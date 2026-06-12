@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tổng hợp môn Business Analysis (Phân tích hệ thống nghiệp vụ)
 
 ## 1. Giới thiệu chung
