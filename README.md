@@ -62,15 +62,20 @@ $$\text{Business Problem} \longrightarrow \text{Process / Pain Point} \longright
 ├── Materials.md                               # Textbooks, references & software tools (Odoo ERP, BPMN)
 ├── Slide/                                     # Lecture slides provided by the instructor
 │   └── Week 1.pdf                             # Week 1: Introduction to BSA & Understanding the Enterprise
-├── Inviduals/                                 # Individual student deliverables
-│   └── Week1.md                               # Week 1 Individual Investigation Plan (Vo Duy Binh - 22301500)
-└── Project/                                   # Group project deliverables & guidelines
-    ├── Week1.md                               # Week 1 Group Project Deliverables (Group 6 - OfficePro Profile & RACI)
+├── Inviduals/                                 # Individual student deliverables (Vo Duy Binh - 22301500)
+│   ├── Week1.md                               # Week 1 Individual Investigation Plan
+│   ├── Week2.md                               # Week 2 Interview Evidence Log (Sales Manager)
+│   └── Week3.md ... Week15.md                 # Weekly individual task deliverables
+├── Group/                                     # Group project deliverables (Group 6 - OfficePro Distribution)
+│   ├── Week1.md                               # Week 1 Enterprise Profile, Stakeholder Map & RACI Matrix
+│   └── Week2.md ... Week15.md                 # Weekly group task deliverables & process models
+└── Project/                                   # Project reference materials & briefs
     └── Final Project/
         ├── BSA_Project_Brief__Guidelines.pdf  # Official Master Project Brief & Guidelines (Weeks 1-15)
         ├── BRD_Template_BSA.docx              # Official Business Requirements Document (BRD) Template
         └── Project.md                         # Detailed 15-Week Implementation Roadmap for Group 6
 ```
+
 
 ---
 
