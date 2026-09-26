@@ -56,8 +56,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(15, 23, 42, 0.9);
+            padding: 0.9rem 2rem;
+            background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border-card);
             z-index: 90;
@@ -104,7 +104,7 @@
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid var(--border-card);
             color: var(--text-main);
-            padding: 0.5rem 0.9rem;
+            padding: 0.45rem 0.85rem;
             border-radius: 8px;
             cursor: pointer;
             font-size: 0.85rem;
@@ -128,7 +128,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem;
+            padding: 1.5rem 2rem;
         }
 
         .slide {
@@ -141,7 +141,7 @@
             visibility: hidden;
             transition: opacity 0.4s ease, transform 0.4s ease;
             transform: scale(0.97) translateY(10px);
-            padding: 2.5rem 3.5rem;
+            padding: 2.2rem 3.2rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -156,22 +156,22 @@
 
         /* Slide Typography & Layouts */
         .slide-header {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .slide-tag {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--accent-cyan);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
             display: block;
         }
 
         .slide-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.2;
             background: linear-gradient(135deg, #ffffff 40%, var(--text-muted));
@@ -183,14 +183,14 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 1.1rem;
         }
 
         /* Card & Grid Containers */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 1.4rem;
         }
 
         .grid-3 {
@@ -210,7 +210,7 @@
             backdrop-filter: blur(12px);
             border: 1px solid var(--border-card);
             border-radius: 14px;
-            padding: 1.5rem;
+            padding: 1.35rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
@@ -222,9 +222,9 @@
 
         .card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.65rem;
             color: var(--accent-cyan);
             display: flex;
             align-items: center;
@@ -232,7 +232,7 @@
         }
 
         .card-text {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: var(--text-muted);
             line-height: 1.5;
         }
@@ -241,7 +241,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.88rem;
+            font-size: 0.86rem;
             background: rgba(15, 23, 42, 0.6);
             border-radius: 10px;
             overflow: hidden;
@@ -249,17 +249,17 @@
         }
 
         th {
-            background: rgba(30, 41, 59, 0.8);
+            background: rgba(30, 41, 59, 0.85);
             color: var(--accent-cyan);
             font-weight: 700;
             text-align: left;
-            padding: 0.75rem 1rem;
+            padding: 0.7rem 0.95rem;
             border-bottom: 1px solid var(--border-card);
             font-family: 'Outfit', sans-serif;
         }
 
         td {
-            padding: 0.7rem 1rem;
+            padding: 0.65rem 0.95rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-main);
         }
@@ -289,7 +289,7 @@
             justify-content: space-between;
             gap: 0.5rem;
             background: rgba(15, 23, 42, 0.8);
-            padding: 1.2rem;
+            padding: 1.1rem;
             border-radius: 12px;
             border: 1px solid var(--border-card);
         }
@@ -298,9 +298,9 @@
             background: rgba(30, 41, 59, 0.9);
             border: 1px solid var(--border-card);
             border-radius: 8px;
-            padding: 0.75rem 1rem;
+            padding: 0.7rem 0.9rem;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             font-weight: 600;
             flex: 1;
         }
@@ -308,7 +308,97 @@
         .flow-arrow {
             color: var(--accent-cyan);
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        /* Overview Grid Modal */
+        #overview-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(9, 13, 22, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        #overview-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.2rem;
+            overflow-y: auto;
+            padding: 1rem;
+            flex: 1;
+        }
+
+        .overview-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-card);
+            border-radius: 10px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 130px;
+        }
+
+        .overview-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.25);
+        }
+
+        .overview-card.active {
+            border-color: var(--accent-amber);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                overflow: visible !important;
+                height: auto !important;
+                background: white !important;
+                color: black !important;
+            }
+            header, footer, #progress-bar, .header-controls {
+                display: none !important;
+            }
+            .slide {
+                position: relative !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                page-break-after: always;
+                height: 100vh !important;
+                padding: 2rem !important;
+                background: white !important;
+                color: black !important;
+            }
+            .glass-card {
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                color: black !important;
+                box-shadow: none !important;
+            }
+            .slide-title, .brand-logo {
+                -webkit-text-fill-color: initial !important;
+                color: #0f172a !important;
+            }
         }
 
         /* Footer Controls */
@@ -316,8 +406,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(15, 23, 42, 0.9);
+            padding: 0.9rem 2rem;
+            background: rgba(15, 23, 42, 0.92);
             border-top: 1px solid var(--border-card);
             z-index: 90;
         }
@@ -331,7 +421,7 @@
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
             border: none;
             color: white;
-            padding: 0.6rem 1.4rem;
+            padding: 0.55rem 1.3rem;
             border-radius: 8px;
             font-weight: 700;
             cursor: pointer;
@@ -339,7 +429,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
         }
 
         .btn-nav:hover {
@@ -365,7 +455,8 @@
             <span class="badge-group">GROUP 6 — BSA FINAL DEFENSE</span>
         </div>
         <div class="header-controls">
-            <span class="slide-counter" id="counter">Slide 1 of 14</span>
+            <span class="slide-counter" id="counter">Slide 1 of 16</span>
+            <button class="btn-ctrl" onclick="toggleOverview()">☰ Slide Overview</button>
             <button class="btn-ctrl" onclick="toggleFullscreen()">⛶ Fullscreen</button>
         </div>
     </header>
@@ -376,16 +467,16 @@
         <div class="slide active">
             <div style="text-align: center; margin: auto; max-width: 900px;">
                 <span class="slide-tag" style="font-size: 1.1rem;">Hoa Sen University — Faculty of Technology</span>
-                <h1 class="slide-title" style="font-size: 3.4rem; margin: 1rem 0;">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
-                <p style="font-size: 1.4rem; color: var(--accent-cyan); font-weight: 600; margin-bottom: 2rem;">
+                <h1 class="slide-title" style="font-size: 3.2rem; margin: 0.8rem 0;">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
+                <p style="font-size: 1.35rem; color: var(--accent-cyan); font-weight: 600; margin-bottom: 1.8rem;">
                     Final Project Defense & Live ERP Prototype Demonstration
                 </p>
-                <div class="glass-card" style="display: inline-block; text-align: left; padding: 2rem 3rem;">
+                <div class="glass-card" style="display: inline-block; text-align: left; padding: 1.8rem 2.8rem;">
                     <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">
                         Scenario B: B2B Wholesale & Distribution — Office Supplies & Stationery
                     </p>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Company Case: <strong style="color: white;">OfficePro Distribution Co., Ltd.</strong></p>
-                    <hr style="border-color: var(--border-card); margin: 1rem 0;">
+                    <hr style="border-color: var(--border-card); margin: 0.9rem 0;">
                     <p style="font-size: 0.95rem; color: var(--accent-amber); font-weight: 700;">
                         👑 Team Leader & Lead BA: Vo Duy Binh (Student ID: 22301500)
                     </p>
@@ -527,7 +618,57 @@
             </div>
         </div>
 
-        <!-- SLIDE 4: BUSINESS PROBLEMS -->
+        <!-- SLIDE 4: STAKEHOLDER MATRIX & EVIDENCE LOG -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 2 — Elicitation Evidence</span>
+                <h2 class="slide-title">Stakeholder Dynamics & Verification Log</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="glass-card">
+                        <div class="card-title">📊 Stakeholder Power / Interest Grid</div>
+                        <div style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.6;">
+                            <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong> Sales Manager & Business Owner — Enforces contract pricelist locks and revenue growth.</p>
+                            <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong> Chief Accountant — Enforces Net 30 debt limits and 3-way invoice matching rules.</p>
+                            <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-cyan);">Keep Informed (Low Power / High Interest):</strong> Warehouse Keepers & Sales Reps — Require fast mobile stock check and pick/pack routing.</p>
+                            <p><strong style="color: var(--text-muted);">Monitor (Low Power / Low Interest):</strong> External Suppliers & Sub-Dealers.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <div class="card-title">📝 Verified Elicitation Log</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Assumption</th>
+                                    <th>Interview Evidence</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Excel Price Lookup</td>
+                                    <td>Confirmed reps copy-paste from static Excel sheets.</td>
+                                    <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone Call Stock Check</td>
+                                    <td>Admitted daily phone checks cause 3-4 stockouts/wk.</td>
+                                    <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Auto Credit Block</td>
+                                    <td>Policy exists on paper but is bypassable verbally.</td>
+                                    <td><span style="color: var(--accent-amber); font-weight: 700;">REVISED</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: BUSINESS PROBLEMS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 2 — Problem Identification</span>
@@ -557,7 +698,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 5: AS-IS PROCESS MODELING -->
+        <!-- SLIDE 6: AS-IS PROCESS MODELING -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — AS-IS Analysis</span>
@@ -598,7 +739,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 6: ROOT CAUSE ANALYSIS -->
+        <!-- SLIDE 7: ROOT CAUSE ANALYSIS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Root Cause Analysis</span>
@@ -618,7 +759,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 7: TO-BE PROCESS DESIGN -->
+        <!-- SLIDE 8: TO-BE PROCESS DESIGN -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — TO-BE Solution Design</span>
@@ -656,7 +797,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 8: MOSCOW REQUIREMENTS -->
+        <!-- SLIDE 9: MOSCOW REQUIREMENTS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Requirements Framing</span>
@@ -693,7 +834,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 9: USE CASES -->
+        <!-- SLIDE 10: USE CASES -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — System Specifications</span>
@@ -722,7 +863,37 @@
             </div>
         </div>
 
-        <!-- SLIDE 10: RTM MATRIX -->
+        <!-- SLIDE 11: BUSINESS RULES & NFR -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 4 — Business Governance</span>
+                <h2 class="slide-title">Business Rules & Non-Functional Requirements</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="glass-card">
+                        <div class="card-title">⚖️ Key Business Rules (BR)</div>
+                        <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+                            <li><strong style="color: white;">BR-01 (Contract Pricing Lock):</strong> System forces contract unit price; manual discount > 5% requires Sales Manager approval in Odoo.</li>
+                            <li><strong style="color: white;">BR-02 (Credit Hold Policy):</strong> Block SO confirmation automatically if client has unpaid invoices > 30 days overdue or debt > credit limit.</li>
+                            <li><strong style="color: white;">BR-03 (Automated Reorder Point):</strong> Reorder alert triggers when ATP stock drops below 100 reams for `ST-001`.</li>
+                            <li><strong style="color: white;">BR-04 (3-Way Matching Tolerance):</strong> Invoices matched against Delivery Note & PO within a 0.5% price variance tolerance.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <div class="card-title">🛡️ Non-Functional Requirements (NFR)</div>
+                        <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
+                            <li><strong style="color: white;">NFR-01 (Role-Based Access Control):</strong> Strict segregation of duties; Sales Reps cannot override price lists or approve vendor POs.</li>
+                            <li><strong style="color: white;">NFR-02 (Performance & Speed):</strong> Real-time ATP inventory lookups execute in &lt; 1.0 second under 50 concurrent users.</li>
+                            <li><strong style="color: white;">NFR-03 (Scalability):</strong> Support catalog scaling to 1,000+ SKUs across multiple regional warehouses.</li>
+                            <li><strong style="color: white;">NFR-04 (Audit Trail & Integrity):</strong> Complete immutable change logs for all price updates, PO approvals, and credit overrides.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: RTM MATRIX -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — Traceability Alignment</span>
@@ -773,7 +944,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 11: ODOO SETUP -->
+        <!-- SLIDE 13: ODOO SETUP -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — ERP Configuration</span>
@@ -805,7 +976,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 12: UAT RESULTS -->
+        <!-- SLIDE 14: UAT RESULTS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — Testing & Validation</span>
@@ -856,7 +1027,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 13: LIVE DEMO WORKFLOW -->
+        <!-- SLIDE 15: LIVE DEMO WORKFLOW -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Live Prototype Demo</span>
@@ -883,7 +1054,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 14: CONCLUSION & Q&A -->
+        <!-- SLIDE 16: CONCLUSION & Q&A -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Conclusion & Defense</span>
@@ -913,9 +1084,20 @@
 
     </div>
 
+    <!-- Overview Grid Modal -->
+    <div id="overview-modal">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="font-family: 'Outfit', sans-serif; color: var(--accent-cyan);">☰ Slide Overview Navigator</h2>
+            <button class="btn-ctrl" onclick="toggleOverview()">✕ Close (Esc)</button>
+        </div>
+        <div class="overview-grid" id="overview-grid">
+            <!-- Grid cards populated dynamically via JS -->
+        </div>
+    </div>
+
     <footer>
         <div style="font-size: 0.85rem; color: var(--text-muted);">
-            Keyboard Controls: <kbd style="background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">←</kbd> Previous | <kbd style="background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">→</kbd> / <kbd style="background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">Space</kbd> Next
+            Keyboard Controls: <kbd style="background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">←</kbd> Prev | <kbd style="background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">→</kbd> / <kbd style="background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">Space</kbd> Next | <kbd style="background: rgba(255,255,255,0.1); padding: 0.1rem 0.4rem; border-radius: 4px;">M</kbd> Overview
         </div>
         <div class="nav-buttons">
             <button class="btn-nav" id="btn-prev" onclick="prevSlide()" disabled>← Previous</button>
@@ -931,6 +1113,27 @@
         const counter = document.getElementById('counter');
         const btnPrev = document.getElementById('btn-prev');
         const btnNext = document.getElementById('btn-next');
+        const overviewModal = document.getElementById('overview-modal');
+        const overviewGrid = document.getElementById('overview-grid');
+
+        // Populate Overview Grid
+        slides.forEach((slide, index) => {
+            const titleElement = slide.querySelector('.slide-title');
+            const titleText = titleElement ? titleElement.innerText : `Slide ${index + 1}`;
+            const card = document.createElement('div');
+            card.className = `overview-card ${index === 0 ? 'active' : ''}`;
+            card.innerHTML = `
+                <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700;">SLIDE ${index + 1}</div>
+                <div style="font-size: 0.88rem; font-weight: 700; color: white; margin: 0.4rem 0;">${titleText}</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Click to jump</div>
+            `;
+            card.onclick = () => {
+                currentSlide = index;
+                updateSlide();
+                toggleOverview();
+            };
+            overviewGrid.appendChild(card);
+        });
 
         function updateSlide() {
             slides.forEach((slide, index) => {
@@ -941,6 +1144,11 @@
             counter.innerText = `Slide ${currentSlide + 1} of ${totalSlides}`;
             btnPrev.disabled = currentSlide === 0;
             btnNext.disabled = currentSlide === totalSlides - 1;
+
+            // Highlight overview card
+            document.querySelectorAll('.overview-card').forEach((card, index) => {
+                card.classList.toggle('active', index === currentSlide);
+            });
         }
 
         function nextSlide() {
@@ -969,14 +1177,27 @@
             }
         }
 
+        function toggleOverview() {
+            overviewModal.classList.toggle('open');
+        }
+
         // Keyboard Navigation
         document.addEventListener('keydown', (e) => {
+            if (overviewModal.classList.contains('open')) {
+                if (e.key === 'Escape' || e.key === 'm' || e.key === 'M') {
+                    toggleOverview();
+                }
+                return;
+            }
+
             if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
                 nextSlide();
             } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
                 prevSlide();
             } else if (e.key === 'f' || e.key === 'F') {
                 toggleFullscreen();
+            } else if (e.key === 'm' || e.key === 'M' || e.key === 'o' || e.key === 'O') {
+                toggleOverview();
             }
         });
 
@@ -985,6 +1206,7 @@
         let touchEndX = 0;
         document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
         document.addEventListener('touchend', e => {
+            if (overviewModal.classList.contains('open')) return;
             touchEndX = e.changedTouches[0].screenX;
             if (touchStartX - touchEndX > 50) nextSlide();
             if (touchEndX - touchStartX > 50) prevSlide();
