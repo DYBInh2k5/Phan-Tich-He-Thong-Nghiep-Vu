@@ -1,4 +1,3 @@
-
 ## Validate the Simulated Enterprise Context
 
 **In-class group activity**
@@ -66,16 +65,17 @@ Copy the checklist below into the **Online Text submission** and complete it tog
 * The instructor will review common issues and clarify major inconsistencies during class.
 
 > **Important:** The purpose of this activity is to make the business context sufficiently clear and coherent for stakeholder investigation. You do not need to create a perfect enterprise.
->
 
 ---
+
 ================================================================================
                       GROUP DELIVERABLE WEEK 2 - GROUP 6
-================================================================================
+========================================================
 
 # VALIDATED ENTERPRISE CONTEXT & GROUP WORKFLOW REVIEW — WEEK 2
 
 ## GROUP & PROJECT INFORMATION
+
 * **Group Name**: Group 6
 * **Master Scenario**: Scenario B — B2B Wholesale & Distribution
 * **Industry Domain**: Office Supplies & Stationery
@@ -87,31 +87,35 @@ Copy the checklist below into the **Online Text submission** and complete it tog
 ## 1. COMPLETED GROUP CHECKLIST
 
 ### Enterprise Context
-* [x] **Business type is clear**: Regional B2B Wholesale & Distribution of Office Supplies & Stationery.
-* [x] **Main products/services are clear**: 10 primary SKUs defined across paper products, writing instruments, filing supplies, office tools, and printer consumables.
-* [x] **Main customers are clear**: Corporate clients, educational institutions, and sub-dealers / retail stationery outlets.
-* [x] **Sales/delivery channels are clear**: Direct B2B Sales Representatives, Enterprise Email/Zalo OA, and Framework Agreements; fulfilled via corporate delivery fleet & third-party logistics.
-* [x] **Locations are clear**: Corporate HQ in District 3 (HCMC), Central Warehouse in Tan Binh IP (2,500 m²), and Regional Depot in Bien Hoa 2 IP (Dong Nai).
+
+* [X] **Business type is clear**: Regional B2B Wholesale & Distribution of Office Supplies & Stationery.
+* [X] **Main products/services are clear**: 10 primary SKUs defined across paper products, writing instruments, filing supplies, office tools, and printer consumables.
+* [X] **Main customers are clear**: Corporate clients, educational institutions, and sub-dealers / retail stationery outlets.
+* [X] **Sales/delivery channels are clear**: Direct B2B Sales Representatives, Enterprise Email/Zalo OA, and Framework Agreements; fulfilled via corporate delivery fleet & third-party logistics.
+* [X] **Locations are clear**: Corporate HQ in District 3 (HCMC), Central Warehouse in Tan Binh IP (2,500 m²), and Regional Depot in Bien Hoa 2 IP (Dong Nai).
 
 ### Business Functions
-* [x] **Sales & Marketing is identified**: B2B sales management, contract price negotiation, quotation generation, and customer relationship management.
-* [x] **Product/Service Operations is identified**: Procurement, vendor management, warehouse receiving, inventory management, picking/packing, and order dispatch.
-* [x] **Accounting & Finance is identified**: Customer invoicing (3-way matching), accounts receivable tracking, credit limit enforcement, and vendor payment management.
-* [x] **HR & Administration is considered**: Corporate governance, employee roles, facility maintenance, and administrative support.
-* [x] **Other necessary functions are identified**: Executive Management (strategic oversight, ROI, and operational risk controls).
+
+* [X] **Sales & Marketing is identified**: B2B sales management, contract price negotiation, quotation generation, and customer relationship management.
+* [X] **Product/Service Operations is identified**: Procurement, vendor management, warehouse receiving, inventory management, picking/packing, and order dispatch.
+* [X] **Accounting & Finance is identified**: Customer invoicing (3-way matching), accounts receivable tracking, credit limit enforcement, and vendor payment management.
+* [X] **HR & Administration is considered**: Corporate governance, employee roles, facility maintenance, and administrative support.
+* [X] **Other necessary functions are identified**: Executive Management (strategic oversight, ROI, and operational risk controls).
 
 ### Organization & Investigation
-* [x] **Key roles/stakeholders are identified**: Sales Manager, Purchasing Manager, Warehouse Manager, Chief Accountant, and Corporate Procurement Officers.
-* [x] **Relationships between business functions are understandable**: End-to-end cross-functional flow: `Supplier` ➔ `Purchasing` ➔ `Warehouse` ➔ `Sales` ➔ `Customer` ➔ `Accounting`.
-* [x] **Each student has a clear Primary Investigation Focus**: 4 distinct operational focus areas assigned without isolating module silos.
-* [x] **Each student has a relevant Primary Stakeholder**: Specific department heads assigned for AI Stakeholder Agent interviews.
-* [x] **No technology solution has been proposed prematurely**: Analysis strictly focuses on business activities, operational pain points, and information flows without assuming specific Odoo ERP software modules.
+
+* [X] **Key roles/stakeholders are identified**: Sales Manager, Purchasing Manager, Warehouse Manager, Chief Accountant, and Corporate Procurement Officers.
+* [X] **Relationships between business functions are understandable**: End-to-end cross-functional flow: `Supplier` ➔ `Purchasing` ➔ `Warehouse` ➔ `Sales` ➔ `Customer` ➔ `Accounting`.
+* [X] **Each student has a clear Primary Investigation Focus**: 4 distinct operational focus areas assigned without isolating module silos.
+* [X] **Each student has a relevant Primary Stakeholder**: Specific department heads assigned for AI Stakeholder Agent interviews.
+* [X] **No technology solution has been proposed prematurely**: Analysis strictly focuses on business activities, operational pain points, and information flows without assuming specific Odoo ERP software modules.
 
 ---
 
 ## 2. VALIDATED GROUP SUMMARY
 
 ### Enterprise Profile Refinement
+
 * **Enterprise Name**: OfficePro Distribution Co., Ltd. (**OfficePro Distribution**)
 * **Business Model**: Regional B2B Wholesale & Distribution specializing in commercial office supplies and stationery.
 * **Core Product Catalog (10 Domain SKUs)**:
@@ -127,6 +131,7 @@ Copy the checklist below into the **Online Text submission** and complete it tog
   10. `ST-010`: Pentel WB1 Whiteboard Marker (Box of 12)
 
 ### Main Business Functions & Interconnections
+
 1. **Sales & Customer Orders**: Manages client contracts, processes quotations, verifies customer-specific contract prices, and confirms Sales Orders (SO).
 2. **Purchasing & Replenishment**: Tracks low-stock thresholds, generates Purchase Requisitions, requests vendor quotations (RFQs), issues Purchase Orders (PO), and monitors supplier lead times.
 3. **Inventory & Warehouse Operations**: Handles goods receiving, quality inspection (QC), bin location storage, order picking/packing, dispatch, and periodic inventory audits across Tan Binh & Bien Hoa warehouses.
@@ -134,12 +139,12 @@ Copy the checklist below into the **Online Text submission** and complete it tog
 
 ### Investigation Assignments (RACI & Stakeholder Allocation)
 
-| Student Name | Student ID | Primary Investigation Focus | Primary Stakeholder |
-| ------------ | ---------- | --------------------------- | ------------------- |
-| **Vo Duy Binh** | **22301500** | **Sales & Customer Orders** (B2B Sales & Contract Pricing) | **Sales Manager** |
-| **Tran Ba Loi** | **22300236** | **Purchasing & Replenishment** (Procurement & Vendor Mgmt) | **Purchasing Manager** |
-| **Nguyen Vu Minh Huy** | **22303760** | **Inventory & Warehouse Operations** (Stock & Fulfillment) | **Warehouse Manager** |
-| **Pham Nguyen Gia Thuan** | **22204631** | **Invoicing & Payments** (Accounts Receivable & Credit Terms) | **Chief Accountant** |
+| Student Name                    | Student ID         | Primary Investigation Focus                                         | Primary Stakeholder          |
+| ------------------------------- | ------------------ | ------------------------------------------------------------------- | ---------------------------- |
+| **Vo Duy Binh**           | **22301500** | **Sales & Customer Orders** (B2B Sales & Contract Pricing)    | **Sales Manager**      |
+| **Tran Ba Loi**           | **22300236** | **Purchasing & Replenishment** (Procurement & Vendor Mgmt)    | **Purchasing Manager** |
+| **Nguyen Vu Minh Huy**    | **22303760** | **Inventory & Warehouse Operations** (Stock & Fulfillment)    | **Warehouse Manager**  |
+| **Pham Nguyen Gia Thuan** | **22204631** | **Invoicing & Payments** (Accounts Receivable & Credit Terms) | **Chief Accountant**   |
 
 ---
 
@@ -149,7 +154,7 @@ During the Week 2 group review session, Group 6 discussed and resolved the follo
 
 1. **Clarification on Contract Pricing Scope**:
    * *Initial Draft*: Contract pricing was assumed to apply to all customers.
-   * *Refinement*: Contract pricing applies strictly to **Corporate Clients** with signed annual framework agreements. Sub-dealers receive volume-based tiered discount lists, while walk-in/one-off B2B buyers pay standard list prices.
+   * *Refinement*: Contract pricing applies strictly to **Corporate Clients** with signed annual framework agreemexnts. Sub-dealers receive volume-based tiered discount lists, while walk-in/one-off B2B buyers pay standard list prices.
 2. **Clarification on Warehouse Operations**:
    * *Initial Draft*: Central Warehouse was treated as a single physical storage space.
    * *Refinement*: OfficePro operates two physical locations: a **Central Warehouse in Tan Binh (HCMC)** holding 80% of stock and bulk paper inventory, and a **Regional Depot in Bien Hoa (Dong Nai)** supporting fast-response deliveries to eastern industrial parks. Stock transfers between locations require formal transfer notes.
