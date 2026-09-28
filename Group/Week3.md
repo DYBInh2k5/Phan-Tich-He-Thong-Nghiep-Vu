@@ -1,4 +1,77 @@
+# ASSIGNMENT PROMPT & INSTRUCTIONS
 
+## Draft the AS-IS Process
+
+**In-Class Project Workshop**
+
+### Step 1 — Compare Evidence
+Each member shares:
+* stakeholder
+* investigation focus
+* key activities
+* actors
+* information
+* handoffs
+* exceptions.
+
+### Step 2 — Select One Process
+Choose **one manageable business process**.
+
+### Step 3 — Define the Scope
+Identify:
+* Process Name
+* Start Point
+* End Point
+* Main Actors
+* Business Outcome
+
+### Step 4 — Build the Process Table
+| Step | Actor | Activity | Information | Handoff |
+| ---- | ----- | -------- | ----------- | ------- |
+| 1    |       |          |             |         |
+| 2    |       |          |             |         |
+| 3    |       |          |             |         |
+| 4    |       |          |             |         |
+| 5    |       |          |             |         |
+
+### Step 5 — Draw the AS-IS Flow
+Use a simple flowchart.  
+**BPMN is not required this week.**
+
+### Step 6 — Mark Uncertainty
+Use:
+* ✓ **Confirmed**
+* ? **Uncertain**
+* A **Assumption**
+
+**One submission per group**  
+Submit before the end of the Week 3 class.
+
+### Include
+1. Process Name
+2. Process Scope
+3. Start / End Point
+4. Main Actors
+5. Process Table
+6. Simple AS-IS Flow
+7. Important Information
+8. Handoffs
+9. Known Exceptions
+10. Evidence / Uncertainty Notes
+11. Questions for Further Investigation
+
+### Quality Checklist
+☐ Based on Week 2 interview evidence  
+☐ Clear process scope  
+☐ Clear actors and activities  
+☐ Logical sequence  
+☐ Important handoffs identified  
+☐ Current tools/workarounds preserved  
+☐ Uncertainty clearly marked  
+☐ No TO-BE activities  
+☐ No proposed technology solution  
+
+---
 ================================================================================
           GROUP DELIVERABLE WEEK 3 - GROUP 6 (SCENARIO B: B2B WHOLESALE)
 ================================================================================

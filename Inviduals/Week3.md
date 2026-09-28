@@ -1,4 +1,25 @@
+# ASSIGNMENT PROMPT & INSTRUCTIONS
 
+## From Interview Evidence to AS-IS Process
+### Individual Assignment
+
+**Task:**  
+Use your Week 2 Interview Evidence Log to create an initial AS-IS process draft.
+
+**Include:**
+1. **Process Information**: Process Name, Trigger, End Point, Main Actors
+2. **Process Table**: Step | Actor | Activity | Information | Output / Handoff
+3. **Simple AS-IS Flow**: A simple flowchart is sufficient.
+4. **Evidence Status**: Confirmed, Uncertain, Assumption
+5. **Unresolved Questions**: Write 1–2 questions that need further clarification.
+
+**Important:**  
+Describe the current process. Do not propose a new system or technology solution.
+
+**Submission:**  
+Individual | PDF | 1–2 pages | Suggested filename: `W3_ASIS_[StudentID]_[Name].pdf`
+
+---
 ================================================================================
           INDIVIDUAL DELIVERABLE WEEK 3 - VO DUY BINH (ID: 22301500)
 ================================================================================
