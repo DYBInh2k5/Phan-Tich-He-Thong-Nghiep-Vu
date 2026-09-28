@@ -7,10 +7,8 @@
 # BUSINESS REQUIREMENTS DOCUMENT FOR B2B WHOLESALE & DISTRIBUTION: OFFICEPRO DISTRIBUTION CO., LTD.
 
 **Submitted by Group 6:**
-* **Vo Duy Binh (Student ID: 22301500)** — Team Leader / Lead Business Analyst
-* **Tran Ba Loi (Student ID: 22300236)** — Project Manager / Systems Analyst
-* **Nguyen Vu Minh Huy (Student ID: 22303760)** — Solution Configurator / ERP Specialist
-* **Pham Nguyen Gia Thuan (Student ID: 22204631)** — QA & UAT Analyst
+* **Vo Duy Binh (Student ID: 22301500)** — Team Leader / Lead Business Analyst & Systems Analyst
+* **Pham Nguyen Gia Thuan (Student ID: 22204631)** — QA & Solution Configurator / UAT Analyst
 
 **Under The Guidance Of:** MSc. Nguyen Thi Thanh Thanh  
 **Date of Submission:** Academic Year 2026–2027, Semester 1  
@@ -57,10 +55,8 @@ The project team would like to express our sincere gratitude to **MSc. Nguyen Th
 
 | Student Name | Student ID | Primary Focus / Assigned Module | Role | RACI Status |
 |---|---|---|---|---|
-| **Vo Duy Binh** | **22301500** | **Sales & Customer Orders** | Team Leader / Lead BA | **A / R** (Sales & Overall BRD) |
-| **Tran Ba Loi** | **22300236** | **Purchasing & Procurement** | Project Manager / Systems Analyst | **A / R** (Purchasing Module) |
-| **Nguyen Vu Minh Huy** | **22303760** | **Inventory & Warehouse** | Solution Configurator / ERP Specialist | **A / R** (Inventory Module) |
-| **Pham Nguyen Gia Thuan** | **22204631** | **Invoicing & Accounting** | QA & UAT Analyst | **A / R** (Invoicing & UAT) |
+| **Vo Duy Binh** | **22301500** | **Sales & Purchasing** | Team Leader / Lead BA & SA | **A / R** (Sales, Purchasing & Overall BRD) |
+| **Pham Nguyen Gia Thuan** | **22204631** | **Inventory & Accounting** | QA & Solution Configurator | **A / R** (Inventory, Invoicing & UAT) |
 
 ***
 
@@ -118,10 +114,8 @@ The company's core catalog consists of **10 primary SKUs**:
 
 | Student Name | Student ID | Assigned Core Module | Key Responsibilities |
 |---|---|---|---|
-| **Vo Duy Binh** | **22301500** | **Sales & Customer Orders** | Lead BA; B2B Sales order entry, Contract Pricelist engine, quotation approval rules. |
-| **Tran Ba Loi** | **22300236** | **Purchasing & Replenishment** | Reorder point rules, Purchase Requisitions, multi-vendor RFQ comparison, Vendor PO creation. |
-| **Nguyen Vu Minh Huy** | **22303760** | **Inventory & Warehouse** | Real-time ATP stock visibility, Tan Binh & Bien Hoa warehouse receipts, picking routing. |
-| **Pham Nguyen Gia Thuan** | **22204631** | **Invoicing & Accounting** | Automated 3-way invoice matching, Net 30 credit hold policy, AR aging debt ledger. |
+| **Vo Duy Binh** | **22301500** | **Sales & Purchasing** | Lead BA & SA; B2B Sales order entry, Contract Pricelist engine, quotation approval rules, Reorder point rules, Purchase Requisitions, RFQ comparison, Vendor PO creation. |
+| **Pham Nguyen Gia Thuan** | **22204631** | **Inventory & Accounting** | QA & Solution Configurator; Real-time ATP stock visibility, warehouse receipts, picking routing, automated 3-way invoice matching, Net 30 credit hold policy, AR aging debt ledger. |
 
 ***
 

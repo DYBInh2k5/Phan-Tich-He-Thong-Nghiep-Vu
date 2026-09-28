@@ -46,10 +46,8 @@ $$\text{Business Problem} \longrightarrow \text{Process / Pain Point} \longright
 
 | No. | Student Name | Student ID | Group Role | Primary Investigation Focus | Primary Stakeholder |
 |---|---|---|---|---|---|
-| 1 | **Vo Duy Binh** | **22301500** | **Team Leader / Lead BA** | **Sales & Customer Orders** (B2B Sales & Contract Pricing) | Sales Manager |
-| 2 | **Tran Ba Loi** | **22300236** | **Project Manager / Systems Analyst** | **Purchasing & Replenishment** (Procurement & Vendor Mgmt) | Purchasing Manager |
-| 3 | **Nguyen Vu Minh Huy** | **22303760** | **Solution Configurator / ERP Specialist** | **Inventory & Warehouse Operations** (Stock & Fulfillment) | Warehouse Manager |
-| 4 | **Pham Nguyen Gia Thuan** | **22204631** | **QA & UAT Analyst** | **Invoicing & Payments** (Accounts Receivable & Net 30) | Chief Accountant |
+| 1 | **Vo Duy Binh** | **22301500** | **Team Leader / Lead BA** | **Sales & Purchasing** (B2B Sales, Pricing & Procurement) | Sales & Purchasing Manager |
+| 2 | **Pham Nguyen Gia Thuan** | **22204631** | **QA & Solutions Analyst** | **Inventory & Invoicing** (Warehouse, Net 30 AR & Accounting) | Warehouse Manager & Chief Accountant |
 
 ---
 

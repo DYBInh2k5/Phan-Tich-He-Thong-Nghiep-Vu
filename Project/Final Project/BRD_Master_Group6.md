@@ -54,20 +54,20 @@ Due to rapid business growth, OfficePro currently experiences significant operat
 
 *(R - Responsible | A - Accountable | C - Consulted | I - Informed)*
 
-| Project Deliverable / Phase | Vo Duy Binh (Sales BA) | Tran Ba Loi (Purchasing BA) | Nguyen Vu Minh Huy (Inventory BA) | Pham Nguyen Gia Thuan (Accounting BA) |
-|---|---|---|---|---|
-| **Phase 1: Business Analysis** | | | | |
-| 1. Enterprise Profile & RACI Matrix | **A/R** | R | R | R |
-| 2. Stakeholder Interview Logs & Info Matrix | **A/R** (Sales Mgr) | R (Purchasing Mgr) | R (Warehouse Mgr) | R (Accounting Mgr) |
-| 3. AS-IS Process & Bottleneck Analysis | **A/R** (Sales AS-IS) | R (Purchasing AS-IS) | R (Inventory AS-IS) | R (Accounting AS-IS) |
-| 4. 5-Whys Root Cause Analysis | R | **A/R** | R | R |
-| 5. TO-BE Process Design (BPMN) | **A/R** (Sales TO-BE) | R (Purchasing TO-BE) | R (Inventory TO-BE) | R (Accounting TO-BE) |
-| 6. MoSCoW Requirements List | R | R | R | **A/R** |
-| **Phase 2: System Analysis & Prototype** | | | | |
-| 7. Use Case Diagrams & Specifications | **A/R** (Sales UCs) | R (Purchase UCs) | R (Inventory UCs) | R (Invoice UCs) |
-| 8. Requirements Traceability Matrix (RTM) | R | R | R | **A/R** |
-| 9. Odoo ERP Setup & 10 SKUs Master Data | C | C | **A/R** | C |
-| 10. Peer UAT Execution & Test Logs | R | R | R | **A/R** |
+| Project Deliverable / Phase | Vo Duy Binh (Sales & Purchasing BA) | Pham Nguyen Gia Thuan (Inventory & Accounting BA) |
+|---|---|---|
+| **Phase 1: Business Analysis** | | |
+| 1. Enterprise Profile & RACI Matrix | **A/R** | R |
+| 2. Stakeholder Interview Logs & Info Matrix | **A/R** (Sales & Purchasing Mgr) | R (Warehouse & Accounting Mgr) |
+| 3. AS-IS Process & Bottleneck Analysis | **A/R** (Sales & Purchasing AS-IS) | R (Inventory & Accounting AS-IS) |
+| 4. 5-Whys Root Cause Analysis | **A/R** | R |
+| 5. TO-BE Process Design (BPMN) | **A/R** (Sales & Purchasing TO-BE) | R (Inventory & Accounting TO-BE) |
+| 6. MoSCoW Requirements List | R | **A/R** |
+| **Phase 2: System Analysis & Prototype** | | |
+| 7. Use Case Diagrams & Specifications | **A/R** (Sales & Purchase UCs) | R (Inventory & Invoice UCs) |
+| 8. Requirements Traceability Matrix (RTM) | R | **A/R** |
+| 9. Odoo ERP Setup & 10 SKUs Master Data | C | **A/R** |
+| 10. Peer UAT Execution & Test Logs | R | **A/R** |
 | 11. Final BRD & Live Demo Defense | **A/R** (Lead Presenter) | R (Demo PO) | R (Demo Stock) | R (Demo Invoice) |
 
 ---

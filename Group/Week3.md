@@ -15,10 +15,8 @@
 * **Group:** Group 6 (Scenario B: B2B Wholesale & Distribution – Office Supplies & Stationery)
 * **Company Case:** OfficePro Distribution Co., Ltd. (`OfficePro Distribution`)
 * **Team Members & Role Contributions:**
-  * **Vo Duy Binh (Student ID: 22301500)** — Team Leader / Lead BA (Sales & Order Entry AS-IS Focus)
-  * **Tran Ba Loi (Student ID: 22300236)** — Project Manager / SA (Purchasing & Procurement AS-IS Focus)
-  * **Nguyen Vu Minh Huy (Student ID: 22303760)** — ERP Specialist (Inventory & Warehouse AS-IS Focus)
-  * **Pham Nguyen Gia Thuan (Student ID: 22204631)** — QA & UAT Analyst (Invoicing & Accounting AS-IS Focus)
+  * **Vo Duy Binh (Student ID: 22301500)** — Team Leader / Lead BA & SA (Sales, Pricing & Procurement AS-IS Focus)
+  * **Pham Nguyen Gia Thuan (Student ID: 22204631)** — QA & Solutions Analyst (Warehouse, Inventory, Invoicing & Accounting AS-IS Focus)
 
 ---
 
@@ -116,10 +114,10 @@ flowchart TD
    * *Presenter:* Vo Duy Binh (Team Leader)
    * *Content:* Demonstrates the 11-step cross-functional swimlane flowchart on Miro. Highlights the critical paper handoff between Sales, Warehouse, and Accounting, emphasizing reliance on Excel sheets, scanned PDF contracts, and verbal Zalo stock checks.
 2. **AI vs. Reality Critique (1–2 mins):**
-   * *Presenter:* Tran Ba Loi & Nguyen Vu Minh Huy
+   * *Presenter:* Pham Nguyen Gia Thuan
    * *Critique (Option A - AI Critique):* When AI was prompted to generate an Order-to-Cash process, it generated an idealized, automated workflow with real-time API inventory locks and automated credit hold blocks. In reality, our Week 2 interview evidence proved that OfficePro operates in a messy, manual environment where Sales Reps call warehouse staff directly and credit blocks are frequently bypassed verbally by managers to hit sales quotas.
 3. **Edge Case / Exception Handling (1 min):**
-   * *Presenter:* Pham Nguyen Gia Thuan
+   * *Presenter:* Vo Duy Binh & Pham Nguyen Gia Thuan
    * *Content:* Explains the handling of client price disputes and overdue credit overrides. When a client disputes an invoice price, Sales Reps must manually dig through scanned PDF archives in shared drives, delaying billing by 1–2 days.
 
 ---

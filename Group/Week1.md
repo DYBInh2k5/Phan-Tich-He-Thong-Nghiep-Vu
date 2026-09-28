@@ -46,10 +46,8 @@ Week 1 Quality Checklist
 
 | No. | Student Name | Student ID | Group Role | Primary Investigation Focus |
 |---|---|---|---|---|
-| 1 | **Vo Duy Binh** | **22301500** | **Team Leader / Lead BA** | Sales & Customer Orders (B2B Sales & Contract Pricing) |
-| 2 | **Tran Ba Loi** | **22300236** | **Project Manager / Systems Analyst** | Purchasing & Replenishment (Procurement & Vendor Mgmt) |
-| 3 | **Nguyen Vu Minh Huy** | **22303760** | **Solution Configurator / ERP Specialist** | Inventory & Warehouse Operations (Stock & Fulfillment) |
-| 4 | **Pham Nguyen Gia Thuan** | **22204631** | **QA & UAT Analyst** | Invoicing & Payments (Accounts Receivable & Credit Terms) |
+| 1 | **Vo Duy Binh** | **22301500** | **Team Leader / Lead BA** | Sales & Purchasing (B2B Sales, Pricing & Procurement) |
+| 2 | **Pham Nguyen Gia Thuan** | **22204631** | **QA & Solutions Analyst** | Inventory & Invoicing (Warehouse, Net 30 AR & Accounting) |
 
 ---
 

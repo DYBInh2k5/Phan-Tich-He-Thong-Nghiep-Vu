@@ -141,10 +141,8 @@ Copy the checklist below into the **Online Text submission** and complete it tog
 
 | Student Name                    | Student ID         | Primary Investigation Focus                                         | Primary Stakeholder          |
 | ------------------------------- | ------------------ | ------------------------------------------------------------------- | ---------------------------- |
-| **Vo Duy Binh**           | **22301500** | **Sales & Customer Orders** (B2B Sales & Contract Pricing)    | **Sales Manager**      |
-| **Tran Ba Loi**           | **22300236** | **Purchasing & Replenishment** (Procurement & Vendor Mgmt)    | **Purchasing Manager** |
-| **Nguyen Vu Minh Huy**    | **22303760** | **Inventory & Warehouse Operations** (Stock & Fulfillment)    | **Warehouse Manager**  |
-| **Pham Nguyen Gia Thuan** | **22204631** | **Invoicing & Payments** (Accounts Receivable & Credit Terms) | **Chief Accountant**   |
+| **Vo Duy Binh**           | **22301500** | **Sales & Purchasing** (B2B Sales, Pricing & Procurement)    | **Sales & Purchasing Manager** |
+| **Pham Nguyen Gia Thuan** | **22204631** | **Inventory & Invoicing** (Warehouse, Net 30 AR & Accounting) | **Warehouse Manager & Chief Accountant** |
 
 ---
 
