@@ -6,7 +6,7 @@
 * **Submission Format:** **One submission per group** on Moodle (Text submission containing **2 Public Links** — No heavy file uploads required).
 * **Required Links in Moodle:**
   1. **Miro / FigJam Board Link:** `https://miro.com/app/board/uXjVHh2cXjQ=/?share_link_id=390777151819` *(Set access to "Anyone with the link can view")*
-  2. **3–5 Minute Video Walkthrough Link:** `https://youtu.be/Group6_BSA_Week3_Walkthrough` *(Uploaded to YouTube Unlisted / Google Drive)*
+  2. **3–5 Minute Video Walkthrough Link:** `https://youtu.be/Q_awOmB35fk` *(Uploaded to YouTube Unlisted / Google Drive)*
 
 ---
 
