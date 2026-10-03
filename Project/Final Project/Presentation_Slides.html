@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            /* Material You (MD3) Seed: Purple / Violet Tonal Palette (#6750A4) */
+        /* Material You (MD3) Light Mode Theme Tokens (Default) */
+        :root, html[data-theme="light"] {
+            --md-sys-color-background: #fffbfe;
+            --md-sys-color-surface: #f7f2fa;
+            --md-sys-color-surface-container: #f3edf7;
+            --md-sys-color-surface-container-high: #ebe4f2;
+            --md-sys-color-surface-container-highest: #e1d9e8;
+            --md-sys-color-outline: #79747e;
+            --md-sys-color-outline-variant: #c4c0c9;
+            
+            --md-sys-color-primary: #6750a4;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-primary-container: #eaddff;
+            --md-sys-color-on-primary-container: #21005d;
+            
+            --md-sys-color-secondary: #625b71;
+            --md-sys-color-secondary-container: #e8def8;
+            --md-sys-color-on-secondary-container: #1d192b;
+            
+            --md-sys-color-tertiary: #7d5260;
+            --md-sys-color-tertiary-container: #ffd8e4;
+            --md-sys-color-on-tertiary-container: #31111d;
+            
+            --md-sys-color-error: #b3261e;
+            --md-sys-color-error-container: #f9dedc;
+            
+            --accent-emerald: #047857;
+            --accent-emerald-bg: #d1fae5;
+            --accent-amber: #b45309;
+            --accent-amber-bg: #fef3c7;
+            --accent-rose: #be123c;
+            --accent-rose-bg: #ffe4e6;
+            --accent-cyan: #0284c7;
+            --accent-cyan-bg: #e0f2fe;
+            
+            --text-main: #1c1b1f;
+            --text-muted: #49454f;
+            --text-title: #1d192b;
+            
+            --card-border: rgba(103, 80, 164, 0.12);
+            --card-shadow: 0 4px 20px rgba(103, 80, 164, 0.08);
+            --card-shadow-hover: 0 10px 30px rgba(103, 80, 164, 0.18);
+            
+            /* MD3 Organic Radius System */
+            --radius-xs: 8px;
+            --radius-sm: 12px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-pill: 9999px;
+            
+            /* MD3 Cubic Bezier Easing */
+            --md-easing: cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        /* Material You (MD3) Dark Mode Theme Tokens Option */
+        html[data-theme="dark"] {
             --md-sys-color-background: #0f0d15;
             --md-sys-color-surface: #181424;
             --md-sys-color-surface-container: #221c33;
@@ -37,24 +92,21 @@
             --md-sys-color-error-container: #8c1d18;
             
             --accent-emerald: #6ee7b7;
+            --accent-emerald-bg: rgba(16, 185, 129, 0.2);
             --accent-amber: #fde68a;
+            --accent-amber-bg: rgba(245, 158, 11, 0.2);
             --accent-rose: #fca5a5;
+            --accent-rose-bg: rgba(244, 63, 94, 0.2);
             --accent-cyan: #7dd3fc;
+            --accent-cyan-bg: rgba(6, 182, 212, 0.2);
             
             --text-main: #e6e1e5;
             --text-muted: #cac4d0;
             --text-title: #ffffff;
             
-            /* MD3 Organic Radius System */
-            --radius-xs: 8px;
-            --radius-sm: 12px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-xl: 32px;
-            --radius-pill: 9999px;
-            
-            /* MD3 Cubic Bezier Easing */
-            --md-easing: cubic-bezier(0.2, 0, 0, 1);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            --card-shadow-hover: 0 8px 30px rgba(103, 80, 164, 0.25);
         }
 
         * {
@@ -74,24 +126,25 @@
             flex-direction: column;
             user-select: none;
             position: relative;
+            transition: background-color 0.3s var(--md-easing), color 0.3s var(--md-easing);
         }
 
         /* Atmospheric Background Blur Shapes (Material You DNA) */
         .bg-blur-shape {
             position: absolute;
             border-radius: 50%;
-            filter: blur(90px);
-            opacity: 0.22;
+            filter: blur(100px);
+            opacity: 0.35;
             pointer-events: none;
             z-index: 0;
-            animation: floatShape 16s ease-in-out infinite alternate;
+            animation: floatShape 18s ease-in-out infinite alternate;
         }
 
         .bg-shape-1 {
             width: 550px;
             height: 550px;
             background: var(--md-sys-color-primary-container);
-            top: -150px;
+            top: -160px;
             left: -100px;
         }
 
@@ -105,9 +158,9 @@
         }
 
         .bg-shape-3 {
-            width: 350px;
-            height: 350px;
-            background: rgba(6, 182, 212, 0.3);
+            width: 380px;
+            height: 380px;
+            background: var(--md-sys-color-secondary-container);
             top: 40%;
             left: 60%;
             animation-delay: -10s;
@@ -125,7 +178,7 @@
             background: linear-gradient(90deg, var(--md-sys-color-primary), var(--accent-cyan), var(--md-sys-color-tertiary));
             width: 0%;
             transition: width 0.3s var(--md-easing);
-            box-shadow: 0 0 14px var(--md-sys-color-primary);
+            box-shadow: 0 0 10px var(--md-sys-color-primary);
             z-index: 100;
         }
 
@@ -135,11 +188,16 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.85rem 2.2rem;
-            background: rgba(24, 20, 36, 0.85);
+            background: rgba(247, 242, 250, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--md-sys-color-surface-container-highest);
             z-index: 90;
+            transition: background-color 0.3s var(--md-easing);
+        }
+
+        html[data-theme="dark"] header {
+            background: rgba(24, 20, 36, 0.88);
         }
 
         .brand-logo {
@@ -150,15 +208,12 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            background: linear-gradient(135deg, #ffffff 40%, var(--md-sys-color-primary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--md-sys-color-primary);
         }
 
         .badge-group {
             background: var(--md-sys-color-secondary-container);
-            border: 1px solid rgba(208, 188, 255, 0.3);
+            border: 1px solid var(--md-sys-color-outline-variant);
             color: var(--md-sys-color-on-secondary-container);
             padding: 0.3rem 0.85rem;
             border-radius: var(--radius-pill);
@@ -171,7 +226,7 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
+            gap: 0.8rem;
         }
 
         .slide-counter {
@@ -179,10 +234,9 @@
             font-weight: 700;
             color: var(--md-sys-color-primary);
             font-family: 'Outfit', sans-serif;
-            background: var(--md-sys-color-surface-container-high);
+            background: var(--md-sys-color-primary-container);
             padding: 0.35rem 0.85rem;
             border-radius: var(--radius-pill);
-            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .btn-ctrl {
@@ -193,7 +247,7 @@
             border-radius: var(--radius-pill);
             cursor: pointer;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.25s var(--md-easing);
             display: flex;
             align-items: center;
@@ -204,7 +258,7 @@
             background: var(--md-sys-color-primary-container);
             color: var(--md-sys-color-on-primary-container);
             border-color: var(--md-sys-color-primary);
-            box-shadow: 0 4px 16px rgba(208, 188, 255, 0.2);
+            box-shadow: 0 4px 16px rgba(103, 80, 164, 0.2);
         }
 
         .btn-ctrl:active {
@@ -266,10 +320,6 @@
             font-weight: 800;
             line-height: 1.2;
             color: var(--text-title);
-            background: linear-gradient(135deg, #ffffff 40%, var(--text-muted));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .slide-content {
@@ -298,22 +348,22 @@
             gap: 1rem;
         }
 
-        /* Surface Cards (Material 3 Tonal Surface System) */
+        /* Surface Cards (Material 3 Light Tonal Surface System) */
         .glass-card {
             background: var(--md-sys-color-surface-container);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--card-border);
             border-radius: var(--radius-lg);
             padding: 1.35rem 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-            transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing), border-color 0.3s var(--md-easing);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing), border-color 0.3s var(--md-easing), background-color 0.3s var(--md-easing);
             position: relative;
             overflow: hidden;
         }
 
         .glass-card:hover {
             transform: translateY(-3px) scale(1.01);
-            border-color: rgba(208, 188, 255, 0.35);
-            box-shadow: 0 8px 30px rgba(103, 80, 164, 0.25);
+            border-color: var(--md-sys-color-primary);
+            box-shadow: var(--card-shadow-hover);
             background: var(--md-sys-color-surface-container-high);
         }
 
@@ -347,8 +397,8 @@
         }
 
         th {
-            background: var(--md-sys-color-surface-container-high);
-            color: var(--md-sys-color-primary);
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
             font-weight: 700;
             text-align: left;
             padding: 0.75rem 1rem;
@@ -358,7 +408,7 @@
 
         td {
             padding: 0.65rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--md-sys-color-surface-container-highest);
             color: var(--text-main);
         }
 
@@ -367,40 +417,40 @@
         }
 
         tr:hover td {
-            background: var(--md-sys-color-surface-container-highest);
+            background: var(--md-sys-color-surface-container-high);
         }
 
         /* MD3 Pill Badges & Chips */
         .highlight {
             color: var(--accent-amber);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .tag-must {
-            background: var(--md-sys-color-error-container);
-            color: var(--md-sys-color-error);
-            border: 1px solid var(--md-sys-color-error);
-            padding: 0.2rem 0.6rem;
+            background: var(--accent-rose-bg);
+            color: var(--accent-rose);
+            border: 1px solid var(--accent-rose);
+            padding: 0.2rem 0.65rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
             font-size: 0.75rem;
         }
 
         .tag-should {
-            background: rgba(245, 158, 11, 0.18);
+            background: var(--accent-amber-bg);
             color: var(--accent-amber);
             border: 1px solid var(--accent-amber);
-            padding: 0.2rem 0.6rem;
+            padding: 0.2rem 0.65rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
             font-size: 0.75rem;
         }
 
         .tag-could {
-            background: rgba(16, 185, 129, 0.18);
+            background: var(--accent-emerald-bg);
             color: var(--accent-emerald);
             border: 1px solid var(--accent-emerald);
-            padding: 0.2rem 0.6rem;
+            padding: 0.2rem 0.65rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
             font-size: 0.75rem;
@@ -419,13 +469,14 @@
         }
 
         .flow-step {
-            background: var(--md-sys-color-surface);
+            background: var(--md-sys-color-surface-container);
             border: 1px solid var(--md-sys-color-outline-variant);
             border-radius: var(--radius-sm);
             padding: 0.7rem 0.9rem;
             text-align: center;
             font-size: 0.83rem;
             font-weight: 600;
+            color: var(--text-title);
             flex: 1;
             transition: transform 0.2s var(--md-easing);
         }
@@ -441,14 +492,14 @@
             font-size: 1.1rem;
         }
 
-        /* Overview Grid Modal (Material 3 Surface Dialog) */
+        /* Overview Grid Modal (Material 3 Light Dialog) */
         #overview-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(15, 13, 21, 0.94);
+            background: rgba(255, 251, 254, 0.94);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             z-index: 200;
@@ -458,6 +509,10 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s var(--md-easing);
+        }
+
+        html[data-theme="dark"] #overview-modal {
+            background: rgba(15, 13, 21, 0.94);
         }
 
         #overview-modal.open {
@@ -490,13 +545,13 @@
         .overview-card:hover {
             border-color: var(--md-sys-color-primary);
             transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(103, 80, 164, 0.35);
+            box-shadow: var(--card-shadow-hover);
             background: var(--md-sys-color-surface-container-high);
         }
 
         .overview-card.active {
             border-color: var(--accent-amber);
-            box-shadow: 0 0 16px rgba(253, 230, 138, 0.3);
+            box-shadow: 0 0 16px rgba(180, 83, 9, 0.25);
             background: var(--md-sys-color-surface-container-high);
         }
 
@@ -529,7 +584,6 @@
                 box-shadow: none !important;
             }
             .slide-title, .brand-logo {
-                -webkit-text-fill-color: initial !important;
                 color: #0f172a !important;
             }
         }
@@ -540,10 +594,15 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.85rem 2.2rem;
-            background: rgba(24, 20, 36, 0.85);
+            background: rgba(247, 242, 250, 0.88);
             border-top: 1px solid var(--md-sys-color-surface-container-highest);
             backdrop-filter: blur(20px);
             z-index: 90;
+            transition: background-color 0.3s var(--md-easing);
+        }
+
+        html[data-theme="dark"] footer {
+            background: rgba(24, 20, 36, 0.88);
         }
 
         .nav-buttons {
@@ -552,14 +611,14 @@
         }
 
         .btn-nav {
-            background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-primary-container));
+            background: var(--md-sys-color-primary);
             border: none;
-            color: white;
+            color: var(--md-sys-color-on-primary);
             padding: 0.55rem 1.4rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
             cursor: pointer;
-            transition: transform 0.2s var(--md-easing), box-shadow 0.2s var(--md-easing);
+            transition: transform 0.2s var(--md-easing), box-shadow 0.2s var(--md-easing), background-color 0.2s var(--md-easing);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -569,7 +628,7 @@
 
         .btn-nav:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(103, 80, 164, 0.45);
+            box-shadow: 0 6px 20px rgba(103, 80, 164, 0.35);
         }
 
         .btn-nav:active {
@@ -586,7 +645,7 @@
 </head>
 <body>
 
-    <!-- Atmospheric Layered Blur Shapes -->
+    <!-- Atmospheric Layered Blur Shapes (MD3 Light Theme) -->
     <div class="bg-blur-shape bg-shape-1"></div>
     <div class="bg-blur-shape bg-shape-2"></div>
     <div class="bg-blur-shape bg-shape-3"></div>
@@ -599,6 +658,7 @@
             <span class="badge-group">GROUP 6 — BSA FINAL DEFENSE</span>
         </div>
         <div class="header-controls">
+            <button class="btn-ctrl" onclick="toggleTheme()" id="theme-btn">☀️ Light Mode</button>
             <span class="slide-counter" id="counter">Slide 1 of 16</span>
             <button class="btn-ctrl" onclick="toggleOverview()">☰ Overview</button>
             <button class="btn-ctrl" onclick="toggleFullscreen()">⛶ Fullscreen</button>
@@ -611,15 +671,15 @@
         <div class="slide active">
             <div style="text-align: center; margin: auto; max-width: 920px;">
                 <span class="slide-tag" style="font-size: 1.05rem;">Hoa Sen University — Faculty of Technology</span>
-                <h1 class="slide-title" style="font-size: 3.2rem; margin: 0.8rem 0;">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
-                <p style="font-size: 1.35rem; color: var(--md-sys-color-primary); font-weight: 600; margin-bottom: 1.8rem;">
+                <h1 class="slide-title" style="font-size: 3.2rem; margin: 0.8rem 0; color: var(--md-sys-color-primary);">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
+                <p style="font-size: 1.35rem; color: var(--text-main); font-weight: 600; margin-bottom: 1.8rem;">
                     Final Project Defense & Live ERP Prototype Demonstration
                 </p>
                 <div class="glass-card" style="display: inline-block; text-align: left; padding: 2rem 3rem; border-radius: var(--radius-xl);">
-                    <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">
+                    <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-title);">
                         Scenario B: B2B Wholesale & Distribution — Office Supplies & Stationery
                     </p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Company Case: <strong style="color: white;">OfficePro Distribution Co., Ltd.</strong></p>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Company Case: <strong style="color: var(--text-title);">OfficePro Distribution Co., Ltd.</strong></p>
                     <hr style="border-color: var(--md-sys-color-surface-container-highest); margin: 0.9rem 0;">
                     <p style="font-size: 0.95rem; color: var(--accent-amber); font-weight: 700;">
                         👑 Team Leader & Lead BA: Vo Duy Binh (Student ID: 22301500)
@@ -668,16 +728,16 @@
                         Core inventory catalog spanning Paper, Writing, Filing, Tools, and Consumables:
                     </p>
                     <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-001` A4 Paper Double A 70gsm</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-002` A4 Paper IK Plus 80gsm</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-003` Thien Long Pen TL-027</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-004` Pilot G2 Gel Pen</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-005` King Jim Display Book</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-006` Deli A5 Notebook</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-007` Kangaro Stapler</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-008` Kangaro Staples</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-009` HP 107a Toner</span>
-                        <span style="background: var(--md-sys-color-surface-container-high); padding: 0.25rem 0.6rem; border-radius: var(--radius-pill);">`ST-010` Pentel Marker</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-001` A4 Paper Double A 70gsm</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-002` A4 Paper IK Plus 80gsm</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-003` Thien Long Pen TL-027</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-004` Pilot G2 Gel Pen</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-005` King Jim Display Book</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-006` Deli A5 Notebook</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-007` Kangaro Stapler</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-008` Kangaro Staples</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-009` HP 107a Toner</span>
+                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-010` Pentel Marker</span>
                     </div>
                 </div>
             </div>
@@ -907,15 +967,15 @@
                     <div class="card-title" style="color: var(--accent-emerald);">✨ TO-BE Operational Improvements</div>
                     <div class="grid-3" style="margin-top: 0.5rem;">
                         <div>
-                            <strong style="color: white; font-size: 0.9rem;">Automated Pricelists:</strong>
+                            <strong style="color: var(--text-title); font-size: 0.9rem;">Automated Pricelists:</strong>
                             <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">System retrieves contract unit prices instantly upon selecting B2B client.</p>
                         </div>
                         <div>
-                            <strong style="color: white; font-size: 0.9rem;">Real-Time ATP Stock:</strong>
+                            <strong style="color: var(--text-title); font-size: 0.9rem;">Real-Time ATP Stock:</strong>
                             <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">Sales checks stock availability across Tan Binh & Bien Hoa before order sign-off.</p>
                         </div>
                         <div>
-                            <strong style="color: white; font-size: 0.9rem;">System Credit Controls:</strong>
+                            <strong style="color: var(--text-title); font-size: 0.9rem;">System Credit Controls:</strong>
                             <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">Orders for accounts with overdue debt > 30 days are blocked automatically.</p>
                         </div>
                     </div>
@@ -1000,19 +1060,19 @@
                     <div class="glass-card">
                         <div class="card-title">⚖️ Key Business Rules (BR)</div>
                         <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-                            <li><strong style="color: white;">BR-01 (Contract Pricing Lock):</strong> System forces contract unit price; manual discount > 5% requires Sales Manager approval in Odoo.</li>
-                            <li><strong style="color: white;">BR-02 (Credit Hold Policy):</strong> Block SO confirmation automatically if client has unpaid invoices > 30 days overdue or debt > credit limit.</li>
-                            <li><strong style="color: white;">BR-03 (Automated Reorder Point):</strong> Reorder alert triggers when ATP stock drops below 100 reams for `ST-001`.</li>
-                            <li><strong style="color: white;">BR-04 (3-Way Matching Tolerance):</strong> Invoices matched against Delivery Note & PO within a 0.5% price variance tolerance.</li>
+                            <li><strong style="color: var(--text-title);">BR-01 (Contract Pricing Lock):</strong> System forces contract unit price; manual discount > 5% requires Sales Manager approval in Odoo.</li>
+                            <li><strong style="color: var(--text-title);">BR-02 (Credit Hold Policy):</strong> Block SO confirmation automatically if client has unpaid invoices > 30 days overdue or debt > credit limit.</li>
+                            <li><strong style="color: var(--text-title);">BR-03 (Automated Reorder Point):</strong> Reorder alert triggers when ATP stock drops below 100 reams for `ST-001`.</li>
+                            <li><strong style="color: var(--text-title);">BR-04 (3-Way Matching Tolerance):</strong> Invoices matched against Delivery Note & PO within a 0.5% price variance tolerance.</li>
                         </ul>
                     </div>
                     <div class="glass-card">
                         <div class="card-title">🛡️ Non-Functional Requirements (NFR)</div>
                         <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-                            <li><strong style="color: white;">NFR-01 (Role-Based Access Control):</strong> Strict segregation of duties; Sales Reps cannot override price lists or approve vendor POs.</li>
-                            <li><strong style="color: white;">NFR-02 (Performance & Speed):</strong> Real-time ATP inventory lookups execute in &lt; 1.0 second under 50 concurrent users.</li>
-                            <li><strong style="color: white;">NFR-03 (Scalability):</strong> Support catalog scaling to 1,000+ SKUs across multiple regional warehouses.</li>
-                            <li><strong style="color: white;">NFR-04 (Audit Trail & Integrity):</strong> Complete immutable change logs for all price updates, PO approvals, and credit overrides.</li>
+                            <li><strong style="color: var(--text-title);">NFR-01 (Role-Based Access Control):</strong> Strict segregation of duties; Sales Reps cannot override price lists or approve vendor POs.</li>
+                            <li><strong style="color: var(--text-title);">NFR-02 (Performance & Speed):</strong> Real-time ATP inventory lookups execute in &lt; 1.0 second under 50 concurrent users.</li>
+                            <li><strong style="color: var(--text-title);">NFR-03 (Scalability):</strong> Support catalog scaling to 1,000+ SKUs across multiple regional warehouses.</li>
+                            <li><strong style="color: var(--text-title);">NFR-04 (Audit Trail & Integrity):</strong> Complete immutable change logs for all price updates, PO approvals, and credit overrides.</li>
                         </ul>
                     </div>
                 </div>
@@ -1241,6 +1301,15 @@
         const btnNext = document.getElementById('btn-next');
         const overviewModal = document.getElementById('overview-modal');
         const overviewGrid = document.getElementById('overview-grid');
+        const themeBtn = document.getElementById('theme-btn');
+
+        // Toggle Theme Function (Light Mode default / Dark Mode toggle)
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeBtn.innerText = newTheme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode';
+        }
 
         // Populate Overview Grid
         slides.forEach((slide, index) => {
@@ -1250,7 +1319,7 @@
             card.className = `overview-card ${index === 0 ? 'active' : ''}`;
             card.innerHTML = `
                 <div style="font-size: 0.75rem; color: var(--md-sys-color-primary); font-weight: 700;">SLIDE ${index + 1}</div>
-                <div style="font-size: 0.88rem; font-weight: 700; color: white; margin: 0.4rem 0;">${titleText}</div>
+                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-title); margin: 0.4rem 0;">${titleText}</div>
                 <div style="font-size: 0.75rem; color: var(--text-muted);">Click to jump</div>
             `;
             card.onclick = () => {
@@ -1324,6 +1393,8 @@
                 toggleFullscreen();
             } else if (e.key === 'm' || e.key === 'M' || e.key === 'o' || e.key === 'O') {
                 toggleOverview();
+            } else if (e.key === 't' || e.key === 'T') {
+                toggleTheme();
             }
         });
 
