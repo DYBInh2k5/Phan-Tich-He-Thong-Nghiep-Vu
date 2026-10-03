@@ -248,98 +248,137 @@
             cursor: pointer;
             font-size: 0.85rem;
             font-weight: 600;
-            transition: all 0.25s var(--md-easing);
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
+            transition: all 0.2s var(--md-easing);
+            font-family: 'Outfit', sans-serif;
         }
 
         .btn-ctrl:hover {
             background: var(--md-sys-color-primary-container);
             color: var(--md-sys-color-on-primary-container);
             border-color: var(--md-sys-color-primary);
-            box-shadow: 0 4px 16px rgba(103, 80, 164, 0.2);
         }
 
-        .btn-ctrl:active {
-            transform: scale(0.95);
-        }
-
-        /* Viewport & Slide Container */
+        /* Slide Viewport Frame */
         #viewport {
             flex: 1;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1.5rem 2.2rem;
+            padding: 1.8rem 2.5rem;
             z-index: 10;
         }
 
         .slide {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            width: calc(100% - 5rem);
+            max-width: 1400px;
+            height: calc(100% - 3.6rem);
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.4s var(--md-easing), transform 0.4s var(--md-easing);
-            transform: scale(0.96) translateY(14px);
-            padding: 2rem 3rem;
+            transform: translateY(24px) scale(0.98);
+            transition: opacity 0.45s var(--md-easing), transform 0.45s var(--md-easing), visibility 0.45s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            overflow-y: auto;
         }
 
         .slide.active {
             opacity: 1;
             visibility: visible;
-            transform: scale(1) translateY(0);
+            transform: translateY(0) scale(1);
         }
 
-        /* Slide Typography */
+        /* Slide Typography Header */
         .slide-header {
-            margin-bottom: 1.1rem;
+            margin-bottom: 1.2rem;
         }
 
         .slide-tag {
-            font-size: 0.78rem;
+            font-size: 0.82rem;
             font-weight: 700;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            letter-spacing: 1.6px;
             color: var(--md-sys-color-primary);
-            margin-bottom: 0.25rem;
-            display: block;
+            background: var(--md-sys-color-primary-container);
+            padding: 0.3rem 0.9rem;
+            border-radius: var(--radius-pill);
+            display: inline-block;
+            margin-bottom: 0.5rem;
         }
 
         .slide-title {
             font-family: 'Outfit', sans-serif;
             font-size: 2.2rem;
             font-weight: 800;
-            line-height: 1.2;
+            letter-spacing: -0.6px;
             color: var(--text-title);
+            line-height: 1.2;
         }
 
         .slide-content {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 1.1rem;
+            gap: 1.2rem;
+            overflow-y: auto;
+            padding-right: 0.4rem;
         }
 
-        /* Material You MD3 Organic Cards & Layout Grids */
+        /* Custom Scrollbar */
+        .slide-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .slide-content::-webkit-scrollbar-thumb {
+            background: var(--md-sys-color-outline-variant);
+            border-radius: var(--radius-pill);
+        }
+
+        /* MD3 Glass Cards Layout */
+        .glass-card {
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-surface-container-highest);
+            border-radius: var(--radius-lg);
+            padding: 1.4rem 1.6rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing), border-color 0.3s var(--md-easing);
+            position: relative;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--card-border);
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-bottom: 0.65rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-text {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Layout Grids */
         .grid-2 {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.3rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
         }
 
         .grid-3 {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.1rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
         }
 
         .grid-4 {
@@ -348,52 +387,52 @@
             gap: 1rem;
         }
 
-        /* Surface Cards (Material 3 Light Tonal Surface System) */
-        .glass-card {
-            background: var(--md-sys-color-surface-container);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-lg);
-            padding: 1.35rem 1.5rem;
+        /* High Resolution Visual Images */
+        .slide-img {
+            width: 100%;
+            max-height: 240px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--md-sys-color-surface-container-highest);
             box-shadow: var(--card-shadow);
-            transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing), border-color 0.3s var(--md-easing), background-color 0.3s var(--md-easing);
-            position: relative;
-            overflow: hidden;
+            margin-top: 0.6rem;
         }
 
-        .glass-card:hover {
-            transform: translateY(-3px) scale(1.01);
-            border-color: var(--md-sys-color-primary);
-            box-shadow: var(--card-shadow-hover);
-            background: var(--md-sys-color-surface-container-high);
+        .slide-img-lg {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--md-sys-color-surface-container-highest);
+            box-shadow: var(--card-shadow);
         }
 
-        .card-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.12rem;
-            font-weight: 700;
-            margin-bottom: 0.65rem;
-            color: var(--md-sys-color-primary);
-            display: flex;
+        /* Clean Numbered Badges */
+        .num-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            display: inline-flex;
             align-items: center;
-            gap: 0.55rem;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            font-family: 'Outfit', sans-serif;
+            margin-right: 0.4rem;
         }
 
-        .card-text {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            line-height: 1.55;
-        }
-
-        /* Tables (Material 3 Styled Tables) */
+        /* Data Tables */
         table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            font-size: 0.86rem;
             background: var(--md-sys-color-surface-container);
             border-radius: var(--radius-md);
             overflow: hidden;
             border: 1px solid var(--md-sys-color-surface-container-highest);
+            font-size: 0.86rem;
         }
 
         th {
@@ -654,14 +693,14 @@
 
     <header>
         <div class="brand-logo">
-            <span>⚡ OfficePro Distribution</span>
+            <span>OfficePro Distribution</span>
             <span class="badge-group">GROUP 6 — BSA FINAL DEFENSE</span>
         </div>
         <div class="header-controls">
-            <button class="btn-ctrl" onclick="toggleTheme()" id="theme-btn">☀️ Light Mode</button>
+            <button class="btn-ctrl" onclick="toggleTheme()" id="theme-btn">Light Mode</button>
             <span class="slide-counter" id="counter">Slide 1 of 16</span>
-            <button class="btn-ctrl" onclick="toggleOverview()">☰ Overview</button>
-            <button class="btn-ctrl" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+            <button class="btn-ctrl" onclick="toggleOverview()">Overview</button>
+            <button class="btn-ctrl" onclick="toggleFullscreen()">Fullscreen</button>
         </div>
     </header>
 
@@ -682,7 +721,7 @@
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Company Case: <strong style="color: var(--text-title);">OfficePro Distribution Co., Ltd.</strong></p>
                     <hr style="border-color: var(--md-sys-color-surface-container-highest); margin: 0.9rem 0;">
                     <p style="font-size: 0.95rem; color: var(--accent-amber); font-weight: 700;">
-                        👑 Team Leader & Lead BA: Vo Duy Binh (Student ID: 22301500)
+                        Team Leader & Lead BA: Vo Duy Binh (Student ID: 22301500)
                     </p>
                     <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">
                         QA & Solutions Analyst: Pham Nguyen Gia Thuan (Student ID: 22204631)
@@ -700,44 +739,33 @@
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">🏢 Company Overview</div>
+                        <div class="card-title">Company Overview</div>
                         <p class="card-text">
                             <strong>OfficePro Distribution Co., Ltd.</strong> is a regional B2B distributor supplying office stationery, copy paper, and consumables to over 250 corporate accounts, schools, and sub-dealers across Southern Vietnam.
                         </p>
-                        <br>
-                        <div class="card-title" style="font-size: 1rem;">📍 Facilities & Locations</div>
-                        <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
-                            <li><strong>Corporate HQ & Sales:</strong> District 3, Ho Chi Minh City</li>
-                            <li><strong>Central Warehouse:</strong> Tan Binh IP, HCMC (2,500 m²; holds 80% stock)</li>
-                            <li><strong>Regional Depot:</strong> Bien Hoa 2 IP, Dong Nai (Fast industrial delivery)</li>
-                        </ul>
+                        <img src="./assets/officepro_warehouse.jpg" alt="OfficePro B2B Distribution Warehouse" class="slide-img">
                     </div>
                     <div class="glass-card">
-                        <div class="card-title">🎯 Target Customers & Channels</div>
-                        <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
+                        <div class="card-title">Target Customers & Distribution Network</div>
+                        <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6; margin-bottom: 0.8rem;">
                             <li><strong>Corporate B2B Accounts:</strong> Order in large batches; contract pricing & Net 30 terms.</li>
                             <li><strong>Educational Institutions:</strong> Periodic academic term orders.</li>
                             <li><strong>Sub-dealers & Retail Outlets:</strong> Tiered volume discounts.</li>
-                            <li><strong>Sales Channels:</strong> Direct B2B Representatives, Corporate Email/Zalo OA, and Framework Agreements.</li>
+                            <li><strong>Operating Facilities:</strong> Central Warehouse Tan Binh IP (2,500 m²) & Regional Depot Dong Nai.</li>
                         </ul>
-                    </div>
-                </div>
-                <div class="glass-card">
-                    <div class="card-title">📦 Master Data — 10 Domain SKUs</div>
-                    <p class="card-text" style="font-size: 0.85rem; margin-bottom: 0.5rem;">
-                        Core inventory catalog spanning Paper, Writing, Filing, Tools, and Consumables:
-                    </p>
-                    <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-001` A4 Paper Double A 70gsm</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-002` A4 Paper IK Plus 80gsm</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-003` Thien Long Pen TL-027</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-004` Pilot G2 Gel Pen</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-005` King Jim Display Book</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-006` Deli A5 Notebook</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-007` Kangaro Stapler</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-008` Kangaro Staples</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-009` HP 107a Toner</span>
-                        <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.25rem 0.65rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-010` Pentel Marker</span>
+                        <div class="card-title" style="font-size: 1rem;">Master Data Catalog (10 SKUs)</div>
+                        <div style="font-size: 0.78rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-001` A4 Paper Double A</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-002` A4 Paper IK Plus</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-003` Thien Long Pen</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-004` Pilot Gel Pen</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-005` Display Book</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-006` Deli Notebook</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-007` Kangaro Stapler</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-008` Staples Box</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-009` HP Laser Toner</span>
+                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-010` Pentel Marker</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -813,7 +841,7 @@
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">📊 Stakeholder Power / Interest Grid</div>
+                        <div class="card-title">Stakeholder Power / Interest Grid</div>
                         <div style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.6;">
                             <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong> Sales Manager & Business Owner — Enforces contract pricelist locks and revenue growth.</p>
                             <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong> Chief Accountant — Enforces Net 30 debt limits and 3-way invoice matching rules.</p>
@@ -822,7 +850,7 @@
                         </div>
                     </div>
                     <div class="glass-card">
-                        <div class="card-title">📝 Verified Elicitation Log</div>
+                        <div class="card-title">Verified Elicitation Log</div>
                         <table>
                             <thead>
                                 <tr>
@@ -863,19 +891,19 @@
             <div class="slide-content">
                 <div class="grid-3">
                     <div class="glass-card" style="border-top: 4px solid var(--accent-rose);">
-                        <div class="card-title" style="color: var(--accent-rose);">❌ Problem 1: Pricing Errors</div>
+                        <div class="card-title" style="color: var(--accent-rose);">Problem 01: Pricing Errors</div>
                         <p class="card-text">
                             Contract prices for corporate accounts are stored in disconnected Excel sheets. Manual copy-pasting into quotes causes a <span class="highlight">5–8% error rate</span> on customer invoices monthly.
                         </p>
                     </div>
                     <div class="glass-card" style="border-top: 4px solid var(--accent-amber);">
-                        <div class="card-title" style="color: var(--accent-amber);">❌ Problem 2: Post-Order Stockouts</div>
+                        <div class="card-title" style="color: var(--accent-amber);">Problem 02: Post-Order Stockouts</div>
                         <p class="card-text">
                             Sales staff lack real-time stock visibility. Confirming orders via phone calls or daily reports leads to <span class="highlight">3–4 stockouts per week</span> after order confirmation.
                         </p>
                     </div>
                     <div class="glass-card" style="border-top: 4px solid var(--md-sys-color-primary);">
-                        <div class="card-title" style="color: var(--md-sys-color-primary);">❌ Problem 3: Credit Disputes</div>
+                        <div class="card-title" style="color: var(--md-sys-color-primary);">Problem 03: Credit Disputes</div>
                         <p class="card-text">
                             Accounting spends <span class="highlight">15–20 hours/week</span> manually cross-checking paper Delivery Notes and SOs. Overdue credit holds are bypassable via informal verbal appeals.
                         </p>
@@ -891,35 +919,29 @@
                 <h2 class="slide-title">AS-IS Workflow & Operational Bottlenecks</h2>
             </div>
             <div class="slide-content">
-                <div class="flow-container" style="margin-bottom: 1.5rem;">
-                    <div class="flow-step">1. Client Inquiry (Email/Zalo)</div>
-                    <span class="flow-arrow">➔</span>
-                    <div class="flow-step">2. Manual Excel Price Lookup</div>
-                    <span class="flow-arrow">➔</span>
-                    <div class="flow-step">3. Phone Call Stock Check</div>
-                    <span class="flow-arrow">➔</span>
-                    <div class="flow-step">4. Manual Quote & Sales Order</div>
-                    <span class="flow-arrow">➔</span>
-                    <div class="flow-step">5. Paper SO to Warehouse & Accounting</div>
-                </div>
                 <div class="grid-2">
-                    <div class="glass-card">
-                        <div class="card-title">⚠️ Key AS-IS Bottlenecks</div>
-                        <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
-                            <li><strong>Sales Silo:</strong> Prices looked up in disconnected Excel files per Sales Rep.</li>
-                            <li><strong>Warehouse Lag:</strong> Goods receiving takes 24–48 hours before stock entry.</li>
-                            <li><strong>Purchasing Delay:</strong> Vendor RFQ comparison done via emails (takes 2–3 days).</li>
-                            <li><strong>Accounting Overhead:</strong> Manual 3-way matching of physical Delivery Notes.</li>
-                        </ul>
+                    <div>
+                        <div class="flow-container" style="flex-direction: column; gap: 0.6rem; margin-bottom: 0.8rem;">
+                            <div class="flow-step" style="width: 100%;">1. Client Inquiry (Email/Zalo)</div>
+                            <span class="flow-arrow">↓</span>
+                            <div class="flow-step" style="width: 100%;">2. Manual Excel Price Lookup</div>
+                            <span class="flow-arrow">↓</span>
+                            <div class="flow-step" style="width: 100%;">3. Phone Call Stock Check</div>
+                            <span class="flow-arrow">↓</span>
+                            <div class="flow-step" style="width: 100%;">4. Manual Quote & Paper SO</div>
+                        </div>
+                        <div class="glass-card">
+                            <div class="card-title">Operational Impact</div>
+                            <ul style="color: var(--text-muted); font-size: 0.82rem; padding-left: 1.1rem; line-height: 1.5;">
+                                <li>Pricing disputes on 5–8% of customer billing invoices.</li>
+                                <li>Frequent order cancellations due to phantom inventory.</li>
+                                <li>15–20 hours/week spent on manual paper 3-way matching.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="glass-card">
-                        <div class="card-title">📉 Operational Impact</div>
-                        <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
-                            <li>Client contract pricing disputes on 5–8% of invoices.</li>
-                            <li>Order cancellations and delivery delays due to depleted stock.</li>
-                            <li>Excess purchasing of slow-moving items (`ST-010`) while paper (`ST-001`) runs out.</li>
-                            <li>Delayed revenue collection and unmonitored credit risks (> 30 days).</li>
-                        </ul>
+                    <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
+                        <div class="card-title">Manual vs Automated Transformation Journey</div>
+                        <img src="./assets/as_is_vs_to_be_diagram.jpg" alt="AS-IS vs TO-BE Enterprise Transformation Diagram" class="slide-img-lg">
                     </div>
                 </div>
             </div>
@@ -933,12 +955,12 @@
             </div>
             <div class="slide-content">
                 <div class="glass-card" style="margin-bottom: 1rem;">
-                    <div class="card-title">🔍 5-Whys Breakdown: Contract Pricing Errors</div>
-                    <ol style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.2rem; line-height: 1.5;">
-                        <li><strong>Why 1?</strong> Sales Reps apply wrong contract unit prices on orders. ➔ <em>Because prices are copy-pasted manually from Excel files.</em></li>
-                        <li><strong>Why 2?</strong> Why are prices in disconnected Excel files? ➔ <em>Because each Rep maintains their own client price lists.</em></li>
-                        <li><strong>Why 3?</strong> Why are pricelists updated independently? ➔ <em>Because framework contracts are filed as scanned PDFs in shared drives.</em></li>
-                        <li><strong>Why 4?</strong> Why is there no central pricing engine? ➔ <em>Because the company lacks a unified database mapping clients to contracts.</em></li>
+                    <div class="card-title">5-Whys Analysis: Contract Pricing Discrepancies</div>
+                    <ol style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
+                        <li><strong style="color: var(--text-title);">Why 1?</strong> Sales Reps apply wrong contract unit prices on orders. ➔ <em>Because prices are copy-pasted manually from Excel files.</em></li>
+                        <li><strong style="color: var(--text-title);">Why 2?</strong> Why are prices in disconnected Excel files? ➔ <em>Because each Rep maintains their own client price lists.</em></li>
+                        <li><strong style="color: var(--text-title);">Why 3?</strong> Why are pricelists updated independently? ➔ <em>Because framework contracts are filed as scanned PDFs in shared drives.</em></li>
+                        <li><strong style="color: var(--text-title);">Why 4?</strong> Why is there no central pricing engine? ➔ <em>Because the company lacks a unified database mapping clients to contracts.</em></li>
                         <li><strong style="color: var(--accent-rose);">Why 5? (Root Cause):</strong> <strong>Lack of a centralized contract-based pricing engine in ERP that enforces contract price rules automatically.</strong></li>
                     </ol>
                 </div>
@@ -952,7 +974,7 @@
                 <h2 class="slide-title">TO-BE Integrated Business Process</h2>
             </div>
             <div class="slide-content">
-                <div class="flow-container" style="margin-bottom: 1.5rem; border-color: var(--accent-emerald);">
+                <div class="flow-container" style="margin-bottom: 1.2rem; border-color: var(--accent-emerald);">
                     <div class="flow-step" style="border-color: var(--accent-emerald);">1. Client Order Inquiry</div>
                     <span class="flow-arrow" style="color: var(--accent-emerald);">➔</span>
                     <div class="flow-step" style="border-color: var(--accent-emerald);">2. System Contract Price Retrieval</div>
@@ -964,7 +986,7 @@
                     <div class="flow-step" style="border-color: var(--accent-emerald);">5. Auto Dispatch & 3-Way Billing</div>
                 </div>
                 <div class="glass-card">
-                    <div class="card-title" style="color: var(--accent-emerald);">✨ TO-BE Operational Improvements</div>
+                    <div class="card-title" style="color: var(--accent-emerald);">TO-BE Operational Improvements</div>
                     <div class="grid-3" style="margin-top: 0.5rem;">
                         <div>
                             <strong style="color: var(--text-title); font-size: 0.9rem;">Automated Pricelists:</strong>
@@ -1058,7 +1080,7 @@
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">⚖️ Key Business Rules (BR)</div>
+                        <div class="card-title">Key Business Rules (BR)</div>
                         <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
                             <li><strong style="color: var(--text-title);">BR-01 (Contract Pricing Lock):</strong> System forces contract unit price; manual discount > 5% requires Sales Manager approval in Odoo.</li>
                             <li><strong style="color: var(--text-title);">BR-02 (Credit Hold Policy):</strong> Block SO confirmation automatically if client has unpaid invoices > 30 days overdue or debt > credit limit.</li>
@@ -1067,7 +1089,7 @@
                         </ul>
                     </div>
                     <div class="glass-card">
-                        <div class="card-title">🛡️ Non-Functional Requirements (NFR)</div>
+                        <div class="card-title">Non-Functional Requirements (NFR)</div>
                         <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
                             <li><strong style="color: var(--text-title);">NFR-01 (Role-Based Access Control):</strong> Strict segregation of duties; Sales Reps cannot override price lists or approve vendor POs.</li>
                             <li><strong style="color: var(--text-title);">NFR-02 (Performance & Speed):</strong> Real-time ATP inventory lookups execute in &lt; 1.0 second under 50 concurrent users.</li>
@@ -1137,26 +1159,30 @@
                 <h2 class="slide-title">Odoo ERP Setup & Master Data Scope</h2>
             </div>
             <div class="slide-content">
-                <div class="grid-4">
-                    <div class="glass-card" style="text-align: center;">
-                        <div style="font-size: 2rem;">🏷️</div>
-                        <div class="card-title" style="justify-content: center; font-size: 1rem;">Odoo Sales</div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">Contract Pricelists, Quotations, Sales Orders, Credit Checks.</p>
+                <div class="grid-2">
+                    <div>
+                        <div class="grid-2" style="margin-bottom: 0.8rem;">
+                            <div class="glass-card" style="text-align: left; padding: 1rem;">
+                                <div class="card-title" style="font-size: 0.95rem;">Odoo Sales</div>
+                                <p style="font-size: 0.78rem; color: var(--text-muted);">Contract Pricelists, Quotations, Sales Orders, Credit Checks.</p>
+                            </div>
+                            <div class="glass-card" style="text-align: left; padding: 1rem;">
+                                <div class="card-title" style="font-size: 0.95rem;">Odoo Purchase</div>
+                                <p style="font-size: 0.78rem; color: var(--text-muted);">Purchase Requisitions, RFQs, Vendor POs, Replenishment Rules.</p>
+                            </div>
+                            <div class="glass-card" style="text-align: left; padding: 1rem;">
+                                <div class="card-title" style="font-size: 0.95rem;">Odoo Inventory</div>
+                                <p style="font-size: 0.78rem; color: var(--text-muted);">Tan Binh & Bien Hoa Warehouses, Picking/Packing, Stock Receipts.</p>
+                            </div>
+                            <div class="glass-card" style="text-align: left; padding: 1rem;">
+                                <div class="card-title" style="font-size: 0.95rem;">Odoo Invoicing</div>
+                                <p style="font-size: 0.78rem; color: var(--text-muted);">VAT Invoices, Payment Matching, Net 30 Debt Control.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <div style="font-size: 2rem;">📦</div>
-                        <div class="card-title" style="justify-content: center; font-size: 1rem;">Odoo Purchase</div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">Purchase Requisitions, RFQs, Vendor POs, Replenishment Rules.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <div style="font-size: 2rem;">🏭</div>
-                        <div class="card-title" style="justify-content: center; font-size: 1rem;">Odoo Inventory</div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">Tan Binh & Bien Hoa Warehouses, Picking/Packing, Stock Receipts.</p>
-                    </div>
-                    <div class="glass-card" style="text-align: center;">
-                        <div style="font-size: 2rem;">💳</div>
-                        <div class="card-title" style="justify-content: center; font-size: 1rem;">Odoo Invoicing</div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">VAT Invoices, Payment Matching, Net 30 Debt Control.</p>
+                    <div class="glass-card">
+                        <div class="card-title">Odoo ERP Architecture & Operations Dashboard</div>
+                        <img src="./assets/odoo_erp_dashboard.jpg" alt="Odoo ERP System Interface Mockup" class="slide-img">
                     </div>
                 </div>
             </div>
@@ -1220,22 +1246,23 @@
                 <h2 class="slide-title">End-to-End Live Odoo Workflow Demonstration</h2>
             </div>
             <div class="slide-content">
-                <div class="glass-card" style="border-color: var(--md-sys-color-primary);">
-                    <div class="card-title">🎬 Live Demo Scenario Execution Sequence</div>
-                    <div class="flow-container" style="margin: 1rem 0;">
-                        <div class="flow-step">1. Sales Order (Contract Price)</div>
-                        <span class="flow-arrow">➔</span>
-                        <div class="flow-step">2. ATP Stock Check</div>
-                        <span class="flow-arrow">➔</span>
-                        <div class="flow-step">3. Purchase PO (Stockout Trigger)</div>
-                        <span class="flow-arrow">➔</span>
-                        <div class="flow-step">4. Stock Receipt</div>
-                        <span class="flow-arrow">➔</span>
-                        <div class="flow-step">5. Delivery & Invoicing</div>
+                <div class="grid-2">
+                    <div class="glass-card" style="border-color: var(--md-sys-color-primary);">
+                        <div class="card-title">Live Demo Scenario Execution Sequence</div>
+                        <div class="flow-container" style="flex-direction: column; gap: 0.5rem; margin: 0.8rem 0;">
+                            <div class="flow-step" style="width: 100%;">1. Sales Order (Contract Price)</div>
+                            <span class="flow-arrow">↓</span>
+                            <div class="flow-step" style="width: 100%;">2. ATP Stock Check</div>
+                            <span class="flow-arrow">↓</span>
+                            <div class="flow-step" style="width: 100%;">3. Purchase PO (Stockout Trigger)</div>
+                            <span class="flow-arrow">↓</span>
+                            <div class="flow-step" style="width: 100%;">4. Stock Receipt & Invoicing</div>
+                        </div>
                     </div>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); text-align: center;">
-                        Demonstrating seamless data flow across Sales ➔ Purchase ➔ Inventory ➔ Invoicing in Odoo ERP.
-                    </p>
+                    <div class="glass-card">
+                        <div class="card-title">Live System Interface</div>
+                        <img src="./assets/odoo_erp_dashboard.jpg" alt="Odoo Live Workflow System" class="slide-img">
+                    </div>
                 </div>
             </div>
         </div>
@@ -1249,7 +1276,7 @@
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">🎯 Key Takeaways</div>
+                        <div class="card-title">Key Project Takeaways</div>
                         <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
                             <li>Eliminated 5-8% pricing errors via automated contract pricelists.</li>
                             <li>Prevented post-confirmation stockouts with real-time ATP inventory.</li>
@@ -1273,8 +1300,8 @@
     <!-- Overview Grid Modal (Material 3 Surface Dialog) -->
     <div id="overview-modal">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h2 style="font-family: 'Outfit', sans-serif; color: var(--md-sys-color-primary);">☰ Slide Overview Navigator</h2>
-            <button class="btn-ctrl" onclick="toggleOverview()">✕ Close (Esc)</button>
+            <h2 style="font-family: 'Outfit', sans-serif; color: var(--md-sys-color-primary);">Slide Overview Navigator</h2>
+            <button class="btn-ctrl" onclick="toggleOverview()">Close (Esc)</button>
         </div>
         <div class="overview-grid" id="overview-grid">
             <!-- Grid cards populated dynamically via JS -->
@@ -1286,8 +1313,8 @@
             Controls: <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">←</kbd> Prev | <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">→</kbd> / <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">Space</kbd> Next | <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">M</kbd> Overview | <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">F</kbd> Fullscreen
         </div>
         <div class="nav-buttons">
-            <button class="btn-nav" id="btn-prev" onclick="prevSlide()" disabled>← Previous</button>
-            <button class="btn-nav" id="btn-next" onclick="nextSlide()">Next →</button>
+            <button class="btn-nav" id="btn-prev" onclick="prevSlide()" disabled>Previous</button>
+            <button class="btn-nav" id="btn-next" onclick="nextSlide()">Next</button>
         </div>
     </footer>
 
@@ -1308,7 +1335,7 @@
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
-            themeBtn.innerText = newTheme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode';
+            themeBtn.innerText = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
         }
 
         // Populate Overview Grid
