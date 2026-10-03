@@ -125,6 +125,7 @@
             user-select: none;
             position: relative;
             transition: background-color 0.3s var(--md-easing), color 0.3s var(--md-easing);
+            font-size: 1rem;
         }
 
         .bg-blur-shape {
@@ -170,11 +171,11 @@
         }
 
         #progress-bar {
-            height: 4px;
+            height: 5px;
             background: linear-gradient(90deg, var(--md-sys-color-primary), var(--accent-cyan), var(--md-sys-color-tertiary));
             width: 0%;
             transition: width 0.3s var(--md-easing);
-            box-shadow: 0 0 10px var(--md-sys-color-primary);
+            box-shadow: 0 0 12px var(--md-sys-color-primary);
             z-index: 100;
         }
 
@@ -182,7 +183,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 2rem;
+            padding: 0.85rem 2.2rem;
             background: rgba(247, 242, 250, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -198,11 +199,11 @@
         .brand-logo {
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             letter-spacing: -0.5px;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.85rem;
             color: var(--md-sys-color-primary);
         }
 
@@ -210,9 +211,9 @@
             background: var(--md-sys-color-secondary-container);
             border: 1px solid var(--md-sys-color-outline-variant);
             color: var(--md-sys-color-on-secondary-container);
-            padding: 0.25rem 0.75rem;
+            padding: 0.3rem 0.85rem;
             border-radius: var(--radius-pill);
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 0.6px;
             text-transform: uppercase;
@@ -221,16 +222,16 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
+            gap: 0.8rem;
         }
 
         .slide-counter {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--md-sys-color-primary);
             font-family: 'Outfit', sans-serif;
             background: var(--md-sys-color-primary-container);
-            padding: 0.3rem 0.75rem;
+            padding: 0.35rem 0.85rem;
             border-radius: var(--radius-pill);
         }
 
@@ -238,10 +239,10 @@
             background: var(--md-sys-color-surface-container-high);
             border: 1px solid var(--md-sys-color-outline-variant);
             color: var(--text-main);
-            padding: 0.4rem 0.9rem;
+            padding: 0.45rem 1rem;
             border-radius: var(--radius-pill);
             cursor: pointer;
-            font-size: 0.82rem;
+            font-size: 0.92rem;
             font-weight: 600;
             transition: all 0.2s var(--md-easing);
             font-family: 'Outfit', sans-serif;
@@ -266,7 +267,7 @@
         .slide {
             position: absolute;
             width: calc(100% - 4rem);
-            max-width: 1450px;
+            max-width: 1480px;
             height: calc(100% - 2.4rem);
             opacity: 0;
             visibility: hidden;
@@ -288,21 +289,21 @@
         }
 
         .slide-tag {
-            font-size: 0.78rem;
+            font-size: 0.92rem;
             font-weight: 700;
             letter-spacing: 1.2px;
             text-transform: uppercase;
             color: var(--md-sys-color-primary);
             background: var(--md-sys-color-primary-container);
-            padding: 0.25rem 0.8rem;
+            padding: 0.3rem 0.95rem;
             border-radius: var(--radius-pill);
             display: inline-block;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.4rem;
         }
 
         .slide-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.95rem;
+            font-size: 2.35rem;
             font-weight: 800;
             letter-spacing: -0.5px;
             color: var(--text-title);
@@ -313,13 +314,13 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.9rem;
+            gap: 1rem;
             overflow-y: auto;
-            padding-right: 0.4rem;
+            padding-right: 0.5rem;
         }
 
         .slide-content::-webkit-scrollbar {
-            width: 6px;
+            width: 7px;
         }
         .slide-content::-webkit-scrollbar-thumb {
             background: var(--md-sys-color-outline-variant);
@@ -330,7 +331,7 @@
             background: var(--md-sys-color-surface-container);
             border: 1px solid var(--md-sys-color-surface-container-highest);
             border-radius: var(--radius-lg);
-            padding: 1.1rem 1.3rem;
+            padding: 1.25rem 1.45rem;
             box-shadow: var(--card-shadow);
             transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing), border-color 0.3s var(--md-easing);
             position: relative;
@@ -344,52 +345,52 @@
 
         .card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.05rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: var(--text-title);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
 
         .card-text {
-            font-size: 0.86rem;
+            font-size: 0.98rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 1.1rem;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 1.1rem;
         }
 
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0.85rem;
+            gap: 0.95rem;
         }
 
         .slide-img {
             width: 100%;
-            max-height: 220px;
+            max-height: 230px;
             object-fit: cover;
             border-radius: var(--radius-md);
             border: 1px solid var(--md-sys-color-surface-container-highest);
             box-shadow: var(--card-shadow);
-            margin-top: 0.5rem;
+            margin-top: 0.6rem;
         }
 
         .slide-img-lg {
             width: 100%;
-            max-height: 280px;
+            max-height: 290px;
             object-fit: cover;
             border-radius: var(--radius-lg);
             border: 1px solid var(--md-sys-color-surface-container-highest);
@@ -404,7 +405,7 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             border: 1px solid var(--md-sys-color-surface-container-highest);
-            font-size: 0.82rem;
+            font-size: 0.94rem;
         }
 
         th {
@@ -412,16 +413,18 @@
             color: var(--md-sys-color-on-primary-container);
             font-weight: 700;
             text-align: left;
-            padding: 0.6rem 0.85rem;
+            padding: 0.75rem 1rem;
             border-bottom: 1px solid var(--md-sys-color-surface-container-highest);
             font-family: 'Outfit', sans-serif;
+            font-size: 0.98rem;
         }
 
         td {
-            padding: 0.55rem 0.85rem;
+            padding: 0.68rem 1rem;
             border-bottom: 1px solid var(--md-sys-color-surface-container-highest);
             color: var(--text-main);
-            line-height: 1.45;
+            line-height: 1.5;
+            font-size: 0.94rem;
         }
 
         tr:last-child td {
@@ -441,39 +444,39 @@
             background: var(--accent-rose-bg);
             color: var(--accent-rose);
             border: 1px solid var(--accent-rose);
-            padding: 0.15rem 0.55rem;
+            padding: 0.2rem 0.65rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 0.72rem;
+            font-size: 0.82rem;
         }
 
         .tag-should {
             background: var(--accent-amber-bg);
             color: var(--accent-amber);
             border: 1px solid var(--accent-amber);
-            padding: 0.15rem 0.55rem;
+            padding: 0.2rem 0.65rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 0.72rem;
+            font-size: 0.82rem;
         }
 
         .tag-could {
             background: var(--accent-emerald-bg);
             color: var(--accent-emerald);
             border: 1px solid var(--accent-emerald);
-            padding: 0.15rem 0.55rem;
+            padding: 0.2rem 0.65rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 0.72rem;
+            font-size: 0.82rem;
         }
 
         .flow-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 0.4rem;
+            gap: 0.5rem;
             background: var(--md-sys-color-surface-container-high);
-            padding: 0.85rem 1rem;
+            padding: 0.95rem 1.1rem;
             border-radius: var(--radius-md);
             border: 1px solid var(--md-sys-color-surface-container-highest);
         }
@@ -482,9 +485,9 @@
             background: var(--md-sys-color-surface-container);
             border: 1px solid var(--md-sys-color-outline-variant);
             border-radius: var(--radius-sm);
-            padding: 0.55rem 0.75rem;
+            padding: 0.65rem 0.85rem;
             text-align: center;
-            font-size: 0.78rem;
+            font-size: 0.92rem;
             font-weight: 600;
             color: var(--text-title);
             flex: 1;
@@ -499,7 +502,7 @@
         .flow-arrow {
             color: var(--md-sys-color-primary);
             font-weight: 800;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         #overview-modal {
@@ -514,7 +517,7 @@
             z-index: 200;
             display: flex;
             flex-direction: column;
-            padding: 2rem;
+            padding: 2.2rem;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s var(--md-easing);
@@ -531,10 +534,10 @@
 
         .overview-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.1rem;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.2rem;
             overflow-y: auto;
-            padding: 0.8rem;
+            padding: 0.9rem;
             flex: 1;
         }
 
@@ -542,13 +545,13 @@
             background: var(--md-sys-color-surface-container);
             border: 1px solid var(--md-sys-color-surface-container-highest);
             border-radius: var(--radius-md);
-            padding: 0.9rem 1.1rem;
+            padding: 1rem 1.2rem;
             cursor: pointer;
             transition: all 0.25s var(--md-easing);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 120px;
+            min-height: 130px;
         }
 
         .overview-card:hover {
@@ -581,7 +584,7 @@
                 transform: none !important;
                 page-break-after: always;
                 height: 100vh !important;
-                padding: 1.8rem !important;
+                padding: 2rem !important;
                 background: white !important;
                 color: black !important;
             }
@@ -600,7 +603,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 2rem;
+            padding: 0.85rem 2.2rem;
             background: rgba(247, 242, 250, 0.88);
             border-top: 1px solid var(--md-sys-color-surface-container-highest);
             backdrop-filter: blur(20px);
@@ -614,22 +617,22 @@
 
         .nav-buttons {
             display: flex;
-            gap: 0.7rem;
+            gap: 0.75rem;
         }
 
         .btn-nav {
             background: var(--md-sys-color-primary);
             border: none;
             color: var(--md-sys-color-on-primary);
-            padding: 0.5rem 1.3rem;
+            padding: 0.55rem 1.4rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
             cursor: pointer;
             transition: transform 0.2s var(--md-easing), box-shadow 0.2s var(--md-easing), background-color 0.2s var(--md-easing);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
+            gap: 0.5rem;
+            font-size: 0.95rem;
             font-family: 'Outfit', sans-serif;
         }
 
@@ -676,31 +679,31 @@
 
         <!-- SLIDE 1: TITLE SLIDE -->
         <div class="slide active">
-            <div style="text-align: center; margin: auto; max-width: 1000px;">
-                <span class="slide-tag" style="font-size: 0.95rem;">Faculty of Technology — Hoa Sen University</span>
-                <h1 class="slide-title" style="font-size: 2.8rem; margin: 0.6rem 0; color: var(--md-sys-color-primary);">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
-                <p style="font-size: 1.25rem; color: var(--text-main); font-weight: 600; margin-bottom: 1.5rem;">
+            <div style="text-align: center; margin: auto; max-width: 1050px;">
+                <span class="slide-tag" style="font-size: 1.05rem;">Faculty of Technology — Hoa Sen University</span>
+                <h1 class="slide-title" style="font-size: 3.2rem; margin: 0.7rem 0; color: var(--md-sys-color-primary);">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
+                <p style="font-size: 1.4rem; color: var(--text-main); font-weight: 600; margin-bottom: 1.6rem;">
                     Final Business Requirements Document (BRD) & Odoo ERP Prototype Defense
                 </p>
-                <div class="glass-card" style="display: inline-block; text-align: left; padding: 1.6rem 2.5rem; border-radius: var(--radius-xl); width: 100%;">
-                    <div class="grid-2" style="gap: 1.5rem;">
+                <div class="glass-card" style="display: inline-block; text-align: left; padding: 1.8rem 2.8rem; border-radius: var(--radius-xl); width: 100%;">
+                    <div class="grid-2" style="gap: 1.8rem;">
                         <div>
-                            <p style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-title);">
+                            <p style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-title);">
                                 Enterprise Case: OfficePro Distribution Co., Ltd.
                             </p>
-                            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.4rem;">Domain: <strong>Scenario B — B2B Wholesale & Distribution (Office Supplies & Stationery)</strong></p>
-                            <p style="color: var(--text-muted); font-size: 0.84rem; line-height: 1.5;">
+                            <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 0.5rem;">Domain: <strong>Scenario B — B2B Wholesale & Distribution (Office Supplies & Stationery)</strong></p>
+                            <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6;">
                                 End-to-end Business Systems Analysis applying the <em>Business-First → Technology-Second</em> methodology: from Enterprise Context, Stakeholder Elicitation, AS-IS BPMN Bottlenecks, 5-Whys Root Cause Analysis, to TO-BE Re-engineering, MoSCoW FRs, Use Case Specs, and Odoo ERP Prototype Validation.
                             </p>
                         </div>
-                        <div style="border-left: 1px solid var(--md-sys-color-surface-container-highest); padding-left: 1.2rem;">
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Course Guidance Lecturer:</p>
-                            <p style="font-size: 0.95rem; font-weight: 700; color: var(--md-sys-color-primary); margin-bottom: 0.8rem;">MSc. Nguyen Thi Thanh Thanh</p>
-                            <hr style="border-color: var(--md-sys-color-surface-container-highest); margin: 0.6rem 0;">
-                            <p style="font-size: 0.9rem; color: var(--accent-amber); font-weight: 700;">
+                        <div style="border-left: 1px solid var(--md-sys-color-surface-container-highest); padding-left: 1.4rem;">
+                            <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 0.4rem;">Course Guidance Lecturer:</p>
+                            <p style="font-size: 1.05rem; font-weight: 700; color: var(--md-sys-color-primary); margin-bottom: 0.9rem;">MSc. Nguyen Thi Thanh Thanh</p>
+                            <hr style="border-color: var(--md-sys-color-surface-container-highest); margin: 0.7rem 0;">
+                            <p style="font-size: 1rem; color: var(--accent-amber); font-weight: 700;">
                                 Team Leader & Lead BA: Vo Duy Binh (Student ID: 22301500)
                             </p>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">
+                            <p style="font-size: 0.94rem; color: var(--text-muted); margin-top: 0.4rem;">
                                 QA & Solutions Configurator: Pham Nguyen Gia Thuan (Student ID: 22204631)
                             </p>
                         </div>
@@ -719,10 +722,10 @@
                 <div class="grid-2">
                     <div class="glass-card">
                         <div class="card-title">Company Profile & Operational Scope</div>
-                        <p class="card-text" style="font-size: 0.84rem; margin-bottom: 0.6rem;">
+                        <p class="card-text" style="font-size: 0.95rem; margin-bottom: 0.7rem;">
                             <strong>OfficePro Distribution Co., Ltd.</strong> is a regional B2B wholesale distributor supplying commercial paper, stationery, and consumables to over <strong>250 active corporate clients</strong>, educational institutions, and sub-dealers across Southern Vietnam.
                         </p>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.6rem;">
+                        <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.7rem;">
                             <p>• <strong>Corporate HQ:</strong> District 3, Ho Chi Minh City</p>
                             <p>• <strong>Central Warehouse:</strong> Tan Binh IP, HCMC (2,500 m²; 80% bulk stock)</p>
                             <p>• <strong>Regional Depot:</strong> Bien Hoa 2 IP, Dong Nai (Fast industrial park delivery)</p>
@@ -841,13 +844,13 @@
                 <div class="grid-2">
                     <div class="glass-card">
                         <div class="card-title">Stakeholder Power / Interest Grid & Info Needs</div>
-                        <div style="font-size: 0.81rem; color: var(--text-muted); line-height: 1.5;">
-                            <p style="margin-bottom: 0.45rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong><br>
+                        <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong><br>
                             • <em>Sales Manager:</em> Enforces contract pricelists, approves quotes > 5% discount.<br>
                             • <em>Business Owner:</em> Requires gross margin visibility and reduced revenue leakage.</p>
-                            <p style="margin-bottom: 0.45rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong><br>
+                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong><br>
                             • <em>Chief Accountant:</em> Requires hard Net 30 credit holds and automated 3-way matching.</p>
-                            <p style="margin-bottom: 0.45rem;"><strong style="color: var(--accent-cyan);">Keep Informed (Low Power / High Interest):</strong><br>
+                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-cyan);">Keep Informed (Low Power / High Interest):</strong><br>
                             • <em>Warehouse Keeper:</em> Needs real-time incoming PO schedules and bin location picking.<br>
                             • <em>Sales Reps:</em> Require instant contract price lookup and real-time ATP stock availability.</p>
                             <p><strong style="color: var(--text-muted);">Monitor (Low Power / Low Interest):</strong> External Suppliers & Sub-Dealers.</p>
@@ -902,21 +905,21 @@
                 <div class="grid-3">
                     <div class="glass-card" style="border-top: 4px solid var(--accent-rose);">
                         <div class="card-title" style="color: var(--accent-rose);">Problem 01: Pricing Errors</div>
-                        <p class="card-text" style="font-size: 0.83rem;">
+                        <p class="card-text" style="font-size: 0.95rem;">
                             <strong>Contract Pricing Discrepancies (5–8% Error Rate):</strong> Individual Sales Reps store framework agreement prices in disconnected Excel files. Manual copy-pasting into client quotations results in 5–8% billing pricing discrepancies, causing invoice disputes and an estimated <strong>50 million VND monthly adjustments</strong>.
                         </p>
                     </div>
 
                     <div class="glass-card" style="border-top: 4px solid var(--accent-amber);">
                         <div class="card-title" style="color: var(--accent-amber);">Problem 02: Post-Order Stockouts</div>
-                        <p class="card-text" style="font-size: 0.83rem;">
+                        <p class="card-text" style="font-size: 0.95rem;">
                             <strong>Post-Confirmation Stockouts (3–4 Orders/Week):</strong> Sales Reps confirm orders based on morning Excel stock dumps or phone calls to warehouse staff. Goods receiving takes 24–48 hours to update, leading to 3–4 stockouts per week post-confirmation and client cancellations.
                         </p>
                     </div>
 
                     <div class="glass-card" style="border-top: 4px solid var(--md-sys-color-primary);">
                         <div class="card-title" style="color: var(--md-sys-color-primary);">Problem 03: Invoice & Credit Friction</div>
-                        <p class="card-text" style="font-size: 0.83rem;">
+                        <p class="card-text" style="font-size: 0.95rem;">
                             <strong>Manual 3-Way Matching (15–20 Hours/Week):</strong> Accounting spends 15–20 hours/week manually cross-checking paper SOs, Delivery Notes, and Invoices. Net 30 credit hold policies are bypassable via informal verbal appeals, exposing the company to bad debt risk.
                         </p>
                     </div>
@@ -933,7 +936,7 @@
             <div class="slide-content">
                 <div class="grid-2">
                     <div>
-                        <div class="flow-container" style="flex-direction: column; gap: 0.45rem; margin-bottom: 0.7rem;">
+                        <div class="flow-container" style="flex-direction: column; gap: 0.5rem; margin-bottom: 0.8rem;">
                             <div class="flow-step" style="width: 100%;">1. Client Email/Zalo Inquiry ➔ Sales Rep opens Personal Excel Pricelist</div>
                             <span class="flow-arrow">↓</span>
                             <div class="flow-step" style="width: 100%;">2. Phone Call to Warehouse ➔ Verbal Stock Check (24-48h Receiving Lag)</div>
@@ -943,8 +946,8 @@
                             <div class="flow-step" style="width: 100%;">4. Goods Delivery ➔ Manual 3-Way Invoice Cross-Check (15-20h/wk)</div>
                         </div>
                         <div class="glass-card">
-                            <div class="card-title" style="font-size: 0.95rem;">Key Operational Bottlenecks</div>
-                            <ul style="color: var(--text-muted); font-size: 0.8rem; padding-left: 1.1rem; line-height: 1.45;">
+                            <div class="card-title" style="font-size: 1.05rem;">Key Operational Bottlenecks</div>
+                            <ul style="color: var(--text-muted); font-size: 0.92rem; padding-left: 1.2rem; line-height: 1.55;">
                                 <li>• <strong>Sales Silo:</strong> Prices looked up in disconnected Excel files per Sales Rep.</li>
                                 <li>• <strong>Warehouse Lag:</strong> Goods receiving takes 24–48 hours before stock entry.</li>
                                 <li>• <strong>Purchasing Delay:</strong> Vendor RFQ comparison done via emails (takes 2–3 days).</li>
@@ -969,8 +972,8 @@
             <div class="slide-content">
                 <div class="grid-3">
                     <div class="glass-card">
-                        <div class="card-title" style="font-size: 0.95rem;">5-Whys: Contract Pricing Errors</div>
-                        <ol style="color: var(--text-muted); font-size: 0.78rem; padding-left: 1rem; line-height: 1.45;">
+                        <div class="card-title" style="font-size: 1.05rem;">5-Whys: Contract Pricing Errors</div>
+                        <ol style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.1rem; line-height: 1.5;">
                             <li><strong>Why 1?</strong> Sales Reps apply wrong contract unit prices on orders. ➔ <em>Prices copy-pasted manually from Excel files.</em></li>
                             <li><strong>Why 2?</strong> Why in disconnected Excel files? ➔ <em>Each Rep maintains separate client pricelists.</em></li>
                             <li><strong>Why 3?</strong> Why separate files? ➔ <em>Framework contracts filed as scanned PDFs in shared drives.</em></li>
@@ -980,8 +983,8 @@
                     </div>
 
                     <div class="glass-card">
-                        <div class="card-title" style="font-size: 0.95rem;">5-Whys: Post-Order Stockouts</div>
-                        <ol style="color: var(--text-muted); font-size: 0.78rem; padding-left: 1rem; line-height: 1.45;">
+                        <div class="card-title" style="font-size: 1.05rem;">5-Whys: Post-Order Stockouts</div>
+                        <ol style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.1rem; line-height: 1.5;">
                             <li><strong>Why 1?</strong> Sales confirms orders for items out of stock. ➔ <em>Stock availability checked via phone call or daily Excel.</em></li>
                             <li><strong>Why 2?</strong> Why rely on phone/Excel? ➔ <em>Warehouse stock updates entered in batch at end of day.</em></li>
                             <li><strong>Why 3?</strong> Why end of day? ➔ <em>Goods receiving requires manual paper check (24-48h lag).</em></li>
@@ -991,8 +994,8 @@
                     </div>
 
                     <div class="glass-card">
-                        <div class="card-title" style="font-size: 0.95rem;">5-Whys: Manual Invoice Matching</div>
-                        <ol style="color: var(--text-muted); font-size: 0.78rem; padding-left: 1rem; line-height: 1.45;">
+                        <div class="card-title" style="font-size: 1.05rem;">5-Whys: Manual Invoice Matching</div>
+                        <ol style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.1rem; line-height: 1.5;">
                             <li><strong>Why 1?</strong> Accountant spends 15-20h/wk cross-checking invoices. ➔ <em>Delivery Notes and SOs compared manually.</em></li>
                             <li><strong>Why 2?</strong> Why manual comparison? ➔ <em>Delivery notes signed on paper by drivers upon delivery.</em></li>
                             <li><strong>Why 3?</strong> Why paper delivery notes? ➔ <em>No mobile warehouse app to confirm digital delivery receipt.</em></li>
@@ -1011,7 +1014,7 @@
                 <h2 class="slide-title">TO-BE Integrated Business Process Re-engineering</h2>
             </div>
             <div class="slide-content">
-                <div class="flow-container" style="margin-bottom: 0.9rem; border-color: var(--accent-emerald);">
+                <div class="flow-container" style="margin-bottom: 1rem; border-color: var(--accent-emerald);">
                     <div class="flow-step" style="border-color: var(--accent-emerald);">1. Client Order Inquiry</div>
                     <span class="flow-arrow" style="color: var(--accent-emerald);">➔</span>
                     <div class="flow-step" style="border-color: var(--accent-emerald);">2. System Contract Price Retrieval</div>
@@ -1025,20 +1028,20 @@
 
                 <div class="grid-3">
                     <div class="glass-card">
-                        <div class="card-title" style="color: var(--accent-emerald); font-size: 0.95rem;">Automated Contract Pricelists</div>
-                        <p class="card-text" style="font-size: 0.8rem;">
+                        <div class="card-title" style="color: var(--accent-emerald); font-size: 1.05rem;">Automated Contract Pricelists</div>
+                        <p class="card-text" style="font-size: 0.92rem;">
                             System automatically retrieves customer contract unit prices upon selecting B2B client account. Eliminates 5-8% pricing errors completely.
                         </p>
                     </div>
                     <div class="glass-card">
-                        <div class="card-title" style="color: var(--accent-emerald); font-size: 0.95rem;">Real-Time ATP Inventory</div>
-                        <p class="card-text" style="font-size: 0.8rem;">
+                        <div class="card-title" style="color: var(--accent-emerald); font-size: 1.05rem;">Real-Time ATP Inventory</div>
+                        <p class="card-text" style="font-size: 0.92rem;">
                             Sales checks Available-to-Promise stock availability across Tan Binh & Bien Hoa before order sign-off. Reduces post-confirmation stockouts by 95%.
                         </p>
                     </div>
                     <div class="glass-card">
-                        <div class="card-title" style="color: var(--accent-emerald); font-size: 0.95rem;">Automated Credit & Billing</div>
-                        <p class="card-text" style="font-size: 0.8rem;">
+                        <div class="card-title" style="color: var(--accent-emerald); font-size: 1.05rem;">Automated Credit & Billing</div>
+                        <p class="card-text" style="font-size: 0.92rem;">
                             Orders for accounts with overdue debt > 30 days are locked automatically. Executes 3-way matching between SO, Delivery Note, and VAT Invoice.
                         </p>
                     </div>
@@ -1086,8 +1089,8 @@
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title" style="font-size: 0.95rem;">UC-SALES-01: Create Sales Order with Contract Price</div>
-                        <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.45;">
+                        <div class="card-title" style="font-size: 1.05rem;">UC-SALES-01: Create Sales Order with Contract Price</div>
+                        <ul style="font-size: 0.88rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.5;">
                             <li>• <strong>Primary Actor:</strong> B2B Sales Representative (Vo Duy Binh)</li>
                             <li>• <strong>Preconditions:</strong> Client account exists and framework agreement registered in Odoo.</li>
                             <li>• <strong>Main Flow:</strong><br>
@@ -1102,8 +1105,8 @@
                     </div>
 
                     <div class="glass-card">
-                        <div class="card-title" style="font-size: 0.95rem;">UC-PURCH-01: Generate Purchase Requisition & Vendor PO</div>
-                        <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.45;">
+                        <div class="card-title" style="font-size: 1.05rem;">UC-PURCH-01: Generate Purchase Requisition & Vendor PO</div>
+                        <ul style="font-size: 0.88rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.5;">
                             <li>• <strong>Primary Actor:</strong> Purchasing Officer / Warehouse Keeper (Pham Nguyen Gia Thuan)</li>
                             <li>• <strong>Preconditions:</strong> Reorder point rule set for SKU `ST-001` (Min: 100 reams).</li>
                             <li>• <strong>Main Flow:</strong><br>
@@ -1265,22 +1268,22 @@
             <div class="slide-content">
                 <div class="grid-2">
                     <div>
-                        <div class="grid-2" style="margin-bottom: 0.8rem;">
-                            <div class="glass-card" style="padding: 0.9rem;">
-                                <div class="card-title" style="font-size: 0.9rem;">Odoo Sales</div>
-                                <p style="font-size: 0.76rem; color: var(--text-muted);">Contract Pricelists, Quotations, Sales Orders, Credit Hold Checks.</p>
+                        <div class="grid-2" style="margin-bottom: 0.9rem;">
+                            <div class="glass-card" style="padding: 1rem;">
+                                <div class="card-title" style="font-size: 1rem;">Odoo Sales</div>
+                                <p style="font-size: 0.88rem; color: var(--text-muted);">Contract Pricelists, Quotations, Sales Orders, Credit Hold Checks.</p>
                             </div>
-                            <div class="glass-card" style="padding: 0.9rem;">
-                                <div class="card-title" style="font-size: 0.9rem;">Odoo Purchase</div>
-                                <p style="font-size: 0.76rem; color: var(--text-muted);">Purchase Requisitions, RFQs, Vendor POs, Replenishment Rules.</p>
+                            <div class="glass-card" style="padding: 1rem;">
+                                <div class="card-title" style="font-size: 1rem;">Odoo Purchase</div>
+                                <p style="font-size: 0.88rem; color: var(--text-muted);">Purchase Requisitions, RFQs, Vendor POs, Replenishment Rules.</p>
                             </div>
-                            <div class="glass-card" style="padding: 0.9rem;">
-                                <div class="card-title" style="font-size: 0.9rem;">Odoo Inventory</div>
-                                <p style="font-size: 0.76rem; color: var(--text-muted);">Tan Binh & Bien Hoa Warehouses, Picking/Packing, Stock Receipts.</p>
+                            <div class="glass-card" style="padding: 1rem;">
+                                <div class="card-title" style="font-size: 1rem;">Odoo Inventory</div>
+                                <p style="font-size: 0.88rem; color: var(--text-muted);">Tan Binh & Bien Hoa Warehouses, Picking/Packing, Stock Receipts.</p>
                             </div>
-                            <div class="glass-card" style="padding: 0.9rem;">
-                                <div class="card-title" style="font-size: 0.9rem;">Odoo Invoicing</div>
-                                <p style="font-size: 0.76rem; color: var(--text-muted);">VAT Invoices, Payment Matching, Net 30 Debt Control.</p>
+                            <div class="glass-card" style="padding: 1rem;">
+                                <div class="card-title" style="font-size: 1rem;">Odoo Invoicing</div>
+                                <p style="font-size: 0.88rem; color: var(--text-muted);">VAT Invoices, Payment Matching, Net 30 Debt Control.</p>
                             </div>
                         </div>
                     </div>
@@ -1353,7 +1356,7 @@
                 <div class="grid-2">
                     <div class="glass-card" style="border-color: var(--md-sys-color-primary);">
                         <div class="card-title">Live Demo Scenario Execution Sequence</div>
-                        <div class="flow-container" style="flex-direction: column; gap: 0.45rem; margin: 0.6rem 0;">
+                        <div class="flow-container" style="flex-direction: column; gap: 0.5rem; margin: 0.7rem 0;">
                             <div class="flow-step" style="width: 100%;">1. Sales Order Entry (Contract Price 65,000 VND)</div>
                             <span class="flow-arrow">↓</span>
                             <div class="flow-step" style="width: 100%;">2. Real-Time ATP Stock Verification</div>
@@ -1383,7 +1386,7 @@
                 <div class="grid-2">
                     <div class="glass-card">
                         <div class="card-title">Quantified Business Impact & Value</div>
-                        <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.1rem; line-height: 1.55;">
+                        <ul style="color: var(--text-muted); font-size: 0.95rem; padding-left: 1.2rem; line-height: 1.6;">
                             <li>• <strong>0% Pricing Errors:</strong> Saved estimated 50 million VND monthly in billing adjustments.</li>
                             <li>• <strong>95% Stockout Reduction:</strong> Eliminated post-confirmation order cancellations.</li>
                             <li>• <strong>90% Time Saved:</strong> Reduced accounting invoice matching from 20 hours to 2 hours/week.</li>
@@ -1391,8 +1394,8 @@
                         </ul>
                     </div>
                     <div class="glass-card" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 2.2rem; color: var(--md-sys-color-primary);">ORAL DEFENSE Q & A</h3>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 2.5rem; color: var(--md-sys-color-primary);">ORAL DEFENSE Q & A</h3>
+                        <p style="color: var(--text-muted); font-size: 1.05rem; margin-top: 0.6rem;">
                             Thank you for your attention!  
                             We welcome questions from MSc. Nguyen Thi Thanh Thanh and the Examination Board.
                         </p>
@@ -1415,7 +1418,7 @@
     </div>
 
     <footer>
-        <div style="font-size: 0.85rem; color: var(--text-muted);">
+        <div style="font-size: 0.92rem; color: var(--text-muted);">
             Controls: <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">←</kbd> Prev | <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">→</kbd> / <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">Space</kbd> Next | <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">M</kbd> Overview | <kbd style="background: var(--md-sys-color-surface-container-high); padding: 0.15rem 0.45rem; border-radius: 4px;">F</kbd> Fullscreen
         </div>
         <div class="nav-buttons">
@@ -1449,9 +1452,9 @@
             const card = document.createElement('div');
             card.className = `overview-card ${index === 0 ? 'active' : ''}`;
             card.innerHTML = `
-                <div style="font-size: 0.75rem; color: var(--md-sys-color-primary); font-weight: 700;">SLIDE ${index + 1}</div>
-                <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-title); margin: 0.3rem 0;">${titleText}</div>
-                <div style="font-size: 0.72rem; color: var(--text-muted);">Click to jump</div>
+                <div style="font-size: 0.8rem; color: var(--md-sys-color-primary); font-weight: 700;">SLIDE ${index + 1}</div>
+                <div style="font-size: 0.92rem; font-weight: 700; color: var(--text-title); margin: 0.35rem 0;">${titleText}</div>
+                <div style="font-size: 0.78rem; color: var(--text-muted);">Click to jump</div>
             `;
             card.onclick = () => {
                 currentSlide = index;
