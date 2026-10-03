@@ -53,7 +53,6 @@
             --card-shadow: 0 4px 20px rgba(103, 80, 164, 0.08);
             --card-shadow-hover: 0 10px 30px rgba(103, 80, 164, 0.18);
             
-            /* MD3 Organic Radius System */
             --radius-xs: 8px;
             --radius-sm: 12px;
             --radius-md: 16px;
@@ -61,7 +60,6 @@
             --radius-xl: 32px;
             --radius-pill: 9999px;
             
-            /* MD3 Cubic Bezier Easing */
             --md-easing: cubic-bezier(0.2, 0, 0, 1);
         }
 
@@ -129,7 +127,6 @@
             transition: background-color 0.3s var(--md-easing), color 0.3s var(--md-easing);
         }
 
-        /* Atmospheric Background Blur Shapes (Material You DNA) */
         .bg-blur-shape {
             position: absolute;
             border-radius: 50%;
@@ -172,7 +169,6 @@
             100% { transform: translate(-20px, 50px) scale(0.95); }
         }
 
-        /* Top Progress Bar */
         #progress-bar {
             height: 4px;
             background: linear-gradient(90deg, var(--md-sys-color-primary), var(--accent-cyan), var(--md-sys-color-tertiary));
@@ -182,12 +178,11 @@
             z-index: 100;
         }
 
-        /* Header Bar (Material You App Bar) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.85rem 2.2rem;
+            padding: 0.75rem 2rem;
             background: rgba(247, 242, 250, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -203,7 +198,7 @@
         .brand-logo {
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             letter-spacing: -0.5px;
             display: flex;
             align-items: center;
@@ -215,9 +210,9 @@
             background: var(--md-sys-color-secondary-container);
             border: 1px solid var(--md-sys-color-outline-variant);
             color: var(--md-sys-color-on-secondary-container);
-            padding: 0.3rem 0.85rem;
+            padding: 0.25rem 0.75rem;
             border-radius: var(--radius-pill);
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.6px;
             text-transform: uppercase;
@@ -226,16 +221,16 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.7rem;
         }
 
         .slide-counter {
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--md-sys-color-primary);
             font-family: 'Outfit', sans-serif;
             background: var(--md-sys-color-primary-container);
-            padding: 0.35rem 0.85rem;
+            padding: 0.3rem 0.75rem;
             border-radius: var(--radius-pill);
         }
 
@@ -243,10 +238,10 @@
             background: var(--md-sys-color-surface-container-high);
             border: 1px solid var(--md-sys-color-outline-variant);
             color: var(--text-main);
-            padding: 0.45rem 1rem;
+            padding: 0.4rem 0.9rem;
             border-radius: var(--radius-pill);
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             transition: all 0.2s var(--md-easing);
             font-family: 'Outfit', sans-serif;
@@ -258,22 +253,21 @@
             border-color: var(--md-sys-color-primary);
         }
 
-        /* Slide Viewport Frame */
         #viewport {
             flex: 1;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1.8rem 2.5rem;
+            padding: 1.2rem 2rem;
             z-index: 10;
         }
 
         .slide {
             position: absolute;
-            width: calc(100% - 5rem);
-            max-width: 1400px;
-            height: calc(100% - 3.6rem);
+            width: calc(100% - 4rem);
+            max-width: 1450px;
+            height: calc(100% - 2.4rem);
             opacity: 0;
             visibility: hidden;
             transform: translateY(24px) scale(0.98);
@@ -289,29 +283,28 @@
             transform: translateY(0) scale(1);
         }
 
-        /* Slide Typography Header */
         .slide-header {
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .slide-tag {
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 1.2px;
             text-transform: uppercase;
             color: var(--md-sys-color-primary);
             background: var(--md-sys-color-primary-container);
-            padding: 0.3rem 0.9rem;
+            padding: 0.25rem 0.8rem;
             border-radius: var(--radius-pill);
             display: inline-block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
         }
 
         .slide-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 2.2rem;
+            font-size: 1.95rem;
             font-weight: 800;
-            letter-spacing: -0.6px;
+            letter-spacing: -0.5px;
             color: var(--text-title);
             line-height: 1.2;
         }
@@ -320,12 +313,11 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 0.9rem;
             overflow-y: auto;
             padding-right: 0.4rem;
         }
 
-        /* Custom Scrollbar */
         .slide-content::-webkit-scrollbar {
             width: 6px;
         }
@@ -334,96 +326,76 @@
             border-radius: var(--radius-pill);
         }
 
-        /* MD3 Glass Cards Layout */
         .glass-card {
             background: var(--md-sys-color-surface-container);
             border: 1px solid var(--md-sys-color-surface-container-highest);
             border-radius: var(--radius-lg);
-            padding: 1.4rem 1.6rem;
+            padding: 1.1rem 1.3rem;
             box-shadow: var(--card-shadow);
             transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing), border-color 0.3s var(--md-easing);
             position: relative;
         }
 
         .glass-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: var(--card-shadow-hover);
             border-color: var(--card-border);
         }
 
         .card-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--text-title);
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .card-text {
-            font-size: 0.92rem;
+            font-size: 0.86rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Layout Grids */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
+            gap: 0.85rem;
         }
 
-        /* High Resolution Visual Images */
         .slide-img {
             width: 100%;
-            max-height: 240px;
+            max-height: 220px;
             object-fit: cover;
             border-radius: var(--radius-md);
             border: 1px solid var(--md-sys-color-surface-container-highest);
             box-shadow: var(--card-shadow);
-            margin-top: 0.6rem;
+            margin-top: 0.5rem;
         }
 
         .slide-img-lg {
             width: 100%;
-            max-height: 320px;
+            max-height: 280px;
             object-fit: cover;
             border-radius: var(--radius-lg);
             border: 1px solid var(--md-sys-color-surface-container-highest);
             box-shadow: var(--card-shadow);
         }
 
-        /* Clean Numbered Badges */
-        .num-badge {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 0.85rem;
-            font-family: 'Outfit', sans-serif;
-            margin-right: 0.4rem;
-        }
-
-        /* Data Tables */
         table {
             width: 100%;
             border-collapse: separate;
@@ -432,7 +404,7 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             border: 1px solid var(--md-sys-color-surface-container-highest);
-            font-size: 0.86rem;
+            font-size: 0.82rem;
         }
 
         th {
@@ -440,15 +412,16 @@
             color: var(--md-sys-color-on-primary-container);
             font-weight: 700;
             text-align: left;
-            padding: 0.75rem 1rem;
+            padding: 0.6rem 0.85rem;
             border-bottom: 1px solid var(--md-sys-color-surface-container-highest);
             font-family: 'Outfit', sans-serif;
         }
 
         td {
-            padding: 0.65rem 1rem;
+            padding: 0.55rem 0.85rem;
             border-bottom: 1px solid var(--md-sys-color-surface-container-highest);
             color: var(--text-main);
+            line-height: 1.45;
         }
 
         tr:last-child td {
@@ -459,7 +432,6 @@
             background: var(--md-sys-color-surface-container-high);
         }
 
-        /* MD3 Pill Badges & Chips */
         .highlight {
             color: var(--accent-amber);
             font-weight: 700;
@@ -469,40 +441,39 @@
             background: var(--accent-rose-bg);
             color: var(--accent-rose);
             border: 1px solid var(--accent-rose);
-            padding: 0.2rem 0.65rem;
+            padding: 0.15rem 0.55rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
         }
 
         .tag-should {
             background: var(--accent-amber-bg);
             color: var(--accent-amber);
             border: 1px solid var(--accent-amber);
-            padding: 0.2rem 0.65rem;
+            padding: 0.15rem 0.55rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
         }
 
         .tag-could {
             background: var(--accent-emerald-bg);
             color: var(--accent-emerald);
             border: 1px solid var(--accent-emerald);
-            padding: 0.2rem 0.65rem;
+            padding: 0.15rem 0.55rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
         }
 
-        /* Flow Diagrams */
         .flow-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 0.5rem;
+            gap: 0.4rem;
             background: var(--md-sys-color-surface-container-high);
-            padding: 1.1rem;
+            padding: 0.85rem 1rem;
             border-radius: var(--radius-md);
             border: 1px solid var(--md-sys-color-surface-container-highest);
         }
@@ -511,9 +482,9 @@
             background: var(--md-sys-color-surface-container);
             border: 1px solid var(--md-sys-color-outline-variant);
             border-radius: var(--radius-sm);
-            padding: 0.7rem 0.9rem;
+            padding: 0.55rem 0.75rem;
             text-align: center;
-            font-size: 0.83rem;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--text-title);
             flex: 1;
@@ -528,10 +499,9 @@
         .flow-arrow {
             color: var(--md-sys-color-primary);
             font-weight: 800;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
-        /* Overview Grid Modal (Material 3 Light Dialog) */
         #overview-modal {
             position: fixed;
             top: 0;
@@ -544,7 +514,7 @@
             z-index: 200;
             display: flex;
             flex-direction: column;
-            padding: 2.2rem;
+            padding: 2rem;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s var(--md-easing);
@@ -562,9 +532,9 @@
         .overview-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 1.2rem;
+            gap: 1.1rem;
             overflow-y: auto;
-            padding: 1rem;
+            padding: 0.8rem;
             flex: 1;
         }
 
@@ -572,18 +542,18 @@
             background: var(--md-sys-color-surface-container);
             border: 1px solid var(--md-sys-color-surface-container-highest);
             border-radius: var(--radius-md);
-            padding: 1rem 1.2rem;
+            padding: 0.9rem 1.1rem;
             cursor: pointer;
             transition: all 0.25s var(--md-easing);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 130px;
+            min-height: 120px;
         }
 
         .overview-card:hover {
             border-color: var(--md-sys-color-primary);
-            transform: translateY(-4px);
+            transform: translateY(-3px);
             box-shadow: var(--card-shadow-hover);
             background: var(--md-sys-color-surface-container-high);
         }
@@ -594,7 +564,6 @@
             background: var(--md-sys-color-surface-container-high);
         }
 
-        /* Print Styles */
         @media print {
             body {
                 overflow: visible !important;
@@ -612,7 +581,7 @@
                 transform: none !important;
                 page-break-after: always;
                 height: 100vh !important;
-                padding: 2rem !important;
+                padding: 1.8rem !important;
                 background: white !important;
                 color: black !important;
             }
@@ -627,12 +596,11 @@
             }
         }
 
-        /* Footer Controls (Material 3 Bottom Navigation Bar) */
         footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.85rem 2.2rem;
+            padding: 0.75rem 2rem;
             background: rgba(247, 242, 250, 0.88);
             border-top: 1px solid var(--md-sys-color-surface-container-highest);
             backdrop-filter: blur(20px);
@@ -646,22 +614,22 @@
 
         .nav-buttons {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.7rem;
         }
 
         .btn-nav {
             background: var(--md-sys-color-primary);
             border: none;
             color: var(--md-sys-color-on-primary);
-            padding: 0.55rem 1.4rem;
+            padding: 0.5rem 1.3rem;
             border-radius: var(--radius-pill);
             font-weight: 700;
             cursor: pointer;
             transition: transform 0.2s var(--md-easing), box-shadow 0.2s var(--md-easing), background-color 0.2s var(--md-easing);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.88rem;
+            gap: 0.4rem;
+            font-size: 0.85rem;
             font-family: 'Outfit', sans-serif;
         }
 
@@ -708,64 +676,86 @@
 
         <!-- SLIDE 1: TITLE SLIDE -->
         <div class="slide active">
-            <div style="text-align: center; margin: auto; max-width: 920px;">
-                <span class="slide-tag" style="font-size: 1.05rem;">Hoa Sen University — Faculty of Technology</span>
-                <h1 class="slide-title" style="font-size: 3.2rem; margin: 0.8rem 0; color: var(--md-sys-color-primary);">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
-                <p style="font-size: 1.35rem; color: var(--text-main); font-weight: 600; margin-bottom: 1.8rem;">
-                    Final Project Defense & Live ERP Prototype Demonstration
+            <div style="text-align: center; margin: auto; max-width: 1000px;">
+                <span class="slide-tag" style="font-size: 0.95rem;">Faculty of Technology — Hoa Sen University</span>
+                <h1 class="slide-title" style="font-size: 2.8rem; margin: 0.6rem 0; color: var(--md-sys-color-primary);">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
+                <p style="font-size: 1.25rem; color: var(--text-main); font-weight: 600; margin-bottom: 1.5rem;">
+                    Final Business Requirements Document (BRD) & Odoo ERP Prototype Defense
                 </p>
-                <div class="glass-card" style="display: inline-block; text-align: left; padding: 2rem 3rem; border-radius: var(--radius-xl);">
-                    <p style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-title);">
-                        Scenario B: B2B Wholesale & Distribution — Office Supplies & Stationery
-                    </p>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Company Case: <strong style="color: var(--text-title);">OfficePro Distribution Co., Ltd.</strong></p>
-                    <hr style="border-color: var(--md-sys-color-surface-container-highest); margin: 0.9rem 0;">
-                    <p style="font-size: 0.95rem; color: var(--accent-amber); font-weight: 700;">
-                        Team Leader & Lead BA: Vo Duy Binh (Student ID: 22301500)
-                    </p>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">
-                        QA & Solutions Analyst: Pham Nguyen Gia Thuan (Student ID: 22204631)
-                    </p>
+                <div class="glass-card" style="display: inline-block; text-align: left; padding: 1.6rem 2.5rem; border-radius: var(--radius-xl); width: 100%;">
+                    <div class="grid-2" style="gap: 1.5rem;">
+                        <div>
+                            <p style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-title);">
+                                Enterprise Case: OfficePro Distribution Co., Ltd.
+                            </p>
+                            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.4rem;">Domain: <strong>Scenario B — B2B Wholesale & Distribution (Office Supplies & Stationery)</strong></p>
+                            <p style="color: var(--text-muted); font-size: 0.84rem; line-height: 1.5;">
+                                End-to-end Business Systems Analysis applying the <em>Business-First → Technology-Second</em> methodology: from Enterprise Context, Stakeholder Elicitation, AS-IS BPMN Bottlenecks, 5-Whys Root Cause Analysis, to TO-BE Re-engineering, MoSCoW FRs, Use Case Specs, and Odoo ERP Prototype Validation.
+                            </p>
+                        </div>
+                        <div style="border-left: 1px solid var(--md-sys-color-surface-container-highest); padding-left: 1.2rem;">
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">Course Guidance Lecturer:</p>
+                            <p style="font-size: 0.95rem; font-weight: 700; color: var(--md-sys-color-primary); margin-bottom: 0.8rem;">MSc. Nguyen Thi Thanh Thanh</p>
+                            <hr style="border-color: var(--md-sys-color-surface-container-highest); margin: 0.6rem 0;">
+                            <p style="font-size: 0.9rem; color: var(--accent-amber); font-weight: 700;">
+                                Team Leader & Lead BA: Vo Duy Binh (Student ID: 22301500)
+                            </p>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.3rem;">
+                                QA & Solutions Configurator: Pham Nguyen Gia Thuan (Student ID: 22204631)
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 2: ENTERPRISE PROFILE -->
+        <!-- SLIDE 2: ENTERPRISE PROFILE & MASTER DATA CATALOG -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 1 — Enterprise Context</span>
-                <h2 class="slide-title">Enterprise Profile & Business Scope</h2>
+                <h2 class="slide-title">Enterprise Profile & Master Data Catalog Scope</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">Company Overview</div>
-                        <p class="card-text">
-                            <strong>OfficePro Distribution Co., Ltd.</strong> is a regional B2B distributor supplying office stationery, copy paper, and consumables to over 250 corporate accounts, schools, and sub-dealers across Southern Vietnam.
+                        <div class="card-title">Company Profile & Operational Scope</div>
+                        <p class="card-text" style="font-size: 0.84rem; margin-bottom: 0.6rem;">
+                            <strong>OfficePro Distribution Co., Ltd.</strong> is a regional B2B wholesale distributor supplying commercial paper, stationery, and consumables to over <strong>250 active corporate clients</strong>, educational institutions, and sub-dealers across Southern Vietnam.
                         </p>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.6rem;">
+                            <p>• <strong>Corporate HQ:</strong> District 3, Ho Chi Minh City</p>
+                            <p>• <strong>Central Warehouse:</strong> Tan Binh IP, HCMC (2,500 m²; 80% bulk stock)</p>
+                            <p>• <strong>Regional Depot:</strong> Bien Hoa 2 IP, Dong Nai (Fast industrial park delivery)</p>
+                            <p>• <strong>Target Segments:</strong> Corporate B2B (Net 30 terms), Schools, Sub-dealers</p>
+                        </div>
                         <img src="./assets/officepro_warehouse.jpg" alt="OfficePro B2B Distribution Warehouse" class="slide-img">
                     </div>
+
                     <div class="glass-card">
-                        <div class="card-title">Target Customers & Distribution Network</div>
-                        <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6; margin-bottom: 0.8rem;">
-                            <li><strong>Corporate B2B Accounts:</strong> Order in large batches; contract pricing & Net 30 terms.</li>
-                            <li><strong>Educational Institutions:</strong> Periodic academic term orders.</li>
-                            <li><strong>Sub-dealers & Retail Outlets:</strong> Tiered volume discounts.</li>
-                            <li><strong>Operating Facilities:</strong> Central Warehouse Tan Binh IP (2,500 m²) & Regional Depot Dong Nai.</li>
-                        </ul>
-                        <div class="card-title" style="font-size: 1rem;">Master Data Catalog (10 SKUs)</div>
-                        <div style="font-size: 0.78rem; color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-001` A4 Paper Double A</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-002` A4 Paper IK Plus</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-003` Thien Long Pen</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-004` Pilot Gel Pen</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-005` Display Book</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-006` Deli Notebook</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-007` Kangaro Stapler</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-008` Staples Box</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-009` HP Laser Toner</span>
-                            <span style="background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 0.2rem 0.5rem; border-radius: var(--radius-pill); font-weight: 500;">`ST-010` Pentel Marker</span>
-                        </div>
+                        <div class="card-title">10 Master Data SKUs & Standard Pricelist</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>SKU Code</th>
+                                    <th>Product Description</th>
+                                    <th>Category</th>
+                                    <th>UoM</th>
+                                    <th>Standard List Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>`ST-001`</td><td>A4 Copy Paper Double A 70gsm</td><td>Paper Products</td><td>Ream</td><td>65,000 VND</td></tr>
+                                <tr><td>`ST-002`</td><td>A4 Copy Paper IK Plus 80gsm</td><td>Paper Products</td><td>Ream</td><td>75,000 VND</td></tr>
+                                <tr><td>`ST-003`</td><td>Thien Long TL-027 Ballpoint Pen</td><td>Writing Inst.</td><td>Box (20)</td><td>90,000 VND</td></tr>
+                                <tr><td>`ST-004`</td><td>Pilot G2 Black Gel Pen 0.7mm</td><td>Writing Inst.</td><td>Box (12)</td><td>320,000 VND</td></tr>
+                                <tr><td>`ST-005`</td><td>King Jim A4 Display Book 60P</td><td>Filing Supplies</td><td>Piece</td><td>45,000 VND</td></tr>
+                                <tr><td>`ST-006`</td><td>Deli A5 Spiral Notebook 160P</td><td>Filing Supplies</td><td>Piece</td><td>35,000 VND</td></tr>
+                                <tr><td>`ST-007`</td><td>Kangaro HD-10 Heavy Duty Stapler</td><td>Office Tools</td><td>Piece</td><td>28,000 VND</td></tr>
+                                <tr><td>`ST-008`</td><td>Kangaro No.10 Staples (Box 20)</td><td>Office Tools</td><td>Big Box</td><td>42,000 VND</td></tr>
+                                <tr><td>`ST-009`</td><td>HP 107a Black Laser Toner</td><td>Consumables</td><td>Box</td><td>1,150,000 VND</td></tr>
+                                <tr><td>`ST-010`</td><td>Pentel WB1 Whiteboard Marker</td><td>Writing Inst.</td><td>Box (12)</td><td>180,000 VND</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -775,57 +765,66 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 1 — Governance</span>
-                <h2 class="slide-title">Group RACI Assignment Matrix</h2>
+                <h2 class="slide-title">Group RACI Assignment Matrix & Responsibilities</h2>
             </div>
             <div class="slide-content">
                 <table>
                     <thead>
                         <tr>
                             <th>Project Deliverable / Milestone</th>
-                            <th>Vo Duy Binh (Sales & Purchasing BA)</th>
-                            <th>Pham Nguyen Gia Thuan (Inventory & Accounting BA)</th>
+                            <th>Vo Duy Binh (22301500)<br>Lead BA & Systems Analyst</th>
+                            <th>Pham Nguyen Gia Thuan (22204631)<br>QA & Solution Configurator</th>
+                            <th>RACI Governance Rule & Output</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Enterprise Profile & RACI Matrix</strong></td>
-                            <td><span class="highlight">A / R</span></td>
-                            <td>R</td>
+                            <td><strong>Enterprise Profile & RACI Setup</strong></td>
+                            <td><span class="highlight">Accountable / Responsible</span></td>
+                            <td>Responsible</td>
+                            <td>Defines business model, 10 SKUs, and team scope boundaries.</td>
                         </tr>
                         <tr>
-                            <td><strong>AI Stakeholder Interviews & Information Needs</strong></td>
-                            <td><span class="highlight">A / R</span> (Sales & Purchasing Mgr)</td>
-                            <td>R (Warehouse & Chief Accountant)</td>
+                            <td><strong>AI Stakeholder Interviews & Elicitation</strong></td>
+                            <td><span class="highlight">Accountable / Responsible</span> (Sales & Purchasing)</td>
+                            <td>Responsible (Warehouse & Accounting)</td>
+                            <td>Conducts AI stakeholder interviews; builds Information Needs Matrix.</td>
                         </tr>
                         <tr>
                             <td><strong>AS-IS Process & Bottleneck Analysis</strong></td>
-                            <td><span class="highlight">A / R</span> (Sales & Purchase AS-IS)</td>
-                            <td>R (Inventory & Invoicing AS-IS)</td>
+                            <td><span class="highlight">Accountable / Responsible</span> (Sales Order & RFQ)</td>
+                            <td>Responsible (Stock Check & Invoicing)</td>
+                            <td>Maps manual Excel/paper workflows and quantifies operational friction.</td>
                         </tr>
                         <tr>
-                            <td><strong>5-Whys Root Cause Analysis & TO-BE BPMN</strong></td>
-                            <td><span class="highlight">A / R</span></td>
-                            <td>R</td>
+                            <td><strong>5-Whys Root Cause & TO-BE Re-engineering</strong></td>
+                            <td><span class="highlight">Accountable / Responsible</span></td>
+                            <td>Responsible</td>
+                            <td>Establishes root cause chains and designs integrated BPMN workflows.</td>
                         </tr>
                         <tr>
-                            <td><strong>MoSCoW Functional Requirements Framing</strong></td>
-                            <td>R</td>
-                            <td><span class="highlight">A / R</span></td>
+                            <td><strong>MoSCoW Functional Requirements Catalog</strong></td>
+                            <td>Responsible</td>
+                            <td><span class="highlight">Accountable / Responsible</span></td>
+                            <td>Frames FR-01 to FR-08 with Must/Should/Could prioritization.</td>
                         </tr>
                         <tr>
-                            <td><strong>Use Cases, Specifications & RTM</strong></td>
-                            <td><span class="highlight">A / R</span> (Sales & Purchase UCs)</td>
-                            <td>R (Inventory & Invoice UCs)</td>
+                            <td><strong>Use Case Specifications & RTM Matrix</strong></td>
+                            <td><span class="highlight">Accountable / Responsible</span> (UC-01 & UC-03)</td>
+                            <td>Responsible (UC-02 & UC-04)</td>
+                            <td>Drafts Use Case specs and connects Problem ➔ FR ➔ UC ➔ Odoo Module.</td>
                         </tr>
                         <tr>
-                            <td><strong>Odoo ERP Core Setup & Master Data</strong></td>
-                            <td>C</td>
-                            <td><span class="highlight">A / R</span></td>
+                            <td><strong>Odoo ERP Core Module Setup & Config</strong></td>
+                            <td>Consulted (Sales & Purchase Rules)</td>
+                            <td><span class="highlight">Accountable / Responsible</span> (Odoo ERP)</td>
+                            <td>Configures Sales Pricelists, Inventory ATP, Reorder Rules & Invoicing.</td>
                         </tr>
                         <tr>
-                            <td><strong>Peer UAT Testing & Final Defense</strong></td>
-                            <td><span class="highlight">A / R</span> (Lead Presenter)</td>
-                            <td>R (Demo UAT & Invoicing)</td>
+                            <td><strong>Peer UAT Testing & Final Presentation</strong></td>
+                            <td><span class="highlight">Accountable / Responsible</span> (Lead Defense)</td>
+                            <td>Responsible (Demo & Test Scripts)</td>
+                            <td>Executes UAT TC-01 to TC-04 and delivers final oral defense presentation.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -836,44 +835,55 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 2 — Elicitation Evidence</span>
-                <h2 class="slide-title">Stakeholder Dynamics & Verification Log</h2>
+                <h2 class="slide-title">Stakeholder Power/Interest Matrix & Evidence Log</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">Stakeholder Power / Interest Grid</div>
-                        <div style="font-size: 0.83rem; color: var(--text-muted); line-height: 1.6;">
-                            <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong> Sales Manager & Business Owner — Enforces contract pricelist locks and revenue growth.</p>
-                            <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong> Chief Accountant — Enforces Net 30 debt limits and 3-way invoice matching rules.</p>
-                            <p style="margin-bottom: 0.4rem;"><strong style="color: var(--accent-cyan);">Keep Informed (Low Power / High Interest):</strong> Warehouse Keepers & Sales Reps — Require fast mobile stock check and pick/pack routing.</p>
+                        <div class="card-title">Stakeholder Power / Interest Grid & Info Needs</div>
+                        <div style="font-size: 0.81rem; color: var(--text-muted); line-height: 1.5;">
+                            <p style="margin-bottom: 0.45rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong><br>
+                            • <em>Sales Manager:</em> Enforces contract pricelists, approves quotes > 5% discount.<br>
+                            • <em>Business Owner:</em> Requires gross margin visibility and reduced revenue leakage.</p>
+                            <p style="margin-bottom: 0.45rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong><br>
+                            • <em>Chief Accountant:</em> Requires hard Net 30 credit holds and automated 3-way matching.</p>
+                            <p style="margin-bottom: 0.45rem;"><strong style="color: var(--accent-cyan);">Keep Informed (Low Power / High Interest):</strong><br>
+                            • <em>Warehouse Keeper:</em> Needs real-time incoming PO schedules and bin location picking.<br>
+                            • <em>Sales Reps:</em> Require instant contract price lookup and real-time ATP stock availability.</p>
                             <p><strong style="color: var(--text-muted);">Monitor (Low Power / Low Interest):</strong> External Suppliers & Sub-Dealers.</p>
                         </div>
                     </div>
+
                     <div class="glass-card">
-                        <div class="card-title">Verified Elicitation Log</div>
+                        <div class="card-title">Verified Elicitation Findings Log</div>
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Assumption</th>
-                                    <th>Interview Evidence</th>
-                                    <th>Status</th>
+                                    <th>Baseline Assumption</th>
+                                    <th>Interview Evidence Obtained</th>
+                                    <th>Verified Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Excel Price Lookup</td>
-                                    <td>Confirmed reps copy-paste from static Excel sheets.</td>
+                                    <td>Sales reps look up contract prices manually from Excel sheets.</td>
+                                    <td>Sales Manager confirmed reps copy-paste prices from account Excel files, causing 5-8% pricing errors monthly.</td>
                                     <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Phone Call Stock Check</td>
-                                    <td>Admitted daily phone checks cause 3-4 stockouts/wk.</td>
+                                    <td>Sales confirms orders based on informal phone stock checks.</td>
+                                    <td>Sales Manager admitted reps rely on daily Excel reports or phone calls, causing 3-4 stockouts/week post-confirmation.</td>
                                     <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
                                 </tr>
                                 <tr>
-                                    <td>Auto Credit Block</td>
-                                    <td>Policy exists on paper but is bypassable verbally.</td>
+                                    <td>Credit holds for overdue accounts (> 30 days) are auto-enforced.</td>
+                                    <td>Sales Manager clarified a credit policy exists on paper, but reps frequently request verbal manager overrides to hit targets.</td>
                                     <td><span style="color: var(--accent-amber); font-weight: 700;">REVISED</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Replenishment is triggered automatically when stock is low.</td>
+                                    <td>Purchasing Manager stated replenishment is triggered manually via handwritten notes from warehouse staff.</td>
+                                    <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -886,26 +896,28 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 2 — Problem Identification</span>
-                <h2 class="slide-title">Primary Business Problems & Operational Friction</h2>
+                <h2 class="slide-title">Primary Operational Problems & Business Friction</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-3">
                     <div class="glass-card" style="border-top: 4px solid var(--accent-rose);">
                         <div class="card-title" style="color: var(--accent-rose);">Problem 01: Pricing Errors</div>
-                        <p class="card-text">
-                            Contract prices for corporate accounts are stored in disconnected Excel sheets. Manual copy-pasting into quotes causes a <span class="highlight">5–8% error rate</span> on customer invoices monthly.
+                        <p class="card-text" style="font-size: 0.83rem;">
+                            <strong>Contract Pricing Discrepancies (5–8% Error Rate):</strong> Individual Sales Reps store framework agreement prices in disconnected Excel files. Manual copy-pasting into client quotations results in 5–8% billing pricing discrepancies, causing invoice disputes and an estimated <strong>50 million VND monthly adjustments</strong>.
                         </p>
                     </div>
+
                     <div class="glass-card" style="border-top: 4px solid var(--accent-amber);">
                         <div class="card-title" style="color: var(--accent-amber);">Problem 02: Post-Order Stockouts</div>
-                        <p class="card-text">
-                            Sales staff lack real-time stock visibility. Confirming orders via phone calls or daily reports leads to <span class="highlight">3–4 stockouts per week</span> after order confirmation.
+                        <p class="card-text" style="font-size: 0.83rem;">
+                            <strong>Post-Confirmation Stockouts (3–4 Orders/Week):</strong> Sales Reps confirm orders based on morning Excel stock dumps or phone calls to warehouse staff. Goods receiving takes 24–48 hours to update, leading to 3–4 stockouts per week post-confirmation and client cancellations.
                         </p>
                     </div>
+
                     <div class="glass-card" style="border-top: 4px solid var(--md-sys-color-primary);">
-                        <div class="card-title" style="color: var(--md-sys-color-primary);">Problem 03: Credit Disputes</div>
-                        <p class="card-text">
-                            Accounting spends <span class="highlight">15–20 hours/week</span> manually cross-checking paper Delivery Notes and SOs. Overdue credit holds are bypassable via informal verbal appeals.
+                        <div class="card-title" style="color: var(--md-sys-color-primary);">Problem 03: Invoice & Credit Friction</div>
+                        <p class="card-text" style="font-size: 0.83rem;">
+                            <strong>Manual 3-Way Matching (15–20 Hours/Week):</strong> Accounting spends 15–20 hours/week manually cross-checking paper SOs, Delivery Notes, and Invoices. Net 30 credit hold policies are bypassable via informal verbal appeals, exposing the company to bad debt risk.
                         </p>
                     </div>
                 </div>
@@ -916,26 +928,27 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — AS-IS Analysis</span>
-                <h2 class="slide-title">AS-IS Workflow & Operational Bottlenecks</h2>
+                <h2 class="slide-title">AS-IS Business Process Analysis & Bottlenecks</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div>
-                        <div class="flow-container" style="flex-direction: column; gap: 0.6rem; margin-bottom: 0.8rem;">
-                            <div class="flow-step" style="width: 100%;">1. Client Inquiry (Email/Zalo)</div>
+                        <div class="flow-container" style="flex-direction: column; gap: 0.45rem; margin-bottom: 0.7rem;">
+                            <div class="flow-step" style="width: 100%;">1. Client Email/Zalo Inquiry ➔ Sales Rep opens Personal Excel Pricelist</div>
                             <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">2. Manual Excel Price Lookup</div>
+                            <div class="flow-step" style="width: 100%;">2. Phone Call to Warehouse ➔ Verbal Stock Check (24-48h Receiving Lag)</div>
                             <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">3. Phone Call Stock Check</div>
+                            <div class="flow-step" style="width: 100%;">3. Manual Quotation Draft ➔ Print Paper SO ➔ Send to Warehouse & Accounting</div>
                             <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">4. Manual Quote & Paper SO</div>
+                            <div class="flow-step" style="width: 100%;">4. Goods Delivery ➔ Manual 3-Way Invoice Cross-Check (15-20h/wk)</div>
                         </div>
                         <div class="glass-card">
-                            <div class="card-title">Operational Impact</div>
-                            <ul style="color: var(--text-muted); font-size: 0.82rem; padding-left: 1.1rem; line-height: 1.5;">
-                                <li>Pricing disputes on 5–8% of customer billing invoices.</li>
-                                <li>Frequent order cancellations due to phantom inventory.</li>
-                                <li>15–20 hours/week spent on manual paper 3-way matching.</li>
+                            <div class="card-title" style="font-size: 0.95rem;">Key Operational Bottlenecks</div>
+                            <ul style="color: var(--text-muted); font-size: 0.8rem; padding-left: 1.1rem; line-height: 1.45;">
+                                <li>• <strong>Sales Silo:</strong> Prices looked up in disconnected Excel files per Sales Rep.</li>
+                                <li>• <strong>Warehouse Lag:</strong> Goods receiving takes 24–48 hours before stock entry.</li>
+                                <li>• <strong>Purchasing Delay:</strong> Vendor RFQ comparison done via emails (takes 2–3 days).</li>
+                                <li>• <strong>Accounting Overhead:</strong> Manual 3-way matching of physical Delivery Notes.</li>
                             </ul>
                         </div>
                     </div>
@@ -951,18 +964,42 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Root Cause Analysis</span>
-                <h2 class="slide-title">5-Whys & Root Cause Breakdown</h2>
+                <h2 class="slide-title">5-Whys Root Cause Breakdown by Core Module</h2>
             </div>
             <div class="slide-content">
-                <div class="glass-card" style="margin-bottom: 1rem;">
-                    <div class="card-title">5-Whys Analysis: Contract Pricing Discrepancies</div>
-                    <ol style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
-                        <li><strong style="color: var(--text-title);">Why 1?</strong> Sales Reps apply wrong contract unit prices on orders. ➔ <em>Because prices are copy-pasted manually from Excel files.</em></li>
-                        <li><strong style="color: var(--text-title);">Why 2?</strong> Why are prices in disconnected Excel files? ➔ <em>Because each Rep maintains their own client price lists.</em></li>
-                        <li><strong style="color: var(--text-title);">Why 3?</strong> Why are pricelists updated independently? ➔ <em>Because framework contracts are filed as scanned PDFs in shared drives.</em></li>
-                        <li><strong style="color: var(--text-title);">Why 4?</strong> Why is there no central pricing engine? ➔ <em>Because the company lacks a unified database mapping clients to contracts.</em></li>
-                        <li><strong style="color: var(--accent-rose);">Why 5? (Root Cause):</strong> <strong>Lack of a centralized contract-based pricing engine in ERP that enforces contract price rules automatically.</strong></li>
-                    </ol>
+                <div class="grid-3">
+                    <div class="glass-card">
+                        <div class="card-title" style="font-size: 0.95rem;">5-Whys: Contract Pricing Errors</div>
+                        <ol style="color: var(--text-muted); font-size: 0.78rem; padding-left: 1rem; line-height: 1.45;">
+                            <li><strong>Why 1?</strong> Sales Reps apply wrong contract unit prices on orders. ➔ <em>Prices copy-pasted manually from Excel files.</em></li>
+                            <li><strong>Why 2?</strong> Why in disconnected Excel files? ➔ <em>Each Rep maintains separate client pricelists.</em></li>
+                            <li><strong>Why 3?</strong> Why separate files? ➔ <em>Framework contracts filed as scanned PDFs in shared drives.</em></li>
+                            <li><strong>Why 4?</strong> Why no central pricing engine? ➔ <em>Lacks a unified database mapping clients to contracts.</em></li>
+                            <li><strong style="color: var(--accent-rose);">Why 5? (Root Cause):</strong> <strong>Lack of a centralized contract-based pricing engine in ERP that enforces contract price rules automatically.</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="card-title" style="font-size: 0.95rem;">5-Whys: Post-Order Stockouts</div>
+                        <ol style="color: var(--text-muted); font-size: 0.78rem; padding-left: 1rem; line-height: 1.45;">
+                            <li><strong>Why 1?</strong> Sales confirms orders for items out of stock. ➔ <em>Stock availability checked via phone call or daily Excel.</em></li>
+                            <li><strong>Why 2?</strong> Why rely on phone/Excel? ➔ <em>Warehouse stock updates entered in batch at end of day.</em></li>
+                            <li><strong>Why 3?</strong> Why end of day? ➔ <em>Goods receiving requires manual paper check (24-48h lag).</em></li>
+                            <li><strong>Why 4?</strong> Why manual paper check? ➔ <em>Inventory receiving not linked to PO in real time.</em></li>
+                            <li><strong style="color: var(--accent-amber);">Why 5? (Root Cause):</strong> <strong>Lack of real-time ATP inventory visibility engine connected across Sales & Warehouse.</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="card-title" style="font-size: 0.95rem;">5-Whys: Manual Invoice Matching</div>
+                        <ol style="color: var(--text-muted); font-size: 0.78rem; padding-left: 1rem; line-height: 1.45;">
+                            <li><strong>Why 1?</strong> Accountant spends 15-20h/wk cross-checking invoices. ➔ <em>Delivery Notes and SOs compared manually.</em></li>
+                            <li><strong>Why 2?</strong> Why manual comparison? ➔ <em>Delivery notes signed on paper by drivers upon delivery.</em></li>
+                            <li><strong>Why 3?</strong> Why paper delivery notes? ➔ <em>No mobile warehouse app to confirm digital delivery receipt.</em></li>
+                            <li><strong>Why 4?</strong> Why no digital matching? ➔ <em>Invoicing and Sales systems operate in isolated silos.</em></li>
+                            <li><strong style="color: var(--md-sys-color-primary);">Why 5? (Root Cause):</strong> <strong>Lack of automated 3-way matching and hard credit hold control integrated in ERP.</strong></li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
@@ -971,10 +1008,10 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — TO-BE Solution Design</span>
-                <h2 class="slide-title">TO-BE Integrated Business Process</h2>
+                <h2 class="slide-title">TO-BE Integrated Business Process Re-engineering</h2>
             </div>
             <div class="slide-content">
-                <div class="flow-container" style="margin-bottom: 1.2rem; border-color: var(--accent-emerald);">
+                <div class="flow-container" style="margin-bottom: 0.9rem; border-color: var(--accent-emerald);">
                     <div class="flow-step" style="border-color: var(--accent-emerald);">1. Client Order Inquiry</div>
                     <span class="flow-arrow" style="color: var(--accent-emerald);">➔</span>
                     <div class="flow-step" style="border-color: var(--accent-emerald);">2. System Contract Price Retrieval</div>
@@ -985,21 +1022,25 @@
                     <span class="flow-arrow" style="color: var(--accent-emerald);">➔</span>
                     <div class="flow-step" style="border-color: var(--accent-emerald);">5. Auto Dispatch & 3-Way Billing</div>
                 </div>
-                <div class="glass-card">
-                    <div class="card-title" style="color: var(--accent-emerald);">TO-BE Operational Improvements</div>
-                    <div class="grid-3" style="margin-top: 0.5rem;">
-                        <div>
-                            <strong style="color: var(--text-title); font-size: 0.9rem;">Automated Pricelists:</strong>
-                            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">System retrieves contract unit prices instantly upon selecting B2B client.</p>
-                        </div>
-                        <div>
-                            <strong style="color: var(--text-title); font-size: 0.9rem;">Real-Time ATP Stock:</strong>
-                            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">Sales checks stock availability across Tan Binh & Bien Hoa before order sign-off.</p>
-                        </div>
-                        <div>
-                            <strong style="color: var(--text-title); font-size: 0.9rem;">System Credit Controls:</strong>
-                            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">Orders for accounts with overdue debt > 30 days are blocked automatically.</p>
-                        </div>
+
+                <div class="grid-3">
+                    <div class="glass-card">
+                        <div class="card-title" style="color: var(--accent-emerald); font-size: 0.95rem;">Automated Contract Pricelists</div>
+                        <p class="card-text" style="font-size: 0.8rem;">
+                            System automatically retrieves customer contract unit prices upon selecting B2B client account. Eliminates 5-8% pricing errors completely.
+                        </p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="card-title" style="color: var(--accent-emerald); font-size: 0.95rem;">Real-Time ATP Inventory</div>
+                        <p class="card-text" style="font-size: 0.8rem;">
+                            Sales checks Available-to-Promise stock availability across Tan Binh & Bien Hoa before order sign-off. Reduces post-confirmation stockouts by 95%.
+                        </p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="card-title" style="color: var(--accent-emerald); font-size: 0.95rem;">Automated Credit & Billing</div>
+                        <p class="card-text" style="font-size: 0.8rem;">
+                            Orders for accounts with overdue debt > 30 days are locked automatically. Executes 3-way matching between SO, Delivery Note, and VAT Invoice.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1009,36 +1050,30 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Requirements Framing</span>
-                <h2 class="slide-title">MoSCoW Prioritized Functional Requirements</h2>
+                <h2 class="slide-title">MoSCoW Prioritized Functional Requirements Catalog</h2>
             </div>
             <div class="slide-content">
-                <div class="grid-3">
-                    <div class="glass-card">
-                        <div class="card-title"><span class="tag-must">MUST HAVE</span></div>
-                        <ul style="font-size: 0.82rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.5;">
-                            <li><strong>FR-01:</strong> Contract Price Retrieval upon client selection.</li>
-                            <li><strong>FR-02:</strong> Real-time ATP Inventory visibility by warehouse.</li>
-                            <li><strong>FR-03:</strong> Automatic Credit Hold for overdue accounts (> 30 days).</li>
-                            <li><strong>FR-04:</strong> Purchase Requisition trigger from low stock alerts.</li>
-                            <li><strong>FR-05:</strong> Automated 3-way invoice matching.</li>
-                        </ul>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-title"><span class="tag-should">SHOULD HAVE</span></div>
-                        <ul style="font-size: 0.82rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.5;">
-                            <li><strong>FR-06:</strong> Annual Framework Contract Expiration Alerts.</li>
-                            <li><strong>FR-07:</strong> Multi-supplier RFQ quotation comparison.</li>
-                            <li><strong>FR-08:</strong> Bin location picking routing instructions.</li>
-                        </ul>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-title"><span class="tag-could">COULD HAVE</span></div>
-                        <ul style="font-size: 0.82rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.5;">
-                            <li><strong>FR-09:</strong> Executive AR Debt Collection Dashboard.</li>
-                            <li><strong>FR-10:</strong> Automated Customer Zalo Order Status Notifications.</li>
-                        </ul>
-                    </div>
-                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Req ID</th>
+                            <th>Module</th>
+                            <th>Feature Description</th>
+                            <th>Priority</th>
+                            <th>Business Objective / Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>FR-01</strong></td><td>Sales</td><td>System shall automatically retrieve customer contract pricelists upon client selection.</td><td><span class="tag-must">MUST HAVE</span></td><td>Eliminate 5-8% contract pricing errors.</td></tr>
+                        <tr><td><strong>FR-02</strong></td><td>Inventory</td><td>System shall display real-time ATP stock levels across Tan Binh and Bien Hoa warehouses.</td><td><span class="tag-must">MUST HAVE</span></td><td>Prevent 3-4 stockouts/week post-confirmation.</td></tr>
+                        <tr><td><strong>FR-03</strong></td><td>Invoicing</td><td>System shall enforce automatic Credit Hold for accounts with overdue debt > 30 days.</td><td><span class="tag-must">MUST HAVE</span></td><td>Prevent bad debt and enforce AR policy.</td></tr>
+                        <tr><td><strong>FR-04</strong></td><td>Purchasing</td><td>System shall generate draft Purchase Requisitions when stock falls below reorder points.</td><td><span class="tag-must">MUST HAVE</span></td><td>Automate stock replenishment for fast movers.</td></tr>
+                        <tr><td><strong>FR-05</strong></td><td>Invoicing</td><td>System shall execute automated 3-way matching (SO + Delivery Note + Vendor/Customer Invoice).</td><td><span class="tag-must">MUST HAVE</span></td><td>Reduce invoice matching time from 20h to 2h/wk.</td></tr>
+                        <tr><td><strong>FR-06</strong></td><td>Sales</td><td>System shall issue alerts 30 days prior to contract expiration dates.</td><td><span class="tag-should">SHOULD HAVE</span></td><td>Proactive framework contract renewals.</td></tr>
+                        <tr><td><strong>FR-07</strong></td><td>Purchasing</td><td>System shall support multi-vendor RFQ price comparison table.</td><td><span class="tag-should">SHOULD HAVE</span></td><td>Optimize vendor purchasing costs.</td></tr>
+                        <tr><td><strong>FR-08</strong></td><td>Invoicing</td><td>System shall provide executive Accounts Receivable aging debt dashboards.</td><td><span class="tag-could">COULD HAVE</span></td><td>Executive financial credit visibility.</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
@@ -1046,25 +1081,38 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — System Specifications</span>
-                <h2 class="slide-title">Enterprise Use Case Specifications</h2>
+                <h2 class="slide-title">Enterprise Use Case Specifications (UC-01 & UC-03)</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">UC-01: Create Sales Order with Contract Price</div>
-                        <ul style="font-size: 0.82rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.5;">
-                            <li><strong>Actor:</strong> B2B Sales Representative</li>
-                            <li><strong>Precondition:</strong> Client account & Contract agreement active.</li>
-                            <li><strong>Main Flow:</strong> 1. Select Client ➔ 2. System applies Contract Pricelist ➔ 3. Select SKU (`ST-001`) ➔ 4. System checks ATP Stock ➔ 5. Confirm Sales Order.</li>
-                            <li><strong>Exception Flow:</strong> Overdue debt > 30 days ➔ System triggers Credit Hold alert; requires Accounting release.</li>
+                        <div class="card-title" style="font-size: 0.95rem;">UC-SALES-01: Create Sales Order with Contract Price</div>
+                        <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.45;">
+                            <li>• <strong>Primary Actor:</strong> B2B Sales Representative (Vo Duy Binh)</li>
+                            <li>• <strong>Preconditions:</strong> Client account exists and framework agreement registered in Odoo.</li>
+                            <li>• <strong>Main Flow:</strong><br>
+                            1. Sales Rep initiates Sales Order and selects Corporate Client.<br>
+                            2. System retrieves active contract pricelist.<br>
+                            3. Sales Rep adds product SKU (`ST-001` A4 Paper).<br>
+                            4. System populates unit price as 65,000 VND (Contract price) instead of 75,000 VND (List price).<br>
+                            5. System verifies real-time ATP stock availability.<br>
+                            6. Sales Rep confirms Sales Order.</li>
+                            <li>• <strong>Exception Flow (Credit Hold):</strong> Client has overdue debt > 30 days. System locks SO status as "Credit Hold" and requires Accounting override.</li>
                         </ul>
                     </div>
+
                     <div class="glass-card">
-                        <div class="card-title">UC-03: Generate Purchase Requisition</div>
-                        <ul style="font-size: 0.82rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.5;">
-                            <li><strong>Actor:</strong> Purchasing Officer / Warehouse Keeper</li>
-                            <li><strong>Precondition:</strong> Inventory falls below minimum reorder point.</li>
-                            <li><strong>Main Flow:</strong> 1. System flags low stock ➔ 2. Purchasing drafts Purchase Requisition ➔ 3. Send RFQs to Suppliers ➔ 4. Select Supplier & Convert to PO.</li>
+                        <div class="card-title" style="font-size: 0.95rem;">UC-PURCH-01: Generate Purchase Requisition & Vendor PO</div>
+                        <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 1rem; line-height: 1.45;">
+                            <li>• <strong>Primary Actor:</strong> Purchasing Officer / Warehouse Keeper (Pham Nguyen Gia Thuan)</li>
+                            <li>• <strong>Preconditions:</strong> Reorder point rule set for SKU `ST-001` (Min: 100 reams).</li>
+                            <li>• <strong>Main Flow:</strong><br>
+                            1. ATP stock drops below minimum threshold (80 reams).<br>
+                            2. System automatically generates draft Purchase Requisition.<br>
+                            3. Purchasing Officer reviews and sends RFQs to 3 suppliers (Double A, IK Plus, Thien Long).<br>
+                            4. Selects winning supplier based on lead time and price.<br>
+                            5. Converts RFQ to official Vendor Purchase Order (PO).</li>
+                            <li>• <strong>Exception Flow:</strong> PO value > 50,000,000 VND requires Purchasing Manager approval.</li>
                         </ul>
                     </div>
                 </div>
@@ -1075,27 +1123,78 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — Business Governance</span>
-                <h2 class="slide-title">Business Rules & Non-Functional Requirements</h2>
+                <h2 class="slide-title">Business Rules (BR) & Non-Functional Requirements (NFR)</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
                         <div class="card-title">Key Business Rules (BR)</div>
-                        <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-                            <li><strong style="color: var(--text-title);">BR-01 (Contract Pricing Lock):</strong> System forces contract unit price; manual discount > 5% requires Sales Manager approval in Odoo.</li>
-                            <li><strong style="color: var(--text-title);">BR-02 (Credit Hold Policy):</strong> Block SO confirmation automatically if client has unpaid invoices > 30 days overdue or debt > credit limit.</li>
-                            <li><strong style="color: var(--text-title);">BR-03 (Automated Reorder Point):</strong> Reorder alert triggers when ATP stock drops below 100 reams for `ST-001`.</li>
-                            <li><strong style="color: var(--text-title);">BR-04 (3-Way Matching Tolerance):</strong> Invoices matched against Delivery Note & PO within a 0.5% price variance tolerance.</li>
-                        </ul>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rule ID</th>
+                                    <th>Business Rule Description</th>
+                                    <th>Enforcement Module</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>BR-01</strong></td>
+                                    <td>Contract unit prices locked in system; manual discount > 5% requires Sales Manager approval.</td>
+                                    <td>Odoo Sales</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>BR-02</strong></td>
+                                    <td>Sales Orders for clients with overdue debt > 30 days automatically blocked from confirmation.</td>
+                                    <td>Odoo Invoicing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>BR-03</strong></td>
+                                    <td>Automated Reorder alert triggers when ATP stock drops below 100 reams for `ST-001`.</td>
+                                    <td>Odoo Inventory</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>BR-04</strong></td>
+                                    <td>3-Way Invoice matching requires 0.5% price variance tolerance against PO & Delivery Note.</td>
+                                    <td>Odoo Accounting</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+
                     <div class="glass-card">
                         <div class="card-title">Non-Functional Requirements (NFR)</div>
-                        <ul style="font-size: 0.84rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.6;">
-                            <li><strong style="color: var(--text-title);">NFR-01 (Role-Based Access Control):</strong> Strict segregation of duties; Sales Reps cannot override price lists or approve vendor POs.</li>
-                            <li><strong style="color: var(--text-title);">NFR-02 (Performance & Speed):</strong> Real-time ATP inventory lookups execute in &lt; 1.0 second under 50 concurrent users.</li>
-                            <li><strong style="color: var(--text-title);">NFR-03 (Scalability):</strong> Support catalog scaling to 1,000+ SKUs across multiple regional warehouses.</li>
-                            <li><strong style="color: var(--text-title);">NFR-04 (Audit Trail & Integrity):</strong> Complete immutable change logs for all price updates, PO approvals, and credit overrides.</li>
-                        </ul>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NFR ID</th>
+                                    <th>Category</th>
+                                    <th>Specific Metric / Target</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>NFR-01</strong></td>
+                                    <td>Security & Access Control</td>
+                                    <td>Role-Based Access Control (RBAC); strict segregation of duties between Sales, Warehouse, and Invoicing.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>NFR-02</strong></td>
+                                    <td>Performance & Speed</td>
+                                    <td>Real-time ATP inventory lookups execute in &lt; 1.0 second under 50 concurrent users.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>NFR-03</strong></td>
+                                    <td>Scalability</td>
+                                    <td>Support catalog scaling to 1,000+ SKUs across multiple regional warehouses without latency.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>NFR-04</strong></td>
+                                    <td>Audit Integrity</td>
+                                    <td>Complete immutable change logs for all price updates, PO approvals, and credit overrides.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -1116,6 +1215,7 @@
                             <th>Use Case (UC)</th>
                             <th>Odoo ERP Module</th>
                             <th>UAT Test Case</th>
+                            <th>Target Outcome</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1123,29 +1223,33 @@
                             <td>Contract Price Errors (5-8%)</td>
                             <td>FR-01 (Contract Pricelist Engine)</td>
                             <td>UC-01 (Create SO with Contract Price)</td>
-                            <td>Sales (Pricelists)</td>
+                            <td>Odoo Sales (Pricelists)</td>
                             <td>TC-01 (Contract Price Verification)</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">0% Pricing Errors</span></td>
                         </tr>
                         <tr>
                             <td>Post-Confirmation Stockouts</td>
                             <td>FR-02 (Real-Time ATP Stock)</td>
                             <td>UC-02 (Check Stock Availability)</td>
-                            <td>Inventory (ATP Check)</td>
+                            <td>Odoo Inventory (ATP Check)</td>
                             <td>TC-02 (ATP Stock Check)</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">95% Stockout Cut</span></td>
                         </tr>
                         <tr>
                             <td>Stockouts on Fast Movers</td>
                             <td>FR-04 (Auto Reorder & Requisitions)</td>
                             <td>UC-03 (Generate Purchase Requisition)</td>
-                            <td>Purchase (Requisitions)</td>
+                            <td>Odoo Purchase (Requisitions)</td>
                             <td>TC-03 (Low Stock Requisition)</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">Automated PO Draft</span></td>
                         </tr>
                         <tr>
                             <td>Manual 3-Way Match Overhead</td>
                             <td>FR-05 (Automated 3-Way Matching)</td>
                             <td>UC-04 (Customer Invoicing)</td>
-                            <td>Invoicing (Matching)</td>
+                            <td>Odoo Invoicing (Matching)</td>
                             <td>TC-04 (3-Way Invoice Generation)</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">20h ➔ 2h/wk Time Saved</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1156,27 +1260,27 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — ERP Configuration</span>
-                <h2 class="slide-title">Odoo ERP Setup & Master Data Scope</h2>
+                <h2 class="slide-title">Odoo ERP Architecture & Master Data Setup</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div>
                         <div class="grid-2" style="margin-bottom: 0.8rem;">
-                            <div class="glass-card" style="text-align: left; padding: 1rem;">
-                                <div class="card-title" style="font-size: 0.95rem;">Odoo Sales</div>
-                                <p style="font-size: 0.78rem; color: var(--text-muted);">Contract Pricelists, Quotations, Sales Orders, Credit Checks.</p>
+                            <div class="glass-card" style="padding: 0.9rem;">
+                                <div class="card-title" style="font-size: 0.9rem;">Odoo Sales</div>
+                                <p style="font-size: 0.76rem; color: var(--text-muted);">Contract Pricelists, Quotations, Sales Orders, Credit Hold Checks.</p>
                             </div>
-                            <div class="glass-card" style="text-align: left; padding: 1rem;">
-                                <div class="card-title" style="font-size: 0.95rem;">Odoo Purchase</div>
-                                <p style="font-size: 0.78rem; color: var(--text-muted);">Purchase Requisitions, RFQs, Vendor POs, Replenishment Rules.</p>
+                            <div class="glass-card" style="padding: 0.9rem;">
+                                <div class="card-title" style="font-size: 0.9rem;">Odoo Purchase</div>
+                                <p style="font-size: 0.76rem; color: var(--text-muted);">Purchase Requisitions, RFQs, Vendor POs, Replenishment Rules.</p>
                             </div>
-                            <div class="glass-card" style="text-align: left; padding: 1rem;">
-                                <div class="card-title" style="font-size: 0.95rem;">Odoo Inventory</div>
-                                <p style="font-size: 0.78rem; color: var(--text-muted);">Tan Binh & Bien Hoa Warehouses, Picking/Packing, Stock Receipts.</p>
+                            <div class="glass-card" style="padding: 0.9rem;">
+                                <div class="card-title" style="font-size: 0.9rem;">Odoo Inventory</div>
+                                <p style="font-size: 0.76rem; color: var(--text-muted);">Tan Binh & Bien Hoa Warehouses, Picking/Packing, Stock Receipts.</p>
                             </div>
-                            <div class="glass-card" style="text-align: left; padding: 1rem;">
-                                <div class="card-title" style="font-size: 0.95rem;">Odoo Invoicing</div>
-                                <p style="font-size: 0.78rem; color: var(--text-muted);">VAT Invoices, Payment Matching, Net 30 Debt Control.</p>
+                            <div class="glass-card" style="padding: 0.9rem;">
+                                <div class="card-title" style="font-size: 0.9rem;">Odoo Invoicing</div>
+                                <p style="font-size: 0.76rem; color: var(--text-muted);">VAT Invoices, Payment Matching, Net 30 Debt Control.</p>
                             </div>
                         </div>
                     </div>
@@ -1192,7 +1296,7 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 4 — Testing & Validation</span>
-                <h2 class="slide-title">Peer UAT Testing Results & Evidence</h2>
+                <h2 class="slide-title">Peer UAT Testing Results & System Validation</h2>
             </div>
             <div class="slide-content">
                 <table>
@@ -1200,7 +1304,7 @@
                         <tr>
                             <th>Test Case ID</th>
                             <th>Test Scenario</th>
-                            <th>Expected Result</th>
+                            <th>Expected System Behavior</th>
                             <th>Actual Odoo Result</th>
                             <th>Status</th>
                         </tr>
@@ -1209,29 +1313,29 @@
                         <tr>
                             <td><strong>TC-01</strong></td>
                             <td>Select Corporate Client A on Sales Order for SKU `ST-001`</td>
-                            <td>System retrieves contract price 65,000 VND instead of standard price</td>
-                            <td>Contract price 65,000 VND applied automatically</td>
+                            <td>System retrieves contract price 65,000 VND instead of standard list price (75,000 VND).</td>
+                            <td>Contract price 65,000 VND applied automatically upon client selection.</td>
                             <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
                         </tr>
                         <tr>
                             <td><strong>TC-02</strong></td>
-                            <td>Order 500 reams when physical stock is 200 reams</td>
-                            <td>System triggers ATP Stock Shortage alert to Sales Rep</td>
-                            <td>ATP warning displayed; delivery date flagged</td>
+                            <td>Order 500 reams when physical stock is 200 reams.</td>
+                            <td>System triggers ATP Stock Shortage alert to Sales Rep before confirmation.</td>
+                            <td>ATP warning displayed; delivery schedule date flagged.</td>
                             <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
                         </tr>
                         <tr>
                             <td><strong>TC-03</strong></td>
-                            <td>Stock drops below reorder point (100 reams)</td>
-                            <td>System generates Purchase Requisition draft for Purchasing</td>
-                            <td>Draft Purchase Requisition created automatically</td>
+                            <td>Stock drops below reorder point threshold (100 reams).</td>
+                            <td>System generates draft Purchase Requisition for Purchasing officer.</td>
+                            <td>Draft Purchase Requisition created automatically in Purchase module.</td>
                             <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
                         </tr>
                         <tr>
                             <td><strong>TC-04</strong></td>
-                            <td>Client with > 30 days overdue debt places order</td>
-                            <td>System locks Sales Order confirmation; requires AR release</td>
-                            <td>Credit Hold status enforced automatically</td>
+                            <td>Client with > 30 days overdue debt attempts order.</td>
+                            <td>System locks Sales Order confirmation; requires AR Accountant release.</td>
+                            <td>Credit Hold status enforced automatically on Sales Order.</td>
                             <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
                         </tr>
                     </tbody>
@@ -1249,14 +1353,16 @@
                 <div class="grid-2">
                     <div class="glass-card" style="border-color: var(--md-sys-color-primary);">
                         <div class="card-title">Live Demo Scenario Execution Sequence</div>
-                        <div class="flow-container" style="flex-direction: column; gap: 0.5rem; margin: 0.8rem 0;">
-                            <div class="flow-step" style="width: 100%;">1. Sales Order (Contract Price)</div>
+                        <div class="flow-container" style="flex-direction: column; gap: 0.45rem; margin: 0.6rem 0;">
+                            <div class="flow-step" style="width: 100%;">1. Sales Order Entry (Contract Price 65,000 VND)</div>
                             <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">2. ATP Stock Check</div>
+                            <div class="flow-step" style="width: 100%;">2. Real-Time ATP Stock Verification</div>
                             <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">3. Purchase PO (Stockout Trigger)</div>
+                            <div class="flow-step" style="width: 100%;">3. Low-Stock Purchase Requisition & Vendor PO</div>
                             <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">4. Stock Receipt & Invoicing</div>
+                            <div class="flow-step" style="width: 100%;">4. Warehouse Stock Receipt & Bin Picking</div>
+                            <span class="flow-arrow">↓</span>
+                            <div class="flow-step" style="width: 100%;">5. Delivery Note & Automated 3-Way Matching Invoice</div>
                         </div>
                     </div>
                     <div class="glass-card">
@@ -1271,24 +1377,24 @@
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Conclusion & Defense</span>
-                <h2 class="slide-title">Summary & Oral Q&A Defense</h2>
+                <h2 class="slide-title">Summary of Proposed Business Value & Q&A</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">Key Project Takeaways</div>
-                        <ul style="color: var(--text-muted); font-size: 0.88rem; padding-left: 1.2rem; line-height: 1.6;">
-                            <li>Eliminated 5-8% pricing errors via automated contract pricelists.</li>
-                            <li>Prevented post-confirmation stockouts with real-time ATP inventory.</li>
-                            <li>Streamlined 3-way invoice matching and automated credit hold enforcement.</li>
-                            <li>Demonstrated full end-to-end traceability from business problem to UAT validation.</li>
+                        <div class="card-title">Quantified Business Impact & Value</div>
+                        <ul style="color: var(--text-muted); font-size: 0.85rem; padding-left: 1.1rem; line-height: 1.55;">
+                            <li>• <strong>0% Pricing Errors:</strong> Saved estimated 50 million VND monthly in billing adjustments.</li>
+                            <li>• <strong>95% Stockout Reduction:</strong> Eliminated post-confirmation order cancellations.</li>
+                            <li>• <strong>90% Time Saved:</strong> Reduced accounting invoice matching from 20 hours to 2 hours/week.</li>
+                            <li>• <strong>Traceability:</strong> Demonstrated full alignment from Business Problem ➔ UAT Validation.</li>
                         </ul>
                     </div>
                     <div class="glass-card" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 2.5rem; color: var(--md-sys-color-primary);">Q & A</h3>
-                        <p style="color: var(--text-muted); font-size: 1rem; margin-top: 0.5rem;">
+                        <h3 style="font-family: 'Outfit', sans-serif; font-size: 2.2rem; color: var(--md-sys-color-primary);">ORAL DEFENSE Q & A</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem;">
                             Thank you for your attention!  
-                            We welcome questions from the Examination Board.
+                            We welcome questions from MSc. Nguyen Thi Thanh Thanh and the Examination Board.
                         </p>
                     </div>
                 </div>
@@ -1330,7 +1436,6 @@
         const overviewGrid = document.getElementById('overview-grid');
         const themeBtn = document.getElementById('theme-btn');
 
-        // Toggle Theme Function (Light Mode default / Dark Mode toggle)
         function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -1338,7 +1443,6 @@
             themeBtn.innerText = newTheme === 'dark' ? 'Dark Mode' : 'Light Mode';
         }
 
-        // Populate Overview Grid
         slides.forEach((slide, index) => {
             const titleElement = slide.querySelector('.slide-title');
             const titleText = titleElement ? titleElement.innerText : `Slide ${index + 1}`;
@@ -1346,8 +1450,8 @@
             card.className = `overview-card ${index === 0 ? 'active' : ''}`;
             card.innerHTML = `
                 <div style="font-size: 0.75rem; color: var(--md-sys-color-primary); font-weight: 700;">SLIDE ${index + 1}</div>
-                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text-title); margin: 0.4rem 0;">${titleText}</div>
-                <div style="font-size: 0.75rem; color: var(--text-muted);">Click to jump</div>
+                <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-title); margin: 0.3rem 0;">${titleText}</div>
+                <div style="font-size: 0.72rem; color: var(--text-muted);">Click to jump</div>
             `;
             card.onclick = () => {
                 currentSlide = index;
@@ -1367,7 +1471,6 @@
             btnPrev.disabled = currentSlide === 0;
             btnNext.disabled = currentSlide === totalSlides - 1;
 
-            // Highlight overview card
             document.querySelectorAll('.overview-card').forEach((card, index) => {
                 card.classList.toggle('active', index === currentSlide);
             });
@@ -1403,7 +1506,6 @@
             overviewModal.classList.toggle('open');
         }
 
-        // Keyboard Navigation
         document.addEventListener('keydown', (e) => {
             if (overviewModal.classList.contains('open')) {
                 if (e.key === 'Escape' || e.key === 'm' || e.key === 'M') {
@@ -1425,7 +1527,6 @@
             }
         });
 
-        // Touch Swipe Navigation
         let touchStartX = 0;
         let touchEndX = 0;
         document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
@@ -1436,7 +1537,6 @@
             if (touchEndX - touchStartX > 50) prevSlide();
         });
 
-        // Initialize
         updateSlide();
     </script>
 </body>
