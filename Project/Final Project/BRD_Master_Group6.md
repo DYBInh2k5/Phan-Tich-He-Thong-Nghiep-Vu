@@ -68,7 +68,7 @@ Due to rapid business growth, OfficePro currently experiences significant operat
 | 8. Requirements Traceability Matrix (RTM) | R | **A/R** |
 | 9. Odoo ERP Setup & 10 SKUs Master Data | C | **A/R** |
 | 10. Peer UAT Execution & Test Logs | R | **A/R** |
-| 11. Final BRD & Live Demo Defense | **A/R** (Lead Presenter) | R (Demo PO) | R (Demo Stock) | R (Demo Invoice) |
+| 11. Final BRD & Live Demo Defense | **A/R** (Lead Presenter & Demo) | R (QA & Demo UAT) |
 
 ---
 

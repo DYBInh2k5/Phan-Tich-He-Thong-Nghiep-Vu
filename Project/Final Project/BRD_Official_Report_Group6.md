@@ -295,10 +295,8 @@ By transitioning OfficePro Distribution from manual Excel/paper procedures to an
 * Accounting invoice matching time is reduced from **20 hours/week to 2 hours/week**.
 
 ## Team Reflection & Individual Lessons Learned
-* **Vo Duy Binh (Lead BA)**: Learned that pricing errors are systemic rather than individual mistakes; effective BA requires cross-functional alignment between Sales and Accounting.
-* **Tran Ba Loi (PM)**: Gained deep insight into supply chain lead times and automated replenishment threshold design.
-* **Nguyen Vu Minh Huy (Configurator)**: Mastered real-time ATP inventory modeling across multi-location warehouse setups.
-* **Pham Nguyen Gia Thuan (QA Analyst)**: Experienced the critical importance of 3-way invoice matching and automated credit controls in financial risk mitigation.
+* **Vo Duy Binh (Lead BA & Systems Analyst)**: Learned that pricing and fulfillment errors are systemic rather than individual employee mistakes; an effective BA requires cross-functional alignment connecting Sales, Purchasing, and Financial controls.
+* **Pham Nguyen Gia Thuan (QA & Solution Configurator)**: Mastered real-time ATP inventory modeling across multi-location warehouse setups and experienced the critical importance of automated 3-way invoice matching and hard credit controls in financial risk mitigation.
 
 ***
 
@@ -315,4 +313,4 @@ By transitioning OfficePro Distribution from manual Excel/paper procedures to an
 Contains transcript logs from interviews conducted with Sales Manager, Purchasing Manager, Warehouse Manager, and Chief Accountant via AI Stakeholder Simulator.
 
 ## Appendix B. Individual Contribution Sign-off
-All 4 group members contributed equally to the research, analysis, BPMN modeling, use case specifications, and final report compilation under the leadership of **Vo Duy Binh (22301500)**.
+Both active group members (**Vo Duy Binh - 22301500** and **Pham Nguyen Gia Thuan - 22204631**) contributed equally to the research, analysis, BPMN modeling, use case specifications, and final report compilation under the leadership of **Vo Duy Binh**.
