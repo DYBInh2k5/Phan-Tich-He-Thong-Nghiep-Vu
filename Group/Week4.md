@@ -46,13 +46,13 @@ Evidence Status: Mark each step as Confirmed (from interview), Uncertain (vague 
 Unresolved Questions: Write 1–2 specific follow-up questions needed to clarify remaining gaps in your next interview.
 
 ✅ SELF-CHECKLIST
-[ ] Activities are named using [Verb] + [Noun] phrasing.
+[x] Activities are named using [Verb] + [Noun] phrasing.
 
-[ ] Flowchart blocks map 1-to-1 with the Process Table rows.
+[x] Flowchart blocks map 1-to-1 with the Process Table rows.
 
-[ ] No future technology or process fixes are proposed.
+[x] No future technology or process fixes are proposed.
 
-[ ] Document fits cleanly within 1–2 pages PDF.
+[x] Document fits cleanly within 1–2 pages PDF.
 
 
 ---
