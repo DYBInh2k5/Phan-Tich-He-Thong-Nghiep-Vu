@@ -93,11 +93,11 @@ Due to rapid business growth, OfficePro currently experiences significant operat
 * **Key Finding 2**: Sales staff lack visibility into real-time inventory levels. They rely on daily Excel stock summaries or call warehouse keepers directly, resulting in **3–4 stockouts per week** after order confirmation.
 * **Key Finding 3**: Sales reps frequently appeal to management to override paper credit holds for clients with overdue balances over 30 days to hit sales targets.
 
-### 2. Purchasing Department (Interviewee: Purchasing Manager — Conducted by Tran Ba Loi)
+### 2. Purchasing Department (Interviewee: Purchasing Manager — Conducted by Vo Duy Binh)
 * **Key Finding 1**: Replenishment is triggered manually when warehouse keepers report low stock. High-demand paper items (`ST-001`) frequently experience stockouts before purchase orders are placed.
 * **Key Finding 2**: Vendor quotation comparison across suppliers (e.g., Double A, Thien Long, HP) is done via email threads, taking **2–3 days** to finalize supplier selection.
 
-### 3. Warehouse Department (Interviewee: Warehouse Manager — Conducted by Nguyen Vu Minh Huy)
+### 3. Warehouse Department (Interviewee: Warehouse Manager — Conducted by Pham Nguyen Gia Thuan)
 * **Key Finding 1**: Incoming shipments from suppliers sit in the receiving area for **24–48 hours** before physical inspection and paper ledger entry are completed.
 * **Key Finding 2**: Picking is done from memory without bin location codes or barcode scanners, causing frequent picking mix-ups between similar SKUs (`ST-001` 70gsm vs `ST-002` 80gsm).
 

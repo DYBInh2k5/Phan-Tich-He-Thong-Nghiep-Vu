@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group 6 BSA Final Defense Slides — OfficePro Distribution</title>
+    <title>Group 6 BSA Phase 1 Defense Slides — OfficePro Distribution</title>
     <!-- Google Fonts: Roboto & Outfit (Material You MD3 Typographic DNA) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -372,12 +372,6 @@
             gap: 1.1rem;
         }
 
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.95rem;
-        }
-
         .slide-img {
             width: 100%;
             max-height: 230px;
@@ -665,7 +659,7 @@
     <header>
         <div class="brand-logo">
             <span>OfficePro Distribution</span>
-            <span class="badge-group">GROUP 6 — BSA FINAL DEFENSE</span>
+            <span class="badge-group">GROUP 6 — BSA PHASE 1 DEFENSE</span>
         </div>
         <div class="header-controls">
             <button class="btn-ctrl" onclick="toggleTheme()" id="theme-btn">Light Mode</button>
@@ -683,7 +677,7 @@
                 <span class="slide-tag" style="font-size: 1.05rem;">Faculty of Technology — Hoa Sen University</span>
                 <h1 class="slide-title" style="font-size: 3.2rem; margin: 0.7rem 0; color: var(--md-sys-color-primary);">BUSINESS SYSTEMS ANALYSIS (BSA)</h1>
                 <p style="font-size: 1.4rem; color: var(--text-main); font-weight: 600; margin-bottom: 1.6rem;">
-                    Final Business Requirements Document (BRD) & Odoo ERP Prototype Defense
+                    Phase 1 Mid-Term Assessment: Business Requirements Document (BRD)
                 </p>
                 <div class="glass-card" style="display: inline-block; text-align: left; padding: 1.8rem 2.8rem; border-radius: var(--radius-xl); width: 100%;">
                     <div class="grid-2" style="gap: 1.8rem;">
@@ -693,7 +687,7 @@
                             </p>
                             <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 0.5rem;">Domain: <strong>Scenario B — B2B Wholesale & Distribution (Office Supplies & Stationery)</strong></p>
                             <p style="color: var(--text-muted); font-size: 0.94rem; line-height: 1.6;">
-                                End-to-end Business Systems Analysis applying the <em>Business-First → Technology-Second</em> methodology: from Enterprise Context, Stakeholder Elicitation, AS-IS BPMN Bottlenecks, 5-Whys Root Cause Analysis, to TO-BE Re-engineering, MoSCoW FRs, Use Case Specs, and Odoo ERP Prototype Validation.
+                                Pure Business Analysis (Phase 1): Investigating enterprise operations, stakeholder information needs, AS-IS BPMN friction, 5-Whys root cause analysis, TO-BE re-engineering, and MoSCoW functional requirements.
                             </p>
                         </div>
                         <div style="border-left: 1px solid var(--md-sys-color-surface-container-highest); padding-left: 1.4rem;">
@@ -712,214 +706,334 @@
             </div>
         </div>
 
-        <!-- SLIDE 2: ENTERPRISE PROFILE & MASTER DATA CATALOG -->
+        <!-- SLIDE 2: ENTERPRISE CONTEXT & PROFILE -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 1 — Enterprise Context</span>
-                <h2 class="slide-title">Enterprise Profile & Master Data Catalog Scope</h2>
+                <h2 class="slide-title">Enterprise Profile & Business Model Overview</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">Company Profile & Operational Scope</div>
+                        <div class="card-title">Company Profile & Market Position</div>
                         <p class="card-text" style="font-size: 0.95rem; margin-bottom: 0.7rem;">
-                            <strong>OfficePro Distribution Co., Ltd.</strong> is a regional B2B wholesale distributor supplying commercial paper, stationery, and consumables to over <strong>250 active corporate clients</strong>, educational institutions, and sub-dealers across Southern Vietnam.
+                            <strong>OfficePro Distribution Co., Ltd.</strong> is a regional commercial B2B wholesale distributor supplying office stationery, commercial copy paper, and printer consumables to over <strong>250 active corporate clients</strong>, educational institutions, and retail sub-dealers across Southern Vietnam.
                         </p>
                         <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.7rem;">
-                            <p>• <strong>Corporate HQ:</strong> District 3, Ho Chi Minh City</p>
-                            <p>• <strong>Central Warehouse:</strong> Tan Binh IP, HCMC (2,500 m²; 80% bulk stock)</p>
-                            <p>• <strong>Regional Depot:</strong> Bien Hoa 2 IP, Dong Nai (Fast industrial park delivery)</p>
-                            <p>• <strong>Target Segments:</strong> Corporate B2B (Net 30 terms), Schools, Sub-dealers</p>
+                            <p>• <strong>Business Model:</strong> High-volume B2B wholesale procurement & contract fulfillment.</p>
+                            <p>• <strong>Primary Upstream Suppliers:</strong> Double A, IK Plus, Thien Long, Pilot, HP Vietnam.</p>
+                            <p>• <strong>Commercial Pricing Structure:</strong> Annual framework contract agreements with discounted tiers.</p>
+                            <p>• <strong>Credit Terms:</strong> Standard Net 30 commercial credit terms for verified corporate accounts.</p>
                         </div>
                         <img src="./assets/officepro_warehouse.jpg" alt="OfficePro B2B Distribution Warehouse" class="slide-img">
                     </div>
 
                     <div class="glass-card">
-                        <div class="card-title">10 Master Data SKUs & Standard Pricelist</div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>SKU Code</th>
-                                    <th>Product Description</th>
-                                    <th>Category</th>
-                                    <th>UoM</th>
-                                    <th>Standard List Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>`ST-001`</td><td>A4 Copy Paper Double A 70gsm</td><td>Paper Products</td><td>Ream</td><td>65,000 VND</td></tr>
-                                <tr><td>`ST-002`</td><td>A4 Copy Paper IK Plus 80gsm</td><td>Paper Products</td><td>Ream</td><td>75,000 VND</td></tr>
-                                <tr><td>`ST-003`</td><td>Thien Long TL-027 Ballpoint Pen</td><td>Writing Inst.</td><td>Box (20)</td><td>90,000 VND</td></tr>
-                                <tr><td>`ST-004`</td><td>Pilot G2 Black Gel Pen 0.7mm</td><td>Writing Inst.</td><td>Box (12)</td><td>320,000 VND</td></tr>
-                                <tr><td>`ST-005`</td><td>King Jim A4 Display Book 60P</td><td>Filing Supplies</td><td>Piece</td><td>45,000 VND</td></tr>
-                                <tr><td>`ST-006`</td><td>Deli A5 Spiral Notebook 160P</td><td>Filing Supplies</td><td>Piece</td><td>35,000 VND</td></tr>
-                                <tr><td>`ST-007`</td><td>Kangaro HD-10 Heavy Duty Stapler</td><td>Office Tools</td><td>Piece</td><td>28,000 VND</td></tr>
-                                <tr><td>`ST-008`</td><td>Kangaro No.10 Staples (Box 20)</td><td>Office Tools</td><td>Big Box</td><td>42,000 VND</td></tr>
-                                <tr><td>`ST-009`</td><td>HP 107a Black Laser Toner</td><td>Consumables</td><td>Box</td><td>1,150,000 VND</td></tr>
-                                <tr><td>`ST-010`</td><td>Pentel WB1 Whiteboard Marker</td><td>Writing Inst.</td><td>Box (12)</td><td>180,000 VND</td></tr>
-                            </tbody>
-                        </table>
+                        <div class="card-title">Customer Segments & Delivery Channels</div>
+                        <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--text-title);">1. Corporate Enterprise Accounts:</strong><br>
+                            Large commercial businesses ordering bulk monthly supplies. Require customized contracted pricing agreements, customized packing, and Net 30 invoices.</p>
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--text-title);">2. Educational Institutions:</strong><br>
+                            Universities and schools ordering seasonal batches prior to academic semesters. Disbursements tied to formal state/institutional invoicing.</p>
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--text-title);">3. Sub-Dealers & Stationery Retailers:</strong><br>
+                            Local retail outlets purchasing frequent medium-sized reorders under tiered volume discount schedules.</p>
+                            <p><strong style="color: var(--text-title);">Sales Channels:</strong> Direct B2B Account Representatives, Corporate Email/Zalo OA inquiries, and Formal Annual Framework Contracts.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 3: RACI MATRIX -->
+        <!-- SLIDE 3: 10 MASTER DATA SKUS -->
         <div class="slide">
             <div class="slide-header">
-                <span class="slide-tag">Section 1 — Governance</span>
-                <h2 class="slide-title">Group RACI Assignment Matrix & Responsibilities</h2>
+                <span class="slide-tag">Section 1 — Master Data Scope</span>
+                <h2 class="slide-title">10 Primary SKUs & Standard Pricelist Catalog</h2>
             </div>
             <div class="slide-content">
                 <table>
                     <thead>
                         <tr>
-                            <th>Project Deliverable / Milestone</th>
-                            <th>Vo Duy Binh (22301500)<br>Lead BA & Systems Analyst</th>
-                            <th>Pham Nguyen Gia Thuan (22204631)<br>QA & Solution Configurator</th>
-                            <th>RACI Governance Rule & Output</th>
+                            <th>No.</th>
+                            <th>SKU Code</th>
+                            <th>Product Description</th>
+                            <th>Category</th>
+                            <th>UoM</th>
+                            <th>Standard List Price (VND)</th>
+                            <th>Contract Price Tier (VND)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>`ST-001`</td><td>A4 Copy Paper Double A 70gsm (500 sheets/ream)</td><td>Paper Products</td><td>Ream</td><td>75,000</td><td><span class="highlight">65,000</span></td></tr>
+                        <tr><td>2</td><td>`ST-002`</td><td>A4 Copy Paper IK Plus 80gsm (500 sheets/ream)</td><td>Paper Products</td><td>Ream</td><td>85,000</td><td><span class="highlight">75,000</span></td></tr>
+                        <tr><td>3</td><td>`ST-003`</td><td>Thien Long TL-027 Blue Ballpoint Pen (Box of 20)</td><td>Writing Inst.</td><td>Box</td><td>90,000</td><td>80,000</td></tr>
+                        <tr><td>4</td><td>`ST-004`</td><td>Pilot G2 Black Gel Pen 0.7mm (Box of 12)</td><td>Writing Inst.</td><td>Box</td><td>320,000</td><td>290,000</td></tr>
+                        <tr><td>5</td><td>`ST-005`</td><td>King Jim A4 Display Book 60 Pockets</td><td>Filing Supplies</td><td>Piece</td><td>45,000</td><td>38,000</td></tr>
+                        <tr><td>6</td><td>`ST-006`</td><td>Deli A5 Spiral Notebook 160 Pages</td><td>Filing Supplies</td><td>Piece</td><td>35,000</td><td>29,000</td></tr>
+                        <tr><td>7</td><td>`ST-007`</td><td>Kangaro HD-10 Heavy Duty Stapler</td><td>Office Tools</td><td>Piece</td><td>28,000</td><td>24,000</td></tr>
+                        <tr><td>8</td><td>`ST-008`</td><td>Kangaro No.10 Staples (Box of 20 small packs)</td><td>Office Tools</td><td>Big Box</td><td>42,000</td><td>36,000</td></tr>
+                        <tr><td>9</td><td>`ST-009`</td><td>Original HP 107a Black Laser Toner Cartridge</td><td>Consumables</td><td>Box</td><td>1,150,000</td><td>1,050,000</td></tr>
+                        <tr><td>10</td><td>`ST-010`</td><td>Pentel WB1 Whiteboard Marker (Box of 12)</td><td>Writing Inst.</td><td>Box</td><td>180,000</td><td>155,000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: FACILITIES & SCOPE BOUNDARIES -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 1 — Operational Scope</span>
+                <h2 class="slide-title">Facilities Network & Project Scope Boundaries</h2>
+            </div>
+            <div class="slide-content">
+                <div class="grid-2">
+                    <div class="glass-card">
+                        <div class="card-title">Facilities & Operating Locations</div>
+                        <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--text-title);">1. Corporate Headquarters & Commercial Office:</strong><br>
+                            District 3, Ho Chi Minh City. Houses Executive Management, B2B Account Reps, Procurement Specialists, and Finance/Accounting.</p>
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--text-title);">2. Central Distribution Warehouse (Tan Binh IP):</strong><br>
+                            Total floor area: <strong>2,500 m²</strong>. Stores 80% of bulk pallets (paper reams, toner stocks). Primary receiving bay and cross-docking terminal.</p>
+                            <p><strong style="color: var(--text-title);">3. Regional Fulfillment Depot (Bien Hoa 2 IP, Dong Nai):</strong><br>
+                            Total area: 800 m². Provides rapid same-day replenishment to manufacturing zones across Dong Nai and Binh Duong.</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="card-title">Phase 1 In-Scope vs. Out-of-Scope Boundaries</div>
+                        <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--accent-emerald);">In-Scope (Pure Business Systems Analysis):</strong><br>
+                            • B2B Sales order negotiation, quotation drafting & contract pricelists.<br>
+                            • Real-time stock visibility & Available-to-Promise (ATP) inventory check.<br>
+                            • Automated low-stock reorder thresholds & vendor purchase requisitions.<br>
+                            • Outbound warehouse picking, packing, and digital delivery handoffs.<br>
+                            • Accounts Receivable 3-way invoice matching and Net 30 credit policy.</p>
+                            <p><strong style="color: var(--accent-rose);">Out-of-Scope (Boundaries):</strong><br>
+                            • Human Resource payroll, manufacturing BOM kitting, retail consumer POS checkout, and international import customs clearing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: RACI MATRIX -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 1 — Governance</span>
+                <h2 class="slide-title">Group RACI Assignment Matrix & Module Ownership</h2>
+            </div>
+            <div class="slide-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Phase 1 Milestone / Deliverable</th>
+                            <th>Vo Duy Binh (Student ID: 22301500)<br>Lead BA & Systems Analyst</th>
+                            <th>Pham Nguyen Gia Thuan (Student ID: 22204631)<br>QA & Solution Configurator</th>
+                            <th>Operational Output</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Enterprise Profile & RACI Setup</strong></td>
+                            <td><strong>Enterprise Profile & Scope Definition</strong></td>
                             <td><span class="highlight">Accountable / Responsible</span></td>
                             <td>Responsible</td>
-                            <td>Defines business model, 10 SKUs, and team scope boundaries.</td>
+                            <td>Case background, 10 SKUs, facilities, and boundaries.</td>
                         </tr>
                         <tr>
-                            <td><strong>AI Stakeholder Interviews & Elicitation</strong></td>
+                            <td><strong>Stakeholder Elicitation & Info Needs</strong></td>
                             <td><span class="highlight">Accountable / Responsible</span> (Sales & Purchasing)</td>
                             <td>Responsible (Warehouse & Accounting)</td>
-                            <td>Conducts AI stakeholder interviews; builds Information Needs Matrix.</td>
+                            <td>AI stakeholder interviews; Information Needs Matrix.</td>
                         </tr>
                         <tr>
-                            <td><strong>AS-IS Process & Bottleneck Analysis</strong></td>
+                            <td><strong>AS-IS Process & Bottleneck Modeling</strong></td>
                             <td><span class="highlight">Accountable / Responsible</span> (Sales Order & RFQ)</td>
                             <td>Responsible (Stock Check & Invoicing)</td>
-                            <td>Maps manual Excel/paper workflows and quantifies operational friction.</td>
+                            <td>Maps manual Excel/paper workflows and quantifies friction.</td>
                         </tr>
                         <tr>
-                            <td><strong>5-Whys Root Cause & TO-BE Re-engineering</strong></td>
+                            <td><strong>5-Whys Root Cause Analysis</strong></td>
                             <td><span class="highlight">Accountable / Responsible</span></td>
                             <td>Responsible</td>
-                            <td>Establishes root cause chains and designs integrated BPMN workflows.</td>
+                            <td>Analyzes root causes for pricing errors, stockouts, and billing.</td>
                         </tr>
                         <tr>
-                            <td><strong>MoSCoW Functional Requirements Catalog</strong></td>
+                            <td><strong>TO-BE Process Re-engineering Design</strong></td>
+                            <td><span class="highlight">Accountable / Responsible</span></td>
+                            <td>Responsible</td>
+                            <td>Designs cross-functional TO-BE integrated BPMN flow.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MoSCoW Requirements Catalog Framing</strong></td>
                             <td>Responsible</td>
                             <td><span class="highlight">Accountable / Responsible</span></td>
-                            <td>Frames FR-01 to FR-08 with Must/Should/Could prioritization.</td>
+                            <td>Frames FR-01 to FR-08 with Must/Should/Could priorities.</td>
                         </tr>
                         <tr>
-                            <td><strong>Use Case Specifications & RTM Matrix</strong></td>
-                            <td><span class="highlight">Accountable / Responsible</span> (UC-01 & UC-03)</td>
-                            <td>Responsible (UC-02 & UC-04)</td>
-                            <td>Drafts Use Case specs and connects Problem ➔ FR ➔ UC ➔ Odoo Module.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Odoo ERP Core Module Setup & Config</strong></td>
-                            <td>Consulted (Sales & Purchase Rules)</td>
-                            <td><span class="highlight">Accountable / Responsible</span> (Odoo ERP)</td>
-                            <td>Configures Sales Pricelists, Inventory ATP, Reorder Rules & Invoicing.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Peer UAT Testing & Final Presentation</strong></td>
-                            <td><span class="highlight">Accountable / Responsible</span> (Lead Defense)</td>
-                            <td>Responsible (Demo & Test Scripts)</td>
-                            <td>Executes UAT TC-01 to TC-04 and delivers final oral defense presentation.</td>
+                            <td><strong>Phase 1 Master BRD Report Compilation</strong></td>
+                            <td><span class="highlight">Accountable / Responsible</span> (Lead Author)</td>
+                            <td>Responsible (QA Review & Editing)</td>
+                            <td>Compiles Sections 1, 2, and 3 matching course guidelines.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- SLIDE 4: STAKEHOLDER MATRIX & EVIDENCE LOG -->
+        <!-- SLIDE 6: STAKEHOLDER POWER / INTEREST GRID -->
         <div class="slide">
             <div class="slide-header">
-                <span class="slide-tag">Section 2 — Elicitation Evidence</span>
-                <h2 class="slide-title">Stakeholder Power/Interest Matrix & Evidence Log</h2>
+                <span class="slide-tag">Section 2 — Stakeholder Analysis</span>
+                <h2 class="slide-title">Stakeholder Identification & Power/Interest Grid</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">Stakeholder Power / Interest Grid & Info Needs</div>
+                        <div class="card-title">Power / Interest Grid Dynamics</div>
                         <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
-                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong><br>
-                            • <em>Sales Manager:</em> Enforces contract pricelists, approves quotes > 5% discount.<br>
-                            • <em>Business Owner:</em> Requires gross margin visibility and reduced revenue leakage.</p>
-                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong><br>
-                            • <em>Chief Accountant:</em> Requires hard Net 30 credit holds and automated 3-way matching.</p>
-                            <p style="margin-bottom: 0.5rem;"><strong style="color: var(--accent-cyan);">Keep Informed (Low Power / High Interest):</strong><br>
-                            • <em>Warehouse Keeper:</em> Needs real-time incoming PO schedules and bin location picking.<br>
-                            • <em>Sales Reps:</em> Require instant contract price lookup and real-time ATP stock availability.</p>
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--accent-rose);">Manage Closely (High Power / High Interest):</strong><br>
+                            • <em>Sales Manager:</em> Focuses on contract pricelist enforcement, quota achievement, and margin preservation.<br>
+                            • <em>Business Owner:</em> Requires cross-functional operational visibility and elimination of revenue leakages.</p>
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--accent-amber);">Keep Satisfied (High Power / Med Interest):</strong><br>
+                            • <em>Chief Accountant:</em> Enforces strict Net 30 debt clearance, VAT compliance, and accurate 3-way matching.</p>
+                            <p style="margin-bottom: 0.6rem;"><strong style="color: var(--accent-cyan);">Keep Informed (Low Power / High Interest):</strong><br>
+                            • <em>Warehouse Keeper:</em> Needs advance notice of incoming supplier shipments and clear outbound picking notes.<br>
+                            • <em>B2B Sales Reps:</em> Need instant contract price lookups and reliable stock availability data.</p>
                             <p><strong style="color: var(--text-muted);">Monitor (Low Power / Low Interest):</strong> External Suppliers & Sub-Dealers.</p>
                         </div>
                     </div>
 
                     <div class="glass-card">
-                        <div class="card-title">Verified Elicitation Findings Log</div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Baseline Assumption</th>
-                                    <th>Interview Evidence Obtained</th>
-                                    <th>Verified Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Sales reps look up contract prices manually from Excel sheets.</td>
-                                    <td>Sales Manager confirmed reps copy-paste prices from account Excel files, causing 5-8% pricing errors monthly.</td>
-                                    <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Sales confirms orders based on informal phone stock checks.</td>
-                                    <td>Sales Manager admitted reps rely on daily Excel reports or phone calls, causing 3-4 stockouts/week post-confirmation.</td>
-                                    <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Credit holds for overdue accounts (> 30 days) are auto-enforced.</td>
-                                    <td>Sales Manager clarified a credit policy exists on paper, but reps frequently request verbal manager overrides to hit targets.</td>
-                                    <td><span style="color: var(--accent-amber); font-weight: 700;">REVISED</span></td>
-                                </tr>
-                                <tr>
-                                    <td>Replenishment is triggered automatically when stock is low.</td>
-                                    <td>Purchasing Manager stated replenishment is triggered manually via handwritten notes from warehouse staff.</td>
-                                    <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="card-title">Stakeholder Perspective Gaps (Simulation Insight)</div>
+                        <div style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;">
+                            <p style="margin-bottom: 0.6rem;">• <strong>Sales Perception:</strong> <em>"Warehouse inventory records are never up-to-date, so we have to call to confirm stock."</em></p>
+                            <p style="margin-bottom: 0.6rem;">• <strong>Warehouse Perception:</strong> <em>"Sales confirms orders without checking with us, then blames the warehouse when stock is physically depleted."</em></p>
+                            <p style="margin-bottom: 0.6rem;">• <strong>Accounting Perception:</strong> <em>"Sales reps verbally bypass credit policies to close deals, leaving us with overdue bad debt."</em></p>
+                            <p><strong style="color: var(--md-sys-color-primary);">BA Takeaway:</strong> Operational problems sit <em>between</em> departments, not inside any single function.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 5: BUSINESS PROBLEMS -->
+        <!-- SLIDE 7: INFORMATION NEEDS MATRIX -->
         <div class="slide">
             <div class="slide-header">
-                <span class="slide-tag">Section 2 — Problem Identification</span>
+                <span class="slide-tag">Section 2 — Information Needs</span>
+                <h2 class="slide-title">Cross-Functional Information Needs Matrix</h2>
+            </div>
+            <div class="slide-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stakeholder Role</th>
+                            <th>Information Required</th>
+                            <th>Timing / Trigger Point</th>
+                            <th>Operational Decision Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>B2B Sales Representative</strong></td>
+                            <td>Customer-specific contracted unit prices; Active agreement validity dates.</td>
+                            <td>Upon receiving corporate inquiry via email/Zalo.</td>
+                            <td>Accurately quote contract rates without manual spreadsheet lookups.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B2B Sales Representative</strong></td>
+                            <td>Real-time Available-to-Promise (ATP) inventory levels by location.</td>
+                            <td>Before confirming customer Sales Order.</td>
+                            <td>Commit to realistic delivery schedules without causing stockouts.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Purchasing Manager</strong></td>
+                            <td>Low-stock depletion alerts; Supplier price & lead time comparisons.</td>
+                            <td>When ATP stock drops below 100 reams.</td>
+                            <td>Issue vendor Purchase Orders (PO) to avoid fast-mover shortages.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Warehouse Keeper</strong></td>
+                            <td>Incoming supplier PO delivery schedules; Outbound picking slips.</td>
+                            <td>Upon truck arrival at receiving dock / order release.</td>
+                            <td>Inspect goods against PO; pick items accurately from bin locations.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AR Accountant</strong></td>
+                            <td>Sales Order details, signed Delivery Notes, customer payment terms.</td>
+                            <td>Post-delivery billing reconciliation.</td>
+                            <td>Execute 3-way invoice matching; enforce Net 30 credit locks.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: ELICITATION FINDINGS LOG -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 2 — Elicitation Evidence</span>
+                <h2 class="slide-title">Elicitation Evidence Log & Interview Verification</h2>
+            </div>
+            <div class="slide-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Baseline Team Assumption</th>
+                            <th>Interview Evidence Obtained (AI Stakeholder Agent)</th>
+                            <th>Analysis & Evidence Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sales reps look up contract prices manually from Excel sheets.</td>
+                            <td>Sales Manager confirmed: Reps copy-paste rates from their personal customer Excel files, causing 5–8% pricing errors monthly.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span><br>Prices are decentralized and prone to human copy-paste errors.</td>
+                        </tr>
+                        <tr>
+                            <td>Sales confirms orders based on informal phone checks with Warehouse.</td>
+                            <td>Sales Manager admitted: Reps rely on morning stock dumps or quick calls, causing 3–4 post-confirmation stockouts every week.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span><br>Physical stock levels are invisible to sales during daily transactions.</td>
+                        </tr>
+                        <tr>
+                            <td>Credit holds for accounts overdue > 30 days are automatically enforced.</td>
+                            <td>Sales Manager clarified: A credit policy exists on paper, but reps frequently request verbal manager overrides to meet sales quotas.</td>
+                            <td><span style="color: var(--accent-amber); font-weight: 700;">REVISED</span><br>Credit policy exists on paper, but enforcement is manual and easily bypassed.</td>
+                        </tr>
+                        <tr>
+                            <td>Stock replenishment is triggered automatically when stock is low.</td>
+                            <td>Purchasing Manager stated: Replenishment is triggered manually via handwritten notes from warehouse staff after stock is already low.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">CONFIRMED</span><br>Procurement operates reactively rather than proactively.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: PRIMARY BUSINESS PROBLEMS -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 3 — Problem Identification</span>
                 <h2 class="slide-title">Primary Operational Problems & Business Friction</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-3">
                     <div class="glass-card" style="border-top: 4px solid var(--accent-rose);">
                         <div class="card-title" style="color: var(--accent-rose);">Problem 01: Pricing Errors</div>
-                        <p class="card-text" style="font-size: 0.95rem;">
+                        <p class="card-text">
                             <strong>Contract Pricing Discrepancies (5–8% Error Rate):</strong> Individual Sales Reps store framework agreement prices in disconnected Excel files. Manual copy-pasting into client quotations results in 5–8% billing pricing discrepancies, causing invoice disputes and an estimated <strong>50 million VND monthly adjustments</strong>.
                         </p>
                     </div>
 
                     <div class="glass-card" style="border-top: 4px solid var(--accent-amber);">
                         <div class="card-title" style="color: var(--accent-amber);">Problem 02: Post-Order Stockouts</div>
-                        <p class="card-text" style="font-size: 0.95rem;">
+                        <p class="card-text">
                             <strong>Post-Confirmation Stockouts (3–4 Orders/Week):</strong> Sales Reps confirm orders based on morning Excel stock dumps or phone calls to warehouse staff. Goods receiving takes 24–48 hours to update, leading to 3–4 stockouts per week post-confirmation and client cancellations.
                         </p>
                     </div>
 
                     <div class="glass-card" style="border-top: 4px solid var(--md-sys-color-primary);">
                         <div class="card-title" style="color: var(--md-sys-color-primary);">Problem 03: Invoice & Credit Friction</div>
-                        <p class="card-text" style="font-size: 0.95rem;">
+                        <p class="card-text">
                             <strong>Manual 3-Way Matching (15–20 Hours/Week):</strong> Accounting spends 15–20 hours/week manually cross-checking paper SOs, Delivery Notes, and Invoices. Net 30 credit hold policies are bypassable via informal verbal appeals, exposing the company to bad debt risk.
                         </p>
                     </div>
@@ -927,34 +1041,50 @@
             </div>
         </div>
 
-        <!-- SLIDE 6: AS-IS PROCESS MODELING -->
+        <!-- SLIDE 10: AS-IS PROCESS WORKFLOW -->
         <div class="slide">
             <div class="slide-header">
-                <span class="slide-tag">Section 3 — AS-IS Analysis</span>
-                <h2 class="slide-title">AS-IS Business Process Analysis & Bottlenecks</h2>
+                <span class="slide-tag">Section 3 — AS-IS Process Modeling</span>
+                <h2 class="slide-title">AS-IS Cross-Functional Business Process Map</h2>
+            </div>
+            <div class="slide-content">
+                <div class="flow-container" style="flex-direction: column; gap: 0.5rem; margin-bottom: 0.8rem;">
+                    <div class="flow-step" style="width: 100%;">1.0 Client Email/Zalo Inquiry ➔ Sales Rep opens Personal Excel Pricelist</div>
+                    <span class="flow-arrow">↓</span>
+                    <div class="flow-step" style="width: 100%;">2.0 Verbal Phone Call to Warehouse ➔ Phone Stock Check (24–48h Receiving Lag)</div>
+                    <span class="flow-arrow">↓</span>
+                    <div class="flow-step" style="width: 100%;">3.0 Manual Quotation Draft ➔ Customer Approves ➔ Print Paper Sales Order (SO)</div>
+                    <span class="flow-arrow">↓</span>
+                    <div class="flow-step" style="width: 100%;">4.0 Physical SO Handed to Warehouse ➔ Bin Picking from Memory ➔ Driver Delivers with Paper Note</div>
+                    <span class="flow-arrow">↓</span>
+                    <div class="flow-step" style="width: 100%;">5.0 Driver Returns Signed Note ➔ Accounting Manually Cross-Checks SO, Note, and Invoice (15–20h/wk)</div>
+                </div>
+                <div class="glass-card">
+                    <p class="card-text" style="font-size: 0.92rem;">
+                        <strong>Key Characteristic:</strong> The AS-IS workflow is 100% paper-bound and fragmented. Each handoff between Sales, Warehouse, and Accounting involves physical paper transit, unrecorded verbal calls, or disconnected spreadsheet lookups.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: AS-IS DEPARTMENTAL BOTTLENECKS -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 3 — Operational Bottlenecks</span>
+                <h2 class="slide-title">Departmental Bottlenecks & Operational Gaps</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
-                    <div>
-                        <div class="flow-container" style="flex-direction: column; gap: 0.5rem; margin-bottom: 0.8rem;">
-                            <div class="flow-step" style="width: 100%;">1. Client Email/Zalo Inquiry ➔ Sales Rep opens Personal Excel Pricelist</div>
-                            <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">2. Phone Call to Warehouse ➔ Verbal Stock Check (24-48h Receiving Lag)</div>
-                            <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">3. Manual Quotation Draft ➔ Print Paper SO ➔ Send to Warehouse & Accounting</div>
-                            <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">4. Goods Delivery ➔ Manual 3-Way Invoice Cross-Check (15-20h/wk)</div>
-                        </div>
-                        <div class="glass-card">
-                            <div class="card-title" style="font-size: 1.05rem;">Key Operational Bottlenecks</div>
-                            <ul style="color: var(--text-muted); font-size: 0.92rem; padding-left: 1.2rem; line-height: 1.55;">
-                                <li>• <strong>Sales Silo:</strong> Prices looked up in disconnected Excel files per Sales Rep.</li>
-                                <li>• <strong>Warehouse Lag:</strong> Goods receiving takes 24–48 hours before stock entry.</li>
-                                <li>• <strong>Purchasing Delay:</strong> Vendor RFQ comparison done via emails (takes 2–3 days).</li>
-                                <li>• <strong>Accounting Overhead:</strong> Manual 3-way matching of physical Delivery Notes.</li>
-                            </ul>
-                        </div>
+                    <div class="glass-card">
+                        <div class="card-title">Departmental Friction Breakdown</div>
+                        <ul style="color: var(--text-muted); font-size: 0.92rem; padding-left: 1.2rem; line-height: 1.6;">
+                            <li>• <strong>Sales Silo:</strong> Pricelists maintained in separate Excel files per rep; no central contract database.</li>
+                            <li>• <strong>Warehouse Receiving Lag:</strong> Supplier trucks arrive, but paper receipts take 24–48 hours to enter into spreadsheets.</li>
+                            <li>• <strong>Procurement Blindspot:</strong> Reorders triggered only after stock physically runs out; vendor RFQs handled over manual email chains (taking 2–3 days).</li>
+                            <li>• <strong>Finance Reconciliation Bottleneck:</strong> Accounting manually compares physical delivery slips against printed orders to issue VAT invoices.</li>
+                        </ul>
                     </div>
+
                     <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
                         <div class="card-title">Manual vs Automated Transformation Journey</div>
                         <img src="./assets/as_is_vs_to_be_diagram.jpg" alt="AS-IS vs TO-BE Enterprise Transformation Diagram" class="slide-img-lg">
@@ -963,11 +1093,11 @@
             </div>
         </div>
 
-        <!-- SLIDE 7: ROOT CAUSE ANALYSIS -->
+        <!-- SLIDE 12: 5-WHYS ROOT CAUSE ANALYSIS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Root Cause Analysis</span>
-                <h2 class="slide-title">5-Whys Root Cause Breakdown by Core Module</h2>
+                <h2 class="slide-title">5-Whys Root Cause Breakdown by Core Problem</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-3">
@@ -978,7 +1108,7 @@
                             <li><strong>Why 2?</strong> Why in disconnected Excel files? ➔ <em>Each Rep maintains separate client pricelists.</em></li>
                             <li><strong>Why 3?</strong> Why separate files? ➔ <em>Framework contracts filed as scanned PDFs in shared drives.</em></li>
                             <li><strong>Why 4?</strong> Why no central pricing engine? ➔ <em>Lacks a unified database mapping clients to contracts.</em></li>
-                            <li><strong style="color: var(--accent-rose);">Why 5? (Root Cause):</strong> <strong>Lack of a centralized contract-based pricing engine in ERP that enforces contract price rules automatically.</strong></li>
+                            <li><strong style="color: var(--accent-rose);">Why 5? (Root Cause):</strong> <strong>Lack of a centralized contract-based pricing engine that enforces contract price rules automatically.</strong></li>
                         </ol>
                     </div>
 
@@ -1000,14 +1130,14 @@
                             <li><strong>Why 2?</strong> Why manual comparison? ➔ <em>Delivery notes signed on paper by drivers upon delivery.</em></li>
                             <li><strong>Why 3?</strong> Why paper delivery notes? ➔ <em>No mobile warehouse app to confirm digital delivery receipt.</em></li>
                             <li><strong>Why 4?</strong> Why no digital matching? ➔ <em>Invoicing and Sales systems operate in isolated silos.</em></li>
-                            <li><strong style="color: var(--md-sys-color-primary);">Why 5? (Root Cause):</strong> <strong>Lack of automated 3-way matching and hard credit hold control integrated in ERP.</strong></li>
+                            <li><strong style="color: var(--md-sys-color-primary);">Why 5? (Root Cause):</strong> <strong>Lack of automated 3-way matching and hard credit hold control.</strong></li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE 8: TO-BE PROCESS DESIGN -->
+        <!-- SLIDE 13: TO-BE PROCESS DESIGN -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — TO-BE Solution Design</span>
@@ -1049,7 +1179,59 @@
             </div>
         </div>
 
-        <!-- SLIDE 9: MOSCOW REQUIREMENTS -->
+        <!-- SLIDE 14: TO-BE OPERATIONAL IMPROVEMENTS -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 3 — Transformation Impact</span>
+                <h2 class="slide-title">AS-IS vs. TO-BE Operational Comparison</h2>
+            </div>
+            <div class="slide-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operational Dimension</th>
+                            <th>Current AS-IS State (Manual / Fragmented)</th>
+                            <th>Proposed TO-BE State (Integrated / Automated)</th>
+                            <th>Target Business Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Contract Pricing Lookup</strong></td>
+                            <td>Sales reps search disconnected personal Excel files; copy-paste rates.</td>
+                            <td>System retrieves approved customer contract pricelist upon client selection.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">Pricing Error Rate: 5–8% ➔ 0%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inventory Visibility</strong></td>
+                            <td>Morning Excel dump or verbal phone calls; 24–48h receiving entry delay.</td>
+                            <td>Real-time Available-to-Promise (ATP) stock visible across both warehouses.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">Stockouts: 3–4/wk ➔ Reduced by 95%</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Stock Replenishment</strong></td>
+                            <td>Reactive purchasing triggered after stock is already physically exhausted.</td>
+                            <td>Automated draft Purchase Requisitions generated when stock hits min threshold.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">Zero Stockouts on Fast-Movers (`ST-001`)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Credit Enforcement</strong></td>
+                            <td>Manual debt checks on paper; verbal manager overrides to meet sales quota.</td>
+                            <td>System enforces hard automated credit lock if customer debt is overdue > 30 days.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">100% Policy Adherence; Low Bad Debt</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Invoice Reconciliation</strong></td>
+                            <td>Accounting spends 15–20 hours/week manually matching SOs and Delivery Notes.</td>
+                            <td>Automated 3-way matching between digital SO, delivery confirmation & invoice.</td>
+                            <td><span style="color: var(--accent-emerald); font-weight: 700;">Matching Time: 20h ➔ 2h/week (90% cut)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SLIDE 15: MOSCOW REQUIREMENTS CATALOG -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Requirements Framing</span>
@@ -1063,15 +1245,15 @@
                             <th>Module</th>
                             <th>Feature Description</th>
                             <th>Priority</th>
-                            <th>Business Objective / Impact</th>
+                            <th>Target Business Outcome</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td><strong>FR-01</strong></td><td>Sales</td><td>System shall automatically retrieve customer contract pricelists upon client selection.</td><td><span class="tag-must">MUST HAVE</span></td><td>Eliminate 5-8% contract pricing errors.</td></tr>
-                        <tr><td><strong>FR-02</strong></td><td>Inventory</td><td>System shall display real-time ATP stock levels across Tan Binh and Bien Hoa warehouses.</td><td><span class="tag-must">MUST HAVE</span></td><td>Prevent 3-4 stockouts/week post-confirmation.</td></tr>
-                        <tr><td><strong>FR-03</strong></td><td>Invoicing</td><td>System shall enforce automatic Credit Hold for accounts with overdue debt > 30 days.</td><td><span class="tag-must">MUST HAVE</span></td><td>Prevent bad debt and enforce AR policy.</td></tr>
+                        <tr><td><strong>FR-01</strong></td><td>Sales</td><td>System shall automatically retrieve customer contract pricelists upon client selection.</td><td><span class="tag-must">MUST HAVE</span></td><td>Eliminate 5–8% contract pricing errors.</td></tr>
+                        <tr><td><strong>FR-02</strong></td><td>Inventory</td><td>System shall display real-time ATP stock levels across Tan Binh and Bien Hoa warehouses.</td><td><span class="tag-must">MUST HAVE</span></td><td>Prevent 3–4 stockouts/week post-confirmation.</td></tr>
+                        <tr><td><strong>FR-03</strong></td><td>Invoicing</td><td>System shall enforce automatic Credit Hold for accounts with overdue debt > 30 days.</td><td><span class="tag-must">MUST HAVE</span></td><td>Prevent bad debt and enforce AR credit policy.</td></tr>
                         <tr><td><strong>FR-04</strong></td><td>Purchasing</td><td>System shall generate draft Purchase Requisitions when stock falls below reorder points.</td><td><span class="tag-must">MUST HAVE</span></td><td>Automate stock replenishment for fast movers.</td></tr>
-                        <tr><td><strong>FR-05</strong></td><td>Invoicing</td><td>System shall execute automated 3-way matching (SO + Delivery Note + Vendor/Customer Invoice).</td><td><span class="tag-must">MUST HAVE</span></td><td>Reduce invoice matching time from 20h to 2h/wk.</td></tr>
+                        <tr><td><strong>FR-05</strong></td><td>Invoicing</td><td>System shall execute automated 3-way matching (SO + Delivery Note + Billing Invoice).</td><td><span class="tag-must">MUST HAVE</span></td><td>Reduce invoice matching time from 20h to 2h/wk.</td></tr>
                         <tr><td><strong>FR-06</strong></td><td>Sales</td><td>System shall issue alerts 30 days prior to contract expiration dates.</td><td><span class="tag-should">SHOULD HAVE</span></td><td>Proactive framework contract renewals.</td></tr>
                         <tr><td><strong>FR-07</strong></td><td>Purchasing</td><td>System shall support multi-vendor RFQ price comparison table.</td><td><span class="tag-should">SHOULD HAVE</span></td><td>Optimize vendor purchasing costs.</td></tr>
                         <tr><td><strong>FR-08</strong></td><td>Invoicing</td><td>System shall provide executive Accounts Receivable aging debt dashboards.</td><td><span class="tag-could">COULD HAVE</span></td><td>Executive financial credit visibility.</td></tr>
@@ -1080,317 +1262,22 @@
             </div>
         </div>
 
-        <!-- SLIDE 10: USE CASES -->
-        <div class="slide">
-            <div class="slide-header">
-                <span class="slide-tag">Section 4 — System Specifications</span>
-                <h2 class="slide-title">Enterprise Use Case Specifications (UC-01 & UC-03)</h2>
-            </div>
-            <div class="slide-content">
-                <div class="grid-2">
-                    <div class="glass-card">
-                        <div class="card-title" style="font-size: 1.05rem;">UC-SALES-01: Create Sales Order with Contract Price</div>
-                        <ul style="font-size: 0.88rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.5;">
-                            <li>• <strong>Primary Actor:</strong> B2B Sales Representative (Vo Duy Binh)</li>
-                            <li>• <strong>Preconditions:</strong> Client account exists and framework agreement registered in Odoo.</li>
-                            <li>• <strong>Main Flow:</strong><br>
-                            1. Sales Rep initiates Sales Order and selects Corporate Client.<br>
-                            2. System retrieves active contract pricelist.<br>
-                            3. Sales Rep adds product SKU (`ST-001` A4 Paper).<br>
-                            4. System populates unit price as 65,000 VND (Contract price) instead of 75,000 VND (List price).<br>
-                            5. System verifies real-time ATP stock availability.<br>
-                            6. Sales Rep confirms Sales Order.</li>
-                            <li>• <strong>Exception Flow (Credit Hold):</strong> Client has overdue debt > 30 days. System locks SO status as "Credit Hold" and requires Accounting override.</li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card">
-                        <div class="card-title" style="font-size: 1.05rem;">UC-PURCH-01: Generate Purchase Requisition & Vendor PO</div>
-                        <ul style="font-size: 0.88rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.5;">
-                            <li>• <strong>Primary Actor:</strong> Purchasing Officer / Warehouse Keeper (Pham Nguyen Gia Thuan)</li>
-                            <li>• <strong>Preconditions:</strong> Reorder point rule set for SKU `ST-001` (Min: 100 reams).</li>
-                            <li>• <strong>Main Flow:</strong><br>
-                            1. ATP stock drops below minimum threshold (80 reams).<br>
-                            2. System automatically generates draft Purchase Requisition.<br>
-                            3. Purchasing Officer reviews and sends RFQs to 3 suppliers (Double A, IK Plus, Thien Long).<br>
-                            4. Selects winning supplier based on lead time and price.<br>
-                            5. Converts RFQ to official Vendor Purchase Order (PO).</li>
-                            <li>• <strong>Exception Flow:</strong> PO value > 50,000,000 VND requires Purchasing Manager approval.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 11: BUSINESS RULES & NFR -->
-        <div class="slide">
-            <div class="slide-header">
-                <span class="slide-tag">Section 4 — Business Governance</span>
-                <h2 class="slide-title">Business Rules (BR) & Non-Functional Requirements (NFR)</h2>
-            </div>
-            <div class="slide-content">
-                <div class="grid-2">
-                    <div class="glass-card">
-                        <div class="card-title">Key Business Rules (BR)</div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Rule ID</th>
-                                    <th>Business Rule Description</th>
-                                    <th>Enforcement Module</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>BR-01</strong></td>
-                                    <td>Contract unit prices locked in system; manual discount > 5% requires Sales Manager approval.</td>
-                                    <td>Odoo Sales</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>BR-02</strong></td>
-                                    <td>Sales Orders for clients with overdue debt > 30 days automatically blocked from confirmation.</td>
-                                    <td>Odoo Invoicing</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>BR-03</strong></td>
-                                    <td>Automated Reorder alert triggers when ATP stock drops below 100 reams for `ST-001`.</td>
-                                    <td>Odoo Inventory</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>BR-04</strong></td>
-                                    <td>3-Way Invoice matching requires 0.5% price variance tolerance against PO & Delivery Note.</td>
-                                    <td>Odoo Accounting</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="glass-card">
-                        <div class="card-title">Non-Functional Requirements (NFR)</div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>NFR ID</th>
-                                    <th>Category</th>
-                                    <th>Specific Metric / Target</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>NFR-01</strong></td>
-                                    <td>Security & Access Control</td>
-                                    <td>Role-Based Access Control (RBAC); strict segregation of duties between Sales, Warehouse, and Invoicing.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>NFR-02</strong></td>
-                                    <td>Performance & Speed</td>
-                                    <td>Real-time ATP inventory lookups execute in &lt; 1.0 second under 50 concurrent users.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>NFR-03</strong></td>
-                                    <td>Scalability</td>
-                                    <td>Support catalog scaling to 1,000+ SKUs across multiple regional warehouses without latency.</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>NFR-04</strong></td>
-                                    <td>Audit Integrity</td>
-                                    <td>Complete immutable change logs for all price updates, PO approvals, and credit overrides.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 12: RTM MATRIX -->
-        <div class="slide">
-            <div class="slide-header">
-                <span class="slide-tag">Section 4 — Traceability Alignment</span>
-                <h2 class="slide-title">Requirements Traceability Matrix (RTM)</h2>
-            </div>
-            <div class="slide-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Business Problem</th>
-                            <th>Functional Req (FR)</th>
-                            <th>Use Case (UC)</th>
-                            <th>Odoo ERP Module</th>
-                            <th>UAT Test Case</th>
-                            <th>Target Outcome</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Contract Price Errors (5-8%)</td>
-                            <td>FR-01 (Contract Pricelist Engine)</td>
-                            <td>UC-01 (Create SO with Contract Price)</td>
-                            <td>Odoo Sales (Pricelists)</td>
-                            <td>TC-01 (Contract Price Verification)</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 700;">0% Pricing Errors</span></td>
-                        </tr>
-                        <tr>
-                            <td>Post-Confirmation Stockouts</td>
-                            <td>FR-02 (Real-Time ATP Stock)</td>
-                            <td>UC-02 (Check Stock Availability)</td>
-                            <td>Odoo Inventory (ATP Check)</td>
-                            <td>TC-02 (ATP Stock Check)</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 700;">95% Stockout Cut</span></td>
-                        </tr>
-                        <tr>
-                            <td>Stockouts on Fast Movers</td>
-                            <td>FR-04 (Auto Reorder & Requisitions)</td>
-                            <td>UC-03 (Generate Purchase Requisition)</td>
-                            <td>Odoo Purchase (Requisitions)</td>
-                            <td>TC-03 (Low Stock Requisition)</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 700;">Automated PO Draft</span></td>
-                        </tr>
-                        <tr>
-                            <td>Manual 3-Way Match Overhead</td>
-                            <td>FR-05 (Automated 3-Way Matching)</td>
-                            <td>UC-04 (Customer Invoicing)</td>
-                            <td>Odoo Invoicing (Matching)</td>
-                            <td>TC-04 (3-Way Invoice Generation)</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 700;">20h ➔ 2h/wk Time Saved</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- SLIDE 13: ODOO SETUP -->
-        <div class="slide">
-            <div class="slide-header">
-                <span class="slide-tag">Section 4 — ERP Configuration</span>
-                <h2 class="slide-title">Odoo ERP Architecture & Master Data Setup</h2>
-            </div>
-            <div class="slide-content">
-                <div class="grid-2">
-                    <div>
-                        <div class="grid-2" style="margin-bottom: 0.9rem;">
-                            <div class="glass-card" style="padding: 1rem;">
-                                <div class="card-title" style="font-size: 1rem;">Odoo Sales</div>
-                                <p style="font-size: 0.88rem; color: var(--text-muted);">Contract Pricelists, Quotations, Sales Orders, Credit Hold Checks.</p>
-                            </div>
-                            <div class="glass-card" style="padding: 1rem;">
-                                <div class="card-title" style="font-size: 1rem;">Odoo Purchase</div>
-                                <p style="font-size: 0.88rem; color: var(--text-muted);">Purchase Requisitions, RFQs, Vendor POs, Replenishment Rules.</p>
-                            </div>
-                            <div class="glass-card" style="padding: 1rem;">
-                                <div class="card-title" style="font-size: 1rem;">Odoo Inventory</div>
-                                <p style="font-size: 0.88rem; color: var(--text-muted);">Tan Binh & Bien Hoa Warehouses, Picking/Packing, Stock Receipts.</p>
-                            </div>
-                            <div class="glass-card" style="padding: 1rem;">
-                                <div class="card-title" style="font-size: 1rem;">Odoo Invoicing</div>
-                                <p style="font-size: 0.88rem; color: var(--text-muted);">VAT Invoices, Payment Matching, Net 30 Debt Control.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-title">Odoo ERP Architecture & Operations Dashboard</div>
-                        <img src="./assets/odoo_erp_dashboard.jpg" alt="Odoo ERP System Interface Mockup" class="slide-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 14: UAT RESULTS -->
-        <div class="slide">
-            <div class="slide-header">
-                <span class="slide-tag">Section 4 — Testing & Validation</span>
-                <h2 class="slide-title">Peer UAT Testing Results & System Validation</h2>
-            </div>
-            <div class="slide-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Test Case ID</th>
-                            <th>Test Scenario</th>
-                            <th>Expected System Behavior</th>
-                            <th>Actual Odoo Result</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>TC-01</strong></td>
-                            <td>Select Corporate Client A on Sales Order for SKU `ST-001`</td>
-                            <td>System retrieves contract price 65,000 VND instead of standard list price (75,000 VND).</td>
-                            <td>Contract price 65,000 VND applied automatically upon client selection.</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>TC-02</strong></td>
-                            <td>Order 500 reams when physical stock is 200 reams.</td>
-                            <td>System triggers ATP Stock Shortage alert to Sales Rep before confirmation.</td>
-                            <td>ATP warning displayed; delivery schedule date flagged.</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>TC-03</strong></td>
-                            <td>Stock drops below reorder point threshold (100 reams).</td>
-                            <td>System generates draft Purchase Requisition for Purchasing officer.</td>
-                            <td>Draft Purchase Requisition created automatically in Purchase module.</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>TC-04</strong></td>
-                            <td>Client with > 30 days overdue debt attempts order.</td>
-                            <td>System locks Sales Order confirmation; requires AR Accountant release.</td>
-                            <td>Credit Hold status enforced automatically on Sales Order.</td>
-                            <td><span style="color: var(--accent-emerald); font-weight: 800;">PASS</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- SLIDE 15: LIVE DEMO WORKFLOW -->
-        <div class="slide">
-            <div class="slide-header">
-                <span class="slide-tag">Live Prototype Demo</span>
-                <h2 class="slide-title">End-to-End Live Odoo Workflow Demonstration</h2>
-            </div>
-            <div class="slide-content">
-                <div class="grid-2">
-                    <div class="glass-card" style="border-color: var(--md-sys-color-primary);">
-                        <div class="card-title">Live Demo Scenario Execution Sequence</div>
-                        <div class="flow-container" style="flex-direction: column; gap: 0.5rem; margin: 0.7rem 0;">
-                            <div class="flow-step" style="width: 100%;">1. Sales Order Entry (Contract Price 65,000 VND)</div>
-                            <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">2. Real-Time ATP Stock Verification</div>
-                            <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">3. Low-Stock Purchase Requisition & Vendor PO</div>
-                            <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">4. Warehouse Stock Receipt & Bin Picking</div>
-                            <span class="flow-arrow">↓</span>
-                            <div class="flow-step" style="width: 100%;">5. Delivery Note & Automated 3-Way Matching Invoice</div>
-                        </div>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-title">Live System Interface</div>
-                        <img src="./assets/odoo_erp_dashboard.jpg" alt="Odoo Live Workflow System" class="slide-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 16: CONCLUSION & Q&A -->
+        <!-- SLIDE 16: CONCLUSION & PHASE 1 DEFENSE -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Conclusion & Defense</span>
-                <h2 class="slide-title">Summary of Proposed Business Value & Q&A</h2>
+                <h2 class="slide-title">Phase 1 Summary, Handover to Phase 2 & Q&A</h2>
             </div>
             <div class="slide-content">
                 <div class="grid-2">
                     <div class="glass-card">
-                        <div class="card-title">Quantified Business Impact & Value</div>
+                        <div class="card-title">Phase 1 Key Deliverables Achieved</div>
                         <ul style="color: var(--text-muted); font-size: 0.95rem; padding-left: 1.2rem; line-height: 1.6;">
-                            <li>• <strong>0% Pricing Errors:</strong> Saved estimated 50 million VND monthly in billing adjustments.</li>
-                            <li>• <strong>95% Stockout Reduction:</strong> Eliminated post-confirmation order cancellations.</li>
-                            <li>• <strong>90% Time Saved:</strong> Reduced accounting invoice matching from 20 hours to 2 hours/week.</li>
-                            <li>• <strong>Traceability:</strong> Demonstrated full alignment from Business Problem ➔ UAT Validation.</li>
+                            <li>• <strong>Enterprise Baseline Established:</strong> 10 Master Data SKUs, multi-facility network, and RACI governance.</li>
+                            <li>• <strong>Stakeholder Elicitation Verified:</strong> Information Needs Matrix and verified interview evidence log.</li>
+                            <li>• <strong>AS-IS Friction Diagnosed:</strong> 5-Whys root cause analysis for pricing, inventory, and billing.</li>
+                            <li>• <strong>TO-BE Solution & MoSCoW Framed:</strong> Functional Requirements `FR-01` to `FR-08` ready for Phase 2 system mapping.</li>
+                            <li>• <strong>Next Steps (Phase 2):</strong> Use Case specifications, system prototyping, and UAT validation scripts.</li>
                         </ul>
                     </div>
                     <div class="glass-card" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
