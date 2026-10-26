@@ -465,9 +465,13 @@ flowchart TD
 
 ---
 
-## 2. BUSINESS PROCESS RELATIONSHIP MAP (BẢN ĐỒ MỐI QUAN HỆ QUY TRÌNH)
+## 2. Activity 2 — Integrate the Five Business Processes (Slide 5)
 
-Bản đồ mối quan hệ quy trình thể hiện cách thức 5 quy trình nghiệp vụ của OfficePro tương tác, phụ thuộc và chuyển giao dữ liệu, chứng từ cho nhau trong chuỗi giá trị bán buôn:
+**Objective:** Understand how the five processes relate to the overall operation of the enterprise.
+
+### 2.1. Process Relationship Map (Bản đồ Mối quan hệ 5 Quy trình)
+
+Bản đồ mối quan hệ thể hiện cách thức 5 quy trình nghiệp vụ của OfficePro tương tác, phụ thuộc và chuyển giao dữ liệu, chứng từ cho nhau trong chuỗi giá trị bán buôn:
 
 ```mermaid
 flowchart LR
@@ -494,16 +498,52 @@ flowchart LR
     class BP4,BP5 support;
 ```
 
-#### Ma trận Phụ thuộc & Luồng Chuyển giao giữa 5 Quy trình:
+---
 
-| Luồng | Quy trình nguồn | Quy trình đích | Dữ liệu / Chứng từ / Trạng thái chuyển giao | Tính chất quan hệ & Mức độ kiểm chứng |
-| :---: | :--- | :--- | :--- | :--- |
-| **1–2** | `BP1` | `BP2` | **Yêu cầu thẩm định giá ➔ Bảng đơn giá hợp đồng đã xác thực:** Khách hàng, mã SKU, số lượng đặt ➔ Đơn giá theo bậc hợp đồng, chiết khấu duyệt ngoại lệ. | **Synchronous Dependency (VERIFIED):** `BP1` bắt buộc phải gọi `BP2` để có đơn giá trước khi lập Báo giá chính thức. |
-| **3–4** | `BP1` | `BP3` | **Yêu cầu kiểm tra tồn ➔ Số lượng tồn khả dụng ATP:** Danh mục SKU đặt hàng ➔ Số lượng có sẵn thực tế (On-hand trừ Reserved). | **Synchronous Dependency (VERIFIED):** `BP1` gọi `BP3` để đảm bảo hàng có sẵn trước khi cam kết ngày giao hàng với khách. |
-| **5** | `BP3` | `BP4` | **Cảnh báo thiếu hụt kho ➔ Kích hoạt đề xuất mua hàng:** Mã SKU hết hàng, số lượng thiếu hụt, đơn hàng chờ giao. | **Trigger Dependency (VERIFIED):** Thiếu hụt tồn kho tại `BP3` là nguyên nhân kích hoạt quy trình tạo đơn mua hàng `BP4`. |
-| **6** | `BP4` | `BP5` | **Đơn mua hàng PO ➔ Lịch trình tiếp nhận hàng:** Mã PO, tên nhà cung cấp, số lượng đặt, thời gian xe tải dự kiến đến. | **Pre-requisite Dependency (VERIFIED):** `BP5` cần thông tin PO từ `BP4` để làm căn cứ kiểm đếm đối chiếu khi xe hàng đến cầu cảng. |
-| **7** | `BP5` | `BP3` | **Số lượng nhập kho thực tế ➔ Cập nhật tồn kho ATP:** Biên bản kiểm đếm, số lượng nhập kho thực tế được cộng vào tổng tồn khả dụng. | **Data Update Dependency (VERIFIED):** `BP5` hoàn tất sẽ làm tăng số lượng tồn khả dụng để `BP3` tiếp tục cấp phát cho các đơn hàng mới. |
-| **8** | `BP5` | `BP1` | **Thông báo hàng về giải tỏa đơn chờ:** Báo cho Sales biết các đơn hàng bị nợ (backorder) đã có đủ hàng để tiến hành xuất kho giao khách. | **Status Dependency (UNVERIFIED):** Hiện tại chưa có cơ chế thông báo tự động; Sales phải chủ động hỏi lại thủ kho nên quan hệ này chưa được chuẩn hóa. |
+### 2.2. Process Integration Table (Bảng Chuyển giao Thông tin & Chứng từ - Slide 5)
+
+Bảng ma trận chuyển giao thông tin chuẩn hóa theo đúng biểu mẫu Slide 5:
+
+| Upstream Process | Output / Information Transferred | Downstream Process | Evidence / Status |
+| :--- | :--- | :--- | :---: |
+| **`BP1. Processing Corporate Orders`** | **Yêu cầu thẩm định giá:** Mã khách hàng doanh nghiệp, danh mục mã SKU (`ST-001` đến `ST-010`), số lượng đặt mua theo từng dòng sản phẩm. | **`BP2. Verifying Contract Prices`** | **VERIFIED**<br>*(Phỏng vấn Sales Manager `EVD-W2-SALES-01`: Bắt buộc phải có giá hợp đồng trước khi xuất Báo giá).* |
+| **`BP2. Verifying Contract Prices`** | **Đơn giá hợp đồng đã xác thực:** Đơn giá theo bậc số lượng thỏa thuận trong hợp đồng khung (VD: `ST-001` @ 65.000₫) và chiết khấu ngoại lệ được duyệt. | **`BP1. Processing Corporate Orders`** | **VERIFIED**<br>*(Dữ liệu mô phỏng `EVD-W4-SIM-02`: Đơn giá được đưa vào Báo giá chính thức và Đơn bán hàng SO).* |
+| **`BP1. Processing Corporate Orders`** | **Yêu cầu kiểm tra khả dụng tồn kho:** Danh mục SKU cần xuất kho, số lượng đặt hàng, ngày cam kết giao hàng theo yêu cầu của khách. | **`BP3. Checking Product Availability`** | **VERIFIED**<br>*(Quy trình bán hàng chuẩn: Kiểm tra tồn kho trước khi gửi báo giá chốt).* |
+| **`BP3. Checking Product Availability`** | **Số lượng tồn khả dụng (ATP Status):** Xác nhận đủ hàng có sẵn để xuất kho giao ngay, hoặc thông báo thiếu hụt một phần/toàn bộ số lượng. | **`BP1. Processing Corporate Orders`** | **VERIFIED**<br>*(Khảo sát thực tế: Sales Rep cần biết trạng thái hàng để cam kết giao trong 24–48h).* |
+| **`BP3. Checking Product Availability`** | **Cảnh báo thiếu hụt kho / Hết hàng:** Mã SKU bị đứt tồn kho, số lượng cần mua bù, đơn hàng đang chờ giao tương ứng. | **`BP4. Processing Purchase Orders`** | **VERIFIED**<br>*(Thủ kho gửi giấy tay báo mua hàng khi kiểm tra thấy kệ hết hàng).* |
+| **`BP4. Processing Purchase Orders`** | **Đơn mua hàng PO & Lịch giao hàng dự kiến:** Bản sao PO chính thức đã ký (`PO-2026-XXXX.pdf`), thông tin nhà cung cấp (Double A / Thiên Long), số lượng đặt, thời gian xe tải dự kiến tới kho. | **`BP5. Receiving Purchased Goods`** | **VERIFIED**<br>*(Thủ kho cần thông tin PO để đối chiếu số lượng và quy cách khi mở niêm phong xe tải).* |
+| **`BP5. Receiving Purchased Goods`** | **Số lượng nhập kho thực tế & Tăng tồn khả dụng ATP:** Biên bản kiểm đếm tiếp nhận, số lượng hàng nhập đạt chuẩn chất lượng được cộng vào tổng tồn kho. | **`BP3. Checking Product Availability`** | **VERIFIED**<br>*(Hàng nhập vào kho làm tăng số lượng tồn khả dụng cho các đơn hàng tiếp theo).* |
+| **`BP5. Receiving Purchased Goods`** | **Thông báo hàng về giải tỏa đơn chờ (Backorder Release):** Thông tin các lô hàng đang nợ đơn khách đã nhập kho thành công để Sales Rep tạo lệnh xuất kho. | **`BP1. Processing Corporate Orders`** | **UNCERTAIN**<br>*(Chưa được xác thực tự động: Hiện tại thủ kho không tự báo cho Sales; Sales phải chủ động gọi điện hỏi lại).* |
+
+---
+
+### 2.3. Discussion Questions Analysis (Slide 5)
+
+Phân tích 4 câu hỏi thảo luận cốt lõi về mối quan hệ giữa 5 quy trình theo yêu cầu tại Slide 5:
+
+#### 1. Does one process depend on the output of another?
+* **Có, sự phụ thuộc mang tính sống còn xuyên suốt toàn chuỗi cung ứng bán buôn:**
+  * `BP1` (Xử lý đơn hàng) phụ thuộc đồng bộ (Synchronous Dependency) vào đầu ra của `BP2` (Đơn giá hợp đồng) và `BP3` (Tồn kho khả dụng). Nếu thiếu một trong hai đầu ra này, Sales Rep không thể phát hành Báo giá hoặc tạo Đơn bán hàng SO hợp lệ.
+  * `BP4` (Mua hàng) phụ thuộc vào sự kích hoạt (Trigger Dependency) từ cảnh báo thiếu hàng của `BP3`.
+  * `BP5` (Tiếp nhận hàng) phụ thuộc tiên quyết (Pre-requisite Dependency) vào mã đơn PO từ `BP4` để làm căn cứ kiểm tra đối soát số lượng và quy cách hàng hóa khi xe tải dỡ hàng tại cầu cảng.
+  * Vòng lặp khép kín: Đầu ra của `BP5` (Số lượng nhập kho thực tế) là đầu vào cập nhật trực tiếp cho `BP3` (Tăng tồn khả dụng ATP).
+
+#### 2. Is information transferred consistently between processes?
+* **Không, thông tin hiện đang chuyển giao KHÔNG NHẤT QUÁN và bị phân mảnh nghiêm trọng:**
+  * Giữa `BP1` và `BP2`: Mỗi nhân viên kinh doanh sử dụng một bảng Excel cá nhân riêng (`BangGia_KhachHang_2026.xlsx`) và hợp đồng scan PDF cũ. Khi Double A hoặc Thiên Long điều chỉnh giá, thông tin chỉ được gửi qua email nội bộ, nhân viên cập nhật trễ nhịp 1–2 tuần dẫn đến giá chuyển giao từ `BP2` sang `BP1` bị sai lệch từ **5% đến 8%**.
+  * Giữa `BP3`, `BP5` và `BP1`: Hàng nhập về cầu cảng tại `BP5` mất **24–48 giờ** mới được gõ vào file Excel tồn kho; trong khi đó Sales tại `BP1` chỉ đọc file Excel trích xuất lúc 8h00 sáng. Dữ liệu tồn kho chuyển giao giữa các quy trình bị trễ nhịp so với biến động vật lý tại kho.
+
+#### 3. Are there handoffs that may cause delays or errors?
+* **Có, tồn tại 4 điểm chuyển giao (Handoffs) thủ công gây nghẽn cổ chai và sai sót lớn:**
+  * **Handoff `BP1 ➔ BP2` (Thỏa thuận chiết khấu ngoại lệ):** Chuyển giao qua tin nhắn Zalo cá nhân hoặc nói miệng giữa Sales Rep và Trưởng phòng kinh doanh. Không có lưu vết hệ thống (Audit Trail), gây rủi ro thất thoát biên lợi nhuận.
+  * **Handoff `BP1 ➔ BP3` (Kiểm tra hàng):** Chuyển giao qua cuộc gọi điện thoại hoặc nhắn tin Zalo cho Thủ kho Tân Bình. Thủ kho phải dừng việc đi bộ ra kệ kiểm tra bằng mắt, làm mất 15–30 phút cho mỗi đơn hàng cần xác nhận gấp.
+  * **Handoff `BP3 ➔ BP4` (Báo mua hàng):** Chuyển giao bằng **phiếu viết tay** của thủ kho mang nộp phòng Thu mua. Chậm trễ trung bình 1–2 ngày trước khi Thu mua bắt đầu gửi email xin báo giá nhà cung cấp.
+  * **Handoff `BP1 ➔ Kho & Kế toán`:** Nhân viên Sales phải **in 2 bản giấy Đơn bán hàng (SO)** cầm tay đi bộ qua lại giữa các phòng ban để nộp, dễ gây thất lạc chứng từ.
+
+#### 4. Are the process boundaries clear?
+* **Ranh giới giữa các quy trình tương đối rõ ràng về mặt phạm vi trách nhiệm (Scope Rule - Slide 8), nhưng bị chồng chéo ở khâu chia sẻ dữ liệu:**
+  * *Ranh giới rõ ràng:* `BP1` kết thúc khi Đơn bán hàng SO được xác nhận; `BP2` chỉ tập trung vào việc tra cứu và phê duyệt đơn giá; `BP3` chỉ chịu trách nhiệm báo cáo số lượng tồn ATP; `BP4` kết thúc khi gửi PO cho nhà cung cấp; `BP5` kết thúc khi hàng được xếp lên kệ và ghi nhận số lượng nhập kho.
+  * *Điểm chồng chéo cần phân định:* Trách nhiệm theo dõi hàng đặt mua đang về (Inbound Stock on Order). Hiện tại Sales (`BP1`) không rõ hàng đang mua ở `BP4` hay đã về cầu cảng ở `BP5`, dẫn đến việc cả Sales và Thủ kho đều phải gọi điện hỏi Procurement Officer, làm ranh giới phối hợp bị mờ nhạt.
 
 ---
 
