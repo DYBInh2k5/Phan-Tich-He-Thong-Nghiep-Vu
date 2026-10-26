@@ -549,25 +549,73 @@ Phân tích 4 câu hỏi thảo luận cốt lõi về mối quan hệ giữa 5 
 
 ## 3. EVIDENCE-BASED PROBLEM AND INFORMATION NEEDS ANALYSIS (SLIDE 6, 7)
 
-Dựa trên kết quả phân tích quy trình AS-IS và chứng cứ phỏng vấn thực nghiệm, nhóm tổng hợp bảng phân tích vấn đề và nhu cầu thông tin chuẩn theo Slide 6, 7:
+**Objective:** Develop a prioritized list of verified business problems and associated information needs grounded in empirical stakeholder evidence.
 
-| Issue ID | Related Process | Empirical Evidence / Observation | Business Problem | Affected Stakeholders | Information Need | Business Impact |
-| :---: | :--- | :--- | :--- | :--- | :--- | :--- |
-| **`ISS-01`** | `BP2` (Contract Prices) | Nhân viên Sales mở file Excel riêng và tìm PDF scan; mỗi người báo một giá khác nhau (`EVD-W2-SALES-01`). | Thiếu cơ chế kiểm soát giá hợp đồng tập trung tự động khi lập báo giá. | B2B Sales Rep, Sales Manager, Corporate Buyer. | Đơn giá hợp đồng có hiệu lực và bậc chiết khấu tự động gắn với mã khách hàng. | **5% đến 8% hóa đơn bị sai lệch đơn giá**, gây khiếu nại, chậm thu nợ ~50 triệu/tháng. |
-| **`ISS-02`** | `BP3` (Stock Check) & `BP5` (Receiving) | Hàng nhập về cầu cảng nằm chờ 24–48h mới gõ vào Excel; Sales gọi điện hỏi kho (`EVD-W2-WH-02`). | Thông tin tồn kho khả dụng ATP bị trễ nhịp và phân mảnh giữa Sales và Kho. | B2B Sales Rep, Warehouse Clerk, Corporate Buyer. | Số lượng tồn khả dụng ATP theo thời gian thực (Tồn thực tế trừ Đơn đã giữ). | **3–4 đơn hàng bị hủy mỗi tuần sau khi đã chốt** do hết hàng thực tế (Post-confirmation stockout). |
-| **`ISS-03`** | `BP4` (Purchase Orders) | Thủ kho hết hàng mới viết giấy tay gửi Thu mua; Thu mua email 3 nơi so giá mất 2-3 ngày (`EVD-W2-PURCH-01`). | Mua hàng bị động, thủ công, quy trình chào giá qua email kéo dài. | Purchasing Officer, Warehouse Clerk, Approving Manager. | Cảnh báo tồn kho chạm điểm đặt hàng lại (Reorder Point) và bảng so sánh giá nhà cung cấp. | Thời gian mua hàng bù kéo dài 3–5 ngày, gián đoạn chuỗi cung ứng các mặt hàng bán chạy (`ST-001`). |
+### 3.1. Detailed 7-Element Problem Analysis Tables (Slide 7 Format)
+
+Áp dụng đúng cấu trúc bảng 7 yếu tố chuẩn theo ví dụ minh họa tại **Slide 7** cho từng vấn đề kinh doanh trọng tâm của OfficePro:
+
+#### Problem 1 (ISS-01): Contract Pricing Inaccuracies & Decentralized Pricing Controls
+
+| Element (Slide 7) | Analysis Detail for OfficePro Enterprise Case |
+| :--- | :--- |
+| **Evidence source** | Phỏng vấn B2B Sales Manager (`EVD-W2-SALES-01`) và Dữ liệu kiểm toán mô phỏng (`EVD-W4-SIM-02`). |
+| **AS-IS observation** | Nhân viên kinh doanh tra cứu đơn giá từ các bảng tính Excel cá nhân phân tán (`BangGia_KhachHang_2026.xlsx`) và file scan PDF hợp đồng cũ; mỗi nhân viên báo một giá khác nhau cho cùng một mã SKU. |
+| **Business problem** | Nhân viên kinh doanh thiếu cơ chế tra cứu giá hợp đồng tập trung tự động và thiếu kiểm soát phê duyệt chiết khấu có lưu vết khi lập báo giá. |
+| **Affected stakeholder** | B2B Sales Representative, Sales Manager, Corporate Buyer, AR Billing Accountant. |
+| **Information need** | Đơn giá hợp đồng có hiệu lực và các bậc chiết khấu số lượng tự động gắn liền với hồ sơ khách hàng ngay khi lập đơn. |
+| **Business impact** | **5% đến 8% hóa đơn bị sai lệch đơn giá**, gây khiếu nại gay gắt từ khách hàng doanh nghiệp, kéo dài thời gian đối soát và chậm thu hồi công nợ ~50.000.000 VNĐ/tháng. |
+| **Open question** | Quy trình phân cấp phê duyệt chính thức khi khách hàng yêu cầu mức chiết khấu ngoại lệ vượt quá 10% (ai có quyền quyết định cuối cùng và có giới hạn trần chiết khấu không)? |
 
 ---
 
-## 4. DRAFT TO-BE PROCESS MODELS (MÔ HÌNH QUY TRÌNH TƯƠNG LAI)
+#### Problem 2 (ISS-02): Inventory Blindness & Post-Confirmation Stockouts
 
-Theo yêu cầu đề bài, nhóm Group 6 phát triển mô hình **TO-BE Swimlane BPMN chi tiết cho 3 quy trình cốt lõi (`BP1`, `BP2`, `BP3`)** và đề xuất **hướng cải tiến cho 2 quy trình còn lại (`BP4`, `BP5`)**:
+| Element (Slide 7) | Analysis Detail for OfficePro Enterprise Case |
+| :--- | :--- |
+| **Evidence source** | Phỏng vấn Thủ kho Tân Bình (`EVD-W2-WH-02`) và Nhật ký sự cố bán hàng (`EVD-W4-SIM-02`). |
+| **AS-IS observation** | Nhân viên Sales gọi điện thoại hoặc nhắn Zalo cho thủ kho để hỏi tồn hàng; hàng nhập về cầu cảng nằm chờ 24–48 giờ mới được gõ vào file Excel tồn kho. |
+| **Business problem** | Nhân viên Sales không thể truy cập trực tiếp thông tin tồn kho khả dụng (Available-to-Promise - ATP) tin cậy theo thời gian thực trước khi xác nhận đơn hàng với khách. |
+| **Affected stakeholder** | B2B Sales Representative, Warehouse Clerk (Tan Binh Hub), Corporate Buyer, Logistics Coordinator. |
+| **Information need** | Số lượng tồn kho khả dụng thực tế (Real-time ATP = On-hand - Reserved across warehouses) hiển thị động tại thời điểm soạn thảo đơn hàng. |
+| **Business impact** | **3–4 đơn hàng B2B bị hủy mỗi tuần sau khi đã xác nhận chốt đơn** do thực tế đứt hàng tại kho (Post-confirmation stockout), làm suy giảm nghiêm trọng uy tín doanh nghiệp. |
+| **Open question** | Tần suất đứt hàng và trễ thông tin tồn kho diễn ra nghiêm trọng nhất vào những thời điểm nào (ví dụ: các đợt cao điểm mua sắm văn phòng phẩm đầu năm tài chính hay định kỳ cuối quý)? |
+
+---
+
+#### Problem 3 (ISS-03): Reactive Reordering & Prolonged Vendor Procurement
+
+| Element (Slide 7) | Analysis Detail for OfficePro Enterprise Case |
+| :--- | :--- |
+| **Evidence source** | Phỏng vấn Chuyên viên Mua hàng (`EVD-W2-PURCH-01`) và Dữ liệu mô phỏng quy trình mua (`EVD-W4-SIM-02`). |
+| **AS-IS observation** | Thủ kho chỉ phát hiện hết hàng khi đi kiểm tra kệ rồi viết giấy tay báo mua; phòng Thu mua gửi email xin báo giá 3 nhà cung cấp và mất 2–3 ngày chờ phản hồi. |
+| **Business problem** | Hoạt động mua hàng bổ sung diễn ra hoàn toàn bị động, thủ công, thiếu cơ chế cảnh báo tự động điểm đặt hàng lại và thiếu ma trận so sánh giá nhà cung cấp tập trung. |
+| **Affected stakeholder** | Purchasing Officer, Warehouse Clerk, Approving Director, Corporate Buyer. |
+| **Information need** | Cảnh báo tồn kho chạm điểm đặt hàng lại (Reorder Point Min/Max) và dữ liệu so sánh đơn giá/thời gian giao hàng lịch sử của các nhà cung cấp quen thuộc. |
+| **Business impact** | Thời gian mua hàng bù kéo dài từ **3 đến 5 ngày**, làm tê liệt khả năng cung ứng cho các hợp đồng lớn và đứt gãy nguồn hàng của các SKU bán chạy (`ST-001` Giấy Double A A4). |
+| **Open question** | Chính sách số lượng đặt hàng tối thiểu (MOQ) và thời gian giao hàng cam kết (Lead time) theo hợp đồng nguyên tắc ký với Double A và Thiên Long là bao nhiêu ngày? |
+
+---
+
+### 3.2. Prioritized Business Problems & Information Needs Summary Matrix
+
+| Priority | Issue ID | Related Process | Verified Business Problem | Information Need | Business Outcome Impact |
+| :---: | :---: | :--- | :--- | :--- | :--- |
+| **P1** | **`ISS-01`** | `BP2` (Contract Prices)<br>`BP1` (Corporate Orders) | Thiếu kiểm soát đơn giá hợp đồng tập trung và quy trình duyệt chiết khấu thủ công qua Zalo. | Đơn giá hợp đồng có hiệu lực và bậc chiết khấu tự động theo mã khách hàng. | Triệt tiêu 5–8% hóa đơn sai giá; thu hồi 50M VNĐ/tháng công nợ đọng; chuẩn hóa kiểm toán giá. |
+| **P2** | **`ISS-02`** | `BP3` (Stock Check)<br>`BP5` (Receiving Goods) | Thông tin tồn kho bị trễ 24–48h và phân mảnh; Sales không biết số lượng tồn khả dụng ATP thực tế. | Số lượng tồn ATP thời gian thực (Tồn thực tế trừ Đơn đã giữ) đa kho. | Loại bỏ hoàn toàn sự cố 3–4 đơn hàng bị hủy/tuần sau khi đã chốt; đảm bảo giao hàng đúng cam kết 24–48h. |
+| **P3** | **`ISS-03`** | `BP4` (Purchase Orders)<br>`BP5` (Receiving Goods) | Mua hàng bị động bằng giấy tay; quy trình hỏi giá email kéo dài 2–3 ngày gây đứt hàng cục bộ. | Cảnh báo tự động Reorder Point và bảng so sánh báo giá nhà cung cấp tập trung. | Rút ngắn chu kỳ phát hành PO từ 3 ngày xuống dưới 2 giờ; ngăn ngừa đứt hàng SKU chủ lực. |
+
+---
+
+## 4. DRAFT TO-BE PROCESS MODELS (MÔ HÌNH QUY TRÌNH TƯƠNG LAI - SLIDE 8, 9)
+
+**Objective:** Propose future business processes that directly eliminate verified operational friction points and fulfill identified information needs without prescribing detailed software configuration prematurely.
 
 ```
 +---------------------------------------------------------------------------------------------------+
 |                        OFFICEPRO RE-ENGINEERED TO-BE ARCHITECTURE OVERVIEW                        |
 +---------------------------------------------------------------------------------------------------+
-| Core 1: TO-BE BP1: Processing Corporate Orders (Automated Workflow & 3-Way Match Validation)      |
+| Core 1: TO-BE BP1: Processing Corporate Orders (Automated Workflow & Digital Handoffs)            |
 | Core 2: TO-BE BP2: Verifying Contract Prices (Automated Contract Pricelist & Policy Approval Gate)|
 | Core 3: TO-BE BP3: Checking Product Availability (Real-Time Multi-Warehouse ATP Engine)           |
 | Proc 4: TO-BE BP4: Automated Reorder Point Replenishment Direction                                |
@@ -579,7 +627,16 @@ Theo yêu cầu đề bài, nhóm Group 6 phát triển mô hình **TO-BE Swimla
 
 ### 4.1. Core Process 1 (TO-BE BP1): Processing Corporate Orders
 
-#### TO-BE Swimlane Model:
+#### AS-IS vs. TO-BE 4-Dimension Comparison Matrix (Slide 9):
+
+| Evaluation Dimension (Slide 9) | AS-IS: Current Process | TO-BE: Proposed Future Process |
+| :--- | :--- | :--- |
+| **What currently happens vs. What should change?** | Nhân viên Sales soạn Báo giá thủ công trên Word/Excel, in 2 bản giấy Đơn bán hàng (SO) rồi đi bộ cầm tay sang Kho và Kế toán để xin duyệt và bàn giao. | Báo giá điện tử được tạo trên hệ thống tập trung; khách duyệt qua cổng số; hệ thống tự động sinh Đơn bán hàng SO số và gửi lệnh nhặt hàng điện tử đến kho. |
+| **Where does the problem occur vs. Where will the process improve?** | Xảy ra nghẽn tại khâu kiểm tra công nợ thủ công và bàn giao chứng từ giấy; đơn hàng nằm chờ ký duyệt mất từ 4–6 giờ. | Cải tiến tại khâu tiếp nhận và xác thực đơn; cơ chế kiểm tra nợ tự động và đẩy lệnh số tức thời giúp rút ngắn chu kỳ từ 4–6 giờ xuống dưới 15 phút. |
+| **What information is missing/delayed vs. What should be available & when?** | Trạng thái công nợ quá hạn và khả năng đáp ứng giao hàng của kho bị mù mờ đối với Sales tại thời điểm tư vấn khách. | Trạng thái nợ quá hạn (> 30 ngày) và tồn kho ATP được hiển thị trực tiếp ngay khi Sales chọn khách hàng và mặt hàng trên màn hình lập đơn. |
+| **Which handoffs create difficulty vs. How should the handoffs change?** | Điểm chuyển giao giấy in SO cầm tay giữa Sales ➔ Kho và Sales ➔ Kế toán gây chậm trễ, thất lạc chứng từ và sai sót gõ lại số liệu. | Chuyển giao hoàn toàn sang luồng dữ liệu số tự động; hệ thống tự động khóa giữ tồn kho (Reservation) và xuất phiếu nhặt hàng số trên thiết bị kho. |
+
+#### TO-BE Swimlane BPMN Model (BP1):
 
 ```mermaid
 flowchart TD
@@ -630,22 +687,31 @@ flowchart TD
     class S_TOBE_GateCredit,C_TOBE_Review gateway;
 ```
 
-#### Giải thích Thay đổi Đề xuất & Cải tiến Nghiệp vụ:
+#### Giải thích Thay đổi Đề xuất & Giá trị Kinh doanh:
 * **Các thay đổi cốt lõi:**
-  1. Loại bỏ hoàn toàn khâu in 2 bản giấy Sales Order đi nộp kho và kế toán bằng chân; thay bằng luồng dữ liệu số tự động kích hoạt lệnh giữ tồn kho (Reservation) và lệnh nhặt hàng (Digital Picking List).
-  2. Thay thế việc duyệt miệng nợ quá hạn bằng cơ chế khóa tín dụng tự động (**Automated Credit Hold**) nếu khách có nợ > 30 ngày, bảo vệ dòng tiền công nợ.
+  1. Loại bỏ hoàn toàn việc in ấn 2 liên SO giấy cầm tay; tích hợp lệnh giữ hàng tự động (Automated Stock Reservation) và lộ trình nhặt hàng số (Digital Picking Route).
+  2. Tích hợp chốt chặn công nợ tự động (**Automated Credit Hold**): Ngăn chặn phát hành đơn hàng mới nếu khách có công nợ quá hạn > 30 ngày mà chưa có bảo lãnh thanh toán.
 * **Cải tiến định lượng kỳ vọng:**
-  * Giảm thời gian xử lý một đơn hàng B2B từ **4–6 giờ xuống dưới 15 phút**.
-  * Loại bỏ 100% chi phí in ấn và thất lạc chứng từ giấy giữa Sales và Kho.
-* **Giả định & Câu hỏi cần xác minh:**
-  * *Giả định:* Khách hàng doanh nghiệp chấp nhận ký duyệt đơn báo giá qua cổng điện tử/email xác thực thay vì đòi hỏi bản in đóng dấu mộc đỏ trước khi giao hàng.
-  * *Câu hỏi cần xác minh:* Quy định xử lý trường hợp khách hàng đặc biệt cần giao hàng khẩn cấp khi đang vướng nợ quá hạn (hạn mức bảo lãnh tối đa là bao nhiêu và do ai ký duyệt bằng văn bản điện tử).
+  * Rút ngắn thời gian xử lý đơn hàng B2B từ **4–6 giờ xuống dưới 15 phút**.
+  * Loại bỏ 100% rủi ro thất lạc chứng từ đơn hàng giữa Sales, Kho và Kế toán.
+* **Giả định & Câu hỏi mở cần xác minh:**
+  * *Giả định:* Khách hàng doanh nghiệp chấp nhận xác nhận báo giá điện tử qua cổng thông tin hoặc email xác thực thay cho hợp đồng giấy đóng dấu mộc đỏ trước giao hàng.
+  * *Câu hỏi mở:* Quy trình phê duyệt bảo lãnh tạm thời cho các đơn hàng khẩn cấp của khách VIP đang vướng nợ quá hạn sẽ do ai ký duyệt bằng văn bản điện tử?
 
 ---
 
 ### 4.2. Core Process 2 (TO-BE BP2): Verifying Contract Prices
 
-#### TO-BE Swimlane Model:
+#### AS-IS vs. TO-BE 4-Dimension Comparison Matrix (Slide 9):
+
+| Evaluation Dimension (Slide 9) | AS-IS: Current Process | TO-BE: Proposed Future Process |
+| :--- | :--- | :--- |
+| **What currently happens vs. What should change?** | Nhân viên Sales tra cứu bảng giá thủ công từ file Excel riêng và file scan PDF hợp đồng; xin duyệt chiết khấu miệng hoặc nhắn tin Zalo không lưu vết. | Hệ thống tự động áp bảng giá hợp đồng hiệu lực theo mã khách hàng; chiết khấu giảm giá > 5% tự động kích hoạt chốt chặn phê duyệt số có lưu vết. |
+| **Where does the problem occur vs. Where will the process improve?** | Xảy ra tại khâu tra cứu giá phân tán; báo sai giá dẫn đến hóa đơn thanh toán bị khiếu nại và chậm trả nợ. | Cải tiến trực tiếp tại dòng sản phẩm báo giá; đơn giá được áp chính xác theo bậc số lượng cam kết, ngăn ngừa 100% lỗi sai giá do con người. |
+| **What information is missing/delayed vs. What should be available & when?** | Bảng giá hợp đồng cập nhật mới từ nhà sản xuất (Double A, Thiên Long) bị trễ 1–2 tuần đối với nhân viên Sales. | Bảng giá hợp đồng có hiệu lực (kèm ngày bắt đầu/kết thúc và bậc số lượng) hiển thị tự động ngay khi chọn mã SKU. |
+| **Which handoffs create difficulty vs. How should the handoffs change?** | Điểm chuyển giao xin duyệt chiết khấu qua tin nhắn Zalo cá nhân giữa Sales Rep và Trưởng phòng Sales thiếu tính minh bạch và dễ thất thoát lợi nhuận. | Thay thế bằng quy trình phê duyệt điện tử tích hợp: hệ thống khóa đơn và gửi thông báo xét duyệt đến giao diện quản lý của Trưởng phòng với 1 cú nhấp chuột. |
+
+#### TO-BE Swimlane BPMN Model (BP2):
 
 ```mermaid
 flowchart TD
@@ -688,22 +754,31 @@ flowchart TD
     class BP2_TOBE_GateManualDisc,BP2_TOBE_GateMgrDecision gateway;
 ```
 
-#### Giải thích Thay đổi Đề xuất & Cải tiến Nghiệp vụ:
+#### Giải thích Thay đổi Đề xuất & Giá trị Kinh doanh:
 * **Các thay đổi cốt lõi:**
-  1. Thay thế tra cứu thủ công qua file Excel phân tán bằng công cụ quản lý bảng giá hợp đồng tập trung (**Centralized Contract Pricelist Engine**). Ngay khi chọn khách hàng, đơn giá thỏa thuận (VD: `ST-001` @ 65.000₫) tự động hiển thị.
-  2. Thiết lập chốt chặn phê duyệt tự động (**Automated Approval Gate**): Mọi nỗ lực sửa giá giảm quá 5% sẽ kích hoạt khóa đơn tự động và gửi yêu cầu phê duyệt có lưu vết (Audit Trail) đến Trưởng phòng, loại bỏ hoàn toàn việc thỏa thuận miệng qua Zalo.
+  1. Thay thế hoàn toàn bảng tính Excel phân tán bằng công cụ quản lý bảng giá hợp đồng tập trung (**Centralized Contract Pricelist Engine**).
+  2. Thiết lập chốt chặn phê duyệt tự động (**Automated Approval Gate**) với ngưỡng chặn cứng 5%, lưu vết kiểm toán (Audit Trail) cho mọi quyết định ghi đè giá.
 * **Cải tiến định lượng kỳ vọng:**
-  * Giảm tỷ lệ hóa đơn sai lệch đơn giá từ **5–8% về 0%**.
-  * Tiết kiệm **50.000.000 VNĐ/tháng** chi phí xử lý khiếu nại, phát hành hóa đơn điều chỉnh và thu hồi công nợ chậm trễ.
-* **Giả định & Câu hỏi cần xác minh:**
-  * *Giả định:* Tất cả các hợp đồng khung ký kết mới hoặc sửa đổi phụ lục giá đều được phòng Pháp chế/Kinh doanh nhập vào Master Data trước ngày có hiệu lực.
-  * *Câu hỏi cần xác minh:* Thời hạn hiệu lực tối đa của một bảng giá hợp đồng (nếu hết hạn 1 năm mà chưa ký tiếp thì tự động gia hạn tạm thời hay chuyển về giá bán lẻ chuẩn).
+  * Đưa tỷ lệ hóa đơn sai lệch đơn giá từ **5–8% về 0%**.
+  * Tiết kiệm **50.000.000 VNĐ/tháng** chi phí xử lý khiếu nại hóa đơn và tăng tốc thu hồi nợ đúng hạn.
+* **Giả định & Câu hỏi mở cần xác minh:**
+  * *Giả định:* Toàn bộ hợp đồng khung và phụ lục giá mới được phòng Kinh doanh/Pháp chế cập nhật vào dữ liệu chủ trước ngày có hiệu lực thực tế.
+  * *Câu hỏi mở:* Quy định xử lý trường hợp hợp đồng khung hết hạn nhưng hai bên đang trong quá trình thương thảo gia hạn (có được tự động gia hạn tạm thời 30 ngày hay không)?
 
 ---
 
 ### 4.3. Core Process 3 (TO-BE BP3): Checking Product Availability
 
-#### TO-BE Swimlane Model:
+#### AS-IS vs. TO-BE 4-Dimension Comparison Matrix (Slide 9):
+
+| Evaluation Dimension (Slide 9) | AS-IS: Current Process | TO-BE: Proposed Future Process |
+| :--- | :--- | :--- |
+| **What currently happens vs. What should change?** | Nhân viên Sales gọi điện thoại hoặc gửi Zalo cho thủ kho; thủ kho đi bộ ra kệ đếm thùng; mất 15–30 phút cho mỗi đơn cần báo giá gấp. | Nhân viên Sales xem trực tiếp số lượng tồn khả dụng (ATP) đa kho theo thời gian thực ngay trên màn hình lập báo giá/đơn hàng. |
+| **Where does the problem occur vs. Where will the process improve?** | Xảy ra tại khâu thẩm định tồn kho; dữ liệu trễ nhịp dẫn đến hứa hẹn giao hàng ảo, sau đó đứt hàng và hủy đơn. | Cải tiến trước khi xác nhận đơn; hệ thống tự động cảnh báo thiếu hàng bằng màu sắc và tự động đề xuất chuyển kho hoặc mua hàng bù. |
+| **What information is missing/delayed vs. What should be available & when?** | Thông tin số lượng tồn kho khả dụng thực tế (đã trừ đi lượng hàng giữ cho đơn khác) và hàng mua đang về bị mù mờ. | Số lượng tồn ATP tức thời ($\text{ATP} = \text{Tồn thực} - \text{Đã cam kết giữ}$) hiển thị chính xác theo thời gian thực trên từng dòng SKU. |
+| **Which handoffs create difficulty vs. How should the handoffs change?** | Điểm chuyển giao gọi điện thoại/nhắn Zalo hỏi hàng giữa Sales và Thủ kho làm gián đoạn công việc của cả hai bên. | Loại bỏ hoàn toàn chuyển giao thủ công; hệ thống tự động cung cấp dữ liệu tức thời và tự động trừ giữ tồn kho khi chốt đơn. |
+
+#### TO-BE Swimlane BPMN Model (BP3):
 
 ```mermaid
 flowchart TD
@@ -743,84 +818,144 @@ flowchart TD
     class BP3_TOBE_GateStock gateway;
 ```
 
-#### Giải thích Thay đổi Đề xuất & Cải tiến Nghiệp vụ:
+#### Giải thích Thay đổi Đề xuất & Giá trị Kinh doanh:
 * **Các thay đổi cốt lõi:**
-  1. Loại bỏ các cuộc gọi điện thoại và tin nhắn Zalo hỏi thủ kho; Sales có thể xem trực tiếp số lượng tồn khả dụng (**Available-to-Promise - ATP**) ngay trên màn hình lập đơn hàng.
-  2. Công thức tính toán ATP thời gian thực đa kho: $\text{ATP} = \text{Tồn thực tế kho Tân Bình \& Biên Hòa} - \text{Đã cam kết giữ cho các đơn hàng khác}$.
-  3. Cảnh báo thị giác tự động (Visual Warning) khi số lượng đặt vượt quá khả năng đáp ứng, ngăn chặn việc nhân viên hứa hẹn giao hàng ảo với khách.
+  1. Loại bỏ các cuộc gọi hỏi kho thủ công; trang bị công cụ tính toán tồn khả dụng thời gian thực (**Real-time ATP Engine**) tổng hợp số liệu đa kho (Tân Bình và Biên Hòa).
+  2. Phản hồi thị giác tức thì (Visual Stock Alert): Cảnh báo dòng màu đỏ khi thiếu hàng và tự động đề xuất phương án điều chuyển nội bộ hoặc sinh yêu cầu mua hàng.
 * **Cải tiến định lượng kỳ vọng:**
-  * Giảm **95% sự cố hủy đơn hàng sau khi đã chốt** (từ 3–4 đơn/tuần xuống gần như bằng 0).
-  * Tiết kiệm 100% thời gian gọi điện thoại kiểm tra kho (tiết kiệm trung bình 10–15 giờ làm việc/tuần cho nhân viên Sales và Thủ kho).
-* **Giả định & Câu hỏi cần xác minh:**
-  * *Giả định:* Tồn kho tại Kho Tân Bình và Kho Biên Hòa được cập nhật ngay lập tức khi hàng về cầu cảng (nhờ cải tiến tại quy trình `BP5`).
-  * *Câu hỏi cần xác minh:* Quy tắc phân bổ ưu tiên tồn kho khi cùng lúc có 2 khách hàng VIP đặt mua vượt quá tổng lượng tồn ATP hiện có.
+  * Giảm **95% sự cố hủy đơn hàng sau khi chốt** (từ 3–4 đơn/tuần xuống gần như bằng 0).
+  * Tiết kiệm **10–15 giờ làm việc/tuần** cho nhân viên Sales và Thủ kho Tân Bình.
+* **Giả định & Câu hỏi mở cần xác minh:**
+  * *Giả định:* Toàn bộ hàng nhập tại cầu cảng được quét mã vạch cập nhật kho tức thời tại quy trình `BP5`, đảm bảo dữ liệu tồn ATP luôn phản ánh đúng thực tế vật lý.
+  * *Câu hỏi mở:* Quy tắc phân bổ ưu tiên giữ hàng (Stock Allocation Priority) khi có nhiều đơn hàng cùng đặt một mặt hàng đang khan hiếm tồn kho.
 
 ---
 
-### 4.4. Proposed Improvement Directions for BP4 & BP5 (Hướng Cải tiến cho 2 Quy trình còn lại)
-
-Theo đúng hướng dẫn tại Slide 8, 9 của bài học Tuần 7, đối với 2 quy trình không nằm trong nhóm 3 quy trình trọng tâm phân tích sâu của Phase 1, nhóm ghi nhận hướng cải tiến nghiệp vụ đề xuất:
+### 4.4. Proposed Improvement Directions for BP4 & BP5 (Slide 8, 9)
 
 #### 1. Improvement Direction for BP4: Processing Purchase Orders
-* **Hiện trạng thủ công (AS-IS Pain Point):** Quy trình mua hàng hoàn toàn bị động; chỉ khi thủ kho phát hiện kệ trống mới viết giấy tay gửi Thu mua, và nhân viên Thu mua phải gửi email so giá mất 2–3 ngày, gây đứt gãy nguồn cung các mặt hàng chạy như Giấy Double A A4 (`ST-001`).
-* **Hướng cải tiến tương lai (TO-BE Direction):**
-  * Thiết lập **Quy tắc tái đặt hàng tự động (Automated Reordering Rules)** dựa trên điểm đặt hàng lại (Reorder Point - Min/Max). Khi tồn ATP của `ST-001` chạm ngưỡng tối thiểu 100 ram, hệ thống tự động sinh Yêu cầu mua hàng dự thảo (Draft Purchase Requisition).
-  * Xây dựng ma trận so sánh giá và thời gian giao hàng của các nhà cung cấp quen thuộc trực tiếp trên hệ thống, rút ngắn thời gian phát hành Đơn mua hàng (PO) từ **3 ngày xuống dưới 2 giờ**.
+* **AS-IS Pain Point:** Quy trình mua hàng hoàn toàn bị động bằng giấy tay của thủ kho, gửi email chào giá mất 2–3 ngày, gây đứt gãy nguồn cung các mặt hàng bán chạy.
+* **TO-BE Improvement Direction:**
+  * Thiết lập **Quy tắc tái đặt hàng tự động (Automated Reordering Rules)** dựa trên ngưỡng Min/Max: Khi tồn ATP của `ST-001` chạm mức an toàn (100 ram), hệ thống tự động sinh Yêu cầu mua hàng dự thảo.
+  * Tích hợp ma trận so sánh đơn giá và thời gian giao hàng cam kết của nhà cung cấp, rút ngắn thời gian phát hành PO từ **3 ngày xuống dưới 2 giờ**.
 
 #### 2. Improvement Direction for BP5: Receiving Purchased Goods
-* **Hiện trạng thủ công (AS-IS Pain Point):** Hàng dỡ xuống cầu cảng phải kiểm đếm thủ công trên giấy, xếp lên kệ theo trí nhớ và mất 24–48 giờ mới được gõ vào file Excel, khiến hàng thực tế đã về kho nhưng Sales không thể nhìn thấy để bán.
-* **Hướng cải tiến tương lai (TO-BE Direction):**
-  * Áp dụng quy trình nhận hàng kỹ thuật số: Thủ kho đối chiếu đơn hàng PO trên thiết bị di động/máy tính bảng, kiểm tra mã vạch SKU để phân biệt chính xác quy cách ram/thùng và định vị vị trí lưu kho cố định (Bin Location Routing).
-  * Tự động cập nhật số lượng nhập kho vào tổng tồn khả dụng ATP **ngay khi thủ kho bấm xác nhận nhập hàng tại cầu cảng**, triệt tiêu độ trễ 24–48 giờ.
+* **AS-IS Pain Point:** Kiểm đếm thủ công trên giấy tại cầu cảng; xếp hàng theo trí nhớ; chậm nhập kho vào bảng tính Excel từ 24–48 giờ khiến hàng thực tế đã về nhưng Sales không nhìn thấy để bán.
+* **TO-BE Improvement Direction:**
+  * Trang bị thiết bị di động quét mã vạch cầm tay tại cầu cảng để đối soát tức thời với đơn PO điện tử, tự động gán vị trí lưu kho cố định (Bin Location).
+  * Tự động cộng số lượng nhập kho vào tổng tồn khả dụng ATP **ngay khi thủ kho bấm xác nhận nhập hàng tại cầu cảng**, triệt tiêu hoàn toàn độ trễ 24–48 giờ.
 
 ---
 
-## 5. REFINED BUSINESS & FUNCTIONAL REQUIREMENTS (BR/FR REFINEMENT - SLIDE 10, 11)
+### 4.5. Review Questions Evaluation (Slide 8)
 
-Dựa trên việc mô hình hóa sâu các quy trình TO-BE, nhóm tiến hành rà soát, đánh giá và tinh chỉnh danh mục yêu cầu nghiệp vụ theo bảng thẩm định chuẩn Slide 10, 11:
+Đánh giá 4 câu hỏi rà soát chất lượng thiết kế quy trình TO-BE theo Slide 8:
+1. **Does the proposed process directly address a verified problem?**
+   * *Có:* Thiết kế TO-BE trực tiếp giải quyết 3 vấn đề thực nghiệm lớn nhất: sai lệch giá 5–8% (`ISS-01`), hủy đơn do thiếu hàng thực tế (`ISS-02`), và chậm trễ mua hàng bù 3–5 ngày (`ISS-03`).
+2. **Are the actors, activities, decisions, and handoffs understandable?**
+   * *Có:* Sơ đồ Swimlane phân định rõ ràng trách nhiệm của từng vai trò (Khách hàng, Sales, Quản lý, Kho, Hệ thống), các cổng quyết định rẽ nhánh minh bạch và các điểm chuyển giao số hóa rõ ràng.
+3. **Is the proposed change realistic from a business perspective?**
+   * *Rất thực tế:* Đề xuất áp dụng các nguyên lý chuẩn của ngành phân phối bán buôn (bảng giá hợp đồng, tồn kho ATP, hạn mức nợ, điểm đặt hàng lại) mà không đòi hỏi thay đổi cơ cấu tổ chức cồng kềnh.
+4. **Have assumptions been clearly identified?**
+   * *Có:* Các giả định cốt lõi về việc khách hàng chấp nhận báo giá điện tử, cập nhật kịp thời dữ liệu chủ hợp đồng và quét mã vạch nhập kho tức thời đều được ghi nhận chi tiết.
 
-| Requirement ID | Original Draft Statement | Review Decision <br>`[Keep / Revise / Remove / Investigate]` | Refined Requirement Statement (Slide 10, 11) | Justification & Process Linkage |
-| :---: | :--- | :---: | :--- | :--- |
-| **`BR-01`** | The business needs corporate sales pricing to be accurate. | **REVISE** *(Quá chung chung, chưa nêu rõ năng lực kinh doanh)* | **The business needs corporate sales order pricing to be automatically determined from active framework agreements to eliminate billing discrepancies and accelerate customer cash collections.** | Trực tiếp giải quyết lỗi sai đơn giá 5–8% trên hóa đơn và giảm công nợ đọng ~50 triệu/tháng (`BP1`, `BP2`). |
-| **`BR-02`** | The business needs to manage stock better. | **REVISE** *(Không đo lường được, thiếu kết quả kinh doanh)* | **The business needs sales confirmation to be strictly verified against real-time Available-to-Promise (ATP) inventory levels across multi-warehouse locations to prevent post-confirmation order cancellations.** | Trực tiếp giải quyết sự cố 3–4 đơn hàng bị hủy mỗi tuần do hết hàng thực tế (`BP1`, `BP3`). |
-| **`FR-01`** | The system should display contract prices. | **REVISE** *(Dùng từ 'should' mơ hồ, thiếu cú pháp chuẩn)* | **The system shall automatically retrieve and populate the contract unit price for each selected product line based on the corporate customer's active pricelist during sales quote and order creation.** | Cú pháp chuẩn `The system shall + action + object + condition`; thay thế việc tra cứu Excel thủ công (`BP2`). |
-| **`FR-02`** | The manager must approve discounts. | **REVISE** *(Chưa nêu rõ hành vi hệ thống và ngưỡng kích hoạt)* | **The system shall block order confirmation and require authorized managerial override whenever a requested unit price is discounted by more than 5% below the contract baseline price.** | Cụ thể hóa ngưỡng chặn tự động 5% để thay thế việc duyệt miệng qua Zalo (`BP1`, `BP2`). |
-| **`FR-03`** | The system shall show warehouse stock. | **REVISE** *(Chưa phân biệt giữa tồn thực tế và tồn khả dụng ATP)* | **The system shall display the real-time Available-to-Promise (ATP) stock quantity of each product line, calculated from on-hand inventory minus reserved orders across warehouses, during order preparation.** | Định nghĩa rõ công thức tính toán ATP để Sales không cam kết giao hàng ảo (`BP3`). |
-| **`FR-04`** | The system shall warn when stock is low. | **REVISE** *(Thiếu ngữ cảnh kích hoạt và hành vi cảnh báo)* | **The system shall flag an order line and display an immediate visual stockout warning whenever the requested order quantity exceeds the real-time ATP quantity.** | Cung cấp phản hồi thị giác tức thời ngăn chặn nhân viên xác nhận đơn thiếu hàng (`BP1`, `BP3`). |
-| **`FR-05`** | The system shall match documents. | **INVESTIGATE** *(Cần làm rõ phạm vi tích hợp đối soát)* | **The system shall automatically reconcile quantities and prices between the confirmed Sales Order, the signed Delivery Slip, and the Customer Invoice to prevent billing discrepancies.** | Đang làm rõ việc chuyển giao chứng từ số giữa Kho và Kế toán để tự động hóa đối soát 3 chiều (`BP1`). |
+---
+
+## 5. REFINED BUSINESS AND FUNCTIONAL REQUIREMENTS (SLIDE 10, 11)
+
+**Objective:** Improve the team's Week 6 BR/FR drafts using the deeper process analysis and proposed TO-BE changes, deciding whether to Keep, Revise, Remove, or Investigate each requirement.
+
+### 5.1. Requirements Refinement Table (Slide 10 Format)
+
+| Requirement ID | Existing Requirement | Linked Problem / Need | Review Decision <br>`[Keep / Revise / Remove / Investigate]` | Revised Requirement Statement (Slide 10, 11) | Open Question (Slide 10) |
+| :---: | :--- | :--- | :---: | :--- | :--- |
+| **`BR-01`** | The business needs corporate sales pricing to be accurate. | `ISS-01`: 5–8% hóa đơn bị sai lệch đơn giá do file Excel phân tán. | **REVISE** | **The business needs corporate sales order pricing to be automatically determined from active framework agreements to eliminate billing discrepancies and accelerate customer cash collections.** | Quy định trần chiết khấu tối đa của Trưởng phòng Sales là bao nhiêu % trước khi phải xin ý kiến Giám đốc? |
+| **`BR-02`** | The business needs to manage stock better. | `ISS-02`: 3–4 đơn hàng bị hủy mỗi tuần sau khi chốt do đứt tồn kho thực tế. | **REVISE** | **The business needs sales confirmation to be strictly verified against real-time Available-to-Promise (ATP) inventory levels across multi-warehouse locations to prevent post-confirmation order cancellations.** | Chính sách ưu tiên phân bổ tồn kho (Stock Allocation Priority) giữa khách hàng VIP và khách hàng thường như thế nào? |
+| **`FR-01`** | The system should display contract prices. | `ISS-01`: Tra cứu giá thủ công gây sai lệch báo giá. | **REVISE** | **The system shall automatically retrieve and populate the contract unit price for each selected product line based on the corporate customer's active pricelist during sales quote and order creation.** | Thời hạn hiệu lực hợp đồng hết hạn thì hệ thống hiển thị cảnh báo gì cho nhân viên Sales? |
+| **`FR-02`** | The manager must approve discounts. | `ISS-01`: Thỏa thuận chiết khấu ngoại lệ qua Zalo không lưu vết. | **REVISE** | **The system shall block order confirmation and require authorized managerial override whenever a requested unit price is discounted by more than 5% below the contract baseline price.** | Thời gian tối đa (SLA) để Trưởng phòng phê duyệt yêu cầu giảm giá trước khi hệ thống tự động hủy hoặc nhắc việc? |
+| **`FR-03`** | The system shall show warehouse stock. | `ISS-02`: Sales không biết tồn kho khả dụng ATP đa kho. | **REVISE** | **The system shall display the real-time Available-to-Promise (ATP) stock quantity of each product line, calculated from on-hand inventory minus reserved orders across warehouses, during order preparation.** | Tần suất làm mới dữ liệu ATP trên màn hình của Sales là tức thời (Real-time) hay định kỳ theo phút? |
+| **`FR-04`** | The system shall warn when stock is low. | `ISS-02`: Hứa hẹn giao hàng ảo vượt quá tồn kho thực tế. | **REVISE** | **The system shall flag an order line and display an immediate visual stockout warning whenever the requested order quantity exceeds the real-time ATP quantity.** | Hệ thống có cho phép nhân viên Sales tách đơn hàng (Split Order) giao làm nhiều đợt khi bị thiếu hàng không? |
+| **`FR-05`** | The system shall match documents. | `ISS-01`: Đối soát thủ công 15–20h/tuần giữa SO, Phiếu giao hàng và Hóa đơn. | **INVESTIGATE** | **The system shall automatically reconcile quantities and prices between the confirmed Sales Order, the signed Delivery Slip, and the Customer Invoice to prevent billing discrepancies.** | Cần điều tra quy trình ký nhận điện tử (e-POD) của tài xế để đối soát 3 chiều tự động không dùng giấy. |
+
+---
+
+### 5.2. Requirements Review Criteria Compliance (Slide 11)
+
+Toàn bộ danh mục BR/FR đã được thẩm định nghiêm ngặt theo 6 tiêu chí của Slide 11:
+1. **Justified by verified evidence or business need:** 100% yêu cầu đều truy vết trực tiếp về chứng cứ thực tế (`EVD-W2-SALES-01`, `EVD-W2-WH-02`, `EVD-W2-ACC-01`).
+2. **BR focuses on business outcome / capability:** Cả `BR-01` và `BR-02` đều tập trung vào kết quả kinh doanh (loại bỏ sai lệch hóa đơn, tăng tốc thu nợ, ngăn chặn hủy đơn hàng).
+3. **FR describes observable system behavior:** Sử dụng chuẩn cú pháp `The system shall + action + object + condition`, tránh các phát biểu cảm tính như "hệ thống phải nhanh hơn".
+4. **Testable & Verifiable:** Các FR đều có tiêu chí nghiệm thu rõ ràng (ngưỡng 5% cho `FR-02`, công thức ATP cho `FR-03`, đổi màu cảnh báo cho `FR-04`).
+5. **Consistent with TO-BE process:** Hoàn toàn ăn khớp với các bước công việc và cổng quyết định trên sơ đồ TO-BE Swimlane tại Mục 4.
+6. **Solution Neutrality:** Giữ nguyên tính độc lập giải pháp công nghệ, không gán ghép cấu hình Odoo hay thiết kế cơ sở dữ liệu sớm.
 
 ---
 
 ## 6. REQUIREMENTS TRACEABILITY MATRIX (SLIDE 12, 13)
 
-Bảng ma trận truy xuất nguồn gốc hai chiều kết nối mạch lạc từ chứng cứ thực tế đến yêu cầu phần mềm theo chuẩn Slide 12, 13:
+**Objective:** Verify that each important requirement can be traced back to an identified business need through the complete 6-step reasoning chain.
 
-$$\text{Evidence Source} \longrightarrow \text{AS-IS Observation} \longrightarrow \text{Business Problem} \longrightarrow \text{Information Need} \longrightarrow \text{BR ID} \longrightarrow \text{FR ID(s)} \longrightarrow \text{Related Process}$$
+### 6.1. Complete 6-Step Traceability Matrix (Slide 12 Format)
 
-| Evidence / Source | AS-IS Observation | Business Problem | Information Need | BR ID | FR ID(s) | Related Process |
-| :--- | :--- | :--- | :--- | :---: | :---: | :---: |
-| **`EVD-W2-SALES-01`** *(Phỏng vấn Sales Manager)* & **`EVD-W4-SIM-02`** *(Kiểm toán mô phỏng)* | Sales reps tra cứu giá thủ công từ file Excel riêng và hợp đồng scan PDF cũ. | Thiếu cơ chế kiểm soát giá tập trung khiến 5–8% hóa đơn bị sai giá, gây tranh chấp thanh toán. | Đơn giá hợp đồng có hiệu lực và bậc chiết khấu tự động gắn với mã khách hàng. | **`BR-01`** | **`FR-01`**, **`FR-02`** | `BP1. Processing Corporate Orders`<br>`BP2. Verifying Contract Prices` |
-| **`EVD-W2-WH-02`** *(Phỏng vấn Thủ kho Tân Bình)* & **`EVD-W4-SIM-02`** *(Kiểm toán mô phỏng)* | Sales gọi điện thoại hỏi kho; hàng nhập về cầu cảng mất 24–48h mới gõ vào sổ Excel. | Tồn kho khả dụng bị trễ nhịp và mù mờ, gây ra 3–4 đơn hàng bị hủy/tuần sau khi đã chốt. | Tồn kho khả dụng thời gian thực ATP (Tồn kho thực tế trừ lượng hàng đã cam kết giữ). | **`BR-02`** | **`FR-03`**, **`FR-04`** | `BP1. Processing Corporate Orders`<br>`BP3. Checking Product Availability` |
-| **`EVD-W2-ACC-01`** *(Phỏng vấn Kế toán trưởng)* & **`EVD-W4-SIM-02`** *(Kiểm toán mô phỏng)* | Kế toán mất 15–20h/tuần ngồi đối chiếu thủ công bản in SO giấy, phiếu xuất kho và hóa đơn. | Quy trình đối soát hóa đơn thủ công tốn nhiều nhân lực và dễ sai sót số liệu. | Dữ liệu đối soát tự động 3 chiều giữa số lượng đặt, số lượng giao và đơn giá hợp đồng. | **`BR-01`** | **`FR-05`** | `BP1. Processing Corporate Orders` |
+$$\text{Evidence / Source} \longrightarrow \text{AS-IS Observation} \longrightarrow \text{Business Problem} \longrightarrow \text{Information Need} \longrightarrow \text{BR ID} \longrightarrow \text{FR ID} \longrightarrow \text{Related Process}$$
+
+| Evidence / Source | AS-IS Observation | Problem / Need | BR ID | FR ID | Related Process |
+| :--- | :--- | :--- | :---: | :---: | :--- |
+| **`EVD-W2-SALES-01`** *(Phỏng vấn Sales Manager)* & **`EVD-W4-SIM-02`** *(Kiểm toán)* | Sales reps tra cứu giá thủ công từ file Excel riêng và PDF scan cũ; mỗi người báo một giá. | **`ISS-01`**: Thiếu cơ chế kiểm soát giá tập trung khiến 5–8% hóa đơn bị sai giá, gây tranh chấp thanh toán. | **`BR-01`** | **`FR-01`** | `BP1. Processing Corporate Orders`<br>`BP2. Verifying Contract Prices` |
+| **`EVD-W2-SALES-01`** *(Phỏng vấn Sales Manager)* | Sales Rep xin duyệt chiết khấu ngoại lệ qua tin nhắn Zalo cá nhân hoặc nói miệng, không lưu vết. | **`ISS-01`**: Không có lưu vết phê duyệt giá ngoại lệ, rủi ro thất thoát biên lợi nhuận kinh doanh. | **`BR-01`** | **`FR-02`** | `BP1. Processing Corporate Orders`<br>`BP2. Verifying Contract Prices` |
+| **`EVD-W2-WH-02`** *(Phỏng vấn Thủ kho Tân Bình)* | Sales gọi điện thoại hỏi kho; hàng về cầu cảng nằm chờ 24–48h mới gõ vào sổ Excel. | **`ISS-02`**: Tồn kho khả dụng bị trễ nhịp và mù mờ, gây ra 3–4 đơn hàng bị hủy/tuần sau khi đã chốt. | **`BR-02`** | **`FR-03`** | `BP1. Processing Corporate Orders`<br>`BP3. Checking Product Availability` |
+| **`EVD-W4-SIM-02`** *(Nhật ký sự cố giao hàng)* | Nhân viên bán hàng cam kết giao ngay cho khách mà không biết kho thực tế đã hết hàng. | **`ISS-02`**: Thiếu cảnh báo thị giác tức thì khi số lượng đặt vượt quá khả năng đáp ứng thực tế. | **`BR-02`** | **`FR-04`** | `BP1. Processing Corporate Orders`<br>`BP3. Checking Product Availability` |
+| **`EVD-W2-ACC-01`** *(Phỏng vấn Kế toán trưởng)* & **`EVD-W4-SIM-02`** *(Kiểm toán)* | Kế toán mất 15–20h/tuần ngồi đối chiếu thủ công bản in SO giấy, phiếu xuất kho và hóa đơn. | **`ISS-01`**: Đối soát thủ công tốn nhân lực và chậm phát hiện sai lệch số lượng/đơn giá thanh toán. | **`BR-01`** | **`FR-05`** *(Investigate)* | `BP1. Processing Corporate Orders` |
+
+---
+
+### 6.2. Validation Questions Analysis (Slide 13)
+
+1. **Can the team explain why each requirement is needed?**
+   * *Có:* Từng yêu cầu đều gắn liền với một nỗi đau vận hành có số liệu chứng minh (sai giá 5–8%, hủy 3–4 đơn/tuần, đối soát thủ công 15–20h/tuần).
+2. **Does the requirement address the identified problem or information need?**
+   * *Có:* `FR-01` và `FR-02` giải quyết dứt điểm nhu cầu kiểm soát giá của `ISS-01`; `FR-03` và `FR-04` đáp ứng nhu cầu thông tin tồn ATP của `ISS-02`.
+3. **Is the FR consistent with the BR?**
+   * *Hoàn toàn nhất quán:* Các FR là hành vi hệ thống cụ thể hóa mục tiêu kết quả kinh doanh được định nghĩa trong `BR-01` và `BR-02`.
+4. **Does the requirement support the proposed TO-BE process?**
+   * *Có:* Từng chức năng hệ thống đều tương ứng chính xác với một bước công việc hoặc cổng quyết định trên các sơ đồ TO-BE Swimlane tại Mục 4.
+5. **If the evidence does not support a requirement, should it be revised or investigated?**
+   * *Có:* Yêu cầu `FR-05` (đối soát 3 chiều tự động) được đánh dấu quyết định là **INVESTIGATE** vì cần tiếp tục khảo sát quy trình bàn giao chứng từ ký nhận giao hàng (e-POD) trước khi chốt giải pháp.
 
 ---
 
 ## 7. PEER REVIEW & INDIVIDUAL EXIT TICKET (SLIDE 14, 15)
 
-### 7.1. Internal Peer Review Notes (Đánh giá chéo nội bộ Group 6):
-* **Người đánh giá:** Phạm Nguyễn Gia Thuận (22204631) ➔ Đánh giá phần việc của Võ Duy Bình (22301500 - `BP1`, `BP2`):
-  * **One Strength (Điểm mạnh):** *"Mô hình TO-BE Swimlane của quy trình BP2 giải quyết triệt để vấn đề sai lệch giá bằng chốt chặn phê duyệt tự động 5%, có sự phân định rạch ròi giữa các vai trò và luồng dữ liệu chứng từ số."*
-  * **One Issue (Vấn đề cần làm rõ):** *"Cần làm rõ cơ chế mở khóa tạm thời nếu hệ thống gặp sự cố kết nối mạng thì nhân viên kinh doanh có thể báo giá khẩn cấp cho khách hàng VIP bằng cách nào."*
-  * **One Question (Câu hỏi cho Process Owner):** *"Thời gian phản hồi tối đa của Trưởng phòng Sales khi nhận thông báo duyệt giá ngoại lệ qua hệ thống là bao nhiêu phút để tránh làm khách hàng sốt ruột?"*
+### 7.1. Internal Peer Review (Slide 14)
+* **Checklist thẩm định nội bộ:**
+  * [x] Is the process scope clear? *(Rõ ràng theo chuẩn gói Scenario 6)*.
+  * [x] Are the trigger, activities, actors, handoffs, and end point understandable? *(Đầy đủ trong 5 bảng 12 yếu tố)*.
+  * [x] Are important problems supported by evidence? *(Gắn với mã chứng cứ EVD thực nghiệm)*.
+  * [x] Does the TO-BE proposal address an identified problem? *(Giải quyết trực tiếp ISS-01, 02, 03)*.
+  * [x] Are the BRs and FRs clear and justified? *(Cú pháp chuẩn, đo lường được)*.
+  * [x] Can the requirements be traced to the business need? *(Hoàn thiện ma trận truy vết 6 bước)*.
 
-### 7.2. Cross-Group Peer Review Notes (Đánh giá chéo liên nhóm):
-* **Nhóm phản biện:** Group 7 (Phân tích chuỗi bán buôn hàng tiêu dùng nhanh FMCG):
-  * **One Strong Point:** Mô hình quan hệ 5 quy trình (Relationship Map) rất trực quan, thể hiện rõ cả quan hệ đồng bộ (Synchronous) và phụ thuộc kích hoạt (Trigger).
-  * **One Issue:** Cần kiểm chứng thêm mối quan hệ số 8 (thông báo hàng về từ `BP5` sang `BP1`) để đảm bảo không bị sót các đơn hàng đặt trước (Backorders).
+* **Biên bản đánh giá chéo giữa các thành viên:**
+  * **Người đánh giá:** Phạm Nguyễn Gia Thuận (22204631) ➔ Đánh giá phần việc của Võ Duy Bình (22301500 - `BP1`, `BP2`):
+    * **One Strength (Điểm mạnh):** *"Mô hình TO-BE Swimlane của quy trình BP2 giải quyết triệt để vấn đề sai lệch giá bằng chốt chặn phê duyệt tự động 5%, có sự phân định rạch ròi giữa các vai trò và luồng dữ liệu chứng từ số."*
+    * **One Issue (Vấn đề cần làm rõ):** *"Cần làm rõ cơ chế mở khóa tạm thời nếu hệ thống gặp sự cố kết nối mạng thì nhân viên kinh doanh có thể báo giá khẩn cấp cho khách hàng VIP bằng cách nào."*
+    * **One Question (Câu hỏi cho Process Owner):** *"Thời gian phản hồi tối đa của Trưởng phòng Sales khi nhận thông báo duyệt giá ngoại lệ qua hệ thống là bao nhiêu phút để tránh làm khách hàng sốt ruột?"*
 
 ---
 
-### 7.3. Individual Exit Ticket — Võ Duy Bình (MSSV: 22301500) (Slide 15):
+### 7.2. Cross-Group Peer Review (Slide 14 Format)
+
+* **Nhóm phản biện:** Group 7 (Phân tích chuỗi bán buôn hàng tiêu dùng nhanh FMCG):
+
+| Review Item (Slide 14) | Detailed Feedback from Group 7 |
+| :--- | :--- |
+| **One strong point** *(What is clear, logical, or well-supported?)* | Mô hình quan hệ 5 quy trình (Process Relationship Map) và ma trận tích hợp thông tin rất trực quan, phân định rõ ràng các mối quan hệ đồng bộ (Synchronous), kích hoạt (Trigger) và điều kiện tiên quyết (Pre-requisite). |
+| **One issue** *(What is unclear, unsupported, or inconsistent?)* | Mối quan hệ số 8 (thông báo hàng về từ `BP5` sang `BP1`) đang để trạng thái UNCERTAIN cần được nhóm khảo sát kỹ hơn để tránh bỏ sót các đơn hàng đặt trước (Backorders) khi hàng về kho. |
+| **One question** *(What evidence or explanation is still needed?)* | Khi hệ thống tự động khóa đơn do nợ quá hạn (> 30 ngày) ở quy trình TO-BE BP1, doanh nghiệp có chính sách ngoại lệ nào cho phép xuất hàng tạm thời đối với khách hàng chiến lược có cam kết thanh toán bằng văn bản không? |
+
+---
+
+### 7.3. Individual Exit Ticket — Võ Duy Bình (MSSV: 22301500) (Slide 15)
 
 1. **Which business problem did your process analysis clarify most clearly?**  
    > *Phân tích quy trình BP2 đã làm sáng tỏ rõ nhất nguyên nhân gốc rễ của tỷ lệ 5–8% hóa đơn bị sai giá: không phải do nhân viên tắc trách, mà do sự phân mảnh thông tin khi bảng giá hợp đồng bị lưu rải rác dưới dạng file PDF scan tĩnh và các bảng tính Excel cá nhân thiếu một nguồn dữ liệu gốc tập trung (Single Source of Truth).*
@@ -838,15 +973,14 @@ $$\text{Evidence Source} \longrightarrow \text{AS-IS Observation} \longrightarro
 
 ## 8. SUBMISSION CHECKLIST VERIFICATION (SLIDE 15)
 
-Đối chiếu toàn bộ tiêu chí nghiệm thu của bài nộp Tuần 7 theo Slide 15:
+Đối chiếu toàn bộ 8 tiêu chí nghiệm thu của bài nộp Tuần 7 theo Slide 15:
 
-* [x] **Five reviewed AS-IS business process descriptions:** Đầy đủ 5 bảng mô tả 12 yếu tố cho `BP1`, `BP2`, `BP3`, `BP4`, `BP5` tại Mục 1.
-* [x] **Five updated AS-IS process models:** Đầy đủ 5 sơ đồ Swimlane BPMN trực quan thể hiện rõ vai trò và điểm ma sát vận hành tại Mục 1.
-* [x] **One business process relationship map:** Đã xây dựng sơ đồ tổng thể và bảng phân tích phụ thuộc giữa 5 quy trình tại Mục 2.
-* [x] **Evidence-based problem and needs analysis:** Hoàn thành bảng phân tích vấn đề và nhu cầu thông tin dựa trên chứng cứ thực nghiệm tại Mục 3.
-* [x] **Draft TO-BE models for core processes:** Đã mô hình hóa Swimlane TO-BE chi tiết cho 3 quy trình trọng tâm (`BP1`, `BP2`, `BP3`) kèm thuyết minh giá trị kinh doanh tại Mục 4.
-* [x] **Improvement directions for remaining processes:** Ghi nhận rõ định hướng cải tiến cho `BP4` (Reorder Point tự động) và `BP5` (Quét mã vạch cập nhật kho tức thời) tại Mục 4.4.
-* [x] **Refined BR and FR list:** Đã tinh chỉnh danh mục yêu cầu với quyết định thẩm định rõ ràng tại Mục 5.
-* [x] **Requirements traceability matrix:** Hoàn thành chuỗi truy vết 6 bước từ Evidence đến FR tại Mục 6.
-* [x] **Internal & Cross-group peer review notes:** Ghi nhận đầy đủ ý kiến phản biện và Exit Ticket cá nhân tại Mục 7.
+* [x] **Five reviewed business process descriptions:** Đầy đủ 5 bảng mô tả 12 yếu tố cho `BP1`, `BP2`, `BP3`, `BP4`, `BP5` tại Mục 1.
+* [x] **One process relationship map:** Đã xây dựng sơ đồ tổng thể và bảng ma trận chuyển giao thông tin chuẩn 4 cột theo Slide 5 tại Mục 2.
+* [x] **An evidence-based problem and information-needs analysis:** Hoàn thành các bảng 7 yếu tố cho `ISS-01`, `ISS-02`, `ISS-03` theo chuẩn Slide 7 tại Mục 3.
+* [x] **Draft TO-BE models for assigned processes (prioritizing core processes):** Đã mô hình hóa Swimlane TO-BE chi tiết cho 3 quy trình trọng tâm (`BP1`, `BP2`, `BP3`) kèm ma trận so sánh 4 chiều theo Slide 9 tại Mục 4.
+* [x] **A refined BR/FR list with requirement IDs:** Đã tinh chỉnh danh mục yêu cầu với quyết định thẩm định rõ ràng theo biểu mẫu Slide 10 tại Mục 5.
+* [x] **An updated requirements traceability matrix:** Hoàn thành chuỗi truy vết 6 bước từ Evidence đến FR theo chuẩn Slide 12 tại Mục 6.
+* [x] **Internal and cross-group peer review notes:** Ghi nhận đầy đủ checklist và biên bản phản biện theo đúng biểu mẫu Slide 14 tại Mục 7.
+* [x] **A list of assumptions and unresolved questions:** Đã ghi nhận rõ ràng các giả định và câu hỏi mở cho từng quy trình và trong Exit Ticket cá nhân.
 * [x] **Solution neutrality strictly maintained:** Tập trung hoàn toàn vào cải tiến quy trình nghiệp vụ, tuyệt đối không cấu hình phần mềm hay ép buộc công nghệ Odoo sớm.
