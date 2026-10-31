@@ -765,6 +765,230 @@
             transform: none;
             box-shadow: none;
         }
+    
+        /* ==========================================================================
+           Process Relationship Map & BPMN Swimlanes Styling (Phase 1 Pure BA)
+           ========================================================================== */
+        .prm-wrapper {
+            display: grid;
+            grid-template-columns: 2.2fr 1.8fr;
+            gap: 1rem;
+            height: 100%;
+        }
+
+        .prm-diagram {
+            background: var(--md-sys-color-surface-container);
+            border: 1.5px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .prm-core-box {
+            background: linear-gradient(135deg, rgba(103, 80, 164, 0.12), rgba(103, 80, 164, 0.04));
+            border: 2px solid var(--md-sys-color-primary);
+            border-radius: var(--radius-md);
+            padding: 0.85rem;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(103, 80, 164, 0.15);
+        }
+
+        .prm-satellite-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-top: 0.6rem;
+        }
+
+        .prm-sat-card {
+            background: var(--md-sys-color-surface-container-high);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--radius-sm);
+            padding: 0.65rem 0.8rem;
+            font-size: 0.84rem;
+            transition: all 0.2s var(--md-easing);
+        }
+
+        .prm-sat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--md-sys-color-primary);
+        }
+
+        .prm-arrow-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.76rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: var(--radius-pill);
+            background: var(--md-sys-color-surface-container-highest);
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Cross-Functional Swimlane Board */
+        .swimlane-board {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding-right: 0.3rem;
+        }
+
+        .swimlane-row {
+            display: grid;
+            grid-template-columns: 145px 1fr;
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            min-height: 85px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: border-color 0.2s;
+        }
+
+        .swimlane-row:hover {
+            border-color: var(--md-sys-color-primary);
+        }
+
+        .swimlane-role-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem 0.7rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            border-right: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        .role-customer { background: rgba(103, 80, 164, 0.12); color: var(--md-sys-color-primary); }
+        .role-sales { background: rgba(217, 119, 6, 0.12); color: var(--accent-amber); }
+        .role-warehouse { background: rgba(8, 145, 178, 0.12); color: var(--accent-cyan); }
+        .role-accounting { background: rgba(225, 29, 72, 0.12); color: var(--accent-rose); }
+        .role-procurement { background: rgba(5, 150, 105, 0.12); color: var(--accent-emerald); }
+
+        .swimlane-steps-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.85rem;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .bpmn-card {
+            background: var(--md-sys-color-surface);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: var(--radius-sm);
+            padding: 0.45rem 0.7rem;
+            min-width: 155px;
+            max-width: 190px;
+            font-size: 0.8rem;
+            line-height: 1.35;
+            color: var(--text-main);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .bpmn-card strong {
+            display: block;
+            color: var(--text-title);
+            margin-bottom: 0.2rem;
+            font-size: 0.82rem;
+        }
+
+        .bpmn-card.friction {
+            border: 1.5px solid var(--accent-rose);
+            background: rgba(225, 29, 72, 0.06);
+        }
+
+        .bpmn-card.friction-amber {
+            border: 1.5px solid var(--accent-amber);
+            background: rgba(217, 119, 6, 0.06);
+        }
+
+        .bpmn-card.automated {
+            border: 1.5px solid var(--accent-emerald);
+            background: rgba(5, 150, 105, 0.07);
+        }
+
+        .bpmn-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.1rem 0.4rem;
+            border-radius: var(--radius-pill);
+            margin-top: 0.25rem;
+        }
+
+        .bpmn-tag-red { background: var(--accent-rose-bg); color: var(--accent-rose); border: 1px solid var(--accent-rose); }
+        .bpmn-tag-amber { background: var(--accent-amber-bg); color: var(--accent-amber); border: 1px solid var(--accent-amber); }
+        .bpmn-tag-green { background: var(--accent-emerald-bg); color: var(--accent-emerald); border: 1px solid var(--accent-emerald); }
+
+        .bpmn-flow-conn {
+            color: var(--md-sys-color-outline);
+            font-weight: 800;
+            font-size: 0.95rem;
+            user-select: none;
+        }
+
+        /* RTM Table Styling */
+        .rtm-table-container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        .rtm-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+
+        .rtm-table th {
+            position: sticky;
+            top: 0;
+            background: var(--md-sys-color-surface-container-high);
+            z-index: 2;
+            padding: 0.55rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-title);
+            border-bottom: 2px solid var(--md-sys-color-outline-variant);
+        }
+
+        .rtm-table td {
+            padding: 0.5rem 0.75rem;
+            border-bottom: 1px solid var(--md-sys-color-surface-container-highest);
+            line-height: 1.4;
+            vertical-align: top;
+        }
+
+        .rtm-id-chip {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.78rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: var(--radius-xs);
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+        }
+
     </style>
 </head>
 <body>
@@ -783,7 +1007,7 @@
         </div>
         <div class="header-controls">
             <button class="btn-ctrl" onclick="toggleTheme()" id="theme-btn">Light Mode</button>
-            <span class="slide-counter" id="counter">Slide 1 of 16</span>
+            <span class="slide-counter" id="counter">Slide 1 of 20</span>
             <button class="btn-ctrl" onclick="toggleOverview()">Overview</button>
             <button class="btn-ctrl" onclick="toggleFullscreen()">Fullscreen</button>
         </div>
@@ -1252,7 +1476,115 @@
             </div>
         </div>
 
-        <!-- SLIDE 10: AS-IS PROCESS WORKFLOW -->
+        
+        <!-- SLIDE 10: PROCESS RELATIONSHIP MAP -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 2 — Process Integration</span>
+                <h2 class="slide-title">Five Core Business Processes Relationship Map</h2>
+            </div>
+            <div class="slide-content">
+                <div class="prm-wrapper">
+                    <!-- Trực quan hóa bản đồ 5 BP -->
+                    <div class="prm-diagram">
+                        <div class="prm-core-box">
+                            <span class="kpi-chip kpi-blue" style="margin-bottom: 0.3rem;">Core Revenue Stream</span>
+                            <div style="font-family: 'Outfit', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--md-sys-color-primary);">
+                                BP1: Processing Corporate B2B Orders
+                            </div>
+                            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem;">
+                                Customer Inquiry ➔ Quotation ➔ Credit Check ➔ Order Confirmation ➔ Invoicing
+                            </div>
+                        </div>
+
+                        <div class="prm-satellite-grid">
+                            <div class="prm-sat-card" style="border-left: 3px solid var(--accent-amber);">
+                                <strong>BP2: Contract Pricing</strong>
+                                <div style="color: var(--text-muted); font-size: 0.78rem;">Maintains approved corporate pricelists & discount tiers.</div>
+                                <div class="prm-arrow-badge">➔ Feeds Contract Price into BP1</div>
+                            </div>
+
+                            <div class="prm-sat-card" style="border-left: 3px solid var(--accent-cyan);">
+                                <strong>BP3: Stock Availability (ATP)</strong>
+                                <div style="color: var(--text-muted); font-size: 0.78rem;">Verifies available stock at Tan Binh & Bien Hoa hubs.</div>
+                                <div class="prm-arrow-badge">➔ Feeds Real-Time ATP into BP1</div>
+                            </div>
+
+                            <div class="prm-sat-card" style="border-left: 3px solid var(--accent-emerald);">
+                                <strong>BP5: Receiving & Inspection</strong>
+                                <div style="color: var(--text-muted); font-size: 0.78rem;">Inspects supplier shipments & updates inventory.</div>
+                                <div class="prm-arrow-badge">➔ Replenishes Stock for BP3</div>
+                            </div>
+
+                            <div class="prm-sat-card" style="border-left: 3px solid var(--md-sys-color-primary);">
+                                <strong>BP4: Purchase Orders</strong>
+                                <div style="color: var(--text-muted); font-size: 0.78rem;">Issues vendor POs when ATP drops below threshold.</div>
+                                <div class="prm-arrow-badge">➔ Triggered by Low Stock in BP3</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 0.5rem; text-align: center;">
+                            <span class="kpi-chip kpi-green">100% Solution-Neutral (Pure Business Systems Analysis)</span>
+                        </div>
+                    </div>
+
+                    <!-- Bảng luồng giao tiếp chứng từ -->
+                    <div class="glass-card" style="padding: 0.8rem 1rem; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div class="card-title" style="font-size: 1.02rem; margin-bottom: 0.4rem;">Inter-Process Handoffs & Evidence Status</div>
+                            <table style="font-size: 0.8rem;">
+                                <thead>
+                                    <tr>
+                                        <th>Upstream</th>
+                                        <th>Transferred Information / Artifact</th>
+                                        <th>Downstream</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>BP2</strong></td>
+                                        <td>Approved Contract Rates (<code>ST-001</code> @ 65k)</td>
+                                        <td><strong>BP1</strong></td>
+                                        <td><span class="kpi-chip kpi-green" style="font-size: 0.72rem; padding: 0.1rem 0.4rem;">Verified</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BP3</strong></td>
+                                        <td>Real-time ATP Stock Quantity by Location</td>
+                                        <td><strong>BP1</strong></td>
+                                        <td><span class="kpi-chip kpi-green" style="font-size: 0.72rem; padding: 0.1rem 0.4rem;">Verified</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BP3</strong></td>
+                                        <td>Reorder Point Trigger (Stock &lt; 100 reams)</td>
+                                        <td><strong>BP4</strong></td>
+                                        <td><span class="kpi-chip kpi-green" style="font-size: 0.72rem; padding: 0.1rem 0.4rem;">Verified</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BP4</strong></td>
+                                        <td>Approved Vendor PO & Delivery Expected Date</td>
+                                        <td><strong>BP5</strong></td>
+                                        <td><span class="kpi-chip kpi-green" style="font-size: 0.72rem; padding: 0.1rem 0.4rem;">Verified</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>BP5</strong></td>
+                                        <td>Goods Receipt Slip & Actual Inward Stock</td>
+                                        <td><strong>BP3</strong></td>
+                                        <td><span class="kpi-chip kpi-green" style="font-size: 0.72rem; padding: 0.1rem 0.4rem;">Verified</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; line-height: 1.4;">
+                            <strong>Analytical Insight:</strong> Friction occurs because AS-IS handoffs rely on fragmented Excel files, unrecorded phone calls, and paper slips without a unified data backbone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SLIDE 11: AS-IS PROCESS WORKFLOW -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — AS-IS Process Modeling</span>
@@ -1294,7 +1626,123 @@
             </div>
         </div>
 
-        <!-- SLIDE 11: AS-IS DEPARTMENTAL BOTTLENECKS -->
+        
+        <!-- SLIDE 12: AS-IS SWIMLANE BPMN -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 3 — AS-IS Process Modeling</span>
+                <h2 class="slide-title">AS-IS Cross-Functional Swimlane BPMN Diagram</h2>
+            </div>
+            <div class="slide-content">
+                <div class="swimlane-board">
+                    <!-- Lane 1: Customer -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-customer">
+                            <span>B2B Corporate Customer</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card">
+                                <strong>1.1 Submit RFQ</strong>
+                                Sends order inquiry via Zalo/Email with list of SKUs.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card" style="margin-left: 210px;">
+                                <strong>1.2 Review Quotation</strong>
+                                Customer reviews draft quote & price terms.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card" style="margin-left: 170px;">
+                                <strong>1.3 Receive Goods</strong>
+                                Signs physical Delivery Note upon truck delivery.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card friction">
+                                <strong>1.4 Invoice Dispute</strong>
+                                Discovers price discrepancy vs signed contract.
+                                <span class="bpmn-tag bpmn-tag-red">Disputes & Delay</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lane 2: Sales -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-sales">
+                            <span>Sales Representative</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card friction" style="margin-left: 30px;">
+                                <strong>2.1 Check Price (Excel)</strong>
+                                Copies rates from personal Excel spreadsheet.
+                                <span class="bpmn-tag bpmn-tag-red">⚡ 5–8% Pricing Errors</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card friction-amber">
+                                <strong>2.2 Call Warehouse</strong>
+                                Phones keeper to check stock; unaware of unposted receipts.
+                                <span class="bpmn-tag bpmn-tag-amber">⚡ 3–4 Stockouts/Wk</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card">
+                                <strong>2.3 Issue Quote & SO</strong>
+                                Drafts Word quote; prints physical paper Sales Order.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card friction">
+                                <strong>2.4 Credit Policy Bypass</strong>
+                                Verbal manager override for overdue debt accounts.
+                                <span class="bpmn-tag bpmn-tag-red">Debt Risk</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lane 3: Warehouse -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-warehouse">
+                            <span>Warehouse & Logistics</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card friction-amber" style="margin-left: 170px;">
+                                <strong>3.1 Manual Stock Check</strong>
+                                Keeper checks morning Excel dump or physical bin.
+                                <span class="bpmn-tag bpmn-tag-amber">24–48h Receiving Lag</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card" style="margin-left: 160px;">
+                                <strong>3.2 Pick & Pack</strong>
+                                Receives paper SO; picks items based on memory.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card">
+                                <strong>3.3 Delivery Transit</strong>
+                                Driver delivers goods with 2 copies of paper Delivery Note.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lane 4: Accounting -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-accounting">
+                            <span>Accounting & Finance</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card friction" style="margin-left: 540px;">
+                                <strong>4.1 Manual 3-Way Match</strong>
+                                Cross-checks paper SO, Delivery Slip, and Pricelist manually.
+                                <span class="bpmn-tag bpmn-tag-red">⚡ 15–20h/Wk Wasted</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card">
+                                <strong>4.2 Issue VAT Invoice</strong>
+                                Types VAT invoice; re-issues adjustment upon customer dispute.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SLIDE 13: AS-IS DEPARTMENTAL BOTTLENECKS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Operational Bottlenecks</span>
@@ -1322,7 +1770,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 12: 5-WHYS ROOT CAUSE ANALYSIS -->
+        <!-- SLIDE 14: 5-WHYS ROOT CAUSE ANALYSIS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Root Cause Analysis</span>
@@ -1366,7 +1814,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 13: TO-BE PROCESS DESIGN -->
+        <!-- SLIDE 15: TO-BE PROCESS DESIGN -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — TO-BE Solution Design</span>
@@ -1414,7 +1862,126 @@
             </div>
         </div>
 
-        <!-- SLIDE 14: TO-BE OPERATIONAL IMPROVEMENTS -->
+        
+        <!-- SLIDE 16: TO-BE SWIMLANE BPMN -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 3 — TO-BE Solution Design</span>
+                <h2 class="slide-title">TO-BE Cross-Functional Swimlane BPMN Diagram</h2>
+            </div>
+            <div class="slide-content">
+                <div class="swimlane-board">
+                    <!-- Lane 1: Customer -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-customer">
+                            <span>B2B Corporate Customer</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card">
+                                <strong>1.1 Submit RFQ</strong>
+                                Submits digital order inquiry via email or portal.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card automated" style="margin-left: 210px;">
+                                <strong>1.2 Instant Quote Approval</strong>
+                                Receives standardized quotation with contract rate lock.
+                                <span class="bpmn-tag bpmn-tag-green">100% Rate Accuracy</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card" style="margin-left: 170px;">
+                                <strong>1.3 Digital Delivery Confirmation</strong>
+                                Confirms receipt digitally upon on-time delivery.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card automated">
+                                <strong>1.4 Friction-Free E-Invoice</strong>
+                                Receives accurate VAT E-invoice matching contract terms.
+                                <span class="bpmn-tag bpmn-tag-green">Zero Disputes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lane 2: Sales Department -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-sales">
+                            <span>Sales Representative</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card automated" style="margin-left: 30px;">
+                                <strong>2.1 Select Customer [FR-01]</strong>
+                                System auto-loads agreed contract pricelist (<code>ST-001</code> @ 65k).
+                                <span class="bpmn-tag bpmn-tag-green">✨ Contract Engine</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card automated">
+                                <strong>2.2 Real-Time ATP Check [FR-02]</strong>
+                                Instant visibility into available stock across hubs.
+                                <span class="bpmn-tag bpmn-tag-green">✨ ATP Real-Time</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card automated">
+                                <strong>2.3 Credit Lock Gate [FR-03]</strong>
+                                Automatic hard block if customer debt is overdue &gt; 30 days.
+                                <span class="bpmn-tag bpmn-tag-green">🔒 Hard Credit Lock</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card">
+                                <strong>2.4 Confirm Digital SO</strong>
+                                System releases picking order immediately to warehouse.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lane 3: Warehouse & Procurement -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-warehouse">
+                            <span>Warehouse & Inventory</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card automated" style="margin-left: 170px;">
+                                <strong>3.1 Real-Time Reservation</strong>
+                                Inventory reserved instantly upon SO confirmation.
+                                <span class="bpmn-tag bpmn-tag-green">Zero Stockout</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card" style="margin-left: 160px;">
+                                <strong>3.2 Bin-Guided Picking</strong>
+                                Structured picking slip guided by exact warehouse bin locations.
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card automated">
+                                <strong>3.3 Digital Dispatch Slip</strong>
+                                System validates dispatch & updates on-hand stock in real time.
+                                <span class="bpmn-tag bpmn-tag-green">Instant Sync</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lane 4: Accounting & Invoicing -->
+                    <div class="swimlane-row">
+                        <div class="swimlane-role-header role-accounting">
+                            <span>Accounting & Finance</span>
+                        </div>
+                        <div class="swimlane-steps-container">
+                            <div class="bpmn-card automated" style="margin-left: 540px;">
+                                <strong>4.1 Automated 3-Way Match [FR-05]</strong>
+                                System auto-reconciles Digital SO + Dispatch + Invoicing lines.
+                                <span class="bpmn-tag bpmn-tag-green">✨ 20h ➔ 2h/Week</span>
+                            </div>
+                            <span class="bpmn-flow-conn">➔</span>
+                            <div class="bpmn-card automated">
+                                <strong>4.2 Automatic E-Invoice</strong>
+                                VAT E-invoice generated without manual re-keying.
+                                <span class="bpmn-tag bpmn-tag-green">Auto-Reconciled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SLIDE 17: TO-BE OPERATIONAL IMPROVEMENTS -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Transformation Impact</span>
@@ -1466,7 +2033,7 @@
             </div>
         </div>
 
-        <!-- SLIDE 15: MOSCOW REQUIREMENTS CATALOG -->
+        <!-- SLIDE 18: MOSCOW REQUIREMENTS CATALOG -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Section 3 — Requirements Framing</span>
@@ -1497,7 +2064,75 @@
             </div>
         </div>
 
-        <!-- SLIDE 16: CONCLUSION & PHASE 1 DEFENSE -->
+        
+        <!-- SLIDE 19: REQUIREMENTS TRACEABILITY MATRIX -->
+        <div class="slide">
+            <div class="slide-header">
+                <span class="slide-tag">Section 3 — Traceability & Validation</span>
+                <h2 class="slide-title">End-to-End Requirements Traceability Matrix (RTM)</h2>
+            </div>
+            <div class="slide-content">
+                <div class="rtm-table-container">
+                    <table class="rtm-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 14%;">Evidence ID</th>
+                                <th style="width: 20%;">AS-IS Observation & Problem</th>
+                                <th style="width: 18%;">Information Need</th>
+                                <th style="width: 10%;">BR ID</th>
+                                <th style="width: 24%;">Functional Requirement (FR)</th>
+                                <th style="width: 14%;">Related Process</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="rtm-id-chip">EVD-W2-SALES-01</span><br><small style="color:var(--text-muted);">Sales Interview</small></td>
+                                <td>Reps lookup prices in individual Excel files; <strong>5–8% pricing error rate</strong>.</td>
+                                <td>Contracted unit prices & agreement validity dates.</td>
+                                <td><span class="rtm-id-chip" style="background:var(--accent-amber-bg);color:var(--accent-amber);">BR-01</span></td>
+                                <td><strong>FR-01:</strong> Retrieve approved contract pricelist upon customer selection. <span class="tag-must">MUST</span></td>
+                                <td><strong>BP1 / BP2</strong><br><small>Corporate Orders & Pricing</small></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rtm-id-chip">EVD-W2-WH-02</span><br><small style="color:var(--text-muted);">Warehouse Log</small></td>
+                                <td>Verbal phone checks; 24–48h receiving lag causes <strong>3–4 stockouts/week</strong>.</td>
+                                <td>Real-time Available-to-Promise (ATP) stock levels.</td>
+                                <td><span class="rtm-id-chip" style="background:var(--accent-amber-bg);color:var(--accent-amber);">BR-01</span></td>
+                                <td><strong>FR-02:</strong> Display real-time ATP stock across Tan Binh & Bien Hoa hubs. <span class="tag-must">MUST</span></td>
+                                <td><strong>BP1 / BP3</strong><br><small>Orders & Stock Check</small></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rtm-id-chip">EVD-W2-ACC-01</span><br><small style="color:var(--text-muted);">Accountant Interview</small></td>
+                                <td>Verbal overrides bypass credit rules; <strong>15–20h/wk</strong> manual 3-way matching.</td>
+                                <td>Real-time overdue debt status and matched SO/dispatch data.</td>
+                                <td><span class="rtm-id-chip" style="background:var(--accent-rose-bg);color:var(--accent-rose);">BR-02</span></td>
+                                <td><strong>FR-03:</strong> Hard credit hold if debt &gt; 30 days.<br><strong>FR-05:</strong> Automated 3-way matching. <span class="tag-must">MUST</span></td>
+                                <td><strong>BP1 / Finance</strong><br><small>Order Confirmation & Invoicing</small></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rtm-id-chip">EVD-W2-PURCH-01</span><br><small style="color:var(--text-muted);">Procurement Log</small></td>
+                                <td>Reorders triggered manually after stock is physically exhausted.</td>
+                                <td>Automated low-stock threshold alert & supplier lead times.</td>
+                                <td><span class="rtm-id-chip" style="background:var(--accent-amber-bg);color:var(--accent-amber);">BR-01</span></td>
+                                <td><strong>FR-04:</strong> Generate draft Purchase Requisitions when stock &lt; reorder points. <span class="tag-must">MUST</span></td>
+                                <td><strong>BP4 / BP5</strong><br><small>Procurement & Receiving</small></td>
+                            </tr>
+                            <tr>
+                                <td><span class="rtm-id-chip">EVD-W4-SIM-02</span><br><small style="color:var(--text-muted);">Simulation Audit</small></td>
+                                <td>Expired framework contracts lead to billing disputes and lost VIP accounts.</td>
+                                <td>Advance expiration notification (30 days prior).</td>
+                                <td><span class="rtm-id-chip" style="background:var(--accent-rose-bg);color:var(--accent-rose);">BR-02</span></td>
+                                <td><strong>FR-06:</strong> Issue automated notifications 30 days before contract expiry. <span class="tag-should">SHOULD</span></td>
+                                <td><strong>BP2</strong><br><small>Contract Pricing</small></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SLIDE 20: CONCLUSION & PHASE 1 DEFENSE -->
         <div class="slide">
             <div class="slide-header">
                 <span class="slide-tag">Conclusion & Defense</span>
