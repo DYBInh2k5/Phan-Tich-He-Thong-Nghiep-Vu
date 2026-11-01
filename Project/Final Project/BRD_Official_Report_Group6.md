@@ -4,34 +4,34 @@
 ***
 
 # PROJECT REPORT ON
-# BUSINESS REQUIREMENTS DOCUMENT (BRD) FOR B2B WHOLESALE & DISTRIBUTION (OFFICE SUPPLIES & STATIONERY): OFFICEPRO DISTRIBUTION CO., LTD.
+# BUSINESS REQUIREMENTS DOCUMENT FOR B2B WHOLESALE & DISTRIBUTION (OFFICE SUPPLIES & STATIONERY): OFFICEPRO DISTRIBUTION CO., LTD.
 
-**Submitted by Group 6:**
-* **Vo Duy Binh (Student ID: 22301500)** — Team Leader / Lead Business Analyst & Systems Analyst
-* **Pham Nguyen Gia Thuan (Student ID: 22204631)** — QA & Solution Configurator / Requirements Analyst
-
-**Under The Guidance Of:** MSc. Nguyen Thi Thanh Thanh  
-**Course Domain:** Scenario B — B2B Wholesale & Distribution (Office Supplies & Stationery)  
-**Deliverable Milestone:** **Phase 1 Mid-Term Assessment (Sections 1, 2, and 3 + Requirements Catalog — 30% Course Weight)**  
-**Submission Date:** October 2026  
+| Project Attribute | Details |
+|---|---|
+| **Course Domain / Enterprise Model** | Scenario B — B2B Wholesale & Distribution (Office Supplies & Stationery) |
+| **Submitted by** | **Vo Duy Binh** (Student ID: 22301500) — Team Leader / Lead Business Analyst<br>**Pham Nguyen Gia Thuan** (Student ID: 22204631) — QA & Requirements Analyst |
+| **Class** | BA2631 — Semester 1 (2026–2027) |
+| **Under The Guidance Of** | MSc. Nguyen Thi Thanh Thanh |
+| **Milestone / Assessment** | **Phase 1 Mid-Term Assessment (Sections 1–4 Baseline — 30% Weight)** |
+| **Month, Year** | October 2026 |
 
 ***
 
 ## EXECUTIVE SUMMARY
 
-OfficePro Distribution Co., Ltd. (**OfficePro Distribution**) is an established regional B2B wholesale distributor specializing in commercial office supplies, copy paper products, stationery, and printer consumables across Southern Vietnam. The enterprise currently serves over 250 active corporate clients, educational institutions, and retail stationery sub-dealers.
+OfficePro Distribution Co., Ltd. (**OfficePro Distribution**) is a regional B2B wholesale distributor specializing in commercial office stationery, commercial copy paper products, and printer consumables across Southern Vietnam. The enterprise currently serves over 250 active corporate clients, educational institutions, and stationery retail sub-dealers from two primary facilities: Tan Binh Central Warehouse (2,500 m²) and Bien Hoa Regional Depot (800 m²).
 
-As the enterprise expands its distribution network, it faces acute operational friction stemming from legacy manual practices: framework contract prices are scattered across individual sales representatives' personal spreadsheets, physical inventory receipts take 24–48 hours to be logged, and financial reconciliation relies on physical paper delivery slips. These disjointed procedures produce a 5–8% billing error rate on client invoices (costing ~50 million VND monthly in adjustments), trigger 3–4 post-confirmation stockout cancellations each week, and demand 15–20 hours weekly in manual 3-way invoice matching.
+As the enterprise expands, it faces critical operational bottlenecks stemming from legacy paper and spreadsheet procedures:
+1. **Contract Price Discrepancies:** Framework contract prices are decentralized across individual sales reps' personal spreadsheets, producing a **5–8% billing error rate** on client invoices and costing **~50 million VND monthly** in dispute adjustments.
+2. **Post-Confirmation Stockouts:** Warehouse goods receipts take **24–48 hours** to be entered into spreadsheets. Sales reps confirm delivery commitments based on outdated morning stock sheets, triggering **3–4 stockouts per week post-confirmation**.
+3. **Manual 3-Way Matching Overhead:** Accounts Receivable expends **15–20 hours weekly** manually reconciling paper Sales Orders, physical Delivery Notes, and Billing Invoices, while credit hold policies are verbally bypassed.
 
-In strict compliance with the **BSA Course Project Guidelines for Phase 1**, this document delivers a comprehensive **Pure Business Systems Analysis** structured to mirror the official university BRD template:
-1. **Section 1: Enterprise Context and Scope** establishes the wholesale business model, the 10-SKU Master Data catalog, customer segments, organizational structure, physical facilities network, project boundaries, and the Group RACI Governance Matrix.
-2. **Section 2: Stakeholder Analysis & Elicitation** models the Power/Interest dynamics of organizational actors, bridges cross-functional perception gaps, details the Information Needs Matrix, and compiles the verified interview evidence log.
-3. **Section 3: Business Process Analysis (AS-IS & TO-BE)** maps the current paper-bound workflow across Sales, Inventory, Purchasing, and Invoicing; diagnoses departmental bottlenecks; isolates root causes via the 5-Whys methodology; re-engineers an integrated TO-BE workflow by module; and quantifies performance improvement targets.
-4. **Section 4.1: System Feature Catalog (Functional Requirements List)** frames the prioritized MoSCoW Functional Requirements Catalog (`FR-01` through `FR-08`), establishing the baseline for Phase 2 system mapping.
-
-Per the Phase 1 assessment mandate, system configuration screenshots, ERP user manuals, and UAT execution logs are deferred to Phase 2, ensuring that this document focuses 100% on business problems, processes, and stakeholder needs.
-
-***
+In strict accordance with the **BSA Course BRD Template**, this report establishes a **Pure Business Systems Analysis (Phase 1)** covering:
+* **Section 1:** Enterprise profile, 10-SKU Master Data catalog, facilities network, and team governance.
+* **Section 2:** Stakeholder Power/Interest matrix, verified elicitation evidence, information needs, and open assumptions.
+* **Section 3:** Five core business processes, AS-IS BPMN friction points, 5-Whys root cause analysis, TO-BE re-engineered workflows, and expected business benefits.
+* **Section 4:** Solution-neutral Business Requirements (`BR-01`, `BR-02`), MoSCoW Functional Requirements (`FR-01` to `FR-08`), Core Business Rules (`BR-R01` to `BR-R06`), and Requirements Traceability Matrix (RTM).
+* **Sections 5 & 6:** Phase 2 roadmaps for Use Case specifications and Odoo ERP solution mapping (deferred to Weeks 8–15 per course guidelines).
 
 ***
 
@@ -45,7 +45,7 @@ Per the Phase 1 assessment mandate, system configuration screenshots, ERP user m
 | **TABLE OF FIGURES** | **v** |
 | **LIST OF TABLES** | **vi** |
 | **GLOSSARY & ABBREVIATIONS** | **vii** |
-| **TEAM MEMBERS & MODULE ASSIGNMENT MATRIX** | **viii** |
+| **TEAM MEMBERS & PROCESS RESPONSIBILITY MATRIX** | **viii** |
 | **SECTION 1. ENTERPRISE CONTEXT AND SCOPE** | **1** |
 | &nbsp;&nbsp;&nbsp;&nbsp;**1.1. Enterprise Profile** | 1 |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.1. Business Model and Operational Overview | 1 |
@@ -53,42 +53,50 @@ Per the Phase 1 assessment mandate, system configuration screenshots, ERP user m
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.3. Organizational Structure and Key Roles | 1 |
 | &nbsp;&nbsp;&nbsp;&nbsp;**1.2. Business Objectives & Key Operational Challenges** | 1 |
 | &nbsp;&nbsp;&nbsp;&nbsp;**1.3. Enterprise Scope & Out-of-Scope Boundaries** | 1 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**1.4. Individual Module Ownership Matrix (Student Name <-> Assigned Module)** | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**1.4. Team Member & Process Responsibility Matrix** | 1 |
 | **SECTION 2. STAKEHOLDER ANALYSIS & ELICITATION** | **2** |
 | &nbsp;&nbsp;&nbsp;&nbsp;**2.1. Stakeholder Identification & Power/Interest Grid** | 2 |
 | &nbsp;&nbsp;&nbsp;&nbsp;**2.2. Elicitation Summary & Verified Evidence Log (Verified Evidence vs. Initial Assumptions)** | 2 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**2.3. Stakeholder Information Needs** | 2 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**2.4. Assumptions, Uncertain Information & Follow-up Questions** | 2 |
 | **SECTION 3. BUSINESS PROCESS ANALYSIS (AS-IS & TO-BE)** | **3** |
-| &nbsp;&nbsp;&nbsp;&nbsp;**3.1. Cross-Functional Process Overview (End-to-End Workflow)** | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module)** | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1. Module 1: Sales — AS-IS BPMN & Friction Points | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2. Module 2: Inventory — AS-IS BPMN & Friction Points | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.3. Module 3: Purchasing — AS-IS BPMN & Friction Points Proposed Process Improvements | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.4. Module 4: Invoicing — AS-IS BPMN & Friction Points | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**3.3. Root Cause Analysis (5-Whys / Fishbone per Module)** | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**3.4. Proposed Future Business Processes (TO-BE BPMN by Module)** | 3 |
-| **SECTION 4. FUNCTIONAL REQUIREMENTS AND USE CASES** | **4** |
-| &nbsp;&nbsp;&nbsp;&nbsp;**4.1. System Feature Catalog (Functional Requirements List)** | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**4.2. Enterprise Use Case Diagram** | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**4.3. Use Case Identification & Module Breakdown** | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**4.4. Detailed Use Case Specifications (Organized by Individual Module)** | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.1. Module 1: Sales Use Cases (e.g., UC-SALES-01, UC-SALES-02...) | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.2. Module 2: Inventory Use Cases (e.g., UC-INV-01, UC-INV-02...) | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.3. Module 3: Procurement Use Cases (e.g., UC-PURCH-01, UC-PURCH-02...) | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.4. Module 4: Invoicing Use Cases (e.g., UC-ACC-01, UC-ACC-02...) | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;**4.5. Business Rules & Operational Constraints** | 4 |
-| **CONCLUSION & LESSONS LEARNED** | **5** |
-| &nbsp;&nbsp;&nbsp;&nbsp;Summary of Proposed Business Value | 5 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Team Reflection & Individual Lessons Learned | 5 |
-| **REFERENCES** | **6** |
-| **APPENDICES** | **7** |
-| &nbsp;&nbsp;&nbsp;&nbsp;Appendix A. Raw Elicitation Notes / Evidence | 7 |
-| &nbsp;&nbsp;&nbsp;&nbsp;Appendix B. Individual Contribution Sign-off | 7 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.1. Business Process Overview & Process Scope** | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.2. Current Business Processes (AS-IS BPMN/Swimlane Models)** | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1. Business Process 1: Processing Customer Orders | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2. Business Process 2: Checking Product Availability | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.3. Business Process 3: Reviewing Replenishment Needs | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.3. Process Problems, Bottlenecks & Root Cause Analysis** | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.4. Proposed Business Processes (TO-BE BPMN / Swimlane Models)** | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.5. Expected Process Improvements & Business Benefits** | 3 |
+| **SECTION 4. BUSINESS AND FUNCTIONAL REQUIREMENTS** | **4** |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.1. Business Requirements (BRs)** | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.2. Functional Requirements (FRs)** | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.3. Business Rules & Operational Constraints** | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.4. Requirements Traceability Matrix** | 4 |
+| **SECTION 5. USE CASE ANALYSIS** | **5** |
+| &nbsp;&nbsp;&nbsp;&nbsp;**5.1. Enterprise Use Case Diagram** | 5 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**5.2. Use Case Identification & Catalog** | 5 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**5.3. Detailed Use Case Specifications** | 5 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**5.4. Use Case Validation & Alignment with Functional Requirements** | 5 |
+| **SECTION 6. ODOO-BASED SOLUTION DESIGN AND VALIDATION** | **6** |
+| &nbsp;&nbsp;&nbsp;&nbsp;**6.1. Proposed Solution Scope & Odoo Application Mapping** | 6 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**6.2. Mapping Business Processes and Requirements to Odoo Workflows** | 6 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**6.3. Odoo Configuration and Master Data Setup** | 6 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**6.4. End-to-End Scenario Demonstration & Test Cases** | 6 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**6.5. Requirements Coverage, Gaps & Workarounds** | 6 |
+| **CONCLUSION & LESSONS LEARNED** | **7** |
+| &nbsp;&nbsp;&nbsp;&nbsp;Summary of Proposed Business Value | 7 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Team Reflection & Individual Lessons Learned | 7 |
+| **REFERENCES** | **8** |
+| **APPENDICES** | **9** |
+| &nbsp;&nbsp;&nbsp;&nbsp;Appendix A. Raw Elicitation Notes / Evidence | 9 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Appendix B. Individual Contribution Sign-off | 9 |
 
 ***
 
 ## ACKNOWLEDGEMENTS
 
-The project team would like to express our deepest gratitude to **MSc. Nguyen Thi Thanh Thanh** for her guidance, structured lectures, and academic supervision throughout the Business Systems Analysis course at Hoa Sen University. Her feedback during weekly workshops has been instrumental in shaping our understanding of enterprise process re-engineering and business requirements engineering.
+The project team would like to express our deepest gratitude to **MSc. Nguyen Thi Thanh Thanh** for her invaluable academic guidance, structured lectures, and continuous mentoring throughout the Business Systems Analysis course at Hoa Sen University. Her feedback during weekly workshops has been instrumental in shaping our understanding of enterprise process re-engineering and solution-neutral requirements engineering.
 
 ***
 
@@ -96,22 +104,27 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 
 * **Figure 1.1:** Organizational Hierarchy & Operational Departmental Structure
 * **Figure 2.1:** Stakeholder Power/Interest Matrix (2x2 Grid)
-* **Figure 3.1:** High-Level End-to-End Wholesale Distribution Value Stream
-* **Figure 3.2:** TO-BE Cross-Functional Process Re-engineering Flowchart
+* **Figure 3.1:** Five Core Business Processes Integration Relationship Map
+* **Figure 3.2:** End-to-End Wholesale Order Fulfillment Value Stream
+* **Figure 3.3:** TO-BE Cross-Functional Process Re-engineering Flowchart
 
 ***
 
 ## LIST OF TABLES
 
 * **Table G.1:** Glossary of Key Business Systems Analysis & Wholesale Terms
-* **Table 0.1:** Group 6 Governance RACI Matrix
+* **Table 0.1:** Team Members & Process Responsibility RACI Matrix
 * **Table 1.1:** Master Data Scope — 10 Primary SKUs & Standard vs. Contract Price Catalog
-* **Table 1.2:** Individual Module Ownership Matrix & Academic Responsibilities
+* **Table 1.2:** Team Member & Process Responsibility Matrix
 * **Table 2.1:** Elicitation Verification Log (Baseline Assumptions vs. Interview Evidence)
-* **Table 2.2:** Cross-Functional Information Needs Matrix
-* **Table 3.1:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
-* **Table 4.1:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
-* **Table 4.2:** Core Enterprise Business Rules & Operational Constraints Matrix
+* **Table 2.2:** Cross-Functional Stakeholder Information Needs Matrix
+* **Table 2.3:** Assumptions, Uncertain Information & Follow-up Tracking Log
+* **Table 3.1:** Inter-Process Handoffs, Transferred Artifacts & Verification Status
+* **Table 3.2:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
+* **Table 4.1:** Core Business Requirements (BR-01 & BR-02)
+* **Table 4.2:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
+* **Table 4.3:** Core Enterprise Business Rules & Operational Constraints Matrix
+* **Table 4.4:** End-to-End Requirements Traceability Matrix (RTM)
 * **Table B.1:** Individual Contribution Sign-off & Academic Integrity Confirmation
 
 ***
@@ -122,45 +135,46 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 
 | Abbreviation / Term | Full Name / Definition |
 |---|---|
-| **ATP** | Available-to-Promise Inventory (On-hand stock minus reservations plus scheduled inbound receipts) |
+| **ATP** | Available-to-Promise Inventory (On-hand stock minus hard reservations plus scheduled inbound receipts) |
 | **B2B** | Business-to-Business Wholesale Commerce |
-| **BPMN** | Business Process Model and Notation (Standard visual modeling notation) |
+| **BPMN** | Business Process Model and Notation (Standard visual cross-functional modeling notation) |
+| **BR** | Business Requirement (High-level business capability or outcome statement) |
 | **BRD** | Business Requirements Document |
-| **FR** | Functional Requirement |
-| **Framework Agreement** | Annual master contract governing pricing, credit terms, and delivery commitments |
+| **FR** | Functional Requirement (System behavior specification: *The system shall...*) |
+| **Framework Agreement** | Annual commercial contract governing negotiated price tiers, lead times, and Net 30 terms |
 | **MoSCoW** | Prioritization Framework (Must have, Should have, Could have, Won't have) |
 | **PO** | Purchase Order (Issued by OfficePro to upstream manufacturers) |
 | **RACI** | Responsible, Accountable, Consulted, Informed Governance Matrix |
 | **RFQ** | Request for Quotation (Supplier price solicitation) |
+| **RTM** | Requirements Traceability Matrix |
 | **SKU** | Stock Keeping Unit (Unique product identification code) |
-| **SO** | Sales Order (Commercial commitment issued to corporate clients) |
+| **SO** | Sales Order (Commercial delivery commitment issued to corporate accounts) |
 | **UoM** | Unit of Measure |
 
 ***
 
-## TEAM MEMBERS & MODULE ASSIGNMENT MATRIX
+## TEAM MEMBERS & PROCESS RESPONSIBILITY MATRIX
 
 *(R - Responsible | A - Accountable | C - Consulted | I - Informed)*
 
-To ensure academic transparency and clear division of labor, Group 6 operates with two active members sharing balanced governance:
+**Table 0.1:** Team Members & Process Responsibility RACI Matrix
 
-**Table 0.1:** Group 6 Governance RACI Matrix
-
-| Student Name | Student ID | Primary Focus / Assigned Modules | Role in Project | RACI Status |
+| Student Name | Student ID | Assigned Core Business Processes | Role in Project | Governance RACI Status |
 |---|---|---|---|---|
-| **Vo Duy Binh** | **22301500** | **Sales & Purchasing** | Team Leader / Lead BA & SA | **A / R** (Sales, Purchasing & Master BRD) |
-| **Pham Nguyen Gia Thuan** | **22204631** | **Inventory & Invoicing** | QA & Solution Configurator | **A / R** (Inventory, Invoicing & Requirements QA) |
+| **Vo Duy Binh** | **22301500** | **BP1: Processing Customer Orders<br>BP2: Verifying Contract Prices<br>BP4: Reviewing Replenishment Needs** | Team Leader / Lead Business Analyst | **A / R** (Sales & Purchasing Domains, Master BRD) |
+| **Pham Nguyen Gia Thuan** | **22204631** | **BP3: Checking Product Availability (ATP)<br>BP5: Receiving Goods & Inspection<br>Invoicing Reconciliation** | QA & Requirements Analyst | **A / R** (Inventory & Invoicing Domains, Quality Assurance) |
 
 ### Detailed Phase 1 Deliverable Responsibilities:
-* **Vo Duy Binh (Lead BA & Systems Analyst):**
-  - Section 1: Enterprise Profile, Case Background, Scope Boundaries, and RACI Matrix setup.
-  - Section 2: AI Stakeholder Elicitation (Sales Manager & Purchasing Manager interviews), Sales Information Needs.
-  - Section 3: AS-IS Process Modeling for Sales & Purchasing, 5-Whys Root Cause Analysis, TO-BE Process Design, and Master BRD Authoring.
-* **Pham Nguyen Gia Thuan (QA & Solution Configurator):**
+* **Vo Duy Binh (Team Leader / Lead BA):**
+  - Section 1: Enterprise Profile, Case Background, Scope Boundaries, and RACI Governance.
+  - Section 2: AI Stakeholder Elicitation (Sales Manager & Purchasing Manager interviews), Open Assumptions Log.
+  - Section 3: Process Relationship Map, AS-IS BPMN for BP1 & BP4, 5-Whys Root Cause Analysis, TO-BE Re-engineering Design, Master BRD Compilation.
+  - Section 4: Business Requirements (`BR-01`, `BR-02`), Business Rules (`BR-R01` to `BR-R03`), Traceability Matrix.
+* **Pham Nguyen Gia Thuan (QA & Requirements Analyst):**
   - Section 1: Facilities Network Definition and 10 SKUs Master Data catalog review.
   - Section 2: AI Stakeholder Elicitation (Warehouse Keeper & Chief Accountant interviews), Cross-Functional Information Needs Matrix.
-  - Section 3: AS-IS Process Modeling for Inventory & Invoicing, AS-IS vs. TO-BE Operational Comparison Table.
-  - Section 4: System Feature Catalog (MoSCoW Prioritized Requirements `FR-01` to `FR-08`) and Quality Assurance review.
+  - Section 3: AS-IS BPMN for BP3 & BP5, AS-IS vs. TO-BE Operational Comparison Table.
+  - Section 4: MoSCoW Functional Requirements Catalog (`FR-01` to `FR-08`), Business Rules (`BR-R04` to `BR-R06`), QA Review.
 
 ***
 
@@ -169,12 +183,12 @@ To ensure academic transparency and clear division of labor, Group 6 operates wi
 ## 1.1. Enterprise Profile
 
 ### 1.1.1. Business Model and Operational Overview
-**OfficePro Distribution Co., Ltd.** is a specialized regional B2B wholesale distributor operating across Southern Vietnam (Ho Chi Minh City, Dong Nai, Binh Duong, and surrounding industrial manufacturing corridors). The company bridges upstream manufacturers and downstream corporate consumers, supplying over **250 active corporate accounts**, higher education institutions, and stationery retail sub-dealers.
+**OfficePro Distribution Co., Ltd.** is a specialized regional B2B wholesale distributor operating across Southern Vietnam (Ho Chi Minh City, Dong Nai, Binh Duong, and surrounding industrial manufacturing corridors). The company bridges upstream stationery manufacturers and downstream commercial consumers, supplying over **250 active corporate accounts**, higher education institutions, and stationery retail sub-dealers.
 
 The wholesale operational model is built upon three structural pillars:
 1. **High-Volume Upstream Procurement:** OfficePro purchases commercial stationery, copy paper products, and printer consumables in bulk pallets directly from certified manufacturers including Double A (Thailand/Vietnam), IK Plus (APP Indonesia), Thien Long Group, Pilot Corporation, and HP Vietnam.
 2. **Annual Framework Agreements:** High-volume commercial accounts execute annual agreements establishing fixed contracted discount tiers, guaranteed replenishment lead times, and negotiated credit privileges.
-3. **Commercial Credit Policy:** Qualified corporate accounts operate under standard **Net 30-day commercial payment terms**, allowing monthly billing cycles against verified delivery notes.
+3. **Commercial Credit Policy:** Qualified corporate accounts operate under standard **Net 30-day commercial payment terms**, allowing monthly consolidated billing against verified delivery notes.
 
 ---
 
@@ -277,14 +291,14 @@ To ground requirements engineering in concrete wholesale realities, OfficePro's 
 
 ---
 
-## 1.4. Individual Module Ownership Matrix (Student Name <-> Assigned Module)
+## 1.4. Team Member & Process Responsibility Matrix
 
 **Table 1.2:** Individual Module Ownership Matrix & Academic Responsibilities
 
-| Student Name | Student ID | Assigned Core Modules | Primary Phase 1 Responsibilities |
+| Student Name | Student ID | Assigned Core Business Processes | Primary Phase 1 Responsibilities |
 |---|---|---|---|
-| **Vo Duy Binh** | **22301500** | **Sales & Purchasing** | Scope definition, contract pricing engine rules, quotation approval workflows, reorder point thresholds, purchase requisition workflows, AS-IS/TO-BE sales modeling, 5-Whys root cause analysis, master BRD authoring. |
-| **Pham Nguyen Gia Thuan** | **22204631** | **Inventory & Invoicing** | Multi-warehouse stock tracking, real-time ATP inventory logic, bin location routing, automated 3-way invoice matching, Net 30 credit control policy, MoSCoW requirements framing, QA review. |
+| **Vo Duy Binh** | **22301500** | **BP1: Processing Customer Orders<br>BP2: Verifying Contract Prices<br>BP4: Reviewing Replenishment Needs** | Scope definition, contract pricing engine rules, quotation approval workflows, reorder point thresholds, purchase requisition workflows, AS-IS/TO-BE sales modeling, 5-Whys root cause analysis, master BRD authoring. |
+| **Pham Nguyen Gia Thuan** | **22204631** | **BP3: Checking Product Availability<br>BP5: Receiving Goods & Inspection<br>Invoicing Reconciliation** | Multi-warehouse stock tracking, real-time ATP inventory logic, bin location routing, automated 3-way invoice matching, Net 30 credit control policy, MoSCoW requirements framing, QA review. |
 
 ***
 
@@ -340,9 +354,9 @@ During requirement elicitation, Group 6 conducted structured interviews using AI
 
 ---
 
-### Cross-Functional Information Needs Matrix
+## 2.3. Stakeholder Information Needs
 
-**Table 2.2:** Cross-Functional Information Needs Matrix
+**Table 2.2:** Cross-Functional Stakeholder Information Needs Matrix
 
 | Stakeholder Role | Key Information Required | Timing / Operational Trigger | Operational Decision Made |
 |---|---|---|---|
@@ -352,80 +366,97 @@ During requirement elicitation, Group 6 conducted structured interviews using AI
 | **Warehouse Keeper** | Inbound supplier shipment schedules; Digital outbound picking lists. | Upon supplier truck arrival at dock; Upon order confirmation release. | Verify goods against PO; pick items accurately according to warehouse bin locations. |
 | **AR Accountant** | Confirmed Sales Orders, signed Delivery Notes, customer payment ledgers. | Following order dispatch and goods delivery receipt. | Execute 3-way invoice matching; enforce Net 30 credit lock policies. |
 
+---
+
+## 2.4. Assumptions, Uncertain Information & Follow-up Questions
+
+**Table 2.3:** Assumptions, Uncertain Information & Follow-up Tracking Log
+
+| Item ID | Domain | Baseline Operational Assumption | Level of Certainty | Follow-up Question for Stakeholders / Phase 2 |
+|---|---|---|:---:|---|
+| **ASM-01** | Sales | Corporate clients accept electronic delivery notes via SMS/Email sign-off. | Uncertain | Will state-owned educational institutions accept digital delivery sign-offs for institutional invoice clearance? |
+| **ASM-02** | Warehouse | Barcode scanners will be introduced at Tan Binh dock during Phase 2. | High | Does the warehouse have sufficient Wi-Fi mesh coverage across all 2,500 m² pallet aisles? |
+| **ASM-03** | Purchasing | Upstream paper mills (Double A, IK Plus) support automated EDI / email PO receipt. | Medium | What is the minimum order lead time variance during peak back-to-school seasonal rushes? |
+| **ASM-04** | Finance | Overdue interest penalties are not legally charged on Net 30 framework agreements. | Confirmed | How are partial client bank transfers matched when the transfer memo omits invoice numbers? |
+
 ***
 
 # SECTION 3. BUSINESS PROCESS ANALYSIS (AS-IS & TO-BE)
 
-## 3.1. Cross-Functional Process Overview (End-to-End Workflow)
+## 3.1. Business Process Overview & Process Scope
 
-$\text{Upstream Supplier} \xrightarrow{\text{PO}} \text{Procurement} \xrightarrow{\text{Receipt}} \text{Warehouse Stock} \xrightarrow{\text{Contract SO}} \text{Sales} \xrightarrow{\text{Dispatch}} \text{Delivery} \xrightarrow{\text{3-Way Match}} \text{Accounting (VAT / Net 30)}$
+```mermaid
+graph LR
+    BP2[BP2: Verifying Contract Prices] -->|Approved Contract Rates| BP1[BP1: Processing Customer Orders]
+    BP5[BP5: Receiving Goods & Inspection] -->|Inward Stock| BP3[BP3: Checking Product Availability]
+    BP3 -->|Real-Time ATP| BP1
+    BP3 -->|Reorder Point Trigger| BP4[BP4: Reviewing Replenishment Needs]
+    BP4 -->|Vendor PO Delivery| BP5
+    BP1 -->|Delivery & SO Line Data| FIN[Invoicing 3-Way Reconciliation]
+```
 
-*Figure 3.1: High-Level End-to-End Wholesale Distribution Value Stream*
+*Figure 3.1: Five Core Business Processes Integration Relationship Map*
 
-The current wholesale process operates across four functional departments: Sales, Purchasing, Warehouse, and Invoicing. Currently, each departmental handoff requires physical transit of paperwork, unrecorded phone calls, or manual copy-pasting between spreadsheets, creating severe information delays and high operational error rates.
+**Table 3.1:** Inter-Process Handoffs, Transferred Artifacts & Verification Status
+
+| Upstream Process | Output / Information Transferred | Downstream Process | Verification Status |
+|---|---|---|:---:|
+| **BP2 (Contract Prices)** | Agreed unit price tiers (`ST-001` @ 65k) & discount ceilings | **BP1 (Customer Orders)** | **Verified (EVD-W2-SALES-01)** |
+| **BP3 (Stock Availability)** | Real-time multi-hub Available-to-Promise (ATP) quantities | **BP1 (Customer Orders)** | **Verified (EVD-W2-WH-02)** |
+| **BP3 (Stock Availability)** | Depletion alert when unreserved stock < safety threshold | **BP4 (Replenishment)** | **Verified (EVD-W2-PURCH-01)** |
+| **BP4 (Replenishment)** | Authorized Vendor Purchase Order & expected arrival date | **BP5 (Receiving Goods)** | **Verified (EVD-W2-PURCH-01)** |
+| **BP5 (Receiving Goods)** | Verified dock receipt slip & accepted on-hand inventory | **BP3 (Stock Availability)** | **Verified (EVD-W2-WH-02)** |
+| **BP1 (Customer Orders)** | Confirmed Sales Order, delivery address, and credit terms | **Warehouse Fulfillment** | **Verified (EVD-W2-SALES-01)** |
+| **Warehouse Fulfillment** | Driver-signed delivery slip & actual dispatched quantities | **Invoicing Reconciliation** | **Verified (EVD-W2-ACC-01)** |
+
+$$\text{Upstream Supplier} \xrightarrow{\text{PO}} \text{Procurement} \xrightarrow{\text{Receipt}} \text{Warehouse Stock} \xrightarrow{\text{Contract SO}} \text{Sales} \xrightarrow{\text{Dispatch}} \text{Delivery} \xrightarrow{\text{3-Way Match}} \text{Accounting (VAT / Net 30)}$$
+
+*Figure 3.2: End-to-End Wholesale Order Fulfillment Value Stream*
+
+The wholesale operational model links five core business processes across Sales, Purchasing, Warehouse, and Invoicing. In the AS-IS state, each handoff depends on disconnected Excel lookups, unrecorded phone calls, or paper transit, generating severe data lag and high operational friction.
 
 ---
 
-## 3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module)
+## 3.2. Current Business Processes (AS-IS BPMN/Swimlane Models)
 
-### 3.2.1. Module 1: Sales — AS-IS BPMN & Friction Points
-* **Process Flow:** Client sends email/Zalo RFQ ➔ Sales Rep opens personal Excel pricelist ➔ Rep calls warehouse keeper to check inventory verbally ➔ Rep drafts quote in Excel ➔ Client approves via email ➔ Rep prints physical paper Sales Order.
-* **Friction Points:**
+### 3.2.1. Business Process 1: Processing Customer Orders
+* **Current Operational Flow:** Corporate client sends inquiry via Email/Zalo ➔ Sales rep opens personal Excel pricelist on laptop ➔ Rep phones Tan Binh warehouse clerk to check stock verbally ➔ Rep types quotation in Word/Excel ➔ Client approves quote ➔ Rep prints physical paper Sales Order.
+* **Diagnosed Friction Points:**
   - *Contract Pricing Errors:* Decentralized spreadsheets cause a **5–8% rate discrepancy** on client invoices, leading to ~50 million VND monthly in billing adjustments.
-  - *Order Confirmation Stockouts:* Reps confirm delivery dates without real-time stock data, leading to **3–4 stockouts per week post-confirmation**.
+  - *Order Confirmation Stockouts:* Reps commit to orders without real-time stock data, leading to **3–4 stockouts per week post-confirmation**.
   - *Credit Policy Bypass:* Reps obtain verbal manager approvals to bypass paper credit holds for clients with overdue balances > 30 days to hit sales quotas.
 
-### 3.2.2. Module 2: Inventory — AS-IS BPMN & Friction Points
-* **Process Flow:** Supplier delivery truck arrives at receiving dock ➔ Goods held 24–48 hours in receiving bay ➔ Warehouse clerk manually checks paper packing list against PO ➔ Items moved to shelves from memory (no bin codes) ➔ Clerk batch-updates spreadsheet at day's end ➔ Picking for sales orders executed from printed paper slips.
-* **Friction Points:**
-  - *Receiving Information Lag:* Newly arrived stock remains "invisible" to sales for **24 to 48 hours**, causing unnecessary stockout rejections.
+### 3.2.2. Business Process 2: Checking Product Availability
+* **Current Operational Flow:** Sales rep calls or messages warehouse staff ➔ Warehouse clerk consults morning Excel inventory export or walks into aisles to check physical pallets ➔ Clerk verbally confirms quantity ➔ Sales confirms delivery commitment to client.
+* **Diagnosed Friction Points:**
+  - *Receiving Information Lag:* Newly arrived stock remains "invisible" to sales for **24 to 48 hours** while paper delivery slips await batch end-of-day spreadsheet data entry.
   - *Picking Mix-ups:* Staff pick from memory without barcode scanners or designated bin location routing, leading to frequent errors between similar SKUs (`ST-001` 70gsm vs. `ST-002` 80gsm).
 
-### 3.2.3. Module 3: Purchasing — AS-IS BPMN & Friction Points
-* **Process Flow:** Warehouse keeper observes empty shelves ➔ Handwrites note to Procurement ➔ Purchasing officer checks vendor catalogs ➔ Sends RFQ emails to 3 suppliers ➔ Compares prices manually in Excel ➔ Generates and emails vendor Purchase Order (PO).
-* **Friction Points:**
+### 3.2.3. Business Process 3: Reviewing Replenishment Needs
+* **Current Operational Flow:** Warehouse keeper observes physical shelf depletion ➔ Handwrites note to Procurement ➔ Purchasing officer checks vendor catalogs ➔ Sends RFQ emails to 3 suppliers ➔ Compares prices manually in Excel ➔ Generates and emails vendor Purchase Order (PO).
+* **Diagnosed Friction Points:**
   - *Reactive Replenishment:* Purchasing is triggered only after physical stockouts occur, leading to 3–5 day replenishment delays on fast-movers like Double A paper.
   - *Lengthy RFQ Comparison:* Comparing vendor quotations over unstructured email threads takes **2 to 3 days**, delaying stock replenishment.
 
-### 3.2.4. Module 4: Invoicing — AS-IS BPMN & Friction Points
-* **Process Flow:** Driver delivers stationery to customer ➔ Customer signs paper Delivery Note ➔ Driver returns signed slip to Accounting ➔ Accountant manually cross-checks line items on paper SO, Delivery Note, and Billing Invoice ➔ Accountant manually creates VAT electronic invoice.
-* **Friction Points:**
-  - *Labor-Intensive 3-Way Matching:* Accounting expends **15 to 20 hours every week** manually reconciling line items across paper documents.
-  - *Delayed Credit Enforcement:* Without system-enforced credit holds, overdue corporate accounts continue ordering, accumulating bad debt risk.
-
 ---
 
-### Proposed Process Improvements (AS-IS vs. TO-BE Operational Comparison)
+## 3.3. Process Problems, Bottlenecks & Root Cause Analysis
 
-**Table 3.1:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
-
-| Operational Dimension | Current AS-IS State (Manual / Fragmented) | Proposed TO-BE State (Integrated / Automated) | Target Business Improvement |
-|---|---|---|---|
-| **Contract Pricing Lookup** | Reps search personal Excel spreadsheets; manual copy-pasting. | System retrieves approved contract pricelist upon client selection. | **Pricing errors: 5–8% ➔ 0%** (Saves ~50M VND/month) |
-| **Inventory Visibility** | Daily Excel summaries or verbal calls; 24–48h receiving entry delay. | Real-time Available-to-Promise (ATP) stock visible across both facilities. | **Stockouts: 3–4/week ➔ Reduced by 95%** |
-| **Stock Replenishment** | Reactive purchasing triggered after warehouse stock physically exhausts. | Automated draft Purchase Requisitions generated when stock hits min threshold. | **Zero stockouts on fast-movers (`ST-001`)** |
-| **Credit Enforcement** | Manual checks on paper; informal verbal overrides to hit sales quota. | Hard automated credit lock if customer debt is overdue > 30 days. | **100% Policy Adherence; Eliminates bad debt** |
-| **Invoice Reconciliation** | Accounting spends 15–20 hours/week manually matching SOs and Delivery Notes. | Automated 3-way matching between digital SO, delivery confirmation & invoice. | **Matching time: 20h ➔ 2h/week (90% reduction)** |
-
----
-
-## 3.3. Root Cause Analysis (5-Whys / Fishbone per Module)
-
-### 1. Sales Module (Contract Pricing Errors: 5–8% Error Rate)
+### 1. Contract Pricing Errors (5–8% Invoice Error Rate)
 1. *Why are prices wrong on customer invoices?* Reps copy-paste unit prices manually from personal Excel spreadsheets into quotes.
 2. *Why personal Excel spreadsheets?* Each sales rep maintains separate customer pricelists for their assigned corporate accounts.
 3. *Why separate files per rep?* Signed framework agreements are stored as static scanned PDFs on shared network folders.
 4. *Why scanned PDFs without central rules?* The company lacks a centralized database mapping contracted SKUs and pricing tiers directly to client accounts.
 5. **Root Cause:** **Lack of a centralized contract-based pricing engine that automatically enforces contracted unit prices upon customer selection.**
 
-### 2. Inventory Module (Post-Confirmation Stockouts: 3–4 Orders/Week)
+### 2. Post-Confirmation Stockouts (3–4 Orders/Week)
 1. *Why do confirmed orders experience stockouts?* Sales confirms delivery dates based on outdated morning stock sheets or informal phone calls.
 2. *Why rely on outdated sheets/calls?* Warehouse inventory updates are entered into spreadsheets in batch at the end of the day.
 3. *Why end-of-day batch entry?* Inbound goods receiving requires manual paper ledger logging (taking 24–48 hours).
 4. *Why manual paper receiving?* Warehouse receiving docks operate disconnected from purchase order records in real time.
 5. **Root Cause:** **Lack of a real-time Available-to-Promise (ATP) inventory visibility engine connecting Sales and Warehouse.**
 
-### 3. Invoicing Module (Manual 3-Way Matching Overhead: 15–20 Hours/Week)
+### 3. Manual 3-Way Matching Overhead (15–20 Hours/Week)
 1. *Why does invoice reconciliation take 15–20 hours weekly?* Accounting manually compares paper Delivery Notes, Sales Orders, and Invoices.
 2. *Why manual cross-checking?* Delivery receipts are signed on physical paper by truck drivers upon delivery and submitted in batches.
 3. *Why paper delivery receipts?* Delivery confirmations are not captured digitally in an integrated system.
@@ -434,7 +465,7 @@ The current wholesale process operates across four functional departments: Sales
 
 ---
 
-## 3.4. Proposed Future Business Processes (TO-BE BPMN by Module)
+## 3.4. Proposed Business Processes (TO-BE BPMN / Swimlane Models)
 
 ```mermaid
 graph TD
@@ -449,94 +480,63 @@ graph TD
     I --> J[Automated 3-Way Matching & VAT Invoicing]
 ```
 
-*Figure 3.2: TO-BE Cross-Functional Process Re-engineering Flowchart*
+*Figure 3.3: TO-BE Cross-Functional Process Re-engineering Flowchart*
 
-### Module Breakdown of TO-BE Integrated Workflow:
-* **Module 1: Sales (TO-BE):** Selecting a B2B corporate account automatically loads their framework contract pricelist (e.g., `ST-001` at 65,000 VND). The system verifies real-time Available-to-Promise (ATP) stock across Tan Binh and Bien Hoa facilities. If debt is overdue > 30 days, the system applies a hard Credit Hold. Otherwise, order confirmation automatically reserves physical stock.
-* **Module 2: Inventory (TO-BE):** Real-time stock status syncs immediately upon goods receipt at dock. Pickers receive digital picking slips with optimized bin location routes, eliminating picking mix-ups between `ST-001` and `ST-002`. Outbound dispatch logs trigger digital delivery confirmations.
-* **Module 3: Purchasing (TO-BE):** Reorder point rules monitor fast-movers like Double A paper. When ATP stock drops below 100 reams, the system auto-generates a draft Purchase Requisition and RFQ comparison matrix, cutting procurement lead times from 5 days to 24 hours.
-* **Module 4: Invoicing (TO-BE):** Upon customer delivery sign-off, the system performs automated 3-way matching between the digital SO, Delivery Note, and draft invoice, automatically issuing VAT invoices and reducing accounting overhead from 20 hours to 2 hours per week.
+### Cross-Functional Operational Flow of TO-BE Solution:
+* **Sales Department:** Selecting a B2B corporate account automatically loads their framework contract pricelist (e.g., `ST-001` at 65,000 VND). The system verifies real-time Available-to-Promise (ATP) stock across Tan Binh and Bien Hoa facilities. If debt is overdue > 30 days, the system applies a hard Credit Hold. Otherwise, order confirmation automatically reserves physical stock.
+* **Warehouse & Logistics:** Real-time stock status syncs immediately upon goods receipt at dock. Pickers receive digital picking slips with optimized bin location routes, eliminating picking mix-ups between `ST-001` and `ST-002`. Outbound dispatch logs trigger digital delivery confirmations.
+* **Purchasing Department:** Reorder point rules monitor fast-movers like Double A paper. When ATP stock drops below 100 reams, the system auto-generates a draft Purchase Requisition and RFQ comparison matrix, cutting procurement lead times from 5 days to 24 hours.
+* **Accounting & Finance:** Upon customer delivery sign-off, the system performs automated 3-way matching between the digital SO, Delivery Note, and draft invoice, automatically issuing VAT invoices and reducing accounting overhead from 20 hours to 2 hours per week.
+
+---
+
+## 3.5. Expected Process Improvements & Business Benefits
+
+**Table 3.2:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
+
+| Operational Dimension | Current AS-IS State (Manual / Fragmented) | Proposed TO-BE State (Integrated / Automated) | Target Business Improvement |
+|---|---|---|---|
+| **Contract Pricing Lookup** | Reps search personal Excel spreadsheets; manual copy-pasting. | System retrieves approved contract pricelist upon client selection. | **Pricing errors: 5–8% ➔ 0%** (Saves ~50M VND/month) |
+| **Inventory Visibility** | Daily Excel summaries or verbal calls; 24–48h receiving entry delay. | Real-time Available-to-Promise (ATP) stock visible across both facilities. | **Stockouts: 3–4/week ➔ Reduced by 95%** |
+| **Stock Replenishment** | Reactive purchasing triggered after warehouse stock physically exhausts. | Automated draft Purchase Requisitions generated when stock hits min threshold. | **Zero stockouts on fast-movers (`ST-001`)** |
+| **Credit Enforcement** | Manual checks on paper; informal verbal overrides to hit sales quota. | Hard automated credit lock if customer debt is overdue > 30 days. | **100% Policy Adherence; Eliminates bad debt** |
+| **Invoice Reconciliation** | Accounting spends 15–20 hours/week manually matching SOs and Delivery Notes. | Automated 3-way matching between digital SO, delivery confirmation & invoice. | **Matching time: 20h ➔ 2h/week (90% reduction)** |
 
 ***
 
-# SECTION 4. FUNCTIONAL REQUIREMENTS AND USE CASES
+# SECTION 4. BUSINESS AND FUNCTIONAL REQUIREMENTS
 
-## 4.1. System Feature Catalog (Functional Requirements List)
+## 4.1. Business Requirements (BRs)
 
-In accordance with Phase 1 requirements framing requirements, process gaps have been translated into a prioritized Functional Requirements Catalog (`FR-01` through `FR-08`):
+**Table 4.1:** Core Business Requirements (BR-01 & BR-02)
 
-**Table 4.1:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
-
-| Req ID | Module | Feature Description | MoSCoW Priority | Target Business Outcome |
-|---|---|---|---|---|
-| **FR-01** | Sales | System shall automatically retrieve customer contract pricelists upon client selection. | **MUST HAVE** | Eliminate 5–8% contract pricing errors and 50M VND dispute losses. |
-| **FR-02** | Inventory | System shall display real-time ATP stock levels across Tan Binh and Bien Hoa warehouses. | **MUST HAVE** | Prevent 3–4 stockouts/week post-confirmation. |
-| **FR-03** | Invoicing | System shall enforce automatic Credit Hold for accounts with overdue debt > 30 days. | **MUST HAVE** | Prevent bad debt accumulation and enforce AR credit policies. |
-| **FR-04** | Purchasing | System shall generate draft Purchase Requisitions when stock falls below reorder points. | **MUST HAVE** | Automate stock replenishment for fast movers like Double A paper. |
-| **FR-05** | Invoicing | System shall execute automated 3-way matching (SO + Delivery Note + Billing Invoice). | **MUST HAVE** | Reduce accounting matching overhead from 20h to 2h/week. |
-| **FR-06** | Sales | System shall issue alerts 30 days prior to framework contract expiration dates. | **SHOULD HAVE** | Enable proactive contract renewals with corporate clients. |
-| **FR-07** | Purchasing | System shall support multi-vendor RFQ price and lead-time comparison tables. | **SHOULD HAVE** | Optimize procurement cost and supplier selection. |
-| **FR-08** | Invoicing | System shall provide executive Accounts Receivable aging debt analysis dashboards. | **COULD HAVE** | Provide executive financial visibility into cash flow and outstanding balances. |
+| Requirement ID | Formal Business Requirement Statement | High-Level Business Outcome / Capability | Linked Core Problem |
+|---|---|---|---|
+| **BR-01** | The business needs customer order fulfillment to be committed exclusively against **verified contract pricing** and **reliable real-time product availability**. | Eliminates revenue leakage from inaccurate billing; prevents unfulfillable delivery commitments. | Pricing disputes (5–8% error) & stockouts (3–4/week). |
+| **BR-02** | The business needs commercial order releases to enforce **strict commercial credit policies** and **automated post-delivery invoice reconciliation**. | Eliminates bad debt accumulation; reduces manual accounting overhead from 20h to 2h/week. | Verbal debt bypass & manual 3-way matching delays. |
 
 ---
 
-## 4.2. Enterprise Use Case Diagram
-> **[PHASE 2 SCOPE BOUNDARY NOTE]**  
-> Per the official course curriculum (*BSA Project Brief & Guidelines*, Page 11–13), the Enterprise Use Case Diagram models system interactions during the solution specification stage (Weeks 8–10). This deliverable is scheduled for Phase 2 implementation.
+## 4.2. Functional Requirements (FRs)
+
+**Table 4.2:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
+
+| Req ID | Module | Feature Description (IEEE 830 Standard) | MoSCoW Priority | Target Business Outcome |
+|---|---|---|:---:|---|
+| **FR-01** | Sales | The system shall automatically retrieve approved customer contract pricelists upon client account selection during quotation drafting. | **MUST HAVE** | Eliminate 5–8% contract pricing errors and 50M VND dispute adjustments. |
+| **FR-02** | Inventory | The system shall display real-time Available-to-Promise (ATP) stock levels across Tan Binh Central Hub and Bien Hoa Depot during order entry. | **MUST HAVE** | Prevent 3–4 post-confirmation stockout cancellations per week. |
+| **FR-03** | Invoicing | The system shall enforce an automated hard Credit Hold on order confirmation for accounts with outstanding debt overdue past 30 calendar days. | **MUST HAVE** | Prevent bad debt accumulation and enforce corporate credit policies. |
+| **FR-04** | Purchasing | The system shall automatically generate draft Purchase Requisitions when Available-to-Promise stock falls below defined safety reorder thresholds. | **MUST HAVE** | Automate stock replenishment for fast movers like Double A paper. |
+| **FR-05** | Invoicing | The system shall execute automated 3-way line item matching between confirmed Sales Orders, verified Delivery Notes, and draft Billing Invoices. | **MUST HAVE** | Reduce accounting reconciliation overhead from 20h to 2h/week. |
+| **FR-06** | Sales | The system shall issue proactive reminder alerts to account representatives 30 calendar days prior to framework contract agreement expiration dates. | **SHOULD HAVE** | Enable proactive contract renewals with corporate clients. |
+| **FR-07** | Purchasing | The system shall support multi-vendor RFQ cost and delivery lead-time comparison tables. | **SHOULD HAVE** | Optimize procurement cost and supplier selection. |
+| **FR-08** | Invoicing | The system shall generate executive Accounts Receivable aging debt analysis dashboards. | **COULD HAVE** | Provide executive financial visibility into cash flow and outstanding balances. |
 
 ---
 
-## 4.3. Use Case Identification & Module Breakdown
-> **[PHASE 2 SCOPE BOUNDARY NOTE]**  
-> Formal Use Case cataloging across Sales, Inventory, Purchasing, and Invoicing modules will be elaborated in Phase 2 alongside detailed system prototyping.
+## 4.3. Business Rules & Operational Constraints
 
----
-
-## 4.4. Detailed Use Case Specifications (Organized by Individual Module)
-> **[PHASE 2 SCOPE BOUNDARY NOTE]**  
-> Full Use Case specifications (Actors, Preconditions, Trigger, Main Flow, Alternate Flows, Postconditions) will be constructed in Phase 2 for assigned student modules (Vo Duy Binh: Sales & Purchasing; Pham Nguyen Gia Thuan: Inventory & Invoicing) to support Odoo ERP system configuration and UAT testing.
-
-### 4.4.1. Module 1: Sales Use Cases (e.g., UC-SALES-01, UC-SALES-02...)
-* **Scope Owner:** Vo Duy Binh (Student ID: 22301500)
-* **Candidate Use Cases (Phase 2 Roadmap):**
-  * `UC-SALES-01:` Retrieve Customer Contract Pricelist upon Account Selection (`FR-01`).
-  * `UC-SALES-02:` Query Real-time ATP Inventory Availability across Warehouses (`FR-02`).
-  * `UC-SALES-03:` Request Sales Manager Discretionary Discount Approval (> 5%).
-  * `UC-SALES-04:` Confirm B2B Sales Order & Trigger Stock Reservation.
-* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
-
-### 4.4.2. Module 2: Inventory Use Cases (e.g., UC-INV-01, UC-INV-02...)
-* **Scope Owner:** Pham Nguyen Gia Thuan (Student ID: 22204631)
-* **Candidate Use Cases (Phase 2 Roadmap):**
-  * `UC-INV-01:` Receive Inbound Supplier Pallets & Post Real-Time Dock Receipts.
-  * `UC-INV-02:` Generate Optimized Bin-Location Guided Picking Slips.
-  * `UC-INV-03:` Validate Outbound Order Dispatch & Issue Digital Delivery Notes.
-  * `UC-INV-04:` Monitor Safety Stock Thresholds & Flag Fast-Mover Depletion (`FR-04`).
-* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
-
-### 4.4.3. Module 3: Procurement Use Cases (e.g., UC-PURCH-01, UC-PURCH-02...)
-* **Scope Owner:** Vo Duy Binh (Student ID: 22301500)
-* **Candidate Use Cases (Phase 2 Roadmap):**
-  * `UC-PURCH-01:` Auto-Generate Draft Purchase Requisition on Reorder Trigger (`FR-04`).
-  * `UC-PURCH-02:` Solicit & Compare Multi-Supplier RFQ Price Matrices (`FR-07`).
-  * `UC-PURCH-03:` Confirm & Release Vendor Purchase Orders (PO) to Paper Manufacturers.
-* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
-
-### 4.4.4. Module 4: Invoicing Use Cases (e.g., UC-INV-01, UC-INV-02...)
-* **Scope Owner:** Pham Nguyen Gia Thuan (Student ID: 22204631)
-* **Candidate Use Cases (Phase 2 Roadmap):**
-  * `UC-ACC-01:` Execute Automated 3-Way Reconciliation (SO + Delivery Note + Invoice) (`FR-05`).
-  * `UC-ACC-02:` Enforce Hard Automated Credit Lock for Accounts Overdue > 30 Days (`FR-03`).
-  * `UC-ACC-03:` Issue VAT Electronic Invoice Post-Reconciliation.
-* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
-
----
-
-## 4.5. Business Rules & Operational Constraints
-
-To ensure solution neutrality and establish unambiguous governance for subsequent system configuration, Group 6 has codified the enterprise's essential operational policies into the **Core Business Rules Matrix**:
-
-**Table 4.2:** Core Enterprise Business Rules & Operational Constraints Matrix
+**Table 4.3:** Core Enterprise Business Rules & Operational Constraints Matrix
 
 | Rule ID | Business Rule Category | Formal Policy Statement | Enforcement Mechanism | Linked Process & FR |
 |---|---|---|---|---|
@@ -546,6 +546,81 @@ To ensure solution neutrality and establish unambiguous governance for subsequen
 | **BR-R04** | **Available-to-Promise (ATP) Allocation** | Order quantities can only be confirmed against verified Available-to-Promise stock (ATP = On-hand - Reserved + Scheduled PO receipts within 48h). Tan Binh Central Hub is queried first; Bien Hoa Depot serves as regional backup. | Multi-facility inventory query engine with automated stock reservation. | BP1 / BP3<br>`FR-02` |
 | **BR-R05** | **Automated Reorder Threshold** | When the unreserved on-hand inventory of fast-moving paper products (`ST-001` Double A, `ST-002` IK Plus) drops below the safety reorder point of **100 reams**, the system must generate a draft Purchase Requisition automatically. | Automated inventory batch trigger event; alerts Procurement Officer. | BP3 / BP4<br>`FR-04` |
 | **BR-R06** | **Mandatory 3-Way Reconciliation** | An Accounts Receivable VAT electronic invoice can only be released after the system successfully reconciles three digital artifacts: (1) Confirmed Sales Order, (2) Signed Warehouse Delivery Note / Dispatch Slip, and (3) Invoiced Line Quantities. | Automated 3-way line item tolerance matching algorithm (zero variance). | BP1 / Invoicing<br>`FR-05` |
+
+---
+
+## 4.4. Requirements Traceability Matrix
+
+**Table 4.4:** End-to-End Requirements Traceability Matrix (RTM)
+
+| Evidence ID / Source | AS-IS Observation | Business Problem / Information Need | BR ID | FR ID & Priority | Related Process |
+|---|---|---|:---:|:---:|---|
+| **EVD-W2-SALES-01**<br>*(Sales Interview)* | Reps copy rates from personal Excel files into quotations. | 5–8% pricing discrepancy; Reps need customer contract prices upon inquiry. | **BR-01** | **FR-01**<br>*(MUST HAVE)* | **BP1 / BP2**<br>Processing Orders & Pricing |
+| **EVD-W2-WH-02**<br>*(Warehouse Log)* | Verbal phone checks; receiving lag takes 24–48 hours to post. | 3–4 stockouts/week post-confirmation; Reps need real-time ATP stock levels. | **BR-01** | **FR-02**<br>*(MUST HAVE)* | **BP1 / BP3**<br>Orders & Stock Availability |
+| **EVD-W2-ACC-01**<br>*(Accountant Interview)* | Reps bypass credit limits; manual 3-way reconciliation on paper. | Bad debt risk; Accounting spends 15–20h/wk matching paper SOs and delivery slips. | **BR-02** | **FR-03**<br>**FR-05**<br>*(MUST HAVE)* | **BP1 / Invoicing**<br>Order Release & Invoicing |
+| **EVD-W2-PURCH-01**<br>*(Procurement Log)* | Replenishment triggered manually via handwritten notes after stockouts. | Supply disruption on fast-movers; Procurement needs automated threshold alerts. | **BR-01** | **FR-04**<br>*(MUST HAVE)* | **BP3 / BP4**<br>Stock Check & Replenishment |
+| **EVD-W4-SIM-02**<br>*(Simulation Log)* | Expired framework contracts cause invoice disputes and lost VIP accounts. | Proactive renewal notices required 30 days prior to agreement expiry dates. | **BR-02** | **FR-06**<br>*(SHOULD HAVE)* | **BP2**<br>Verifying Contract Prices |
+
+***
+
+# SECTION 5. USE CASE ANALYSIS
+
+> **[PHASE 2 MILESTONE SCOPE BOUNDARY NOTE]**  
+> Per the official course curriculum (*BSA Project Brief & Guidelines*, Page 11–13), formal Use Case Analysis represents a **Phase 2 Deliverable (Weeks 8–11)**. In Phase 1, candidate Use Cases have been identified and mapped to Functional Requirements to establish the baseline for subsequent system prototyping.
+
+## 5.1. Enterprise Use Case Diagram
+*(To be developed and rendered in Phase 2 using UML standard notation modeling actors: B2B Customer, Sales Representative, Sales Manager, Warehouse Keeper, Purchasing Officer, and Chief Accountant).*
+
+## 5.2. Use Case Identification & Catalog
+* **Sales Domain:**
+  * `UC-SALES-01:` Retrieve Approved Contract Pricelist (`FR-01`)
+  * `UC-SALES-02:` Query Real-Time ATP Multi-Facility Stock (`FR-02`)
+  * `UC-SALES-03:` Request Discretionary Discount Approval (> 5%)
+  * `UC-SALES-04:` Confirm B2B Sales Order & Trigger Allocation
+* **Inventory Domain:**
+  * `UC-INV-01:` Process Inbound Supplier Goods Receipt & Post to Stock
+  * `UC-INV-02:` Generate Bin-Location Guided Picking Slip
+  * `UC-INV-03:` Validate Order Dispatch & Issue Digital Delivery Slip
+  * `UC-INV-04:` Monitor Safety Stock & Trigger Reorder Signal (`FR-04`)
+* **Procurement Domain:**
+  * `UC-PURCH-01:` Generate Draft Purchase Requisition on Low Stock (`FR-04`)
+  * `UC-PURCH-02:` Create & Compare Multi-Supplier RFQs (`FR-07`)
+  * `UC-PURCH-03:` Confirm & Release Purchase Order to Manufacturer
+* **Invoicing Domain:**
+  * `UC-ACC-01:` Execute Automated 3-Way Reconciliation (`FR-05`)
+  * `UC-ACC-02:` Enforce Hard Automated Credit Lock (`FR-03`)
+  * `UC-ACC-03:` Release Commercial VAT Electronic Invoice
+
+## 5.3. Detailed Use Case Specifications
+*(Detailed tables specifying Primary Actor, Preconditions, Trigger, Normal Course of Events, Alternative Courses, and Postconditions will be compiled during Phase 2).*
+
+## 5.4. Use Case Validation & Alignment with Functional Requirements
+*(Cross-verification matrix confirming 100% coverage between Use Cases and Functional Requirements `FR-01` through `FR-08` scheduled for Phase 2 review).*
+
+***
+
+# SECTION 6. ODOO-BASED SOLUTION DESIGN AND VALIDATION
+
+> **[PHASE 2 MILESTONE SCOPE BOUNDARY NOTE]**  
+> System configuration, ERP live database setup, screen mockups, and User Acceptance Testing (UAT) represent **Phase 2 Deliverables (Weeks 12–15)**. To maintain strict solution neutrality in Phase 1, ERP technical setup is deferred until requirements are signed off by course instructors.
+
+## 6.1. Proposed Solution Scope & Odoo Application Mapping
+* **Sales Management:** Odoo Sales Module (Customer Pricelists, Quotation Approval Gates).
+* **Inventory Management:** Odoo Inventory Module (Multi-Warehouse routing, Real-Time ATP, Bin Locations).
+* **Procurement:** Odoo Purchase Module (Automated Reordering Rules, RFQ comparison).
+* **Invoicing & Finance:** Odoo Invoicing / Accounting Module (Automated 3-Way Matching, Credit Limits).
+
+## 6.2. Mapping Business Processes and Requirements to Odoo Workflows
+*(Cross-functional mapping diagrams linking BP1–BP5 and FR-01–FR-08 directly to standard Odoo transaction flows will be compiled in Phase 2).*
+
+## 6.3. Odoo Configuration and Master Data Setup
+*(Master data configuration for 10 primary SKUs, customer price agreements, vendor pricebooks, and warehouse bin locations scheduled for Phase 2 implementation).*
+
+## 6.4. End-to-End Scenario Demonstration & Test Cases
+*(Formal UAT test scripts and cross-group peer testing execution logs will be conducted in Phase 2).*
+
+## 6.5. Requirements Coverage, Gaps & Workarounds
+*(Final evaluation matrix reporting standard feature coverage, custom configuration workarounds, and gaps scheduled for Phase 2).*
 
 ***
 
