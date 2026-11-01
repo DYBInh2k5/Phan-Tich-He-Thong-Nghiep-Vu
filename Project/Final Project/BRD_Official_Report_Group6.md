@@ -47,25 +47,38 @@ Per the Phase 1 assessment mandate, system configuration screenshots, ERP user m
 | **GLOSSARY & ABBREVIATIONS** | **vii** |
 | **TEAM MEMBERS & MODULE ASSIGNMENT MATRIX** | **viii** |
 | **SECTION 1. ENTERPRISE CONTEXT AND SCOPE** | **1** |
-| &nbsp;&nbsp;&nbsp;&nbsp;1.1. Enterprise Profile | 1 |
-| &nbsp;&nbsp;&nbsp;&nbsp;1.2. Business Objectives & Key Operational Challenges | 1 |
-| &nbsp;&nbsp;&nbsp;&nbsp;1.3. Enterprise Scope & Out-of-Scope Boundaries | 1 |
-| &nbsp;&nbsp;&nbsp;&nbsp;1.4. Individual Module Ownership Matrix (Student Name <-> Assigned Module) | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**1.1. Enterprise Profile** | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.1. Business Model and Operational Overview | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.2. Products, Services, and Target Customers | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.1.3. Organizational Structure and Key Roles | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**1.2. Business Objectives & Key Operational Challenges** | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**1.3. Enterprise Scope & Out-of-Scope Boundaries** | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**1.4. Individual Module Ownership Matrix (Student Name <-> Assigned Module)** | 1 |
 | **SECTION 2. STAKEHOLDER ANALYSIS & ELICITATION** | **2** |
-| &nbsp;&nbsp;&nbsp;&nbsp;2.1. Stakeholder Identification & Power/Interest Grid | 2 |
-| &nbsp;&nbsp;&nbsp;&nbsp;2.2. Elicitation Summary & Verified Evidence Log (Verified Evidence vs. Initial Assumptions) | 2 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**2.1. Stakeholder Identification & Power/Interest Grid** | 2 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**2.2. Elicitation Summary & Verified Evidence Log (Verified Evidence vs. Initial Assumptions)** | 2 |
 | **SECTION 3. BUSINESS PROCESS ANALYSIS (AS-IS & TO-BE)** | **3** |
-| &nbsp;&nbsp;&nbsp;&nbsp;3.1. Cross-Functional Process Overview (End-to-End Workflow) | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module) | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;3.3. Root Cause Analysis (5-Whys / Fishbone per Module) | 3 |
-| &nbsp;&nbsp;&nbsp;&nbsp;3.4. Proposed Future Business Processes (TO-BE BPMN by Module) | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.1. Cross-Functional Process Overview (End-to-End Workflow)** | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module)** | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.1. Module 1: Sales — AS-IS BPMN & Friction Points | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.2. Module 2: Inventory — AS-IS BPMN & Friction Points | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.3. Module 3: Purchasing — AS-IS BPMN & Friction Points Proposed Process Improvements | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2.4. Module 4: Invoicing — AS-IS BPMN & Friction Points | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.3. Root Cause Analysis (5-Whys / Fishbone per Module)** | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**3.4. Proposed Future Business Processes (TO-BE BPMN by Module)** | 3 |
 | **SECTION 4. FUNCTIONAL REQUIREMENTS AND USE CASES** | **4** |
-| &nbsp;&nbsp;&nbsp;&nbsp;4.1. System Feature Catalog (Functional Requirements List) | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;4.2. Enterprise Use Case Diagram | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;4.3. Use Case Identification & Module Breakdown | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;4.4. Detailed Use Case Specifications (Organized by Individual Module) | 4 |
-| &nbsp;&nbsp;&nbsp;&nbsp;4.5. Business Rules & Operational Constraints | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.1. System Feature Catalog (Functional Requirements List)** | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.2. Enterprise Use Case Diagram** | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.3. Use Case Identification & Module Breakdown** | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.4. Detailed Use Case Specifications (Organized by Individual Module)** | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.1. Module 1: Sales Use Cases (e.g., UC-SALES-01, UC-SALES-02...) | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.2. Module 2: Inventory Use Cases (e.g., UC-INV-01, UC-INV-02...) | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.3. Module 3: Procurement Use Cases (e.g., UC-PURCH-01, UC-PURCH-02...) | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.4.4. Module 4: Invoicing Use Cases (e.g., UC-ACC-01, UC-ACC-02...) | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;**4.5. Business Rules & Operational Constraints** | 4 |
 | **CONCLUSION & LESSONS LEARNED** | **5** |
+| &nbsp;&nbsp;&nbsp;&nbsp;Summary of Proposed Business Value | 5 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Team Reflection & Individual Lessons Learned | 5 |
 | **REFERENCES** | **6** |
 | **APPENDICES** | **7** |
 | &nbsp;&nbsp;&nbsp;&nbsp;Appendix A. Raw Elicitation Notes / Evidence | 7 |
@@ -149,7 +162,7 @@ To ensure academic transparency and clear division of labor, Group 6 operates wi
 
 ## 1.1. Enterprise Profile
 
-### Business Model and Operational Overview
+### 1.1.1. Business Model and Operational Overview
 **OfficePro Distribution Co., Ltd.** is a specialized regional B2B wholesale distributor operating across Southern Vietnam (Ho Chi Minh City, Dong Nai, Binh Duong, and surrounding industrial manufacturing corridors). The company bridges upstream manufacturers and downstream corporate consumers, supplying over **250 active corporate accounts**, higher education institutions, and stationery retail sub-dealers.
 
 The wholesale operational model is built upon three structural pillars:
@@ -159,7 +172,7 @@ The wholesale operational model is built upon three structural pillars:
 
 ---
 
-### Products, Services, and Target Customers
+### 1.1.2. Products, Services, and Target Customers
 
 #### 1. Master Data Scope: 10 Primary SKUs
 To ground requirements engineering in concrete wholesale realities, OfficePro's core catalog comprises **10 primary SKUs** across four product categories:
@@ -186,7 +199,7 @@ To ground requirements engineering in concrete wholesale realities, OfficePro's 
 
 ---
 
-### Organizational Structure and Key Roles
+### 1.1.3. Organizational Structure and Key Roles
 
 ```
                      ┌────────────────────────┐
@@ -335,26 +348,26 @@ The current wholesale process operates across four functional departments: Sales
 
 ## 3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module)
 
-### Module 1: Sales — AS-IS BPMN & Friction Points
+### 3.2.1. Module 1: Sales — AS-IS BPMN & Friction Points
 * **Process Flow:** Client sends email/Zalo RFQ ➔ Sales Rep opens personal Excel pricelist ➔ Rep calls warehouse keeper to check inventory verbally ➔ Rep drafts quote in Excel ➔ Client approves via email ➔ Rep prints physical paper Sales Order.
 * **Friction Points:**
   - *Contract Pricing Errors:* Decentralized spreadsheets cause a **5–8% rate discrepancy** on client invoices, leading to ~50 million VND monthly in billing adjustments.
   - *Order Confirmation Stockouts:* Reps confirm delivery dates without real-time stock data, leading to **3–4 stockouts per week post-confirmation**.
   - *Credit Policy Bypass:* Reps obtain verbal manager approvals to bypass paper credit holds for clients with overdue balances > 30 days to hit sales quotas.
 
-### Module 2: Inventory — AS-IS BPMN & Friction Points
+### 3.2.2. Module 2: Inventory — AS-IS BPMN & Friction Points
 * **Process Flow:** Supplier delivery truck arrives at receiving dock ➔ Goods held 24–48 hours in receiving bay ➔ Warehouse clerk manually checks paper packing list against PO ➔ Items moved to shelves from memory (no bin codes) ➔ Clerk batch-updates spreadsheet at day's end ➔ Picking for sales orders executed from printed paper slips.
 * **Friction Points:**
   - *Receiving Information Lag:* Newly arrived stock remains "invisible" to sales for **24 to 48 hours**, causing unnecessary stockout rejections.
   - *Picking Mix-ups:* Staff pick from memory without barcode scanners or designated bin location routing, leading to frequent errors between similar SKUs (`ST-001` 70gsm vs. `ST-002` 80gsm).
 
-### Module 3: Purchasing — AS-IS BPMN & Friction Points
+### 3.2.3. Module 3: Purchasing — AS-IS BPMN & Friction Points
 * **Process Flow:** Warehouse keeper observes empty shelves ➔ Handwrites note to Procurement ➔ Purchasing officer checks vendor catalogs ➔ Sends RFQ emails to 3 suppliers ➔ Compares prices manually in Excel ➔ Generates and emails vendor Purchase Order (PO).
 * **Friction Points:**
   - *Reactive Replenishment:* Purchasing is triggered only after physical stockouts occur, leading to 3–5 day replenishment delays on fast-movers like Double A paper.
   - *Lengthy RFQ Comparison:* Comparing vendor quotations over unstructured email threads takes **2 to 3 days**, delaying stock replenishment.
 
-### Module 4: Invoicing — AS-IS BPMN & Friction Points
+### 3.2.4. Module 4: Invoicing — AS-IS BPMN & Friction Points
 * **Process Flow:** Driver delivers stationery to customer ➔ Customer signs paper Delivery Note ➔ Driver returns signed slip to Accounting ➔ Accountant manually cross-checks line items on paper SO, Delivery Note, and Billing Invoice ➔ Accountant manually creates VAT electronic invoice.
 * **Friction Points:**
   - *Labor-Intensive 3-Way Matching:* Accounting expends **15 to 20 hours every week** manually reconciling line items across paper documents.
@@ -455,7 +468,41 @@ In accordance with Phase 1 requirements framing requirements, process gaps have 
 
 ## 4.4. Detailed Use Case Specifications (Organized by Individual Module)
 > **[PHASE 2 SCOPE BOUNDARY NOTE]**  
-> Full Use Case specifications (Actors, Preconditions, Trigger, Main Flow, Alternate Flows, Postconditions) will be constructed in Phase 2 for assigned student modules (Vo Duy Binh: Sales & Purchasing; Pham Nguyen Gia Thuan: Inventory & Invoicing).
+> Full Use Case specifications (Actors, Preconditions, Trigger, Main Flow, Alternate Flows, Postconditions) will be constructed in Phase 2 for assigned student modules (Vo Duy Binh: Sales & Purchasing; Pham Nguyen Gia Thuan: Inventory & Invoicing) to support Odoo ERP system configuration and UAT testing.
+
+### 4.4.1. Module 1: Sales Use Cases (e.g., UC-SALES-01, UC-SALES-02...)
+* **Scope Owner:** Vo Duy Binh (Student ID: 22301500)
+* **Candidate Use Cases (Phase 2 Roadmap):**
+  * `UC-SALES-01:` Retrieve Customer Contract Pricelist upon Account Selection (`FR-01`).
+  * `UC-SALES-02:` Query Real-time ATP Inventory Availability across Warehouses (`FR-02`).
+  * `UC-SALES-03:` Request Sales Manager Discretionary Discount Approval (> 5%).
+  * `UC-SALES-04:` Confirm B2B Sales Order & Trigger Stock Reservation.
+* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
+
+### 4.4.2. Module 2: Inventory Use Cases (e.g., UC-INV-01, UC-INV-02...)
+* **Scope Owner:** Pham Nguyen Gia Thuan (Student ID: 22204631)
+* **Candidate Use Cases (Phase 2 Roadmap):**
+  * `UC-INV-01:` Receive Inbound Supplier Pallets & Post Real-Time Dock Receipts.
+  * `UC-INV-02:` Generate Optimized Bin-Location Guided Picking Slips.
+  * `UC-INV-03:` Validate Outbound Order Dispatch & Issue Digital Delivery Notes.
+  * `UC-INV-04:` Monitor Safety Stock Thresholds & Flag Fast-Mover Depletion (`FR-04`).
+* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
+
+### 4.4.3. Module 3: Procurement Use Cases (e.g., UC-PURCH-01, UC-PURCH-02...)
+* **Scope Owner:** Vo Duy Binh (Student ID: 22301500)
+* **Candidate Use Cases (Phase 2 Roadmap):**
+  * `UC-PURCH-01:` Auto-Generate Draft Purchase Requisition on Reorder Trigger (`FR-04`).
+  * `UC-PURCH-02:` Solicit & Compare Multi-Supplier RFQ Price Matrices (`FR-07`).
+  * `UC-PURCH-03:` Confirm & Release Vendor Purchase Orders (PO) to Paper Manufacturers.
+* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
+
+### 4.4.4. Module 4: Invoicing Use Cases (e.g., UC-INV-01, UC-INV-02...)
+* **Scope Owner:** Pham Nguyen Gia Thuan (Student ID: 22204631)
+* **Candidate Use Cases (Phase 2 Roadmap):**
+  * `UC-ACC-01:` Execute Automated 3-Way Reconciliation (SO + Delivery Note + Invoice) (`FR-05`).
+  * `UC-ACC-02:` Enforce Hard Automated Credit Lock for Accounts Overdue > 30 Days (`FR-03`).
+  * `UC-ACC-03:` Issue VAT Electronic Invoice Post-Reconciliation.
+* *(Full specification tables deferred to Phase 2 per BSA Course Guidelines).*
 
 ---
 
