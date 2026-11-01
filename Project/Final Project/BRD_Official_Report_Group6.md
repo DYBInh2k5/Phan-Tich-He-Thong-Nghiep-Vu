@@ -97,12 +97,14 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 * **Figure 1.1:** Organizational Hierarchy & Operational Departmental Structure
 * **Figure 2.1:** Stakeholder Power/Interest Matrix (2x2 Grid)
 * **Figure 3.1:** High-Level End-to-End Wholesale Distribution Value Stream
-* **Figure 3.2:** TO-BE Cross-Functional Process Re-engineering Flowchart (Mermaid)
+* **Figure 3.2:** TO-BE Cross-Functional Process Re-engineering Flowchart
 
 ***
 
 ## LIST OF TABLES
 
+* **Table G.1:** Glossary of Key Business Systems Analysis & Wholesale Terms
+* **Table 0.1:** Group 6 Governance RACI Matrix
 * **Table 1.1:** Master Data Scope — 10 Primary SKUs & Standard vs. Contract Price Catalog
 * **Table 1.2:** Individual Module Ownership Matrix & Academic Responsibilities
 * **Table 2.1:** Elicitation Verification Log (Baseline Assumptions vs. Interview Evidence)
@@ -115,6 +117,8 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 ***
 
 ## GLOSSARY & ABBREVIATIONS
+
+**Table G.1:** Glossary of Key Business Systems Analysis & Wholesale Terms
 
 | Abbreviation / Term | Full Name / Definition |
 |---|---|
@@ -139,6 +143,8 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 *(R - Responsible | A - Accountable | C - Consulted | I - Informed)*
 
 To ensure academic transparency and clear division of labor, Group 6 operates with two active members sharing balanced governance:
+
+**Table 0.1:** Group 6 Governance RACI Matrix
 
 | Student Name | Student ID | Primary Focus / Assigned Modules | Role in Project | RACI Status |
 |---|---|---|---|---|
@@ -176,6 +182,8 @@ The wholesale operational model is built upon three structural pillars:
 
 #### 1. Master Data Scope: 10 Primary SKUs
 To ground requirements engineering in concrete wholesale realities, OfficePro's core catalog comprises **10 primary SKUs** across four product categories:
+
+**Table 1.1:** Master Data Scope — 10 Primary SKUs & Standard vs. Contract Price Catalog
 
 | No. | SKU Code | Product Description | Category | UoM | Standard List Price (VND) | Contract Price Tier (VND) |
 |---|---|---|---|---|---|---|
@@ -221,6 +229,8 @@ To ground requirements engineering in concrete wholesale realities, OfficePro's 
                         │ & AR Officers)  │
                         └─────────────────┘
 ```
+
+*Figure 1.1: Organizational Hierarchy & Operational Departmental Structure*
 
 * **Executive Leadership (Business Owner):** Oversees strategic growth, operating margins, capital allocation, and client retention.
 * **Sales Department (Sales Manager & B2B Reps):** Manages corporate client framework contracts, negotiates pricing tiers, issues quotations, and inputs Sales Orders.
@@ -269,6 +279,8 @@ To ground requirements engineering in concrete wholesale realities, OfficePro's 
 
 ## 1.4. Individual Module Ownership Matrix (Student Name <-> Assigned Module)
 
+**Table 1.2:** Individual Module Ownership Matrix & Academic Responsibilities
+
 | Student Name | Student ID | Assigned Core Modules | Primary Phase 1 Responsibilities |
 |---|---|---|---|
 | **Vo Duy Binh** | **22301500** | **Sales & Purchasing** | Scope definition, contract pricing engine rules, quotation approval workflows, reorder point thresholds, purchase requisition workflows, AS-IS/TO-BE sales modeling, 5-Whys root cause analysis, master BRD authoring. |
@@ -294,6 +306,8 @@ To ground requirements engineering in concrete wholesale realities, OfficePro's 
                   LOW POWER ---------------> HIGH INTEREST
 ```
 
+*Figure 2.1: Stakeholder Power/Interest Matrix (2x2 Grid)*
+
 * **Manage Closely (High Power / High Interest):**
   * *Sales Manager:* Protects operating margins, enforces contract pricelists, and approves price discounts (> 5%).
   * *Business Owner:* Demands enterprise operational visibility, elimination of revenue leaks, and customer retention.
@@ -315,6 +329,8 @@ To ground requirements engineering in concrete wholesale realities, OfficePro's 
 
 During requirement elicitation, Group 6 conducted structured interviews using AI Stakeholder Agents to validate project assumptions against wholesale realities:
 
+**Table 2.1:** Elicitation Verification Log (Baseline Assumptions vs. Interview Evidence)
+
 | No. | Baseline Project Assumption | Elicitation Evidence Obtained (Stakeholder Interview) | Verification Status & Analytical Conclusion |
 |---|---|---|---|
 | **1** | Sales reps look up contract prices manually from Excel sheets. | Sales Manager confirmed reps maintain personal client Excel files and copy-paste rates, causing 5–8% pricing errors monthly. | **CONFIRMED**<br>Decentralized price records directly cause billing disputes and revenue leakage. |
@@ -325,6 +341,8 @@ During requirement elicitation, Group 6 conducted structured interviews using AI
 ---
 
 ### Cross-Functional Information Needs Matrix
+
+**Table 2.2:** Cross-Functional Information Needs Matrix
 
 | Stakeholder Role | Key Information Required | Timing / Operational Trigger | Operational Decision Made |
 |---|---|---|---|
@@ -340,7 +358,9 @@ During requirement elicitation, Group 6 conducted structured interviews using AI
 
 ## 3.1. Cross-Functional Process Overview (End-to-End Workflow)
 
-$$\text{Upstream Supplier} \xrightarrow{\text{PO}} \text{Procurement} \xrightarrow{\text{Receipt}} \text{Warehouse Stock} \xrightarrow{\text{Contract SO}} \text{Sales} \xrightarrow{\text{Dispatch}} \text{Delivery} \xrightarrow{\text{3-Way Match}} \text{Accounting (VAT / Net 30)}$$
+$\text{Upstream Supplier} \xrightarrow{\text{PO}} \text{Procurement} \xrightarrow{\text{Receipt}} \text{Warehouse Stock} \xrightarrow{\text{Contract SO}} \text{Sales} \xrightarrow{\text{Dispatch}} \text{Delivery} \xrightarrow{\text{3-Way Match}} \text{Accounting (VAT / Net 30)}$
+
+*Figure 3.1: High-Level End-to-End Wholesale Distribution Value Stream*
 
 The current wholesale process operates across four functional departments: Sales, Purchasing, Warehouse, and Invoicing. Currently, each departmental handoff requires physical transit of paperwork, unrecorded phone calls, or manual copy-pasting between spreadsheets, creating severe information delays and high operational error rates.
 
@@ -376,6 +396,8 @@ The current wholesale process operates across four functional departments: Sales
 ---
 
 ### Proposed Process Improvements (AS-IS vs. TO-BE Operational Comparison)
+
+**Table 3.1:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
 
 | Operational Dimension | Current AS-IS State (Manual / Fragmented) | Proposed TO-BE State (Integrated / Automated) | Target Business Improvement |
 |---|---|---|---|
@@ -427,6 +449,8 @@ graph TD
     I --> J[Automated 3-Way Matching & VAT Invoicing]
 ```
 
+*Figure 3.2: TO-BE Cross-Functional Process Re-engineering Flowchart*
+
 ### Module Breakdown of TO-BE Integrated Workflow:
 * **Module 1: Sales (TO-BE):** Selecting a B2B corporate account automatically loads their framework contract pricelist (e.g., `ST-001` at 65,000 VND). The system verifies real-time Available-to-Promise (ATP) stock across Tan Binh and Bien Hoa facilities. If debt is overdue > 30 days, the system applies a hard Credit Hold. Otherwise, order confirmation automatically reserves physical stock.
 * **Module 2: Inventory (TO-BE):** Real-time stock status syncs immediately upon goods receipt at dock. Pickers receive digital picking slips with optimized bin location routes, eliminating picking mix-ups between `ST-001` and `ST-002`. Outbound dispatch logs trigger digital delivery confirmations.
@@ -440,6 +464,8 @@ graph TD
 ## 4.1. System Feature Catalog (Functional Requirements List)
 
 In accordance with Phase 1 requirements framing requirements, process gaps have been translated into a prioritized Functional Requirements Catalog (`FR-01` through `FR-08`):
+
+**Table 4.1:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
 
 | Req ID | Module | Feature Description | MoSCoW Priority | Target Business Outcome |
 |---|---|---|---|---|
@@ -509,6 +535,8 @@ In accordance with Phase 1 requirements framing requirements, process gaps have 
 ## 4.5. Business Rules & Operational Constraints
 
 To ensure solution neutrality and establish unambiguous governance for subsequent system configuration, Group 6 has codified the enterprise's essential operational policies into the **Core Business Rules Matrix**:
+
+**Table 4.2:** Core Enterprise Business Rules & Operational Constraints Matrix
 
 | Rule ID | Business Rule Category | Formal Policy Statement | Enforcement Mechanism | Linked Process & FR |
 |---|---|---|---|---|
@@ -581,6 +609,8 @@ By transitioning OfficePro Distribution Co., Ltd. from fragmented paper/Excel pr
 ## Appendix B. Individual Contribution Sign-off
 
 Both active group members (**Vo Duy Binh - Student ID: 22301500** and **Pham Nguyen Gia Thuan - Student ID: 22204631**) have contributed equally (50% / 50%) to the research, stakeholder elicitation, process analysis, BPMN modeling, and report compilation for the Phase 1 Mid-Term Assessment under the leadership of **Vo Duy Binh**.
+
+**Table B.1:** Individual Contribution Sign-off & Academic Integrity Confirmation
 
 | Student Name | Student ID | Phase 1 Assigned Scope | Contribution (%) | Student Signature |
 |---|---|---|---|---|
