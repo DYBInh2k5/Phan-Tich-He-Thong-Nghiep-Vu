@@ -33,6 +33,66 @@ Per the Phase 1 assessment mandate, system configuration screenshots, ERP user m
 
 ***
 
+***
+
+## TABLE OF CONTENTS
+
+* [EXECUTIVE SUMMARY](#executive-summary)
+* [TABLE OF CONTENTS](#table-of-contents)
+* [ACKNOWLEDGEMENTS](#acknowledgements)
+* [TABLE OF FIGURES](#table-of-figures)
+* [LIST OF TABLES](#list-of-tables)
+* [GLOSSARY & ABBREVIATIONS](#glossary--abbreviations)
+* [TEAM MEMBERS & MODULE ASSIGNMENT MATRIX](#team-members--module-assignment-matrix)
+* [SECTION 1. ENTERPRISE CONTEXT AND SCOPE](#section-1-enterprise-context-and-scope)
+  * [1.1. Enterprise Profile](#11-enterprise-profile)
+  * [1.2. Business Objectives & Key Operational Challenges](#12-business-objectives--key-operational-challenges)
+  * [1.3. Enterprise Scope & Out-of-Scope Boundaries](#13-enterprise-scope--out-of-scope-boundaries)
+  * [1.4. Individual Module Ownership Matrix](#14-individual-module-ownership-matrix-student-name---assigned-module)
+* [SECTION 2. STAKEHOLDER ANALYSIS & ELICITATION](#section-2-stakeholder-analysis--elicitation)
+  * [2.1. Stakeholder Identification & Power/Interest Grid](#21-stakeholder-identification--powerinterest-grid)
+  * [2.2. Elicitation Summary & Verified Evidence Log](#22-elicitation-summary--verified-evidence-log-verified-evidence-vs-initial-assumptions)
+* [SECTION 3. BUSINESS PROCESS ANALYSIS (AS-IS & TO-BE)](#section-3-business-process-analysis-as-is--to-be)
+  * [3.1. Cross-Functional Process Overview (End-to-End Workflow)](#31-cross-functional-process-overview-end-to-end-workflow)
+  * [3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module)](#32-current-business-processes--bottlenecks-as-is-bpmn-by-module)
+  * [3.3. Root Cause Analysis (5-Whys / Fishbone per Module)](#33-root-cause-analysis-5-whys--fishbone-per-module)
+  * [3.4. Proposed Future Business Processes (TO-BE BPMN by Module)](#34-proposed-future-business-processes-to-be-bpmn-by-module)
+* [SECTION 4. FUNCTIONAL REQUIREMENTS AND USE CASES](#section-4-functional-requirements-and-use-cases)
+  * [4.1. System Feature Catalog (Functional Requirements List)](#41-system-feature-catalog-functional-requirements-list--moscow-framework)
+  * [4.2. Enterprise Use Case Diagram (Phase 2)](#42-enterprise-use-case-diagram)
+  * [4.3. Use Case Identification & Module Breakdown (Phase 2)](#43-use-case-identification--module-breakdown)
+  * [4.4. Detailed Use Case Specifications (Phase 2)](#44-detailed-use-case-specifications)
+  * [4.5. Business Rules & Operational Constraints](#45-business-rules--operational-constraints)
+* [CONCLUSION & LESSONS LEARNED](#conclusion--lessons-learned)
+* [REFERENCES](#references)
+* [APPENDICES](#appendices)
+  * [Appendix A. Raw Elicitation Notes / Evidence](#appendix-a-raw-elicitation-notes--evidence)
+  * [Appendix B. Individual Contribution Sign-off](#appendix-b-individual-contribution-sign-off)
+
+***
+
+## TABLE OF FIGURES
+
+* **Figure 1.1:** Organizational Hierarchy & Operational Departmental Structure
+* **Figure 2.1:** Stakeholder Power/Interest Matrix (2x2 Grid)
+* **Figure 3.1:** High-Level End-to-End Wholesale Distribution Value Stream
+* **Figure 3.2:** TO-BE Cross-Functional Process Re-engineering Flowchart (Mermaid)
+
+***
+
+## LIST OF TABLES
+
+* **Table 1.1:** Master Data Scope — 10 Primary SKUs & Standard vs. Contract Price Catalog
+* **Table 1.2:** Individual Module Ownership Matrix & Academic Responsibilities
+* **Table 2.1:** Elicitation Verification Log (Baseline Assumptions vs. Interview Evidence)
+* **Table 2.2:** Cross-Functional Information Needs Matrix
+* **Table 3.1:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
+* **Table 4.1:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
+* **Table 4.2:** Core Enterprise Business Rules & Operational Constraints Matrix
+* **Table B.1:** Individual Contribution Sign-off & Academic Integrity Confirmation
+
+***
+
 ## ACKNOWLEDGEMENTS
 
 The project team would like to express our deepest gratitude to **MSc. Nguyen Thi Thanh Thanh** for her guidance, structured lectures, and academic supervision throughout the Business Systems Analysis course at Hoa Sen University. Her feedback during weekly workshops has been instrumental in shaping our understanding of enterprise process re-engineering and business requirements engineering.
@@ -379,9 +439,36 @@ In accordance with Phase 1 requirements framing requirements, process gaps have 
 
 ---
 
-### [NOTE ON SECTIONS 4.2 – 4.5: DEFERRED TO PHASE 2]
-> *Per the official BSA Course Guidelines (BSA_Project_Brief__Guidelines.pdf, Page 11–13):*  
-> Sections 4.2 (Enterprise Use Case Diagram), 4.3 (Use Case Identification & Module Breakdown), 4.4 (Detailed Use Case Specifications), and 4.5 (Business Rules & Operational Constraints Matrix) represent **Phase 2 Deliverables (Weeks 10–11)** and will be fully elaborated alongside Odoo ERP prototyping and UAT test execution in the Phase 2 Final Report.
+## 4.2. Enterprise Use Case Diagram
+> **[PHASE 2 SCOPE BOUNDARY NOTE]**  
+> Per the official course curriculum (*BSA Project Brief & Guidelines*, Page 11–13), the Enterprise Use Case Diagram models system interactions during the solution specification stage (Weeks 8–10). This deliverable is scheduled for Phase 2 implementation.
+
+---
+
+## 4.3. Use Case Identification & Module Breakdown
+> **[PHASE 2 SCOPE BOUNDARY NOTE]**  
+> Formal Use Case cataloging across Sales, Inventory, Purchasing, and Invoicing modules will be elaborated in Phase 2 alongside detailed system prototyping.
+
+---
+
+## 4.4. Detailed Use Case Specifications (Organized by Individual Module)
+> **[PHASE 2 SCOPE BOUNDARY NOTE]**  
+> Full Use Case specifications (Actors, Preconditions, Trigger, Main Flow, Alternate Flows, Postconditions) will be constructed in Phase 2 for assigned student modules (Vo Duy Binh: Sales & Purchasing; Pham Nguyen Gia Thuan: Inventory & Invoicing).
+
+---
+
+## 4.5. Business Rules & Operational Constraints
+
+To ensure solution neutrality and establish unambiguous governance for subsequent system configuration, Group 6 has codified the enterprise's essential operational policies into the **Core Business Rules Matrix**:
+
+| Rule ID | Business Rule Category | Formal Policy Statement | Enforcement Mechanism | Linked Process & FR |
+|---|---|---|---|---|
+| **BR-R01** | **Contract Price Integrity** | Upon selecting a verified B2B corporate account, unit prices for all contracted SKUs (e.g., `ST-001` Double A Paper @ 65,000 VND) must be locked to the approved framework pricelist without manual overrides. | Automated system retrieval; manual edit disabled for standard sales reps. | BP1 / BP2<br>`FR-01` |
+| **BR-R02** | **Discretionary Discount Cap** | Sales representatives may apply an ad-hoc commercial discount of up to **5.0%** independently. Any discount exceeding 5.0% mandates formal electronic sign-off from the Sales Manager before the quotation can be confirmed. | Dual-tier approval workflow; auto-blocks status progression if discount > 5%. | BP1<br>`FR-01` |
+| **BR-R03** | **Hard Credit Lock Policy** | Any customer account with an outstanding invoice overdue by **more than 30 calendar days** past delivery shall be placed on an automatic system Credit Hold. No new Sales Orders can be confirmed without written Chief Accountant approval. | Hard system gatekeeper; prevents SO confirmation state transition. | BP1 / Finance<br>`FR-03` |
+| **BR-R04** | **Available-to-Promise (ATP) Allocation** | Order quantities can only be confirmed against verified Available-to-Promise stock (ATP = On-hand - Reserved + Scheduled PO receipts within 48h). Tan Binh Central Hub is queried first; Bien Hoa Depot serves as regional backup. | Multi-facility inventory query engine with automated stock reservation. | BP1 / BP3<br>`FR-02` |
+| **BR-R05** | **Automated Reorder Threshold** | When the unreserved on-hand inventory of fast-moving paper products (`ST-001` Double A, `ST-002` IK Plus) drops below the safety reorder point of **100 reams**, the system must generate a draft Purchase Requisition automatically. | Automated inventory batch trigger event; alerts Procurement Officer. | BP3 / BP4<br>`FR-04` |
+| **BR-R06** | **Mandatory 3-Way Reconciliation** | An Accounts Receivable VAT electronic invoice can only be released after the system successfully reconciles three digital artifacts: (1) Confirmed Sales Order, (2) Signed Warehouse Delivery Note / Dispatch Slip, and (3) Invoiced Line Quantities. | Automated 3-way line item tolerance matching algorithm (zero variance). | BP1 / Invoicing<br>`FR-05` |
 
 ***
 
