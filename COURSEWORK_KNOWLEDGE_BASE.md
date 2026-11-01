@@ -2,7 +2,7 @@
 ## BUSINESS SYSTEMS ANALYSIS (BSA) — MASTER COURSEWORK & EXERCISES KNOWLEDGE BASE
 
 > 🔄 **AUTOMATED SYNCHRONIZATION STATUS: ACTIVE**  
-> **Last Auto-Updated:** `2026-11-01 07:42:05 (UTC)`  
+> **Last Auto-Updated:** `2026-11-01 07:52:27 (UTC)`  
 > **Sync Engine:** `scripts/auto_update_knowledge.js`  
 > **Target Tracking:** All Lecture Slides, Individual Deliverables, Group Submissions, and Project Phase 1/2 Artifacts.  
 > *Note: This file is dynamically re-compiled whenever new slides, assignments, or project files are committed or saved.*
@@ -108,8 +108,9 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 
 | Project Deliverable | File Path | Size | Description |
 | :--- | :--- | :---: | :--- |
+| **~$oject phase 1.docx** | [`Project/Final Project/~$oject phase 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/~$oject phase 1.docx) | 0.2 KB | Official Phase 1 Artifact |
 | **BRD_Master_Group6.md** | [`Project/Final Project/BRD_Master_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Master_Group6.md) | 13.1 KB | Official Phase 1 Artifact |
-| **BRD_Official_Report_Group6.md** | [`Project/Final Project/BRD_Official_Report_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Official_Report_Group6.md) | 45.5 KB | Official Phase 1 Artifact |
+| **BRD_Official_Report_Group6.md** | [`Project/Final Project/BRD_Official_Report_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Official_Report_Group6.md) | 44.9 KB | Official Phase 1 Artifact |
 | **BRD_Template_BSA_New.docx** | [`Project/Final Project/BRD_Template_BSA_New.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Template_BSA_New.docx) | 60.4 KB | Official Phase 1 Artifact |
 | **BRD_Template_BSA.docx** | [`Project/Final Project/BRD_Template_BSA.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Template_BSA.docx) | 61.4 KB | Official Phase 1 Artifact |
 | **Design.md** | [`Project/Final Project/Design.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Design.md) | 24.7 KB | Official Phase 1 Artifact |

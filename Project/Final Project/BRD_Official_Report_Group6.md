@@ -37,37 +37,45 @@ Per the Phase 1 assessment mandate, system configuration screenshots, ERP user m
 
 ## TABLE OF CONTENTS
 
-* [EXECUTIVE SUMMARY](#executive-summary)
-* [TABLE OF CONTENTS](#table-of-contents)
-* [ACKNOWLEDGEMENTS](#acknowledgements)
-* [TABLE OF FIGURES](#table-of-figures)
-* [LIST OF TABLES](#list-of-tables)
-* [GLOSSARY & ABBREVIATIONS](#glossary--abbreviations)
-* [TEAM MEMBERS & MODULE ASSIGNMENT MATRIX](#team-members--module-assignment-matrix)
-* [SECTION 1. ENTERPRISE CONTEXT AND SCOPE](#section-1-enterprise-context-and-scope)
-  * [1.1. Enterprise Profile](#11-enterprise-profile)
-  * [1.2. Business Objectives & Key Operational Challenges](#12-business-objectives--key-operational-challenges)
-  * [1.3. Enterprise Scope & Out-of-Scope Boundaries](#13-enterprise-scope--out-of-scope-boundaries)
-  * [1.4. Individual Module Ownership Matrix](#14-individual-module-ownership-matrix-student-name---assigned-module)
-* [SECTION 2. STAKEHOLDER ANALYSIS & ELICITATION](#section-2-stakeholder-analysis--elicitation)
-  * [2.1. Stakeholder Identification & Power/Interest Grid](#21-stakeholder-identification--powerinterest-grid)
-  * [2.2. Elicitation Summary & Verified Evidence Log](#22-elicitation-summary--verified-evidence-log-verified-evidence-vs-initial-assumptions)
-* [SECTION 3. BUSINESS PROCESS ANALYSIS (AS-IS & TO-BE)](#section-3-business-process-analysis-as-is--to-be)
-  * [3.1. Cross-Functional Process Overview (End-to-End Workflow)](#31-cross-functional-process-overview-end-to-end-workflow)
-  * [3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module)](#32-current-business-processes--bottlenecks-as-is-bpmn-by-module)
-  * [3.3. Root Cause Analysis (5-Whys / Fishbone per Module)](#33-root-cause-analysis-5-whys--fishbone-per-module)
-  * [3.4. Proposed Future Business Processes (TO-BE BPMN by Module)](#34-proposed-future-business-processes-to-be-bpmn-by-module)
-* [SECTION 4. FUNCTIONAL REQUIREMENTS AND USE CASES](#section-4-functional-requirements-and-use-cases)
-  * [4.1. System Feature Catalog (Functional Requirements List)](#41-system-feature-catalog-functional-requirements-list--moscow-framework)
-  * [4.2. Enterprise Use Case Diagram (Phase 2)](#42-enterprise-use-case-diagram)
-  * [4.3. Use Case Identification & Module Breakdown (Phase 2)](#43-use-case-identification--module-breakdown)
-  * [4.4. Detailed Use Case Specifications (Phase 2)](#44-detailed-use-case-specifications)
-  * [4.5. Business Rules & Operational Constraints](#45-business-rules--operational-constraints)
-* [CONCLUSION & LESSONS LEARNED](#conclusion--lessons-learned)
-* [REFERENCES](#references)
-* [APPENDICES](#appendices)
-  * [Appendix A. Raw Elicitation Notes / Evidence](#appendix-a-raw-elicitation-notes--evidence)
-  * [Appendix B. Individual Contribution Sign-off](#appendix-b-individual-contribution-sign-off)
+| Section / Deliverable Heading | Template Page Reference |
+|---|:---:|
+| **EXECUTIVE SUMMARY** | **i** |
+| **TABLE OF CONTENTS** | **ii** |
+| **ACKNOWLEDGEMENTS** | **iv** |
+| **TABLE OF FIGURES** | **v** |
+| **LIST OF TABLES** | **vi** |
+| **GLOSSARY & ABBREVIATIONS** | **vii** |
+| **TEAM MEMBERS & MODULE ASSIGNMENT MATRIX** | **viii** |
+| **SECTION 1. ENTERPRISE CONTEXT AND SCOPE** | **1** |
+| &nbsp;&nbsp;&nbsp;&nbsp;1.1. Enterprise Profile | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;1.2. Business Objectives & Key Operational Challenges | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;1.3. Enterprise Scope & Out-of-Scope Boundaries | 1 |
+| &nbsp;&nbsp;&nbsp;&nbsp;1.4. Individual Module Ownership Matrix (Student Name <-> Assigned Module) | 1 |
+| **SECTION 2. STAKEHOLDER ANALYSIS & ELICITATION** | **2** |
+| &nbsp;&nbsp;&nbsp;&nbsp;2.1. Stakeholder Identification & Power/Interest Grid | 2 |
+| &nbsp;&nbsp;&nbsp;&nbsp;2.2. Elicitation Summary & Verified Evidence Log (Verified Evidence vs. Initial Assumptions) | 2 |
+| **SECTION 3. BUSINESS PROCESS ANALYSIS (AS-IS & TO-BE)** | **3** |
+| &nbsp;&nbsp;&nbsp;&nbsp;3.1. Cross-Functional Process Overview (End-to-End Workflow) | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;3.2. Current Business Processes & Bottlenecks (AS-IS BPMN by Module) | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;3.3. Root Cause Analysis (5-Whys / Fishbone per Module) | 3 |
+| &nbsp;&nbsp;&nbsp;&nbsp;3.4. Proposed Future Business Processes (TO-BE BPMN by Module) | 3 |
+| **SECTION 4. FUNCTIONAL REQUIREMENTS AND USE CASES** | **4** |
+| &nbsp;&nbsp;&nbsp;&nbsp;4.1. System Feature Catalog (Functional Requirements List) | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;4.2. Enterprise Use Case Diagram | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;4.3. Use Case Identification & Module Breakdown | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;4.4. Detailed Use Case Specifications (Organized by Individual Module) | 4 |
+| &nbsp;&nbsp;&nbsp;&nbsp;4.5. Business Rules & Operational Constraints | 4 |
+| **CONCLUSION & LESSONS LEARNED** | **5** |
+| **REFERENCES** | **6** |
+| **APPENDICES** | **7** |
+| &nbsp;&nbsp;&nbsp;&nbsp;Appendix A. Raw Elicitation Notes / Evidence | 7 |
+| &nbsp;&nbsp;&nbsp;&nbsp;Appendix B. Individual Contribution Sign-off | 7 |
+
+***
+
+## ACKNOWLEDGEMENTS
+
+The project team would like to express our deepest gratitude to **MSc. Nguyen Thi Thanh Thanh** for her guidance, structured lectures, and academic supervision throughout the Business Systems Analysis course at Hoa Sen University. Her feedback during weekly workshops has been instrumental in shaping our understanding of enterprise process re-engineering and business requirements engineering.
 
 ***
 
@@ -90,12 +98,6 @@ Per the Phase 1 assessment mandate, system configuration screenshots, ERP user m
 * **Table 4.1:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
 * **Table 4.2:** Core Enterprise Business Rules & Operational Constraints Matrix
 * **Table B.1:** Individual Contribution Sign-off & Academic Integrity Confirmation
-
-***
-
-## ACKNOWLEDGEMENTS
-
-The project team would like to express our deepest gratitude to **MSc. Nguyen Thi Thanh Thanh** for her guidance, structured lectures, and academic supervision throughout the Business Systems Analysis course at Hoa Sen University. Her feedback during weekly workshops has been instrumental in shaping our understanding of enterprise process re-engineering and business requirements engineering.
 
 ***
 
@@ -422,7 +424,7 @@ graph TD
 
 # SECTION 4. FUNCTIONAL REQUIREMENTS AND USE CASES
 
-## 4.1. System Feature Catalog (Functional Requirements List — MoSCoW Framework)
+## 4.1. System Feature Catalog (Functional Requirements List)
 
 In accordance with Phase 1 requirements framing requirements, process gaps have been translated into a prioritized Functional Requirements Catalog (`FR-01` through `FR-08`):
 
