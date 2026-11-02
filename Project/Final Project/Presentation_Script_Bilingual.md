@@ -324,7 +324,11 @@
 > - **Accounting & Finance Lane:** Manually enters invoices into standalone software, manually cross-checks paper receipts (15–20 hours wasted weekly), and frequently bypasses credit checks via verbal sales appeals.  
 > - **Procurement Lane:** Reacts only when warehouse shelves run dry; negotiates via manual emails with 2–3 day turnaround delays.  
 > 
-> The red friction badges on this diagram pinpoint exactly where information breakdown and operational lag occur."
+> Crucially, as emphasized in the Week 7 Rubric, notice the **3 Decision Gateways** that create operational failure points:  
+> - **Gateway 1 (Overdue Debt > 30 Days?):** Verbally bypassed by sales managers, accumulating bad debt. If enforced, it leads to **End 3: Order Blocked**.  
+> - **Gateway 2 (Stock in Bins?):** Checked over phone without bin visibility. If stock is unavailable, it leads to **End 2: Order Cancelled**.  
+> - **Gateway 3 (Customer Accepts Quote?):** If pricing is wrong, it leads to **End 1: Quote Declined**.  
+> Only when all manual hurdles are cleared does the order reach **End 4: Order Fulfilled & Invoiced** after severe manual delay."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
 > "Để mô hình hóa chuẩn xác các điểm bàn giao giữa các phòng ban, Slide 12 trình bày **Sơ đồ BPMN Swimlane Liên chức năng Hiện trạng AS-IS** qua 5 làn bơi trách nhiệm:  
@@ -335,7 +339,11 @@
 > - **Làn Kế toán:** Nhập hóa đơn thủ công vào phần mềm kế toán độc lập, đối soát chứng từ giấy bằng mắt (tốn 15-20 giờ/tuần), và dễ dàng bỏ qua rào cản nợ quá hạn khi kinh doanh nài nỉ xin duyệt.  
 > - **Làn Thu mua:** Hoàn toàn bị động, chỉ đặt hàng khi kho báo hết sạch; gửi email hỏi giá nhà cung cấp mất 2-3 ngày.  
 > 
-> Các nhãn đỏ cảnh báo trên sơ đồ chỉ rõ chính xác các điểm đứt gãy thông tin và lãng phí thời gian trong hiện trạng."
+> Đặc biệt, theo đúng Tiêu chí Đánh giá Week 7 của Thầy, quý Thầy Cô có thể quan sát rõ **3 Cổng Quyết định (Decision Gateways)** chính là các điểm nghẽn gây gãy luồng:  
+> - **Cổng 1 (Nợ quá hạn > 30 ngày?):** Bị duyệt miệng bỏ qua gây rủi ro nợ xấu; nếu kích hoạt đúng sẽ dẫn đến **End 3: Chặn đơn do nợ quá hạn**.  
+> - **Cổng 2 (Còn tồn hàng trong Bin?):** Hỏi miệng qua điện thoại không thấy hàng chờ nhập; nếu hết hàng dẫn đến **End 2: Hủy đơn do hết hàng**.  
+> - **Cổng 3 (Khách duyệt báo giá?):** Nếu báo giá sai hợp đồng dẫn đến **End 1: Từ chối báo giá**.  
+> Chỉ khi vượt qua mọi trở ngại thủ công thì đơn hàng mới đến được **End 4: Giao xong & Xuất hóa đơn** nhưng chịu độ trễ tới 48 giờ."
 
 ---
 
@@ -446,7 +454,9 @@
 > - **Accounting & Finance Lane:** No longer keys manual invoices. The system triggers automated 3-way matching, auto-generates VAT e-invoices, and dispatches automated payment reminders on Day 25 of Net 30 terms.  
 > - **Procurement Lane:** Receives automated reorder triggers when ATP drops below safety stock, evaluating multi-vendor RFQ matrices digitally within hours rather than days.  
 > 
-> All five swimlanes now interact in real time through shared operational data."
+> Most importantly, the re-engineered process introduces a dedicated **Central System (ERP Engine)** lane between Sales and Warehouse:  
+> - The Central System automates all critical decision gateways: **Gateway 1** automatically blocks overdue debt (> 30 days) to **End 3: Credit Hold**; **Gateway 2** checks multi-hub ATP and triggers **End 2: Backorder & Auto PR** if depleted; and **Gateway 3** locks contract pricing so the client approves instantly, flowing to **End 4: Fulfilled, Invoiced & Reconciled**.  
+> Manual handoffs and paper trails are completely eliminated."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
 > "Slide 16 trực quan hóa bước nhảy chuyển đổi số này thông qua **Sơ đồ BPMN Swimlane Liên chức năng Tương lai TO-BE**:  
@@ -510,7 +520,7 @@
 > - **COULD HAVE Requirements:**  
 >   - `FR-08` (Executive): Accounts Receivable aging debt analysis dashboards.  
 > 
-> Every single functional requirement maps directly back to a diagnosed business problem and validated stakeholder information need."
+> Crucially, in strict adherence to IEEE 830 standards highlighted in our rubric, every single functional requirement begins with **"The system SHALL..."** and defines a concrete **Verification / Acceptance Idea**—such as testing contract rate auto-fill on `ST-001`, multi-hub ATP stock simulation, and automated 3-way matching tolerance tests—ensuring 100% testability when we advance to Phase 2 configuration."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
 > "Để hoàn tất việc đặc tả yêu cầu trong Phase 1, Slide 18 trình bày **Danh mục Yêu cầu Chức năng Ưu tiên theo Khung MoSCoW** (từ `FR-01` đến `FR-08`):  
@@ -529,7 +539,7 @@
 > - **Yêu cầu CÓ THỂ CÓ (Could Have):**  
 >   - `FR-08` (Ban Giám đốc): Dashboard báo cáo phân tích tuổi nợ công nợ phải thu cho Ban giám đốc.  
 > 
-> Toàn bộ 8 yêu cầu chức năng này đều truy vết trực tiếp về nỗi đau thực tế của doanh nghiệp và nhu cầu thông tin của các stakeholder."
+> Đặc biệt, tuân thủ nghiêm ngặt tiêu chuẩn IEEE 830 và thang đo Week 7 của Thầy, mọi yêu cầu chức năng đều bắt đầu chuẩn xác bằng **"Hệ thống PHẢI..."** và đi kèm một **Ý tưởng Kiểm thử / Nghiệm thu (Verification Idea)** cụ thể—như kiểm thử tự động áp giá hợp đồng với SKU `ST-001`, kiểm thử trừ tồn kho ATP đa điểm, và kiểm thử dung sai đối soát 3 bên 0%—bảo đảm tính khả nghiệm 100% khi bước vào Phase 2 cấu hình Odoo."
 
 ---
 
@@ -546,7 +556,8 @@
 > - Stockout emergencies `EVD-W3-PROC-04` trace to `INF-PROC-01`, `BR-04`, and `FR-04` (Automated Reorder Points).  
 > - And manual billing overhead `EVD-W3-ACCT-05` traces to `INF-ACCT-02`, `BR-05`, and `FR-05` (Automated 3-Way Matching).  
 > 
-> This matrix proves to the Examination Board that no functional requirement was arbitrarily invented; each one is firmly rooted in verified operational evidence."
+> This matrix proves to the Examination Board our Golden Rule of Traceability: **"Traceability is not just ID matching: it proves that every system feature addresses a real business need discovered during stakeholder elicitation."**  
+> Through our rigorous 6-column chain (`Evidence ID -> AS-IS Observation -> Problem/Need -> BR ID -> FR ID -> TO-BE Change`), we guarantee that Phase 2 will implement exactly what the business requires—nothing missing, and nothing unnecessary."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
 > "Slide 19 trình bày **Ma trận Truy xuất Yêu cầu Nghiệp vụ Đầu-cuối (RTM)**, minh chứng tính truy vết hai chiều 100% giữa các cấu phần phân tích:  
@@ -557,7 +568,8 @@
 > - Sự cố thiếu hàng `EVD-W3-PROC-04` truy vết tới `INF-PROC-01`, `BR-04`, và `FR-04` (Điểm đặt hàng lại tự động).  
 > - Và gánh nặng đối soát hóa đơn `EVD-W3-ACCT-05` truy vết tới `INF-ACCT-02`, `BR-05`, và `FR-05` (Đối soát 3 bên tự động).  
 > 
-> Ma trận RTM này chứng minh với Hội đồng rằng không có bất kỳ yêu cầu chức năng nào được bịa đặt hay suy diễn tùy tiện, mà tất cả đều bắt nguồn vững chắc từ bằng chứng vận hành thực tế."
+> Ma trận RTM này minh chứng Nguyên tắc Vàng về Tính Truy xuất: **"Tính truy xuất không chỉ là so khớp các mã định danh: nó chứng minh rằng mọi tính năng hệ thống đều giải quyết một nhu cầu nghiệp vụ thực tế được khám phá từ phỏng vấn stakeholder."**  
+> Thông qua chuỗi 6 cột liền mạch (`Mã Bằng chứng -> Quan sát AS-IS -> Vấn đề/Nhu cầu -> Mã BR -> Mã FR -> Thay đổi TO-BE`), nhóm cam kết Phase 2 sẽ hiện thực hóa chính xác những gì doanh nghiệp cần—không thiếu sót và không dư thừa tính năng."
 
 ---
 
