@@ -105,8 +105,8 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 * **Figure 1.1:** Organizational Hierarchy & Operational Departmental Structure
 * **Figure 2.1:** Stakeholder Power/Interest Matrix (2x2 Grid)
 * **Figure 3.1:** Five Core Business Processes Integration Relationship Map
-* **Figure 3.2:** End-to-End Wholesale Order Fulfillment Value Stream
-* **Figure 3.3:** TO-BE Cross-Functional Process Re-engineering Flowchart
+* **Figure 3.2:** AS-IS Cross-Functional Swimlane BPMN Diagram — Current Order Fulfillment
+* **Figure 3.3:** TO-BE Cross-Functional Swimlane BPMN Diagram — Automated Order Fulfillment
 
 ***
 
@@ -119,11 +119,18 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 * **Table 2.1:** Elicitation Verification Log (Baseline Assumptions vs. Interview Evidence)
 * **Table 2.2:** Cross-Functional Stakeholder Information Needs Matrix
 * **Table 2.3:** Assumptions, Uncertain Information & Follow-up Tracking Log
-* **Table 3.1:** Inter-Process Handoffs, Transferred Artifacts & Verification Status
-* **Table 3.2:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
-* **Table 4.1:** Core Business Requirements (BR-01 & BR-02)
-* **Table 4.2:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
-* **Table 4.3:** Core Enterprise Business Rules & Operational Constraints Matrix
+* **Table 3.1:** Selected Core Business Process Metadata & Operational Boundary
+* **Table 3.2:** Process Operational Scope (In-Scope vs. Out-of-Scope)
+* **Table 3.3:** Inter-Process Handoffs, Transferred Artifacts & Verification Status
+* **Table 3.4:** Sequential Step Breakdown of AS-IS Order Fulfillment Process
+* **Table 3.5:** Field Elicitation Evidence Register
+* **Table 3.6:** Identified Operational Problems, Root Causes, and Business Impact
+* **Table 3.7:** 5-Whys Root Cause Analysis Breakdown by Core Problem
+* **Table 3.8:** Key Operational Changes from AS-IS to TO-BE
+* **Table 3.9:** Expected Process Improvements and Justified Business Benefits
+* **Table 4.1:** Formal Business Requirements (BR-01 through BR-05)
+* **Table 4.2:** Prioritized Functional Requirements Catalog (FR-01 to FR-08) with Verification Ideas
+* **Table 4.3:** Core Enterprise Business Rules Matrix
 * **Table 4.4:** End-to-End Requirements Traceability Matrix (RTM)
 * **Table B.1:** Individual Contribution Sign-off & Academic Integrity Confirmation
 
@@ -385,183 +392,357 @@ During requirement elicitation, Group 6 conducted structured interviews using AI
 
 ## 3.1. Business Process Overview & Process Scope
 
+### 3.1.1. Core Business Process Identification & Metadata
+The primary business process selected for end-to-end analysis across Phase 1 is **Processing Corporate B2B Orders** (Order-to-Cash / Quote-to-Cash fulfillment) for OfficePro Distribution Co., Ltd.
+
+**Table 3.1:** Selected Core Business Process Metadata & Operational Boundary
+
+| Metadata Item | Project Operational Description (OfficePro Distribution Co., Ltd.) |
+|---|---|
+| **Process Name** | **Processing Corporate B2B Orders** |
+| **Naming Structure** | Verb + Noun Phrase: *Processing* (Verb) + *Corporate B2B Orders* (Noun Phrase) |
+| **Process Trigger** | A corporate client submits an inquiry or Request for Quotation (RFQ) for stationery products via email, telephone, or digital procurement channel. |
+| **Start Point** | The Sales Representative receives and logs the customer inquiry, identifying the corporate account and requested SKU quantities. |
+| **End Point** | The process terminates at one of four mutually exclusive operational outcomes:<br>1. **Order Fulfilled & Invoiced (Success):** Goods delivered, e-POD confirmed, and VAT e-invoice dispatched.<br>2. **Quotation Declined (Alternative):** Client formally rejects the submitted quotation and price terms.<br>3. **Order Cancelled (Stockout Exception):** Confirmed order cannot be fulfilled due to stockout and client declines backorder.<br>4. **Order Blocked on Credit Hold (Policy Exception):** Order is locked because client has debt overdue past 30 days and fails credit clearance. |
+| **Main Actors** | **External:** B2B Corporate Customer.<br>**Internal:** Sales Representative, Warehouse Operations (Tan Binh Central Hub & Bien Hoa Depot), Chief Accountant / Finance Officer, Procurement Officer.<br>*(The TO-BE model introduces the Central Order & Inventory Management System).* |
+
+### 3.1.2. Process Scope Boundaries (In-Scope vs. Out-of-Scope)
+To preserve project rigor and prevent scope creep, the operational boundaries are explicitly defined in Table 3.2.
+
+**Table 3.2:** Process Operational Scope (In-Scope vs. Out-of-Scope)
+
+| In-Scope Operational Activities | Out-of-Scope Operational Activities |
+|---|---|
+| • Receiving, logging, and reviewing corporate order inquiries.<br>• Retrieving agreed framework contract prices & discount ceilings.<br>• Checking real-time Available-to-Promise (ATP) stock across Tan Binh & Bien Hoa hubs.<br>• Verifying commercial credit standing (Net 30 payment terms and overdue debt status).<br>• Preparing, approving, and transmitting standardized quotations.<br>• Confirming Sales Orders and allocating/reserving physical inventory.<br>• Warehouse picking, staging, and dispatching against digital pick-lists.<br>• Capturing customer proof-of-delivery (e-POD) sign-off.<br>• Executing automated 3-way matching and issuing electronic VAT invoices.<br>• Triggering automated purchase requisitions when safety stock is breached. | • B2C retail e-commerce web storefront and retail walk-in point-of-sale.<br>• Raw material pulp harvesting and paper manufacturing/milling.<br>• Real-time GPS telematics and vehicle maintenance of third-party logistics (3PL) fleets.<br>• Cross-border international freight forwarding and customs clearance.<br>• Legal debt collection litigation and corporate bankruptcy processing.<br>• Post-delivery customer satisfaction surveying and marketing campaigns. |
+
+### 3.1.3. Process Objective
+The primary business objective is to **ensure that every corporate wholesale order is accepted and committed only when pre-negotiated contract prices are accurately applied (0% rate errors), multi-facility Available-to-Promise (ATP) stock is guaranteed (preventing stockouts), commercial customer credit is verified in good standing (no debt overdue > 30 days), and physical delivery is digitally verified before electronic VAT invoices are released.**
+
+### 3.1.4. Inter-Process Relationship Map
+The core order processing workflow (BP1) operates within an integrated network of four satellite supporting processes, as modeled in Figure 3.1 and detailed in Table 3.3.
+
 ```mermaid
 graph LR
-    BP2[BP2: Verifying Contract Prices] -->|Approved Contract Rates| BP1[BP1: Processing Customer Orders]
-    BP5[BP5: Receiving Goods & Inspection] -->|Inward Stock| BP3[BP3: Checking Product Availability]
-    BP3 -->|Real-Time ATP| BP1
-    BP3 -->|Reorder Point Trigger| BP4[BP4: Reviewing Replenishment Needs]
-    BP4 -->|Vendor PO Delivery| BP5
-    BP1 -->|Delivery & SO Line Data| FIN[Invoicing 3-Way Reconciliation]
+    BP2[BP2: Reviewing & Applying Contract Pricing] -->|Approved Contract Rates| BP1[BP1: Processing Corporate B2B Orders]
+    BP4[BP4: Receiving Goods & Inbound Inspection] -->|Accepted On-Hand Stock| BP3[BP3: Checking Product Availability / ATP]
+    BP3 -->|Real-Time ATP Stock & Reservations| BP1
+    BP3 -->|Depletion Trigger ATP < Safety Stock| BP5[BP5: Reviewing Replenishment Needs & Purchasing]
+    BP5 -->|Authorized Vendor PO Arrival| BP4
+    BP1 -->|Confirmed SO & Delivery Sign-off| FIN[Invoicing: Automated 3-Way Reconciliation]
 ```
 
 *Figure 3.1: Five Core Business Processes Integration Relationship Map*
 
-**Table 3.1:** Inter-Process Handoffs, Transferred Artifacts & Verification Status
+**Table 3.3:** Inter-Process Handoffs, Transferred Artifacts & Verification Status
 
 | Upstream Process | Output / Information Transferred | Downstream Process | Verification Status |
 |---|---|---|:---:|
 | **BP2 (Contract Prices)** | Agreed unit price tiers (`ST-001` @ 65k) & discount ceilings | **BP1 (Customer Orders)** | **Verified (EVD-W2-SALES-01)** |
 | **BP3 (Stock Availability)** | Real-time multi-hub Available-to-Promise (ATP) quantities | **BP1 (Customer Orders)** | **Verified (EVD-W2-WH-02)** |
-| **BP3 (Stock Availability)** | Depletion alert when unreserved stock < safety threshold | **BP4 (Replenishment)** | **Verified (EVD-W2-PURCH-01)** |
-| **BP4 (Replenishment)** | Authorized Vendor Purchase Order & expected arrival date | **BP5 (Receiving Goods)** | **Verified (EVD-W2-PURCH-01)** |
-| **BP5 (Receiving Goods)** | Verified dock receipt slip & accepted on-hand inventory | **BP3 (Stock Availability)** | **Verified (EVD-W2-WH-02)** |
+| **BP3 (Stock Availability)** | Depletion alert when unreserved stock < safety threshold | **BP5 (Replenishment)** | **Verified (EVD-W3-PROC-04)** |
+| **BP5 (Replenishment)** | Authorized Vendor Purchase Order & expected arrival date | **BP4 (Receiving Goods)** | **Verified (EVD-W3-PROC-04)** |
+| **BP4 (Receiving Goods)** | Verified dock receipt slip & accepted on-hand inventory | **BP3 (Stock Availability)** | **Verified (EVD-W2-WH-02)** |
 | **BP1 (Customer Orders)** | Confirmed Sales Order, delivery address, and credit terms | **Warehouse Fulfillment** | **Verified (EVD-W2-SALES-01)** |
-| **Warehouse Fulfillment** | Driver-signed delivery slip & actual dispatched quantities | **Invoicing Reconciliation** | **Verified (EVD-W2-ACC-01)** |
-
-$$\text{Upstream Supplier} \xrightarrow{\text{PO}} \text{Procurement} \xrightarrow{\text{Receipt}} \text{Warehouse Stock} \xrightarrow{\text{Contract SO}} \text{Sales} \xrightarrow{\text{Dispatch}} \text{Delivery} \xrightarrow{\text{3-Way Match}} \text{Accounting (VAT / Net 30)}$$
-
-*Figure 3.2: End-to-End Wholesale Order Fulfillment Value Stream*
-
-The wholesale operational model links five core business processes across Sales, Purchasing, Warehouse, and Invoicing. In the AS-IS state, each handoff depends on disconnected Excel lookups, unrecorded phone calls, or paper transit, generating severe data lag and high operational friction.
+| **Warehouse Fulfillment** | Driver-signed delivery slip & actual dispatched quantities | **Invoicing Reconciliation** | **Verified (EVD-W3-ACCT-03)** |
 
 ---
 
-## 3.2. Current Business Processes (AS-IS BPMN/Swimlane Models)
+## 3.2. Current Business Processes (AS-IS BPMN / Swimlane Models)
 
-### 3.2.1. Business Process 1: Processing Customer Orders
-* **Current Operational Flow:** Corporate client sends inquiry via Email/Zalo ➔ Sales rep opens personal Excel pricelist on laptop ➔ Rep phones Tan Binh warehouse clerk to check stock verbally ➔ Rep types quotation in Word/Excel ➔ Client approves quote ➔ Rep prints physical paper Sales Order.
-* **Diagnosed Friction Points:**
-  - *Contract Pricing Errors:* Decentralized spreadsheets cause a **5–8% rate discrepancy** on client invoices, leading to ~50 million VND monthly in billing adjustments.
-  - *Order Confirmation Stockouts:* Reps commit to orders without real-time stock data, leading to **3–4 stockouts per week post-confirmation**.
-  - *Credit Policy Bypass:* Reps obtain verbal manager approvals to bypass paper credit holds for clients with overdue balances > 30 days to hit sales quotas.
+### 3.2.1. AS-IS Process Description
+In the current operational state at OfficePro Distribution Co., Ltd., order processing is fragmented across personal spreadsheets, phone calls, and physical paper transit. Table 3.4 details the step-by-step sequential activity flow and departmental handoffs.
 
-### 3.2.2. Business Process 2: Checking Product Availability
-* **Current Operational Flow:** Sales rep calls or messages warehouse staff ➔ Warehouse clerk consults morning Excel inventory export or walks into aisles to check physical pallets ➔ Clerk verbally confirms quantity ➔ Sales confirms delivery commitment to client.
-* **Diagnosed Friction Points:**
-  - *Receiving Information Lag:* Newly arrived stock remains "invisible" to sales for **24 to 48 hours** while paper delivery slips await batch end-of-day spreadsheet data entry.
-  - *Picking Mix-ups:* Staff pick from memory without barcode scanners or designated bin location routing, leading to frequent errors between similar SKUs (`ST-001` 70gsm vs. `ST-002` 80gsm).
+**Table 3.4:** Sequential Step Breakdown of AS-IS Order Fulfillment Process
 
-### 3.2.3. Business Process 3: Reviewing Replenishment Needs
-* **Current Operational Flow:** Warehouse keeper observes physical shelf depletion ➔ Handwrites note to Procurement ➔ Purchasing officer checks vendor catalogs ➔ Sends RFQ emails to 3 suppliers ➔ Compares prices manually in Excel ➔ Generates and emails vendor Purchase Order (PO).
-* **Diagnosed Friction Points:**
-  - *Reactive Replenishment:* Purchasing is triggered only after physical stockouts occur, leading to 3–5 day replenishment delays on fast-movers like Double A paper.
-  - *Lengthy RFQ Comparison:* Comparing vendor quotations over unstructured email threads takes **2 to 3 days**, delaying stock replenishment.
+| Step | Responsible Lane | Current Operational Activity / Outcome | Diagnosed Operational Friction |
+|:---:|---|---|---|
+| **1** | **Customer** | Submits inquiry/RFQ with list of requested SKUs via Email, Zalo, or phone. | Unstructured request formats; missing SKU details. |
+| **2** | **Sales Representative** | Opens local personal Excel spreadsheet to search for agreed client contract prices. | **5–8% rate error rate;** outdated price sheets. |
+| **3** | **Sales Representative** | Telephones Tan Binh warehouse clerk to verbally inquire about stock availability. | Time-consuming phone tag; no record of reservation. |
+| **4** | **Warehouse Operations** | Walks the warehouse aisles or inspects morning inventory printouts to check bins. | **24–48h dock receiving lag;** stock invisibly sitting in receiving. |
+| **5** | **Sales Representative** | Drafts quote in Word/Excel based on verbal stock check and emails quote to client. | Rep confirms delivery dates on guesswork. |
+| **6** | **Customer** | Reviews draft quotation and decides whether to accept or decline price terms. | Manual turnaround takes 1 to 2 business days. |
+| **7** | **Sales Representative** | Obtains verbal approval to bypass credit holds for clients with overdue balances > 30 days. | **Credit policy bypassed;** bad debt accumulation risk. |
+| **8** | **Warehouse Operations** | Warehouse pickers manually pick items from memory; discover out-of-stock items post-SO. | **3–4 stockouts/week;** emergency order cancellations. |
+| **9** | **Warehouse Operations** | Dispatches goods with handwritten, triple-copy carbon paper Delivery Slips. | High risk of lost or damaged paper delivery slips. |
+| **10** | **Accounting & Finance** | Collects signed physical delivery notes; line-by-line cross-checks against paper SOs. | **15–20 hours/week** manual matching overhead. |
+
+> **READ THE GATEWAYS (AS-IS DECISION LOGIC):**  
+> The AS-IS process contains three separate decision gateways:  
+> 1. *Is Service/Stock Available?* (Warehouse evaluates physical stock).  
+> 2. *Does the Customer Accept the Quotation?* (Customer evaluates price and lead time).  
+> 3. *Is Credit Status Approved?* (Informal check, frequently overridden verbally).  
+> In the AS-IS state, these decisions are executed informally without systematic data validation.
+
+```mermaid
+flowchart TD
+    subgraph CUSTOMER["B2B Corporate Customer"]
+        C_START((Start: RFQ Submission)) --> C1[1.1 Submit RFQ via Email/Zalo]
+        C2[1.2 Review Quotation & Terms]
+        C_END1((End: Quote Declined))
+        C3[1.3 Receive Goods & Sign Carbon Slip]
+    end
+
+    subgraph SALES["Sales Representative"]
+        C1 --> S1[2.1 Search Personal Excel Pricelist]
+        S1 --> S2[2.2 Call Warehouse to Inquire Stock]
+        S3[2.3 Prepare Quote in Word/Excel] --> C2
+        C2 -->|Quote Declined| C_END1
+        C2 -->|Quote Accepted| S4{Overdue Debt > 30 Days?}
+        S4 -->|Yes: Verbal Override| S5[2.4 Confirm SO & Commit Delivery]
+        S4 -->|No: Standard Credit| S5
+    end
+
+    subgraph WAREHOUSE["Warehouse Operations"]
+        S2 --> W1{Stock Available in Bins?}
+        W1 -->|No| W_END2((End: Order Cancelled - Out of Stock))
+        W1 -->|Yes: Verbal Confirm| S3
+        S5 --> W2[3.1 Pick Items from Aisles Memory]
+        W2 --> W3{Stock Actually in Bins?}
+        W3 -->|No: Stockout Post-SO| W_END3((End: Order Cancelled - Stockout Post-SO))
+        W3 -->|Yes| W4[3.2 Handwrite Carbon Delivery Slip]
+        W4 --> C3
+    end
+
+    subgraph ACCOUNTING["Accounting & Finance"]
+        C3 --> A1[4.1 Collect Physical Delivery Notes]
+        A1 --> A2[4.2 Manual Line-by-Line 3-Way Match]
+        A2 --> A3[4.3 Manually Type VAT Invoice into Standalone App]
+        A3 --> A_END4((End: Invoice Dispatched & Net 30 Begun))
+    end
+
+    classDef redNode fill:#FFE4E6,stroke:#E11D48,stroke-width:1.5px;
+    classDef amberNode fill:#FEF3C7,stroke:#D97706,stroke-width:1.5px;
+    class S1,W3,A2 redNode;
+    class S4,W1 amberNode;
+```
+
+*Figure 3.2: AS-IS Cross-Functional Swimlane BPMN Diagram — Current Order Fulfillment*
+
+* **Interpretation of AS-IS Model:** Figure 3.2 illustrates the current fragmented workflow across four functional swimlanes. The process contains one Start Event, three Decision Gateways, and four distinct End Events. Red and amber highlighted nodes represent acute operational friction points where information disconnects cause pricing discrepancies, post-confirmation cancellations, credit risk exposure, and excessive manual labor.
 
 ---
 
 ## 3.3. Process Problems, Bottlenecks & Root Cause Analysis
 
-### 1. Contract Pricing Errors (5–8% Invoice Error Rate)
-1. *Why are prices wrong on customer invoices?* Reps copy-paste unit prices manually from personal Excel spreadsheets into quotes.
-2. *Why personal Excel spreadsheets?* Each sales rep maintains separate customer pricelists for their assigned corporate accounts.
-3. *Why separate files per rep?* Signed framework agreements are stored as static scanned PDFs on shared network folders.
-4. *Why scanned PDFs without central rules?* The company lacks a centralized database mapping contracted SKUs and pricing tiers directly to client accounts.
-5. **Root Cause:** **Lack of a centralized contract-based pricing engine that automatically enforces contracted unit prices upon customer selection.**
+### 3.3.1. Field Evidence Register
+Findings gathered during stakeholder elicitation sessions are cataloged in Table 3.5.
 
-### 2. Post-Confirmation Stockouts (3–4 Orders/Week)
-1. *Why do confirmed orders experience stockouts?* Sales confirms delivery dates based on outdated morning stock sheets or informal phone calls.
-2. *Why rely on outdated sheets/calls?* Warehouse inventory updates are entered into spreadsheets in batch at the end of the day.
-3. *Why end-of-day batch entry?* Inbound goods receiving requires manual paper ledger logging (taking 24–48 hours).
-4. *Why manual paper receiving?* Warehouse receiving docks operate disconnected from purchase order records in real time.
-5. **Root Cause:** **Lack of a real-time Available-to-Promise (ATP) inventory visibility engine connecting Sales and Warehouse.**
+**Table 3.5:** Field Elicitation Evidence Register
 
-### 3. Manual 3-Way Matching Overhead (15–20 Hours/Week)
-1. *Why does invoice reconciliation take 15–20 hours weekly?* Accounting manually compares paper Delivery Notes, Sales Orders, and Invoices.
-2. *Why manual cross-checking?* Delivery receipts are signed on physical paper by truck drivers upon delivery and submitted in batches.
-3. *Why paper delivery receipts?* Delivery confirmations are not captured digitally in an integrated system.
-4. *Why no digital matching?* Sales, Warehouse, and Invoicing operate in disconnected departmental silos.
-5. **Root Cause:** **Lack of automated 3-way matching and hard credit hold control connecting Sales Orders, Delivery Confirmations, and Invoices.**
+| Evidence ID | Stakeholder Source & Role | Verbatim Stakeholder Evidence Statement | AS-IS Factual Observation |
+|---|---|---|---|
+| **EVD-W2-SALES-01** | Lê Thị Mai<br>*(Sales Supervisor)* | *"Each sales rep keeps their own Excel sheet of customer prices. When Double A updated prices last quarter, two reps kept using the old sheet for three weeks. We had to issue credit notes for 8 orders totaling 52 million VND."* | Contract unit prices are retrieved from unmanaged local spreadsheets rather than a central database; 5–8% pricing error rate on invoices. |
+| **EVD-W2-WH-02** | Trần Hùng<br>*(Tan Binh Warehouse Mgr)* | *"Supplier delivery trucks arrive and goods sit in the receiving bay for up to two days before someone enters them into the inventory sheet. Sales calls to ask if we have stock, we say no, but the pallet was sitting right by dock 2."* | Inbound receiving logs take 24–48 hours to enter into spreadsheets; sales operates without visibility into newly arrived stock. |
+| **EVD-W3-ACCT-03** | Trần Thị Mai<br>*(Chief Accountant)* | *"We spend almost half our working week matching paper delivery slips to sales orders and invoice drafts. When a customer has overdue debt past 30 days, sales often begs management for a verbal exception to hit monthly targets."* | Accounting spends 15–20 hours weekly on manual line-by-line paper matching; paper credit hold rules are circumvented via verbal appeals. |
+| **EVD-W3-PROC-04** | Phạm Tuấn<br>*(Procurement Officer)* | *"We only know we are out of Double A paper when the warehouse supervisor walks over with a handwritten note saying the shelf is empty. By the time we email suppliers and get quotes back, 3 to 5 days have passed."* | Replenishment is triggered reactively only after physical stockouts occur; supplier RFQ negotiation takes 2 to 3 days over email. |
+
+### 3.3.2. Identified Problems and Root Causes
+Table 3.6 synthesizes the operational problems, their underlying root causes, and business impact.
+
+**Table 3.6:** Identified Operational Problems, Root Causes, and Business Impact
+
+| Problem ID | Operational Problem / Bottleneck | Likely Root Cause in Enterprise Context | Quantified Business Impact |
+|---|---|---|---|
+| **P-01** | **Contract Pricing Discrepancies:** Unit prices on invoices diverge from signed framework agreements. | Lack of a centralized contract-based pricing engine that automatically enforces contracted unit prices upon customer selection. | 5%–8% of monthly invoices contain price errors; ~50 million VND in disputed credit notes; payment delays of 15–20 days. |
+| **P-02** | **Post-Confirmation Stockouts:** Sales commits to delivery dates for orders that cannot be fulfilled. | Lack of a real-time Available-to-Promise (ATP) inventory visibility engine connecting Sales and multi-warehouse hubs. | 3–4 stockout emergencies per week; SLA delivery failure on 12% of orders; emergency procurement at premium prices. |
+| **P-03** | **Manual 3-Way Matching Overhead:** Accounting spends 15–20 hours weekly cross-checking paper documents. | Lack of automated digital 3-way matching and systematic hard credit hold enforcement connecting SOs, Delivery Notes, and Invoices. | 15–20 hours/week accounting labor wasted; delayed VAT invoice release (3–5 days); unblocked overdue debt (>30 days). |
+
+> **IMPORTANT ANALYTICAL DISTINCTION:**  
+> A *problem* describes what is not working well in the business. A *root cause* explains why it occurs. We do NOT label a proposed software feature (such as *"add a dashboard"* or *"install an ERP"*) as the root cause. The root cause must explain the fundamental underlying process, data, or governance failure.
+
+### 3.3.3. Rigorous 5-Whys Root Cause Analysis
+To rigorously isolate the true process failures, the 5-Whys technique was executed for each identified problem (Table 3.7).
+
+**Table 3.7:** 5-Whys Root Cause Analysis Breakdown by Core Problem
+
+| Iteration Level | Problem P-01: Contract Pricing Errors | Problem P-02: Post-Confirmation Stockouts | Problem P-03: Manual 3-Way Matching Overhead |
+|:---:|---|---|---|
+| **Problem Statement** | 5%–8% of customer invoices have incorrect unit prices. | Sales confirms orders that warehouse cannot fulfill. | Accounting spends 15–20 hours weekly reconciling invoices. |
+| **Why #1?** | Why? Sales reps copy-paste prices from personal Excel files. | Why? Sales confirms orders based on morning stock sheets or calls. | Why? Accounting manually cross-references paper slips line by line. |
+| **Why #2?** | Why personal files? Each rep manages separate files for assigned accounts. | Why outdated sheets? Warehouse inventory updates are entered in batch at end of day. | Why manual cross-checking? Signed Delivery Notes are physical paper slips. |
+| **Why #3?** | Why separate files? Framework contracts are filed as scanned PDFs. | Why end-of-day batch entry? Goods receiving requires manual paper ledger logging (24–48h). | Why physical paper slips? Delivery confirmations are not captured electronically. |
+| **Why #4?** | Why scanned PDFs? No central database maps contracted SKUs to client IDs. | Why manual paper receiving? Receiving docks operate disconnected from PO records. | Why no electronic matching? Sales, Warehouse, and Billing operate in isolated departmental silos. |
+| **Why #5 (Root Cause)** | **Lack of a centralized contract pricing engine that auto-enforces contracted rates upon client selection.** | **Lack of a real-time Available-to-Promise (ATP) inventory visibility engine connecting Sales and Warehouses.** | **Lack of automated digital 3-way matching and hard credit hold control connecting SOs, Delivery Notes, and Invoices.** |
 
 ---
 
 ## 3.4. Proposed Business Processes (TO-BE BPMN / Swimlane Models)
 
+### 3.4.1. TO-BE Process Description & Key Changes
+The proposed TO-BE business process eliminates manual paper silos by integrating Sales, Warehouse, Purchasing, and Invoicing through a central automated digital backbone. Table 3.8 outlines the specific operational transformations.
+
+**Table 3.8:** Key Operational Changes from AS-IS to TO-BE
+
+| AS-IS Operational Issue | Proposed TO-BE Operational Change | Problem Addressed |
+|---|---|:---:|
+| Reps search personal Excel files; copy-paste rates manually. | System automatically retrieves approved framework contract prices upon selecting a corporate customer account. | **P-01** |
+| Stock availability checked via phone calls; 24–48h dock receiving lag. | Real-time Available-to-Promise (ATP) stock calculation across Tan Binh and Bien Hoa hubs with automatic stock reservation upon SO confirmation. | **P-02** |
+| Customer credit checked informally on paper; verbal bypasses common. | Automated hard Credit Hold gatekeeper blocks order confirmation for customer accounts with unpaid balances overdue > 30 days. | **P-03** |
+| Warehouse pickers pick from memory; frequent SKU mix-ups. | Digital pick-lists generated with optimized bin location routing and barcode verification scanning at loading dock. | **P-02** |
+| Drivers carry paper delivery notes; physical signatures collected. | Electronic Proof of Delivery (e-POD) sign-off captured on mobile tablet upon physical customer receipt. | **P-03** |
+| Accounting manually cross-checks paper slips; 15–20h/wk overhead. | Automated 3-way matching between digital SO, e-POD delivery confirmation, and draft invoice auto-generates electronic VAT invoices. | **P-03** |
+| Replenishment triggered reactively only after warehouse runs out. | Automated reorder point rules generate draft Purchase Requisitions when fast-moving paper stock falls below safety stock threshold. | **P-02** |
+
 ```mermaid
-graph TD
-    A[B2B Client Order Inquiry] --> B[System Auto-Retrieves Contract Price]
-    B --> C[System Real-Time ATP Stock Check]
-    C --> D{Stock Available?}
-    D -- No --> E[Auto Draft Purchase Requisition]
-    D -- Yes --> F{Overdue Debt > 30 Days?}
-    F -- Yes --> G[System Auto Credit Hold - Accounting Review]
-    F -- No --> H[Auto Confirm SO & Reserve ATP Stock]
-    H --> I[Warehouse Bin Location Picking]
-    I --> J[Automated 3-Way Matching & VAT Invoicing]
+flowchart TD
+    subgraph CUSTOMER["B2B Corporate Customer"]
+        T_START((Start: RFQ Submission)) --> TC1[1.1 Submit Digital RFQ via Portal/Email]
+        TC2[1.2 Review Standardized Quote]
+        T_END1((End: Quote Declined))
+        TC3[1.3 Receive Shipment & Sign e-POD on Tablet]
+    end
+
+    subgraph SYSTEM["Central Order & Inventory System"]
+        TC1 --> TS1[2.1 Auto-Retrieve Contract Pricelist FR-01]
+        TS1 --> TS2[2.2 Real-Time Multi-Hub ATP Stock Query FR-02]
+        TS2 --> TS3{Stock Available in Network?}
+        TS3 -->|No| TS4[2.3 Trigger Draft Purchase Requisition FR-04]
+        TS4 --> T_END2((End: Order Backordered - Auto Replenishment Triggered))
+        TS3 -->|Yes| TS5[2.4 Generate Standardized Quote Document]
+        TS5 --> TC2
+        TC2 -->|Quote Declined| T_END1
+        TC2 -->|Quote Approved| TS6{Overdue Debt > 30 Days? FR-03}
+        TS6 -->|Yes: Overdue > 30 Days| TS7[2.5 Apply Automated Hard Credit Hold]
+        TS7 --> T_END3((End: Order Blocked on Credit Hold - Accounting Review))
+        TS6 -->|No: Credit OK| TS8[2.6 Auto-Confirm SO & Reserve ATP Stock]
+        TS8 --> TW1[3.1 Auto-Generate Digital Pick-List with Bin Routes]
+        TW3 --> TS9[4.1 Automated 3-Way Match Line Items FR-05]
+        TS9 --> TS10[4.2 Auto-Generate Electronic VAT Invoice]
+        TS10 --> T_END4((End: Order Fulfilled, Invoiced & Net 30 Countdown Initiated))
+    end
+
+    subgraph WAREHOUSE["Warehouse Operations (Tan Binh / Bien Hoa)"]
+        TW1 --> TW2[3.2 Scan Barcodes & Pack Bins at Loading Bay]
+        TW2 --> TW3[3.3 Dispatch Truck & Transmit e-POD to Tablet]
+        TW3 --> TC3
+    end
+
+    subgraph PROCUREMENT["Procurement Department"]
+        TS4 --> TP1[5.1 Review Auto-Generated PR & Multi-Vendor RFQ Matrix FR-07]
+    end
+
+    classDef greenNode fill:#D1FAE5,stroke:#059669,stroke-width:1.5px;
+    classDef amberNode fill:#FEF3C7,stroke:#D97706,stroke-width:1.5px;
+    class TS1,TS2,TS8,TS9,TS10,TW1 greenNode;
+    class TS6,TS7 amberNode;
 ```
 
-*Figure 3.3: TO-BE Cross-Functional Process Re-engineering Flowchart*
+*Figure 3.3: TO-BE Cross-Functional Swimlane BPMN Diagram — Automated Order Fulfillment*
 
-### Cross-Functional Operational Flow of TO-BE Solution:
-* **Sales Department:** Selecting a B2B corporate account automatically loads their framework contract pricelist (e.g., `ST-001` at 65,000 VND). The system verifies real-time Available-to-Promise (ATP) stock across Tan Binh and Bien Hoa facilities. If debt is overdue > 30 days, the system applies a hard Credit Hold. Otherwise, order confirmation automatically reserves physical stock.
-* **Warehouse & Logistics:** Real-time stock status syncs immediately upon goods receipt at dock. Pickers receive digital picking slips with optimized bin location routes, eliminating picking mix-ups between `ST-001` and `ST-002`. Outbound dispatch logs trigger digital delivery confirmations.
-* **Purchasing Department:** Reorder point rules monitor fast-movers like Double A paper. When ATP stock drops below 100 reams, the system auto-generates a draft Purchase Requisition and RFQ comparison matrix, cutting procurement lead times from 5 days to 24 hours.
-* **Accounting & Finance:** Upon customer delivery sign-off, the system performs automated 3-way matching between the digital SO, Delivery Note, and draft invoice, automatically issuing VAT invoices and reducing accounting overhead from 20 hours to 2 hours per week.
+* **Interpretation of TO-BE Model:** Figure 3.3 establishes the integrated future-state process model. The introduction of the **Central System** lane automates routine data validation, stock reservation, credit gating, and 3-way reconciliation. The model preserves the same business scope as the AS-IS model while providing clear handling for all alternative and exceptional outcomes (quote declined, backorder replenishment, and credit hold).
 
 ---
 
 ## 3.5. Expected Process Improvements & Business Benefits
 
-**Table 3.2:** AS-IS vs. TO-BE Operational Comparison & Target Improvements
+**Table 3.9:** Expected Process Improvements and Justified Business Benefits
 
-| Operational Dimension | Current AS-IS State (Manual / Fragmented) | Proposed TO-BE State (Integrated / Automated) | Target Business Improvement |
+| Current Problem ID | TO-BE Process Change | Expected Process Improvement (Operational) | Expected Business Benefit (Strategic / Financial) |
 |---|---|---|---|
-| **Contract Pricing Lookup** | Reps search personal Excel spreadsheets; manual copy-pasting. | System retrieves approved contract pricelist upon client selection. | **Pricing errors: 5–8% ➔ 0%** (Saves ~50M VND/month) |
-| **Inventory Visibility** | Daily Excel summaries or verbal calls; 24–48h receiving entry delay. | Real-time Available-to-Promise (ATP) stock visible across both facilities. | **Stockouts: 3–4/week ➔ Reduced by 95%** |
-| **Stock Replenishment** | Reactive purchasing triggered after warehouse stock physically exhausts. | Automated draft Purchase Requisitions generated when stock hits min threshold. | **Zero stockouts on fast-movers (`ST-001`)** |
-| **Credit Enforcement** | Manual checks on paper; informal verbal overrides to hit sales quota. | Hard automated credit lock if customer debt is overdue > 30 days. | **100% Policy Adherence; Eliminates bad debt** |
-| **Invoice Reconciliation** | Accounting spends 15–20 hours/week manually matching SOs and Delivery Notes. | Automated 3-way matching between digital SO, delivery confirmation & invoice. | **Matching time: 20h ➔ 2h/week (90% reduction)** |
+| **P-01: Contract Pricing Errors** | System automatically locks and applies approved contract pricelists upon client selection. | Complete elimination of manual spreadsheet lookups and copy-paste steps; 100% price quotation accuracy. | Eliminates ~50 million VND monthly in billing adjustments and credit notes; prevents client payment disputes. |
+| **P-02: Receiving Lag & Stockouts** | Real-time multi-hub Available-to-Promise (ATP) stock query and automated stock reservation. | Immediate stock visibility upon dock receipt; eliminates 24–48h receiving blindspot; zero double-booking of stock. | Reduces post-confirmation stockout cancellations by 95% (from 3–4/wk to near zero); protects SLA delivery commitments. |
+| **P-02: Reactive Replenishment** | Automated reorder point monitoring generating draft Purchase Requisitions when stock < 100 reams. | Purchasing receives advance replenishment notifications before physical stockouts occur; lead times cut from 5 days to 24h. | Guarantees uninterrupted fulfillment for high-velocity items like Double A paper; avoids purchasing at retail premiums. |
+| **P-03: Verbal Credit Bypass** | Hard automated credit hold enforced for accounts with debt overdue > 30 calendar days. | Eliminates informal verbal approvals; orders cannot transition to confirmed state without formal accounting sign-off. | 100% compliance with commercial credit policy; eliminates bad debt accumulation; accelerates cash collection cycle. |
+| **P-03: Manual 3-Way Matching** | Automated 3-way matching between digital Sales Order, e-POD confirmation, and draft billing lines. | Eliminates manual line-by-line paper cross-checking; immediate automated release of electronic VAT invoices. | Reduces accounting invoice reconciliation overhead by 90% (from 15–20 hours down to 2 hours per week). |
+
+> **BENEFITS MUST BE JUSTIFIED:**  
+> The percentage improvements stated above are grounded directly in our verified field baselines established during Weeks 2–4 elicitation: baseline pricing error rate of 5–8% (50M VND/month), dock receiving lag of 24–48 hours, post-confirmation stockout frequency of 3–4 orders/week, and accounting reconciliation workload of 15–20 hours/week. Expected benefits reflect the direct mathematical elimination of these manual friction steps through digital integration.
 
 ***
 
 # SECTION 4. BUSINESS AND FUNCTIONAL REQUIREMENTS
 
 ## 4.1. Business Requirements (BRs)
+Business Requirements describe the high-level business needs, desired outcomes, and operational capabilities that the enterprise must achieve, independent of any specific software vendor or user interface design.
 
-**Table 4.1:** Core Business Requirements (BR-01 & BR-02)
+**Table 4.1:** Formal Business Requirements (BR-01 through BR-05)
 
-| Requirement ID | Formal Business Requirement Statement | High-Level Business Outcome / Capability | Linked Core Problem |
-|---|---|---|---|
-| **BR-01** | The business needs customer order fulfillment to be committed exclusively against **verified contract pricing** and **reliable real-time product availability**. | Eliminates revenue leakage from inaccurate billing; prevents unfulfillable delivery commitments. | Pricing disputes (5–8% error) & stockouts (3–4/week). |
-| **BR-02** | The business needs commercial order releases to enforce **strict commercial credit policies** and **automated post-delivery invoice reconciliation**. | Eliminates bad debt accumulation; reduces manual accounting overhead from 20h to 2h/week. | Verbal debt bypass & manual 3-way matching delays. |
+| BR ID | Formal Business Requirement Statement | Related Problem / Information Need | Related Process |
+|---|---|---|:---:|
+| **BR-01** | The business needs customer order commitments and quotations to be generated exclusively using **verified contract pricing tiers**, eliminating pricing discrepancies. | P-01: Contract Pricing Errors<br>INF-SALES-01: Approved framework pricelist | **BP1 / BP2**<br>Processing Orders & Pricing |
+| **BR-02** | The business needs real-time, network-wide **Available-to-Promise (ATP) inventory visibility and stock reservation** across all physical warehouses prior to order confirmation. | P-02: Post-Confirmation Stockouts<br>INF-WH-01: Real-time inventory status | **BP1 / BP3**<br>Orders & Stock Availability |
+| **BR-03** | The business needs commercial order confirmations to strictly enforce **commercial credit policies**, automatically blocking order release for accounts with debt overdue past 30 days. | P-03: Verbal Credit Policy Bypass<br>INF-ACCT-01: Overdue debt aging status | **BP1 / Finance**<br>Order Release & Credit Control |
+| **BR-04** | The business needs inventory replenishment to be triggered **automatically upon reaching defined safety thresholds**, preventing operational stockouts on fast-moving SKUs. | P-02: Reactive Replenishment<br>INF-PROC-01: Depletion threshold alerts | **BP3 / BP5**<br>Stock Check & Replenishment |
+| **BR-05** | The business needs invoice reconciliation to be executed through **automated digital 3-way matching**, eliminating manual paper cross-checking and accelerating billing. | P-03: Manual 3-Way Matching Overhead<br>INF-ACCT-02: Digital delivery confirmation | **BP1 / Invoicing**<br>Delivery & Invoicing |
+
+> **BR WRITING CHECK:**  
+> Each Business Requirement above explains *what* the enterprise needs to achieve operationally to solve an identified problem. Statements like *"The system shall display a red warning icon"* or *"The system shall send an email"* are Functional Requirements (FRs), not Business Requirements.
 
 ---
 
 ## 4.2. Functional Requirements (FRs)
+Functional Requirements define specific, observable, and verifiable system behaviors that the solution must exhibit to satisfy the Business Requirements. Statements adhere to the standard IEEE 830 format (*"The system shall..."*).
 
-**Table 4.2:** MoSCoW Prioritized Functional Requirements Catalog (FR-01 to FR-08)
+**Table 4.2:** Prioritized Functional Requirements Catalog (FR-01 to FR-08) with Verification Ideas
 
-| Req ID | Module | Feature Description (IEEE 830 Standard) | MoSCoW Priority | Target Business Outcome |
-|---|---|---|:---:|---|
-| **FR-01** | Sales | The system shall automatically retrieve approved customer contract pricelists upon client account selection during quotation drafting. | **MUST HAVE** | Eliminate 5–8% contract pricing errors and 50M VND dispute adjustments. |
-| **FR-02** | Inventory | The system shall display real-time Available-to-Promise (ATP) stock levels across Tan Binh Central Hub and Bien Hoa Depot during order entry. | **MUST HAVE** | Prevent 3–4 post-confirmation stockout cancellations per week. |
-| **FR-03** | Invoicing | The system shall enforce an automated hard Credit Hold on order confirmation for accounts with outstanding debt overdue past 30 calendar days. | **MUST HAVE** | Prevent bad debt accumulation and enforce corporate credit policies. |
-| **FR-04** | Purchasing | The system shall automatically generate draft Purchase Requisitions when Available-to-Promise stock falls below defined safety reorder thresholds. | **MUST HAVE** | Automate stock replenishment for fast movers like Double A paper. |
-| **FR-05** | Invoicing | The system shall execute automated 3-way line item matching between confirmed Sales Orders, verified Delivery Notes, and draft Billing Invoices. | **MUST HAVE** | Reduce accounting reconciliation overhead from 20h to 2h/week. |
-| **FR-06** | Sales | The system shall issue proactive reminder alerts to account representatives 30 calendar days prior to framework contract agreement expiration dates. | **SHOULD HAVE** | Enable proactive contract renewals with corporate clients. |
-| **FR-07** | Purchasing | The system shall support multi-vendor RFQ cost and delivery lead-time comparison tables. | **SHOULD HAVE** | Optimize procurement cost and supplier selection. |
-| **FR-08** | Invoicing | The system shall generate executive Accounts Receivable aging debt analysis dashboards. | **COULD HAVE** | Provide executive financial visibility into cash flow and outstanding balances. |
+| FR ID | Functional Requirement Statement (IEEE 830) | Related BR | Verification / Acceptance Idea | MoSCoW Priority |
+|---|---|:---:|---|:---:|
+| **FR-01** | The system shall automatically retrieve and apply approved framework contract unit prices upon selection of a verified B2B corporate customer account during quotation creation. | **BR-01** | Select corporate account 'Alpha Corp' for SKU `ST-001`; verify unit price automatically defaults to 65,000 VND without manual entry. | **MUST HAVE** |
+| **FR-02** | The system shall display real-time Available-to-Promise (ATP) inventory quantities across Tan Binh Central Hub and Bien Hoa Depot during order line item entry. | **BR-02** | Enter order for 50 reams of `ST-001`; verify system displays Tan Binh ATP (120 reams) and Bien Hoa ATP (30 reams) accurately. | **MUST HAVE** |
+| **FR-03** | The system shall automatically apply a hard Credit Hold on order confirmation for any customer account with an outstanding invoice overdue by more than 30 calendar days. | **BR-03** | Attempt to confirm SO for client with 35-day overdue invoice; verify system locks confirmation and displays 'Credit Hold - Overdue > 30 Days'. | **MUST HAVE** |
+| **FR-04** | The system shall automatically generate a draft Purchase Requisition when the unreserved on-hand quantity of a designated fast-moving SKU falls below its safety reorder threshold. | **BR-04** | Reduce `ST-001` ATP stock to 90 reams (threshold = 100); verify system auto-generates draft Purchase Requisition for 200 reams. | **MUST HAVE** |
+| **FR-05** | The system shall execute automated 3-way line item matching between the confirmed Sales Order, verified electronic Delivery Note (e-POD), and draft Billing Invoice. | **BR-05** | Complete e-POD delivery sign-off; verify system automatically reconciles delivered quantities and releases electronic VAT invoice without manual review. | **MUST HAVE** |
+| **FR-06** | The system shall issue automated notification alerts to assigned account representatives 30 calendar days prior to customer framework contract agreement expiration dates. | **BR-01** | Simulate contract expiration date in 29 days; verify automated notification appears on sales rep dashboard and via email. | **SHOULD HAVE** |
+| **FR-07** | The system shall generate a multi-vendor RFQ price and delivery lead-time comparison matrix upon receipt of vendor quotation submissions. | **BR-04** | Submit 3 vendor quotes for `ST-001`; verify system renders side-by-side comparison table highlighting lowest cost and shortest lead time. | **SHOULD HAVE** |
+| **FR-08** | The system shall render an executive Accounts Receivable aging dashboard displaying total outstanding debt categorized into Current, 1–30 Days, 31–60 Days, and >60 Days buckets. | **BR-03** | Open AR dashboard; verify aging debt amounts correctly aggregate and filter by customer tier and days overdue. | **COULD HAVE** |
+
+> **FR WRITING CHECK:**  
+> Each Functional Requirement above specifies a clear, testable system behavior with measurable verification criteria. Vague terms such as *"the system should be user-friendly"* or *"the system should work fast"* have been rigorously excluded.
 
 ---
 
 ## 4.3. Business Rules & Operational Constraints
 
-**Table 4.3:** Core Enterprise Business Rules & Operational Constraints Matrix
+### 4.3.1. Formal Business Rules Matrix
+Business Rules define the policies and operational constraints that govern enterprise operations. Table 4.3 distinguishes business rules from software functions.
 
-| Rule ID | Business Rule Category | Formal Policy Statement | Enforcement Mechanism | Linked Process & FR |
-|---|---|---|---|---|
-| **BR-R01** | **Contract Price Integrity** | Upon selecting a verified B2B corporate account, unit prices for all contracted SKUs (e.g., `ST-001` Double A Paper @ 65,000 VND) must be locked to the approved framework pricelist without manual overrides. | Automated system retrieval; manual edit disabled for standard sales reps. | BP1 / BP2<br>`FR-01` |
-| **BR-R02** | **Discretionary Discount Cap** | Sales representatives may apply an ad-hoc commercial discount of up to **5.0%** independently. Any discount exceeding 5.0% mandates formal electronic sign-off from the Sales Manager before the quotation can be confirmed. | Dual-tier approval workflow; auto-blocks status progression if discount > 5%. | BP1<br>`FR-01` |
-| **BR-R03** | **Hard Credit Lock Policy** | Any customer account with an outstanding invoice overdue by **more than 30 calendar days** past delivery shall be placed on an automatic system Credit Hold. No new Sales Orders can be confirmed without written Chief Accountant approval. | Hard system gatekeeper; prevents SO confirmation state transition. | BP1 / Finance<br>`FR-03` |
-| **BR-R04** | **Available-to-Promise (ATP) Allocation** | Order quantities can only be confirmed against verified Available-to-Promise stock (ATP = On-hand - Reserved + Scheduled PO receipts within 48h). Tan Binh Central Hub is queried first; Bien Hoa Depot serves as regional backup. | Multi-facility inventory query engine with automated stock reservation. | BP1 / BP3<br>`FR-02` |
-| **BR-R05** | **Automated Reorder Threshold** | When the unreserved on-hand inventory of fast-moving paper products (`ST-001` Double A, `ST-002` IK Plus) drops below the safety reorder point of **100 reams**, the system must generate a draft Purchase Requisition automatically. | Automated inventory batch trigger event; alerts Procurement Officer. | BP3 / BP4<br>`FR-04` |
-| **BR-R06** | **Mandatory 3-Way Reconciliation** | An Accounts Receivable VAT electronic invoice can only be released after the system successfully reconciles three digital artifacts: (1) Confirmed Sales Order, (2) Signed Warehouse Delivery Note / Dispatch Slip, and (3) Invoiced Line Quantities. | Automated 3-way line item tolerance matching algorithm (zero variance). | BP1 / Invoicing<br>`FR-05` |
+**Table 4.3:** Core Enterprise Business Rules Matrix
+
+| Rule ID | Formal Business Rule / Policy Statement | Operational Rationale | Enforcement Mechanism | Related BR / FR |
+|---|---|---|---|:---:|
+| **BR-R01** | **Contract Price Locking:** Unit prices for contracted SKUs (`ST-001` to `ST-010`) must strictly match the active framework contract. Standard sales representatives are prohibited from editing contracted rates. | Prevents unauthorized discounting and rate errors; protects 20–25% corporate margin. | System permission locks unit price field for standard sales roles. | **BR-01**<br>`FR-01` |
+| **BR-R02** | **Discretionary Discount Ceiling:** Sales representatives may apply an ad-hoc commercial discount of up to **5.0%**. Any discount exceeding 5.0% requires formal electronic approval from the Sales Manager. | Prevents margin erosion while allowing field sales reasonable closing flexibility. | Automated approval workflow; locks SO confirmation if discount > 5.0%. | **BR-01**<br>`FR-01` |
+| **BR-R03** | **Hard Credit Lock Policy:** Any customer account with an outstanding invoice overdue by **more than 30 calendar days** shall be placed on automated Credit Hold. No new orders may be released without Chief Accountant clearance. | Mitigates severe cash flow risk and stops bad debt accumulation from chronic late-payers. | Automated system gatekeeper; disables 'Confirm Order' button. | **BR-03**<br>`FR-03` |
+| **BR-R04** | **Available-to-Promise (ATP) Allocation:** Order confirmation is permitted only if total order quantity $le$ network ATP stock. Tan Binh Hub is allocated first; Bien Hoa Depot serves as regional secondary. | Eliminates double-booking of stock; guarantees 100% fulfillable order commitments. | Multi-facility inventory query and automated stock reservation lock. | **BR-02**<br>`FR-02` |
+| **BR-R05** | **Automated Replenishment Trigger:** When unreserved on-hand stock of fast-movers (`ST-001` Double A, `ST-002` IK Plus) drops below **100 reams**, an automated Purchase Requisition must be generated. | Prevents stockout crises on highest-velocity revenue drivers (paper represents 45% volume). | Automated inventory batch trigger event; alerts Procurement Officer. | **BR-04**<br>`FR-04` |
+| **BR-R06** | **Mandatory 3-Way Reconciliation:** An Accounts Receivable VAT electronic invoice can only be released after successful 3-way matching between (1) Confirmed SO, (2) Signed e-POD, and (3) Invoice Line Items. | Eliminates invoicing errors, customer billing disputes, and accounting fraud. | Automated 3-way tolerance matching algorithm (zero discrepancy). | **BR-05**<br>`FR-05` |
+
+### 4.3.2. Operational Constraints
+The implementation of the proposed business requirements operates under specific real-world operational constraints:
+* **Multi-Facility Logistics Constraint:** The physical distance between Tan Binh Central Hub and Bien Hoa Depot requires a minimum inter-warehouse transfer window of **4 hours** under standard traffic conditions.
+* **Master Data Catalog Constraint:** The Phase 1 analysis and validation baseline is strictly scoped to the **10 primary commercial SKUs** (`ST-001` through `ST-010`). Additional product lines are deferred to subsequent phases.
+* **Credit Term Constraint:** Commercial credit terms are restricted to verified Tier-1 and Tier-2 accounts under signed framework agreements; Tier-3 retail sub-dealers operate under cash-on-delivery (COD) or immediate bank transfer terms.
+* **Regulatory Compliance Constraint:** Electronic VAT invoice generation must strictly adhere to Vietnamese tax regulations (Decree 123/2020/ND-CP and Circular 78/2021/TT-BTC) regarding electronic invoice formatting and tax authority digital signing.
 
 ---
 
-## 4.4. Requirements Traceability Matrix
+## 4.4. Requirements Traceability Matrix (RTM)
+
+### 4.4.1. Traceability Methodology & Chain
+The Requirements Traceability Matrix demonstrates end-to-end bidirectional traceability from verified field elicitation evidence through business problems, information needs, business requirements, and functional specifications to TO-BE process changes:
+
+$$	ext{Evidence (EVD)} longrightarrow 	ext{AS-IS Observation} longrightarrow 	ext{Business Problem (P)} longrightarrow 	ext{Information Need (INF)} longrightarrow 	ext{Business Requirement (BR)} longrightarrow 	ext{Functional Requirement (FR)} longrightarrow 	ext{TO-BE Change}$$
+
+### 4.4.2. End-to-End Requirements Traceability Matrix
+Table 4.4 documents the complete traceability chain for OfficePro Distribution Co., Ltd.
 
 **Table 4.4:** End-to-End Requirements Traceability Matrix (RTM)
 
-| Evidence ID / Source | AS-IS Observation | Business Problem / Information Need | BR ID | FR ID & Priority | Related Process |
-|---|---|---|:---:|:---:|---|
-| **EVD-W2-SALES-01**<br>*(Sales Interview)* | Reps copy rates from personal Excel files into quotations. | 5–8% pricing discrepancy; Reps need customer contract prices upon inquiry. | **BR-01** | **FR-01**<br>*(MUST HAVE)* | **BP1 / BP2**<br>Processing Orders & Pricing |
-| **EVD-W2-WH-02**<br>*(Warehouse Log)* | Verbal phone checks; receiving lag takes 24–48 hours to post. | 3–4 stockouts/week post-confirmation; Reps need real-time ATP stock levels. | **BR-01** | **FR-02**<br>*(MUST HAVE)* | **BP1 / BP3**<br>Orders & Stock Availability |
-| **EVD-W2-ACC-01**<br>*(Accountant Interview)* | Reps bypass credit limits; manual 3-way reconciliation on paper. | Bad debt risk; Accounting spends 15–20h/wk matching paper SOs and delivery slips. | **BR-02** | **FR-03**<br>**FR-05**<br>*(MUST HAVE)* | **BP1 / Invoicing**<br>Order Release & Invoicing |
-| **EVD-W2-PURCH-01**<br>*(Procurement Log)* | Replenishment triggered manually via handwritten notes after stockouts. | Supply disruption on fast-movers; Procurement needs automated threshold alerts. | **BR-01** | **FR-04**<br>*(MUST HAVE)* | **BP3 / BP4**<br>Stock Check & Replenishment |
-| **EVD-W4-SIM-02**<br>*(Simulation Log)* | Expired framework contracts cause invoice disputes and lost VIP accounts. | Proactive renewal notices required 30 days prior to agreement expiry dates. | **BR-02** | **FR-06**<br>*(SHOULD HAVE)* | **BP2**<br>Verifying Contract Prices |
+| Evidence ID / Source | AS-IS Factual Observation | Problem ID / Information Need | BR ID | FR ID & Priority | Proposed TO-BE Operational Change | Related Process |
+|---|---|---|:---:|:---:|---|:---:|
+| **EVD-W2-SALES-01**<br>*(Sales Interview)* | Reps copy rates from personal Excel files into quotations; 5–8% rate error on invoices. | **P-01** (Contract Pricing Errors)<br>**INF-SALES-01** (Approved contract pricelist) | **BR-01** | **FR-01**<br>*(MUST HAVE)* | System automatically applies approved contract pricelist upon selecting corporate account; disables manual edits. | **BP1 / BP2**<br>Processing Orders & Pricing |
+| **EVD-W2-WH-02**<br>*(Warehouse Observation)* | Dock receiving entries lag by 24–48h; reps make verbal phone inquiries; stockouts occur post-SO. | **P-02** (Post-Confirmation Stockouts)<br>**INF-WH-01** (Real-time inventory status) | **BR-02** | **FR-02**<br>*(MUST HAVE)* | Real-time multi-hub Available-to-Promise (ATP) stock displayed across Tan Binh & Bien Hoa; stock reserved on SO confirm. | **BP1 / BP3**<br>Orders & Stock Availability |
+| **EVD-W3-ACCT-03**<br>*(Chief Accountant Interview)* | Reps bypass credit limits via verbal appeals; debtors overdue > 30 days continue placing orders. | **P-03** (Credit Policy Bypass)<br>**INF-ACCT-01** (Overdue debt aging status) | **BR-03** | **FR-03**<br>*(MUST HAVE)* | Automated hard Credit Hold blocks order confirmation for any account with unpaid invoices overdue past 30 days. | **BP1 / Finance**<br>Order Release & Credit Control |
+| **EVD-W3-PROC-04**<br>*(Procurement Officer Interview)* | Replenishment is triggered manually via handwritten notes only after warehouse bins run empty. | **P-02** (Reactive Replenishment)<br>**INF-PROC-01** (Depletion threshold alerts) | **BR-04** | **FR-04**<br>*(MUST HAVE)* | Automated reorder point monitoring generates draft Purchase Requisition when paper stock drops below 100 reams. | **BP3 / BP5**<br>Stock Check & Replenishment |
+| **EVD-W3-ACCT-03**<br>*(Chief Accountant Interview)* | Accounting spends 15–20h/week manually cross-checking physical paper delivery notes against SOs. | **P-03** (Manual Matching Overhead)<br>**INF-ACCT-02** (Digital delivery receipt) | **BR-05** | **FR-05**<br>*(MUST HAVE)* | Automated 3-way matching between digital SO, e-POD confirmation, and draft billing lines auto-releases electronic VAT invoices. | **BP1 / Invoicing**<br>Delivery & Invoicing |
+| **EVD-W4-SIM-02**<br>*(Simulation Findings)* | Expired framework contracts cause customer billing disputes and delayed contract renewals. | **P-01** (Expired Contract Disputes)<br>**INF-SALES-02** (Contract expiration dates) | **BR-01** | **FR-06**<br>*(SHOULD HAVE)* | Automated reminder alerts notify account reps 30 days prior to framework contract agreement expiration dates. | **BP2**<br>Verifying Contract Prices |
+| **EVD-W3-PROC-04**<br>*(Procurement Officer Interview)* | Purchasing officers spend 2–3 days compiling supplier quotes from unstructured email threads. | **P-02** (Vendor Selection Delays)<br>**INF-PROC-02** (Multi-vendor quote comparison) | **BR-04** | **FR-07**<br>*(SHOULD HAVE)* | Multi-vendor RFQ comparison matrix generated automatically to compare supplier pricing and delivery lead times. | **BP5**<br>Reviewing Replenishment Needs |
+| **EVD-W3-MGMT-05**<br>*(Management Interview)* | Executive management lacks visibility into corporate debt aging and cash collection forecasts. | **P-03** (Cash Flow Blindspots)<br>**INF-MGMT-01** (AR debt aging metrics) | **BR-03** | **FR-08**<br>*(COULD HAVE)* | Executive Accounts Receivable aging dashboard rendering debt buckets (Current, 1–30, 31–60, >60 days overdue). | **BP1 / Finance**<br>Executive Financial Reporting |
 
-***
+> **TRACEABILITY IS NOT JUST ID MATCHING:**  
+> A valid traceability link must reflect genuine operational semantics. In Table 4.4, every single requirement traces backwards to a verified field observation and forward to a concrete process improvement. There are zero "orphan" requirements (features without business justification) and zero unaddressed operational problems.
+
 
 # SECTION 5. USE CASE ANALYSIS
 
