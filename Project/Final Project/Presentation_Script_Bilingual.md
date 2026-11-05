@@ -1,5 +1,5 @@
 # KỊCH BẢN THUYẾT TRÌNH BẢO VỆ ĐỒ ÁN PHASE 1 (SONG NGỮ ANH - VIỆT)
-## BSA PHASE 1 MID-TERM DEFENSE SCRIPT — GROUP 6 (20 SLIDES TRỌN VẸN)
+## BSA PHASE 1 MID-TERM DEFENSE SCRIPT — GROUP 6 (20 SLIDES ĐỒNG BỘ 1:1)
 **Doanh nghiệp nghiên cứu:** Công ty TNHH Phân phối OfficePro (OfficePro Distribution Co., Ltd.)  
 **Kịch bản nghiệp vụ:** Scenario B — B2B Wholesale & Distribution (Văn phòng phẩm & Thiết bị văn phòng)  
 **Khóa học:** Phân tích Hệ thống Nghiệp vụ (Business Systems Analysis - BSA) — Năm học 2026–2027, Học kỳ 1  
@@ -8,16 +8,17 @@
 
 ---
 
-### 👥 PHÂN CÔNG THUYẾT TRÌNH CÂN BẰNG 50/50 THEO MODULE VÀ CẤU TRÚC SLIDE
+### 👥 PHÂN CÔNG THUYẾT TRÌNH CÂN BẰNG 50/50 THEO THỨ TỰ SLIDE TRÊN MÀN HÌNH
 
-| Diễn giả (Speaker) | Vai trò & Module phụ trách | Số lượng Slide | Danh sách Slide phụ trách chính |
+| Diễn giả (Speaker) | Vai trò & Phân hệ Phụ trách | Số lượng Slide | Danh sách Slide chính xác trên màn hình |
 | :--- | :--- | :---: | :--- |
-| **Speaker 1: Võ Duy Bình**<br>*(MSSV: 22301500)* | **Team Leader / Lead BA & SA**<br>• Phụ trách Module: **Sales & Purchasing**<br>• Phạm vi: Hồ sơ doanh nghiệp, Master Data 10 SKUs, Mạng lưới kho bãi, Cơ cấu tổ chức, Nhu cầu thông tin Stakeholder, Mô hình quan hệ 5 quy trình, Phân tích 5-Whys, Chiến lược tái cấu trúc TO-BE, Tổng kết Phase 1. | **10 Slides** | **Slide 1, 2, 3, 4, 5, 9, 10, 11, 14, 15**<br>*(Đồng tổng kết Slide 20)* |
-| **Speaker 2: Phạm Nguyễn Gia Thuận**<br>*(MSSV: 22204631)* | **QA & Solution Configurator / Requirements Analyst**<br>• Phụ trách Module: **Inventory & Invoicing**<br>• Phạm vi: Ma trận Stakeholder Power/Interest, RACI phân công, Persona khách hàng & nhân viên, Sơ đồ AS-IS Swimlane (BPMN SVG), 4 Nỗi đau vận hành, Sơ đồ TO-BE Swimlane (BPMN SVG có làn ERP), Bảng so sánh lợi ích, Danh mục MoSCoW 8 FRs kèm Verification Ideas, Ma trận RTM 6 cột. | **10 Slides** | **Slide 6, 7, 8, 12, 13, 16, 17, 18, 19**<br>*(Điều phối Phản biện Q&A Slide 20)* |
+| **Speaker 1: Võ Duy Bình**<br>*(MSSV: 22301500)* | **Team Leader / Lead BA & SA**<br>• Phân hệ: **Quản lý Bán hàng & Thu mua (Sales & Purchasing)**<br>• Phạm vi: Bối cảnh doanh nghiệp, Master Data 10 SKUs, Mạng lưới kho bãi, Quản trị RACI, 3 Nỗi đau vận hành định lượng, Mô hình quan hệ 5 quy trình, Các bước quy trình AS-IS, Phân tích 5-Whys, Chiến lược tái cấu trúc TO-BE, và Tổng kết Phase 1. | **10 Slides** | **Slide 1, 2, 3, 4, 5, 9, 10, 11, 14, 15**<br>*(Đồng tổng kết Slide 20)* |
+| **Speaker 2: Phạm Nguyễn Gia Thuận**<br>*(MSSV: 22204631)* | **QA & Solution Configurator / Requirements Analyst**<br>• Phân hệ: **Quản lý Kho & Hóa đơn (Inventory & Invoicing)**<br>• Phạm vi: Ma trận Stakeholder Power/Interest, Nhu cầu thông tin liên phòng ban, Bằng chứng phỏng vấn đối soát giả định, Sơ đồ AS-IS Swimlane (BPMN SVG), Điểm nghẽn phòng ban, Sơ đồ TO-BE Swimlane (BPMN SVG có làn ERP), Bảng so sánh lợi ích, Danh mục MoSCoW 8 FRs kèm Verification Ideas, Ma trận RTM 6 cột, và Điều phối Q&A. | **10 Slides** | **Slide 6, 7, 8, 12, 13, 16, 17, 18, 19**<br>*(Điều phối Phản biện Q&A Slide 20)* |
 
 ---
 
-# SLIDE 1: TRANG TIÊU ĐỀ & TỔNG QUAN HỒ SƠ ĐỒ ÁN (TITLE & EXECUTIVE PROFILE)
+# SLIDE 1: TRANG TIÊU ĐỀ & TỔNG QUAN HỒ SƠ ĐỒ ÁN
+*(Tương ứng trên màn hình: BUSINESS SYSTEMS ANALYSIS (BSA) — Phase 1 Mid-Term Assessment: Business Requirements Document)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 45 - 60 giây  
 
@@ -45,294 +46,311 @@
 
 ---
 
-# SLIDE 2: BỐI CẢNH DOANH NGHIỆP & MÔ HÌNH B2B (ENTERPRISE CONTEXT & BUSINESS MODEL)
+# SLIDE 2: HỒ SƠ DOANH NGHIỆP & MÔ HÌNH BÁN BUÔN B2B
+*(Tương ứng trên màn hình: Enterprise Profile & Wholesale Business Model — Hubs & Customer Tiers)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 50 - 60 giây  
 
 ### 🇬🇧 English Script:
-> "OfficePro Distribution Co., Ltd. is an established regional B2B wholesale distributor operating in Southern Vietnam, serving over **250 active corporate clients**, educational institutions, and stationery retail sub-dealers.  
+> "As displayed on Slide 2, **OfficePro Distribution Co., Ltd.** is an established regional B2B wholesale distributor operating in Southern Vietnam, serving over **250 active corporate clients**, educational institutions, and stationery retail sub-dealers.  
 > 
 > Our business model relies on high-volume procurement from major upstream manufacturers—such as Double A, IK Plus, Thien Long, Pilot, and HP Vietnam—and distributing these supplies to commercial organizations.  
 > 
-> Key characteristics of our wholesale operations include:  
-> - First, **annual framework contract agreements**, where high-volume corporate clients lock in special contracted prices rather than paying retail list prices.  
-> - Second, **commercial credit terms**, where verified corporate accounts receive **Net 30-day payment privileges**.  
-> - And third, our customer base spans three clear tiers: Corporate Enterprise Accounts, Educational Institutions with seasonal academic cycles, and local Stationery Sub-Dealers purchasing frequent replenishment batches."
+> Notice the customer tier breakdown on the right:  
+> - **Tier 1 (Key Accounts):** Large commercial enterprises purchasing under annual framework contracts with negotiated contract pricing and **Net 30-day commercial credit terms**.  
+> - **Tier 2:** Schools and educational institutions with massive seasonal procurement cycles in August and January.  
+> - **Tier 3:** Local stationery sub-dealers ordering bi-weekly replenishment batches.  
+> 
+> Managing contracted discounts and Net 30 credit without automation is the operational heartbeat of OfficePro."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Công ty TNHH Phân phối OfficePro là doanh nghiệp bán buôn B2B chuyên phân phối văn phòng phẩm tại khu vực miền Nam, phục vụ hơn **250 khách hàng doanh nghiệp**, trường học và đại lý bán lẻ.  
+> "Như hiển thị trên Slide 2, **Công ty TNHH Phân phối OfficePro** là doanh nghiệp bán buôn B2B chuyên phân phối văn phòng phẩm tại khu vực miền Nam, phục vụ hơn **250 khách hàng doanh nghiệp**, trường học và đại lý bán lẻ.  
 > 
 > Mô hình vận hành của doanh nghiệp là thu mua số lượng lớn từ các nhà sản xuất uy tín như Double A, IK Plus, Thiên Long, Pilot và HP Việt Nam, sau đó phân phối lại cho các tổ chức thương mại.  
 > 
-> Đặc trưng nghiệp vụ bán buôn của OfficePro bao gồm:  
-> - Thứ nhất, vận hành dựa trên **hợp đồng nguyên tắc (Framework Agreements)** thường niên, giúp khách hàng doanh nghiệp được áp dụng đơn giá hợp đồng ưu đãi thay vì giá bán lẻ niêm yết.  
-> - Thứ hai, chính sách **công nợ thương mại Net 30 ngày** dành cho các khách hàng doanh nghiệp đủ điều kiện tín dụng.  
-> - Thứ ba, tệp khách hàng được phân tầng rõ rệt: Doanh nghiệp thương mại lớn, Khối trường học với mùa vụ nhập học, và các Đại lý văn phòng phẩm cấp dưới đặt hàng định kỳ."
+> Quý Thầy Cô có thể quan sát cấu trúc 3 phân tầng khách hàng ở bên phải:  
+> - **Tier 1 (Khách hàng Trọng điểm):** Các doanh nghiệp thương mại lớn, mua hàng theo hợp đồng nguyên tắc năm, được hưởng đơn giá hợp đồng ưu đãi và chính sách **công nợ thương mại Net 30 ngày**.  
+> - **Tier 2 (Khối Giáo dục & Trường học):** Mua sắm tập trung theo mùa khai giảng vào tháng 8 và tháng 1.  
+> - **Tier 3 (Đại lý Bán lẻ Cấp dưới):** Đặt hàng bổ sung định kỳ 2 tuần một lần.  
+> 
+> Việc kiểm soát giá hợp đồng và hạn mức nợ Net 30 thủ công chính là cội nguồn của mọi rắc rối vận hành tại OfficePro."
 
 ---
 
-# SLIDE 3: DANH MỤC MASTER DATA 10 SKUS (10 PRIMARY SKUS & PRICELIST CATALOG)
+# SLIDE 3: DANH MỤC MASTER DATA 10 SKUS TRỌNG YẾU
+*(Tương ứng trên màn hình: 10 Primary SKUs & Standard Pricelist Catalog — List vs. Contract Pricing)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 45 - 55 giây  
 
 ### 🇬🇧 English Script:
-> "To ground our business analysis in realistic wholesale operations, Slide 3 defines our **Master Data catalog comprising 10 primary domain SKUs**.  
+> "To ground our business analysis in realistic wholesale operations, Slide 3 defines our **Master Data catalog comprising 10 primary domain SKUs** (Table 1.1 in our report):  
 > 
-> These items represent our highest-velocity commercial inventory, grouped into four core categories:  
-> - **Paper Products:** Featuring our primary volume driver, `ST-001` (Double A A4 80gsm Ream), with standard retail pricing at 85,000 VND, alongside IK Plus 70gsm at 75,000 VND.  
-> - **Writing Instruments:** Including Thien Long TL-027 Ballpoint Pens sold in boxes of 20, Pilot G2 Gel Pens, and Pentel EnerGel pens.  
-> - **Filing & Organization:** Such as King Jim A4 7cm Lever Arch Files and Deli Clear Book Displays.  
-> - **Desk Accessories & Equipment:** Covering Plus Staplers, Deli Multi-tier Document Trays, and Casio FX-580VN X Scientific Calculators.  
+> - **Paper Products:** Our highest volume driver is `ST-001` (Double A A4 80gsm Ream), with standard list price at 85,000 VND, alongside IK Plus 70gsm (`ST-002`) at 75,000 VND.  
+> - **Writing Instruments:** Thien Long TL-027 Ballpoint Pens (`ST-003`), Pilot G2 Gel Pens (`ST-004`), and Pentel EnerGel pens (`ST-005`).  
+> - **Filing & Organization:** King Jim Lever Arch Files (`ST-006`) and Deli Clear Book Displays (`ST-007`).  
+> - **Desk Accessories & Equipment:** Plus Staplers (`ST-008`), Deli Document Trays (`ST-009`), and Casio FX-580VN X Scientific Calculators (`ST-010`).  
 > 
-> Notice the critical distinction highlighted in our catalog: for every SKU, we maintain both a **Standard Retail/Wholesale List Price** and a pre-negotiated **Contract Rate**—such as 65,000 VND for Double A paper under Tier-1 corporate agreements. Managing this pricing divergence without errors is the operational heartbeat of OfficePro."
+> Crucially, observe the **20% to 25% pricing divergence** between standard list prices and contracted rates—such as 65,000 VND for Double A paper under Tier-1 agreements. In the current AS-IS state, reps search personal Excel files manually, introducing a dangerous **5% to 8% pricing error rate**."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Nhằm đảm bảo tính thực tiễn cao cho đồ án, Slide 3 định nghĩa danh mục **Dữ liệu Chủ (Master Data) gồm 10 mã SKU trọng yếu**.  
+> "Nhằm đảm bảo tính thực tiễn cao cho đồ án, Slide 3 định nghĩa danh mục **Dữ liệu Chủ (Master Data) gồm 10 mã SKU trọng yếu** (Bảng 1.1 trong Báo cáo):  
 > 
-> Đây là các mặt hàng có tốc độ lưu chuyển nhanh nhất trong ngành văn phòng phẩm, phân chia thành 4 nhóm chính:  
-> - **Nhóm Giấy in:** Tiêu biểu là mã chủ lực `ST-001` (Giấy Double A A4 80gsm) giá niêm yết 85.000 VNĐ/ram, và IK Plus 70gsm giá 75.000 VNĐ/ram.  
-> - **Nhóm Dụng cụ Viết:** Bút bi Thiên Long TL-027 (hộp 20 cây), bút gel Pilot G2 và Pentel EnerGel.  
-> - **Nhóm Lưu trữ Hồ sơ:** Bìa còng King Jim 7cm và Bìa lá Deli.  
-> - **Nhóm Thiết bị Văn phòng:** Bấm kim Plus, Kệ tài liệu Deli và Máy tính khoa học Casio FX-580VN X.  
+> - **Nhóm Giấy in ấn:** Mã chủ lực là `ST-001` (Giấy Double A A4 80gsm) giá niêm yết 85.000 VNĐ/ram, và IK Plus 70gsm (`ST-002`) giá 75.000 VNĐ/ram.  
+> - **Nhóm Dụng cụ viết:** Bút bi Thiên Long TL-027 (`ST-003`), bút gel Pilot G2 (`ST-004`) và Pentel EnerGel (`ST-005`).  
+> - **Nhóm Lưu trữ hồ sơ:** Bìa còng King Jim 7cm (`ST-006`) và Bìa lá Deli (`ST-007`).  
+> - **Nhóm Thiết bị văn phòng:** Bấm kim Plus (`ST-008`), Kệ tài liệu Deli (`ST-009`) và Máy tính khoa học Casio FX-580VN X (`ST-010`).  
 > 
-> Điểm cốt lõi trên bảng giá này là mỗi SKU đều có hai mức giá: **Giá niêm yết (List Price)** và **Đơn giá Hợp đồng (Contract Rate)**—ví dụ Double A chỉ còn 65.000 VNĐ/ram cho khách doanh nghiệp lớn. Việc kiểm soát sự chênh lệch giá này một cách chính xác chính là bài toán sống còn trong vận hành của OfficePro."
+> Điểm mấu chốt trên bảng này là sự chênh lệch **20% đến 25% giữa Giá niêm yết và Đơn giá Hợp đồng**—ví dụ Double A giảm còn 65.000 VNĐ cho khách Tier-1. Việc nhân viên tra cứu file Excel thủ công tạo ra **tỷ lệ sai giá 5% đến 8%**, gây thất thoát và tranh chấp hóa đơn lớn."
 
 ---
 
-# SLIDE 4: MẠNG LƯỚI CƠ SỞ & RANH GIỚI DỰ ÁN (FACILITIES NETWORK & SCOPE BOUNDARIES)
+# SLIDE 4: MẠNG LƯỚI CƠ SỞ & RANH GIỚI PHẠM VI DỰ ÁN
+*(Tương ứng trên màn hình: Facilities Network & Project Scope Boundaries — In-Scope vs. Out-of-Scope)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 50 - 60 giây  
 
 ### 🇬🇧 English Script:
-> "Slide 4 establishes our physical operational footprint and strict project boundaries:  
+> "Slide 4 establishes our physical operational network and strict project boundaries:  
 > 
-> - **Tan Binh Central Hub (2,500 m²):** Located in Tan Binh Industrial Park, Ho Chi Minh City. This is our corporate headquarters and central fulfillment warehouse, managing 1,200 pallet positions, full-truckload receiving, cross-docking, and high-volume deliveries across HCMC.  
-> - **Bien Hoa Satellite Hub (800 m²):** Located in Bien Hoa Industrial Zone 2, Dong Nai. It operates as a regional cross-dock and quick-dispatch satellite serving over 80 manufacturing plants in Dong Nai and Binh Duong industrial corridors.  
+> - **Operating Facilities:**  
+>   - **Tan Binh Central Hub (2,500 m²):** Located in Tan Binh Industrial Park, HCMC. Houses 1,200 pallet positions (80% of total inventory), handling supplier receiving, cross-docking, and high-volume deliveries across HCMC.  
+>   - **Bien Hoa Satellite Hub (800 m²):** Located in Bien Hoa Industrial Zone 2, Dong Nai. Stores 350 pallet positions, serving as a rapid replenishment depot for over 80 manufacturing plants in Dong Nai and Binh Duong.  
 > 
-> To ensure high academic rigor and prevent scope creep, our Phase 1 project scope is strictly bounded (as detailed in Table 3.2):  
-> - **In-Scope:** The core wholesale quote-to-cash workflow, framework contract pricing, multi-warehouse stock reservation, and Net 30 commercial credit enforcement.  
-> - **Out-of-Scope:** E-commerce retail storefronts, third-party logistics fleet tracking, cross-border international customs, and manufacturing assembly. We remain laser-focused on core B2B wholesale distribution."
+> - **Strict Boundaries (Table 3.2):**  
+>   - **In-Scope (Green Box):** Quote-to-cash workflow, contract pricing enforcement, multi-facility ATP reservation, Net 30 credit control, and safety-stock replenishment.  
+>   - **Out-of-Scope (Red Box):** B2C e-commerce, 3PL GPS vehicle telematics, international customs clearance, and manufacturing assembly.  
+> We maintain laser focus on core B2B wholesale distribution."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
 > "Slide 4 xác định mạng lưới cơ sở vật lý và ranh giới phạm vi của dự án:  
 > 
-> - **Kho Tổng Tân Bình (2.500 m²):** Đặt tại KCN Tân Bình, TP.HCM. Đây là trụ sở chính và trung tâm phân phối chủ lực với 1.200 vị trí pallet, tiếp nhận các xe tải lớn từ nhà máy, thực hiện cross-docking và giao hàng cho toàn khu vực TP.HCM.  
-> - **Kho Vệ tinh Biên Hòa (800 m²):** Đặt tại KCN Biên Hòa 2, Đồng Nai. Đóng vai trò trạm trung chuyển khu vực phục vụ hơn 80 nhà máy sản xuất tại các hành lang công nghiệp Đồng Nai và Bình Dương.  
+> - **Mạng lưới Cơ sở Hoạt động:**  
+>   - **Kho Tổng Tân Bình (2.500 m²):** Đặt tại KCN Tân Bình, TP.HCM. Chứa 1.200 vị trí pallet (chiếm 80% trữ lượng), chuyên tiếp nhận xe tải lớn từ nhà máy, thực hiện cross-docking và giao hàng cho toàn khu vực TP.HCM.  
+>   - **Kho Vệ tinh Biên Hòa (800 m²):** Đặt tại KCN Biên Hòa 2, Đồng Nai. Chứa 350 vị trí pallet, đóng vai trò trạm phản ứng nhanh cho hơn 80 nhà máy tại Đồng Nai và Bình Dương.  
 > 
-> Để đảm bảo tính tập trung và tránh lan man phạm vi theo đúng Bảng 3.2, đồ án xác định rõ:  
-> - **Phạm vi Thực hiện (In-Scope):** Luồng phân phối bán buôn từ báo giá đến thu tiền (Quote-to-Cash), quản lý giá hợp đồng nguyên tắc, giữ chỗ tồn kho liên kho và kiểm soát công nợ Net 30.  
-> - **Phạm vi Ngoài đề tài (Out-of-Scope):** Bán lẻ thương mại điện tử B2C, định vị đội xe vận tải 3PL, thủ tục hải quan xuất nhập khẩu quốc tế và gia công sản xuất. Nhóm hoàn toàn tập trung vào năng lực lõi của B2B Wholesale."
+> - **Ranh giới Đồ án rõ ràng (theo Bảng 3.2):**  
+>   - **Trong phạm vi (Hộp xanh):** Quy trình từ Báo giá đến Thu tiền, quản lý giá hợp đồng, giữ chỗ tồn kho liên kho (ATP), kiểm soát nợ Net 30 và đặt hàng tự động theo tồn an toàn.  
+>   - **Ngoài phạm vi (Hộp đỏ):** Không làm bán lẻ B2C, không làm định vị GPS đội xe, không làm thủ tục hải quan và không làm gia công sản xuất.  
+> Nhóm hoàn toàn tập trung vào giải quyết bài toán bán buôn B2B."
 
 ---
 
-# SLIDE 5: CƠ CẤU TỔ CHỨC & ĐỊNH BIÊN NHÂN SỰ (ORGANIZATION STRUCTURE & HEADCOUNT)
+# SLIDE 5: MA TRẬN PHÂN CÔNG RACI NHÓM & QUẢN TRỊ DỰ ÁN
+*(Tương ứng trên màn hình: Group RACI Assignment Matrix & Governance — Section 1 Deliverables)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 45 - 50 giây  
 
 ### 🇬🇧 English Script:
-> "Slide 5 illustrates the **Organizational Structure and Headcount of OfficePro**, comprising **38 full-time personnel** structured across four operational departments:  
-> - **Executive Board (3 members):** Led by Managing Director Nguyen Van Thang, setting strategic growth and credit tolerance.  
-> - **Sales & Marketing Department (12 members):** 1 Sales Supervisor, 8 Field Account Executives managing B2B clients, and 3 Customer Service Representatives.  
-> - **Warehouse & Logistics Department (14 members):** 1 Inventory Manager, 2 Hub Supervisors (Tan Binh & Bien Hoa), 8 Forklift Operators and Order Pickers, and 3 Delivery Fleet Drivers.  
-> - **Accounting & Finance Department (5 members):** Led by Chief Accountant Tran Thi Mai, managing Accounts Receivable (AR), Accounts Payable (AP), and cashflow.  
-> - **Procurement Department (4 members):** Managing supplier relationships with Double A, Pilot, and Thien Long.  
+> "To demonstrate disciplined academic governance, Slide 5 details our **Group RACI Assignment Matrix** (Table 0.1 in our report):  
 > 
-> This lean organizational scale highlights why manual paper bottlenecks severely cripple operational throughput."
+> - **Vo Duy Binh (Student ID: 22301500) — Team Leader / Lead BA & SA:**  
+>   Accountable and Responsible (A/R) for **Sales Management** and **Purchasing Management** modules; enterprise context scoping, business problem framing, 5-Whys root cause analysis, and TO-BE re-engineering.  
+> - **Pham Nguyen Gia Thuan (Student ID: 22204631) — QA & Solution Configurator:**  
+>   Accountable and Responsible (A/R) for **Inventory Management** and **Invoicing/Accounting** modules; stakeholder power/interest mapping, information needs matrix, elicitation evidence verification, BPMN swimlanes, MoSCoW functional requirements, and RTM traceability.  
+> 
+> Each member holds primary ownership for two core functional modules, supported by mutual consultation (C) and cross-review sign-offs. I now pass the presentation to my teammate, Gia Thuan, to present Section 2."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 5 thể hiện **Cơ cấu Tổ chức và Định biên Nhân sự của OfficePro** với quy mô **38 nhân sự chính thức**, phân bổ trong 4 khối nghiệp vụ:  
-> - **Ban Giám đốc (3 người):** Đứng đầu là Giám đốc Điều hành Nguyễn Văn Thắng, phê duyệt chính sách công nợ và kế hoạch kinh doanh.  
-> - **Khối Kinh doanh (12 người):** Gồm 1 Trưởng phòng, 8 Chuyên viên Quản lý Khách hàng Doanh nghiệp và 3 Nhân viên Chăm sóc Khách hàng.  
-> - **Khối Kho vận (14 người):** Gồm 1 Quản lý Kho, 2 Trưởng kho Tân Bình & Biên Hòa, 8 Nhân viên nhặt hàng bốc dỡ và 3 Tài xế giao nhận.  
-> - **Khối Kế toán - Tài chính (5 người):** Do Kế toán trưởng Trần Thị Mai phụ trách, quản trị công nợ phải thu, phải trả và thanh toán.  
-> - **Khối Thu mua (4 người):** Chuyên trách làm việc với các nhà cung cấp Double A, Pilot, Thiên Long.  
+> "Để thể hiện tính kỷ luật và sự phân công lao động khoa học, Slide 5 minh họa **Ma trận Quản trị Phân công RACI của nhóm** (Bảng 0.1 trong Báo cáo):  
 > 
-> Quy mô 38 nhân sự cho thấy vì sao việc xử lý giấy tờ thủ công gây ra tắc nghẽn nghiêm trọng cho toàn bộ dòng chảy hoạt động."
+> - **Võ Duy Bình (MSSV: 22301500) — Trưởng nhóm / Lead BA & SA:**  
+>   Chịu trách nhiệm chính (A/R) cho hai phân hệ **Quản lý Bán hàng (Sales)** và **Quản lý Thu mua (Purchasing)**; thiết lập bối cảnh, chẩn đoán vấn đề, phân tích nguyên nhân gốc rễ 5-Whys và chiến lược TO-BE.  
+> - **Phạm Nguyễn Gia Thuận (MSSV: 22204631) — QA & Phân tích Yêu cầu:**  
+>   Chịu trách nhiệm chính (A/R) cho hai phân hệ **Quản lý Kho (Inventory)** và **Hóa đơn/Kế toán (Invoicing)**; thiết lập ma trận Power/Interest, nhu cầu thông tin, bằng chứng phỏng vấn, sơ đồ BPMN Swimlane, danh mục MoSCoW và ma trận truy vết RTM.  
+> 
+> Mỗi thành viên nắm quyền giải trình trọn vẹn 2 module nghiệp vụ nòng cốt, phối hợp tư vấn chéo (C) và duyệt bài chặt chẽ. Sau đây, em xin nhường lời cho bạn Gia Thuận trình bày Phần 2."
 
 ---
 
-# SLIDE 6: MA TRẬN PHÂN LOẠI STAKEHOLDER (STAKEHOLDER POWER / INTEREST GRID)
+# SLIDE 6: NHẬN DIỆN STAKEHOLDER & MA TRẬN POWER / INTEREST 2X2
+*(Tương ứng trên màn hình: Stakeholder Identification & Power/Interest Grid — 4 Quadrants)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 55 - 60 giây  
 
 ### 🇬🇧 English Script:
-> "Good morning, Lecturer and Examination Board. My name is **Pham Nguyen Gia Thuan**, QA and Requirements Analyst. I will guide you through our **Stakeholder Analysis, Process Modeling, and Requirements Engineering**.  
+> "Good morning, Lecturer and Examination Board. My name is **Pham Nguyen Gia Thuan**, QA and Requirements Analyst. I will present our **Stakeholder Analysis, Process Modeling, and Requirements Engineering**.  
 > 
-> In Slide 6, we categorize our key organizational actors using the standard **Power / Interest Grid**:  
-> - **Manage Closely (High Power, High Interest):** The Managing Director (Nguyen Van Thang) and Chief Accountant (Tran Thi Mai). They hold ultimate veto power over commercial credit policy, financial solvency, and overall operational efficiency.  
-> - **Keep Satisfied (High Power, Low Interest):** Wholesale Corporate Clients and Key Accounts. They possess strong purchasing leverage and demand 100% contract price accuracy and flawless billing.  
-> - **Keep Informed (Low Power, High Interest):** Sales Representatives, Warehouse Supervisors, and Procurement Officers. They execute day-to-day operations and directly bear the pain of manual bottlenecks.  
-> - **Monitor (Low Power, Low Interest):** Junior warehouse packers and delivery drivers, who require simple, unambiguous picking lists and mobile delivery sign-offs.  
+> In Slide 6, we categorize our organizational actors using the standard **Power / Interest Grid** (Figure 2.1 in our report):  
+> - **Manage Closely (High Power, High Interest):** The Sales Manager and Business Owner (Managing Director Nguyen Van Thang). They hold executive control over pricing margins, discount approvals, and overall business survival.  
+> - **Keep Satisfied (High Power, Low Interest):** The Chief Accountant (Tran Thi Mai). She enforces strict Net 30 debt clearance, VAT tax compliance, and accurate 3-way invoice matching.  
+> - **Keep Informed (Low Power, High Interest):** Sales Representatives, Warehouse Supervisors, and Procurement Officers. They execute day-to-day operations and directly bear the pain of manual spreadsheets, receiving lags, and stockouts.  
+> - **Monitor (Low Power, Low Interest):** External suppliers and stationery sub-dealers, requiring clear purchase orders and delivery notes.  
 > 
-> This classification ensures our elicitation targeted the right stakeholders with appropriate depth."
+> This classification guided our targeted elicitation interviews."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
 > "Kính chào Thầy Cô và Hội đồng đánh giá. Em là **Phạm Nguyễn Gia Thuận**, QA và Chuyên viên Phân tích Yêu cầu của Nhóm 6. Em xin phép tiếp nối với **Phân tích Stakeholder, Mô hình hóa Quy trình và Kỹ thuật Yêu cầu**.  
 > 
-> Tại Slide 6, nhóm phân loại các chủ thể liên quan trong doanh nghiệp dựa trên **Ma trận Quyền lực / Mức độ Quan tâm (Power / Interest Grid)**:  
-> - **Quản lý Chặt chẽ (High Power, High Interest):** Giám đốc Điều hành (Nguyễn Văn Thắng) và Kế toán trưởng (Trần Thị Mai). Đây là các nhân sự có quyền quyết định cao nhất về chính sách hạn mức tín dụng, dòng tiền và hiệu quả vận hành.  
-> - **Giữ Hài lòng (High Power, Low Interest):** Khách hàng B2B Doanh nghiệp lớn. Họ có sức mua lớn, có quyền lựa chọn nhà phân phối khác và đòi hỏi tính chính xác tuyệt đối của đơn giá hợp đồng và hóa đơn VAT.  
-> - **Cập nhật Thường xuyên (Low Power, High Interest):** Nhân viên Kinh doanh, Trưởng kho và Nhân viên Thu mua. Đây là những người trực tiếp vận hành hàng ngày và gánh chịu mọi phiền toái từ các điểm nghẽn thủ công.  
-> - **Theo dõi (Low Power, Low Interest):** Nhân viên đóng gói và tài xế giao nhận, những người cần phiếu xuất kho rõ ràng và thủ tục giao nhận đơn giản.  
+> Tại Slide 6, nhóm phân loại các chủ thể liên quan dựa trên **Ma trận Quyền lực / Mức độ Quan tâm (Power/Interest Grid)** (Hình 2.1 trong Báo cáo):  
+> - **Quản lý Chặt chẽ (High Power, High Interest):** Giám đốc Điều hành (Nguyễn Văn Thắng) và Trưởng phòng Kinh doanh. Nắm quyền kiểm soát biên lợi nhuận, duyệt chiết khấu và sự sống còn của doanh nghiệp.  
+> - **Giữ Hài lòng (High Power, Low Interest):** Kế toán trưởng (Trần Thị Mai). Người giám sát thu hồi công nợ Net 30, tuân thủ thuế VAT và tính chính xác của hóa đơn.  
+> - **Cập nhật Thường xuyên (Low Power, High Interest):** Nhân viên Kinh doanh, Trưởng kho và Nhân viên Thu mua. Những người trực tiếp vận hành hàng ngày và gánh chịu mọi phiền toái từ file Excel, trễ nhập hàng và sự cố thiếu hàng.  
+> - **Theo dõi (Low Power, Low Interest):** Nhà cung cấp và các đại lý bán lẻ cấp dưới, cần đơn đặt hàng rõ ràng.  
 > 
-> Việc phân nhóm này định hướng chính xác đối tượng phỏng vấn sâu cho nhóm."
+> Việc phân nhóm này giúp định hướng chính xác đối tượng phỏng vấn thu thập yêu cầu."
 
 ---
 
-# SLIDE 7: MA TRẬN PHÂN QUYỀN RACI QUẢN TRỊ (RACI GOVERNANCE MATRIX)
-**Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
-**Thời lượng dự kiến:** 45 - 50 giây  
-
-### 🇬🇧 English Script:
-> "Slide 7 details our **RACI Governance Matrix**, defining clear operational accountability across all six core wholesale activities:  
-> - **Quote Generation & Price Verification:** Sales Rep is Responsible (R); Sales Supervisor is Accountable (A).  
-> - **Multi-Hub Inventory Check & Reservation:** Warehouse Supervisor is Responsible (R); Inventory Manager is Accountable (A).  
-> - **Commercial Credit Approval (Net 30):** Chief Accountant is Accountable (A); Sales is Consulted (C).  
-> - **Picking, Packing & Dock Inspection:** Warehouse Staff is Responsible (R); Warehouse Supervisor is Accountable (A).  
-> - **Billing & 3-Way Invoice Matching:** Accounting Staff is Responsible (R); Chief Accountant is Accountable (A).  
-> - **Replenishment Reorder & Supplier PO:** Procurement Officer is Responsible (R); Managing Director is Accountable (A).  
-> 
-> Every activity has exactly one single Accountable owner (A), eliminating organizational finger-pointing."
-
-### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 7 trình bày **Ma trận Phân quyền RACI Quản trị**, xác lập trách nhiệm vận hành minh bạch cho 6 hoạt động cốt lõi:  
-> - **Lập Báo giá & Áp giá Hợp đồng:** Nhân viên Kinh doanh Chịu trách nhiệm thực hiện (R); Giám sát Kinh doanh Giám sát và Giải trình (A).  
-> - **Kiểm tra Tồn kho & Giữ chỗ Liên kho:** Trưởng kho Chịu trách nhiệm thực hiện (R); Quản lý Kho Giải trình (A).  
-> - **Xét duyệt Hạn mức Công nợ Net 30:** Kế toán trưởng chịu trách nhiệm Giải trình và Phê duyệt (A); Kinh doanh chỉ đóng vai trò Tham vấn (C).  
-> - **Nhặt hàng, Đóng gói & Xuất bến:** Nhân viên Kho thực hiện (R); Trưởng kho Giải trình (A).  
-> - **Đối soát Hóa đơn 3 Bên & Ghi sổ:** Kế toán viên thực hiện (R); Kế toán trưởng Giải trình (A).  
-> - **Đặt hàng Bổ sung & Lập PO:** Chuyên viên Thu mua thực hiện (R); Giám đốc Điều hành Phê duyệt (A).  
-> 
-> Mỗi tác vụ chỉ có **duy nhất 1 cá nhân giải trình (Accountable)**, xóa bỏ hoàn toàn tình trạng đổ lỗi trách nhiệm giữa các phòng ban."
-
----
-
-# SLIDE 8: HỒ SƠ CHÂN DUNG ĐẠI DIỆN PERSONAS (ENTERPRISE PERSONAS)
+# SLIDE 7: MA TRẬN NHU CẦU THÔNG TIN LIÊN PHÒNG BAN
+*(Tương ứng trên màn hình: Cross-Functional Information Needs Matrix — 4 Core Roles)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 50 - 55 giây  
 
 ### 🇬🇧 English Script:
-> "Slide 8 brings our operational reality to life through **Two Enterprise Personas**:  
-> - **Persona 1: Ms. Hoang Mai Anh (Procurement Manager at Vinatex Garment Corporation):**  
->   She represents our Tier-1 B2B clients. Her primary goal is seamless monthly replenishment of Double A paper and stationery without billing errors. Her biggest pain point: receiving invoices with prices 5–8% higher than contracted, forcing tedious credit note renegotiations.  
-> - **Persona 2: Mr. Tran Quoc Tuan (B2B Sales Executive at OfficePro):**  
->   He manages 25 corporate accounts. His goal is hitting monthly revenue targets. His greatest frustration: having to call the warehouse repeatedly to verify stock, and having confirmed orders cancelled days later due to hidden stockouts.  
+> "Slide 7 bridges organizational roles with operational decision-making through our **Cross-Functional Information Needs Matrix** (Table 2.2 in our report):  
 > 
-> These authentic personas ensure our systems analysis directly solves human frustrations."
+> - **B2B Sales Representative (`INF-SALES-01`):** Requires customer-specific contracted prices and active validity dates upon inquiry, to quote accurately without manual spreadsheet lookups. Also requires real-time Available-to-Promise (ATP) inventory across both warehouses before confirming orders.  
+> - **Warehouse Operations Supervisor (`INF-WH-01`):** Requires advance visibility into scheduled supplier inbound shipments to plan dock labor, plus real-time picking queues for reserved orders.  
+> - **Chief Accountant (`INF-ACCT-01`):** Requires automated customer debt aging (> 30 days overdue) to block risky orders, plus signed electronic proof-of-delivery for instant 3-way matching.  
+> - **Procurement Officer (`INF-PROC-01`):** Requires real-time alerts when stock falls below safety reorder thresholds, paired with multi-vendor price comparison sheets.  
+> 
+> Every information need identified here maps directly to our requirements catalog."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 8 nhân cách hóa thực tế vận hành qua **Hai Hồ sơ Chân dung Đại diện (Personas)**:  
-> - **Persona 1: Chị Hoàng Mai Anh (Trưởng phòng Mua hàng - Tập đoàn Dệt may Vinatex):**  
->   Đại diện cho nhóm khách hàng doanh nghiệp B2B lớn. Mục tiêu của chị là đặt mua định kỳ giấy Double A và văn phòng phẩm nhanh chóng, đúng đơn giá hợp đồng. Nỗi đau lớn nhất: hóa đơn nhận về bị sai giá 5-8%, mất thời gian đối soát và khiếu nại.  
-> - **Persona 2: Anh Trần Quốc Tuấn (Chuyên viên Kinh doanh B2B tại OfficePro):**  
->   Quản lý 25 tài khoản khách hàng doanh nghiệp. Mục tiêu là đạt chỉ tiêu doanh số tháng. Nỗi đau lớn nhất: phải gọi điện thoại liên tục cho thủ kho để hỏi tồn, và đơn đã chốt với khách bị hủy giữa chừng vì kho hết hàng.  
+> "Slide 7 kết nối cơ cấu tổ chức với việc ra quyết định nghiệp vụ qua **Ma trận Nhu cầu Thông tin Liên phòng ban** (Bảng 2.2 trong Báo cáo):  
 > 
-> Việc xây dựng chân dung giúp nhóm bám sát trải nghiệm người dùng thực tế."
+> - **Nhân viên Kinh doanh (`INF-SALES-01`):** Cần truy cập tức thì bảng giá hợp đồng đã ký và tồn kho khả dụng (ATP) liên kho thời gian thực, để báo giá và chốt đơn chính xác mà không cần tra cứu Excel hay gọi điện thoại.  
+> - **Quản lý Kho (`INF-WH-01`):** Cần nắm trước lịch xe hàng về từ nhà máy để bố trí nhân sự bốc dỡ, và danh sách đơn hàng đã giữ chỗ để nhặt hàng đúng đơn.  
+> - **Kế toán trưởng (`INF-ACCT-01`):** Cần báo cáo tuổi nợ (> 30 ngày) để chặn đơn khách nợ xấu, và biên bản giao nhận điện tử để đối soát hóa đơn 3 bên tức thì.  
+> - **Nhân viên Thu mua (`INF-PROC-01`):** Cần cảnh báo tự động khi tồn kho chạm ngưỡng an toàn và bảng ma trận so sánh giá giữa các nhà cung cấp.  
+> 
+> Các nhu cầu thông tin này là tiền đề trực tiếp để xây dựng danh mục yêu cầu chức năng."
 
 ---
 
-# SLIDE 9: MA TRẬN NHU CẦU THÔNG TIN STAKEHOLDER (STAKEHOLDER INFORMATION NEEDS MATRIX)
-**Người trình bày:** Võ Duy Bình (Speaker 1)  
-**Thời lượng dự kiến:** 50 - 55 giây  
+# SLIDE 8: NHẬT KÝ BẰNG CHỨNG THU THẬP & ĐỐI SOÁT GIẢ ĐỊNH
+*(Tương ứng trên màn hình: Elicitation Evidence Log & Interview Verification — Assumptions vs. Reality)*  
+**Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
+**Thời lượng dự kiến:** 50 - 60 giây  
 
 ### 🇬🇧 English Script:
-> "Returning to our elicitation findings, Slide 9 formalizes the **Stakeholder Information Needs Matrix**:  
-> - **Sales Representatives (`INF-SALES-01`):** Require instant, verified access to approved customer contract pricelists and real-time Available-to-Promise (ATP) stock, rather than relying on stale spreadsheets.  
-> - **Warehouse Supervisors (`INF-WH-01`):** Require real-time visibility into advance inbound supplier shipments and outgoing reserved orders to optimize floor staging and bin allocation.  
-> - **Chief Accountant (`INF-ACCT-01`):** Needs automated customer credit aging status (> 30 days overdue) and electronic delivery receipts for instant 3-way matching.  
-> - **Procurement Officers (`INF-PROC-01`):** Need automated reorder triggers when stock hits minimum safety levels, paired with multi-supplier RFQ comparison sheets.  
+> "To guarantee academic rigor, Slide 8 presents our **Elicitation Evidence Log** (Table 2.1 in our report), contrasting baseline assumptions against verified interview evidence:  
 > 
-> Identifying these explicit data requirements directly shaped our functional requirements catalog."
+> - **Assumption 1 (Pricing Lookups):** We assumed reps search contract prices manually from Excel. ➔ **CONFIRMED:** Sales Manager verified reps copy-paste from personal Excel files, causing **5% to 8% pricing errors monthly**.  
+> - **Assumption 2 (Stock Visibility):** We assumed warehouse has real-time inventory visibility. ➔ **REFUTED:** Interviews revealed a **24 to 48-hour delay** between physical receiving and paper ledger entry. Goods on the dock are invisible to sales!  
+> - **Assumption 3 (Credit Checking):** We assumed accounting strictly blocks overdue clients. ➔ **REFUTED:** Credit checks are verbally bypassed; clients with debt > 30 days old continue ordering unchecked.  
+> - **Assumption 4 (Procurement Reordering):** We assumed procurement reorders predictively. ➔ **REFUTED:** Reordering is purely reactive after bins are completely empty, requiring 2 to 3 days of manual email negotiations.  
+> 
+> Every finding is validated against real operational evidence."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 9 hệ thống hóa **Ma trận Nhu cầu Thông tin Stakeholder (Information Needs Matrix)**:  
-> - **Nhân viên Kinh doanh (`INF-SALES-01`):** Cần truy cập tức thì bảng giá hợp đồng đã ký và chỉ số Tồn kho Khả dụng (ATP) thời gian thực, thay vì dựa vào các file Excel phân tán dễ sai sót.  
-> - **Quản lý Kho (`INF-WH-01`):** Cần nắm rõ lịch hàng về từ nhà cung cấp và danh sách các đơn hàng đã được giữ chỗ để điều phối nhân sự bốc dỡ và tối ưu diện tích kệ.  
-> - **Kế toán trưởng (`INF-ACCT-01`):** Cần thông tin tuổi nợ khách hàng (đặc biệt nợ quá hạn > 30 ngày) và phiếu giao hàng điện tử để đối soát hóa đơn 3 bên tức thì.  
-> - **Nhân viên Thu mua (`INF-PROC-01`):** Cần cảnh báo đặt hàng tự động khi tồn kho chạm ngưỡng an toàn, đi kèm bảng so sánh báo giá RFQ từ nhiều nhà cung cấp.  
+> "Để đảm bảo tính khoa học và thực tế, Slide 8 trình bày **Nhật ký Bằng chứng Thu thập & Đối soát Giả định** (Bảng 2.1 trong Báo cáo), đối chiếu giữa giả định ban đầu và bằng chứng phỏng vấn thực tế:  
 > 
-> Các nhu cầu thông tin cốt lõi này chính là nền tảng để nhóm xây dựng các yêu cầu chức năng sau này."
+> - **Giả định 1 (Tra giá hợp đồng):** Nhóm giả định kinh doanh tra giá Excel thủ công. ➔ **XÁC NHẬN:** Quản lý kinh doanh xác nhận nhân viên copy-paste từ file Excel cá nhân, gây **lỗi giá từ 5% đến 8% mỗi tháng**.  
+> - **Giả định 2 (Minh bạch kho):** Nhóm giả định thủ kho nắm được hàng tồn real-time. ➔ **BÁC BỎ:** Thực tế có **độ trễ 24 đến 48 giờ** giữa lúc xe tải dỡ hàng đến khi vào sổ. Hàng nằm ở bãi đỗ nhưng kinh doanh không thấy để bán!  
+> - **Giả định 3 (Khóa nợ quá hạn):** Nhóm giả định kế toán chặn nghiêm ngặt khách nợ quá hạn. ➔ **BÁC BỎ:** Thực tế quy định bị lách bằng cách xin duyệt miệng; khách nợ quá 30 ngày vẫn được chốt đơn mới.  
+> - **Giả định 4 (Đặt hàng thu mua):** Nhóm giả định phòng thu mua dự báo đặt hàng trước. ➔ **BÁC BỎ:** Chỉ đặt hàng khi trên kệ đã cạn kiệt, đàm phán qua email mất 2 đến 3 ngày.  
+> 
+> Toàn bộ kết quả đều dựa trên đối soát thực địa khách quan."
 
 ---
 
-# SLIDE 10: MÔ HÌNH QUAN HỆ GIỮA 5 QUY TRÌNH NGHIỆP VỤ CỐT LÕI (5 CORE PROCESSES RELATIONSHIP MAP)
-**Người trình bày:** Võ Duy Bình (Speaker 1)  
-**Thời lượng dự kiến:** 50 - 55 giây  
-
-### 🇬🇧 English Script:
-> "Slide 10 presents our **Five Core Business Processes Relationship Map**, illustrating the inter-process dependency model:  
-> - At the heart of our commercial revenue engine is **BP1: Processing Corporate B2B Orders**, which coordinates customer inquiry, quotation, credit validation, order confirmation, and invoice issuance.  
-> - BP1 relies directly on four supporting satellite processes:  
->   - **BP2 (Contract Pricing Management):** Maintains approved customer framework pricelists and feeds negotiated rates directly into BP1.  
->   - **BP3 (Checking Product Availability - ATP):** Validates real-time inventory levels across Tan Binh and Bien Hoa hubs, feeding confirmed stock reserves back into BP1.  
->   - **BP4 (Receiving & Inbound Inspection):** Processes incoming shipments from manufacturers like Double A and Pilot, updating warehouse on-hand stock and preventing receiving backlogs.  
->   - **BP5 (Reviewing Replenishment Needs & Purchasing):** Triggered when ATP stock drops below safety thresholds, issuing Purchase Orders to suppliers to replenish inventory for future BP1 orders.  
-> 
-> Understanding these cross-process connections is essential to eliminating departmental silos."
-
-### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 10 trình bày **Mô hình Mối quan hệ giữa 5 Quy trình Nghiệp vụ Cốt lõi** trong doanh nghiệp:  
-> - Trọng tâm tạo ra doanh thu là quy trình **BP1: Xử lý Đơn hàng B2B Doanh nghiệp**, điều phối từ tiếp nhận yêu cầu, lập báo giá, kiểm tra công nợ, xác nhận đơn đến xuất hóa đơn.  
-> - Quy trình BP1 liên kết hữu cơ và nhận dữ liệu từ 4 quy trình vệ tinh xung quanh:  
->   - **BP2 (Quản lý Bảng giá Hợp đồng):** Lưu trữ bảng giá thỏa thuận và cung cấp đơn giá hợp đồng chuẩn cho BP1.  
->   - **BP3 (Kiểm tra Tồn kho Khả dụng ATP):** Xác minh số lượng hàng thực tế giữa kho Tân Bình và Biên Hòa để xác nhận giữ chỗ hàng cho BP1.  
->   - **BP4 (Nhận hàng & Kiểm hàng Đầu vào):** Tiếp nhận xe tải từ các nhà sản xuất như Double A, Pilot, cập nhật hàng lên kệ để BP3 và BP1 có hàng bán.  
->   - **BP5 (Đánh giá Nhu cầu Bổ sung & Thu mua):** Kích hoạt khi tồn kho ATP chạm mức tồn an toàn, phát hành đơn mua hàng PO để tái bổ sung hàng cho các đơn BP1 tiếp theo.  
-> 
-> Nhìn nhận 5 quy trình trong một thể thống nhất giúp chúng ta thấy rõ luồng dữ liệu liên thông và xóa bỏ tư duy cục bộ phòng ban."
-
----
-
-# SLIDE 11: MÔ TẢ QUY TRÌNH HIỆN TẠI AS-IS (AS-IS PROCESS STEPS & METADATA)
+# SLIDE 9: 3 VẤN ĐỀ VẬN HÀNH CỐT LÕI KÈM THIỆT HẠI ĐỊNH LƯỢNG
+*(Tương ứng trên màn hình: Primary Operational Problems & Quantified Friction — Problems 01, 02, 03)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 55 - 60 giây  
 
 ### 🇬🇧 English Script:
-> "Slide 11 outlines our **AS-IS Process Metadata and Operational Steps** (governed by Table 3.1 and Table 3.4 in our master BRD):  
-> - **Process Name:** Processing Corporate Wholesale Orders and Inventory Fulfillment.  
-> - **Trigger:** Corporate client sends an RFQ inquiry via email or Zalo message.  
-> - **Current Step-by-Step Reality:**  
->   - `Step-01`: Client submits an RFQ inquiry.  
->   - `Step-02`: Sales rep manually checks an outdated local Excel spreadsheet, producing a **5% to 8% pricing error rate**.  
->   - `Step-03`: Sales rep calls the warehouse over the phone. The warehouse suffers a **24–48 hour receiving delay**, blinding them to newly arrived pallets.  
->   - `Step-04`: Sales rep confirms the order based on assumption.  
->   - `Step-05`: Warehouse picks the order, only to discover bins are empty, causing **3–4 stockout emergencies weekly**.  
->   - `Step-06`: Goods are dispatched with handwritten, triple-copy delivery slips.  
->   - `Step-07`: Accounting expends **15–20 hours weekly** manually cross-referencing paper slips to type VAT invoices, while overdue debtors (> 30 days) continue ordering unchecked.  
+> "Returning to the business analysis, Slide 9 synthesizes our findings into **Three Primary Operational Problems with Quantified Friction** (Table 3.6 in our report):  
 > 
-> Everything relies on phone calls, personal spreadsheets, and carbon paper."
+> 1. **Problem 01: Contract Pricing Discrepancies (`PRB-01`):**  
+>    Caused by sales reps maintaining disconnected personal Excel sheets. Introduces a **5% to 8% pricing error rate**, generating **50 million VND in monthly invoice disputes** and credit adjustments.  
+> 2. **Problem 02: Post-Confirmation Stockout Emergencies (`PRB-03`):**  
+>    Due to 24–48h receiving delays and lack of real-time ATP checks, reps confirm orders for stock that is missing or already reserved, causing **3 to 4 stockout emergencies weekly** and 2–3 day fulfillment delays.  
+> 3. **Problem 03: Manual Paper 3-Way Reconciliation Bottleneck (`PRB-04`):**  
+>    Accounting burns **15 to 20 hours weekly** manually matching handwritten delivery slips against sales orders, while accounts with debt overdue > 30 days continue accumulating bad debt.  
+> 
+> These quantified pains directly motivate our process re-engineering."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 11 mô tả chi tiết **Thông tin Định danh và Các bước của Quy trình Hiện trạng AS-IS** (theo Bảng 3.1 và Bảng 3.4 trong Báo cáo BRD):  
-> - **Tên quy trình:** Xử lý Đơn hàng Bán buôn Doanh nghiệp và Thực hiện Xuất kho.  
-> - **Tác nhân kích hoạt (Trigger):** Khách hàng doanh nghiệp gửi yêu cầu báo giá qua Email hoặc tin nhắn Zalo.  
-> - **Dòng chảy hiện trạng gồm 7 bước thủ công:**  
->   - `Bước 1`: Khách gửi yêu cầu mua hàng.  
->   - `Bước 2`: Nhân viên kinh doanh mở file Excel cá nhân để tra giá, tạo ra **tỷ lệ sai giá 5% đến 8%**.  
->   - `Bước 3`: Kinh doanh gọi điện thoại cho thủ kho để hỏi hàng. Thủ kho không thấy hàng mới về bãi do **độ trễ nhập kho 24-48 giờ**.  
->   - `Bước 4`: Kinh doanh xác nhận đơn cho khách dựa trên phỏng đoán.  
->   - `Bước 5`: Thủ kho đi nhặt hàng thì phát hiện hết hàng, dẫn đến **3-4 sự cố thiếu hàng mỗi tuần**.  
->   - `Bước 6`: Giao hàng kèm phiếu xuất kho viết tay bằng giấy than 3 liên.  
->   - `Bước 7`: Kế toán thu gom chứng từ giấy, tốn **15-20 giờ mỗi tuần** ngồi dò từng dòng để gõ hóa đơn VAT, trong khi khách nợ quá hạn vẫn được duyệt đơn mới.  
+> "Tiếp tục mạch phân tích nghiệp vụ, Slide 9 tổng hợp thực trạng thành **3 Vấn đề Vận hành Cốt lõi kèm Thiệt hại Định lượng** (Bảng 3.6 trong Báo cáo):  
+> 
+> 1. **Vấn đề 1: Sai lệch Đơn giá Hợp đồng (`PRB-01`):**  
+>    Do nhân viên kinh doanh lưu file Excel cá nhân riêng lẻ. Gây ra **tỷ lệ sai giá từ 5% đến 8%**, làm thiệt hại **50 triệu đồng mỗi tháng** do phải điều chỉnh hóa đơn và tranh chấp công nợ.  
+> 2. **Vấn đề 2: Hết hàng sau khi Chốt đơn (`PRB-03`):**  
+>    Do khâu nhập kho chậm 24-48 giờ và không kiểm tra tồn kho ATP trước khi xác nhận đơn, dẫn đến **3 đến 4 sự cố thiếu hàng mỗi tuần**, làm chậm giao hàng 2-3 ngày và vi phạm cam kết SLA.  
+> 3. **Vấn đề 3: Gánh nặng Đối soát Hóa đơn Giấy (`PRB-04`):**  
+>    Kế toán tiêu tốn **15 đến 20 giờ mỗi tuần** chỉ để ngồi dò từng dòng giữa phiếu giao hàng giấy than và đơn bán hàng, trong khi khách có nợ quá hạn trên 30 ngày vẫn được duyệt đơn mới.  
+> 
+> Những thiệt hại định lượng rõ ràng này chính là động lực thôi thúc nhóm tái thiết kế quy trình."
+
+---
+
+# SLIDE 10: MÔ HÌNH MỐI QUAN HỆ GIỮA 5 QUY TRÌNH NGHIỆP VỤ CỐT LÕI
+*(Tương ứng trên màn hình: Five Core Business Processes Relationship Map — BP1 to BP5 Dependency)*  
+**Người trình bày:** Võ Duy Bình (Speaker 1)  
+**Thời lượng dự kiến:** 50 - 55 giây  
+
+### 🇬🇧 English Script:
+> "Slide 10 presents our **Five Core Business Processes Relationship Map** (Figure 3.1 in our report), illustrating cross-process data dependencies:  
+> 
+> - At the center of our revenue engine is **BP1: Processing Corporate B2B Orders**, which coordinates quotation, credit validation, order confirmation, and billing.  
+> - BP1 relies directly on four supporting satellite processes:  
+>   - **BP2 (Contract Pricing Management):** Feeds approved customer-specific price agreements into BP1.  
+>   - **BP3 (Checking Product Availability - ATP):** Validates real-time inventory levels across Tan Binh and Bien Hoa hubs, confirming stock reservations for BP1.  
+>   - **BP4 (Receiving & Inbound Inspection):** Processes shipments from suppliers like Double A and Pilot, updating warehouse on-hand stock.  
+>   - **BP5 (Reviewing Replenishment Needs & Purchasing):** Triggered when ATP stock drops below safety thresholds, issuing Purchase Orders to replenish inventory for future BP1 orders.  
+> 
+> Eliminating silos across these five processes is essential to wholesale efficiency."
+
+### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
+> "Slide 10 trình bày **Mô hình Mối quan hệ giữa 5 Quy trình Nghiệp vụ Cốt lõi** (Hình 3.1 trong Báo cáo), thể hiện luồng liên thông dữ liệu:  
+> 
+> - Trọng tâm tạo ra doanh thu là quy trình **BP1: Xử lý Đơn hàng B2B Doanh nghiệp**, điều phối từ báo giá, kiểm tra công nợ, xác nhận đơn đến xuất hóa đơn.  
+> - Quy trình BP1 liên kết hữu cơ và nhận dữ liệu từ 4 quy trình vệ tinh xung quanh:  
+>   - **BP2 (Quản lý Bảng giá Hợp đồng):** Lưu trữ bảng giá thỏa thuận và cung cấp đơn giá hợp đồng chuẩn cho BP1.  
+>   - **BP3 (Kiểm tra Tồn kho Khả dụng ATP):** Xác minh số lượng hàng thực tế giữa kho Tân Bình và Biên Hòa để xác nhận giữ chỗ hàng cho BP1.  
+>   - **BP4 (Nhận hàng & Kiểm hàng Đầu vào):** Tiếp nhận xe tải từ các nhà máy như Double A, Pilot, cập nhật hàng lên kệ để kho có hàng bán.  
+>   - **BP5 (Đánh giá Nhu cầu Bổ sung & Thu mua):** Kích hoạt khi tồn kho ATP chạm mức tồn an toàn, phát hành đơn mua hàng PO để tái bổ sung hàng cho các đơn BP1 tiếp theo.  
+> 
+> Nhìn nhận 5 quy trình trong một thể thống nhất giúp chúng ta xóa bỏ hoàn toàn tư duy cục bộ phòng ban."
+
+---
+
+# SLIDE 11: MÔ TẢ CÁC BƯỚC QUY TRÌNH HIỆN TẠI AS-IS
+*(Tương ứng trên màn hình: AS-IS Cross-Functional Business Process Map — Steps 1.0 to 5.0)*  
+**Người trình bày:** Võ Duy Bình (Speaker 1)  
+**Thời lượng dự kiến:** 55 - 60 giây  
+
+### 🇬🇧 English Script:
+> "Slide 11 walks through the linear, fragmented reality of our **Current AS-IS Business Process Map** (Table 3.4 in our report):  
+> 
+> - **Step 1.0 (Customer Inquiry & Quotation):** Client sends an RFQ. Sales rep opens a personal, local Excel pricelist to look up prices, introducing that dangerous **5% to 8% pricing error rate**.  
+> - **Step 2.0 (Verbal Stock Availability Check):** Sales rep calls the warehouse supervisor over the phone. The warehouse is unaware of pallets sitting in the receiving bay due to the **24–48 hour receiving lag**.  
+> - **Step 3.0 (Manual Order Confirmation):** Rep confirms the order based on assumption. But two days later, physical picking reveals the bin is empty! **3 to 4 stockouts happen weekly**.  
+> - **Step 4.0 (Emergency Procurement Reorder):** Rep sends an urgent email to Purchasing. Supplier negotiation takes 2 to 3 days, forcing fulfillment delays.  
+> - **Step 5.0 (Delivery & Manual Invoicing):** Goods are delivered with a handwritten, carbon-copy slip. Accounting spends **15–20 hours weekly** cross-referencing lines to type VAT invoices, while overdue debtors bypass credit policies.  
+> 
+> Every single step relies on phone calls, personal spreadsheets, and carbon paper."
+
+### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
+> "Slide 11 mô tả chi tiết dòng chảy phân mảnh của **Quy trình Hiện trạng AS-IS** (theo Bảng 3.4 trong Báo cáo):  
+> 
+> - **Bước 1.0 (Tiếp nhận & Báo giá):** Khách hàng gửi yêu cầu mua hàng. Nhân viên kinh doanh mở file Excel cá nhân để tra giá, tạo ra **tỷ lệ sai giá 5% đến 8%**.  
+> - **Bước 2.0 (Kiểm tra kho qua điện thoại):** Nhân viên gọi điện thoại cho thủ kho để hỏi hàng miệng. Thủ kho không biết hàng đã về bãi vì **độ trễ nhập kho 24-48 giờ**.  
+> - **Bước 3.0 (Chốt đơn thủ công):** Nhân viên xác nhận đơn cho khách dựa trên phỏng đoán. Nhưng hai ngày sau khi đi nhặt hàng thì kệ trống không! Dẫn đến **3-4 sự cố thiếu hàng mỗi tuần**.  
+> - **Bước 4.0 (Mua hàng khẩn cấp):** Kinh doanh gửi email hối thúc phòng mua hàng, mất 2-3 ngày đàm phán làm đơn hàng bị trễ hạn giao.  
+> - **Bước 5.0 (Giao hàng & Xuất hóa đơn thủ công):** Giao hàng bằng phiếu giấy than. Kế toán thu gom chứng từ giấy, tốn **15-20 giờ mỗi tuần** ngồi dò từng dòng để gõ hóa đơn VAT, trong khi khách nợ quá hạn vẫn được duyệt đơn mới.  
 > 
 > Toàn bộ quy trình hiện tại phụ thuộc hoàn toàn vào điện thoại, file Excel cá nhân và chứng từ giấy."
 
 ---
 
-# SLIDE 12: SƠ ĐỒ BPMN SWIMLANE HIỆN TRẠNG AS-IS (AS-IS SWIMLANE BPMN DIAGRAM - SVG)
+# SLIDE 12: SƠ ĐỒ BPMN SWIMLANE HIỆN TRẠNG AS-IS
+*(Tương ứng trên màn hình: AS-IS Cross-Functional Swimlane BPMN Diagram — Vector SVG Figure 3.1)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 60 - 70 giây  
 
 ### 🇬🇧 English Script:
 > "To formally visualize cross-functional handoffs, Slide 12 presents our **AS-IS Cross-Functional Swimlane BPMN 2.0 Diagram** (Figure 3.1 in our report), rendered in full vector precision:  
 > 
-> - As required by Section B of our Evaluation Checklist, the diagram models **4 distinct participant lanes**:  
+> - As mandated by Section B of our Evaluation Checklist, the diagram models **4 distinct participant lanes**:  
 >   1. **Customer Lane:** Submits RFQ inquiry, evaluates draft quote, and signs paper delivery slip upon truck arrival.  
 >   2. **Sales Representative Lane:** Looks up local Excel pricelist (Friction: 5–8% rate error), calls warehouse verbally, and issues draft quotes.  
 >   3. **Warehouse Operations Lane:** Inspects bins manually over the phone (Friction: 24–48h staging lag), picks and packs, and issues handwritten triple-copy slips.  
 >   4. **Accounting & Finance Lane:** Verifies customer debt manually, cross-checks paper slips line-by-line (15–20h wasted weekly), and enters invoices into standalone software.  
 > 
-> - Crucially, notice the flow begins with a single **Start Event `(( START ))`** and features **3 explicit Decision Gateways** with clear **`[YES]`** and **`[NO]`** branch labels:  
+> - Notice the flow begins with a single **Start Event `(( START ))`** and features **3 explicit Decision Gateways** with clear **`[YES]`** and **`[NO]`** branch labels:  
 >   - **Gateway 1 (Overdue Debt > 30 Days?):** If YES ➔ Diverts to **`End 3: Credit Locked (Order Blocked)`**. If NO ➔ Proceeds to price lookup.  
 >   - **Gateway 2 (Customer Accepts Quote?):** If NO ➔ Diverts to **`End 1: Quote Declined`**. If YES ➔ Sales calls warehouse.  
 >   - **Gateway 3 (Sufficient Physical Stock?):** If NO ➔ Diverts to **`End 2: Order Cancelled (Stockout Emergency)`**.  
@@ -359,33 +377,35 @@
 
 ---
 
-# SLIDE 13: 4 NỖI ĐAU VẬN HÀNH & KHOẢNG CÁCH DỮ LIỆU (DEPARTMENTAL BOTTLENECKS & 4 PAIN POINTS)
+# SLIDE 13: ĐIỂM NGHẼN PHÒNG BAN & KHOẢNG CÁCH DỮ LIỆU
+*(Tương ứng trên màn hình: Departmental Bottlenecks & Operational Gaps — 4 Silos)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 50 - 55 giây  
 
 ### 🇬🇧 English Script:
-> "Slide 13 synthesizes our field investigation into **Four Quantified Operational Pain Points** (Table 3.6 in our report):  
+> "Slide 13 drills deeper into the departmental silos and operational bottlenecks:  
 > 
-> 1. **5%–8% Contract Pricing Error Rate (`PRB-01`):** Caused by sales reps maintaining personal Excel sheets, resulting in 50 million VND in monthly invoice disputes and credit notes.  
-> 2. **24–48 Hour Warehouse Receiving Lag (`PRB-02`):** Shipments from Double A and Pilot sit in staging bays before manual ledger entry, blinding sales reps to available inventory.  
-> 3. **3–4 Post-Order Stockout Emergencies Weekly (`PRB-03`):** Orders are confirmed without real-time ATP checks, causing severe fulfillment delays and customer dissatisfaction.  
-> 4. **15–20 Hours Weekly of Manual 3-Way Reconciliation (`PRB-04`):** Accounting manually matches paper delivery slips against sales orders, while customer accounts with debts overdue > 30 days continue ordering unchecked.  
+> - **Sales Silo:** Pricelists are maintained in separate personal Excel files per rep; the lack of a centralized contract repository causes widespread rate discrepancies.  
+> - **Warehouse Receiving Lag:** Supplier shipments arrive, but paper receiving logs take **24 to 48 hours** to enter into spreadsheets, blinding sales reps to newly arrived inventory.  
+> - **Procurement Blindspot:** Replenishment is triggered reactively only after warehouse bins run empty; multi-vendor RFQ negotiations consume 2 to 3 days over tedious email exchanges.  
+> - **Accounting Reconciliation Bottleneck:** Accounting expends **15 to 20 hours weekly** cross-checking physical paper documents, while customer debt overdue > 30 days is not systematically blocked.  
 > 
-> These four quantified pains provide indisputable justification for digital transformation."
+> The fundamental breakthrough requires shifting from **isolated departmental paper silos to an integrated, automated digital backbone**."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 13 tổng hợp kết quả điều tra thực địa thành **4 Nỗi đau Vận hành Định lượng** (Bảng 3.6 trong Báo cáo):  
+> "Slide 13 bóc tách sâu hơn các điểm nghẽn tại từng phòng ban trong doanh nghiệp:  
 > 
-> 1. **5%–8% Tỷ lệ Lỗi Giá Hợp đồng (`PRB-01`):** Do nhân viên kinh doanh dùng file Excel cá nhân, gây thiệt hại 50 triệu đồng mỗi tháng tiền tranh chấp hóa đơn.  
-> 2. **24–48 Giờ Trễ Nhập Kho (`PRB-02`):** Hàng từ Double A và Pilot về nằm ở bãi đỗ trước khi được ghi sổ thủ công, khiến kinh doanh không thấy được hàng mới về.  
-> 3. **3–4 Sự cố Hết hàng sau khi Chốt đơn mỗi tuần (`PRB-03`):** Xác nhận đơn mà không kiểm tra tồn kho khả dụng thời gian thực, dẫn đến giao hàng trễ và khách hàng phàn nàn.  
-> 4. **15–20 Giờ/tuần Đối soát Hóa đơn Giấy (`PRB-04`):** Kế toán phải dò từng dòng giữa phiếu giao hàng giấy than và đơn bán hàng, trong khi khách có nợ quá hạn > 30 ngày vẫn được đặt đơn mới.  
+> - **Ốc đảo Kinh doanh:** Bảng giá hợp đồng bị cô lập trong file Excel của từng nhân viên; thiếu cơ sở dữ liệu giá tập trung gây sai sót giá tràn lan.  
+> - **Độ trễ Nhập kho:** Hàng nhà cung cấp về nằm ở bãi đỗ **24 đến 48 giờ** mới được nhập vào sổ sách, khiến hàng mới hoàn toàn 'vô hình' với nhân viên bán hàng.  
+> - **Điểm mù Thu mua:** Chỉ đặt hàng khi kệ trong kho đã cạn kiệt; đàm phán báo giá RFQ mất 2 đến 3 ngày qua email thủ công.  
+> - **Nút thắt Kế toán:** Tốn **15 đến 20 tiếng mỗi tuần** để ngồi đối soát chứng từ giấy thủ công, trong khi các khoản nợ quá hạn trên 30 ngày không có công cụ chặn tự động.  
 > 
-> 4 nỗi đau có số liệu rõ ràng này là bằng chứng xác đáng chứng minh sự cần thiết phải chuyển đổi số."
+> Mấu chốt của bài toán chuyển đổi là phải dịch chuyển từ **các ốc đảo giấy tờ rời rạc sang một trục kỹ thuật số tích hợp và tự động hóa**."
 
 ---
 
-# SLIDE 14: PHÂN TÍCH NGUYÊN NHÂN GỐC RỄ 5-WHYS (5-WHYS ROOT CAUSE ANALYSIS)
+# SLIDE 14: PHÂN TÍCH NGUYÊN NHÂN GỐC RỄ 5-WHYS
+*(Tương ứng trên màn hình: 5-Whys Root Cause Breakdown by Core Problem — Table 3.7)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 60 giây  
 
@@ -427,7 +447,8 @@
 
 ---
 
-# SLIDE 15: CHIẾN LƯỢC TÁI CẤU TRÚC QUY TRÌNH TO-BE (TO-BE INTEGRATED PROCESS RE-ENGINEERING)
+# SLIDE 15: CHIẾN LƯỢC TÁI CẤU TRÚC QUY TRÌNH TƯƠNG LAI TO-BE
+*(Tương ứng trên màn hình: TO-BE Integrated Business Process Re-engineering — Four Automation Pillars)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 55 - 60 giây  
 
@@ -453,7 +474,8 @@
 
 ---
 
-# SLIDE 16: SƠ ĐỒ BPMN SWIMLANE TƯƠNG LAI TO-BE (TO-BE SWIMLANE BPMN DIAGRAM - SVG)
+# SLIDE 16: SƠ ĐỒ BPMN SWIMLANE TƯƠNG LAI TO-BE
+*(Tương ứng trên màn hình: TO-BE Cross-Functional Swimlane BPMN Diagram — Vector SVG Figure 3.2)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 60 - 70 giây  
 
@@ -503,7 +525,8 @@
 
 ---
 
-# SLIDE 17: BẢNG SO SÁNH HIỆU QUẢ VẬN HÀNH & LỢI ÍCH ĐỊNH LƯỢNG (OPERATIONAL COMPARISON & BENEFITS)
+# SLIDE 17: BẢNG SO SÁNH HIỆU QUẢ VẬN HÀNH & LỢI ÍCH ĐỊNH LƯỢNG
+*(Tương ứng trên màn hình: AS-IS vs. TO-BE Operational Comparison — Table 3.8 & Table 3.9)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 50 - 55 giây  
 
@@ -531,7 +554,8 @@
 
 ---
 
-# SLIDE 18: DANH MỤC YÊU CẦU CHỨC NĂNG MOSCOW & TIÊU CHÍ NGHIỆM THU (MOSCOW FRS & VERIFICATION IDEAS)
+# SLIDE 18: DANH MỤC YÊU CẦU CHỨC NĂNG MOSCOW & TIÊU CHÍ NGHIỆM THU
+*(Tương ứng trên màn hình: MoSCoW Prioritized Functional Requirements Catalog — 5 BRs ➔ 8 FRs with Verification Ideas)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 60 - 70 giây  
 
@@ -581,14 +605,15 @@
 
 ---
 
-# SLIDE 19: MA TRẬN TRUY XUẤT YÊU CẦU ĐẦU-CUỐI RTM (6-COLUMN RTM TRACEABILITY MATRIX)
+# SLIDE 19: MA TRẬN TRUY XUẤT YÊU CẦU ĐẦU-CUỐI RTM
+*(Tương ứng trên màn hình: End-to-End Requirements Traceability Matrix (RTM) — 6-Column End-to-End Chain)*  
 **Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
 **Thời lượng dự kiến:** 55 - 60 giây  
 
 ### 🇬🇧 English Script:
-> "Slide 19 establishes our **End-to-End Requirements Traceability Matrix (RTM)**, proving 100% bidirectional traceability across all analysis artifacts through our **6-Column Chain**:  
+> "Slide 19 establishes our **End-to-End Requirements Traceability Matrix (RTM)**, proving 100% bidirectional traceability across all analysis artifacts through our **6-Column Chain** (Table 4.4 in our report):  
 > 
-> `Evidence ID ➔ AS-IS Observation ➔ Problem / Need ➔ BR ID ➔ FR ID ➔ Proposed TO-BE Change`  
+> `Evidence ID ➔ AS-IS Observation ➔ Problem / Need ➔ BR ID ➔ Functional Requirement (FR) ➔ Proposed TO-BE Change`  
 > 
 > - Sales interview evidence `EVD-W2-SALES-01` (5–8% pricing errors) maps to `INF-SALES-01`, `BR-01`, `FR-01`, and the TO-BE automated contract pricing engine.  
 > - Receiving delay evidence `EVD-W2-WH-02` (24–48h staging lag) maps to `INF-WH-01`, `BR-02`, `FR-02`, and real-time multi-hub ATP reservation.  
@@ -599,9 +624,9 @@
 > This matrix proves our Golden Rule of Traceability: **'Traceability is not just ID matching: it proves that every system feature addresses a real business need discovered during stakeholder elicitation.'** There are zero orphan requirements, and zero unaddressed business pains!"
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Slide 19 trình bày **Ma trận Truy xuất Yêu cầu Nghiệp vụ Đầu-cuối (RTM)**, minh chứng tính truy vết hai chiều 100% qua **Chuỗi 6 Cột khép kín**:  
+> "Slide 19 trình bày **Ma trận Truy xuất Yêu cầu Nghiệp vụ Đầu-cuối (RTM)**, minh chứng tính truy vết hai chiều 100% qua **Chuỗi 6 Cột khép kín** (Bảng 4.4 trong Báo cáo):  
 > 
-> `Mã Bằng chứng ➔ Quan sát AS-IS ➔ Vấn đề / Nhu cầu ➔ Mã BR ➔ Mã FR ➔ Thay đổi TO-BE`  
+> `Mã Bằng chứng ➔ Quan sát AS-IS ➔ Vấn đề / Nhu cầu ➔ Mã BR ➔ Yêu cầu Chức năng (FR) ➔ Thay đổi TO-BE`  
 > 
 > - Bằng chứng phỏng vấn kinh doanh `EVD-W2-SALES-01` (lỗi giá 5-8%) liên kết tới `INF-SALES-01`, `BR-01`, `FR-01`, và công cụ tự động áp giá hợp đồng TO-BE.  
 > - Bằng chứng trễ nhập kho `EVD-W2-WH-02` (trễ 24-48 giờ) liên kết tới `INF-WH-01`, `BR-02`, `FR-02`, và cơ chế giữ chỗ tồn kho ATP liên kho.  
@@ -613,7 +638,8 @@
 
 ---
 
-# SLIDE 20: TỔNG KẾT PHASE 1, BÀN GIAO PHASE 2 & BẢO VỆ PHẢN BIỆN (CONCLUSION & ORAL DEFENSE Q&A)
+# SLIDE 20: TỔNG KẾT PHASE 1, BÀN GIAO PHASE 2 & BẢO VỆ PHẢN BIỆN
+*(Tương ứng trên màn hình: Phase 1 Summary, Handover to Phase 2 & Q&A)*  
 **Người trình bày:** Võ Duy Bình & Phạm Nguyễn Gia Thuận  
 **Thời lượng dự kiến:** 50 - 60 giây  
 
