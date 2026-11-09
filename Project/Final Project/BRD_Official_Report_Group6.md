@@ -171,12 +171,12 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 
 *(R - Responsible | A - Accountable | C - Consulted | I - Informed)*
 
-**Table 0.1:** Team Members & Process Responsibility RACI Matrix
+**Table 0.1:** Team Members & Process Responsibility RACI Matrix (with Workload Share & Performance Rating)
 
-| Student Name                    | Student ID         | Assigned Core Business Processes                                                                            | Role in Project                     | Governance RACI Status                                             |
-| ------------------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------ |
-| **Vo Duy Binh**           | **22301500** | **BP1:** Processing Customer Orders<br/>**BP2:** Verifying Contract Prices<br/>**BP4:** Reviewing Replenishment Needs   | Team Leader / Lead Business Analyst | **A / R** (Sales & Purchasing Domains, Master BRD)           |
-| **Pham Nguyen Gia Thuan** | **22204631** | **BP3:** Checking Product Availability (ATP)<br/>**BP5:** Receiving Goods & Inspection<br/>**BP-INV:** Invoicing Reconciliation | QA & Requirements Analyst           | **A / R** (Inventory & Invoicing Domains, Quality Assurance) |
+| Student Name                    | Student ID         | Assigned Core Business Processes                                                                            | Role in Project                     | Governance RACI Status                                             | Workload Share (%) | Individual Performance Rating |
+| ------------------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------ | :---: | :---: |
+| **Vo Duy Binh**           | **22301500** | **BP1:** Processing Customer Orders<br/>**BP2:** Verifying Contract Prices<br/>**BP4:** Reviewing Replenishment Needs   | Team Leader / Lead Business Analyst | **A / R** (Sales & Purchasing Domains, Master BRD)           | **50%** | **100% (Outstanding)** |
+| **Pham Nguyen Gia Thuan** | **22204631** | **BP3:** Checking Product Availability (ATP)<br/>**BP5:** Receiving Goods & Inspection<br/>**BP-INV:** Invoicing Reconciliation | QA & Requirements Analyst           | **A / R** (Inventory & Invoicing Domains, Quality Assurance) | **50%** | **100% (Outstanding)** |
 
 ### Detailed Phase 1 Deliverable Responsibilities:
 
@@ -317,12 +317,12 @@ To ground requirements engineering in concrete wholesale realities, OfficePro's 
 
 ## 1.4. Team Member & Process Responsibility Matrix
 
-**Table 1.2:** Individual Module Ownership Matrix & Academic Responsibilities
+**Table 1.2:** Individual Module Ownership Matrix & Workload Performance
 
-| Student Name                    | Student ID         | Assigned Core Business Processes                                                                          | Primary Phase 1 Responsibilities                                                                                                                                                                                       |
-| ------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Vo Duy Binh**           | **22301500** | **BP1:** Processing Customer Orders<br/>**BP2:** Verifying Contract Prices<br/>**BP4:** Reviewing Replenishment Needs | Scope definition, contract pricing engine rules, quotation approval workflows, reorder point thresholds, purchase requisition workflows, AS-IS/TO-BE sales modeling, 5-Whys root cause analysis, master BRD authoring. |
-| **Pham Nguyen Gia Thuan** | **22204631** | **BP3:** Checking Product Availability<br/>**BP5:** Receiving Goods & Inspection<br/>**BP-INV:** Invoicing Reconciliation | Multi-warehouse stock tracking, real-time ATP inventory logic, bin location routing, automated 3-way invoice matching, Net 30 credit control policy, MoSCoW requirements framing, QA review.                           |
+| Student Name                    | Student ID         | Assigned Core Business Processes                                                                          | Primary Phase 1 Responsibilities                                                                                                                                                                                       | Contribution (%) | Task Performance Rating |
+| ------------------------------- | ------------------ | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---: | :---: |
+| **Vo Duy Binh**           | **22301500** | **BP1:** Processing Customer Orders<br/>**BP2:** Verifying Contract Prices<br/>**BP4:** Reviewing Replenishment Needs | Scope definition, contract pricing engine rules, quotation approval workflows, reorder point thresholds, purchase requisition workflows, AS-IS/TO-BE sales modeling, 5-Whys root cause analysis, master BRD authoring. | **50%** | **100% (On Schedule)** |
+| **Pham Nguyen Gia Thuan** | **22204631** | **BP3:** Checking Product Availability<br/>**BP5:** Receiving Goods & Inspection<br/>**BP-INV:** Invoicing Reconciliation | Multi-warehouse stock tracking, real-time ATP inventory logic, bin location routing, automated 3-way invoice matching, Net 30 credit control policy, MoSCoW requirements framing, QA review.                           | **50%** | **100% (On Schedule)** |
 
 **Table 1.2.1:** Phase 1 Milestone RACI Assignment Matrix & Governance (Aligned 1:1 with Slide 12)
 
@@ -990,9 +990,9 @@ By transitioning OfficePro Distribution Co., Ltd. from fragmented paper/Excel pr
 
 Both active group members (**Vo Duy Binh - Student ID: 22301500** and **Pham Nguyen Gia Thuan - Student ID: 22204631**) have contributed equally (50% / 50%) to the research, stakeholder elicitation, process analysis, BPMN modeling, and report compilation for the Phase 1 Mid-Term Assessment under the leadership of **Vo Duy Binh**.
 
-**Table B.1:** Individual Contribution Sign-off & Academic Integrity Confirmation
+**Table B.1:** Individual Contribution Sign-off, Performance Rating & Academic Integrity Confirmation
 
-| Student Name                    | Student ID         | Phase 1 Assigned Scope               | Contribution (%) | Student Signature         |
-| ------------------------------- | ------------------ | ------------------------------------ | ---------------- | ------------------------- |
-| **Vo Duy Binh**           | **22301500** | Sales & Purchasing Modules / Lead BA | 50%              | *Vo Duy Binh*           |
-| **Pham Nguyen Gia Thuan** | **22204631** | Inventory & Invoicing Modules / QA   | 50%              | *Pham Nguyen Gia Thuan* |
+| Student Name                    | Student ID         | Phase 1 Assigned Scope               | Workload Contribution (%) | Task Performance Rating (%) | Student Signature         |
+| ------------------------------- | ------------------ | ------------------------------------ | :-----------------------: | :-------------------------: | ------------------------- |
+| **Vo Duy Binh**           | **22301500** | Sales & Purchasing Modules / Lead BA | **50%**                   | **100% (Outstanding)**      | *Vo Duy Binh*           |
+| **Pham Nguyen Gia Thuan** | **22204631** | Inventory & Invoicing Modules / QA   | **50%**                   | **100% (Outstanding)**      | *Pham Nguyen Gia Thuan* |
