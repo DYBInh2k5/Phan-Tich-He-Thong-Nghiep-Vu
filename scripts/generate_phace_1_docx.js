@@ -42,6 +42,10 @@ function escapeXml(unsafe) {
 }
 
 // Convert inline formatting to Word runs
+function makeDrawingImage(rId, cx, cy, docId, name) {
+  return `<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="180" w:after="180"/></w:pPr><w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="${cx}" cy="${cy}"/><wp:effectExtent l="0" t="0" r="0" b="0"/><wp:docPr id="${docId}" name="${name}"/><wp:cNvGraphicFramePr><a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/></wp:cNvGraphicFramePr><a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:nvPicPr><pic:cNvPr id="${docId}" name="${name}"/><pic:cNvPicPr><a:picLocks noChangeAspect="1"/></pic:cNvPicPr></pic:nvPicPr><pic:blipFill><a:blip r:embed="${rId}" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${cx}" cy="${cy}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>`;
+}
+
 function parseInlineMarkdown(text) {
   if (!text) return '';
   const tokens = [];
@@ -180,6 +184,7 @@ let isBody = false;
 
 let insideTable = false;
 let currentTableLines = [];
+let insideMermaid = false;
 
 for (let i = 0; i < mdLines.length; i++) {
   const line = mdLines[i];
@@ -220,6 +225,38 @@ for (let i = 0; i < mdLines.length; i++) {
 
   // Horizontal rules
   if (trimmed === '---') {
+    continue;
+  }
+
+  // Skip HTML details/summary tags
+  if (trimmed.startsWith('<details') || trimmed.startsWith('</details') || trimmed.startsWith('<summary') || trimmed.startsWith('</summary')) {
+    continue;
+  }
+
+  // Handle Mermaid blocks (skip raw code in word doc since we embed the high-res PNG image instead)
+  if (trimmed.startsWith('```mermaid')) {
+    insideMermaid = true;
+    continue;
+  }
+  if (insideMermaid) {
+    if (trimmed === '```') {
+      insideMermaid = false;
+    }
+    continue;
+  }
+  if (trimmed === '```') {
+    continue;
+  }
+
+  // Handle images
+  if (trimmed.includes('figure_3_2_as_is_swimlane.png')) {
+    const imgXml = makeDrawingImage('rIdFig32', 5760000, 2321632, 201, 'Figure 3.2 AS-IS Swimlane');
+    if (isBody) bodyXml += imgXml; else frontMatterXml += imgXml;
+    continue;
+  }
+  if (trimmed.includes('figure_3_3_to_be_swimlane.png')) {
+    const imgXml = makeDrawingImage('rIdFig33', 5760000, 2380408, 202, 'Figure 3.3 TO-BE Swimlane');
+    if (isBody) bodyXml += imgXml; else frontMatterXml += imgXml;
     continue;
   }
 

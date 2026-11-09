@@ -498,6 +498,13 @@ In the current operational state at OfficePro Distribution Co., Ltd., order proc
 > 3. *Is Credit Status Approved?* (Informal check, frequently overridden verbally).
 > In the AS-IS state, these decisions are executed informally without systematic data validation.
 
+![Figure 3.2: AS-IS Cross-Functional Swimlane BPMN Diagram — Current Order Fulfillment (Slide 12 Snapshot)](./assets/figure_3_2_as_is_swimlane.png)
+
+*Figure 3.2: AS-IS Cross-Functional Swimlane BPMN Diagram — Current Order Fulfillment (Aligned 1:1 with Slide 12)*
+
+<details>
+<summary><b>Click to view BPMN 2.0 Mermaid Code (Figure 3.2)</b></summary>
+
 ```mermaid
 flowchart LR
     subgraph CUSTOMER["CUSTOMER"]
@@ -542,7 +549,7 @@ flowchart LR
     class A1_path invisible;
 ```
 
-*Figure 3.2: AS-IS Cross-Functional Swimlane BPMN Diagram — Current Order Fulfillment (Aligned 1:1 with Slide 12)*
+</details>
 
 * **Interpretation of AS-IS Model (Week 7 Rubric):** Figure 3.2 illustrates the current fragmented workflow across four functional swimlanes (Customer, Sales, Warehouse, and Finance & Accounting), matching Slide 12 of the defense deck. The process contains one Start Event, three Decision Gateways, and four distinct End Events. Red and amber highlighted nodes represent acute operational friction points where information disconnects cause pricing discrepancies (`P-01`), post-confirmation cancellations (`P-02`), credit risk exposure, and excessive manual labor (`P-03`).
 
@@ -630,6 +637,13 @@ The proposed TO-BE business process eliminates manual paper silos by integrating
 | Accounting manually cross-checks paper slips; 15–20h/wk overhead.      | Automated 3-way matching between digital SO, e-POD delivery confirmation, and draft invoice auto-generates electronic VAT invoices.             |  **P-03**  |
 | Replenishment triggered reactively only after warehouse runs out.       | Automated reorder point rules generate draft Purchase Requisitions when fast-moving paper stock falls below safety stock threshold.             |  **P-02**  |
 
+![Figure 3.3: TO-BE Cross-Functional Swimlane BPMN Diagram — Automated Order Fulfillment (Slide 16 Snapshot)](./assets/figure_3_3_to_be_swimlane.png)
+
+*Figure 3.3: TO-BE Cross-Functional Swimlane BPMN Diagram — Automated Order Fulfillment (Aligned 1:1 with Slide 16)*
+
+<details>
+<summary><b>Click to view BPMN 2.0 Mermaid Code (Figure 3.3)</b></summary>
+
 ```mermaid
 flowchart LR
     subgraph CUSTOMER["CUSTOMER"]
@@ -684,7 +698,7 @@ flowchart LR
     class T_END4 greenEnd;
 ```
 
-*Figure 3.3: TO-BE Cross-Functional Swimlane BPMN Diagram — Automated Order Fulfillment (Aligned 1:1 with Slide 16)*
+</details>
 
 * **Interpretation of TO-BE Model (Week 7 Rubric):** Figure 3.3 establishes the integrated future-state process model across five functional swimlanes (Customer, Central System ERP, Sales, Warehouse, and Finance & Accounting), exactly matching Slide 16 of the presentation deck. The introduction of the **Central System** lane automates routine data validation, real-time stock reservation, credit gating, and 3-way reconciliation. The model preserves the same business scope as the AS-IS model while providing clear handling for all four BPMN 2.0 alternative and exceptional outcomes: quote declined (**End 1**), backorder replenishment (**End 2**), credit hold (**End 3**), and fulfilled & reconciled (**End 4**).
 
