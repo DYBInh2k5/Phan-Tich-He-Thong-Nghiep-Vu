@@ -1,0 +1,167 @@
+<svg viewBox="0 0 980 405" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Inter', sans-serif; display: block; margin: auto;">
+  <defs>
+    <marker id="t-arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+    <marker id="t-arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+    <marker id="t-arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#e11d48" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="980" height="26" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="12" y="18" font-family="'Outfit', sans-serif" font-weight="800" font-size="12" fill="#166534">TO-BE SWIMLANE | AUTOMATED CORPORATE WHOLESALE ORDERS</text>
+  <text x="730" y="17" font-size="10.5" fill="#15803d" font-weight="600">Figure 3.2 — Re-Engineered Future State</text>
+
+  <!-- Lane 1: CUSTOMER -->
+  <rect x="0" y="26" width="130" height="70" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="65" y="66" text-anchor="middle" font-weight="700" font-size="11" fill="#334155">CUSTOMER</text>
+  <rect x="130" y="26" width="850" height="70" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Lane 2: CENTRAL SYSTEM (ERP ENGINE) -->
+  <rect x="0" y="96" width="130" height="85" fill="#eff6ff" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="65" y="134" text-anchor="middle" font-weight="800" font-size="10.5" fill="#1d4ed8">CENTRAL SYSTEM</text>
+  <text x="65" y="148" text-anchor="middle" font-weight="700" font-size="9.5" fill="#3b82f6">(ERP ENGINE)</text>
+  <rect x="130" y="96" width="850" height="85" fill="#f8fafc" stroke="#60a5fa" stroke-width="1.5"/>
+
+  <!-- Lane 3: SALES -->
+  <rect x="0" y="181" width="130" height="70" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="65" y="216" text-anchor="middle" font-weight="700" font-size="10.5" fill="#334155">SALES</text>
+  <text x="65" y="229" text-anchor="middle" font-weight="700" font-size="9.5" fill="#64748b">REPRESENTATIVE</text>
+  <rect x="130" y="181" width="850" height="70" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Lane 4: WAREHOUSE -->
+  <rect x="0" y="251" width="130" height="70" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="65" y="286" text-anchor="middle" font-weight="700" font-size="10.5" fill="#334155">WAREHOUSE</text>
+  <text x="65" y="299" text-anchor="middle" font-weight="700" font-size="9.5" fill="#64748b">OPERATIONS</text>
+  <rect x="130" y="251" width="850" height="70" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Lane 5: ACCOUNTING -->
+  <rect x="0" y="321" width="130" height="70" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="65" y="356" text-anchor="middle" font-weight="700" font-size="10.5" fill="#334155">ACCOUNTING &</text>
+  <text x="65" y="369" text-anchor="middle" font-weight="700" font-size="9.5" fill="#64748b">FINANCE</text>
+  <rect x="130" y="321" width="850" height="70" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- START EVENT -->
+  <circle cx="160" cy="61" r="15" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <text x="160" y="65" text-anchor="middle" font-weight="800" font-size="11" fill="#0f172a">START</text>
+  <line x1="175" y1="61" x2="198" y2="61" stroke="#475569" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- Submit RFQ -->
+  <rect x="200" y="43" width="95" height="36" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="247" y="58" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Submit RFQ</text>
+  <text x="247" y="70" text-anchor="middle" font-size="11" fill="#475569">(Digital Portal/Email)</text>
+  <path d="M 247 79 L 247 110" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- Auto Contract Price -->
+  <rect x="195" y="112" width="105" height="40" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="247" y="127" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e40af">Auto Contract Price</text>
+  <text x="247" y="140" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2563eb">FR-01 (ST-001 @ 65k)</text>
+  <line x1="300" y1="132" x2="318" y2="132" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- ATP Multi-Hub Check -->
+  <rect x="320" y="112" width="100" height="40" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="370" y="127" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e40af">Query Multi-Hub</text>
+  <text x="370" y="140" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2563eb">ATP Stock FR-02</text>
+  <line x1="420" y1="132" x2="438" y2="132" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- GATEWAY 1: ATP > 0? -->
+  <polygon points="455,116 472,132 455,148 438,132" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="455" y="110" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">ATP > 0?</text>
+
+  <!-- GW 1 -> NO -> Auto PR & Backorder -->
+  <path d="M 455 148 L 455 166 L 498 166" fill="none" stroke="#d97706" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+  <text x="460" y="161" font-size="10.5" font-weight="800" fill="#d97706">NO</text>
+  <rect x="500" y="152" width="80" height="26" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+  <text x="540" y="166" text-anchor="middle" font-size="10.5" font-weight="700" fill="#92400e">Auto PR FR-04</text>
+  <line x1="580" y1="165" x2="592" y2="165" stroke="#d97706" stroke-width="1.2" marker-end="url(#t-arrow)"/>
+  <circle cx="606" cy="165" r="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <circle cx="606" cy="165" r="11" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="606" y="168" text-anchor="middle" font-size="11" font-weight="800" fill="#92400e">BACKORDER</text>
+
+  <!-- GW 1 -> YES -> Generate Quote & Send to Customer -->
+  <path d="M 472 132 L 515 132 L 515 61 L 538 61" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#t-arrow-green)"/>
+  <text x="478" y="127" font-size="11" font-weight="800" fill="#059669">YES</text>
+
+  <!-- Review Quote (Customer) -->
+  <rect x="540" y="43" width="85" height="36" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="582" y="58" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Review Quote</text>
+  <text x="582" y="70" text-anchor="middle" font-size="11" fill="#475569">& Lock Rate</text>
+  <line x1="625" y1="61" x2="648" y2="61" stroke="#475569" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- GATEWAY 2: Accepts Quote? -->
+  <polygon points="665,45 682,61 665,77 648,61" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="665" y="40" text-anchor="middle" font-size="11.5" font-weight="700" fill="#92400e">Accepts?</text>
+
+  <!-- GW 2 -> NO -> Quote Declined -->
+  <line x1="682" y1="61" x2="710" y2="61" stroke="#e11d48" stroke-width="1.5" marker-end="url(#t-arrow-red)"/>
+  <text x="688" y="56" font-size="11" font-weight="800" fill="#e11d48">NO</text>
+  <circle cx="726" cy="61" r="15" fill="#ffe4e6" stroke="#e11d48" stroke-width="2"/>
+  <circle cx="726" cy="61" r="12" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+  <text x="726" y="60" text-anchor="middle" font-size="11" font-weight="800" fill="#9f1239">QUOTE</text>
+  <text x="726" y="68" text-anchor="middle" font-size="6" font-weight="800" fill="#e11d48">DECLINED</text>
+
+  <!-- GW 2 -> YES -> Gateway 3: Debt Check in Central System -->
+  <path d="M 665 77 L 665 108" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#t-arrow-green)"/>
+  <text x="670" y="94" font-size="11" font-weight="800" fill="#059669">YES</text>
+
+  <!-- GATEWAY 3: Debt Check -->
+  <polygon points="665,113 683,129 665,145 647,129" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+  <text x="665" y="108" text-anchor="middle" font-size="11" font-weight="700" fill="#991b1b">Debt > 30d?</text>
+
+  <!-- GW 3 -> YES -> Hard Credit Hold -->
+  <line x1="683" y1="129" x2="718" y2="129" stroke="#dc2626" stroke-width="1.5" marker-end="url(#t-arrow-red)"/>
+  <text x="692" y="123" font-size="10.5" font-weight="800" fill="#dc2626">YES</text>
+  <circle cx="735" cy="129" r="15" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="735" cy="129" r="12" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+  <text x="735" y="128" text-anchor="middle" font-size="11" font-weight="800" fill="#991b1b">CREDIT</text>
+  <text x="735" y="136" text-anchor="middle" font-size="6" font-weight="800" fill="#dc2626">LOCKED</text>
+
+  <!-- GW 3 -> NO -> Auto Confirm & Reserve Stock -->
+  <path d="M 665 145 L 665 188 L 690 188" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#t-arrow-green)"/>
+  <text x="640" y="158" font-size="11" font-weight="800" fill="#059669">NO</text>
+
+  <!-- Confirm SO (Sales) -->
+  <rect x="692" y="184" width="100" height="34" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <text x="742" y="197" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065f46">Auto-Reserve ATP</text>
+  <text x="742" y="208" text-anchor="middle" font-size="10.5" font-weight="600" fill="#059669">& Release SO</text>
+  <path d="M 742 218 L 742 266" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- Bin-Guided Picking (Warehouse) -->
+  <rect x="695" y="268" width="95" height="36" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="742" y="282" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">Bin-Guided Picking</text>
+  <text x="742" y="294" text-anchor="middle" font-size="10.5" font-weight="600" fill="#2563eb">FR-07 (Aisle/Rack)</text>
+  <line x1="790" y1="286" x2="808" y2="286" stroke="#475569" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- Scan & Dispatch (Warehouse) -->
+  <rect x="810" y="268" width="85" height="36" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="852" y="282" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0f172a">Scan Barcodes</text>
+  <text x="852" y="294" text-anchor="middle" font-size="10.5" fill="#475569">& Dispatch</text>
+  <path d="M 852 268 L 852 80" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- Sign e-POD (Customer) -->
+  <rect x="805" y="43" width="95" height="36" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <text x="852" y="57" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065f46">Receive Goods</text>
+  <text x="852" y="69" text-anchor="middle" font-size="10.5" font-weight="600" fill="#059669">& Sign e-POD</text>
+  <path d="M 852 79 L 852 116" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t-arrow)"/>
+
+  <!-- Automated 3-Way Match (Central System) -->
+  <rect x="800" y="118" width="105" height="38" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="852" y="132" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e40af">Automated 3-Way</text>
+  <text x="852" y="144" text-anchor="middle" font-size="10.5" font-weight="700" fill="#2563eb">Match FR-05 (0% err)</text>
+  <path d="M 852 156 L 852 336" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#t-arrow-green)"/>
+
+  <!-- Auto VAT E-Invoice (Accounting) -->
+  <rect x="805" y="338" width="95" height="36" rx="5" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <text x="852" y="352" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065f46">Auto VAT E-Invoice</text>
+  <text x="852" y="364" text-anchor="middle" font-size="10.5" fill="#059669">(Direct Sync)</text>
+  <line x1="900" y1="356" x2="928" y2="356" stroke="#059669" stroke-width="1.5" marker-end="url(#t-arrow-green)"/>
+
+  <!-- End 4: Fulfilled & Reconciled -->
+  <circle cx="948" cy="356" r="16" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <circle cx="948" cy="356" r="12" fill="#d1fae5" stroke="#059669" stroke-width="1"/>
+  <text x="948" y="354" text-anchor="middle" font-size="11" font-weight="800" fill="#065f46">FULFILLED &</text>
+  <text x="948" y="364" text-anchor="middle" font-size="6" font-weight="800" fill="#059669">RECONCILED</text>
+</svg>

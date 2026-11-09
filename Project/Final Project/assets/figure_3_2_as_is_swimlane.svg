@@ -1,0 +1,151 @@
+<svg viewBox="0 0 980 395" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Inter', sans-serif; display: block; margin: auto;">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#e11d48" />
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="980" height="26" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="12" y="18" font-family="'Outfit', sans-serif" font-weight="800" font-size="12" fill="#0f172a">AS-IS SWIMLANE | PROCESSING CORPORATE WHOLESALE ORDERS</text>
+  <text x="730" y="17" font-size="10.5" fill="#64748b" font-weight="600">Figure 3.1 — Current Operational State</text>
+
+  <!-- Lane 1: CUSTOMER -->
+  <rect x="0" y="26" width="125" height="90" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="62" y="76" text-anchor="middle" font-weight="700" font-size="11" fill="#334155">CUSTOMER</text>
+  <rect x="125" y="26" width="855" height="90" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Lane 2: SALES -->
+  <rect x="0" y="116" width="125" height="90" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="62" y="160" text-anchor="middle" font-weight="700" font-size="10.5" fill="#334155">SALES</text>
+  <text x="62" y="174" text-anchor="middle" font-weight="700" font-size="10" fill="#64748b">REPRESENTATIVE</text>
+  <rect x="125" y="116" width="855" height="90" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Lane 3: WAREHOUSE -->
+  <rect x="0" y="206" width="125" height="90" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="62" y="250" text-anchor="middle" font-weight="700" font-size="10.5" fill="#334155">WAREHOUSE</text>
+  <text x="62" y="264" text-anchor="middle" font-weight="700" font-size="10" fill="#64748b">OPERATIONS</text>
+  <rect x="125" y="206" width="855" height="90" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- Lane 4: ACCOUNTING -->
+  <rect x="0" y="296" width="125" height="90" fill="#f8fafc" stroke="#94a3b8" stroke-width="1"/>
+  <text x="62" y="340" text-anchor="middle" font-weight="700" font-size="10.5" fill="#334155">ACCOUNTING &</text>
+  <text x="62" y="354" text-anchor="middle" font-weight="700" font-size="10" fill="#64748b">FINANCE</text>
+  <rect x="125" y="296" width="855" height="90" fill="#ffffff" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- START EVENT -->
+  <circle cx="155" cy="71" r="16" fill="#e2e8f0" stroke="#475569" stroke-width="2"/>
+  <text x="155" y="75" text-anchor="middle" font-weight="800" font-size="8.5" fill="#0f172a">START</text>
+  <line x1="171" y1="71" x2="193" y2="71" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Submit RFQ -->
+  <rect x="195" y="51" width="95" height="40" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="242" y="68" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Submit RFQ /</text>
+  <text x="242" y="81" text-anchor="middle" font-size="9" fill="#475569">Inquiry (Email)</text>
+  <path d="M 242 91 L 242 138" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Search Excel (Sales) -->
+  <rect x="190" y="140" width="105" height="42" rx="5" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.8"/>
+  <text x="242" y="156" text-anchor="middle" font-size="9.5" font-weight="700" fill="#9f1239">Search Personal</text>
+  <text x="242" y="169" text-anchor="middle" font-size="9" font-weight="600" fill="#e11d48">Excel Pricelist ⚡</text>
+  <path d="M 242 182 L 242 228" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Check Stock (Warehouse) -->
+  <rect x="195" y="230" width="95" height="40" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="242" y="247" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Check Physical</text>
+  <text x="242" y="260" text-anchor="middle" font-size="9" fill="#475569">Stock in Bins</text>
+  <line x1="290" y1="250" x2="328" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- GATEWAY 1: Stock Available? (Diamond) -->
+  <polygon points="350,232 370,250 350,268 330,250" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="350" y="224" text-anchor="middle" font-size="9" font-weight="700" fill="#92400e">Stock in Bins?</text>
+
+  <!-- GW 1 -> NO -> Order Cancelled (Right) -->
+  <line x1="370" y1="250" x2="408" y2="250" stroke="#e11d48" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <text x="385" y="244" font-size="8.5" font-weight="800" fill="#e11d48">NO</text>
+  <circle cx="430" cy="250" r="18" fill="#ffe4e6" stroke="#e11d48" stroke-width="2.5"/>
+  <circle cx="430" cy="250" r="14" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+  <text x="430" y="248" text-anchor="middle" font-size="7.5" font-weight="800" fill="#9f1239">ORDER</text>
+  <text x="430" y="258" text-anchor="middle" font-size="7" font-weight="800" fill="#e11d48">CANCELLED</text>
+
+  <!-- GW 1 -> YES -> Prepare Quote (Up to Sales) -->
+  <path d="M 350 232 L 350 161 L 413 161" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="355" y="198" font-size="8.5" font-weight="800" fill="#059669">YES</text>
+
+  <!-- Prepare Quote (Sales) -->
+  <rect x="415" y="140" width="95" height="42" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="462" y="157" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Prepare Word</text>
+  <text x="462" y="170" text-anchor="middle" font-size="9" fill="#475569">Quote & Email</text>
+  <path d="M 462 140 L 462 71 L 528 71" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Review Quote (Customer) -->
+  <rect x="530" y="51" width="90" height="40" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="575" y="68" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Review Quote</text>
+  <text x="575" y="81" text-anchor="middle" font-size="9" fill="#475569">& Pricing</text>
+  <line x1="620" y1="71" x2="648" y2="71" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- GATEWAY 2: Accepts Quote? -->
+  <polygon points="665,53 683,71 665,89 647,71" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="665" y="46" text-anchor="middle" font-size="9" font-weight="700" fill="#92400e">Accepts?</text>
+
+  <!-- GW 2 -> NO -> Quote Declined -->
+  <line x1="683" y1="71" x2="718" y2="71" stroke="#e11d48" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <text x="696" y="65" font-size="8.5" font-weight="800" fill="#e11d48">NO</text>
+  <circle cx="740" cy="71" r="18" fill="#ffe4e6" stroke="#e11d48" stroke-width="2.5"/>
+  <circle cx="740" cy="71" r="14" fill="#ffe4e6" stroke="#e11d48" stroke-width="1"/>
+  <text x="740" y="69" text-anchor="middle" font-size="7.5" font-weight="800" fill="#9f1239">QUOTE</text>
+  <text x="740" y="79" text-anchor="middle" font-size="7" font-weight="800" fill="#e11d48">DECLINED</text>
+
+  <!-- GW 2 -> YES -> Debt Check (Down to Sales) -->
+  <path d="M 665 89 L 665 138" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="670" y="114" font-size="8.5" font-weight="800" fill="#059669">YES</text>
+
+  <!-- GATEWAY 3: Debt Check (Sales) -->
+  <polygon points="665,143 685,161 665,179 645,161" fill="#fee2e2" stroke="#dc2626" stroke-width="1.8"/>
+  <text x="665" y="136" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">Debt > 30d?</text>
+
+  <!-- GW 3 -> YES -> Confirm SO (Verbal bypass) -->
+  <line x1="685" y1="161" x2="718" y2="161" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <text x="694" y="154" font-size="8" font-weight="800" fill="#dc2626">YES*</text>
+
+  <!-- Confirm SO (Sales) -->
+  <rect x="720" y="140" width="105" height="42" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="772" y="157" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Print Paper SO</text>
+  <text x="772" y="170" text-anchor="middle" font-size="8.5" fill="#e11d48">(*Verbal Bypass)</text>
+  <path d="M 772 182 L 772 228" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Pick Items (Warehouse) -->
+  <rect x="720" y="230" width="105" height="42" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="772" y="247" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Pick by Memory &</text>
+  <text x="772" y="260" text-anchor="middle" font-size="9" fill="#475569">Write Paper Slip</text>
+
+  <!-- Dispatch & Customer Signs Receipt -->
+  <path d="M 825 251 L 870 251 L 870 93" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="825" y="54" width="95" height="38" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.2"/>
+  <text x="872" y="69" text-anchor="middle" font-size="9" font-weight="700" fill="#0f172a">Receive Goods &</text>
+  <text x="872" y="81" text-anchor="middle" font-size="8.5" fill="#475569">Sign Carbon Slip</text>
+
+  <!-- Accounting: Manual 3-Way Match -->
+  <path d="M 872 92 L 872 316 L 798 316" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="680" y="320" width="118" height="42" rx="5" fill="#ffe4e6" stroke="#e11d48" stroke-width="1.8"/>
+  <text x="739" y="337" text-anchor="middle" font-size="9" font-weight="700" fill="#9f1239">Manual 3-Way Match</text>
+  <text x="739" y="350" text-anchor="middle" font-size="8.5" font-weight="600" fill="#e11d48">15–20h/Wk Friction ⚡</text>
+  <line x1="798" y1="341" x2="828" y2="341" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Type VAT Invoice -->
+  <rect x="830" y="320" width="85" height="42" rx="5" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="872" y="337" text-anchor="middle" font-size="9.5" font-weight="700" fill="#0f172a">Type VAT</text>
+  <text x="872" y="350" text-anchor="middle" font-size="9" fill="#475569">Invoice</text>
+  <line x1="915" y1="341" x2="938" y2="341" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- End 4: Order Fulfilled -->
+  <circle cx="956" cy="341" r="16" fill="#d1fae5" stroke="#059669" stroke-width="2.5"/>
+  <circle cx="956" cy="341" r="12" fill="#d1fae5" stroke="#059669" stroke-width="1"/>
+  <text x="956" y="339" text-anchor="middle" font-size="6.5" font-weight="800" fill="#065f46">ORDER</text>
+  <text x="956" y="348" text-anchor="middle" font-size="6" font-weight="800" fill="#059669">FULFILLED</text>
+</svg>

@@ -23,3 +23,4 @@ content = content.replace(
 
 fs.writeFileSync('index.html', content, 'utf8');
 console.log('Successfully generated index.html at root! Length:', content.length);
+
