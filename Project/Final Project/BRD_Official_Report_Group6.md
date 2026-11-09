@@ -500,45 +500,46 @@ In the current operational state at OfficePro Distribution Co., Ltd., order proc
 
 ```mermaid
 flowchart LR
-    subgraph CUSTOMER["Swimlane 1: B2B Corporate Customer"]
-        C_START((Start: RFQ Submission)) --> C1["1.1 Submit RFQ via Email / Zalo"]
-        C2["1.2 Review Quotation & Terms"]
-        C_END1((End 1: Quote Declined))
-        C3["1.3 Receive Goods & Sign Carbon Delivery Slip"]
+    subgraph CUSTOMER["CUSTOMER"]
+        C_START((START)) --> C1["Submit RFQ /<br/>Inquiry (Email)"]
+        C2["Review Quote<br/>& Pricing"]
+        C_END1(["QUOTE<br/>DECLINED"])
+        C3["Receive Goods &<br/>Sign Carbon Slip"]
     end
 
-    subgraph SALES["Swimlane 2: B2B Sales Representative"]
-        C1 --> S1["2.1 Search Personal Excel Pricelist<br/><b>[P-01: Excel Rates 5-8% Err]</b>"]
-        S1 --> S2["2.2 Call Warehouse to Inquire Stock (Phone)"]
-        S3["2.3 Prepare Quotation in Word/Excel"] --> C2
-        C2 -->|Quote Declined| C_END1
-        C2 -->|Quote Accepted| S4{"Overdue Debt > 30 Days?<br/>(Informal Verbal Check)"}
-        S4 -->|Yes: Verbal Override| S5["2.4 Confirm SO & Commit Delivery"]
-        S4 -->|No: Standard Credit| S5
+    subgraph SALES["SALES REPRESENTATIVE"]
+        C1 --> S1["Search Personal<br/>Excel Pricelist ⚡"]
+        S1 --> S2["Check Physical<br/>Stock in Bins"]
+        S2 --> W1{"Stock in Bins?"}
+        W1 -->|YES| S3["Prepare Word<br/>Quote & Email"]
+        W1 -->|NO| W_END2(["ORDER<br/>CANCELLED"])
+        S3 --> C2
+        C2 -->|NO| C_END1
+        C2 -->|YES| S4{"Debt > 30d?"}
+        S4 -->|YES*| S5["Print Paper SO<br/>(*Verbal Bypass)"]
+        S4 -->|NO| S5
     end
 
-    subgraph WAREHOUSE["Swimlane 3: Warehouse Operations (Tan Binh Hub)"]
-        S2 --> W1{"Stock Available in Bins?<br/>(Visual Check)"}
-        W1 -->|No| W_END2((End 2: Cancelled - Out of Stock))
-        W1 -->|Yes: Verbal Confirm| S3
-        S5 --> W2["3.1 Pick Items from Aisles Memory"]
-        W2 --> W3{"Stock Actually in Bins?<br/><b>[P-02: 3-4 Stockouts/Wk]</b>"}
-        W3 -->|No: Post-SO Stockout| W_END3((End 3: Stockout Post-SO))
-        W3 -->|Yes: Physical Count OK| W4["3.2 Handwrite Carbon Delivery Slip"]
-        W4 --> C3
+    subgraph WAREHOUSE["WAREHOUSE OPERATIONS"]
+        S5 --> W2["Pick by Memory &<br/>Write Paper Slip"]
+        W2 --> C3
+        C3 --> A1_path[" "]
     end
 
-    subgraph ACCOUNTING["Swimlane 4: Finance & Accounting Department"]
-        C3 --> A1["4.1 Collect Physical Carbon Delivery Notes"]
-        A1 --> A2["4.2 Manual Line-by-Line 3-Way Match<br/><b>[P-03: 15-20h Matching/Wk]</b>"]
-        A2 --> A3["4.3 Manually Retype VAT Invoice into Standalone App"]
-        A3 --> A_END4((End 4: Fulfilled - Delayed & High Overhead))
+    subgraph ACCOUNTING["ACCOUNTING & FINANCE"]
+        A1_path --> A2["Manual 3-Way Match<br/>15–20h/Wk Friction ⚡"]
+        A2 --> A3["Type VAT<br/>Invoice"]
+        A3 --> A_END4(["ORDER<br/>FULFILLED"])
     end
 
     classDef redNode fill:#FFE4E6,stroke:#E11D48,stroke-width:2px;
     classDef amberNode fill:#FEF3C7,stroke:#D97706,stroke-width:2px;
-    class S1,W3,A2 redNode;
+    classDef endGreen fill:#D1FAE5,stroke:#059669,stroke-width:2px;
+    classDef invisible fill:none,stroke:none;
+    class S1,A2 redNode;
     class S4,W1 amberNode;
+    class A_END4 endGreen;
+    class A1_path invisible;
 ```
 
 *Figure 3.2: AS-IS Cross-Functional Swimlane BPMN Diagram — Current Order Fulfillment (Aligned 1:1 with Slide 12)*
@@ -547,23 +548,20 @@ flowchart LR
 
 **Table 3.4.1:** AS-IS BPMN Swimlane Step-by-Step Specification (Aligned 1:1 with Figure 3.2 & Slide 12)
 
-| Step ID | Swimlane / Department | Actor | Action Description | Primary Artifact / Input | Transferred Output | Failure Mode / Operational Friction |
+| Step Label | Swimlane / Department | Actor | Action Description | Primary Artifact / Input | Transferred Output | Failure Mode / Operational Friction |
 | :---: | :--- | :--- | :--- | :--- | :--- | :--- |
-| **1.1** | **Customer** | Corporate Buyer | Submits inquiry/RFQ with list of requested SKUs via Email, Zalo, or phone. | Unstructured RFQ email / message | Draft quote request | Unstructured request formats; missing SKU details or delivery date requirements. |
-| **2.1** | **Sales** | B2B Sales Rep | Searches personal Excel sheet stored on local laptop to look up client-specific framework unit rates. | Local personal Excel pricelist | Draft line prices | **[P-01]** Decentralized pricelists; 5–8% billing error rate costing ~50M VND monthly in adjustments. |
-| **2.2** | **Sales** | B2B Sales Rep | Telephones Tan Binh warehouse clerk to verbally inquire about pallet stock availability. | Phone call inquiry | Verbal confirmation | Informal verbal check; no inventory reservation; static morning sheets miss dock changes. |
-| **GW-1** | **Warehouse** | Warehouse Keeper | Conducts visual scan of pallet racks in Tan Binh warehouse to verify physical stock. | Visual inspection | Verbal Yes / No | Stock may look present but be already promised to another sales rep (double-booking). |
-| **2.3** | **Sales** | B2B Sales Rep | Types formal quotation in Word/Excel template and emails PDF to client procurement officer. | Quotation template + verbal confirm | Formal quotation PDF | Time lag of 4–8 hours to issue quote; customer accepts or declines. |
-| **GW-2** | **Customer** | Corporate Buyer | Evaluates quoted unit prices, delivery timeline, and commercial payment terms. | Received quotation document | Decision (Accept / Decline) | If pricing is incorrect or terms too slow, client declines (**End 1: Quote Declined**). |
-| **GW-3** | **Sales** | B2B Sales Rep | Informally checks customer commercial debt status; frequently requests verbal management override if overdue > 30 days. | Paper AR list / verbal check | Verbal override approval | **[P-03]** Credit policy exists on paper but is routinely bypassed verbally to hit monthly sales quotas. |
-| **2.4** | **Sales** | B2B Sales Rep | Signs formal Sales Order (SO) and commits delivery schedule to customer. | Confirmed order commitment | Signed Sales Order (paper/PDF) | Sales commitment made without reserving physical inventory in warehouse. |
-| **3.1** | **Warehouse** | Warehouse Picker | Walks warehouse aisles relying on personal memory to locate and pick pallet items. | Printed paper SO copy | Picked goods pallet | No bin location routing; inefficient travel paths; slow picking throughput. |
-| **GW-4** | **Warehouse** | Warehouse Keeper | Verifies whether picked goods match required quantity; discovers stockouts post-confirmation. | Physical count at dock | Decision (Stock present / Post-SO Stockout) | **[P-02]** Inbound receipts take 24–48h to log; stockouts occur post-SO confirmation (**End 3: Stockout Post-SO**; 3–4 times/week). |
-| **3.2** | **Warehouse** | Warehouse Keeper | Manually handwrites 3-ply carbon delivery slip and dispatches delivery truck. | Handwritten carbon Delivery Note (DN) | Dispatched truck + Carbon DN | Illegible handwriting; transcription errors on quantities and SKU codes. |
-| **1.3** | **Customer** | Receiving Clerk | Inspects physical goods at customer receiving bay and signs carbon delivery slip. | Physical shipment + Paper DN | Signed Delivery Slip (Hard copy) | Transit delays; delivery slip physical copy takes 1–3 days to return to headquarters. |
-| **4.1** | **Accounting** | AR Accountant | Collects physical carbon delivery notes returned from truck drivers at end of week. | Batched paper delivery notes | Unmatched delivery paperwork | Physical document backlog; lost delivery slips delay billing cycle. |
-| **4.2** | **Accounting** | AR Accountant | Manually performs line-by-line 3-way matching between Paper SO, Delivery Note, and Billing draft. | Paper SO + Paper DN + Price list | Manual cross-check result | **[P-03]** 15–20 hours weekly spent on manual line-by-line reconciliation; pricing discrepancies discovered late. |
-| **4.3** | **Accounting** | Billing Officer | Manually types verified line items into standalone electronic invoice portal to issue VAT invoice. | Matching verification result | Electronic VAT Invoice (E-Invoice) | Redundant manual data re-entry; billing delayed by 5–7 days post-delivery (**End 4: Delayed Fulfillment**). |
+| **Submit RFQ / Inquiry (Email)** | **CUSTOMER** | Corporate Buyer | Submits inquiry/RFQ with list of requested SKUs via Email. | Unstructured RFQ email / message | Draft quote request | Unstructured request formats; missing SKU details or delivery date requirements. |
+| **Search Personal Excel Pricelist ⚡** | **SALES REPRESENTATIVE** | B2B Sales Rep | Searches personal Excel sheet stored on local laptop to look up client contract rates. | Local personal Excel pricelist | Draft line prices | **[P-01]** Decentralized pricelists; 5–8% billing error rate costing ~50M VND monthly in adjustments. |
+| **Check Physical Stock in Bins** | **SALES / WAREHOUSE** | Sales Rep & Warehouse | Sales telephones Tan Binh warehouse clerk to check physical stock in bins. | Phone call inquiry | Verbal confirmation | Informal verbal check; no inventory reservation; static morning sheets miss dock changes. |
+| **Stock in Bins? (Gateway)** | **WAREHOUSE OPERATIONS** | Warehouse Keeper | Evaluates if requested goods physically exist on pallet racks. | Visual inspection | Decision (YES / NO) | If stock unavailable: **ORDER CANCELLED**. Stock may look present but be already promised to another sales rep. |
+| **Prepare Word Quote & Email** | **SALES REPRESENTATIVE** | B2B Sales Rep | Types formal quotation in Word/Excel template and emails PDF to client procurement officer. | Quotation template + verbal confirm | Formal quotation PDF | Time lag of 4–8 hours to issue quote; customer accepts or declines. |
+| **Review Quote & Pricing** | **CUSTOMER** | Corporate Buyer | Evaluates quoted unit prices, delivery timeline, and commercial payment terms. | Received quotation document | Decision (YES / NO) | If client declines: **QUOTE DECLINED**. |
+| **Debt > 30d? (Gateway)** | **SALES REPRESENTATIVE** | B2B Sales Rep | Checks customer debt aging; if debt > 30 days, requests verbal management override. | Paper AR list / verbal check | Decision (YES* / NO) | **[P-03]** Credit policy exists on paper but is routinely bypassed verbally to hit monthly sales quotas. |
+| **Print Paper SO (*Verbal Bypass)** | **SALES REPRESENTATIVE** | B2B Sales Rep | Prints paper Sales Order (SO) with verbal bypass exception and commits delivery. | Confirmed order commitment | Printed Paper SO | Sales commitment made without reserving physical inventory in warehouse. |
+| **Pick by Memory & Write Paper Slip** | **WAREHOUSE OPERATIONS** | Warehouse Picker | Walks aisles relying on memory to pick items; handwrites 3-ply carbon delivery slip. | Printed paper SO copy | Carbon Delivery Slip + Pallet | Inefficient picking paths; **3–4 stockouts/week** post-SO; illegible carbon handwriting. |
+| **Receive Goods & Sign Carbon Slip** | **CUSTOMER** | Receiving Clerk | Inspects physical goods at receiving bay and signs hard-copy carbon delivery slip. | Physical shipment + Paper slip | Signed Carbon Slip (Hard copy) | Transit delays; delivery slip physical copy takes 1–3 days to return to headquarters. |
+| **Manual 3-Way Match ⚡** | **ACCOUNTING & FINANCE** | AR Accountant | Collects returned paper slips and manually performs line-by-line 3-way matching. | Paper SO + Carbon Slip + Price list | Manual cross-check result | **[P-03] 15–20 hours/week** manual matching overhead; high discrepancy friction. |
+| **Type VAT Invoice** | **ACCOUNTING & FINANCE** | Billing Officer | Manually types verified line items into standalone electronic invoice portal. | Matching verification result | Electronic VAT Invoice | Redundant manual data re-entry; billing delayed by 5–7 days (**ORDER FULFILLED**). |
 
 ---
 
@@ -634,50 +632,56 @@ The proposed TO-BE business process eliminates manual paper silos by integrating
 
 ```mermaid
 flowchart LR
-    subgraph CUSTOMER["Swimlane 1: B2B Corporate Customer"]
-        T_START((Start: RFQ Submission)) --> TC1["1.1 Submit Digital RFQ via Portal / Email"]
-        TC2["1.2 Review Standardized Quote"]
-        T_END1((End 1: Quote Declined))
-        TC3["1.3 Receive Shipment & Sign e-POD on Tablet"]
+    subgraph CUSTOMER["CUSTOMER"]
+        T_START((START)) --> TC1["Submit RFQ<br/>(Digital Portal/Email)"]
+        TC2["Review Quote<br/>& Lock Rate"]
+        GW2{"Accepts?"}
+        TC2 --> GW2
+        GW2 -->|NO| T_END1(["QUOTE<br/>DECLINED"])
+        TC3["Receive Goods<br/>& Sign e-POD"]
     end
 
-    subgraph SYSTEM["Swimlane 2: Central System (ERP Engine)"]
-        TC1 --> TS1["2.1 Auto-Retrieve Contract Pricelist<br/><b>FR-01 (Contract Locked)</b>"]
-        TS1 --> TS2["2.2 Real-Time Multi-Hub ATP Stock Query<br/><b>FR-02 (Tan Binh & Bien Hoa)</b>"]
-        TS2 --> TS3{"Stock Available in Network?<br/>(ATP Check)"}
-        TS3 -->|No: Stock < Order| TS4["2.3 Automated Reorder & Backorder PR<br/><b>FR-04 (Draft PR Generated)</b>"]
-        TS4 --> T_END2((End 2: Backorder Replenishment Triggered))
-        TS3 -->|Yes: ATP OK| TS5["2.4 Auto-Generate Standardized Quote Document"]
-        TS5 --> TC2
-        TC2 -->|Quote Declined| T_END1
-        TC2 -->|Quote Approved| TS6{"Hard Credit Check: Overdue > 30 Days?<br/><b>FR-03 (Automated Policy)</b>"}
-        TS6 -->|Yes: Overdue > 30 Days| TS7["2.5 Enforce System Hard Credit Lock<br/>(Block SO Confirmation)"]
-        TS7 --> T_END3((End 3: Credit Locked - Accounting Review))
-        TS6 -->|No: Credit Healthy| TS8["2.6 Auto-Confirm SO & Reserve ATP Stock<br/>(Digital SO Released)"]
-        TS8 --> TW1["3.1 Auto-Generate Digital Pick-List<br/><b>FR-07 (Bin/Rack Routing)</b>"]
-        TW3 --> TS9["4.1 Automated 3-Way Line Item Match<br/><b>FR-05 (0% Discrepancy Tolerance)</b>"]
-        TS9 --> TS10["4.2 Direct Synchronous VAT E-Invoice Sync<br/>(Tax Authority Linked)"]
-        TS10 --> T_END4((End 4: Fulfilled, Invoiced & Reconciled))
+    subgraph SYSTEM["CENTRAL SYSTEM (ERP ENGINE)"]
+        TC1 --> TS1["Auto Contract Price<br/>FR-01 (ST-001 @ 65k)"]
+        TS1 --> TS2["Query Multi-Hub<br/>ATP Stock FR-02"]
+        TS2 --> GW1{"ATP > 0?"}
+        GW1 -->|NO| TS4["Auto PR FR-04"]
+        TS4 --> T_END2(["BACKORDER"])
+        GW1 -->|YES| TC2
+        GW2 -->|YES| GW3{"Debt > 30d?"}
+        GW3 -->|YES| T_END3(["CREDIT<br/>LOCKED"])
+        TS9["Automated 3-Way<br/>Match FR-05 (0% err)"]
     end
 
-    subgraph SALES["Swimlane 3: Sales Department"]
-        TS5 -.-> S_NOTE["Sales Rep monitors quotation progress via pipeline dashboard"]
+    subgraph SALES["SALES REPRESENTATIVE"]
+        GW3 -->|NO| S1["Auto-Reserve ATP<br/>& Release SO"]
     end
 
-    subgraph WAREHOUSE["Swimlane 4: Warehouse Operations (Tan Binh / Bien Hoa)"]
-        TW1 --> TW2["3.2 Mobile Barcode Scanning & Bin Verification"]
-        TW2 --> TW3["3.3 Loading Bay Staging & Dispatch Truck"]
-        TW3 --> TC3
+    subgraph WAREHOUSE["WAREHOUSE OPERATIONS"]
+        S1 --> TW1["Bin-Guided Picking<br/>FR-07 (Aisle/Rack)"]
+        TW1 --> TW2["Scan Barcodes<br/>& Dispatch"]
+        TW2 --> TC3
     end
 
-    subgraph FINANCE["Swimlane 5: Finance & Accounting Department"]
-        TS10 -.-> F_NOTE["Accountant monitors automated AR ledger & Net 30 aging dashboard FR-08"]
+    subgraph FINANCE["ACCOUNTING & FINANCE"]
+        TC3 --> TS9
+        TS9 --> FA1["Auto VAT E-Invoice<br/>(Direct Sync)"]
+        FA1 --> T_END4(["FULFILLED &<br/>RECONCILED"])
     end
 
-    classDef greenNode fill:#D1FAE5,stroke:#059669,stroke-width:2px;
-    classDef amberNode fill:#FEF3C7,stroke:#D97706,stroke-width:2px;
-    class TS1,TS2,TS8,TS9,TS10,TW1 greenNode;
-    class TS6,TS7,TS3 amberNode;
+    classDef blueNode fill:#DBEAFE,stroke:#2563EB,stroke-width:1.5px;
+    classDef greenNode fill:#D1FAE5,stroke:#059669,stroke-width:1.5px;
+    classDef amberNode fill:#FEF3C7,stroke:#D97706,stroke-width:1.8px;
+    classDef redNode fill:#FEE2E2,stroke:#DC2626,stroke-width:1.8px;
+    classDef redEnd fill:#FFE4E6,stroke:#E11D48,stroke-width:2px;
+    classDef greenEnd fill:#D1FAE5,stroke:#059669,stroke-width:2px;
+
+    class TS1,TS2,TS9 blueNode;
+    class S1,TC3,FA1 greenNode;
+    class GW1,GW2,TS4 amberNode;
+    class GW3,T_END3 redNode;
+    class T_END1 redEnd;
+    class T_END4 greenEnd;
 ```
 
 *Figure 3.3: TO-BE Cross-Functional Swimlane BPMN Diagram — Automated Order Fulfillment (Aligned 1:1 with Slide 16)*
@@ -686,24 +690,22 @@ flowchart LR
 
 **Table 3.8.1:** TO-BE BPMN Swimlane Step-by-Step Specification (Aligned 1:1 with Figure 3.3 & Slide 16)
 
-| Step ID | Swimlane / Department | Automated Engine / Actor | Action Description | Associated FR ID | System Input | System Output | Elimination of AS-IS Bottleneck |
+| Step Label / Node | Swimlane / Department | Automated Engine / Actor | Action Description | Associated FR ID | System Input | System Output | Elimination of AS-IS Bottleneck |
 | :---: | :--- | :--- | :--- | :---: | :--- | :--- | :--- |
-| **1.1** | **Customer** | Corporate Buyer | Submits electronic purchase RFQ via customer portal or standardized email. | — | Digital RFQ document | Unstructured data parsed into system fields | Eliminates illegible handwriting and incomplete quotation requests. |
-| **2.1** | **Central System** | Automated Pricing Engine | System automatically queries and applies verified client-specific framework contract unit price upon customer ID selection. | **FR-01** | Verified Customer Account ID + SKU Codes | Locked Contract Unit Price (e.g., `ST-001` @ 65k) | **Eliminates P-01:** Completely eliminates personal Excel files and manual copy-pasting; 0% price error rate on quotes. |
-| **2.2** | **Central System** | Inventory Engine | System calculates network-wide Available-to-Promise (ATP = On Hand - Reserved - Safety Stock) across Tan Binh and Bien Hoa facilities. | **FR-02** | SKU quantities + Real-time warehouse balance | Real-time ATP quantity per warehouse location | **Eliminates P-02:** Eliminates phone calls and morning spreadsheet blindspots; real-time visibility prevents overpromising. |
-| **GW-1** | **Central System** | Inventory Gateway | Evaluates whether current unreserved ATP quantity meets or exceeds order requirements. | **FR-02** | Order quantity vs. ATP quantity | Decision: Sufficient Stock / Insufficient Stock | Prevents commitments on exhausted stock; bifurcates into immediate fulfillment vs. auto-replenishment. |
-| **2.3** | **Central System** | Replenishment Engine | Generates draft Purchase Requisition (PR) and multi-vendor RFQ comparison when inventory falls below minimum safety threshold. | **FR-04** | Depleted inventory trigger (< 100 reams for `ST-001`) | Draft Vendor Purchase Requisition | **Eliminates P-02:** Transitions procurement from reactive handwritten notes to proactive auto-replenishment before stockouts occur (**End 2**). |
-| **2.4** | **Central System** | Quotation Engine | Instantly compiles and transmits standardized electronic quotation document with locked rates and delivery dates to customer. | **FR-01** | Confirmed line items + Approved contract prices | Electronic Quotation PDF / Portal View | Reduces quote generation time from 4–8 hours down to under 5 minutes. |
-| **GW-2** | **Customer** | Corporate Buyer | Reviews quotation details and clicks electronic approval or decline. | — | Electronic quotation | Customer Decision (Approve / Decline) | Formal digital acceptance timestamped in audit log (**End 1: Quote Declined**). |
-| **GW-3** | **Central System** | Credit Gating Engine | System performs programmatic credit evaluation; checks whether customer account has outstanding receivables overdue > 30 calendar days. | **FR-03** | Customer Accounts Receivable aging record | Decision: Credit Passed / Hard Credit Hold | **Eliminates P-03:** Completely prevents verbal sales overrides; enforces 100% compliance with corporate Net 30 credit policy. |
-| **2.5** | **Central System** | Credit Engine | Applies programmatic Hard Credit Hold; halts SO transition and alerts Credit Controller if overdue debt exists. | **FR-03** | Overdue aging trigger (> 30 days) | Credit Lock Notification + Blocked Order | **Eliminates P-03:** Stops bad debt accumulation at entry point; requires formal accounting clearance (**End 3: Credit Locked**). |
-| **2.6** | **Central System** | Order Processing Engine | Confirms Sales Order (SO) and atomically allocates and locks inventory balance in ATP ledger to prevent double-booking. | **FR-02** | Approved quote + Credit clearance | Confirmed SO + Hard Inventory Reservation | Guarantees that confirmed stock cannot be intercepted by subsequent sales transactions. |
-| **3.1** | **Central System** | Warehouse Engine | Automatically generates optimized digital pick-list with aisle/rack/bin routing coordinates sent to warehouse handheld terminals. | **FR-07** | Confirmed Sales Order line items | Digital Pick-List with bin sequence | Replaces aisle memory navigation; cuts warehouse picking travel time by over 40%. |
-| **3.2** | **Warehouse** | Warehouse Picker | Scans barcode labels on pallets and bins at loading dock using mobile handheld scanner; verifies SKU accuracy. | **FR-07** | Pallet/box barcodes + Digital pick-list | Validated packing scan log | Eliminates manual shipment errors, wrong SKU dispatches, and handwritten delivery slips. |
-| **3.3** | **Warehouse** | Dispatch Controller | Stages verified bins, prints carrier manifest, dispatches delivery truck, and transmits digital delivery note to driver's tablet. | — | Validated packing log | Dispatched vehicle + Tablet e-POD | Enables real-time shipment dispatch tracking across transit corridors. |
-| **1.3** | **Customer** | Receiving Officer | Inspects delivered goods, signs digital electronic Proof of Delivery (e-POD) on driver's tablet, and receives immediate PDF receipt. | — | Physical delivery + Driver tablet | Timestamped, geo-tagged e-POD signature | Eliminates lost carbon delivery slips; captures instant legal acceptance upon delivery. |
-| **4.1** | **Central System** | Reconciliation Engine | Executes automated programmatic 3-way match comparing Sales Order lines, digital e-POD quantities, and draft invoice charges. | **FR-05** | Confirmed SO + Digital e-POD + Contract Pricelist | 3-Way Match Verification (0% error tolerance) | **Eliminates P-03:** Replaces 15–20 hours/week of manual paper matching with zero-touch automated validation in seconds. |
-| **4.2** | **Central System** | Invoicing Engine | Direct synchronous interface posts Accounts Receivable journal entry and transmits validated electronic VAT invoice to tax authority and customer email. | **FR-05, FR-08** | Validated 3-way match result | Electronic VAT Invoice + Net 30 Ledger Update | Eliminates 5–7 day billing lag; initiates Net 30 payment countdown immediately on delivery date (**End 4: Fulfilled & Reconciled**). |
+| **Submit RFQ (Digital Portal/Email)** | **CUSTOMER** | Corporate Buyer | Submits electronic purchase RFQ via customer digital portal or email. | — | Digital RFQ document | Unstructured data parsed into system fields | Eliminates illegible handwriting and incomplete quotation requests. |
+| **Auto Contract Price FR-01** | **CENTRAL SYSTEM (ERP ENGINE)** | Automated Pricing Engine | System automatically queries and applies verified framework contract price upon customer selection. | **FR-01** | Customer Account ID + SKU Codes | Locked Contract Unit Price (`ST-001` @ 65k) | **Eliminates P-01:** Completely eliminates personal Excel files; 0% price error rate on quotes. |
+| **Query Multi-Hub ATP Stock FR-02** | **CENTRAL SYSTEM (ERP ENGINE)** | Inventory Engine | System calculates network-wide Available-to-Promise across Tan Binh and Bien Hoa facilities. | **FR-02** | SKU quantities + Real-time warehouse balance | Real-time ATP quantity per warehouse location | **Eliminates P-02:** Eliminates phone calls and morning spreadsheet blindspots; real-time visibility. |
+| **ATP > 0? (Gateway)** | **CENTRAL SYSTEM (ERP ENGINE)** | Inventory Gateway | Evaluates whether current unreserved ATP quantity meets or exceeds order requirements. | **FR-02** | Order quantity vs. ATP quantity | Decision: YES / NO | Prevents commitments on exhausted stock; bifurcates into quote review vs. auto PR. |
+| **Auto PR FR-04 -> BACKORDER** | **CENTRAL SYSTEM (ERP ENGINE)** | Replenishment Engine | Generates draft Purchase Requisition when inventory is insufficient; triggers backorder. | **FR-04** | Depleted inventory trigger (< 100 reams) | Draft Vendor Purchase Requisition | **Eliminates P-02:** Transitions procurement from reactive notes to proactive auto-replenishment (**BACKORDER**). |
+| **Review Quote & Lock Rate** | **CUSTOMER** | Corporate Buyer | Reviews quotation with contract prices and locked delivery dates; decides acceptance. | **FR-01** | Confirmed line items + Approved contract prices | Customer Decision (YES / NO) | Reduces quote turnaround from 4–8 hours down to minutes. If NO: **QUOTE DECLINED**. |
+| **Debt > 30d? (Gateway)** | **CENTRAL SYSTEM (ERP ENGINE)** | Credit Gating Engine | Programmatic credit check: tests whether customer account has receivables overdue > 30 days. | **FR-03** | Customer Accounts Receivable aging record | Decision: YES / NO | **Eliminates P-03:** Programmatic enforcement; stops verbal sales overrides. |
+| **CREDIT LOCKED** | **CENTRAL SYSTEM (ERP ENGINE)** | Credit Engine | Applies programmatic Hard Credit Hold; halts SO transition and alerts Credit Controller. | **FR-03** | Overdue aging trigger (> 30 days) | Credit Lock Notification + Blocked Order | **Eliminates P-03:** Stops bad debt accumulation at entry point (**CREDIT LOCKED**). |
+| **Auto-Reserve ATP & Release SO** | **SALES REPRESENTATIVE** | Order Processing Engine | Confirms Sales Order (SO) and atomically allocates and locks inventory balance in ATP ledger. | **FR-02** | Approved quote + Credit clearance | Confirmed SO + Hard Inventory Reservation | Guarantees confirmed stock cannot be double-booked by subsequent transactions. |
+| **Bin-Guided Picking FR-07** | **WAREHOUSE OPERATIONS** | Warehouse Engine | Automatically generates optimized digital pick-list with aisle/rack/bin routing coordinates. | **FR-07** | Confirmed Sales Order line items | Digital Pick-List with bin sequence | Replaces aisle memory navigation; cuts warehouse picking travel time by over 40%. |
+| **Scan Barcodes & Dispatch** | **WAREHOUSE OPERATIONS** | Warehouse Picker | Scans barcode labels on pallets and bins at loading dock using mobile handheld scanner. | **FR-07** | Pallet/box barcodes + Digital pick-list | Validated packing scan log + Dispatched Truck | Eliminates manual shipment errors, wrong SKU dispatches, and handwritten delivery slips. |
+| **Receive Goods & Sign e-POD** | **CUSTOMER** | Receiving Officer | Inspects delivered goods, signs digital e-POD on driver's tablet, receives immediate PDF. | — | Physical delivery + Driver tablet | Timestamped, geo-tagged e-POD signature | Eliminates lost carbon delivery slips; captures instant legal acceptance upon delivery. |
+| **Automated 3-Way Match FR-05** | **CENTRAL SYSTEM (ERP ENGINE)** | Reconciliation Engine | Programmatic 3-way match comparing Sales Order lines, digital e-POD, and draft invoice charges. | **FR-05** | Confirmed SO + Digital e-POD + Contract Pricelist | 3-Way Match Verification (0% error tolerance) | **Eliminates P-03:** Replaces 15–20 hours/week of manual paper matching with zero-touch automated validation. |
+| **Auto VAT E-Invoice (Direct Sync)** | **ACCOUNTING & FINANCE** | Invoicing Engine | Direct synchronous interface posts AR journal entry and transmits validated VAT invoice to tax authority. | **FR-05, FR-08** | Validated 3-way match result | Electronic VAT Invoice + Net 30 Ledger Update | Eliminates 5–7 day billing lag (**FULFILLED & RECONCILED**). |
 
 ---
 
