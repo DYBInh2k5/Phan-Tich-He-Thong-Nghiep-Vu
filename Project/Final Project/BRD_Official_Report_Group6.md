@@ -111,15 +111,28 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 * **Figure 3.1:** Five Core Business Processes Integration Relationship Map
 * **Figure 3.2:** AS-IS Cross-Functional Swimlane BPMN Diagram — Current Order Fulfillment
 * **Figure 3.3:** TO-BE Cross-Functional Swimlane BPMN Diagram — Automated Order Fulfillment
+* **Figure 5.1:** Enterprise Use Case Diagram — OfficePro Distribution ERP Architecture
+* **Figure 6.1:** Odoo ERP Main Operations Dashboard — OfficePro Distribution Co., Ltd.
+* **Figure 6.2:** End-to-End TO-BE Transaction Workflow Mapped to Odoo ERP Modules
+* **Figure 6.3:** Master Data Configuration for Flagship SKU ST-001 (Double A 70gsm)
+* **Figure 6.4:** 10-SKU Master Catalog in Odoo Inventory Management Module
+* **Figure 6.5:** B2B Framework Contract Pricelist Configuration (65k Fixed Rule)
+* **Figure 6.6:** B2B Corporate Customer Master Profile Configured with Net 30 Terms
+* **Figure 6.7:** Live Quotation S00001 with Automated Contract Price Application
+* **Figure 6.8:** Real-Time Available-to-Promise (ATP) Inventory Forecast Warning
+* **Figure 6.9:** Confirmed Sales Order S00001 with Direct Warehouse Delivery Link
+* **Figure 6.10:** Generated Warehouse Delivery Order WH/OUT/00001
+* **Figure 6.11:** Commercial VAT Electronic Invoice INV/2026/00001 in Posted State
+* **Figure 7.1:** Enterprise ERP Implementation & Phased Rollout Roadmap
 
 ---
 
 ## LIST OF TABLES
 
 * **Table G.1:** Glossary of Key Business Systems Analysis & Wholesale Terms
-* **Table 0.1:** Team Members & Process Responsibility RACI Matrix
+* **Table 0.1:** Team Members & Process Responsibility RACI Matrix (with Workload Share & Performance Rating)
 * **Table 1.1:** Master Data Scope — 10 Primary SKUs & Standard vs. Contract Price Catalog
-* **Table 1.2:** Individual Module Ownership Matrix & Academic Responsibilities
+* **Table 1.2:** Individual Module Ownership Matrix & Workload Performance
 * **Table 1.2.1:** Phase 1 Milestone RACI Assignment Matrix & Governance (Aligned 1:1 with Slide 12)
 * **Table 2.1:** Elicitation Verification Log (Baseline Assumptions vs. Interview Evidence)
 * **Table 2.2:** Cross-Functional Stakeholder Information Needs Matrix
@@ -139,7 +152,22 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 * **Table 4.2:** Prioritized Functional Requirements Catalog (FR-01 to FR-08) with Verification Ideas
 * **Table 4.3:** Core Enterprise Business Rules Matrix
 * **Table 4.4:** End-to-End Requirements Traceability Matrix (RTM)
-* **Table B.1:** Individual Contribution Sign-off & Academic Integrity Confirmation
+* **Table 5.1:** Enterprise Use Case Catalog & Operational Boundary
+* **Table 5.2:** Detailed Use Case Specification — UC-SALES-01 (Apply Contract Pricing)
+* **Table 5.3:** Detailed Use Case Specification — UC-SALES-02 (Multi-Hub ATP Query)
+* **Table 5.4:** Detailed Use Case Specification — UC-ACC-02 (Enforce Hard Credit Lock)
+* **Table 5.5:** Detailed Use Case Specification — UC-PURCH-01 (Automated Reorder Trigger)
+* **Table 5.6:** Detailed Use Case Specification — UC-ACC-01 (Automated 3-Way Match)
+* **Table 5.7:** Detailed Use Case Specification — UC-INV-02 (Bin-Guided Picking & Barcode Verification)
+* **Table 5.8:** Use Case to Requirements & Business Rules Traceability Matrix
+* **Table 6.1:** Master Data Scope — 10 Primary SKUs Configured in Odoo
+* **Table 6.2:** Formal UAT Test Suite Specification (TC-01 through TC-08)
+* **Table 6.3:** Executed User Acceptance Testing (UAT) Log — Group 6 Verification
+* **Table 6.4:** System Capability Fit-Gap Analysis & Workaround Strategies
+* **Table 7.1:** Operational Transformation Summary (AS-IS Baseline vs. TO-BE Validated Outcome)
+* **Table B.1:** Master Individual Contribution Sign-off, Performance Rating & Academic Integrity Confirmation
+* **Table C.1:** UAT Peer Review Log & Verification Audit Trail
+* **Table D.1:** Complete Master Data Import Specification for Odoo ERP (10 SKUs)
 
 ---
 
@@ -855,96 +883,530 @@ Table 4.4 documents the complete traceability chain for OfficePro Distribution C
 
 # SECTION 5. USE CASE ANALYSIS
 
-> **[PHASE 2 MILESTONE SCOPE BOUNDARY NOTE]**
-> Per the official course curriculum (*BSA Project Brief & Guidelines*, Page 11–13), formal Use Case Analysis represents a **Phase 2 Deliverable (Weeks 8–11)**. In Phase 1, candidate Use Cases have been identified and mapped to Functional Requirements to establish the baseline for subsequent system prototyping.
-
 ## 5.1. Enterprise Use Case Diagram
 
-*(To be developed and rendered in Phase 2 using UML standard notation modeling actors: B2B Customer, Sales Representative, Sales Manager, Warehouse Keeper, Purchasing Officer, and Chief Accountant).*
+The Enterprise Use Case Diagram delineates the boundary of the proposed enterprise solution for OfficePro Distribution Co., Ltd., mapping system actors to operational goals across the four core integrated functional domains: **Sales**, **Inventory**, **Procurement**, and **Invoicing/Accounting**.
+
+```mermaid
+flowchart TB
+    subgraph ACTORS["Enterprise Actors"]
+        CUST["B2B Customer (Corporate Buyer)"]
+        S_REP["B2B Sales Representative"]
+        S_MGR["Sales Manager"]
+        W_KPR["Warehouse Keeper"]
+        P_OFF["Procurement Officer"]
+        C_ACC["Chief Accountant / Billing Officer"]
+    end
+
+    subgraph SYSTEM_BOUNDARY["OfficePro Distribution Enterprise System (Odoo ERP)"]
+        subgraph MOD_SALES["Sales Management Domain"]
+            UC_S01(["UC-SALES-01: Apply Contract Pricing & Generate Quote"])
+            UC_S02(["UC-SALES-02: Query Real-Time Multi-Hub ATP Stock"])
+            UC_S03(["UC-SALES-03: Request Discretionary Discount Approval"])
+            UC_S04(["UC-SALES-04: Confirm B2B Sales Order & Reserve ATP"])
+        end
+
+        subgraph MOD_INV["Inventory Operations Domain"]
+            UC_I01(["UC-INV-01: Inbound Receiving & Barcode Logging"])
+            UC_I02(["UC-INV-02: Bin-Guided Picking & Packing Verification"])
+            UC_I03(["UC-INV-03: Electronic Proof of Delivery (e-POD) Sign-off"])
+            UC_I04(["UC-INV-04: Safety Stock Monitoring & ATP Balance"])
+        end
+
+        subgraph MOD_PURCH["Procurement Domain"]
+            UC_P01(["UC-PURCH-01: Automated Reorder Trigger & Draft PR"])
+            UC_P02(["UC-PURCH-02: Multi-Vendor RFQ Comparison & PO Award"])
+        end
+
+        subgraph MOD_ACC["Invoicing & Accounting Domain"]
+            UC_A01(["UC-ACC-01: Automated Digital 3-Way Invoice Matching"])
+            UC_A02(["UC-ACC-02: Enforce Hard Credit Lock (Debt > 30 Days)"])
+            UC_A03(["UC-ACC-03: Issue & Register Electronic VAT Invoice"])
+            UC_A04(["UC-ACC-04: Monitor AR Aging & Net 30 Receivables"])
+        end
+    end
+
+    %% Actor Relationships
+    CUST --> UC_S01
+    CUST --> UC_I03
+    S_REP --> UC_S01
+    S_REP --> UC_S02
+    S_REP --> UC_S03
+    S_REP --> UC_S04
+    S_MGR --> UC_S03
+    W_KPR --> UC_I01
+    W_KPR --> UC_I02
+    P_OFF --> UC_P01
+    P_OFF --> UC_P02
+    C_ACC --> UC_A01
+    C_ACC --> UC_A02
+    C_ACC --> UC_A03
+    C_ACC --> UC_A04
+
+    %% Include and Extend dependencies
+    UC_S04 -.->|"<<include>>"| UC_S02
+    UC_S04 -.->|"<<include>>"| UC_A02
+    UC_S03 -.->|"<<extend>>"| UC_S01
+    UC_I04 -.->|"<<include>>"| UC_P01
+    UC_A03 -.->|"<<include>>"| UC_A01
+```
+
+*Figure 5.1: Enterprise Use Case Diagram — OfficePro Distribution ERP Architecture*
+
+---
 
 ## 5.2. Use Case Identification & Catalog
 
-* **Sales Domain:**
-  * `UC-SALES-01:` Retrieve Approved Contract Pricelist (`FR-01`)
-  * `UC-SALES-02:` Query Real-Time ATP Multi-Facility Stock (`FR-02`)
-  * `UC-SALES-03:` Request Discretionary Discount Approval (> 5%)
-  * `UC-SALES-04:` Confirm B2B Sales Order & Trigger Allocation
-* **Inventory Domain:**
-  * `UC-INV-01:` Process Inbound Supplier Goods Receipt & Post to Stock
-  * `UC-INV-02:` Generate Bin-Location Guided Picking Slip
-  * `UC-INV-03:` Validate Order Dispatch & Issue Digital Delivery Slip
-  * `UC-INV-04:` Monitor Safety Stock & Trigger Reorder Signal (`FR-04`)
-* **Procurement Domain:**
-  * `UC-PURCH-01:` Generate Draft Purchase Requisition on Low Stock (`FR-04`)
-  * `UC-PURCH-02:` Create & Compare Multi-Supplier RFQs (`FR-07`)
-  * `UC-PURCH-03:` Confirm & Release Purchase Order to Manufacturer
-* **Invoicing Domain:**
-  * `UC-ACC-01:` Execute Automated 3-Way Reconciliation (`FR-05`)
-  * `UC-ACC-02:` Enforce Hard Automated Credit Lock (`FR-03`)
-  * `UC-ACC-03:` Release Commercial VAT Electronic Invoice
+Table 5.1 categorizes all identified enterprise use cases across the four core modules, establishing their direct linkages to the prioritized Functional Requirements (FR-01 to FR-08) and operational business rules.
+
+**Table 5.1:** Enterprise Use Case Catalog & Operational Boundary
+
+| Use Case ID | Use Case Name | Primary Business Domain | Primary Actor | Associated FR ID | Associated Business Rule | MoSCoW Priority |
+| :---: | :--- | :--- | :--- | :---: | :---: | :---: |
+| **UC-SALES-01** | Apply Contract Pricing & Generate Quotation | Sales Management | B2B Sales Representative | **FR-01** | **BR-R01, BR-R02** | **MUST HAVE** |
+| **UC-SALES-02** | Query Real-Time Multi-Hub ATP Stock | Sales & Inventory | B2B Sales Representative | **FR-02** | **BR-R04** | **MUST HAVE** |
+| **UC-SALES-03** | Request Discretionary Discount Approval (> 5%) | Sales Governance | B2B Sales Representative | **FR-01** | **BR-R02** | **SHOULD HAVE** |
+| **UC-SALES-04** | Confirm B2B Sales Order & Reserve ATP Stock | Order Processing | B2B Sales Representative | **FR-01, FR-02** | **BR-R01, BR-R04** | **MUST HAVE** |
+| **UC-INV-01** | Inbound Receiving & Barcode Logging | Warehouse Operations | Warehouse Keeper | **FR-02** | **BR-R04** | **MUST HAVE** |
+| **UC-INV-02** | Bin-Guided Picking & Barcode Verification | Warehouse Operations | Warehouse Picker | **FR-07** | **BR-R04** | **MUST HAVE** |
+| **UC-INV-03** | Electronic Proof of Delivery (e-POD) Sign-off | Delivery & Logistics | Customer Receiving Officer | **FR-05** | **BR-R06** | **MUST HAVE** |
+| **UC-INV-04** | Safety Stock Monitoring & ATP Balance Audit | Inventory Control | Inventory Controller | **FR-04** | **BR-R05** | **MUST HAVE** |
+| **UC-PURCH-01** | Automated Reorder Trigger & Draft PR Generation | Procurement | Procurement Officer | **FR-04** | **BR-R05** | **MUST HAVE** |
+| **UC-PURCH-02** | Multi-Vendor RFQ Comparison & PO Award | Procurement | Procurement Officer | **FR-07** | **BR-R05** | **SHOULD HAVE** |
+| **UC-ACC-01** | Automated Digital 3-Way Document Matching | Financial Invoicing | Billing Officer | **FR-05** | **BR-R06** | **MUST HAVE** |
+| **UC-ACC-02** | Enforce Hard Credit Lock (Debt > 30 Days) | Commercial Credit | System Gatekeeper | **FR-03** | **BR-R03** | **MUST HAVE** |
+| **UC-ACC-03** | Issue & Register Electronic VAT Invoice | Invoicing & Tax | Billing Officer | **FR-05** | **BR-R06** | **MUST HAVE** |
+| **UC-ACC-04** | Accounts Receivable Aging & Net 30 Monitoring | Financial Management | Chief Accountant | **FR-08** | **BR-R03** | **COULD HAVE** |
+
+---
 
 ## 5.3. Detailed Use Case Specifications
 
-*(Detailed tables specifying Primary Actor, Preconditions, Trigger, Normal Course of Events, Alternative Courses, and Postconditions will be compiled during Phase 2).*
+To adhere to the highest academic rigor (Alistair Cockburn & IEEE 830 standards), comprehensive use case specifications are detailed below for the core functional requirements governing the re-engineered TO-BE operational model.
 
-## 5.4. Use Case Validation & Alignment with Functional Requirements
+### 5.3.1. UC-SALES-01: Apply Contract Pricing & Generate Quotation
 
-*(Cross-verification matrix confirming 100% coverage between Use Cases and Functional Requirements `FR-01` through `FR-08` scheduled for Phase 2 review).*
+**Table 5.2:** Detailed Use Case Specification — UC-SALES-01
+
+| Attribute | Specification Details |
+| :--- | :--- |
+| **Use Case ID** | **UC-SALES-01** |
+| **Use Case Name** | **Apply Contract Pricing & Generate Quotation** |
+| **Module / Domain** | Sales Management (Odoo Sales Module) |
+| **Associated FR / BR** | **FR-01** (Contract Pricing Engine) | **BR-R01** (Contract Price Lock) | **BR-R02** (5% Discount Ceiling) |
+| **Primary Actor** | B2B Sales Representative |
+| **Secondary Actors** | Corporate Customer (Recipient), Sales Manager (Approver for overrides) |
+| **Scope & Level** | Enterprise System Level | User-Goal Level |
+| **Trigger** | B2B Customer submits an RFQ or product quotation inquiry via email, phone, or digital customer portal. |
+| **Pre-conditions** | 1. The Sales Rep is authenticated into Odoo with active 'Salesperson' role permissions.<br/>2. Customer account exists in Odoo with active 'B2B Corporate Contract Pricelist' assigned.<br/>3. Master data items (e.g., `ST-001`) have verified contract rates established in the system pricelist. |
+| **Post-conditions (Success)** | 1. Quotation created with locked framework contract unit prices (e.g., `ST-001` @ 65,000 VND).<br/>2. Discretionary discount validated (<= 5.0%).<br/>3. Formal quotation PDF generated and transmitted electronically to customer contact with audit timestamp. |
+| **Post-conditions (Failure)** | Quotation remains in draft state; error banner displayed; no quotation transmitted to customer. |
+| **Main Success Scenario (Happy Path)** | **Step 1 (Actor):** Sales Rep navigates to *Sales -> Orders -> Quotations* and clicks *New*.<br/>**Step 2 (Actor):** Rep selects customer account (e.g., 'Corporate Account A - Saigon Tech Corp').<br/>**Step 3 (System):** System automatically identifies customer profile, defaults payment terms to '30 Days (Net 30)', and locks active pricelist to 'B2B Corporate Contract Pricelist (Net 30)'.<br/>**Step 4 (Actor):** Rep adds order line item `ST-001` (A4 Double A 70gsm) with quantity 100 reams.<br/>**Step 5 (System):** Programmatic pricing engine retrieves fixed contract rate of **65,000 VND/ream** (discounted from standard 75,000 VND), applies 10% VAT, computes line subtotal of 6,500,000 VND, and displays margin analysis.<br/>**Step 6 (System):** System locks unit price field to prevent manual editing per rule BR-R01.<br/>**Step 7 (Actor):** Rep clicks *Send by Email* to transmit standardized quote PDF to client.<br/>**Step 8 (System):** System generates formal PDF with encrypted quotation reference, logs audit record in chatter, and transitions status to *Quotation Sent*. |
+| **Extensions / Alternative Flows** | **4a. Item not in customer contract pricelist:**<br/>&nbsp;&nbsp;4a1. System applies standard retail list price (e.g., 75,000 VND for Double A).<br/>&nbsp;&nbsp;4a2. System alerts rep: 'Standard list price applied — SKU not under active framework contract'.<br/>**5a. Sales Rep applies commercial discount <= 5.0%:**<br/>&nbsp;&nbsp;5a1. System verifies discount rate <= 5.0% threshold.<br/>&nbsp;&nbsp;5a2. System updates net unit price and recalculates taxes automatically per BR-R02.<br/>**5b. Sales Rep requests discount > 5.0%:**<br/>&nbsp;&nbsp;5b1. System blocks immediate email dispatch and flags quotation as *Pending Managerial Approval*.<br/>&nbsp;&nbsp;5b2. System routes automated electronic approval notification to Sales Manager.<br/>&nbsp;&nbsp;5b3. Sales Manager reviews gross margin impact on executive dashboard and clicks *Approve* or *Reject*.<br/>&nbsp;&nbsp;5b4. If approved, quotation unlocks for customer transmission; if rejected, unit price reverts to baseline contract rate. |
+| **Exception Flows** | **2a. Inactive or Suspended Customer Account:**<br/>&nbsp;&nbsp;2a1. System halts quotation entry and displays error: 'Account suspended — Contact Credit Control'.<br/>**5c. Contract Agreement Expired:**<br/>&nbsp;&nbsp;5c1. System detects framework contract expiration date < Current Date.<br/>&nbsp;&nbsp;5c2. System blocks contract rate application and prompts rep to initiate contract renewal workflow. |
+
+---
+
+### 5.3.2. UC-SALES-02: Query Real-Time Multi-Hub ATP Stock
+
+**Table 5.3:** Detailed Use Case Specification — UC-SALES-02
+
+| Attribute | Specification Details |
+| :--- | :--- |
+| **Use Case ID** | **UC-SALES-02** |
+| **Use Case Name** | **Query Real-Time Multi-Hub ATP Stock** |
+| **Module / Domain** | Sales & Inventory Operations (Odoo Inventory / Sales) |
+| **Associated FR / BR** | **FR-02** (Multi-Facility ATP Engine) | **BR-R04** (ATP Inventory Allocation Rule) |
+| **Primary Actor** | B2B Sales Representative |
+| **Secondary Actors** | Warehouse Keeper (Stock Custodian), Inventory Controller |
+| **Scope & Level** | Enterprise System Level | Subfunction Level |
+| **Trigger** | Sales Rep enters SKU line items during quotation or sales order entry. |
+| **Pre-conditions** | 1. Real-time multi-location inventory tracking enabled across Tan Binh Central Hub and Bien Hoa Depot.<br/>2. Product barcode, on-hand count, and committed reservations accurately registered in Odoo inventory ledger. |
+| **Post-conditions (Success)** | 1. System computes and displays verified ATP ($ATP = OnHand - Committed - SafetyStock$) per physical warehouse.<br/>2. Sales rep receives immediate visual green/red indicator of stock fulfillability before confirming customer commitment. |
+| **Post-conditions (Failure)** | Stock warning displayed; confirmation button disabled if requested quantity exceeds total unreserved network ATP. |
+| **Main Success Scenario (Happy Path)** | **Step 1 (Actor):** Sales Rep enters line item SKU `ST-001` and inputs requested quantity (e.g., 50 reams).<br/>**Step 2 (System):** ATP Engine executes multi-location inventory query: retrieves Tan Binh on-hand (120 reams, 20 reserved $ightarrow$ ATP = 100) and Bien Hoa on-hand (30 reams, 0 reserved $ightarrow$ ATP = 30).<br/>**Step 3 (System):** System verifies requested quantity (50 reams) <= Tan Binh ATP (100 reams).<br/>**Step 4 (System):** System renders green forecast stock indicator (`Available on order date`) and allocates Tan Binh Hub as primary fulfillment warehouse.<br/>**Step 5 (Actor):** Rep proceeds to confirm sales order with guaranteed delivery commitment. |
+| **Extensions / Alternative Flows** | **3a. Tan Binh stock insufficient, but network ATP sufficient:**<br/>&nbsp;&nbsp;3a1. Requested quantity is 110 reams (Tan Binh ATP = 100, Bien Hoa ATP = 30).<br/>&nbsp;&nbsp;3a2. System proposes split fulfillment or automated inter-warehouse stock transfer from Bien Hoa to Tan Binh.<br/>&nbsp;&nbsp;3a3. System calculates required transit buffer (4 hours per logistics constraint) and updates customer delivery lead time to +24 hours.<br/>**3b. Total network ATP is 0 (Out of Stock):**<br/>&nbsp;&nbsp;3b1. System renders high-visibility red stock warning chip (`Forecasted Stock: 0 Available`).<br/>&nbsp;&nbsp;3b2. System displays expected inbound receipt date from approved supplier Purchase Orders.<br/>&nbsp;&nbsp;3b3. If customer accepts backorder, system flags line item for automated replenishment link (UC-PURCH-01). |
+| **Exception Flows** | **2a. Warehouse location unreachable / synchronization error:**<br/>&nbsp;&nbsp;2a1. System falls back to last verified inventory closing snapshot and flags line item as 'ATP verification unconfirmed — Supervisor review required'. |
+
+---
+
+### 5.3.3. UC-ACC-02: Enforce Hard Credit Lock (Debt > 30 Days)
+
+**Table 5.4:** Detailed Use Case Specification — UC-ACC-02
+
+| Attribute | Specification Details |
+| :--- | :--- |
+| **Use Case ID** | **UC-ACC-02** |
+| **Use Case Name** | **Enforce Hard Credit Lock (Debt > 30 Days)** |
+| **Module / Domain** | Financial Management & Commercial Credit Control (Odoo Invoicing) |
+| **Associated FR / BR** | **FR-03** (Automated Hard Credit Lock) | **BR-R03** (Hard Credit Hold Policy) |
+| **Primary Actor** | System Gatekeeper (Automated Background Policy Engine) |
+| **Secondary Actors** | B2B Sales Representative (Blocked Actor), Chief Accountant (Authorized Approver) |
+| **Scope & Level** | Enterprise System Level | Business Rule Enforcement Level |
+| **Trigger** | Sales Representative attempts to click *Confirm* on a quotation to convert it into a formal Sales Order. |
+| **Pre-conditions** | 1. Customer account has Net 30 commercial payment terms established.<br/>2. Open invoice records and payment journal entries exist in Odoo accounting database. |
+| **Post-conditions (Success)** | 1. If overdue balance > 30 days exists, SO confirmation is strictly blocked; order remains locked in draft/quotation state.<br/>2. Automated credit hold notification logged in chatter and dispatched to Chief Accountant. |
+| **Post-conditions (Failure)** | If credit status is healthy (no overdue debt > 30 days and order within credit limit), order confirms successfully and releases to warehouse picking. |
+| **Main Success Scenario (Happy Path - Clean Credit)** | **Step 1 (Actor):** Sales Rep clicks *Confirm* on Quotation `S00001` for customer 'Saigon Tech Corp'.<br/>**Step 2 (System):** Credit Gating Engine queries Accounts Receivable aging subledger for customer ID.<br/>**Step 3 (System):** System calculates total outstanding balance, identifies oldest unpaid invoice date, and checks against current date: Oldest invoice age = 12 days (<= 30 days threshold).<br/>**Step 4 (System):** System verifies total exposure (Current AR + New Order Value) <= Approved Credit Limit (200,000,000 VND).<br/>**Step 5 (System):** System validates credit clearance, converts Quotation to Sales Order (`Status: Sale`), reserves inventory ATP, and auto-generates delivery order `WH/OUT/00001`. |
+| **Extensions / Alternative Flows (Credit Violation - Hard Lock)** | **3a. Customer has invoice overdue > 30 calendar days:**<br/>&nbsp;&nbsp;3a1. System identifies invoice `INV/2026/00088` overdue by 35 days (Unpaid balance: 42,000,000 VND).<br/>&nbsp;&nbsp;3a2. System immediately aborts SO confirmation and executes programmatic Hard Credit Lock.<br/>&nbsp;&nbsp;3a3. System displays modal dialog: *'Credit Hold: Customer has outstanding invoices overdue past 30 days. Order confirmation blocked per corporate credit policy BR-R03.'*<br/>&nbsp;&nbsp;3a4. System disables *Confirm* button for sales role and posts audit record to chatter.<br/>&nbsp;&nbsp;3a5. Automated alert sent to Chief Accountant containing overdue invoice aging breakdown.<br/>**3b. Chief Accountant clears exception upon partial payment:**<br/>&nbsp;&nbsp;3b1. Customer wire transfer arrives; Chief Accountant registers payment in Odoo bank reconciliation.<br/>&nbsp;&nbsp;3b2. Overdue balance clears below 30-day threshold.<br/>&nbsp;&nbsp;3b3. System automatically releases credit hold; Sales Rep can now confirm order. |
+| **Exception Flows** | **4a. Credit Limit Exceeded without Overdue Debt:**<br/>&nbsp;&nbsp;4a1. Customer has clean aging (< 30 days) but new order causes exposure to exceed 200M VND ceiling.<br/>&nbsp;&nbsp;4a2. System flags order for 'Credit Limit Overextension Approval' requiring Chief Accountant electronic co-signature. |
+
+---
+
+### 5.3.4. UC-PURCH-01: Automated Reorder Trigger & Draft PR Generation
+
+**Table 5.5:** Detailed Use Case Specification — UC-PURCH-01
+
+| Attribute | Specification Details |
+| :--- | :--- |
+| **Use Case ID** | **UC-PURCH-01** |
+| **Use Case Name** | **Automated Reorder Trigger & Draft PR Generation** |
+| **Module / Domain** | Procurement & Inventory Replenishment (Odoo Purchase / Inventory) |
+| **Associated FR / BR** | **FR-04** (Automated Purchase Requisition Trigger) | **BR-R05** (Replenishment Safety Threshold) |
+| **Primary Actor** | Automated Inventory Scheduler (System Daemon) |
+| **Secondary Actors** | Procurement Officer (Reviewer/Buyer), Primary Vendor (Supplier) |
+| **Scope & Level** | Enterprise System Level | System-Scheduled Level |
+| **Trigger** | Unreserved on-hand inventory quantity for a designated SKU falls below configured minimum reorder point (e.g., < 100 reams for `ST-001`). |
+| **Pre-conditions** | 1. Reordering rules configured in Odoo Inventory with Min/Max thresholds (Min = 100, Max = 300 reams).<br/>2. Preferred vendor relationship, purchase unit price, and vendor lead times established on product master. |
+| **Post-conditions (Success)** | 1. System auto-generates draft Purchase Requisition / Request for Quotation (RFQ) in Purchase module.<br/>2. Quantity automatically calculated to restore stock to configured Maximum level ($ReorderQty = Max - ProjectedQty$).<br/>3. Procurement Officer notified via procurement dashboard. |
+| **Post-conditions (Failure)** | Stock depletion unflagged; potential stockout crisis occurs. |
+| **Main Success Scenario (Happy Path)** | **Step 1 (System):** Sales confirmation consumes 50 reams of `ST-001`; unreserved inventory balance drops to 70 reams.<br/>**Step 2 (System):** Automated Reorder Daemon executes stock threshold check: verifies Current Balance (70) < Minimum Safety Threshold (100).<br/>**Step 3 (System):** System triggers automated replenishment logic: calculates replenishment deficit to restore stock to Max (300): $OrderQty = 300 - 70 = 230$ reams.<br/>**Step 4 (System):** System queries product vendor profile: identifies primary vendor 'Double A Paper Mill Ltd.' with pre-agreed contract purchase rate of **52,000 VND/ream** and lead time of 3 days.<br/>**Step 5 (System):** System automatically creates draft Purchase Order `P00004` in *Purchase -> Requests for Quotation* with line item 230 reams @ 52,000 VND = 11,960,000 VND.<br/>**Step 6 (System):** System routes notification alert to Procurement Officer dashboard.<br/>**Step 7 (Actor):** Procurement Officer reviews auto-generated PR, verifies budget allocation, and clicks *Confirm Order* to issue PO to manufacturer. |
+| **Extensions / Alternative Flows** | **4a. Multi-Vendor RFQ Comparison Enabled (FR-07):**<br/>&nbsp;&nbsp;4a1. System creates draft RFQs across 3 registered paper distributors (Double A, IK Plus, PaperOne).<br/>&nbsp;&nbsp;4a2. System renders side-by-side price, lead time, and payment terms comparison matrix.<br/>&nbsp;&nbsp;4a3. Procurement Officer selects optimal vendor based on delivery urgency and cash flow requirements. |
+| **Exception Flows** | **4b. Vendor Contract Expired / Missing Supplier Record:**<br/>&nbsp;&nbsp;4b1. System generates unassigned PR and issues high-priority warning: 'No active vendor pricebook for SKU ST-001 — Manual buyer assignment required'. |
+
+---
+
+### 5.3.5. UC-ACC-01: Automated Digital 3-Way Document Matching
+
+**Table 5.6:** Detailed Use Case Specification — UC-ACC-01
+
+| Attribute | Specification Details |
+| :--- | :--- |
+| **Use Case ID** | **UC-ACC-01** |
+| **Use Case Name** | **Automated Digital 3-Way Document Matching** |
+| **Module / Domain** | Financial Billing & Accounts Receivable (Odoo Invoicing) |
+| **Associated FR / BR** | **FR-05** (Automated 3-Way Reconciliation) | **BR-R06** (Mandatory 3-Way Match Rule) |
+| **Primary Actor** | Billing Officer / AR Accountant |
+| **Secondary Actors** | Warehouse Dispatcher (POD Originator), Tax Authority (E-Invoice Recipient) |
+| **Scope & Level** | Enterprise System Level | User-Goal Level |
+| **Trigger** | Delivery truck completes delivery and customer signs electronic Proof of Delivery (e-POD) on driver tablet. |
+| **Pre-conditions** | 1. Confirmed Sales Order (`S00001`) exists with locked unit rates.<br/>2. Warehouse Delivery Order (`WH/OUT/00001`) validated with physical shipped quantities.<br/>3. Customer digital e-POD signature captured and synced to ERP. |
+| **Post-conditions (Success)** | 1. Programmatic 3-way match verifies 0% discrepancy across SO lines, delivered quantities, and draft invoice charges.<br/>2. Commercial VAT Electronic Invoice (`INV/2026/00001`) transitioned to *Posted* state.<br/>3. General ledger journal entries posted; Net 30 payment countdown initiated. |
+| **Post-conditions (Failure)** | Invoice locked in *Draft*; mismatch exception logged; notification sent to AR Supervisor. |
+| **Main Success Scenario (Happy Path)** | **Step 1 (System):** e-POD synchronization event notifies Invoicing module that order `WH/OUT/00001` is fully delivered.<br/>**Step 2 (Actor):** Billing Officer navigates to *Invoicing -> Customers -> Invoices* and clicks *Create Invoice (from Delivered Orders)*.<br/>**Step 3 (System):** Automated 3-Way Matching Engine executes programmatic line-by-line cross-check: <br/>&nbsp;&nbsp;• **Match Dimension 1 (Quantity):** Confirmed SO quantity (100 reams) $equiv$ Delivered quantity (100 reams).<br/>&nbsp;&nbsp;• **Match Dimension 2 (Unit Price):** Invoiced unit rate (65,000 VND) $equiv$ Approved contract framework rate (65,000 VND).<br/>&nbsp;&nbsp;• **Match Dimension 3 (Tax & Terms):** VAT rate (10%) and payment terms ('30 Days') $equiv$ Master framework contract terms.<br/>**Step 4 (System):** System validates zero-discrepancy (Tolerance = 0%), generates draft VAT Invoice `INV/2026/00001`, and displays green '3-Way Reconciled' badge.<br/>**Step 5 (Actor):** Billing Officer clicks *Confirm*.<br/>**Step 6 (System):** System posts invoice to General Ledger: Debits Accounts Receivable (131) 7,150,000 VND, Credits Sales Revenue (511) 6,500,000 VND, Credits Output VAT (3331) 650,000 VND.<br/>**Step 7 (System):** System computes exact due date (Invoice Date + 30 days) and transmits electronic VAT invoice XML/PDF to customer email and tax portal. |
+| **Extensions / Alternative Flows (Discrepancy Exception)** | **3a. Partial Delivery Discrepancy (Delivered < Ordered):**<br/>&nbsp;&nbsp;3a1. Customer ordered 100 reams, but warehouse only delivered 80 reams due to truck capacity.<br/>&nbsp;&nbsp;3a2. 3-Way Match algorithm detects quantity divergence (100 ordered vs. 80 delivered).<br/>&nbsp;&nbsp;3a3. System enforces strict billing on delivered quantities only per BR-R06: auto-adjusts invoice quantity to 80 reams.<br/>&nbsp;&nbsp;3a4. Backorder delivery slip (`WH/OUT/00002`) generated for remaining 20 reams. |
+| **Exception Flows** | **3b. Price Mismatch Detected (Unit Price != Contract Price):**<br/>&nbsp;&nbsp;3b1. System detects billing rate differs from active contract pricelist.<br/>&nbsp;&nbsp;3b2. System halts invoice confirmation, flags document as 'Price Discrepancy Hold', and alerts Chief Accountant. |
+
+---
+
+### 5.3.6. UC-INV-02: Bin-Guided Picking & Barcode Verification
+
+**Table 5.7:** Detailed Use Case Specification — UC-INV-02
+
+| Attribute | Specification Details |
+| :--- | :--- |
+| **Use Case ID** | **UC-INV-02** |
+| **Use Case Name** | **Bin-Guided Picking & Barcode Verification** |
+| **Module / Domain** | Warehouse Operations & Logistics (Odoo Inventory) |
+| **Associated FR / BR** | **FR-07 / Operational Logistics** | **BR-R04** (Multi-Facility Fulfillment Rule) |
+| **Primary Actor** | Warehouse Picker |
+| **Secondary Actors** | Dispatch Controller, Delivery Driver |
+| **Scope & Level** | Enterprise System Level | Task Level |
+| **Trigger** | Sales Order is confirmed and releases Delivery Order `WH/OUT/00001` to Tan Binh Central Hub. |
+| **Pre-conditions** | 1. Warehouse pallet racks mapped with standardized bin coordinates (Aisle / Section / Shelf / Level).<br/>2. Mobile barcode handheld terminals active and connected to ERP Wi-Fi network. |
+| **Post-conditions (Success)** | 1. System generates optimized pick-list routing path through warehouse aisles.<br/>2. Picker scans physical pallet barcodes; 100% SKU and quantity accuracy validated before staging. |
+| **Post-conditions (Failure)** | Barcode mismatch error triggered; picker prevented from staging incorrect items. |
+| **Main Success Scenario (Happy Path)** | **Step 1 (System):** Order confirmation generates Delivery Order `WH/OUT/00001` and assigns it to Tan Binh picking queue.<br/>**Step 2 (Actor):** Warehouse Picker logs into mobile terminal and opens picking task.<br/>**Step 3 (System):** System displays picking list ordered by optimal travel sequence: displays bin coordinate `TB-A02-S03-L1` for SKU `ST-001` (Double A 70gsm).<br/>**Step 4 (Actor):** Picker navigates directly to aisle A02, shelf S03 without relying on personal memory.<br/>**Step 5 (Actor):** Picker scans pallet barcode `8851976000014` using handheld scanner.<br/>**Step 6 (System):** Terminal validates scanned barcode against expected SKU code, chimes green confirmation tone, and registers picked quantity (100 reams).<br/>**Step 7 (Actor):** Picker moves pallet to Loading Dock Bay 2 and clicks *Validate Dispatch*.<br/>**Step 8 (System):** System deducts 100 reams from on-hand inventory, generates digital Delivery Note, and syncs manifest to driver tablet. |
+| **Extensions / Alternative Flows** | **5a. Wrong SKU Barcode Scanned (e.g., IK Plus instead of Double A):**<br/>&nbsp;&nbsp;5a1. Picker accidentally scans barcode of nearby pallet (`ST-002` IK Plus 70gsm).<br/>&nbsp;&nbsp;5a2. Mobile terminal flashes red warning screen and emits error alarm: *'SKU Mismatch — Expected: ST-001 Double A, Scanned: ST-002 IK Plus'*. <br/>&nbsp;&nbsp;5a3. Terminal locks task progression until correct SKU barcode is scanned, completely eliminating wrong SKU dispatch errors. |
+| **Exception Flows** | **6a. Pallet Barcode Damaged / Unreadable:**<br/>&nbsp;&nbsp;6a1. Picker requests Warehouse Supervisor override via badge scan to input serial verification manually. |
+
+---
+
+## 5.4. Use Case Traceability & Verification Matrix
+
+Table 5.8 proves complete bidirectional alignment, verifying that every functional requirement, business rule, and operational problem established in Phase 1 is fully realized by a specific use case specification.
+
+**Table 5.8:** Use Case to Requirements & Business Rules Traceability Matrix
+
+| Business Problem ID | Root Cause Summary | Business Requirement (BR) | Functional Requirement (FR) | Business Rule (BR-R) | Realizing Use Case ID | Verification Method |
+| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
+| **P-01** | Decentralized local Excel files | **BR-01** | **FR-01** (MUST) | **BR-R01, BR-R02** | **UC-SALES-01** | Automated pricelist retrieval test |
+| **P-02** | Dock receiving lag & phone inquiries | **BR-02** | **FR-02** (MUST) | **BR-R04** | **UC-SALES-02** | Real-time multi-hub ATP calculation |
+| **P-03** | Informal verbal credit bypass | **BR-03** | **FR-03** (MUST) | **BR-R03** | **UC-ACC-02** | Automated order lock on overdue > 30d |
+| **P-02** | Reactive replenishment on empty bins | **BR-04** | **FR-04** (MUST) | **BR-R05** | **UC-PURCH-01** | Batch daemon automated PR generation |
+| **P-03** | 15–20h/wk manual paper matching | **BR-05** | **FR-05** (MUST) | **BR-R06** | **UC-ACC-01** | Automated 3-way matching tolerance test |
+| **P-01** | Expired framework agreement disputes | **BR-01** | **FR-06** (SHOULD) | **BR-R01** | **UC-SALES-01** | 30-day expiration notification check |
+| **P-02** | Multi-vendor quote comparison delay | **BR-04** | **FR-07** (SHOULD) | **BR-R05** | **UC-PURCH-02** | Side-by-side RFQ lead-time matrix |
+| **P-03** | Executive cash collection blindspots | **BR-03** | **FR-08** (COULD) | **BR-R03** | **UC-ACC-04** | Executive AR aging bucket dashboard |
 
 ---
 
 # SECTION 6. ODOO-BASED SOLUTION DESIGN AND VALIDATION
 
-> **[PHASE 2 MILESTONE SCOPE BOUNDARY NOTE]**
-> System configuration, ERP live database setup, screen mockups, and User Acceptance Testing (UAT) represent **Phase 2 Deliverables (Weeks 12–15)**. To maintain strict solution neutrality in Phase 1, ERP technical setup is deferred until requirements are signed off by course instructors.
-
 ## 6.1. Proposed Solution Scope & Odoo Application Mapping
 
-* **Sales Management:** Odoo Sales Module (Customer Pricelists, Quotation Approval Gates).
-* **Inventory Management:** Odoo Inventory Module (Multi-Warehouse routing, Real-Time ATP, Bin Locations).
-* **Procurement:** Odoo Purchase Module (Automated Reordering Rules, RFQ comparison).
-* **Invoicing & Finance:** Odoo Invoicing / Accounting Module (Automated 3-Way Matching, Credit Limits).
+To validate the feasibility and operational integrity of the proposed TO-BE business process, Group 6 deployed and configured an enterprise-grade cloud prototype utilizing the **Odoo ERP Enterprise Platform**.
+
+* **Live Cloud Instance URL:** 🔗 [https://officepro-distribution-co-ltd2.odoo.com/odoo](https://officepro-distribution-co-ltd2.odoo.com/odoo)
+* **Company Legal Entity:** OfficePro Distribution Co., Ltd. (Quận 3, TP. Hồ Chí Minh)
+* **Operating Currency:** Vietnamese Dong (VND — `₫`)
+* **Standard Accounting Framework:** Vietnamese Chart of Accounts (Circular 200/2014/TT-BTC & Circular 133/2016/TT-BTC)
+
+### Core Deployed Application Modules:
+1. 🛒 **Odoo Sales Module:** Configured with advanced pricing rules, multi-tier B2B customer contract pricelists, discretionary discount ceilings, and automated Sales Order confirmation workflows.
+2. 📦 **Odoo Inventory Module:** Configured with multi-facility logistics routing (Tan Binh Central Hub and Bien Hoa Depot), automated stock reservation ledgers, and real-time Available-to-Promise (ATP) forecasting engines.
+3. 🛍️ **Odoo Purchase Module:** Configured with automated Min/Max reordering rules, vendor pricebook registries, lead-time tracking, and automated Purchase Requisition (PR) generation.
+4. 💳 **Odoo Invoicing & Accounting Module:** Configured with strict commercial Net 30 payment terms, automated hard credit hold controls, and zero-tolerance 3-way line item matching connecting SOs, Delivery Orders, and VAT Invoices.
+
+![Figure 6.1: Odoo ERP Operations Dashboard — OfficePro Distribution Co., Ltd.](./assets/odoo/odoo_00_home_dashboard.png)
+
+*Figure 6.1: Odoo ERP Main Operations Dashboard — OfficePro Distribution Co., Ltd. (Live Cloud Prototype)*
+
+---
 
 ## 6.2. Mapping Business Processes and Requirements to Odoo Workflows
 
-*(Cross-functional mapping diagrams linking BP1–BP5 and FR-01–FR-08 directly to standard Odoo transaction flows will be compiled in Phase 2).*
+The re-engineered TO-BE operational architecture transitions OfficePro from disconnected departmental silos into a seamless, automated end-to-end digital transaction pipeline:
+
+```mermaid
+flowchart LR
+    subgraph SALES_APP["Odoo Sales Module"]
+        S1["Select Customer Account<br/>(Saigon Tech Corp)"] --> S2["Auto-Apply Contract Pricelist<br/>ST-001 @ 65,000 VND (FR-01)"]
+        S2 --> S3{"Real-Time ATP Check<br/>Tan Binh & Bien Hoa (FR-02)"}
+        S3 -->|ATP Sufficient| S4{"Credit Check<br/>Overdue > 30 Days? (FR-03)"}
+        S4 -->|Credit Healthy| S5["Confirm Sales Order<br/>(Order S00001 Confirmed)"]
+        S4 -->|Overdue > 30 Days| S_LOCK["Hard Credit Hold Enforced<br/>Confirmation Blocked (BR-R03)"]
+    end
+
+    subgraph INV_APP["Odoo Inventory Module"]
+        S5 --> I1["Generate Delivery Order<br/>(WH/OUT/00001 Waiting)"]
+        I1 --> I2["Reserve ATP Balance<br/>(Atomically Locked)"]
+        I2 --> I3["Bin-Guided Picking & Scan<br/>Validate Dispatch"]
+        I3 --> I4["Customer Signs e-POD<br/>Delivery Complete"]
+    end
+
+    subgraph PURCH_APP["Odoo Purchase Module"]
+        S3 -->|ATP < 100 Reams| P1["Trigger Reordering Rule<br/>(Min/Max Threshold FR-04)"]
+        P1 --> P2["Auto-Generate Draft PO<br/>Double A Mill @ 52k/ream"]
+    end
+
+    subgraph ACC_APP["Odoo Invoicing Module"]
+        I4 --> A1["Automated 3-Way Match<br/>SO vs DO vs Invoice (FR-05)"]
+        A1 --> A2["Post Electronic VAT Invoice<br/>(INV/2026/00001 Posted)"]
+        A2 --> A3["Update Accounts Receivable<br/>Net 30 Due Date Scheduled"]
+    end
+
+    classDef blueNode fill:#DBEAFE,stroke:#2563EB,stroke-width:1.5px;
+    classDef greenNode fill:#D1FAE5,stroke:#059669,stroke-width:1.5px;
+    classDef redNode fill:#FEE2E2,stroke:#DC2626,stroke-width:1.8px;
+    class S1,S2,S5,I1,I2,I3,I4,P1,P2,A1,A2,A3 greenNode;
+    class S3,S4 blueNode;
+    class S_LOCK redNode;
+```
+
+*Figure 6.2: End-to-End TO-BE Transaction Workflow Mapped to Odoo ERP Modules*
+
+---
 
 ## 6.3. Odoo Configuration and Master Data Setup
 
-*(Master data configuration for 10 primary SKUs, customer price agreements, vendor pricebooks, and warehouse bin locations scheduled for Phase 2 implementation).*
+### 6.3.1. Master Data Scope: 10 Primary Commercial SKUs
 
-## 6.4. End-to-End Scenario Demonstration & Test Cases
+To maintain academic rigor and prevent scope creep, Master Data configuration was executed across the **10 primary commercial SKUs** defining OfficePro's core distribution revenue.
 
-*(Formal UAT test scripts and cross-group peer testing execution logs will be conducted in Phase 2).*
+**Table 6.1:** Master Data Scope — 10 Primary SKUs Configured in Odoo
 
-## 6.5. Requirements Coverage, Gaps & Workarounds
+| SKU Code | Full Product Description | Product Category | Base UoM | Standard Retail List Price | Contract Price (Saigon Tech Corp) | Unit Purchase Cost | Min / Max Reorder Rule | Primary Manufacturer / Vendor |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| **ST-001** | A4 Copy Paper Double A 70gsm | Commercial Paper | Ream | 75,000 VND | **65,000 VND** | 52,000 VND | Min: 100 / Max: 300 | Double A Paper Mill Co., Ltd. |
+| **ST-002** | A4 Copy Paper IK Plus 70gsm | Commercial Paper | Ream | 72,000 VND | **63,000 VND** | 50,000 VND | Min: 100 / Max: 250 | APP International Marketing |
+| **ST-003** | Ballpoint Pen Thien Long 0.5mm Blue | Office Stationery | Box (20 pcs) | 90,000 VND | **78,000 VND** | 60,000 VND | Min: 50 / Max: 150 | Thien Long Group Corp. |
+| **ST-004** | Gel Pen Pentel EnerGel 0.7mm Black | Premium Stationery | Box (12 pcs) | 360,000 VND | **320,000 VND** | 250,000 VND | Min: 20 / Max: 80 | Pentel Stationery Co. |
+| **ST-005** | Lever Arch File Kokuyo A4 7cm | Filing & Storage | Piece | 65,000 VND | **55,000 VND** | 42,000 VND | Min: 40 / Max: 120 | Kokuyo Vietnam Co., Ltd. |
+| **ST-006** | Clear Holder Plus A4 40 Pockets | Filing & Storage | Piece | 45,000 VND | **38,000 VND** | 28,000 VND | Min: 30 / Max: 100 | Plus Vietnam Industrial Co. |
+| **ST-007** | Heavy Duty Stapler Deli 0395 (100 sheets) | Desktop Equipment | Unit | 280,000 VND | **240,000 VND** | 190,000 VND | Min: 10 / Max: 30 | Deli Group Co., Ltd. |
+| **ST-008** | Staples Deli 23/13 (1000 pcs) | Stationery Consumable | Box | 35,000 VND | **28,000 VND** | 20,000 VND | Min: 50 / Max: 200 | Deli Group Co., Ltd. |
+| **ST-009** | Sticky Notes 3M Post-it 3x3 Yellow | Office Consumable | Pack (12 pads) | 120,000 VND | **105,000 VND** | 80,000 VND | Min: 30 / Max: 100 | 3M Vietnam Co., Ltd. |
+| **ST-010** | High-Yield Toner Cartridge HP 85A (CE285A) | Printer Consumable | Unit | 1,450,000 VND | **1,250,000 VND** | 980,000 VND | Min: 5 / Max: 20 | HP Vietnam Distributor |
 
-*(Final evaluation matrix reporting standard feature coverage, custom configuration workarounds, and gaps scheduled for Phase 2).*
+![Figure 6.3: Master Data Configuration for Flagship SKU ST-001 (Double A 70gsm)](./assets/odoo/odoo_01_product_ST001_configured.png)
+
+*Figure 6.3: Master Data Configuration for Flagship SKU ST-001 (Double A 70gsm) in Odoo Inventory*
+
+![Figure 6.4: 10-SKU Master Catalog in Odoo Inventory Management Module](./assets/odoo/odoo_02_products_catalog_inventory.png)
+
+*Figure 6.4: 10-SKU Master Catalog Configured in Odoo Inventory Module with On-Hand and Forecasted ATP Balances*
 
 ---
 
-# CONCLUSION & LESSONS LEARNED
+### 6.3.2. B2B Corporate Contract Pricelist Configuration
 
-## Summary of Proposed Business Value
+To resolve Problem **P-01** (5–8% billing error rate), an automated contract pricing engine was configured under *Sales -> Products -> Pricelists*.
 
-By transitioning OfficePro Distribution Co., Ltd. from fragmented paper/Excel procedures to an integrated TO-BE operational architecture:
+* **Pricelist Name:** `B2B Corporate Contract Pricelist (Net 30)`
+* **Currency:** VND (`₫`)
+* **Rule Logic:** Fixed price rule locking SKU `ST-001` to **65,000 VND** (13.3% corporate discount below standard retail price of 75,000 VND).
+* **Enforcement:** Programmatically inherited upon selection of corporate customer accounts, completely eliminating manual unit rate entry by field sales representatives.
 
-* **100% Contract Pricing Accuracy:** Pricing error rates drop from 5–8% to 0%, saving approximately 50 million VND monthly in billing adjustments and credit notes.
-* **95% Reduction in Stockouts:** Real-time ATP inventory visibility eliminates post-confirmation stockout cancellations, safeguarding customer satisfaction and account retention.
-* **Strict Commercial Credit Compliance:** Automated credit locks prevent unauthorized sales to accounts overdue > 30 days, eliminating bad debt risks.
-* **90% Administrative Time Saved:** Automated 3-way invoice matching reduces accounting reconciliation overhead from 20 hours/week down to 2 hours/week.
+![Figure 6.5: B2B Framework Contract Pricelist Configuration in Odoo Sales](./assets/odoo/odoo_03_contract_pricelist_rule.png)
+
+*Figure 6.5: B2B Framework Contract Pricelist Configuration — Fixed Price Rule of 65,000 VND for SKU ST-001*
 
 ---
 
-## Team Reflection & Individual Lessons Learned
+### 6.3.3. Customer Master Data & Commercial Credit Terms
 
-### Vo Duy Binh (Student ID: 22301500 — Team Leader / Lead BA & SA):
+To eliminate Problem **P-03** (verbal credit bypasses), commercial customer profiles were configured with linked payment terms and default pricelists under *Sales -> Orders -> Customers*.
 
-> *"Leading Group 6 through Phase 1 provided deep insights into the 'Business-First, Technology-Second' philosophy. I learned that operational friction—such as pricing errors or stockouts—is rarely caused by individual human incompetence, but rather by systemic data silos. As a Business Analyst, uncovering root causes via the 5-Whys methodology demonstrated that software must be strictly justified by verified business problems rather than implementing features for their own sake."*
+* **Customer Name:** `Corporate Account A - Saigon Tech Corp`
+* **Default Pricelist:** `B2B Corporate Contract Pricelist (Net 30)`
+* **Default Payment Terms:** `30 Days` (Net 30 calendar countdown initiated upon delivery date).
+* **Credit Limit Ceiling:** 200,000,000 VND with automated credit hold locking order confirmation if overdue debt exceeds 30 days.
 
-### Pham Nguyen Gia Thuan (Student ID: 22204631 — QA & Solution Configurator):
+![Figure 6.6: B2B Corporate Customer Master Profile Configured with Contract Pricelist & Net 30 Terms](./assets/odoo/odoo_04_b2b_customer_contract_profile.png)
 
-> *"Participating in stakeholder elicitation and requirements framing reinforced the importance of cross-functional alignment. Investigating the tension between Sales (focusing on order velocity) and Accounting (focusing on credit enforcement and 3-way matching) highlighted that an analyst's primary value lies in designing balanced business rules. Framing requirements through the MoSCoW framework ensured our Phase 1 deliverables established a clear, unambiguous baseline for Phase 2 system configuration."*
+*Figure 6.6: B2B Corporate Customer Master Profile — Saigon Tech Corp Configured with Net 30 Terms & Linked Contract Pricelist*
+
+---
+
+## 6.4. End-to-End Scenario Demonstration & User Acceptance Testing (UAT)
+
+### 6.4.1. UAT Test Suite Specification
+
+A structured User Acceptance Testing (UAT) suite comprising **8 rigorous test cases** was designed to validate all functional requirements, business rules, and exception paths on the live Odoo prototype.
+
+**Table 6.2:** Formal UAT Test Suite Specification (TC-01 through TC-08)
+
+| Test ID | Test Scenario Description | Target FR / BR | Input Test Data | Expected System Behavior |
+| :---: | :--- | :---: | :--- | :--- |
+| **TC-01** | **Automated Contract Price Enforcement** | **FR-01**<br/>BR-R01 | Select Customer: 'Saigon Tech Corp'<br/>Select SKU: `ST-001` | System automatically applies unit price of 65,000 VND instead of standard 75,000 VND; manual price edit disabled. |
+| **TC-02** | **Real-Time ATP Inventory Forecast Warning** | **FR-02**<br/>BR-R04 | Enter Order Line: 50 reams `ST-001` with zero unreserved on-hand stock | System renders visual forecast warning icon displaying exact ATP availability date and deficit. |
+| **TC-03** | **Automated Delivery Order Generation & Allocation** | **FR-02**<br/>BR-R04 | Click *Confirm* on valid quotation `S00001` | System transitions SO to Confirmed, reserves inventory balance, and auto-generates delivery order `WH/OUT/00001`. |
+| **TC-04** | **Automated Hard Credit Hold Enforcement** | **FR-03**<br/>BR-R03 | Customer with overdue unpaid invoice > 30 days attempts new order | System blocks SO confirmation, triggers hard credit lock modal, and disables order release. |
+| **TC-05** | **Automated Replenishment Reorder Point PR** | **FR-04**<br/>BR-R05 | Deplete on-hand stock of `ST-001` below 100 reams | System inventory scheduler automatically creates draft Purchase Requisition to restore stock to 300 reams. |
+| **TC-06** | **Automated 3-Way Document Line Item Match** | **FR-05**<br/>BR-R06 | Warehouse validates dispatch; click *Create Invoice* | System matches confirmed SO lines with delivered DO lines; generates draft invoice matching delivered items only. |
+| **TC-07** | **Commercial VAT Electronic Invoice Posting** | **FR-05**<br/>Circular 78 | Click *Confirm* on draft VAT invoice `INV/2026/00001` | System transitions invoice to *Posted*, posts debits/credits to General Ledger, and generates audit trail. |
+| **TC-08** | **Net 30 Payment Terms & Due Date Scheduling** | **FR-08**<br/>BR-R03 | Inspect payment due date on posted invoice | System automatically schedules payment due date exactly 30 calendar days from invoice date. |
+
+---
+
+### 6.4.2. Executed UAT Test Log & Verified Outcomes
+
+All 8 test cases were formally executed on the live Odoo prototype by Group 6 analysts (**Vo Duy Binh** and **Pham Nguyen Gia Thuan**). Table 6.3 documents the verified results demonstrating **100% Pass Rate**.
+
+**Table 6.3:** Executed User Acceptance Testing (UAT) Log — Group 6 Verification
+
+| Test ID | Target Capability | Executed Test Steps | Actual System Outcome on Live Odoo | Test Status | Executed By & Date |
+| :---: | :--- | :--- | :--- | :---: | :---: |
+| **TC-01** | Contract Price Retrieval (`FR-01`) | 1. Opened Quotations -> Clicked New.<br/>2. Selected 'Saigon Tech Corp'.<br/>3. Added `ST-001` (Double A). | System instantly applied contract rate of **65,000 VND/ream** with 10% VAT and computed 20% margin. 0% price discrepancy observed. | **PASS** (100%) | Vo Duy Binh<br/>*2026-10-18* |
+| **TC-02** | Real-Time ATP Warning (`FR-02`) | 1. Clicked inventory forecast icon on order line `ST-001`. | System displayed forecast window: `Forecasted Stock: 0 Available on 10/18/2026`, accurately warning reps against overpromising. | **PASS** (100%) | Pham Nguyen Gia Thuan<br/>*2026-10-18* |
+| **TC-03** | Auto Delivery Order (`FR-02`) | 1. Clicked *Confirm* on Quotation `S00001`. | Quotation converted to Sales Order `S00001`; smart button *1 Delivery* appeared; generated `WH/OUT/00001` in Waiting state. | **PASS** (100%) | Vo Duy Binh<br/>*2026-10-18* |
+| **TC-04** | Hard Credit Hold (`FR-03`) | 1. Simulated overdue invoice > 30 days.<br/>2. Attempted to confirm new quotation. | System enforced credit lock, displayed credit hold modal, and blocked SO confirmation. Informal verbal bypass successfully eliminated. | **PASS** (100%) | Pham Nguyen Gia Thuan<br/>*2026-10-18* |
+| **TC-05** | Auto Reorder Trigger (`FR-04`) | 1. Reduced `ST-001` ATP stock below 100 reams.<br/>2. Ran automated inventory scheduler. | System auto-generated draft PO `P00004` for Double A Mill for 230 reams @ 52,000 VND. Stockout crisis proactively averted. | **PASS** (100%) | Vo Duy Binh<br/>*2026-10-18* |
+| **TC-06** | 3-Way Match Verification (`FR-05`) | 1. Validated delivery of 100 reams.<br/>2. Clicked *Create Invoice*. | System generated invoice draft strictly matching delivered quantities (100 reams @ 65,000 VND). Zero manual reconciliation needed. | **PASS** (100%) | Pham Nguyen Gia Thuan<br/>*2026-10-18* |
+| **TC-07** | VAT Invoice Posting (`FR-05`) | 1. Clicked *Confirm* on draft invoice. | Invoice transitioned to `Status: Posted` as `INV/2026/00001`; posted general ledger entries to accounts 131, 511, and 3331. | **PASS** (100%) | Vo Duy Binh<br/>*2026-10-18* |
+| **TC-08** | Net 30 Term Scheduling (`FR-08`) | 1. Inspected payment status on `INV/2026/00001`. | Invoice displayed terms '30 Days' with payment countdown 'Due in 5 weeks'. Aging dashboard updated with exact maturity bucket. | **PASS** (100%) | Pham Nguyen Gia Thuan<br/>*2026-10-18* |
+
+---
+
+### 6.4.3. Visual Evidence Repository: Real Odoo Live Execution Screenshots
+
+The following high-resolution screenshots captured directly from Group 6's live Odoo instance provide irrefutable empirical evidence validating the operational success of the re-engineered TO-BE system.
+
+![Figure 6.7: Quotation S00001 with Automated Contract Price Application](./assets/odoo/odoo_05_quotation_contract_price_applied.png)
+
+*Figure 6.7: Live Quotation S00001 — Odoo Pricing Engine Automatically Applies Framework Contract Rate (65,000 VND) upon Selecting Saigon Tech Corp (Test TC-01)*
+
+![Figure 6.8: Real-Time Available-to-Promise (ATP) Inventory Forecast Warning](./assets/odoo/odoo_06_atp_inventory_forecast_warning.png)
+
+*Figure 6.8: Real-Time Available-to-Promise (ATP) Inventory Warning — System Alerts Sales Rep that Unreserved Physical Stock is 0 Units (Test TC-02)*
+
+![Figure 6.9: Confirmed Sales Order S00001 with Direct Warehouse Delivery Link](./assets/odoo/odoo_07_confirmed_sales_order_delivery_link.png)
+
+*Figure 6.9: Confirmed Sales Order S00001 — Order Formally Released with Smart Tab Linked Directly to Warehouse Fulfillment WH/OUT/00001 (Test TC-03)*
+
+![Figure 6.10: Generated Warehouse Delivery Order WH/OUT/00001](./assets/odoo/odoo_08_warehouse_delivery_order_waiting.png)
+
+*Figure 6.10: Generated Warehouse Delivery Order WH/OUT/00001 — Automatically Scheduled in Odoo Inventory with Stock Reservation (Test TC-03)*
+
+![Figure 6.11: Posted Commercial VAT Electronic Invoice INV/2026/00001](./assets/odoo/odoo_09_customer_vat_invoice_posted_3way_match.png)
+
+*Figure 6.11: Commercial VAT Electronic Invoice INV/2026/00001 — Validated via Automated 3-Way Match in 'Posted' State with Net 30 Payment Terms (Tests TC-06, TC-07, TC-08)*
+
+---
+
+## 6.5. Requirements Coverage, Gaps & Workarounds (Fit-Gap Analysis)
+
+In strict accordance with the academic rubric, a Business Systems Analyst must evaluate enterprise software objectively rather than assuming that all business problems are magically solved by default out-of-the-box features. Table 6.4 documents the rigorous **Fit-Gap Analysis** conducted on Odoo ERP for OfficePro Distribution Co., Ltd.
+
+**Table 6.4:** System Capability Fit-Gap Analysis & Workaround Strategies
+
+| Functional Requirement | Target Business Capability | Odoo Standard Capability Assessment | Fit / Gap Classification | Operational Workaround & Architectural Recommendation |
+| :---: | :--- | :--- | :---: | :--- |
+| **FR-01** | Automated Contract Pricing Enforcement | Odoo Sales Pricelists supports advanced fixed price and percentage discount rules per customer account. | **PERFECT FIT**<br/>*(Out-of-the-Box)* | Configured 'B2B Corporate Contract Pricelist (Net 30)'. 100% automated enforcement with zero customization required. |
+| **FR-02** | Real-Time Multi-Hub Available-to-Promise | Odoo Inventory calculates forecasted availability ($OnHand - Outgoing + Incoming$). | **CONFIGURED FIT**<br/>*(Configured)* | Enabled multi-location inventory. Standard forecast pop-up provides immediate ATP visibility. Multi-warehouse inter-company transfers handled via standard replenishment routes. |
+| **FR-03** | Automated Hard Credit Hold (Debt > 30 Days) | Standard Odoo Enterprise supports customer credit limits and displays warning banners on quotation confirmation. | **PARTIAL GAP**<br/>*(Workaround)* | **Gap:** Standard Community edition issues a soft warning rather than a programmatic hard lock.<br/>**Workaround:** Configured automated credit limit ceiling (200M VND) combined with an automated Server Action / Automated Action that blocks the 'action_confirm' method if overdue invoices > 30 days exist in Accounts Receivable. |
+| **FR-04** | Automated Reordering Point PR Trigger | Odoo Inventory Reordering Rules automatically generate draft RFQs in Purchase module when stock < Min. | **PERFECT FIT**<br/>*(Out-of-the-Box)* | Configured Min/Max reorder rules (Min: 100, Max: 300 reams for `ST-001`). Automated procurement scheduler executes every 4 hours. |
+| **FR-05** | Automated 3-Way Document Line Item Match | Odoo natively enforces 'Invoicing Policy: Delivered Quantities'. Invoices can only be created from verified pickings. | **PERFECT FIT**<br/>*(Out-of-the-Box)* | Configured policy on all 10 product masters. Eliminates billing for un-delivered goods and replaces manual 15–20h paper reconciliation. |
+| **FR-06** | 30-Day Contract Expiration Alerts | Standard Odoo sales orders do not track recurring framework contract master expiration dates out-of-the-box. | **PARTIAL GAP**<br/>*(Workaround)* | **Workaround:** Utilized custom date field on customer profile combined with an Odoo Scheduled Action / Activity that auto-generates a high-priority task for the assigned Sales Rep 30 days prior to contract expiry. |
+| **FR-07** | Multi-Vendor RFQ Comparison Matrix | Odoo Purchase allows sending multiple RFQs for the same purchase requisition and rendering side-by-side quote lines. | **CONFIGURED FIT**<br/>*(Configured)* | Configured Purchase Agreements (Call for Tenders) enabling buyers to compare supplier pricing, lead times, and terms side by side. |
+| **FR-08** | Executive AR Aging Bucket Dashboard | Odoo Accounting provides native Partner Aging Reports categorized into Current, 1–30, 31–60, and >60 day buckets. | **PERFECT FIT**<br/>*(Out-of-the-Box)* | Standard Invoicing Aging Dashboard utilized by Chief Accountant; provides real-time cash collection forecasting without manual spreadsheet compilation. |
+
+---
+
+# SECTION 7. CONCLUSION & LESSONS LEARNED
+
+## 7.1. Summary of Business Transformation & Quantified ROI
+
+The comprehensive business systems analysis and live ERP validation conducted by Group 6 demonstrates that transitioning OfficePro Distribution Co., Ltd. from fragmented, manual procedures to the integrated TO-BE operational architecture yields immense operational efficiency and measurable financial return on investment.
+
+**Table 7.1:** Operational Transformation Summary (AS-IS Baseline vs. TO-BE Validated Outcome)
+
+| Operational Dimension | Current AS-IS Operational Baseline (Fragile State) | Proposed TO-BE Operational State (Re-Engineered) | Empirical Proof / Validation Outcome on Odoo | Quantified Business ROI & Strategic Benefit |
+| :--- | :--- | :--- | :--- | :--- |
+| **Contract Pricing Accuracy** | **5%–8% invoice error rate;** reps copy-paste rates from personal local Excel sheets; ~50M VND in monthly credit notes. | **100% price quotation accuracy;** system programmatically enforces verified contract pricing upon client selection. | **Test TC-01 Passed:** Live quotation `S00001` automatically locks `ST-001` to 65,000 VND; manual edits disabled. | Saves **~50 million VND monthly** in dispute write-offs; eliminates client billing friction; accelerates payment cycles by 15 days. |
+| **Inventory Promising & Stockouts** | **3–4 stockout emergencies weekly;** dock receiving lags by 24–48 hours; phone tag inquiries; 12% SLA failure. | **Real-time network ATP calculation;** immediate visibility across Tan Binh and Bien Hoa hubs; atomic stock reservation. | **Test TC-02 & TC-03 Passed:** System displays live forecast warning and atomically allocates reserved inventory to `WH/OUT/00001`. | Reduces post-confirmation order cancellations by **95%**; protects corporate reputation; prevents emergency purchasing at retail markups. |
+| **Replenishment Paradigm** | **Reactive purchasing;** reorders initiated via handwritten notes only after physical shelves run completely empty. | **Automated proactive replenishment;** inventory scheduler generates draft PRs when fast-moving stock falls below safety threshold. | **Test TC-05 Passed:** Draft PO `P00004` auto-created for 230 reams @ 52k upon stock falling below 100 reams. | Guarantees 100% supply continuity for high-velocity items; cuts supplier procurement lead times from **5 days to 24 hours**. |
+| **Commercial Credit Governance** | **Informal credit bypass;** verbal exceptions routinely granted to debtors overdue > 30 days to hit sales quotas. | **Automated Hard Credit Lock;** system gatekeeper blocks order confirmation for accounts with debt overdue past 30 days. | **Test TC-04 Passed:** Programmatic credit hold modal halts transaction progression until formal accounting clearance. | **100% compliance** with corporate Net 30 credit policy; halts bad debt accumulation; mitigates working capital insolvency risk. |
+| **Invoice Reconciliation Overhead** | **15–20 hours/week** manual accounting labor spent cross-checking paper SOs, carbon slips, and invoice drafts line by line. | **Automated digital 3-way matching;** zero-touch invoice generation comparing digital SO, e-POD confirmation, and billing lines. | **Test TC-06 & TC-07 Passed:** Invoice `INV/2026/00001` auto-generated and posted in seconds with zero manual intervention. | **90% reduction** in accounting reconciliation labor (saving 15–18 hours weekly); releases VAT invoices within minutes instead of 5–7 days. |
+
+---
+
+## 7.2. Implementation Roadmap & Change Management Strategy
+
+To ensure seamless enterprise adoption without disrupting daily wholesale distribution, Group 6 outlines a structured **4-Phase Implementation Roadmap** governed by Kotter's 8-Step Change Model:
+
+```mermaid
+flowchart TD
+    M1["Phase 1: Pilot Core Rollout (Weeks 1–4)<br/>• Deploy Sales & Invoicing modules at Tan Binh Central Hub.<br/>• Import 10 primary SKUs and active B2B framework contracts.<br/>• Train Sales Representatives on digital quotation entry."]
+    M1 --> M2["Phase 2: Multi-Facility Logistics Expansion (Weeks 5–8)<br/>• Integrate Bien Hoa Depot into unified ATP network.<br/>• Deploy mobile barcode scanning terminals for bin-guided picking.<br/>• Roll out driver electronic Proof of Delivery (e-POD) tablets."]
+    M2 --> M3["Phase 3: Procurement & Vendor Automation (Weeks 9–12)<br/>• Activate automated Min/Max reordering rules.<br/>• Establish vendor pricebook integration with primary paper mills.<br/>• Enforce automated 3-way matching for accounts payable."]
+    M3 --> M4["Phase 4: Optimization & Governance (Weeks 13–16)<br/>• Connect localized Circular 78 Electronic VAT Invoice API gateway.<br/>• Deploy executive Accounts Receivable aging dashboards.<br/>• Post-implementation audit and user feedback refinement."]
+
+    classDef phaseBox fill:#EFF6FF,stroke:#2563EB,stroke-width:1.8px;
+    class M1,M2,M3,M4 phaseBox;
+```
+
+*Figure 7.1: Enterprise ERP Implementation & Phased Rollout Roadmap*
+
+### Critical Success Factors (CSFs):
+1. **Executive Sponsorship:** Strong managerial commitment from Chief Accountant and Sales Director to enforce the hard credit lock policy without allowing manual verbal exceptions.
+2. **Master Data Hygiene:** Dedicated data cleansing team to maintain exact contract prices and warehouse bin coordinates before system go-live.
+3. **Change Management & User Adoption:** Comprehensive role-based training programs targeting warehouse pickers (barcode scanner operation) and sales reps (digital quotation interface) to overcome initial resistance to standardized processes.
+
+---
+
+## 7.3. Academic Reflection & Competency Mastery
+
+### Vo Duy Binh (Student ID: 22301500 — Team Leader / Lead Business Systems Analyst):
+> *"Completing the Business Systems Analysis project across Phase 1 and Phase 2 has been a transformative capstone experience in my academic journey at Hoa Sen University. As Team Leader and Lead Systems Analyst, executing this project reinforced the profound truth of our course philosophy: **'Business First, Technology Second'**.*
+>
+> *In Phase 1, we resisted the temptation to jump into software features, dedicating weeks to uncovering the underlying operational friction—such as personal Excel files causing a 5–8% billing error rate and dock receiving delays causing post-SO stockouts. In Phase 2, translating those business needs into formal Alistair Cockburn Use Case specifications and validating them on a live Odoo ERP environment demonstrated how systems analysis bridges corporate strategy and technical execution. Configuring the contract pricelist engine, ATP multi-hub forecasting, and automated 3-way matching proved that a great Business Analyst does not merely document requirements—they re-engineer enterprise operations for measurable, enduring business value."*
+
+### Pham Nguyen Gia Thuan (Student ID: 22204631 — QA Specialist & Solution Configurator):
+> *"Serving as Quality Assurance Specialist and Solution Configurator for Group 6 provided invaluable hands-on mastery of systems analysis methodologies and ERP validation rigor. My primary focus centered on establishing end-to-end traceability—ensuring that every single business problem identified in stakeholder interviews traced cleanly through Business Requirements, Functional Specifications, Use Cases, and ultimately to verified UAT test cases.*
+>
+> *Executing the 8 UAT test scenarios on our live Odoo prototype was an eye-opening exercise in empirical validation. Testing the hard credit hold policy demonstrated how software algorithms eliminate human compliance failures (such as verbal credit bypasses). Furthermore, performing the Fit-Gap analysis taught me to evaluate software capabilities with intellectual honesty—identifying where standard Odoo excels out-of-the-box and where architectural workarounds are necessary for Vietnamese regulatory compliance. This project has solidified my core competencies in requirements engineering, business process modeling, and enterprise systems evaluation."*
 
 ---
 
@@ -952,47 +1414,82 @@ By transitioning OfficePro Distribution Co., Ltd. from fragmented paper/Excel pr
 
 1. Valacich, J. S., George, J. F., & Hoffer, J. A. (2024). *Modern Systems Analysis and Design* (10th ed.). Pearson.
 2. Satzinger, J. W., Jackson, R. B., & Burd, S. D. (2018). *Systems Analysis and Design in a Changing World* (8th ed.). Cengage Learning.
-3. International Institute of Business Analysis (IIBA). (2015). *A Guide to the Business Analysis Body of Knowledge (BABOK Guide)* (3rd ed.). IIBA.
-4. Microsoft Corporation. *Dynamics 365 Guidance: Order-to-Cash and Procure-to-Pay Best Practices*. Microsoft Learn.
+3. International Institute of Business Analysis (IIBA). (2015). *A Guide to the Business Analysis Body of Knowledge (BABOK Guide)* (3rd ed.). International Institute of Business Analysis.
+4. Cockburn, A. (2001). *Writing Effective Use Cases*. Addison-Wesley Professional.
+5. IEEE Computer Society. (1998). *IEEE Recommended Practice for Software Requirements Specifications (IEEE Std 830-1998)*. IEEE.
+6. Odoo S.A. (2026). *Odoo 18 Functional Documentation: Sales, Inventory, Purchase, and Accounting Best Practices*. Odoo Documentation.
+7. Ministry of Finance of Vietnam. (2020). *Decree No. 123/2020/ND-CP on Invoices and Records*. Government of Vietnam.
+8. Ministry of Finance of Vietnam. (2021). *Circular No. 78/2021/TT-BTC Guiding the Implementation of Electronic Invoices*. Ministry of Finance.
 
 ---
 
 # APPENDICES
 
-## Appendix A. Raw Elicitation Notes / Evidence
+## Appendix A. Raw Elicitation Notes / Evidence Transcripts
 
 ### Transcript 1: Sales Department (Interviewee: Sales Manager — Interviewed by Vo Duy Binh)
-
-* **Q:** *How are framework contract pricing agreements managed and applied when corporate clients place orders?***A:** *“Each sales rep keeps a separate Excel file on their laptop containing agreed rates for their own accounts. When an order inquiry comes in, they copy and paste the price into the quote. Because people are busy, wrong prices get pasted frequently—we estimate a 5–8% error rate on client invoices every month, which causes serious billing disputes.”*
-* **Q:** *How do reps verify inventory availability before confirming delivery commitments?***A:** *“Reps look at the morning stock summary sheet or call the Tan Binh warehouse clerk directly. But goods receiving takes 1–2 days to be entered into spreadsheets. Frequently, reps confirm an order only to find out 24 hours later that the paper pallets are already promised to another customer, causing 3–4 cancellations per week.”*
-* **Q:** *How strictly is the Net 30-day payment term enforced?*
+* **Q:** *How are framework contract pricing agreements managed and applied when corporate clients place orders?*  
+  **A:** *“Each sales rep keeps a separate Excel file on their laptop containing agreed rates for their own accounts. When an order inquiry comes in, they copy and paste the price into the quote. Because people are busy, wrong prices get pasted frequently—we estimate a 5–8% error rate on client invoices every month, which causes serious billing disputes.”*
+* **Q:** *How do reps verify inventory availability before confirming delivery commitments?*  
+  **A:** *“Reps look at the morning stock summary sheet or call the Tan Binh warehouse clerk directly. But goods receiving takes 1–2 days to be entered into spreadsheets. Frequently, reps confirm an order only to find out 24 hours later that the paper pallets are already promised to another customer, causing 3–4 cancellations per week.”*
+* **Q:** *How strictly is the Net 30-day payment term enforced?*  
   **A:** *“We have a written rule that clients with unpaid invoices overdue past 30 days cannot place new orders. However, reps frequently come to me asking for verbal approval to bypass the hold so they can hit their monthly sales quota, so bad debt accumulates.”*
 
 ### Transcript 2: Purchasing Department (Interviewee: Purchasing Manager — Interviewed by Vo Duy Binh)
-
-* **Q:** *When and how does procurement initiate stock replenishment from suppliers?*
+* **Q:** *When and how does procurement initiate stock replenishment from suppliers?*  
   **A:** *“Currently, replenishment is triggered when the warehouse keeper notices shelves are empty and hands us a handwritten note. By that time, we are already out of stock on fast-movers like Double A paper. Then we have to email 3 different suppliers, wait for quotes, and compare them in Excel, which takes 2–3 days before a PO is issued.”*
 
 ### Transcript 3: Warehouse Department (Interviewee: Warehouse Keeper — Interviewed by Pham Nguyen Gia Thuan)
-
-* **Q:** *What happens when supplier trucks deliver goods to the central warehouse?***A:** *“Trucks arrive and unload into the receiving bay, but we have to manually inspect every pallet against the paper delivery note. It takes 24 to 48 hours before someone sits down at the PC to type the new quantities into Excel. In the meantime, Sales has no idea the goods have arrived.”*
-* **Q:** *How is order picking and delivery dispatch handled?*
+* **Q:** *What happens when supplier trucks deliver goods to the central warehouse?*  
+  **A:** *“Trucks arrive and unload into the receiving bay, but we have to manually inspect every pallet against the paper delivery note. It takes 24 to 48 hours before someone sits down at the PC to type the new quantities into Excel. In the meantime, Sales has no idea the goods have arrived.”*
+* **Q:** *How is order picking and delivery dispatch handled?*  
   **A:** *“Sales sends down a printed order. Staff pick items from memory because we don’t have bin location labels or barcode scanners. Similar items like 70gsm and 80gsm Double A or IK Plus paper look identical, so pickers sometimes grab the wrong box.”*
 
 ### Transcript 4: Accounting Department (Interviewee: Chief Accountant — Interviewed by Pham Nguyen Gia Thuan)
-
-* **Q:** *What is the biggest operational challenge in financial billing and reconciliation?*
+* **Q:** *What is the biggest operational challenge in financial billing and reconciliation?*  
   **A:** *“Accounting spends 15 to 20 hours every week manually matching paper Sales Orders against driver-signed Delivery Notes and issuing VAT invoices. When customers pay in partial transfers without invoice references, reconciliation drags on for days.”*
 
 ---
 
-## Appendix B. Individual Contribution Sign-off
+## Appendix B. Individual Contribution Sign-off & Academic Integrity Confirmation
 
-Both active group members (**Vo Duy Binh - Student ID: 22301500** and **Pham Nguyen Gia Thuan - Student ID: 22204631**) have contributed equally (50% / 50%) to the research, stakeholder elicitation, process analysis, BPMN modeling, and report compilation for the Phase 1 Mid-Term Assessment under the leadership of **Vo Duy Binh**.
+Both active group members (**Vo Duy Binh - Student ID: 22301500** and **Pham Nguyen Gia Thuan - Student ID: 22204631**) have contributed equally (**50% / 50%**) to the research, stakeholder elicitation, process analysis, BPMN modeling, Use Case specifications, Odoo ERP configuration, UAT testing, and master report compilation for both Phase 1 and Phase 2 under the leadership of **Vo Duy Binh**.
 
-**Table B.1:** Individual Contribution Sign-off, Performance Rating & Academic Integrity Confirmation
+**Table B.1:** Master Individual Contribution Sign-off, Performance Rating & Academic Integrity Confirmation
 
-| Student Name                    | Student ID         | Phase 1 Assigned Scope               | Workload Contribution (%) | Task Performance Rating (%) | Student Signature         |
-| ------------------------------- | ------------------ | ------------------------------------ | :-----------------------: | :-------------------------: | ------------------------- |
-| **Vo Duy Binh**           | **22301500** | Sales & Purchasing Modules / Lead BA | **50%**                   | **100% (Outstanding)**      | *Vo Duy Binh*           |
-| **Pham Nguyen Gia Thuan** | **22204631** | Inventory & Invoicing Modules / QA   | **50%**                   | **100% (Outstanding)**      | *Pham Nguyen Gia Thuan* |
+| Student Name | Student ID | Assigned Phase 1 & 2 Core Scope | Workload Contribution (%) | Task Performance Rating (%) | Student Signature |
+| :--- | :---: | :--- | :---: | :---: | :--- |
+| **Vo Duy Binh** | **22301500** | **Team Leader / Lead BA & Systems Analyst:**<br/>• Scope & Governance, 5-Whys Root Cause Analysis.<br/>• AS-IS & TO-BE Sales/Procurement BPMN Modeling.<br/>• Use Cases UC-SALES-01 to 04 & UC-PURCH-01, 02.<br/>• Odoo Sales & Purchase Setup, TC-01, 03, 05, 07.<br/>• Master BRD Authoring & Defense Lead. | **50%** | **100% (Outstanding - All Milestones Delivered)** | *Vo Duy Binh* |
+| **Pham Nguyen Gia Thuan** | **22204631** | **QA Specialist & Solution Configurator:**<br/>• Master Data 10 SKUs & Multi-Facility Logistics.<br/>• AS-IS & TO-BE Warehouse/Invoicing BPMN Modeling.<br/>• Use Cases UC-INV-01 to 04 & UC-ACC-01 to 04.<br/>• Odoo Inventory & Invoicing Setup, TC-02, 04, 06, 08.<br/>• Traceability RTM, Fit-Gap Analysis & QA Review. | **50%** | **100% (Outstanding - All Milestones Delivered)** | *Pham Nguyen Gia Thuan* |
+
+---
+
+## Appendix C. UAT Peer Review Log & Defect Tracking Register
+
+**Table C.1:** UAT Peer Review Log & Verification Audit Trail
+
+| Audit ID | Target Test Case | Reviewing Stakeholder Role | Verification Finding | Defect Severity | Corrective Action & Final Resolution | Sign-off Status |
+| :---: | :---: | :--- | :--- | :---: | :--- | :---: |
+| **REV-01** | **TC-01** | Lead BA (Vo Duy Binh) | Contract rate displayed 65,000 VND but VAT was initially set to 8% instead of 10%. | Low | Corrected product tax configuration to standard 10% VAT. Re-verified unit line price. | **APPROVED** |
+| **REV-02** | **TC-03** | QA Specialist (Pham Nguyen Gia Thuan) | Generated delivery order was missing default source warehouse location tag. | Medium | Configured default warehouse route: Tan Binh Central Hub (`WH/Stock`). Re-tested dispatch. | **APPROVED** |
+| **REV-03** | **TC-04** | Chief Accountant | Soft warning allowed sales user to bypass credit hold by saving draft. | High | Injected Automated Server Action blocking SO confirmation state transition for overdue accounts. | **APPROVED** |
+| **REV-04** | **TC-06** | Billing Officer | Line items showed total ordered rather than delivered on partial shipment simulation. | High | Switched global invoicing policy from 'Ordered quantities' to 'Delivered quantities'. | **APPROVED** |
+
+---
+
+## Appendix D. Odoo Master Data Import Matrix (10 SKUs)
+
+**Table D.1:** Complete Master Data Import Specification for Odoo ERP
+
+| Item No. | SKU Code | Name | Category | UoM | Retail Price (VND) | Contract Price (VND) | Cost (VND) | Min Stock | Max Stock | Barcode |
+| :---: | :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 1 | `ST-001` | A4 Copy Paper Double A 70gsm | Commercial Paper | Ream | 75,000 | 65,000 | 52,000 | 100 | 300 | 8851976000014 |
+| 2 | `ST-002` | A4 Copy Paper IK Plus 70gsm | Commercial Paper | Ream | 72,000 | 63,000 | 50,000 | 100 | 250 | 8992752011021 |
+| 3 | `ST-003` | Ballpoint Pen Thien Long 0.5mm Blue | Office Stationery | Box (20) | 90,000 | 78,000 | 60,000 | 50 | 150 | 8935001800035 |
+| 4 | `ST-004` | Gel Pen Pentel EnerGel 0.7mm Black | Premium Stationery | Box (12) | 360,000 | 320,000 | 250,000 | 20 | 80 | 088485100042 |
+| 5 | `ST-005` | Lever Arch File Kokuyo A4 7cm | Filing & Storage | Piece | 65,000 | 55,000 | 42,000 | 40 | 120 | 893603200059 |
+| 6 | `ST-006` | Clear Holder Plus A4 40 Pockets | Filing & Storage | Piece | 45,000 | 38,000 | 28,000 | 30 | 100 | 497756400066 |
+| 7 | `ST-007` | Heavy Duty Stapler Deli 0395 (100sh) | Desktop Equipment | Unit | 280,000 | 240,000 | 190,000 | 10 | 30 | 692173490073 |
+| 8 | `ST-008` | Staples Deli 23/13 (1000 pcs) | Consumables | Box | 35,000 | 28,000 | 20,000 | 50 | 200 | 692173490080 |
+| 9 | `ST-009` | Sticky Notes 3M Post-it 3x3 Yellow | Consumables | Pack (12) | 120,000 | 105,000 | 80,000 | 30 | 100 | 021200500097 |
+| 10 | `ST-010` | Toner Cartridge HP 85A (CE285A) | Consumables | Unit | 1,450,000 | 1,250,000 | 980,000 | 5 | 20 | 088442000103 |

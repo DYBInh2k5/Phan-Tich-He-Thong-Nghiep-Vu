@@ -2,7 +2,7 @@
 ## BUSINESS SYSTEMS ANALYSIS (BSA) — MASTER COURSEWORK & EXERCISES KNOWLEDGE BASE
 
 > 🔄 **AUTOMATED SYNCHRONIZATION STATUS: ACTIVE**  
-> **Last Auto-Updated:** `2026-11-09 11:58:04 (UTC)`  
+> **Last Auto-Updated:** `2026-11-12 02:24:12 (UTC)`  
 > **Sync Engine:** `scripts/auto_update_knowledge.js`  
 > **Target Tracking:** All Lecture Slides, Individual Deliverables, Group Submissions, and Project Phase 1/2 Artifacts.  
 > *Note: This file is dynamically re-compiled whenever new slides, assignments, or project files are committed or saved.*
@@ -109,16 +109,17 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | Project Deliverable | File Path | Size | Description |
 | :--- | :--- | :---: | :--- |
 | **BRD_Master_Group6.md** | [`Project/Final Project/BRD_Master_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Master_Group6.md) | 13.1 KB | Official Phase 1 Artifact |
-| **BRD_Official_Report_Group6.md** | [`Project/Final Project/BRD_Official_Report_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Official_Report_Group6.md) | 116.3 KB | Official Phase 1 Artifact |
+| **BRD_Official_Report_Group6.md** | [`Project/Final Project/BRD_Official_Report_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Official_Report_Group6.md) | 172.0 KB | Official Phase 1 Artifact |
 | **BRD_Template_BSA_New.docx** | [`Project/Final Project/BRD_Template_BSA_New.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Template_BSA_New.docx) | 60.4 KB | Official Phase 1 Artifact |
 | **BRD_Template_BSA.docx** | [`Project/Final Project/BRD_Template_BSA.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Template_BSA.docx) | 61.4 KB | Official Phase 1 Artifact |
 | **Design.md** | [`Project/Final Project/Design.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Design.md) | 24.7 KB | Official Phase 1 Artifact |
-| **Group 6_Project_Phase_1.docx** | [`Project/Final Project/Group 6_Project_Phase_1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Group 6_Project_Phase_1.docx) | 283.2 KB | Official Phase 1 Artifact |
+| **Group 6_Project_Phase_1.docx** | [`Project/Final Project/Group 6_Project_Phase_1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Group 6_Project_Phase_1.docx) | 2464.9 KB | Official Phase 1 Artifact |
+| **Master_BRD_Phase_1_and_2_Group6.docx** | [`Project/Final Project/Master_BRD_Phase_1_and_2_Group6.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Master_BRD_Phase_1_and_2_Group6.docx) | 2464.9 KB | Official Phase 1 Artifact |
 | **Odoo_Live_Instance_Group6.md** | [`Project/Final Project/Odoo_Live_Instance_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Odoo_Live_Instance_Group6.md) | 9.1 KB | Official Phase 1 Artifact |
-| **phace 1.docx** | [`Project/Final Project/phace 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/phace 1.docx) | 283.2 KB | Official Phase 1 Artifact |
-| **Phase 1.docx** | [`Project/Final Project/Phase 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Phase 1.docx) | 283.2 KB | Official Phase 1 Artifact |
+| **phace 1.docx** | [`Project/Final Project/phace 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/phace 1.docx) | 2464.9 KB | Official Phase 1 Artifact |
+| **Phase 1.docx** | [`Project/Final Project/Phase 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Phase 1.docx) | 2464.9 KB | Official Phase 1 Artifact |
 | **Presentation_Script_Bilingual.md** | [`Project/Final Project/Presentation_Script_Bilingual.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Presentation_Script_Bilingual.md) | 68.7 KB | Official Phase 1 Artifact |
-| **Presentation_Slides.html** | [`Project/Final Project/Presentation_Slides.html`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Presentation_Slides.html) | 263.4 KB | Official Phase 1 Artifact |
+| **Presentation_Slides.html** | [`Project/Final Project/Presentation_Slides.html`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Presentation_Slides.html) | 293.0 KB | Official Phase 1 Artifact |
 | **Project phase 1.docx** | [`Project/Final Project/Project phase 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Project phase 1.docx) | 161.7 KB | Official Phase 1 Artifact |
 | **PROJECT_PHASE_1_SUMMARY.md** | [`Project/PROJECT_PHASE_1_SUMMARY.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/PROJECT_PHASE_1_SUMMARY.md) | 64.9 KB | Official Phase 1 Artifact |
 | **Project.md** | [`Project/Final Project/Project.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Project.md) | 14.7 KB | Official Phase 1 Artifact |

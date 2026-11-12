@@ -260,6 +260,30 @@ for (let i = 0; i < mdLines.length; i++) {
     continue;
   }
 
+  const odooMap = {
+    'odoo_00_home_dashboard.png': { rId: 'rIdOdoo00', cy: 3240000, name: 'Figure 6.1 Odoo Dashboard' },
+    'odoo_01_product_ST001_configured.png': { rId: 'rIdOdoo01', cy: 3100000, name: 'Figure 6.3 ST-001 Setup' },
+    'odoo_02_products_catalog_inventory.png': { rId: 'rIdOdoo02', cy: 2600000, name: 'Figure 6.4 10-SKU Catalog' },
+    'odoo_03_contract_pricelist_rule.png': { rId: 'rIdOdoo03', cy: 2900000, name: 'Figure 6.5 Pricelist Rule' },
+    'odoo_04_b2b_customer_contract_profile.png': { rId: 'rIdOdoo04', cy: 3100000, name: 'Figure 6.6 Customer Profile' },
+    'odoo_05_quotation_contract_price_applied.png': { rId: 'rIdOdoo05', cy: 3200000, name: 'Figure 6.7 Quotation S00001' },
+    'odoo_06_atp_inventory_forecast_warning.png': { rId: 'rIdOdoo06', cy: 3100000, name: 'Figure 6.8 ATP Forecast Warning' },
+    'odoo_07_confirmed_sales_order_delivery_link.png': { rId: 'rIdOdoo07', cy: 3100000, name: 'Figure 6.9 Confirmed Sales Order' },
+    'odoo_08_warehouse_delivery_order_waiting.png': { rId: 'rIdOdoo08', cy: 3100000, name: 'Figure 6.10 Delivery Order' },
+    'odoo_09_customer_vat_invoice_posted_3way_match.png': { rId: 'rIdOdoo09', cy: 3100000, name: 'Figure 6.11 Posted VAT Invoice' },
+  };
+
+  let matchedOdoo = false;
+  for (const [key, val] of Object.entries(odooMap)) {
+    if (trimmed.includes(key)) {
+      const imgXml = makeDrawingImage(val.rId, 5760000, val.cy, 300 + Object.keys(odooMap).indexOf(key), val.name);
+      if (isBody) bodyXml += imgXml; else frontMatterXml += imgXml;
+      matchedOdoo = true;
+      break;
+    }
+  }
+  if (matchedOdoo) continue;
+
   // Headings
   if (trimmed.startsWith('#### ')) {
     const text = trimmed.replace(/^####\s+/, '');
