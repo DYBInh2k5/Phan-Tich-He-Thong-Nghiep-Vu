@@ -2,7 +2,7 @@
 ## BUSINESS SYSTEMS ANALYSIS (BSA) — MASTER COURSEWORK & EXERCISES KNOWLEDGE BASE
 
 > 🔄 **AUTOMATED SYNCHRONIZATION STATUS: ACTIVE**  
-> **Last Auto-Updated:** `2026-11-15 07:52:41 (UTC)`  
+> **Last Auto-Updated:** `2026-11-16 02:11:27 (UTC)`  
 > **Sync Engine:** `scripts/auto_update_knowledge.js`  
 > **Target Tracking:** All Lecture Slides, Individual Deliverables, Group Submissions, and Project Phase 1/2 Artifacts.  
 > *Note: This file is dynamically re-compiled whenever new slides, assignments, or project files are committed or saved.*
@@ -57,6 +57,7 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | Slide Filename | File Size | Last Modified | Core Theme Covered |
 | :--- | :---: | :---: | :--- |
 | [`Week 1.pdf`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Slide/Week 1.pdf) | 1.35 MB | 2026-09-14 | Lecture Deck Content |
+| [`WEEK 10 – USE CASE MODELING.pdf`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Slide/WEEK 10 – USE CASE MODELING.pdf) | 1.36 MB | 2026-11-16 | Lecture Deck Content |
 | [`Week 2 Business Process  Stakeholder Investigation.pdf`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Slide/Week 2 Business Process  Stakeholder Investigation.pdf) | 1.29 MB | 2026-09-26 | Lecture Deck Content |
 | [`Week 3 - AS-IS Processes.pdf`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Slide/Week 3 - AS-IS Processes.pdf) | 2.53 MB | 2026-09-28 | Lecture Deck Content |
 | [`Week 4 - Business Process Simulation.pdf`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Slide/Week 4 - Business Process Simulation.pdf) | 2.92 MB | 2026-10-05 | Lecture Deck Content |
@@ -69,7 +70,7 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | Week / Deliverable | Status & Size | Key Completed Artifacts & Topics |
 | :--- | :---: | :--- |
 | [`Week1.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week1.md) | ✅ Completed (3.9 KB) | STUDENT INFORMATION; Task 1 — Investigation Focus |
-| [`Week10.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week10.md) | ⏳ Template (0 B) | Pending |
+| [`Week10.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week10.md) | ✅ Completed (54.4 KB) | Individual Task Focus (from Lecture Slide Deck WEEK 10: USE CASE MODELING); INDIVIDUAL DELIVERABLE WEEK 10 — VÕ DUY BÌNH (ID: 22301500) |
 | [`Week11.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week11.md) | ⏳ Template (0 B) | Pending |
 | [`Week12.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week12.md) | ⏳ Template (0 B) | Pending |
 | [`Week13.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week13.md) | ⏳ Template (0 B) | Pending |
@@ -89,7 +90,7 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | Week / Deliverable | Status & Size | Key Completed Artifacts & Topics |
 | :--- | :---: | :--- |
 | [`Week1.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Group/Week1.md) | ✅ Completed (8.7 KB) | GROUP 6 — SCENARIO B: B2B WHOLESALE & DISTRIBUTION; GROUP 6 MEMBERS & RACI ASSIGNMENT |
-| [`Week10.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Group/Week10.md) | ⏳ Template (0 B) | Pending |
+| [`Week10.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Group/Week10.md) | ✅ Completed (36.8 KB) | Objective; Group Requirements |
 | [`Week11.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Group/Week11.md) | ⏳ Template (0 B) | Pending |
 | [`Week12.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Group/Week12.md) | ⏳ Template (0 B) | Pending |
 | [`Week13.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Group/Week13.md) | ⏳ Template (0 B) | Pending |
