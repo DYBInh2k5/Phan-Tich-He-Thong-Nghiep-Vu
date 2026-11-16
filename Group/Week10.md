@@ -181,7 +181,9 @@ Per Slide 4, all Use Case names strictly follow the **[Verb] + [Noun]** syntax, 
 
 The Enterprise Use Case Diagram defines the complete functional scope of **OfficePro-EDMS**. All 8 human and external system actors are positioned outside the system boundary; 14 Use Cases across 4 operational domains are enclosed inside. The diagram strictly follows textbook UML formatting with stick-figure actors, use case ovals, and formal `<<include>>` / `<<extend>>` stereotypes:
 
-![Enterprise Use Case Diagram — Group 6](../assets/usecase_enterprise_group6.svg)
+
+![Enterprise Use Case Diagram — Group 6](./usecase_enterprise_group6.png)
+
 
 ### 4.1. Justification of UML Relationships (Slide 10)
 * **`<<include>>` UC-SALES-04 to UC-SALES-01 (Apply Contract Pricelist):** Every corporate sales order confirmation must unconditionally retrieve the validated contract pricelist. Confirming an order cannot occur without executing price verification.
