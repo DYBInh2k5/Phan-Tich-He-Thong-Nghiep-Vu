@@ -283,6 +283,107 @@ flowchart LR
 
 ---
 
+
+### 4.2. Standard UML Notation (PlantUML Diagram — Classic Stick Figure & Oval Style)
+
+Dành cho trình xem **Markdown Preview Enhanced** hoặc công cụ PlantUML (vẽ đúng chuẩn hình người que Actor và hình Oval Use Case như sách giáo trình UML):
+
+```plantuml
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam monochrome false
+skinparam shadowing true
+skinparam defaultFontName Arial
+skinparam usecase {
+    BackgroundColor #EFF6FF
+    BorderColor #2563EB
+    BorderThickness 1.5
+}
+skinparam actor {
+    BackgroundColor #FEF3C7
+    BorderColor #D97706
+}
+
+' ACTORS DEFINITIONS (STICK FIGURES)
+actor "Sales Staff\n(Account Executive)" as SalesStaff
+actor "Sales Manager\n(Commercial Approver)" as SalesManager
+actor "Corporate Customer\n(B2B Client)" as Customer
+actor "Warehouse Clerk\n(Inventory Operator)" as WarehouseClerk
+actor "Purchasing Staff\n(Procurement Officer)" as PurchasingStaff
+actor "Accounting Officer\n(Credit Controller)" as AccountingOfficer
+actor "Supplier\n(Vendor Rep)" as Supplier
+actor "Tax Authority Gateway\n<<External System>>" as TaxAuthority
+
+' SYSTEM BOUNDARY
+rectangle "OfficePro-EDMS: B2B Distribution Management System" <<Subsystem>> {
+    
+    package "Commercial Sales & Pricing Domain" {
+        usecase "UC-SALES-01\nApply Contract Pricelist" as UC_S01
+        usecase "UC-SALES-02\nQuery ATP Stock Availability" as UC_S02
+        usecase "UC-SALES-03\nRequest Discount Approval" as UC_S03
+        usecase "UC-SALES-04\nConfirm Sales Order" as UC_S04 #FFFBEB
+    }
+
+    package "Inventory & Fulfillment Domain" {
+        usecase "UC-INV-01\nLog Inbound Barcode Receipt" as UC_I01
+        usecase "UC-INV-02\nGenerate Bin-Guided Picking List" as UC_I02
+        usecase "UC-INV-03\nCapture Electronic Delivery Proof" as UC_I03
+        usecase "UC-INV-04\nAudit Cycle Count Inventory" as UC_I04
+    }
+
+    package "Procurement Replenishment Domain" {
+        usecase "UC-PURCH-01\nTrigger Automated PR" as UC_P01 #FFFBEB
+        usecase "UC-PURCH-02\nCompare Multi-Vendor RFQs" as UC_P02
+        usecase "UC-PURCH-03\nApprove Purchase Order" as UC_P03
+    }
+
+    package "Financial Governance Domain" {
+        usecase "UC-ACC-01\nExecute Automated 3-Way Match" as UC_A01 #FFFBEB
+        usecase "UC-ACC-02\nEnforce Hard Credit Hold" as UC_A02
+        usecase "UC-ACC-03\nGenerate Electronic VAT Invoice" as UC_A03
+    }
+}
+
+' ASSOCIATIONS
+SalesStaff -- UC_S01
+SalesStaff -- UC_S02
+SalesStaff -- UC_S04
+Customer -- UC_S04
+Customer -- UC_I03
+
+SalesManager -- UC_S03
+SalesManager -- UC_P03
+
+WarehouseClerk -- UC_I01
+WarehouseClerk -- UC_I02
+WarehouseClerk -- UC_I03
+WarehouseClerk -- UC_I04
+
+PurchasingStaff -- UC_P01
+PurchasingStaff -- UC_P02
+PurchasingStaff -- UC_P03
+Supplier -- UC_P02
+Supplier -- UC_I01
+
+AccountingOfficer -- UC_A01
+AccountingOfficer -- UC_A02
+AccountingOfficer -- UC_A03
+UC_A03 -- TaxAuthority
+
+' INCLUDE & EXTEND RELATIONSHIPS
+UC_S04 .> UC_S01 : <<include>>
+UC_S04 .> UC_S02 : <<include>>
+UC_A03 .> UC_A01 : <<include>>
+UC_I01 .> UC_P03 : <<include>>
+
+UC_S03 .> UC_S04 : <<extend>>\n[Discount > 5%]
+UC_A02 .> UC_S04 : <<extend>>\n[Overdue Debt > 30d]
+@enduml
+```
+
+---
+
 ## 5. FR-TO-USE CASE TRACEABILITY MATRIX (Slide 8, 9, 14, 17)
 
 Per Slide 8 & 9, functional requirements are mapped to cohesive Use Cases without mechanical 1-to-1 conversion. Multiple validation rules and supporting behaviors are bundled into the primary Use Case that fulfills the actor's goal.

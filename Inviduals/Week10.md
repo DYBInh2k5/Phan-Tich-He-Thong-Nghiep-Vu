@@ -173,6 +173,77 @@ flowchart LR
 
 ---
 
+
+### 2.2. Standard UML Notation (PlantUML Subsystem Diagram — Classic Stick Figures & Ovals)
+
+Sơ đồ phân hệ chuyên sâu của **Võ Duy Bình** vẽ theo chuẩn hình người que (Actor stick-figure) và hình elip Use Case cổ điển:
+
+```plantuml
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam monochrome false
+skinparam shadowing true
+skinparam usecase {
+    BackgroundColor #EFF6FF
+    BorderColor #2563EB
+    BorderThickness 1.5
+}
+skinparam actor {
+    BackgroundColor #FEF3C7
+    BorderColor #D97706
+}
+
+actor "Sales Staff\n(Account Executive)" as SalesStaff
+actor "Sales Manager\n(Commercial Approver)" as SalesManager
+actor "Corporate Customer\n(B2B Client)" as Customer
+actor "Purchasing Staff\n(Procurement Officer)" as PurchasingStaff
+actor "Supplier\n(Vendor Rep)" as Supplier
+actor "Accounting Officer\n(Credit Controller)" as AccountingOfficer
+
+rectangle "Commercial Sales, Pricing & Procurement Subsystem" <<Subsystem>> {
+    
+    package "Sales & Pricing (BP1 & BP2)" {
+        usecase "UC-SALES-01\nApply Contract Pricelist" as UC_S01
+        usecase "UC-SALES-03\nRequest Discount Approval" as UC_S03
+        usecase "UC-SALES-04\nConfirm Sales Order" as UC_S04 #FFFBEB
+    }
+
+    package "Procurement Replenishment (BP4)" {
+        usecase "UC-PURCH-01\nTrigger Automated PR" as UC_P01 #FFFBEB
+        usecase "UC-PURCH-02\nCompare Multi-Vendor RFQs" as UC_P02
+        usecase "UC-PURCH-03\nApprove Purchase Order" as UC_P03
+    }
+
+    package "Credit & Reconciliation Gates" {
+        usecase "UC-ACC-01\nExecute Automated 3-Way Match" as UC_A01
+        usecase "UC-ACC-02\nEnforce Hard Credit Hold" as UC_A02
+    }
+}
+
+SalesStaff -- UC_S01
+SalesStaff -- UC_S04
+Customer -- UC_S04
+
+SalesManager -- UC_S03
+SalesManager -- UC_P03
+
+PurchasingStaff -- UC_P01
+PurchasingStaff -- UC_P02
+PurchasingStaff -- UC_P03
+Supplier -- UC_P02
+
+AccountingOfficer -- UC_A01
+AccountingOfficer -- UC_A02
+
+UC_S04 .> UC_S01 : <<include>>
+UC_S03 .> UC_S04 : <<extend>>\n[Discount > 5%]
+UC_A02 .> UC_S04 : <<extend>>\n[Overdue Debt > 30d]
+@enduml
+```
+
+---
+
 ## 3. DEEP DIVE USE CASE SPECIFICATIONS FOR OWNED CORE USE CASES (Slide 17)
 
 To satisfy the individual explanation requirement of Slide 17, I provide complete Alistair Cockburn structured specifications for my three primary flagship Use Cases.
