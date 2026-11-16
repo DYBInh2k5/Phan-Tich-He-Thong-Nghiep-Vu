@@ -15,21 +15,21 @@
 
 > [!IMPORTANT]
 > **Đường dẫn Trang chủ Odoo của Doanh nghiệp:**  
-> 🔗 **`https://officepro-distribution-co-ltd2.odoo.com/odoo`**  
+> 🔗 **`https://edu-officeprodistribution.odoo.com/odoo`**  
 > *(Tài khoản quản trị đăng nhập: Email của bạn Võ Duy Bình)*
 
 ### 📌 Các đường dẫn trực tiếp (Deep Links) vào từng phân hệ nghiệp vụ:
 
 | Phân hệ / Nghiệp vụ | Đường dẫn truy cập trực tiếp trên Odoo | Chức năng chính |
 | :--- | :--- | :--- |
-| **🏠 Bàn làm việc chính (Home Dashboard)** | [`/odoo`](https://officepro-distribution-co-ltd2.odoo.com/odoo) | Tổng quan hệ thống ERP, danh sách các App đã cài đặt. |
-| **📦 Danh mục Tồn kho (Inventory Products)** | [`/odoo/inventory/products`](https://officepro-distribution-co-ltd2.odoo.com/odoo/inventory/products) | Quản lý Master Data 10 SKUs, tồn kho On Hand và Forecasted. |
-| **📄 Chi tiết Sản phẩm `ST-001` (Double A)** | [`/odoo/inventory/products/1`](https://officepro-distribution-co-ltd2.odoo.com/odoo/inventory/products/1) | Xem giá niêm yết 75.000₫, giá vốn 52.000₫, cấu hình tồn kho. |
-| **🏷️ Bảng giá Hợp đồng B2B (`Net 30`)** | [`/odoo/sales/pricelists/2`](https://officepro-distribution-co-ltd2.odoo.com/odoo/sales/pricelists/2) | Quy tắc giá hợp đồng cố định **65.000 VND** cho SKU `ST-001`. |
-| **👥 Hồ sơ Khách hàng B2B (Saigon Tech Corp)** | [`/odoo/sales/customers/9`](https://officepro-distribution-co-ltd2.odoo.com/odoo/sales/customers/9) | Khách B2B gắn liền Bảng giá Hợp đồng và hạn nợ Net 30 (`30 Days`). |
-| **📑 Báo giá & Đơn bán hàng B2B (`S00001`)** | [`/odoo/sales/1`](https://officepro-distribution-co-ltd2.odoo.com/odoo/sales/1) | Đơn bán hàng `S00001` tự động áp dụng giá hợp đồng 65.000₫. |
-| **🚚 Phiếu xuất kho vận chuyển (`WH/OUT/00001`)** | [`/odoo/inventory`](https://officepro-distribution-co-ltd2.odoo.com/odoo/inventory) | Phiếu xuất kho tự động sinh từ đơn `S00001` sang phân hệ kho. |
-| **🧾 Hóa đơn VAT điện tử (`INV/2026/00001`)** | [`/odoo/invoicing`](https://officepro-distribution-co-ltd2.odoo.com/odoo/invoicing) | Hóa đơn GTGT chính thức ghi sổ (Status: Posted), khớp 3 bên Net 30. |
+| **🏠 Bàn làm việc chính (Home Dashboard)** | [`/odoo`](https://edu-officeprodistribution.odoo.com/odoo) | Tổng quan hệ thống ERP, danh sách các App đã cài đặt. |
+| **📦 Danh mục Tồn kho (Inventory Products)** | [`/odoo/inventory/products`](https://edu-officeprodistribution.odoo.com/odoo/inventory/products) | Quản lý Master Data 10 SKUs, tồn kho On Hand và Forecasted. |
+| **📄 Chi tiết Sản phẩm `ST-001` (Double A)** | [`/odoo/inventory/products/1`](https://edu-officeprodistribution.odoo.com/odoo/inventory/products/1) | Xem giá niêm yết 75.000₫, giá vốn 52.000₫, cấu hình tồn kho. |
+| **🏷️ Bảng giá Hợp đồng B2B (`Net 30`)** | [`/odoo/sales/pricelists/2`](https://edu-officeprodistribution.odoo.com/odoo/sales/pricelists/2) | Quy tắc giá hợp đồng cố định **65.000 VND** cho SKU `ST-001`. |
+| **👥 Hồ sơ Khách hàng B2B (Saigon Tech Corp)** | [`/odoo/sales/customers/9`](https://edu-officeprodistribution.odoo.com/odoo/sales/customers/9) | Khách B2B gắn liền Bảng giá Hợp đồng và hạn nợ Net 30 (`30 Days`). |
+| **📑 Báo giá & Đơn bán hàng B2B (`S00001`)** | [`/odoo/sales/1`](https://edu-officeprodistribution.odoo.com/odoo/sales/1) | Đơn bán hàng `S00001` tự động áp dụng giá hợp đồng 65.000₫. |
+| **🚚 Phiếu xuất kho vận chuyển (`WH/OUT/00001`)** | [`/odoo/inventory`](https://edu-officeprodistribution.odoo.com/odoo/inventory) | Phiếu xuất kho tự động sinh từ đơn `S00001` sang phân hệ kho. |
+| **🧾 Hóa đơn VAT điện tử (`INV/2026/00001`)** | [`/odoo/invoicing`](https://edu-officeprodistribution.odoo.com/odoo/invoicing) | Hóa đơn GTGT chính thức ghi sổ (Status: Posted), khớp 3 bên Net 30. |
 
 ---
 
@@ -96,6 +96,6 @@ Tất cả 10 file ảnh độ phân giải cao được lưu trữ tại:
    - Copy trực tiếp bảng kiểm thử ở Mục 3 vào Báo cáo UAT Report.  
    - Chèn các ảnh chụp từ Mục 4 vào báo cáo để làm minh chứng đạt chuẩn 100% Pass.
 2. **Khi Trình bày Demo trực tiếp trước Giảng viên (Tuần 14–15):**  
-   - Đăng nhập vào đường dẫn: `https://officepro-distribution-co-ltd2.odoo.com/odoo`
+   - Đăng nhập vào đường dẫn: `https://edu-officeprodistribution.odoo.com/odoo`
    - Nhóm trưởng **Võ Duy Bình** mở đơn `S00001` trình diễn việc Odoo tự động loại bỏ lỗi giá 5–8% nhờ Bảng giá Hợp đồng.
    - Thành viên **Phạm Nguyễn Gia Thuận** mở phiếu xuất kho `WH/OUT/00001` và Hóa đơn `INV/2026/00001` trình diễn quy trình đối soát 3 bên tự động giúp tiết kiệm 15–20 giờ làm việc thủ công mỗi tuần của kế toán.

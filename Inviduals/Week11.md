@@ -10,6 +10,10 @@
 * **Quy trình chịu trách nhiệm:** `BP1` Đặt hàng Doanh nghiệp, `BP2` Kiểm soát Giá hợp đồng, `BP4` Mua hàng Bù kho
 * **Mục tiêu Tuần 11:** Ánh xạ các Use Case (`UC-SALES-01`, `UC-SALES-02`, `UC-SALES-04`, `UC-PURCH-01`, `UC-ACC-01`, `UC-ACC-02`) đã mô hình hóa ở Tuần 10 lên giao diện thực tế Odoo ERP Cloud, nạp Master Data 10 SKU và thực hiện kịch bản demo sống liên thông (End-to-End Walkthrough).
 
+> 🌐 **Live Cloud Instance (Hệ thống thực hành chính thức):**  
+> 🔗 **Trang chủ Dashboard:** [https://edu-officeprodistribution.odoo.com/odoo](https://edu-officeprodistribution.odoo.com/odoo)  
+> *Đã kết nối tài khoản Odoo Cloud của sinh viên, sẵn sàng thực hành và cấu hình kịch bản nghiệp vụ.*
+
 ---
 
 ## 1. MỤC TIÊU & NGUYÊN TẮC DEMO HỌC THUẬT (MAPPING USE CASE ➔ ODOO)
@@ -49,17 +53,14 @@ Buổi demo Tuần 11 không đơn thuần là "bấm nút phần mềm", mà l�
 ## 2. GIAI ĐOẠN 0: CHUẨN BỊ MÔI TRƯỜNG & NẠP DỮ LIỆU CHỦ (MASTER DATA)
 *(Thời gian chuẩn bị trước giờ học: 3–5 phút)*
 
-### Bước 0.1: Tạo Database Odoo Mới (Nếu bản cũ đã hết hạn)
-1. Truy cập: **[odoo.com/trial](https://www.odoo.com/trial)**.
-2. Chọn đúng **4 Phân hệ Nghiệp vụ**:
-   * ✅ **Sales** (Bán hàng)
-   * ✅ **Inventory** (Kho vận)
-   * ✅ **Purchase** (Thu mua)
-   * ✅ **Invoicing** (Hóa đơn & Kế toán)
-3. Điền thông tin kích hoạt:
-   * **Company Name:** `OfficePro Distribution Co., Ltd.`
-   * **Phone / Email:** Sử dụng email sinh viên hoặc email cá nhân để nhận link kích hoạt.
-   * **Company Size:** 5–20 employees | **Primary Interest:** Educational / Student.
+### Bước 0.1: Đăng nhập vào Hệ thống Odoo Cloud đã tạo sẵn
+1. Truy cập trực tiếp link chính thức: **[https://edu-officeprodistribution.odoo.com/odoo](https://edu-officeprodistribution.odoo.com/odoo)**.
+2. Kiểm tra các Phân hệ Nghiệp vụ đã được cài đặt:
+   * ✅ **Sales** (Bán hàng B2B)
+   * ✅ **Inventory** (Kho vận & Tồn kho ATP)
+   * ✅ **Purchase** (Mua hàng bổ sung tự động)
+   * ✅ **Invoicing** (Kế toán công nợ & Hóa đơn điện tử VAT)
+*(Trường hợp sau 15 ngày bản dùng thử hết hạn thì mới tạo lại theo hướng dẫn tại [odoo.com/trial](https://www.odoo.com/trial)).*
 
 ### Bước 0.2: Cấu hình Tiền tệ VND & Kế toán Việt Nam
 1. Vào menu **Settings (Cài đặt)** $ightarrow$ Tìm mục **Companies** $ightarrow$ Click vào công ty **OfficePro Distribution Co., Ltd.**.

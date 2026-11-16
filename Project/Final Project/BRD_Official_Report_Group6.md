@@ -1147,7 +1147,7 @@ Table 5.8 proves complete bidirectional alignment, verifying that every function
 
 To validate the feasibility and operational integrity of the proposed TO-BE business process, Group 6 deployed and configured an enterprise-grade cloud prototype utilizing the **Odoo ERP Enterprise Platform**.
 
-* **Live Cloud Instance URL:** 🔗 [https://officepro-distribution-co-ltd2.odoo.com/odoo](https://officepro-distribution-co-ltd2.odoo.com/odoo)
+* **Live Cloud Instance URL:** 🔗 [https://edu-officeprodistribution.odoo.com/odoo](https://edu-officeprodistribution.odoo.com/odoo)
 * **Company Legal Entity:** OfficePro Distribution Co., Ltd. (Quận 3, TP. Hồ Chí Minh)
 * **Operating Currency:** Vietnamese Dong (VND — `₫`)
 * **Standard Accounting Framework:** Vietnamese Chart of Accounts (Circular 200/2014/TT-BTC & Circular 133/2016/TT-BTC)
