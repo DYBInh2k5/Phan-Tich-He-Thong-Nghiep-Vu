@@ -2,7 +2,7 @@
 ## BUSINESS SYSTEMS ANALYSIS (BSA) — MASTER COURSEWORK & EXERCISES KNOWLEDGE BASE
 
 > 🔄 **AUTOMATED SYNCHRONIZATION STATUS: ACTIVE**  
-> **Last Auto-Updated:** `2026-11-16 03:48:37 (UTC)`  
+> **Last Auto-Updated:** `2026-11-16 04:04:59 (UTC)`  
 > **Sync Engine:** `scripts/auto_update_knowledge.js`  
 > **Target Tracking:** All Lecture Slides, Individual Deliverables, Group Submissions, and Project Phase 1/2 Artifacts.  
 > *Note: This file is dynamically re-compiled whenever new slides, assignments, or project files are committed or saved.*
@@ -70,8 +70,8 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | Week / Deliverable | Status & Size | Key Completed Artifacts & Topics |
 | :--- | :---: | :--- |
 | [`Week1.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week1.md) | ✅ Completed (3.9 KB) | STUDENT INFORMATION; Task 1 — Investigation Focus |
-| [`Week10.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week10.md) | ✅ Completed (60.0 KB) | Individual Task Focus (from Lecture Slide Deck WEEK 10: USE CASE MODELING); INDIVIDUAL DELIVERABLE WEEK 10 — VÕ DUY BÌNH (ID: 22301500) |
-| [`Week11.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week11.md) | ⏳ Template (0 B) | Pending |
+| [`Week10.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week10.md) | ✅ Completed (60.3 KB) | Individual Task Focus (from Lecture Slide Deck WEEK 10: USE CASE MODELING); INDIVIDUAL DELIVERABLE WEEK 10 — VÕ DUY BÌNH (ID: 22301500) |
+| [`Week11.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week11.md) | ✅ Completed (17.8 KB) | HƯỚNG DẪN THỰC HÀNH & KỊCH BẢN DEMO ODOO ERP TUẦN 11; DỰA TRÊN MÔ HÌNH USE CASE & YÊU CẦU CHỨC NĂNG (TUẦN 10) |
 | [`Week12.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week12.md) | ⏳ Template (0 B) | Pending |
 | [`Week13.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week13.md) | ⏳ Template (0 B) | Pending |
 | [`Week14.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week14.md) | ⏳ Template (0 B) | Pending |
