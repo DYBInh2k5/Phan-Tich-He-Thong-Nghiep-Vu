@@ -40,11 +40,11 @@ Buổi demo Tuần 11 không đơn thuần là "bấm nút phần mềm", mà l�
 |                                                                                                             |
 |   [UC-PURCH-01: Trigger Automated PR]      --->  [Odoo Purchase: Reordering Rule Min=100 / Max=300]         |
 |   - Mục tiêu: Tự động bổ sung tồn kho            - Chứng cứ: Xuất kho tụt xuống 70 ram (< 100) -> Odoo tự   |
-|   - Đáp ứng: FR-04 (Mua hàng tự động)            - sinh RFQ P00004 đặt đúng 230 ram từ NCC Double A Paper   |
+|   - Đáp ứng: FR-04 (Mua hàng tự động)            - sinh RFQ P00001 đặt đúng 230 ram từ NCC Giấy Bến Cát     |
 |                                                                                                             |
 |   [UC-ACC-01: Automated 3-Way Match]       --->  [Odoo Invoicing: Đối soát 3 bên tự động theo hàng thực giao]|
 |   - Mục tiêu: Khớp SO - Giao hàng - Hóa đơn      - Chứng cứ: Nút "Create Invoice" chỉ cho phép xuất tiền    |
-|   - Đáp ứng: FR-05 (Giảm 90% công kế toán)       - đúng bằng số lượng đã Delivered trên phiếu WH/OUT        |
+|   - Đáp ứng: FR-05 (Giảm 90% công kế toán)       - đúng bằng số lượng đã Delivered trên phiếu WH/OUT/00002  |
 +-------------------------------------------------------------------------------------------------------------+
 ```
 
@@ -92,7 +92,7 @@ Nhóm đã chuẩn bị sẵn tệp chuẩn: [`Project/Final Project/Odoo_Master
    * **Min Quantity (Tồn tối thiểu):** `100`
    * **Max Quantity (Tồn tối đa):** `300`
    * **Preferred Route:** `Buy (Mua hàng)`
-   * **Vendor:** `Double A International Paper Co., Ltd.` (Giá cung ứng: 52.000 VND).
+   * **Vendor:** `Nhà cung cấp Giấy Bến Cát` (Giá cung ứng: 52.000 VND).
 
 
 ---
@@ -186,7 +186,7 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
        * **On Hand (Tồn vật lý):** 120 ram.
        * **Forecasted / Free to Use (Tồn khả dụng ATP):** 70 ram (do đã trừ đi 50 ram bị giữ chỗ bởi đơn S00001).
   2. **Thực hiện Lấy hàng theo Ô kệ (`UC-INV-02`):**
-     * Vào **Operations** $rightarrow$ **Transfers** $rightarrow$ Mở phiếu xuất `WH/OUT/00001`.
+     * Vào **Operations** $rightarrow$ **Transfers** $rightarrow$ Mở phiếu xuất `WH/OUT/00002`.
      * Bấm **Print** $rightarrow$ **Picking Operations**: Phiếu in chỉ rõ vị trí `Location: WH/Stock/Aisle-02/Bin-04`.
   3. **Xác nhận Xuất kho:**
      * Bấm nút **Validate** $rightarrow$ Bấm **Apply**.
@@ -217,11 +217,11 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
 * **Các bước thao tác chuẩn:**
   1. **Cấu hình Quy tắc Tồn an toàn (Reordering Rules):**
      * Vào **Configuration** $rightarrow$ **Reordering Rules** $rightarrow$ Bấm **New**.
-     * Chọn SKU `ST-001` | Min Quantity: `100` | Max Quantity: `300` | Vendor: `Double A Paper Co., Ltd.`.
+     * Chọn SKU `ST-001` | Min Quantity: `100` | Max Quantity: `300` | Vendor: `Nhà cung cấp Giấy Bến Cát`.
   2. **Kích hoạt Mua hàng Tự động (`UC-PURCH-01`):**
      * Khi kho xuất bán hàng làm tồn kho tụt xuống 70 ram (< Min 100).
      * Hệ thống tự động sinh một đơn nháp trong **Purchase** $rightarrow$ **Requests for Quotation**.
-     * Mở đơn `P00004`: Số lượng mua được tự động tính đúng bằng:
+     * Mở đơn `P00001`: Số lượng mua được tự động tính đúng bằng:
        $\text{Reorder Quantity} = 300 - 70 = 230\text{ ram}$
   3. **So sánh Báo giá Đa Nhà cung cấp (`UC-PURCH-02`):**
      * Trên đơn RFQ, bấm **Create Alternative** để gửi thêm bản chào giá cho Nhà cung cấp số 2 (Thiên Long, Deli).
@@ -252,7 +252,7 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
 * **Các bước thao tác chuẩn:**
   1. **Thực hiện Đối soát 3 bên tự động (`UC-ACC-01`):**
      * Quay lại đơn `S00001` $rightarrow$ Bấm nút **Create Invoice** $rightarrow$ Chọn **Regular Invoice**.
-     * Mở hóa đơn nháp: Số lượng tính tiền được hệ thống tự động khóa chặt đúng **50 ram** (bằng đúng số lượng thực giao trên Lệnh giao kho WH/OUT/00001, dù đơn đặt hàng ban đầu có thể khác).
+     * Mở hóa đơn nháp: Số lượng tính tiền được hệ thống tự động khóa chặt đúng **50 ram** (bằng đúng số lượng thực giao trên Lệnh giao kho WH/OUT/00002, dù đơn đặt hàng ban đầu có thể khác).
      * Dung sai chênh lệch = 0. Bấm **Confirm** để phát hành hóa đơn chính thức `INV/2026/00001`.
   2. **Quản lý Tuổi nợ & Khóa nợ quá hạn (`UC-ACC-02`):**
      * Vào **Accounting** $rightarrow$ Menu **Reporting** $rightarrow$ Chọn **Aged Receivable (Báo cáo Tuổi nợ Phải thu)**.
@@ -311,7 +311,7 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 2. **Quay lại Đơn hàng hợp lệ S00001 của Tập đoàn ABC:**
    * Bấm nút **"Confirm" (Xác nhận)**.
    * Trạng thái đơn chuyển từ *Quotation* sang **Sales Order S00001**.
-   * 👉 **Điểm nhấn thuyết minh:** Ngay khi SO được xác nhận, ở góc trên bên phải màn hình xuất hiện một Smart Button **Delivery (1)** liên kết trực tiếp sang phiếu xuất kho `WH/OUT/00001`. Hàng lập tức được chuyển từ trạng thái *Available* sang *Reserved* (Giữ chỗ 50 ram), ngăn chặn các sale khác bán trùng hàng!
+   * 👉 **Điểm nhấn thuyết minh:** Ngay khi SO được xác nhận, ở góc trên bên phải màn hình xuất hiện một Smart Button **Delivery (1)** liên kết trực tiếp sang phiếu xuất kho `WH/OUT/00002`. Hàng lập tức được chuyển từ trạng thái *Available* sang *Reserved* (Giữ chỗ 50 ram), ngăn chặn các sale khác bán trùng hàng!
 
 ---
 
@@ -320,7 +320,7 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 * **Yêu cầu chức năng tương ứng:** `FR-04`, `FR-07`.
 
 #### Thao tác từng bước trên Odoo:
-1. Click vào Smart Button **Delivery (1)** trên Sales Order (mở phiếu `WH/OUT/00001`).
+1. Click vào Smart Button **Delivery (1)** trên Sales Order (mở phiếu `WH/OUT/00002`).
    * Bấm **Print $ightarrow$ Picking Operations**.
    * 👉 **Điểm nhấn thuyết minh:** Phiếu xuất kho in ra thể hiện rõ vị trí lấy hàng theo tọa độ ô kệ (`Aisle 02 / Bin 04`), giúp thủ kho không phải đi tìm kiếm thủ công (Đạt chuẩn `UC-INV-02` & `FR-07`).
 2. Bấm nút **"Validate" (Xác nhận xuất kho)** $ightarrow$ Trạng thái chuyển sang **Done (Đã hoàn thành)**.
@@ -330,7 +330,7 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 3. **Mở Module Purchase (Thu mua) để chứng minh tính năng tự động:**
    * Chuyển sang menu **Purchase $ightarrow$ Requests for Quotation (Yêu cầu báo giá)**.
    * 👉 **Điểm nhấn thuyết minh kinh điển (Show-stopper):** 
-     *"Thưa cô, mức tồn kho tối thiểu (Min) chúng em cài đặt cho SKU ST-001 là 100 ram, mức tối đa (Max) là 300 ram. Khi tồn kho tụt xuống 70 ram (< 100), hệ thống Odoo đã tự động chạy quy tắc Reordering Rule và **tự động sinh ra đơn mua nháp P00004** gửi Nhà cung cấp Double A với số lượng chính xác là $300 - 70 = 230$ ram giấy mà không cần nhân viên gõ tay!"* (Chứng minh 100% hiện thực hóa `UC-PURCH-01` & `FR-04`).
+     *"Thưa cô, mức tồn kho tối thiểu (Min) chúng em cài đặt cho SKU ST-001 là 100 ram, mức tối đa (Max) là 300 ram. Khi tồn kho tụt xuống 70 ram (< 100), hệ thống Odoo đã tự động chạy quy tắc Reordering Rule và **tự động sinh ra đơn mua nháp P00001** gửi Nhà cung cấp Giấy Bến Cát với số lượng chính xác là $300 - 70 = 230$ ram giấy mà không cần nhân viên gõ tay!"* (Chứng minh 100% hiện thực hóa `UC-PURCH-01` & `FR-04`).
 
 ---
 
@@ -348,7 +348,32 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 
 ---
 
-## 5. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
+
+---
+
+## 5. BẢNG TỔNG HỢP CÁC BẢN GHI SỐ LIỆU THỰC TẾ TRÊN LIVE CLOUD (LIVE AUDIT TRAIL EVIDENCE)
+
+Toàn bộ kịch bản nghiệp vụ liên thông đã được thực thi và xác thực 100% trên hệ sinh thái Odoo Cloud chính thức của sinh viên: [https://edu-officeprodistribution.odoo.com/odoo](https://edu-officeprodistribution.odoo.com/odoo).
+
+Dưới đây là bảng nhật ký kiểm toán (Audit Trail) với đầy đủ mã định danh bản ghi, trạng thái hệ thống và liên kết trực tiếp:
+
+| STT | Đối tượng / Chứng từ | Mã chứng từ thực tế | Phân hệ (App) | Trạng thái (Status) | Số lượng & Giá trị thực tế | Liên kết trực tiếp trên Odoo Cloud |
+| :---: | :--- | :--- | :--- | :---: | :--- | :--- |
+| **1** | **Master Data Sản phẩm** | `ST-001` (ID: 3) | Inventory / Products | Đang kinh doanh | Tồn On Hand: **300 ram**, Giá bán lẻ: **75.000₫**, Giá vốn: **52.000₫** | [Xem Sản phẩm ST-001](https://edu-officeprodistribution.odoo.com/odoo/inventory/products/3) |
+| **2** | **Quy tắc Tồn kho An toàn** | Reordering Rule #1 | Inventory / Operations | Kích hoạt (Auto) | Min: **100 ram**, Max: **300 ram**, Tuyến: **Buy** | [Xem Reordering Rule](https://edu-officeprodistribution.odoo.com/odoo/inventory/products/3/action-748) |
+| **3** | **Bảng giá Hợp đồng B2B** | Bảng giá 2026 — ABC | Sales / Pricelists | Có hiệu lực | Cố định: **65.000₫/ram** cho SKU ST-001 | [Xem Danh sách Pricelist](https://edu-officeprodistribution.odoo.com/odoo/sales) |
+| **4** | **Khách hàng Doanh nghiệp** | `Tập đoàn ABC` | Contacts / Customers | Hoạt động | Hạn nợ: **30 Days (Net 30)**, Bảng giá: B2B Contract 2026 | [Xem Khách hàng](https://edu-officeprodistribution.odoo.com/odoo/contacts) |
+| **5** | **Nhà cung cấp Giấy** | `Nhà cung cấp Giấy Bến Cát` | Contacts / Vendors | Hoạt động | Đơn giá cung ứng: **52.000₫/ram** | [Xem Nhà cung cấp](https://edu-officeprodistribution.odoo.com/odoo/purchase) |
+| **6** | **Đơn Bán hàng (SO)** | **`S00001`** | Sales / Orders | **Sales Order** | 50 ram ST-001, Đơn giá khóa: **65.000₫**, Tổng: **3.575.000₫** | [Xem SO S00001](https://edu-officeprodistribution.odoo.com/odoo/sales/1) |
+| **7** | **Lệnh Xuất kho Giao hàng** | **`WH/OUT/00002`** | Inventory / Delivery | **Done** | Nhu cầu: 50 ram, Thực xuất: **50 ram** (Tồn giảm từ 120 -> 70) | [Xem Phiếu WH/OUT/00002](https://edu-officeprodistribution.odoo.com/odoo/sales/1/action-708/2) |
+| **8** | **Hóa đơn Bán hàng Điện tử** | **`INV/2026/00001`** | Accounting / Invoicing | **Posted** | Số lượng tính tiền: **50 ram** (Khớp WH/OUT), Doanh thu TK 5110: **3.250.000₫**, VAT: **325.000₫** | [Xem Invoice INV/2026/00001](https://edu-officeprodistribution.odoo.com/odoo/sales/1/invoicing/1) |
+| **9** | **Đơn Mua hàng Bổ sung Tự động** | **`P00001`** | Purchase / Orders | **Purchase Order** | Tự động sinh từ Reorder Point: **230 ram** ($300 - 70$), Thành tiền: **13.156.000₫** | [Xem PO P00001](https://edu-officeprodistribution.odoo.com/odoo/purchase/1) |
+| **10** | **Lệnh Nhập kho từ NCC** | **`WH/IN/00001`** | Inventory / Receipts | **Done** | Nhu cầu: 230 ram, Thực nhập: **230 ram** (Tồn kho phục hồi về Max **300 ram**) | [Xem Phiếu WH/IN/00001](https://edu-officeprodistribution.odoo.com/odoo/purchase/1/action-708/3) |
+| **11** | **Hóa đơn Mua hàng từ NCC** | **`BILL/2026/11/0001`** | Accounting / Purchases | **Posted** | Đối soát 3 bên khớp P00001 & WH/IN/00001, Giá vốn TK 6320: **11.960.000₫**, VAT: **1.196.000₫** | [Xem Bill BILL/2026/11/0001](https://edu-officeprodistribution.odoo.com/odoo/accounting/account.move/2) |
+| **12** | **Bảng Điều hành Doanh nghiệp** | Dashboards Tổng quan | Dashboards | Cập nhật Real-time | Ghi nhận doanh thu bán, công nợ phải thu, phân tích chu kỳ mua hàng | [Xem Dashboards](https://edu-officeprodistribution.odoo.com/odoo/dashboards) |
+
+
+## 6. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
 
 Bạn có thể đọc hoặc nói tự nhiên theo khung lời thoại này:
 
@@ -357,9 +382,9 @@ Bạn có thể đọc hoặc nói tự nhiên theo khung lời thoại này:
 > 
 > **Đầu tiên là Use Case UC-SALES-01:** Khi em tạo báo giá cho khách hàng hợp đồng Tập đoàn ABC, hệ thống tự động nhận diện bảng giá riêng và cố định đơn giá giấy Double A ST-001 ở mức 65.000đ thay vì 75.000đ giá lẻ. Nhân viên kinh doanh không thể tự ý sửa giá, triệt tiêu hoàn toàn 5–8% lỗi giá hợp đồng của Phase 1.  
 > 
-> **Tiếp theo là UC-SALES-02 & UC-ACC-02:** Hệ thống lập tức hiển thị tồn kho khả dụng ATP tại cả 2 kho Tân Bình và Biên Hòa, đồng thời kiểm tra nợ quá hạn Net 30 của khách. Khi bấm xác nhận đơn hàng S00001, Odoo tự động chuyển 50 ram giấy sang trạng thái giữ chỗ và sinh Lệnh giao kho WH/OUT/00001.  
+> **Tiếp theo là UC-SALES-02 & UC-ACC-02:** Hệ thống lập tức hiển thị tồn kho khả dụng ATP tại cả 2 kho Tân Bình và Biên Hòa, đồng thời kiểm tra nợ quá hạn Net 30 của khách. Khi bấm xác nhận đơn hàng S00001, Odoo tự động chuyển 50 ram giấy sang trạng thái giữ chỗ và sinh Lệnh giao kho WH/OUT/00002.  
 > 
-> **Điểm đột phá nhất nằm ở UC-PURCH-01:** Sau khi thủ kho xác nhận xuất 50 ram, tồn kho thực tế giảm xuống 70 ram — vi phạm ngưỡng tồn an toàn Min = 100. Ngay lập tức, phân hệ Thu mua đã tự động kích hoạt và sinh đơn mua nháp P00004 đặt đúng 230 ram từ Nhà cung cấp Double A để bù kho lên mức Max 300 ram mà không cần sự can thiệp thủ công.  
+> **Điểm đột phá nhất nằm ở UC-PURCH-01:** Sau khi thủ kho xác nhận xuất 50 ram, tồn kho thực tế giảm xuống 70 ram — vi phạm ngưỡng tồn an toàn Min = 100. Ngay lập tức, phân hệ Thu mua đã tự động kích hoạt và sinh đơn mua nháp P00001 đặt đúng 230 ram từ Nhà cung cấp Giấy Bến Cát để bù kho lên mức Max 300 ram mà không cần sự can thiệp thủ công.  
 > 
 > **Cuối cùng là UC-ACC-01:** Hóa đơn bán lẻ INV/2026/00001 được tạo tự động dựa trên số lượng đã giao thực tế, hoàn tất chuỗi đối soát 3 bên với dung sai 0%.  
 > 
@@ -367,7 +392,7 @@ Bạn có thể đọc hoặc nói tự nhiên theo khung lời thoại này:
 
 ---
 
-## 6. BỘ CÂU HỎI PHẢN BIỆN DỰ KIẾN CỦA GIẢNG VIÊN & CÁCH TRẢ LỜI CHUẨN BA
+## 7. BỘ CÂU HỎI PHẢN BIỆN DỰ KIẾN CỦA GIẢNG VIÊN & CÁCH TRẢ LỜI CHUẨN BA
 
 * **Câu hỏi 1:** *"Tại sao trong Odoo nhóm không cấu hình cho khách hàng tự đặt hàng trên Website E-commerce?"*  
   * **Trả lời:** *"Dạ thưa cô, đây là mô hình phân phối B2B bán buôn văn phòng phẩm khối lượng lớn. Khách hàng doanh nghiệp mua theo hợp đồng khung nguyên tắc hàng năm với đơn giá cố định và điều khoản nợ Net 30, chứ không phải bán lẻ B2C quẹt thẻ online. Do đó, ranh giới hệ thống tập trung tối ưu phân hệ Sales, Inventory, Purchase và Invoicing để kiểm soát hợp đồng và đối soát chứng từ."*
