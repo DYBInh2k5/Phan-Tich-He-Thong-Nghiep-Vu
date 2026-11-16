@@ -94,9 +94,189 @@ Nhóm đã chuẩn bị sẵn tệp chuẩn: [`Project/Final Project/Odoo_Master
    * **Preferred Route:** `Buy (Mua hàng)`
    * **Vendor:** `Double A International Paper Co., Ltd.` (Giá cung ứng: 52.000 VND).
 
+
 ---
 
-## 3. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
+## 2. BẢN ĐỒ TỔNG THỂ 20 PHÂN HỆ ODOO (ODOO ALL-APPS ECOSYSTEM) TRÊN LIVE INSTANCE
+
+Hệ thống Odoo Cloud của nhóm tại **[edu-officeprodistribution.odoo.com](https://edu-officeprodistribution.odoo.com/odoo)** đã được cài đặt và kích hoạt trọn bộ **20 ứng dụng chuyên nghiệp**. Dưới đây là bảng phân loại và vai trò từng app trong vận hành thực tế của **OfficePro Distribution Co., Ltd.**:
+
+### Bảng 11.1: Danh mục 20 Phân hệ Odoo & Ánh xạ Nghiệp vụ B2B OfficePro
+
+| Nhóm Nghiệp vụ | Tên Phân hệ (App) | Biểu tượng | Chức năng cốt lõi tại OfficePro | Ánh xạ Use Case / FR |
+| :--- | :--- | :---: | :--- | :--- |
+| **I. Bán hàng & Khách hàng** | **CRM** | 🧲 | Quản lý đầu mối doanh nghiệp (Leads), cơ hội ký hợp đồng khung hàng năm. | Giai đoạn tiền hợp đồng |
+| | **Sales** | 📊 | Tạo báo giá, tự động khóa giá hợp đồng, quản lý đơn hàng bán SO. | `UC-SALES-01`, `UC-SALES-04` (`FR-01`, `FR-06`) |
+| | **Contacts** | 📇 | Master Data khách hàng doanh nghiệp, nhà cung cấp, chi nhánh kho. | Quản trị dữ liệu đối tác |
+| | **Website** | 🌐 | Cổng thông tin doanh nghiệp, tra cứu danh mục sản phẩm văn phòng phẩm. | Ranh giới công cộng |
+| | **Email Marketing** | ✉️ | Gửi thông báo bảng giá định kỳ, gia hạn hợp đồng khung B2B. | Hỗ trợ `FR-06` (Cảnh báo 30 ngày) |
+| | **Surveys** | 📋 | Khảo sát mức độ hài lòng khách hàng sau khi nhận hàng e-POD. | Đo lường chất lượng dịch vụ |
+| **II. Chuỗi cung ứng & Kho** | **Inventory** | 📦 | Quản lý tồn kho 2 kho Tân Bình & Biên Hòa, tồn kho khả dụng ATP, kiểm kê. | `UC-SALES-02`, `UC-INV-02`, `UC-INV-04` (`FR-02`, `FR-07`) |
+| | **Purchase** | 🛒 | Tạo RFQ gửi nhà cung cấp, tự động kích hoạt Reordering Rules Min/Max. | `UC-PURCH-01`, `UC-PURCH-02`, `UC-PURCH-03` (`FR-04`) |
+| | **Barcode** | 📱 | Quét mã vạch camera/máy quét khi nhận hàng tại dock và xuất kho. | `UC-INV-01` (Log Inbound Barcode) (`FR-02`) |
+| | **Manufacturing** | 🏭 | Tạo Combo/Bộ sản phẩm văn phòng phẩm tiết kiệm (BOM định mức). | Nghiệp vụ gia công đóng gói |
+| | **Shop Floor** | 💻 | Màn hình cảm ứng xưởng đóng gói dành cho công nhân kho thao tác nhanh. | Hỗ trợ đóng gói đơn sỉ |
+| **III. Kế toán & Pháp lý** | **Accounting** | ⚖️ | Đối soát 3 bên tự động, quản lý công nợ Net 30, chặn nợ quá hạn, xuất VAT. | `UC-ACC-01`, `UC-ACC-02`, `UC-ACC-03` (`FR-03`, `FR-05`, `FR-08`) |
+| | **Sign** | ✍️ | Ký số điện tử biên bản giao nhận hàng (e-POD) trực tiếp trên tablet/mobile. | `UC-INV-03` (Electronic Delivery Proof) (`FR-05`) |
+| | **Documents** | 📂 | Lưu trữ hợp đồng pháp lý quét scan, hóa đơn điện tử VAT, chứng từ thuế. | Quản trị chứng từ số |
+| **IV. Quản trị & Tác nghiệp** | **Dashboards** | 📈 | Bảng phân tích trực quan: Doanh số, Tuổi nợ AR, Tồn kho ATP, KPI giao hàng. | Báo cáo điều hành (`FR-08`) |
+| | **Planning** | 📅 | Lập lịch phân ca làm việc cho thủ kho và tài xế xe tải giao hàng. | Điều phối nhân sự logistics |
+| | **Project** | 📑 | Quản lý dự án đấu thầu cung cấp trọn gói cho tòa nhà/tập đoàn lớn. | Quản lý hợp đồng dự án |
+| | **Employees** | 👥 | Phân quyền truy cập Role-based (Sales Rep, Kho, Kế toán, Quản lý). | Kiểm soát phân quyền hệ thống |
+| | **Discuss** | 💬 | Kênh chat nội bộ, tag `@SalesManager` duyệt đơn chiết khấu > 5%. | `UC-SALES-03` (Duyệt chiết khấu) |
+| | **Calendar / To-do** | 🗓️ | Lịch họp khách hàng, quản lý danh sách việc cần làm của nhân viên. | Phối hợp tác nghiệp |
+| | **Knowledge** | 📚 | Cẩm nang quy trình SOP bán hàng, quy chế chiết khấu, chính sách đổi trả. | Quản trị tri thức nội bộ |
+| | **Settings** | ⚙️ | Cài đặt tiền tệ VND, mẫu in chứng từ, kích hoạt đa kho, đa bảng giá. | Thiết lập hệ thống cốt lõi |
+
+---
+
+## 3. HƯỚNG DẪN THAO TÁC CHI TIẾT TỪNG PHÂN HỆ (CLICK-BY-CLICK OPERATION MANUAL)
+
+Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn làm chủ 100% hệ thống Odoo khi thực hành hoặc trình diễn trước lớp:
+
+---
+
+### PHÂN HỆ 1: CONTACTS (QUẢN TRỊ DỮ LIỆU ĐỐI TÁC KHÁCH HÀNG & NCC)
+* **Mục đích:** Khai báo Master Data khách hàng doanh nghiệp (B2B Client) và Nhà cung cấp (Supplier).
+* **Đường dẫn truy cập:** Bấm icon **Contacts** trên màn hình chính.
+* **Các bước thao tác chuẩn:**
+  1. Bấm nút **New** (Tạo mới).
+  2. Chọn loại đối tác: **Company** (Doanh nghiệp).
+  3. Nhập **Company Name:** `Tập đoàn ABC` (hoặc `Saigon Tech Corp`).
+  4. Nhập địa chỉ, Mã số thuế (`Tax ID: 0312345678`).
+  5. Chuyển sang Tab **Sales & Purchase (Bán hàng & Mua hàng):**
+     * **Pricelist (Bảng giá):** Chọn `Bảng giá Hợp đồng 2026 — Tập đoàn ABC`.
+     * **Payment Terms (Hạn nợ):** Chọn `30 Days` (Chuẩn Net 30).
+  6. Chuyển sang Tab **Invoicing (Kế toán & Công nợ):**
+     * **Credit Limit:** Nhập `500,000,000` VND (Hạn mức tín dụng).
+     * Bật tùy chọn cảnh báo nếu nợ quá 30 ngày (phục vụ `UC-ACC-02`).
+  7. Bấm biểu tượng đám mây (Cloud Save) để lưu dữ liệu.
+
+---
+
+### PHÂN HỆ 2: SALES (BÁN HÀNG B2B & KHÓA GIÁ HỢP ĐỒNG)
+* **Mục đích:** Hiện thực hóa `UC-SALES-01` (Apply Contract Pricelist), `UC-SALES-03` (Discount Approval) và `UC-SALES-04` (Confirm Order).
+* **Đường dẫn truy cập:** Bấm icon **Sales** $rightarrow$ Menu **Orders** $rightarrow$ **Quotations**.
+* **Các bước thao tác chuẩn:**
+  1. Bấm nút **New** để tạo Báo giá mới.
+  2. **Chọn Khách hàng:** Gõ tìm `Tập đoàn ABC`.
+     * Quan sát: Ô **Pricelist** tự động khóa sang bảng giá riêng của khách.
+     * Quan sát: Ô **Payment Terms** tự động nạp `30 Days`.
+  3. **Thêm Sản phẩm:** Bấm **Add a product** $rightarrow$ Chọn SKU `ST-001` (Giấy A4 Double A 70gsm).
+     * Nhập số lượng: `50` ram.
+     * **Kiểm tra đơn giá:** Hệ thống tự động điền **65,000 VND** (thay vì 75,000 VND giá bán lẻ chuẩn).
+  4. **Thử nghiệm Ngoại lệ Chiết khấu vượt 5% (`UC-SALES-03`):**
+     * Nhập vào cột **Disc.%**: `10%`.
+     * Hệ thống ghi nhận cảnh báo chiết khấu cần Sales Manager phê duyệt.
+     * Sử dụng khung chat dưới chân trang (Chatter) gõ: `@SalesManager Xin phê duyệt chiết khấu 10% cho đơn thầu số lượng lớn.`
+  5. **Xác nhận Đơn hàng (`UC-SALES-04`):**
+     * Sau khi duyệt giá, bấm nút **Confirm** màu tím góc trên bên trái.
+     * Trạng thái đơn đổi từ *Quotation* thành **Sales Order (S00001)**.
+     * Hệ thống tự động tạo Lệnh giao kho **Delivery (1)** ở góc phải.
+
+---
+
+### PHÂN HỆ 3: INVENTORY (KHO VẬN ĐA ĐIỂM & TỒN KHO KHẢ DỤNG ATP)
+* **Mục đích:** Hiện thực hóa `UC-SALES-02` (Query ATP Stock), `UC-INV-02` (Bin Picking) và `UC-INV-04` (Cycle Count).
+* **Đường dẫn truy cập:** Bấm icon **Inventory**.
+* **Các bước thao tác chuẩn:**
+  1. **Xem Tồn kho Khả dụng ATP (`UC-SALES-02`):**
+     * Vào **Products** $rightarrow$ **Products** $rightarrow$ Bấm chọn SKU `ST-001`.
+     * Quan sát 2 con số quan trọng:
+       * **On Hand (Tồn vật lý):** 120 ram.
+       * **Forecasted / Free to Use (Tồn khả dụng ATP):** 70 ram (do đã trừ đi 50 ram bị giữ chỗ bởi đơn S00001).
+  2. **Thực hiện Lấy hàng theo Ô kệ (`UC-INV-02`):**
+     * Vào **Operations** $rightarrow$ **Transfers** $rightarrow$ Mở phiếu xuất `WH/OUT/00001`.
+     * Bấm **Print** $rightarrow$ **Picking Operations**: Phiếu in chỉ rõ vị trí `Location: WH/Stock/Aisle-02/Bin-04`.
+  3. **Xác nhận Xuất kho:**
+     * Bấm nút **Validate** $rightarrow$ Bấm **Apply**.
+     * Trạng thái chuyển sang **Done**. Hàng thực xuất khỏi kho 50 ram, tồn vật lý giảm còn đúng 70 ram.
+  4. **Kiểm kê Định kỳ (`UC-INV-04`):**
+     * Vào **Operations** $rightarrow$ **Physical Inventory**.
+     * So sánh số đếm thực tế (Counted Quantity) với số sổ sách (On Hand) $rightarrow$ Bấm **Apply** để ghi nhận chênh lệch.
+
+---
+
+### PHÂN HỆ 4: BARCODE (QUÉT MÃ VẠCH TẠI CỬA KHO GIAO NHẬN)
+* **Mục đích:** Hiện thực hóa `UC-INV-01` (Log Inbound Barcode Receipt) bằng thiết bị quét cầm tay hoặc camera.
+* **Đường dẫn truy cập:** Bấm icon **Barcode** trên màn hình chính.
+* **Các bước thao tác chuẩn:**
+  1. Màn hình Barcode mở ra với giao diện lớn chuyên dụng cho kho.
+  2. Chọn mục **Operations** $rightarrow$ Chọn **Receipts** (Nhập kho) hoặc **Delivery Orders** (Xuất kho).
+  3. Mở phiếu nhập hàng từ nhà cung cấp Double A.
+  4. Bật chế độ quét: Hướng máy quét hoặc camera vào mã vạch SKU `ST-001` (`8935001100018`).
+  5. Mỗi tiếng "Tít", số lượng đã nhận tự động nhảy tăng (+1, +50 ram).
+  6. Quét mã vạch vị trí kệ `LOC-BIN-04` để chỉ định cất hàng.
+  7. Bấm **Validate** ngay trên màn hình Barcode $rightarrow$ Phiếu nhập kho hoàn thành tức thì mà không cần dùng bàn phím máy tính!
+
+---
+
+### PHÂN HỆ 5: PURCHASE (THU MUA & TỰ ĐỘNG BÙ KHO MIN/MAX)
+* **Mục đích:** Hiện thực hóa `UC-PURCH-01` (Trigger Automated PR), `UC-PURCH-02` (Multi-Vendor RFQ) và `UC-PURCH-03` (Approve PO).
+* **Đường dẫn truy cập:** Bấm icon **Purchase**.
+* **Các bước thao tác chuẩn:**
+  1. **Cấu hình Quy tắc Tồn an toàn (Reordering Rules):**
+     * Vào **Configuration** $rightarrow$ **Reordering Rules** $rightarrow$ Bấm **New**.
+     * Chọn SKU `ST-001` | Min Quantity: `100` | Max Quantity: `300` | Vendor: `Double A Paper Co., Ltd.`.
+  2. **Kích hoạt Mua hàng Tự động (`UC-PURCH-01`):**
+     * Khi kho xuất bán hàng làm tồn kho tụt xuống 70 ram (< Min 100).
+     * Hệ thống tự động sinh một đơn nháp trong **Purchase** $rightarrow$ **Requests for Quotation**.
+     * Mở đơn `P00004`: Số lượng mua được tự động tính đúng bằng:
+       $\text{Reorder Quantity} = 300 - 70 = 230\text{ ram}$
+  3. **So sánh Báo giá Đa Nhà cung cấp (`UC-PURCH-02`):**
+     * Trên đơn RFQ, bấm **Create Alternative** để gửi thêm bản chào giá cho Nhà cung cấp số 2 (Thiên Long, Deli).
+     * Bấm nút **Compare Product Lines** để xem bảng ma trận giá và thời gian giao hàng.
+  4. **Phê duyệt Đơn mua hàng (`UC-PURCH-03`):**
+     * Bấm **Confirm Order** $rightarrow$ Đơn mua chính thức được ban hành, sẵn sàng tiếp nhận hàng tại dock.
+
+---
+
+### PHÂN HỆ 6: SIGN (KÝ SỐ BIÊN BẢN GIAO HÀNG e-POD)
+* **Mục đích:** Hiện thực hóa `UC-INV-03` (Capture Electronic Delivery Proof) không dùng giấy tờ in.
+* **Đường dẫn truy cập:** Bấm icon **Sign** trên màn hình chính.
+* **Các bước thao tác chuẩn:**
+  1. Bấm nút **Upload a PDF template** $rightarrow$ Tải lên mẫu `Bien_Ban_Giao_Nhan_ePOD.pdf`.
+  2. Kéo thả các trường dữ liệu vào cuối trang:
+     * Ô **Signature** (Chữ ký người nhận đại diện Tập đoàn ABC).
+     * Ô **Name** (Họ tên người nhận hàng).
+     * Ô **Date** (Thời gian ký nhận thực tế).
+  3. Bấm **Send** (hoặc **Sign Now** nếu tài xế đưa máy tính bảng cho khách ký tại chỗ).
+  4. Khách hàng ký tay trực tiếp lên màn hình cảm ứng $rightarrow$ Bấm **Validate & Send Completed Document**.
+  5. File PDF có chữ ký số được tự động lưu trữ và ghim thẳng vào Đơn bán hàng S00001, tạo bằng chứng pháp lý đối soát kế toán.
+
+---
+
+### PHÂN HỆ 7: ACCOUNTING (ĐỐI SOÁT 3 BÊN, CHẶN NỢ & HÓA ĐƠN VAT)
+* **Mục đích:** Hiện thực hóa `UC-ACC-01` (3-Way Matching), `UC-ACC-02` (Hard Credit Hold) và `UC-ACC-03` (Electronic VAT Invoice).
+* **Đường dẫn truy cập:** Bấm icon **Accounting**.
+* **Các bước thao tác chuẩn:**
+  1. **Thực hiện Đối soát 3 bên tự động (`UC-ACC-01`):**
+     * Quay lại đơn `S00001` $rightarrow$ Bấm nút **Create Invoice** $rightarrow$ Chọn **Regular Invoice**.
+     * Mở hóa đơn nháp: Số lượng tính tiền được hệ thống tự động khóa chặt đúng **50 ram** (bằng đúng số lượng thực giao trên Lệnh giao kho WH/OUT/00001, dù đơn đặt hàng ban đầu có thể khác).
+     * Dung sai chênh lệch = 0. Bấm **Confirm** để phát hành hóa đơn chính thức `INV/2026/00001`.
+  2. **Quản lý Tuổi nợ & Khóa nợ quá hạn (`UC-ACC-02`):**
+     * Vào **Accounting** $rightarrow$ Menu **Reporting** $rightarrow$ Chọn **Aged Receivable (Báo cáo Tuổi nợ Phải thu)**.
+     * Màn hình phân loại nợ thành các cột thời gian: *1–30 ngày, 31–60 ngày, 61–90 ngày, > 90 ngày*.
+     * Khách hàng nào rơi vào cột *31–60 ngày* trở lên sẽ tự động bị hệ thống kích hoạt cờ `Credit Hold`, chặn nhân viên kinh doanh tạo thêm đơn hàng mới.
+  3. **Xuất Hóa đơn Điện tử VAT (`UC-ACC-03`):**
+     * Trên Hóa đơn đã Confirm, bấm nút **Print** $rightarrow$ **Invoices** (hoặc nút **Send & Print**).
+     * Hệ thống tạo file PDF hóa đơn tài chính chuẩn Thông tư thuế Việt Nam kèm mã tra cứu hóa đơn điện tử.
+
+---
+
+### PHÂN HỆ 8: DASHBOARDS & DOCUMENTS (BÁO CÁO ĐIỀU HÀNH & KHO LƯU TRỮ CHỨNG TỪ)
+* **Mục đích:** Giúp Ban Giám đốc và Lead BA theo dõi toàn cảnh hoạt động phân phối trong thời gian thực.
+* **Đường dẫn truy cập:**
+  * **Dashboards:** Bấm icon **Dashboards** để xem:
+    * Biểu đồ tỷ trọng doanh thu theo từng nhóm văn phòng phẩm (Giấy in, Bút viết, Bìa file).
+    * Biểu đồ số ngày thu hồi công nợ trung bình (DSO - Days Sales Outstanding).
+    * Tỷ lệ đáp ứng đơn hàng hoàn hảo (Perfect Order Rate) đạt trên 98%.
+  * **Documents:** Bấm icon **Documents**:
+    * Xem kho lưu trữ số hóa toàn bộ hợp đồng khung B2B, biên bản giao nhận e-POD có chữ ký số, bảng đối soát ngân hàng được phân loại gọn gàng theo thư mục `Finance`, `Sales`, `Logistics`.
+
+---
+
+## 4. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
 
 Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo 4 kịch bản chuẩn sau:
 
@@ -168,7 +348,7 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 
 ---
 
-## 4. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
+## 5. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
 
 Bạn có thể đọc hoặc nói tự nhiên theo khung lời thoại này:
 
@@ -187,7 +367,7 @@ Bạn có thể đọc hoặc nói tự nhiên theo khung lời thoại này:
 
 ---
 
-## 5. BỘ CÂU HỎI PHẢN BIỆN DỰ KIẾN CỦA GIẢNG VIÊN & CÁCH TRẢ LỜI CHUẨN BA
+## 6. BỘ CÂU HỎI PHẢN BIỆN DỰ KIẾN CỦA GIẢNG VIÊN & CÁCH TRẢ LỜI CHUẨN BA
 
 * **Câu hỏi 1:** *"Tại sao trong Odoo nhóm không cấu hình cho khách hàng tự đặt hàng trên Website E-commerce?"*  
   * **Trả lời:** *"Dạ thưa cô, đây là mô hình phân phối B2B bán buôn văn phòng phẩm khối lượng lớn. Khách hàng doanh nghiệp mua theo hợp đồng khung nguyên tắc hàng năm với đơn giá cố định và điều khoản nợ Net 30, chứ không phải bán lẻ B2C quẹt thẻ online. Do đó, ranh giới hệ thống tập trung tối ưu phân hệ Sales, Inventory, Purchase và Invoicing để kiểm soát hợp đồng và đối soát chứng từ."*

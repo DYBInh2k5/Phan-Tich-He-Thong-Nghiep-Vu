@@ -181,11 +181,10 @@ Per Slide 4, all Use Case names strictly follow the **[Verb] + [Noun]** syntax, 
 
 The Enterprise Use Case Diagram defines the complete functional scope of **OfficePro-EDMS**. All 8 human and external system actors are positioned outside the system boundary; 14 Use Cases across 4 operational domains are enclosed inside. The diagram strictly follows textbook UML formatting with stick-figure actors, use case ovals, and formal `<<include>>` / `<<extend>>` stereotypes:
 
-
 ![Enterprise Use Case Diagram — Group 6](./usecase_enterprise_group6.png)
 
-
 ### 4.1. Justification of UML Relationships (Slide 10)
+
 * **`<<include>>` UC-SALES-04 to UC-SALES-01 (Apply Contract Pricelist):** Every corporate sales order confirmation must unconditionally retrieve the validated contract pricelist. Confirming an order cannot occur without executing price verification.
 * **`<<include>>` UC-SALES-04 to UC-SALES-02 (Query ATP Stock Availability):** Order confirmation requires an automated calculation of available stock to reserve inventory. Confirming an order without ATP validation is prohibited by business rules.
 * **`<<extend>>` UC-SALES-03 (Request Discount Approval) to UC-SALES-04:** This behavior is executed conditionally only when a Sales Staff enters a discount exceeding 5% below contract price (Extension Point: `PriceDiscountThresholdExceeded`). Standard orders bypass this approval.
@@ -195,6 +194,8 @@ The Enterprise Use Case Diagram defines the complete functional scope of **Offic
 ### 4.2. Standard UML Notation (PlantUML Enterprise Diagram — Classic Stick Figures & Ovals)
 
 Sơ đồ tổng thể toàn doanh nghiệp OfficePro-EDMS của **Nhóm 6** vẽ theo chuẩn hình người que (Actor stick-figure) và hình elip Use Case cổ điển:
+
+![1794805465149](image/Week10/1794805465149.png)
 
 ```plantuml
 @startuml
@@ -290,7 +291,6 @@ UC_A03 ..> UC_A01 : <<include>>
 1. **Non-Mechanical Conversion (Slide 8):** The 14 Use Cases in Table 10.2 consolidate multiple operational functional requirements into cohesive business services rather than creating fragmented 1-to-1 micro-cases.
 2. **Actor Separation (Slide 5):** No internal databases, departments, or technical software components are modeled as actors. All actors represent external human roles or authenticated external systems (*Tax Authority Gateway*).
 3. **Absence of Flowchart Thinking (Slide 11):** Relationships between Use Cases represent behavioral inclusion and conditional extension, not sequential step-by-step workflow timing.
-
 
 ---
 
