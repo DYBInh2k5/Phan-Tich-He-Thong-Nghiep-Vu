@@ -102,81 +102,18 @@ Applying the **Verb + Noun** naming convention (Slide 4) and avoiding vague verb
 
 ## 2.1. Individual Subsystem Use Case Diagram: Commercial Sales, Pricing & Procurement
 
-To clearly illustrate the interaction scope owned by **Võ Duy Bình** (covering `BP1`, `BP2`, and `BP4`), the following UML Use Case diagram defines the subsystem functional boundary, primary actor associations, and formal `<<include>>` / `<<extend>>` relationships:
+To clearly illustrate the interaction scope owned by **Võ Duy Bình** (covering `BP1`, `BP2`, and `BP4`), the following official UML Use Case diagram defines the subsystem functional boundary, primary actor associations, and formal `<<include>>` / `<<extend>>` relationships adhering strictly to textbook standards (stick-figure actors, clean use case ovals, and rectangular subsystem boundaries):
 
-```mermaid
-flowchart LR
-    %% ACTORS DEFINITIONS (OUTSIDE SUBSYSTEM BOUNDARY)
-    subgraph INDIV_ACTORS ["Primary Actors in Scope"]
-        A_SalesStaff["👤 Sales Staff<br/>(Account Executive)"]
-        A_SalesManager["👔 Sales Manager<br/>(Commercial Approver)"]
-        A_PurchasingStaff["🛒 Purchasing Staff<br/>(Procurement Officer)"]
-        A_Customer["🏢 Corporate Customer<br/>(B2B Client)"]
-        A_Supplier["🚚 Supplier<br/>(Vendor Rep)"]
-        A_AccountingOfficer["💼 Accounting Officer<br/>(Credit Controller)"]
-    end
+![Subsystem Use Case Diagram — Võ Duy Bình](../assets/usecase_subsystem_indiv_binh.svg)
 
-    %% SUBSYSTEM BOUNDARY
-    subgraph SUBSYSTEM_COMMERCIAL ["SUBSYSTEM: B2B Commercial Sales, Contract Pricing & Procurement Replenishment"]
-      
-        %% SALES & PRICING DOMAIN (BP1 & BP2)
-        subgraph DOMAIN_SALES ["BP1 & BP2: Commercial Sales & Contract Pricing"]
-            UC_S01(["UC-SALES-01<br/>Apply Contract Pricelist"]):::ucOwned
-            UC_S03(["UC-SALES-03<br/>Request Discount Approval"]):::ucOwned
-            UC_S04(["UC-SALES-04<br/>Confirm Sales Order"]):::ucCoreOwned
-        end
+> **UML Design Integrity Check (Slide 4, 5, 6, 10, 11):**  
+> 1. **No Process Flow Confusion (Slide 11):** The diagram strictly models actor goals and software services. No sequential flowchart arrows (`-->`) are used.  
+> 2. **Role-Based Actors (Slide 5):** Specific functional roles are positioned outside the boundary (*Sales Staff*, *Sales Manager*, *Purchasing Staff*, *Corporate Customer*, *Supplier*, *Accounting Officer*). No department names or internal database components.  
+> 3. **Non-Mechanical Conversion (Slide 8):** Individual validation rules (e.g. credit checks, discount threshold checks) are modeled as formal `<<extend>>` gates into the target goal **UC-SALES-04 (Confirm Sales Order)** rather than fragmented into micro-use cases.
 
-        %% PROCUREMENT DOMAIN (BP4)
-        subgraph DOMAIN_PURCH ["BP4: Procurement Replenishment"]
-            UC_P01(["UC-PURCH-01<br/>Trigger Automated PR"]):::ucCoreOwned
-            UC_P02(["UC-PURCH-02<br/>Compare Multi-Vendor RFQs"]):::ucOwned
-            UC_P03(["UC-PURCH-03<br/>Approve Purchase Order"]):::ucOwned
-        end
+### 2.2. Standard PlantUML Source Specification
 
-        %% FINANCIAL GOVERNANCE GATES
-        subgraph DOMAIN_FIN_GATES ["Financial Governance & Reconciliation"]
-            UC_A01(["UC-ACC-01<br/>Execute Automated 3-Way Match"]):::ucOwned
-            UC_A02(["UC-ACC-02<br/>Enforce Hard Credit Hold"]):::ucOwned
-        end
-    end
-
-    %% ASSOCIATIONS (Actor to Use Case)
-    A_SalesStaff --- UC_S01
-    A_SalesStaff --- UC_S04
-    A_Customer --- UC_S04
-
-    A_SalesManager --- UC_S03
-    A_SalesManager --- UC_P03
-
-    A_PurchasingStaff --- UC_P01
-    A_PurchasingStaff --- UC_P02
-    A_PurchasingStaff --- UC_P03
-    A_Supplier --- UC_P02
-
-    A_AccountingOfficer --- UC_A01
-    A_AccountingOfficer --- UC_A02
-
-    %% FORMAL UML RELATIONSHIPS
-    UC_S04 -.->|"<<include>>"| UC_S01
-    UC_S03 -.->|"<<extend>> [Discount > 5%]"| UC_S04
-    UC_A02 -.->|"<<extend>> [Overdue Debt > 30d]"| UC_S04
-
-    %% STYLING (Professional UML Color Palette)
-    classDef ucOwned fill:#EFF6FF,stroke:#2563EB,stroke-width:1.5px,color:#1E3A8A,font-size:11px;
-    classDef ucCoreOwned fill:#FEF3C7,stroke:#D97706,stroke-width:2px,color:#78350F,font-weight:bold,font-size:11px;
-```
-
-> **UML Design Integrity Check:**
->
-> 1. **No Process Flow Confusions (Slide 11):** Sơ đồ không sử dụng các mũi tên tuần tự `-->` (vốn là của Swimlane/BPMN). Mọi tương tác chỉ là đường kết nối actor (`---`) hoặc quan hệ định chuẩn UML (`<<include>>`, `<<extend>>`).
-> 2. **Role-based Actors (Slide 5):** Tuyệt đối không dùng tên phòng ban hay database nội bộ.
-> 3. **Non-mechanical Conversion (Slide 8):** Các quy tắc kiểm tra con (như kiểm tra nợ quá hạn, kiểm tra chiết khấu 5%) không bị băm nhỏ thành use case rời rạc mà được gắn kết logic bằng `<<extend>>` vào Use Case mục tiêu `UC-SALES-04`.
-
----
-
-### 2.2. Standard UML Notation (PlantUML Subsystem Diagram — Classic Stick Figures & Ovals)
-
-Sơ đồ phân hệ chuyên sâu của **Võ Duy Bình** vẽ theo chuẩn hình người que (Actor stick-figure) và hình elip Use Case cổ điển:
+For compilation in PlantUML or IDE UML tools, the diagram source code is formally documented as follows:
 
 ```plantuml
 @startuml
@@ -202,7 +139,6 @@ actor "Supplier\n(Vendor Rep)" as Supplier
 actor "Accounting Officer\n(Credit Controller)" as AccountingOfficer
 
 rectangle "Commercial Sales, Pricing & Procurement Subsystem" <<Subsystem>> {
-  
     package "Sales & Pricing (BP1 & BP2)" {
         usecase "UC-SALES-01\nApply Contract Pricelist" as UC_S01
         usecase "UC-SALES-03\nRequest Discount Approval" as UC_S03

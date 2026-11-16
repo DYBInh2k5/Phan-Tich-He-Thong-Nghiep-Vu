@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 700" width="960" height="700">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0F172A" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-extend" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#DC2626"/>
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="960" height="700" fill="#FFFFFF"/>
+
+  <!-- System Boundary Rectangle -->
+  <rect x="230" y="45" width="500" height="610" rx="14" fill="#F8FAFC" stroke="#334155" stroke-width="2" stroke-dasharray="none"/>
+  <rect x="230" y="45" width="500" height="34" rx="14" fill="#E2E8F0" stroke="#334155" stroke-width="2"/>
+  <rect x="230" y="65" width="500" height="14" fill="#E2E8F0"/>
+  <text x="480" y="68" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="bold" fill="#0F172A">
+    «Subsystem» Commercial Sales, Pricing &amp; Procurement Replenishment
+  </text>
+
+  <!-- ACTORS (LEFT SIDE: PRIMARY HUMAN OPERATORS) -->
+  
+    <!-- Actor: Sales Staff -->
+    <g class="actor" transform="translate(90, 150)">
+      <circle cx="0" cy="-28" r="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="-18" x2="0" y2="8" stroke="#1E293B" stroke-width="2"/>
+      <line x1="-16" y1="-10" x2="16" y2="-10" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="-14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <text x="0" y="46" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Sales Staff</text>
+      <text x="0" y="60" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#64748B">(Account Executive)</text>
+    </g>
+  
+    <!-- Actor: Corporate Customer -->
+    <g class="actor" transform="translate(90, 320)">
+      <circle cx="0" cy="-28" r="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="-18" x2="0" y2="8" stroke="#1E293B" stroke-width="2"/>
+      <line x1="-16" y1="-10" x2="16" y2="-10" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="-14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <text x="0" y="46" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Corporate Customer</text>
+      <text x="0" y="60" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#64748B">(B2B Enterprise Client)</text>
+    </g>
+  
+    <!-- Actor: Purchasing Staff -->
+    <g class="actor" transform="translate(90, 510)">
+      <circle cx="0" cy="-28" r="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="-18" x2="0" y2="8" stroke="#1E293B" stroke-width="2"/>
+      <line x1="-16" y1="-10" x2="16" y2="-10" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="-14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <text x="0" y="46" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Purchasing Staff</text>
+      <text x="0" y="60" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#64748B">(Procurement Officer)</text>
+    </g>
+
+  <!-- ACTORS (RIGHT SIDE: GOVERNANCE & EXTERNAL PARTNERS) -->
+  
+    <!-- Actor: Sales Manager -->
+    <g class="actor" transform="translate(870, 150)">
+      <circle cx="0" cy="-28" r="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="-18" x2="0" y2="8" stroke="#1E293B" stroke-width="2"/>
+      <line x1="-16" y1="-10" x2="16" y2="-10" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="-14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <text x="0" y="46" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Sales Manager</text>
+      <text x="0" y="60" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#64748B">(Commercial Approver)</text>
+    </g>
+  
+    <!-- Actor: Accounting Officer -->
+    <g class="actor" transform="translate(870, 320)">
+      <circle cx="0" cy="-28" r="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="-18" x2="0" y2="8" stroke="#1E293B" stroke-width="2"/>
+      <line x1="-16" y1="-10" x2="16" y2="-10" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="-14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <text x="0" y="46" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Accounting Officer</text>
+      <text x="0" y="60" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#64748B">(Credit Controller)</text>
+    </g>
+  
+    <!-- Actor: Supplier -->
+    <g class="actor" transform="translate(870, 510)">
+      <circle cx="0" cy="-28" r="10" fill="#FFFFFF" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="-18" x2="0" y2="8" stroke="#1E293B" stroke-width="2"/>
+      <line x1="-16" y1="-10" x2="16" y2="-10" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="-14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <line x1="0" y1="8" x2="14" y2="30" stroke="#1E293B" stroke-width="2"/>
+      <text x="0" y="46" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#0F172A">Supplier</text>
+      <text x="0" y="60" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#64748B">(Vendor Representative)</text>
+    </g>
+
+  <!-- USE CASES INSIDE BOUNDARY -->
+  <!-- Sales & Pricing Domain -->
+  
+    <!-- UseCase: UC-SALES-01 -->
+    <g class="usecase" id="UC-SALES-01">
+      <ellipse cx="480" cy="120" rx="130" ry="26" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="114" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E40AF">UC-SALES-01</text>
+      <text x="480" y="130" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Apply Contract Pricelist</text>
+    </g>
+  
+    <!-- UseCase: UC-SALES-03 -->
+    <g class="usecase" id="UC-SALES-03">
+      <ellipse cx="480" cy="200" rx="130" ry="26" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="194" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E40AF">UC-SALES-03</text>
+      <text x="480" y="210" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Request Discount Approval</text>
+    </g>
+  
+    <!-- UseCase: UC-SALES-04 -->
+    <g class="usecase" id="UC-SALES-04">
+      <ellipse cx="480" cy="280" rx="130" ry="28" fill="#FEF3C7" stroke="#D97706" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="274" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#92400E">UC-SALES-04</text>
+      <text x="480" y="290" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Confirm Sales Order</text>
+    </g>
+
+  <!-- Financial Governance Extension -->
+  
+    <!-- UseCase: UC-ACC-02 -->
+    <g class="usecase" id="UC-ACC-02">
+      <ellipse cx="480" cy="365" rx="130" ry="26" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="359" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E40AF">UC-ACC-02</text>
+      <text x="480" y="375" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Enforce Hard Credit Hold</text>
+    </g>
+  
+    <!-- UseCase: UC-ACC-01 -->
+    <g class="usecase" id="UC-ACC-01">
+      <ellipse cx="480" cy="435" rx="130" ry="26" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="429" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E40AF">UC-ACC-01</text>
+      <text x="480" y="445" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Execute Automated 3-Way Match</text>
+    </g>
+
+  <!-- Procurement Replenishment Domain -->
+  
+    <!-- UseCase: UC-PURCH-01 -->
+    <g class="usecase" id="UC-PURCH-01">
+      <ellipse cx="480" cy="505" rx="130" ry="28" fill="#FEF3C7" stroke="#D97706" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="499" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#92400E">UC-PURCH-01</text>
+      <text x="480" y="515" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Trigger Automated PR</text>
+    </g>
+  
+    <!-- UseCase: UC-PURCH-02 -->
+    <g class="usecase" id="UC-PURCH-02">
+      <ellipse cx="480" cy="570" rx="130" ry="26" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="564" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E40AF">UC-PURCH-02</text>
+      <text x="480" y="580" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Compare Multi-Vendor RFQs</text>
+    </g>
+  
+    <!-- UseCase: UC-PURCH-03 -->
+    <g class="usecase" id="UC-PURCH-03">
+      <ellipse cx="480" cy="630" rx="130" ry="26" fill="#FFFFFF" stroke="#2563EB" stroke-width="1.8" filter="url(#shadow)"/>
+      <text x="480" y="624" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="bold" fill="#1E40AF">UC-PURCH-03</text>
+      <text x="480" y="640" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0F172A">Approve Purchase Order</text>
+    </g>
+
+  <!-- ASSOCIATIONS (SOLID LINES: ACTOR TO USE CASE) -->
+  <g stroke="#334155" stroke-width="1.6">
+    <!-- Sales Staff Associations -->
+    <line x1="140" y1="150" x2="350" y2="120"/>
+    <line x1="140" y1="150" x2="350" y2="280"/>
+
+    <!-- Corporate Customer Association -->
+    <line x1="140" y1="320" x2="350" y2="280"/>
+
+    <!-- Purchasing Staff Associations -->
+    <line x1="140" y1="510" x2="350" y2="505"/>
+    <line x1="140" y1="510" x2="350" y2="570"/>
+    <line x1="140" y1="510" x2="350" y2="630"/>
+
+    <!-- Sales Manager Associations -->
+    <line x1="820" y1="150" x2="610" y2="200"/>
+    <line x1="820" y1="150" x2="610" y2="630"/>
+
+    <!-- Accounting Officer Associations -->
+    <line x1="820" y1="320" x2="610" y2="365"/>
+    <line x1="820" y1="320" x2="610" y2="435"/>
+
+    <!-- Supplier Association -->
+    <line x1="820" y1="510" x2="610" y2="570"/>
+  </g>
+
+  <!-- FORMAL UML RELATIONSHIPS (INCLUDE & EXTEND) -->
+  <!-- UC-SALES-04 <<include>> UC-SALES-01 -->
+  <g>
+    <path d="M 480 252 L 480 148" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+    <rect x="425" y="185" width="110" height="18" fill="#FFFFFF" stroke="#CBD5E1" rx="4"/>
+    <text x="480" y="198" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="bold" fill="#2563EB">«include»</text>
+  </g>
+
+  <!-- UC-SALES-03 <<extend>> UC-SALES-04 -->
+  <g>
+    <path d="M 480 226 L 480 250" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow-extend)"/>
+    <rect x="375" y="230" width="210" height="18" fill="#FFFFFF" stroke="#FECDD3" rx="4"/>
+    <text x="480" y="243" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#DC2626">«extend» [Discount &gt; 5%]</text>
+  </g>
+
+  <!-- UC-ACC-02 <<extend>> UC-SALES-04 -->
+  <g>
+    <path d="M 480 339 L 480 310" fill="none" stroke="#DC2626" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arrow-extend)"/>
+    <rect x="365" y="318" width="230" height="18" fill="#FFFFFF" stroke="#FECDD3" rx="4"/>
+    <text x="480" y="331" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#DC2626">«extend» [Overdue Debt &gt; 30d]</text>
+  </g>
+
+  <!-- Diagram Legend Box -->
+  <rect x="250" y="662" width="460" height="28" rx="6" fill="#F1F5F9" stroke="#CBD5E1"/>
+  <text x="480" y="681" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#475569">
+    <tspan font-weight="bold">Legend:</tspan> Solid line = Actor Association | Blue Dashed = «include» | Red Dashed = «extend» (Conditional)
+  </text>
+</svg>

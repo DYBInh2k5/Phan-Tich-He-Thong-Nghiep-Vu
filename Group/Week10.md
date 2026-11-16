@@ -179,114 +179,20 @@ Per Slide 4, all Use Case names strictly follow the **[Verb] + [Noun]** syntax, 
 
 ## 4. ENTERPRISE USE CASE DIAGRAM (Slide 7, 10, 11, 15)
 
-The Enterprise Use Case Diagram defines the complete functional scope of **OfficePro-EDMS**. Actors are positioned outside the system boundary; Use Cases are enclosed inside. The diagram utilizes `<<include>>` for mandatory reusable sub-behaviors and `<<extend>>` for conditional or optional exception handling (Slide 10).
+The Enterprise Use Case Diagram defines the complete functional scope of **OfficePro-EDMS**. All 8 human and external system actors are positioned outside the system boundary; 14 Use Cases across 4 operational domains are enclosed inside. The diagram strictly follows textbook UML formatting with stick-figure actors, use case ovals, and formal `<<include>>` / `<<extend>>` stereotypes:
 
-```mermaid
-flowchart LR
-    %% ACTORS DEFINITIONS (OUTSIDE BOUNDARY)
-    subgraph ACTORS_COMMERCIAL ["Commercial & Sales Actors"]
-        A_SalesStaff["👤 Sales Staff<br>(Account Executive)"]
-        A_SalesManager["👔 Sales Manager<br>(Commercial Approver)"]
-        A_Customer["🏢 Corporate Customer<br>(B2B Client)"]
-    end
-
-    subgraph ACTORS_OPERATIONAL ["Logistics & Finance Actors"]
-        A_WarehouseClerk["📦 Warehouse Clerk<br>(Inventory Operator)"]
-        A_PurchasingStaff["🛒 Purchasing Staff<br>(Procurement Officer)"]
-        A_AccountingOfficer["💼 Accounting Officer<br>(Credit Controller)"]
-        A_Supplier["🚚 Supplier<br>(Vendor Rep)"]
-        A_TaxAuthority["🏛️ Tax Authority Gateway<br>(External System)"]
-    end
-
-    %% SYSTEM BOUNDARY
-    subgraph SYSTEM_BOUNDARY ["SYSTEM BOUNDARY: OfficePro B2B Enterprise Distribution Management System (OfficePro-EDMS)"]
-      
-        %% SALES MODULE
-        subgraph MOD_SALES ["1. Commercial Sales Domain"]
-            UC_S01(["UC-SALES-01<br>Apply Contract Pricelist"]):::ucStyle
-            UC_S02(["UC-SALES-02<br>Query ATP Stock Availability"]):::ucStyle
-            UC_S03(["UC-SALES-03<br>Request Discount Approval"]):::ucStyle
-            UC_S04(["UC-SALES-04<br>Confirm Sales Order"]):::ucCoreStyle
-        end
-
-        %% INVENTORY MODULE
-        subgraph MOD_INV ["2. Inventory & Logistics Domain"]
-            UC_I01(["UC-INV-01<br>Log Inbound Barcode Receipt"]):::ucStyle
-            UC_I02(["UC-INV-02<br>Generate Bin-Guided Picking List"]):::ucStyle
-            UC_I03(["UC-INV-03<br>Capture Electronic Delivery Proof"]):::ucStyle
-            UC_I04(["UC-INV-04<br>Audit Cycle Count Inventory"]):::ucStyle
-        end
-
-        %% PROCUREMENT MODULE
-        subgraph MOD_PURCH ["3. Procurement Replenishment Domain"]
-            UC_P01(["UC-PURCH-01<br>Trigger Automated Purchase Requisition"]):::ucCoreStyle
-            UC_P02(["UC-PURCH-02<br>Compare Multi-Vendor Purchase RFQs"]):::ucStyle
-            UC_P03(["UC-PURCH-03<br>Approve Purchase Order"]):::ucStyle
-        end
-
-        %% ACCOUNTING MODULE
-        subgraph MOD_ACC ["4. Financial Governance & Billing Domain"]
-            UC_A01(["UC-ACC-01<br>Execute Automated 3-Way Reconciliation"]):::ucCoreStyle
-            UC_A02(["UC-ACC-02<br>Enforce Hard Credit Hold"]):::ucStyle
-            UC_A03(["UC-ACC-03<br>Generate Electronic VAT Invoice"]):::ucStyle
-        end
-    end
-
-    %% ACTOR ASSOCIATIONS
-    A_SalesStaff --- UC_S01
-    A_SalesStaff --- UC_S02
-    A_SalesStaff --- UC_S04
-    A_Customer --- UC_S04
-    A_Customer --- UC_I03
-
-    A_SalesManager --- UC_S03
-    A_SalesManager --- UC_P03
-
-    A_WarehouseClerk --- UC_I01
-    A_WarehouseClerk --- UC_I02
-    A_WarehouseClerk --- UC_I03
-    A_WarehouseClerk --- UC_I04
-
-    A_PurchasingStaff --- UC_P01
-    A_PurchasingStaff --- UC_P02
-    A_PurchasingStaff --- UC_P03
-    A_Supplier --- UC_P02
-    A_Supplier --- UC_I01
-
-    A_AccountingOfficer --- UC_A01
-    A_AccountingOfficer --- UC_A02
-    A_AccountingOfficer --- UC_A03
-    UC_A03 --- A_TaxAuthority
-
-    %% RELATIONSHIPS: INCLUDE (Mandatory reusable behavior)
-    UC_S04 -.->|"<<include>>"| UC_S01
-    UC_S04 -.->|"<<include>>"| UC_S02
-    UC_A03 -.->|"<<include>>"| UC_A01
-    UC_I01 -.->|"<<include>>"| UC_P03
-
-    %% RELATIONSHIPS: EXTEND (Optional / Conditional exception behavior)
-    UC_S03 -.->|"<<extend>> [Discount > 5%]"| UC_S04
-    UC_A02 -.->|"<<extend>> [Overdue Debt > 30d]"| UC_S04
-
-    %% STYLING
-    classDef ucStyle fill:#EEF2FF,stroke:#4F46E5,stroke-width:1.5px,color:#1E1B4B,font-size:11px;
-    classDef ucCoreStyle fill:#FEF3C7,stroke:#D97706,stroke-width:2px,color:#78350F,font-weight:bold,font-size:11px;
-```
+![Enterprise Use Case Diagram — Group 6](../assets/usecase_enterprise_group6.svg)
 
 ### 4.1. Justification of UML Relationships (Slide 10)
-
 * **`<<include>>` UC-SALES-04 to UC-SALES-01 (Apply Contract Pricelist):** Every corporate sales order confirmation must unconditionally retrieve the validated contract pricelist. Confirming an order cannot occur without executing price verification.
 * **`<<include>>` UC-SALES-04 to UC-SALES-02 (Query ATP Stock Availability):** Order confirmation requires an automated calculation of available stock to reserve inventory. Confirming an order without ATP validation is prohibited by business rules.
 * **`<<extend>>` UC-SALES-03 (Request Discount Approval) to UC-SALES-04:** This behavior is executed conditionally only when a Sales Staff enters a discount exceeding 5% below contract price (Extension Point: `PriceDiscountThresholdExceeded`). Standard orders bypass this approval.
 * **`<<extend>>` UC-ACC-02 (Enforce Hard Credit Hold) to UC-SALES-04:** This behavior intercepts the confirmation flow only when the customer's ledger contains unpaid invoices overdue > 30 days (Extension Point: `CreditPolicyViolationDetected`). Normal credit accounts proceed without interception.
 * **`<<include>>` UC-ACC-03 to UC-ACC-01 (Execute Automated 3-Way Reconciliation):** Issuing a legal VAT invoice requires mandatory 3-way reconciliation against signed delivery slips to ensure zero billing discrepancy.
 
----
+### 4.2. Standard PlantUML Source Specification
 
-
-### 4.2. Standard UML Notation (PlantUML Diagram — Classic Stick Figure & Oval Style)
-
-Dành cho trình xem **Markdown Preview Enhanced** hoặc công cụ PlantUML (vẽ đúng chuẩn hình người que Actor và hình Oval Use Case như sách giáo trình UML):
+For compilation in PlantUML or IDE UML tools, the complete Enterprise Use Case Diagram source code is formally documented as follows:
 
 ```plantuml
 @startuml
@@ -317,7 +223,6 @@ actor "Tax Authority Gateway\n<<External System>>" as TaxAuthority
 
 ' SYSTEM BOUNDARY
 rectangle "OfficePro-EDMS: B2B Distribution Management System" <<Subsystem>> {
-    
     package "Commercial Sales & Pricing Domain" {
         usecase "UC-SALES-01\nApply Contract Pricelist" as UC_S01
         usecase "UC-SALES-02\nQuery ATP Stock Availability" as UC_S02
