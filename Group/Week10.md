@@ -185,17 +185,17 @@ The Enterprise Use Case Diagram defines the complete functional scope of **Offic
 flowchart LR
     %% ACTORS DEFINITIONS (OUTSIDE BOUNDARY)
     subgraph ACTORS_COMMERCIAL ["Commercial & Sales Actors"]
-        A_SalesStaff["fa:fa-user Sales Staff<br>(Account Executive)"]
-        A_SalesManager["fa:fa-user-tie Sales Manager<br>(Commercial Approver)"]
-        A_Customer["fa:fa-building Corporate Customer<br>(B2B Client)"]
+        A_SalesStaff["👤 Sales Staff<br>(Account Executive)"]
+        A_SalesManager["👔 Sales Manager<br>(Commercial Approver)"]
+        A_Customer["🏢 Corporate Customer<br>(B2B Client)"]
     end
 
     subgraph ACTORS_OPERATIONAL ["Logistics & Finance Actors"]
-        A_WarehouseClerk["fa:fa-boxes-packing Warehouse Clerk<br>(Inventory Operator)"]
-        A_PurchasingStaff["fa:fa-cart-shopping Purchasing Staff<br>(Procurement Officer)"]
-        A_AccountingOfficer["fa:fa-file-invoice-dollar Accounting Officer<br>(Credit Controller)"]
-        A_Supplier["fa:fa-truck-field Supplier<br>(Vendor Rep)"]
-        A_TaxAuthority["fa:fa-landmark Tax Authority Gateway<br>(External System)"]
+        A_WarehouseClerk["📦 Warehouse Clerk<br>(Inventory Operator)"]
+        A_PurchasingStaff["🛒 Purchasing Staff<br>(Procurement Officer)"]
+        A_AccountingOfficer["💼 Accounting Officer<br>(Credit Controller)"]
+        A_Supplier["🚚 Supplier<br>(Vendor Rep)"]
+        A_TaxAuthority["🏛️ Tax Authority Gateway<br>(External System)"]
     end
 
     %% SYSTEM BOUNDARY
