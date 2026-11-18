@@ -441,6 +441,56 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
   * **Documents:** Bấm icon **Documents**:
     * Xem kho lưu trữ số hóa toàn bộ hợp đồng khung B2B, biên bản giao nhận e-POD có chữ ký số, bảng đối soát ngân hàng được phân loại gọn gàng theo thư mục `Finance`, `Sales`, `Logistics`.
 
+
+---
+
+### PHÂN HỆ 9: MANUFACTURING & SHOP FLOOR (ĐÓNG GÓI BỘ SẢN PHẨM COMBO)
+* **Mục đích:** Quản lý quy trình kitting/đóng gói combo văn phòng phẩm (`CB-001`) theo định mức BOM #1.
+* **Đường dẫn truy cập:** Bấm icon **Manufacturing** hoặc **Shop Floor**.
+* **Các bước thao tác chuẩn:**
+  1. Mở menu **Operations** $rightarrow$ **Manufacturing Orders**.
+  2. Xem Lệnh sản xuất **`WH/MO/00001`**:
+     * Sản phẩm: `Combo VPP Doanh Nghiệp Tiết Kiệm Standard (CB-001)`.
+     * Số lượng đóng gói: **10 bộ**.
+     * Linh kiện tiêu hao: 20 ram Giấy Double A, 10 hộp Bút bi Thiên Long, 20 Bìa còng Kokuyo, 10 Dập ghim Deli, 10 hộp Ghim Deli.
+  3. Bấm **Produce All** hoặc xác nhận trên màn hình cảm ứng **Shop Floor** $rightarrow$ Trạng thái chuyển sang **Done**, 10 bộ combo nhập kho và nguyên liệu tự động trừ kho.
+
+---
+
+### PHÂN HỆ 10: PROJECT (QUẢN LÝ DỰ ÁN TRIỂN KHAI & TIẾN ĐỘ HỢP ĐỒNG B2B)
+* **Mục đích:** Theo dõi tiến độ thực hiện hợp đồng cung ứng lớn cho tập đoàn.
+* **Đường dẫn truy cập:** Bấm icon **Project**.
+* **Các bước thao tác chuẩn:**
+  1. Mở Dự án: **`Dự Án Triển Khai Cung Ứng VPP Trọn Gói 2026 - Tập Đoàn ABC`**.
+  2. Bảng Kanban hiển thị 5 nhiệm vụ trọng yếu phân quyền cho từng trưởng bộ phận:
+     * *Khảo sát định mức nhu cầu văn phòng phẩm* (Nguyễn Văn Quản Lý - Hoàn thành).
+     * *Đàm phán phụ lục hợp đồng & chốt Bảng giá 2026* (Nguyễn Văn Quản Lý - Hoàn thành).
+     * *Thiết lập tồn kho an toàn Min/Max & vị trí ô kệ Bin-04* (Trần Văn Kho - Hoàn thành).
+     * *Vận hành thử nghiệm Bán hàng - e-POD - Đối soát 3 bên* (Lê Thị Kế Toán - Đang thực hiện).
+     * *Đánh giá nghiệm thu & bàn giao chính thức* (Võ Duy Bình - Cần làm).
+
+---
+
+### PHÂN HỆ 11: CRM (QUẢN TRỊ ĐƯỜNG ỐNG CƠ HỘI DOANH NGHIỆP 515 TRIỆU ĐỒNG)
+* **Mục đích:** Quản lý phễu khách hàng từ đầu mối tiềm năng đến khi ký kết hợp đồng.
+* **Đường dẫn truy cập:** Bấm icon **CRM**.
+* **Các bước thao tác chuẩn:**
+  1. Màn hình Pipeline hiển thị 4 cơ hội lớn với tổng giá trị **515.000.000₫**:
+     * *New:* Dự án Tòa nhà Etown Tân Bình (60tr).
+     * *Qualified:* Hợp đồng Mua sắm OCB Bank (250tr).
+     * *Proposition:* Đấu thầu Chi nhánh Saigon Tech Corp (85tr).
+     * *Won:* Gói VPP Thường Niên Tập đoàn ABC (120tr).
+  2. Thao tác kéo thả thẻ cơ hội giữa các cột để cập nhật xác suất thành công theo thời gian thực.
+
+---
+
+### PHÂN HỆ 12: SURVEYS & EMAIL MARKETING (KHẢO SÁT CHẤT LƯỢNG e-POD & CSAT)
+* **Mục đích:** Đo lường độ hài lòng khách hàng doanh nghiệp sau khi nhận hàng và phát hành thông báo giá tự động.
+* **Đường dẫn truy cập:** Bấm icon **Surveys** hoặc **Email Marketing**.
+* **Các bước thao tác chuẩn:**
+  1. Trong **Surveys**: Mở bản khảo sát *Khảo Sát Chất Lượng Dịch Vụ Giao Hàng & Văn Phòng Phẩm OfficePro B2B* gồm 3 câu hỏi đánh giá độ chính xác đơn giá hợp đồng và tính tiện dụng của ký số e-POD.
+  2. Trong **Email Marketing**: Xem chiến dịch mail *Công Bố Bảng Giá Hợp Đồng Ưu Đãi 2026* gửi tự động cho danh sách người liên hệ doanh nghiệp.
+
 ---
 
 ## 5. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
@@ -548,6 +598,13 @@ Dưới đây là bảng nhật ký kiểm toán (Audit Trail) với đầy đ�
 | **10** | **Lệnh Nhập kho từ NCC** | **`WH/IN/00001`** | Inventory / Receipts | **Done** | Nhu cầu: 230 ram, Thực nhập: **230 ram** (Tồn kho phục hồi về Max **300 ram**) | [Xem Phiếu WH/IN/00001](https://edu-officeprodistribution.odoo.com/odoo/purchase/1/action-708/3) |
 | **11** | **Hóa đơn Mua hàng từ NCC** | **`BILL/2026/11/0001`** | Accounting / Purchases | **Posted** | Đối soát 3 bên khớp P00001 & WH/IN/00001, Giá vốn TK 6320: **11.960.000₫**, VAT: **1.196.000₫** | [Xem Bill BILL/2026/11/0001](https://edu-officeprodistribution.odoo.com/odoo/accounting/account.move/2) |
 | **12** | **Bảng Điều hành Doanh nghiệp** | Dashboards Tổng quan | Dashboards | Cập nhật Real-time | Ghi nhận doanh thu bán, công nợ phải thu, phân tích chu kỳ mua hàng | [Xem Dashboards](https://edu-officeprodistribution.odoo.com/odoo/dashboards) |
+| **13** | **Lệnh Đóng gói Combo (MO)** | **`WH/MO/00001`** | Manufacturing / Operations | **Done** | Sản xuất 10 bộ Combo CB-001, tự động tiêu hao 5 nhóm linh kiện theo BOM #1 | [Xem Lệnh MO/00001](https://edu-officeprodistribution.odoo.com/odoo) |
+| **14** | **Dự án Triển khai Hợp đồng B2B** | Project ABC 2026 | Project / Tasks | Đang vận hành | 5 nhiệm vụ mốc (Milestones) phân quyền cho 4 trưởng phòng ban | [Xem Dự án](https://edu-officeprodistribution.odoo.com/odoo) |
+| **15** | **Khảo sát CSAT & e-POD** | Khảo sát Khách hàng B2B | Surveys | Hoạt động | Đánh giá độ chính xác 0% lỗi giá & tính thuận tiện của chữ ký số e-POD | [Xem Khảo sát](https://edu-officeprodistribution.odoo.com/odoo) |
+| **16** | **Lịch Họp Ban Điều Hành** | Cuộc họp Đánh giá ERP | Calendar | Đã lên lịch | Cuộc họp điều hành ngày 20/11 có mặt đầy đủ CEO và 4 trưởng phòng chức năng | [Xem Lịch Họp](https://edu-officeprodistribution.odoo.com/odoo) |
+| **17** | **Chiến dịch Email Báo giá** | Email Bảng giá 2026 | Email Marketing | Đã tạo mẫu | Gửi thông báo tự động bảng giá hợp đồng cố định cho khách hàng doanh nghiệp | [Xem Email Marketing](https://edu-officeprodistribution.odoo.com/odoo) |
+| **18** | **Cơ sở Tri thức & SOPs** | SOP-01, SOP-02, SOP-03 | Knowledge | Đã phát hành | Quy trình bán hàng, kiểm soát nợ Net 30 và quét mã vạch bù kho tự động | [Xem Knowledge](https://edu-officeprodistribution.odoo.com/odoo) |
+| **19** | **Tài khoản Người dùng (RBAC)** | 5 User Accounts | Settings / Users | Đã phân quyền | CEO (Toàn quyền), Sales Manager, Warehouse Lead, Chief Accountant, PO Lead | [Xem Danh sách Users](https://edu-officeprodistribution.odoo.com/odoo/settings/users) |
 
 
 ## 7. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
