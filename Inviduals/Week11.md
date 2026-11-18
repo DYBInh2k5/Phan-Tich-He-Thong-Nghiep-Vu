@@ -631,6 +631,11 @@ Dưới đây là bảng nhật ký kiểm toán (Audit Trail) với đầy đ�
 | **18** | **Cơ sở Tri thức & SOPs** | SOP-01, SOP-02, SOP-03 | Knowledge | Đã phát hành | Quy trình bán hàng, kiểm soát nợ Net 30 và quét mã vạch bù kho tự động | [Xem Knowledge](https://edu-officeprodistribution.odoo.com/odoo) |
 | **19** | **Tài khoản Người dùng (RBAC)** | 5 User Accounts | Settings / Users | Đã phân quyền | CEO (Toàn quyền), Sales Manager, Warehouse Lead, Chief Accountant, PO Lead | [Xem Danh sách Users](https://edu-officeprodistribution.odoo.com/odoo/settings/users) |
 | **20** | **Website Doanh nghiệp & B2B Shop** | Cổng Web Portal B2B | Website / eCommerce | Hoạt động | Trang chủ (/), Giới thiệu (/about-us), Cửa hàng (/shop - 11 sản phẩm), Liên hệ (/contactus) | [Truy cập Website](https://edu-officeprodistribution.odoo.com/) |
+| **21** | **Lịch Hẹn Tư Vấn B2B Trực Tuyến** | Appointment 30 Mins | Appointments | Kích hoạt | Cổng đặt lịch trực tuyến 30 phút tư vấn gói hợp đồng nguyên tắc B2B | [Xem Appointments](https://edu-officeprodistribution.odoo.com/odoo) |
+| **22** | **Lập Lịch Phân Ca Trực Vận Hành** | Planning Shifts Tuần | Planning | Đã phân ca | Ca trực kiểm kho, xuất hàng SO S00001 và nhận bù kho PO P00001 (Hub Tân Bình) | [Xem Planning](https://edu-officeprodistribution.odoo.com/odoo) |
+| **23** | **Kho Lưu Trữ Chứng Từ Số Hóa** | Documents Folders | Documents | Đã phân loại | 3 thư mục Hợp đồng B2B, Biên bản e-POD, Hóa đơn VAT liên kết SO, Picking, Invoice | [Xem Documents](https://edu-officeprodistribution.odoo.com/odoo) |
+| **24** | **Kênh Chat & Cộng Tác Nội Bộ** | Discuss Channels | Discuss | Hoạt động | 3 kênh #kinh-doanh-b2b, #kho-van-logistics, #duyet-chiet-khau-b2b (Chatter UC-SALES-03) | [Xem Discuss](https://edu-officeprodistribution.odoo.com/odoo) |
+| **25** | **Mẫu Ký Số Biên Bản e-POD** | Sign Template e-POD | Sign | Sẵn sàng ký | Mẫu biên bản giao nhận hàng hóa điện tử có chữ ký số khách hàng phục vụ đối soát | [Xem Sign](https://edu-officeprodistribution.odoo.com/odoo) |
 
 
 ## 7. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
