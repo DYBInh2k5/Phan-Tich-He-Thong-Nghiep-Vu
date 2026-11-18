@@ -227,13 +227,65 @@ Phân hệ CRM đã được nạp dữ liệu thật với 4 cơ hội kinh doa
 
 ---
 
-### 3.6. Cơ cấu Tổ chức Nhân sự & Phân quyền Vai trò Nghiệp vụ
-Khớp nối chuẩn xác với các Actor được phân tích trong Sơ đồ Use Case Tuần 10:
-* **Giám Đốc Dự Án ERP & Lead BA:** `Võ Duy Bình` (MSSV: `22301500`).
-* **Trưởng Phòng Kinh Doanh B2B (Sales Manager / Commercial Approver):** `Nguyễn Văn Quản Lý` — Phụ trách duyệt chiết khấu vượt 5% (`UC-SALES-03`).
-* **Thủ Kho Trưởng - Hub Tân Bình (Warehouse Officer):** `Trần Văn Kho` — Phụ trách lấy hàng theo ô kệ Bin-04 (`UC-INV-02`) và xác nhận phiếu xuất kho `WH/OUT`.
-* **Kế Toán Trưởng (Credit Controller & 3-Way Match):** `Lê Thị Kế Toán` — Phụ trách kiểm soát nợ Net 30 (`UC-ACC-02`), đối soát tự động 3 bên (`UC-ACC-01`) và hạch toán ngân hàng.
-* **Chuyên Viên Thu Mua (Procurement Officer):** `Phạm Thu Mua` — Phụ trách theo dõi đơn mua bù kho tự động `P00001` và tiếp nhận hàng từ NCC (`UC-PURCH-01/03`).
+### 3.6. Cơ cấu Tổ chức Nhân sự, Hệ thống Thẻ Nhân viên & Phân quyền Người dùng (RBAC)
+
+Để đảm bảo an toàn thông tin, bảo mật chứng từ tài chính và chuyên nghiệp hóa quy trình vận hành theo chuẩn ERP quốc tế, hệ thống nhân sự tại **OfficePro Distribution Co., Ltd.** đã được cấu hình chặt chẽ theo 3 lớp:
+
+#### 3.6.1. Sơ đồ Phân cấp Tổ chức Trực quan (Visual Organizational Hierarchy)
+Đã thiết lập trường quan hệ báo cáo trực tiếp (`parent_id`) trên hệ thống Odoo để hiển thị chuẩn xác cây sơ đồ tổ chức (Hierarchy View):
+
+```
+                     +-----------------------------------------------------------+
+                     |            VÕ DUY BÌNH (MSSV: 22301500)                   |
+                     |     Tổng Giám Đốc (CEO) & Giám Đốc Dự Án ERP              |
+                     |       User ID: 2 (binhvo20055@gmail.com)                  |
+                     |         Mã NV: OP-CEO-001 | PIN: 2005                     |
+                     +-----------------------------+-----------------------------+
+                                                   |
+         +--------------------+--------------------+--------------------+--------------------+
+         |                    |                                         |                    |
+         v                    v                                         v                    v
++------------------+ +------------------+                      +------------------+ +------------------+
+| NGUYỄN VĂN QUẢN LÝ| |   TRẦN VĂN KHO   |                      |  LÊ THỊ KẾ TOÁN  | |   PHẠM THU MUA   |
+| Trưởng Phòng KD  | | Thủ Kho Trưởng   |                      | Kế Toán Trưởng   | | Trưởng Bộ Phận   |
+| B2B (Sales Mgr)  | | Hub Tân Bình     |                      | (Credit Control) | | Mua Hàng (PO)    |
+| Mã: OP-SM-002    | | Mã: OP-WH-003    |                      | Mã: OP-ACC-004   | | Mã: OP-PO-005    |
+| PIN: 1234        | | PIN: 5678        |                      | PIN: 9012        | | PIN: 3456        |
+| Duyệt CK > 5%    | | Xuất kho, Ô kệ   |                      | Nợ Net 30, 3-Way | | Mua bù kho MinMax|
++------------------+ +------------------+                      +------------------+ +------------------+
+```
+
+---
+
+#### 3.6.2. Danh bạ Hồ sơ Thẻ Nhân viên, Mã Vạch Barcode & Mã PIN Chấm công
+Mỗi nhân sự trong hệ thống được cấp phát định danh duy nhất, bao gồm mã thẻ quét mã vạch (phục vụ đăng nhập máy quét Barcode tại cửa kho và trạm đóng gói Shop Floor) và mã PIN 4 chữ số:
+
+| STT | Mã Nhân viên | Họ và Tên Nhân sự | Chức danh Công việc | Phòng ban Chức năng | Mã Vạch Thẻ (Barcode) | Mã PIN (Kiosk/Shop Floor) | Số CCCD / Định danh | Email Công vụ | Nơi Làm việc |
+| :---: | :--- | :--- | :--- | :--- | :---: | :---: | :---: | :--- | :--- |
+| **1** | `OP-CEO-001` | **Võ Duy Bình** | Tổng Giám Đốc (CEO) & Giám Đốc Dự Án ERP | Ban Giám Đốc | `041223015001` | `2005` | `079205001500` | `binhvo20055@gmail.com` | VP & Tổng Kho Tân Bình |
+| **2** | `OP-SM-002` | **Nguyễn Văn Quản Lý** | Trưởng Phòng Kinh Doanh B2B | Phòng Kinh Doanh B2B | `041223015002` | `1234` | `079201004567` | `sales.manager@officepro.vn` | VP & Tổng Kho Tân Bình |
+| **3** | `OP-WH-003` | **Trần Văn Kho** | Thủ Kho Trưởng - Hub Tân Bình | Phòng Kho Vận & Chuỗi Cung Ứng | `041223015003` | `5678` | `079202008912` | `warehouse.lead@officepro.vn` | VP & Tổng Kho Tân Bình |
+| **4** | `OP-ACC-004` | **Lê Thị Kế Toán** | Kế Toán Trưởng & Quản Lý Công Nợ | Phòng Kế Toán Tài Chính | `041223015004` | `9012` | `079203003456` | `accounting@officepro.vn` | VP & Tổng Kho Tân Bình |
+| **5** | `OP-PO-005` | **Phạm Thu Mua** | Trưởng Bộ Phận Mua Hàng & Cung Ứng | Phòng Thu Mua | `041223015005` | `3456` | `079204007890` | `procurement@officepro.vn` | VP & Tổng Kho Tân Bình |
+
+---
+
+#### 3.6.3. Ma trận Phân quyền Người dùng & Kiểm soát Truy cập (RBAC Matrix)
+Hệ thống Odoo áp dụng nguyên tắc đặc quyền tối thiểu (Principle of Least Privilege). Mỗi chức danh chỉ được cấp quyền truy cập đúng phạm vi trách nhiệm nghiệp vụ của mình:
+
+| Nhóm Phân hệ | Tổng Giám Đốc (CEO / Admin) | Trưởng Phòng KD (Sales Mgr) | Thủ Kho Trưởng (Warehouse) | Kế Toán Trưởng (Finance) | Chuyên Viên Mua Hàng (Purchasing) |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Tài khoản Đăng nhập (Login)** | `binhvo20055@gmail.com` | `sales.manager@officepro.vn` | `warehouse.lead@officepro.vn` | `accounting@officepro.vn` | `procurement@officepro.vn` |
+| **Vai trò Hệ thống (System Role)** | **Administrator (Full Access)** | Standard User | Standard User | Standard User | Standard User |
+| **Bán hàng (Sales / CRM)** | **Administrator** | **Administrator (Duyệt giá)** | Chỉ xem đơn hàng xuất kho | Invoicing (Tạo hóa đơn) | Không truy cập |
+| **Kho vận (Inventory / Barcode)** | **Administrator** | Chỉ xem tồn kho khả dụng ATP | **Administrator (Xuất/Nhập/Kiểm)** | Chỉ xem giá trị tồn | Chỉ xem tồn an toàn Min/Max |
+| **Kế toán (Accounting / Billing)** | **Administrator** | Không truy cập sổ cái | Không truy cập sổ sách | **Administrator (Toàn quyền)** | Chỉ xem hóa đơn NCC liên quan |
+| **Mua sắm (Purchase / RFQ)** | **Administrator** | Không truy cập | Chỉ xem tiến độ hàng về | Đối soát 3 bên với Bill | **Administrator (Tạo & Duyệt PO)**|
+| **Đóng gói (Shop Floor / MRP)** | **Administrator** | Xem định mức Combo | **Người vận hành (Operator)** | Xem chi phí định mức | Mua NVL định mức BOM |
+| **Cài đặt & Phân quyền (Settings)**| **Toàn quyền Quản trị** | Không được phép | Không được phép | Không được phép | Không được phép |
+
+> 🔒 **Điểm nhấn bảo mật học thuật:**  
+> Nhân viên kinh doanh tuyệt đối không thể tự ý sửa đơn giá hợp đồng hay xóa đơn hàng đã chốt; Thủ kho chỉ chịu trách nhiệm xác nhận số lượng thực xuất mà không thể can thiệp vào tài khoản ngân hàng; Kế toán trưởng nắm giữ chốt chặn cuối cùng kiểm tra 3-Way Matching trước khi xuất tiền chi trả. Cơ chế phân quyền này đáp ứng 100% tiêu chuẩn kiểm toán hệ thống thông tin doanh nghiệp (COBIT / ITIL).
 
 ---
 

@@ -2,7 +2,7 @@
 ## BUSINESS SYSTEMS ANALYSIS (BSA) — MASTER COURSEWORK & EXERCISES KNOWLEDGE BASE
 
 > 🔄 **AUTOMATED SYNCHRONIZATION STATUS: ACTIVE**  
-> **Last Auto-Updated:** `2026-11-18 04:24:17 (UTC)`  
+> **Last Auto-Updated:** `2026-11-18 04:32:39 (UTC)`  
 > **Sync Engine:** `scripts/auto_update_knowledge.js`  
 > **Target Tracking:** All Lecture Slides, Individual Deliverables, Group Submissions, and Project Phase 1/2 Artifacts.  
 > *Note: This file is dynamically re-compiled whenever new slides, assignments, or project files are committed or saved.*
@@ -71,7 +71,7 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | :--- | :---: | :--- |
 | [`Week1.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week1.md) | ✅ Completed (3.9 KB) | STUDENT INFORMATION; Task 1 — Investigation Focus |
 | [`Week10.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week10.md) | ✅ Completed (59.8 KB) | Individual Task Focus (from Lecture Slide Deck WEEK 10: USE CASE MODELING); INDIVIDUAL DELIVERABLE WEEK 10 — VÕ DUY BÌNH (ID: 22301500) |
-| [`Week11.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week11.md) | ✅ Completed (45.1 KB) | HƯỚNG DẪN THỰC HÀNH & KỊCH BẢN DEMO ODOO ERP TUẦN 11; DỰA TRÊN MÔ HÌNH USE CASE & YÊU CẦU CHỨC NĂNG (TUẦN 10) |
+| [`Week11.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week11.md) | ✅ Completed (50.7 KB) | HƯỚNG DẪN THỰC HÀNH & KỊCH BẢN DEMO ODOO ERP TUẦN 11; DỰA TRÊN MÔ HÌNH USE CASE & YÊU CẦU CHỨC NĂNG (TUẦN 10) |
 | [`Week12.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week12.md) | ⏳ Template (0 B) | Pending |
 | [`Week13.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week13.md) | ⏳ Template (0 B) | Pending |
 | [`Week14.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Inviduals/Week14.md) | ⏳ Template (0 B) | Pending |
