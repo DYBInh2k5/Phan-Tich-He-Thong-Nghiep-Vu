@@ -518,6 +518,80 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
 
 ---
 
+
+---
+
+### PHÂN HỆ 14: APPOINTMENTS & CALENDAR (ĐẶT LỊCH HẸN TƯ VẤN & HỌP ĐIỀU HÀNH)
+* **Mục đích:** Cung cấp cổng đặt lịch hẹn trực tuyến cho khách hàng doanh nghiệp và quản lý lịch họp nội bộ Ban Điều Hành.
+* **Đường dẫn truy cập:** Bấm icon **Appointments** hoặc **Calendar**.
+* **Các bước thao tác chuẩn:**
+  1. **Khách hàng đặt lịch hẹn tư vấn B2B trực tuyến:**
+     * Khách hàng truy cập đường dẫn: `https://edu-officeprodistribution.odoo.com/appointment/1`.
+     * Chọn lịch hẹn: **Tư Vấn & Ký Kết Hợp Đồng Cung Ứng Văn Phòng Phẩm B2B (30 Phút)**.
+     * Chọn chuyên viên phụ trách: `Võ Duy Bình` (CEO) hoặc `Nguyễn Văn Quản Lý` (Sales Manager).
+     * Chọn ngày giờ còn trống $rightarrow$ Điền thông tin doanh nghiệp $rightarrow$ Bấm **Confirm Appointment**.
+     * Hệ thống tự động đồng bộ lịch vào ứng dụng **Calendar** và gửi email thông báo xác nhận.
+  2. **Theo dõi Cuộc họp Điều hành Định kỳ trong Calendar:**
+     * Mở **Calendar** $rightarrow$ Xem sự kiện ngày 20/11: *Họp Ban Điều Hành: Đánh Giá Vận Hành ERP & Kế Hoạch Cung Ứng*.
+     * Xem danh sách 5 trưởng bộ phận được mời tham gia họp và tài liệu đính kèm.
+
+---
+
+### PHÂN HỆ 15: PLANNING (LẬP LỊCH PHÂN CA TRỰC LOGISTICS & KINH DOANH)
+* **Mục đích:** Phân bổ nhân sự trực kho, xử lý đơn hàng và điều phối xe tải giao hàng tránh ùn tắc dock xuất nhập.
+* **Đường dẫn truy cập:** Bấm icon **Planning**.
+* **Các bước thao tác chuẩn:**
+  1. Mở màn hình Gantt Chart / Tuần của **Planning**.
+  2. Xem các ca trực đã phân bổ:
+     * **Trần Văn Kho (Thủ kho):** Ca sáng 08:00 - 17:00 phụ trách *Kiểm kho, xuất hàng SO S00001 và nhận bù kho PO P00001*.
+     * **Nguyễn Văn Quản Lý (Sales Manager):** Ca trực 08:00 - 17:00 phụ trách *Kiểm soát đơn giá hợp đồng nguyên tắc và thẩm định chiết khấu*.
+  3. Để tạo ca trực mới: Click đúp vào ô thời gian bất kỳ trên bảng $rightarrow$ Chọn nhân viên, vị trí (Role) $rightarrow$ Bấm **Publish & Send** để gửi thông báo ca trực đến ứng dụng của nhân viên.
+
+---
+
+### PHÂN HỆ 16: DOCUMENTS (KHO LƯU TRỮ CHỨNG TỪ SỐ HÓA B2B)
+* **Mục đích:** Số hóa 100% hồ sơ giấy tờ, lưu trữ tập trung hợp đồng khung B2B, biên bản giao nhận e-POD và hóa đơn điện tử.
+* **Đường dẫn truy cập:** Bấm icon **Documents**.
+* **Các bước thao tác chuẩn:**
+  1. Màn hình mở ra hệ thống cây thư mục được phân loại khoa học:
+     * 📁 **Hợp Đồng Khung B2B (B2B Master Contracts):** Chứa tệp `Hop_Dong_Nguyen_Tac_Cung_Ung_VPP_2026_Tap_Doan_ABC.pdf` (liên kết trực tiếp với Sales Order S00001).
+     * 📁 **Biên Bản Giao Nhận Điện Tử e-POD (Logistics e-POD Proofs):** Chứa tệp `Bien_Ban_Giao_Nhan_ePOD_WH_OUT_00002_Signed.pdf` (liên kết với phiếu xuất kho WH/OUT/00002).
+     * 📁 **Hóa Đơn Tài Chính & Chứng Từ Thuế VAT (Fiscal Invoices):** Chứa tệp `Hoa_Don_Dien_Tu_VAT_INV_2026_00001.pdf` (liên kết với Invoice INV/2026/00001).
+  2. Bấm vào tệp để xem trước nội dung, tải về (Download) hoặc chia sẻ link bảo mật cho đối tác.
+
+---
+
+### PHÂN HỆ 17: DISCUSS (KÊNH CỘNG TÁC NỘI BỘ & DUYỆT CHIẾT KHẤU UC-SALES-03)
+* **Mục đích:** Kênh liên lạc tức thời giữa các phòng ban và xử lý các luồng phê duyệt ngoại lệ kinh doanh.
+* **Đường dẫn truy cập:** Bấm icon **Discuss**.
+* **Các bước thao tác chuẩn:**
+  1. Danh sách kênh chat chuyên môn bên trái:
+     * **#kinh-doanh-b2b:** Trao đổi về tiến độ đàm phán hợp đồng, nhu cầu SKU mới của khách hàng.
+     * **#kho-van-logistics:** Điều phối xe tải giao hàng, báo cáo tình trạng quá tải dock lấy hàng.
+     * **#duyet-chiet-khau-b2b:** Tiếp nhận và phê duyệt các yêu cầu chiết khấu vượt khung 5% (`UC-SALES-03`).
+  2. Minh họa quy trình duyệt chiết khấu:
+     * Nhân viên kinh doanh gửi tin: `@Nguyễn Văn Quản Lý Xin phê duyệt mức chiết khấu 7% cho đơn hàng thầu 50 ram giấy Double A của Tập đoàn ABC.`
+     * Trưởng phòng trả lời trực tiếp: `Phê duyệt chiết khấu 7% cho hợp đồng khối lượng lớn. Đã mở quyền xác nhận SO.`
+
+---
+
+### PHÂN HỆ 18: EMPLOYEES & ORG CHART (QUẢN LÝ THẺ NHÂN VIÊN, MÃ PIN & SƠ ĐỒ PHÂN CẤP)
+* **Mục đích:** Quản lý hồ sơ nhân sự, mã vạch thẻ định danh, mã PIN chấm công và trực quan hóa cây sơ đồ tổ chức trực thuộc CEO.
+* **Đường dẫn truy cập:** Bấm icon **Employees**.
+* **Các bước thao tác chuẩn:**
+  1. **Xem Sơ đồ Phân cấp Tổ chức Trực quan (Hierarchy View):**
+     * Ở góc trên bên phải màn hình danh sách nhân viên, bấm vào biểu tượng cây phả hệ (**Hierarchy View**).
+     * Màn hình thể hiện rõ: **Võ Duy Bình (CEO / System Admin)** đứng ở vị trí cao nhất, bên dưới là 4 nhánh báo cáo trực tiếp gồm 4 trưởng phòng ban (`Nguyễn Văn Quản Lý`, `Trần Văn Kho`, `Lê Thị Kế Toán`, `Phạm Thu Mua`).
+  2. **Xem và Sử dụng Mã Thẻ Nhân viên (Barcode) & Mã PIN:**
+     * Bấm vào thẻ của bất kỳ nhân viên nào (ví dụ: `Trần Văn Kho` - Thủ kho).
+     * Tab **HR Settings**: Hiển thị **Badge ID / Barcode** (`041223015003`) và **PIN Code** (`5678`).
+     * Khi thủ kho đến cửa kho hoặc mở máy quét cầm tay, chỉ cần quét mã vạch trên thẻ nhân viên hoặc bấm PIN `5678` để đăng nhập nhanh mà không cần gõ mật khẩu dài.
+  3. **In Thẻ Nhân Viên Hàng Loạt:**
+     * Chọn tất cả nhân viên $rightarrow$ Menu **Actions (Hành động)** $rightarrow$ Chọn **Print Badge (In thẻ)**.
+     * Odoo tạo file PDF chứa ảnh, mã vạch EAN, họ tên và chức danh sẵn sàng in thẻ nhựa đeo cổ cho toàn công ty.
+
+---
+
 ## 5. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
 
 Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo 4 kịch bản chuẩn sau:
