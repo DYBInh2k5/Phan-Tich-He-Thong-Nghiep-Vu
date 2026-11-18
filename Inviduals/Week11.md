@@ -491,6 +491,31 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
   1. Trong **Surveys**: Mở bản khảo sát *Khảo Sát Chất Lượng Dịch Vụ Giao Hàng & Văn Phòng Phẩm OfficePro B2B* gồm 3 câu hỏi đánh giá độ chính xác đơn giá hợp đồng và tính tiện dụng của ký số e-POD.
   2. Trong **Email Marketing**: Xem chiến dịch mail *Công Bố Bảng Giá Hợp Đồng Ưu Đãi 2026* gửi tự động cho danh sách người liên hệ doanh nghiệp.
 
+
+---
+
+### PHÂN HỆ 13: WEBSITE (CỔNG THÔNG TIN DOANH NGHIỆP & CỬA HÀNG B2B TRỰC TUYẾN)
+* **Mục đích:** Cung cấp kênh tra cứu thông tin năng lực doanh nghiệp, danh mục sản phẩm chuẩn hóa và tiếp nhận yêu cầu báo giá/đấu thầu từ khách hàng doanh nghiệp.
+* **Đường dẫn truy cập:**
+  * **Trang chủ chính thức:** [https://edu-officeprodistribution.odoo.com/](https://edu-officeprodistribution.odoo.com/)
+  * **Trang Về Chúng Tôi:** [https://edu-officeprodistribution.odoo.com/about-us](https://edu-officeprodistribution.odoo.com/about-us)
+  * **Cửa hàng B2B Trực tuyến:** [https://edu-officeprodistribution.odoo.com/shop](https://edu-officeprodistribution.odoo.com/shop)
+  * **Trang Liên hệ & Báo giá:** [https://edu-officeprodistribution.odoo.com/contactus](https://edu-officeprodistribution.odoo.com/contactus)
+* **Các tính năng đã thiết kế & vận hành thực tế:**
+  1. **Trang chủ Doanh nghiệp (`/`):**
+     * Thiết kế Hero Banner chuyên nghiệp: *"OfficePro Distribution Co., Ltd. — Giải Pháp Chuỗi Cung Ứng B2B Chuyên Nghiệp"*.
+     * 3 Trụ cột giá trị cốt lõi: **0% Lỗi giá hợp đồng**, **Giao hàng 24h & e-POD**, **Hạn mức tín dụng Net 30**.
+     * Dải banner thương hiệu đối tác chiến lược: Tập đoàn ABC, Saigon Tech Corp, Ngân hàng OCB, Tòa nhà Etown Tân Bình.
+  2. **Trang Giới thiệu Năng lực (`/about-us`):**
+     * Tầm nhìn, sứ mệnh, giá trị cốt lõi và bảng thông tin pháp lý (MST 0317896542, đại diện pháp luật Võ Duy Bình, hệ thống 2 tổng kho Tân Bình & Biên Hòa, tài khoản ngân hàng Vietcombank).
+  3. **Cửa hàng Văn phòng phẩm Trực tuyến (`/shop`):**
+     * Phân loại thành 6 danh mục eCommerce: *Giấy in, Bút viết, Bìa còng, Dụng cụ đóng gói, Hộp mực in, Combo Tiết kiệm*.
+     * Xuất bản (Publish) toàn bộ 10 SKU + 1 Bộ Combo `CB-001`.
+     * Khi khách hàng doanh nghiệp đăng nhập, đơn giá **tự động khóa chặt theo Bảng giá Hợp đồng 2026** và hiển thị số lượng tồn khả dụng (ATP).
+  4. **Cổng Tiếp nhận Thông tin Đối tác (`/contactus`):**
+     * Biểu mẫu liên hệ trực tuyến tự động chuyển hóa thành **Cơ hội Kinh doanh (Lead/Opportunity)** trong phân hệ CRM.
+     * Hiển thị bảng định vị trụ sở KCN Tân Bình, chi nhánh Biên Hòa, hotline `(028) 3816 5588` và email `contact@officepro.vn`.
+
 ---
 
 ## 5. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
@@ -605,6 +630,7 @@ Dưới đây là bảng nhật ký kiểm toán (Audit Trail) với đầy đ�
 | **17** | **Chiến dịch Email Báo giá** | Email Bảng giá 2026 | Email Marketing | Đã tạo mẫu | Gửi thông báo tự động bảng giá hợp đồng cố định cho khách hàng doanh nghiệp | [Xem Email Marketing](https://edu-officeprodistribution.odoo.com/odoo) |
 | **18** | **Cơ sở Tri thức & SOPs** | SOP-01, SOP-02, SOP-03 | Knowledge | Đã phát hành | Quy trình bán hàng, kiểm soát nợ Net 30 và quét mã vạch bù kho tự động | [Xem Knowledge](https://edu-officeprodistribution.odoo.com/odoo) |
 | **19** | **Tài khoản Người dùng (RBAC)** | 5 User Accounts | Settings / Users | Đã phân quyền | CEO (Toàn quyền), Sales Manager, Warehouse Lead, Chief Accountant, PO Lead | [Xem Danh sách Users](https://edu-officeprodistribution.odoo.com/odoo/settings/users) |
+| **20** | **Website Doanh nghiệp & B2B Shop** | Cổng Web Portal B2B | Website / eCommerce | Hoạt động | Trang chủ (/), Giới thiệu (/about-us), Cửa hàng (/shop - 11 sản phẩm), Liên hệ (/contactus) | [Truy cập Website](https://edu-officeprodistribution.odoo.com/) |
 
 
 ## 7. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
