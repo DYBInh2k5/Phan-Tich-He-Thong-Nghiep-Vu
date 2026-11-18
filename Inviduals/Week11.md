@@ -63,30 +63,55 @@ Buổi demo Tuần 11 không đơn thuần là "bấm nút phần mềm", mà l�
 *(Trường hợp sau 15 ngày bản dùng thử hết hạn thì mới tạo lại theo hướng dẫn tại [odoo.com/trial](https://www.odoo.com/trial)).*
 
 ### Bước 0.2: Cấu hình Tiền tệ VND & Kế toán Việt Nam
-1. Vào menu **Settings (Cài đặt)** $ightarrow$ Tìm mục **Companies** $ightarrow$ Click vào công ty **OfficePro Distribution Co., Ltd.**.
+1. Vào menu **Settings (Cài đặt)** $
+ightarrow$ Tìm mục **Companies** $
+ightarrow$ Click vào công ty **OfficePro Distribution Co., Ltd.**.
 2. Đổi **Currency (Tiền tệ)** thành: **VND (₫)**.
-3. Vào **Invoicing $ightarrow$ Configuration $ightarrow$ Settings** $ightarrow$ Kích hoạt gói kế toán **Vietnam - Accounting (Thông tư 200/133)**.
+3. Vào **Invoicing $
+ightarrow$ Configuration $
+ightarrow$ Settings** $
+ightarrow$ Kích hoạt gói kế toán **Vietnam - Accounting (Thông tư 200/133)**.
 
 ### Bước 0.3: Nạp Nhanh 10 SKU Master Data Bằng Tệp CSV 1-Chạm
 Nhóm đã chuẩn bị sẵn tệp chuẩn: [`Project/Final Project/Odoo_Master_Data_Import_10_SKUs.csv`](file:///d:/HSU/2631Semester%201(2026-2027)/BA/Project/Final%20Project/Odoo_Master_Data_Import_10_SKUs.csv).
-1. Vào menu **Inventory $ightarrow$ Products $ightarrow$ Products**.
-2. Bấm vào nút **⚙️ Favorites (Yêu thích)** ở góc trên thanh tìm kiếm $ightarrow$ Chọn **Import records (Nhập bản ghi)**.
-3. Bấm **Upload File** $ightarrow$ Chọn tệp `Odoo_Master_Data_Import_10_SKUs.csv`.
-4. Bấm nút **Test (Kiểm tra)** $ightarrow$ Hệ thống báo màu xanh: *"Everything seems valid"*.
-5. Bấm **Import** $ightarrow$ **10 sản phẩm trọng yếu từ `ST-001` đến `ST-010` được tạo tự động trong 2 giây!**
+1. Vào menu **Inventory $
+ightarrow$ Products $
+ightarrow$ Products**.
+2. Bấm vào nút **⚙️ Favorites (Yêu thích)** ở góc trên thanh tìm kiếm $
+ightarrow$ Chọn **Import records (Nhập bản ghi)**.
+3. Bấm **Upload File** $
+ightarrow$ Chọn tệp `Odoo_Master_Data_Import_10_SKUs.csv`.
+4. Bấm nút **Test (Kiểm tra)** $
+ightarrow$ Hệ thống báo màu xanh: *"Everything seems valid"*.
+5. Bấm **Import** $
+ightarrow$ **10 sản phẩm trọng yếu từ `ST-001` đến `ST-010` được tạo tự động trong 2 giây!**
 
 ### Bước 0.4: Cấu hình Bảng giá Hợp đồng Khách hàng (Pricelist Rule cho `UC-SALES-01`)
-1. Vào **Sales $ightarrow$ Configuration $ightarrow$ Settings** $ightarrow$ Tick bật tính năng **Pricelists (Bảng giá)** (chọn tùy chọn *"Advanced price rules (discounts, formulas)"*).
-2. Vào **Sales $ightarrow$ Products $ightarrow$ Pricelists** $ightarrow$ Bấm **New** tạo bảng giá mới:
+1. Vào **Sales $
+ightarrow$ Configuration $
+ightarrow$ Settings** $
+ightarrow$ Tick bật tính năng **Pricelists (Bảng giá)** (chọn tùy chọn *"Advanced price rules (discounts, formulas)"*).
+2. Vào **Sales $
+ightarrow$ Products $
+ightarrow$ Pricelists** $
+ightarrow$ Bấm **New** tạo bảng giá mới:
    * **Name:** `Bảng giá Hợp đồng 2026 — Tập đoàn ABC`
    * **Currency:** VND
-   * **Add a line:** Chọn Sản phẩm `ST-001` (Giấy A4 Double A 70gsm) $ightarrow$ Đặt **Fixed Price (Giá cố định): 65,000 VND**.
-3. Vào **Sales $ightarrow$ Orders $ightarrow$ Customers** $ightarrow$ Tạo khách hàng: **Tập đoàn ABC**.
-   * Tab **Sales & Purchase** $ightarrow$ Gán **Pricelist:** `Bảng giá Hợp đồng 2026 — Tập đoàn ABC`.
+   * **Add a line:** Chọn Sản phẩm `ST-001` (Giấy A4 Double A 70gsm) $
+ightarrow$ Đặt **Fixed Price (Giá cố định): 65,000 VND**.
+3. Vào **Sales $
+ightarrow$ Orders $
+ightarrow$ Customers** $
+ightarrow$ Tạo khách hàng: **Tập đoàn ABC**.
+   * Tab **Sales & Purchase** $
+ightarrow$ Gán **Pricelist:** `Bảng giá Hợp đồng 2026 — Tập đoàn ABC`.
    * **Payment Terms:** `30 Days (Net 30)`.
 
 ### Bước 0.5: Cấu hình Điểm đặt hàng an toàn Min/Max (Reordering Rule cho `UC-PURCH-01`)
-1. Vào **Inventory $ightarrow$ Operations $ightarrow$ Replenishment (hoặc Products $ightarrow$ Reordering Rules)**.
+1. Vào **Inventory $
+ightarrow$ Operations $
+ightarrow$ Replenishment (hoặc Products $
+ightarrow$ Reordering Rules)**.
 2. Bấm **New**:
    * **Product:** `ST-001` (A4 Copy Paper Double A 70gsm)
    * **Min Quantity (Tồn tối thiểu):** `100`
@@ -130,7 +155,97 @@ Hệ thống Odoo Cloud của nhóm tại **[edu-officeprodistribution.odoo.com]
 
 ---
 
-## 3. HƯỚNG DẪN THAO TÁC CHI TIẾT TỪNG PHÂN HỆ (CLICK-BY-CLICK OPERATION MANUAL)
+
+---
+
+## 3. CẤU HÌNH DOANH NGHIỆP TOÀN DIỆN (ENTERPRISE-GRADE ARCHITECTURE)
+
+Nhằm đáp ứng đầy đủ tiêu chuẩn vận hành thực tế của một doanh nghiệp phân phối B2B quy mô chuyên nghiệp (**OfficePro Distribution Co., Ltd.**), hệ thống Odoo Cloud đã được thiết lập đồng bộ 100% qua tất cả các lớp cấu hình:
+
+### 3.1. Hồ sơ Pháp lý Doanh nghiệp & Kế toán Ngân hàng
+* **Tên công ty chính thức:** `OfficePro Distribution Co., Ltd.` (Công ty TNHH Phân Phối Văn Phòng Phẩm OfficePro).
+* **Mã số thuế (Tax ID):** `0317896542`.
+* **Địa chỉ trụ sở chính:** `Lô B2, Đường D1, KCN Tân Bình, Phường Tây Thạnh, Quận Tân Phú, TP. Hồ Chí Minh`.
+* **Hotline / Điện thoại:** `(028) 3816 5588` | **Email:** `contact@officepro.vn` | **Website:** `https://officepro.vn`.
+* **Tiền tệ hạch toán:** Đồng Việt Nam (`VND - ₫`).
+* **Tài khoản Ngân hàng doanh nghiệp:** `Ngân hàng TMCP Ngoại Thương Việt Nam (Vietcombank) - Chi nhánh Tân Bình`, Số tài khoản: `0071001234567`.
+
+---
+
+### 3.2. Mạng lưới Logistics Đa Kho & Tọa độ Ô Kệ (Multi-Warehouse & Bin Locations)
+Hệ thống quản trị chuỗi cung ứng được thiết lập mô hình 2 trung tâm phân phối chính:
+1. **Kho Tân Bình - Hub Trung Tâm (Mã: `WH`):**
+   * Đóng vai trò là tổng kho tiếp nhận hàng từ nhà máy sản xuất và phân phối đơn hàng khu vực nội thành TP.HCM và miền Tây.
+   * Tọa độ ô kệ chi tiết: Đã khởi tạo vị trí chuyên dụng `WH/Stock/Aisle-02/Bin-04` phục vụ lấy hàng có hướng dẫn (`UC-INV-02`).
+2. **Kho Biên Hòa - Hub Vệ Tinh (Mã: `KBH`):**
+   * Đóng vai trò là kho đệm vệ tinh tiếp nhận và giao hàng nhanh cho các khu công nghiệp trọng điểm tại Đồng Nai, Bình Dương, Bà Rịa - Vũng Tàu.
+
+---
+
+### 3.3. Danh mục Dữ liệu Chủ 10 SKU Trọng yếu & Bộ Combo Đóng gói (Master Data & Kitting)
+
+Toàn bộ 10 SKU trọng yếu và 1 Bộ sản phẩm đóng gói (`CB-001`) đã được khởi tạo trực tiếp trên phân hệ Kho & Bán hàng, kèm mã vạch Barcode EAN, giá vốn, giá bán lẻ niêm yết, đơn giá hợp đồng B2B và số lượng tồn khả dụng ATP:
+
+| STT | Mã SKU | Tên Sản phẩm Chi tiết | Mã Vạch (Barcode) | Giá Vốn (Cost) | Giá Bán Lẻ (List) | Giá HĐ B2B (Contract) | Tồn Khả dụng (ATP) | Vị trí Ô Kệ |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **1** | `ST-001` | Giấy in A4 Double A 70gsm (Ram 500 tờ) | `8935001100018` | 52.000₫ | 75.000₫ | **65.000₫** | **300 ram** | `WH/Stock/Aisle-02/Bin-04` |
+| **2** | `ST-002` | Giấy in A4 IK Plus 70gsm (Ram 500 tờ) | `8992752011021` | 50.000₫ | 72.000₫ | **62.000₫** | **150 ram** | `WH/Stock` |
+| **3** | `ST-003` | Bút bi Thiên Long TL-027 0.5mm (Hộp 20 cây) | `8935001800035` | 60.000₫ | 90.000₫ | **78.000₫** | **200 hộp** | `WH/Stock` |
+| **4** | `ST-004` | Bút gel Pentel EnerGel 0.7mm Đen (Hộp 12 cây) | `088485100042` | 250.000₫ | 360.000₫ | **310.000₫** | **80 hộp** | `WH/Stock` |
+| **5** | `ST-005` | Bìa còng Kokuyo A4 7cm gáy xanh | `893603200059` | 42.000₫ | 65.000₫ | **55.000₫** | **100 cái** | `WH/Stock` |
+| **6** | `ST-006` | Bìa lá Clear Holder Plus A4 (Xấp 40 lá) | `497756400066` | 28.000₫ | 45.000₫ | **38.000₫** | **120 xấp** | `WH/Stock` |
+| **7** | `ST-007` | Dập ghim đại Deli 0395 hạng nặng (100 tờ) | `692173490073` | 190.000₫ | 280.000₫ | **240.000₫** | **50 cái** | `WH/Stock` |
+| **8** | `ST-008` | Ghim bấm đại Deli 23/13 (Hộp 1000 ghim) | `692173490080` | 20.000₫ | 35.000₫ | **28.000₫** | **300 hộp** | `WH/Stock` |
+| **9** | `ST-009` | Giấy ghi chú 3M Post-it 3x3 Vàng (Xấp 100 tờ) | `021200500097` | 80.000₫ | 120.000₫ | **105.000₫** | **150 xấp** | `WH/Stock` |
+| **10** | `ST-010` | Hộp mực in Laser HP 85A (CE285A) chính hãng | `088442000103` | 980.000₫ | 1.450.000₫ | **1.280.000₫** | **40 hộp** | `WH/Stock` |
+| **11** | `CB-001` | Combo VPP Doanh Nghiệp Tiết Kiệm Standard | `8935001990019` | 240.000₫ | 350.000₫ | **295.000₫** | *Theo BOM #1* | `WH/Stock/Kitting` |
+
+> 💡 **Cấu trúc Định mức Bộ sản phẩm (BOM #1 cho Combo `CB-001`):**  
+> Mỗi bộ `CB-001` khi lắp ráp bao gồm: 2 ram Giấy Double A (`ST-001`) + 1 hộp Bút bi Thiên Long (`ST-003`) + 2 Bìa còng Kokuyo (`ST-005`) + 1 Dập ghim Deli (`ST-007`) + 1 hộp Ghim bấm Deli (`ST-008`). Phân hệ **Manufacturing** và **Shop Floor** hỗ trợ công nhân kho đóng gói combo nhanh chóng.
+
+---
+
+### 3.4. Hệ sinh thái Đối tác Doanh nghiệp (B2B Clients & Strategic Suppliers)
+1. **Khách hàng Doanh nghiệp Trọng điểm (Corporate Clients):**
+   * **Tập đoàn ABC:** Khách hàng truyền thống, Hạn mức tín dụng 500 triệu, Net 30, Bảng giá B2B 2026.
+   * **Công ty Cổ phần Công nghệ Saigon Tech (MST: `0315678901`):** Công ty phần mềm quy mô 500 nhân sự tại Công viên PM Quang Trung, Net 30, Bảng giá B2B 2026.
+   * **Ngân hàng TMCP Phương Đông - OCB (MST: `0300852238`):** Hệ thống hội sở và chi nhánh ngân hàng, Net 30, Bảng giá B2B 2026.
+2. **Nhà cung cấp Chiến lược (Strategic Suppliers):**
+   * **Nhà cung cấp Giấy Bến Cát:** Đối tác cung ứng chiến lược các dòng giấy in cao cấp Double A, IK Plus.
+   * **Công ty Cổ phần Tập đoàn Thiên Long (MST: `0301464830`):** Đối tác cung ứng chính các dòng bút viết, dụng cụ học tập và văn phòng.
+   * **Công ty TNHH Thương mại Deli Việt Nam (MST: `0312987654`):** Nhà sản xuất và cung ứng các thiết bị văn phòng dập ghim, kéo cắt, bìa hồ sơ.
+
+---
+
+### 3.5. Quy trình Quản trị Phễu Bán hàng Doanh nghiệp (CRM Sales Pipeline)
+Phân hệ CRM đã được nạp dữ liệu thật với 4 cơ hội kinh doanh lớn phân bổ đồng đều qua các giai đoạn chuyển đổi:
+* **Stage 1 (New):** *Dự án Cung ứng Trọn gói Tòa nhà Etown Tân Bình* — Doanh thu kỳ vọng: **60.000.000₫** (Xác suất 20%).
+* **Stage 2 (Qualified):** *Hợp đồng Mua sắm Tập trung Quý 1/2026 - OCB Bank* — Doanh thu kỳ vọng: **250.000.000₫** (Xác suất 50%).
+* **Stage 3 (Proposition):** *Đấu thầu Cung ứng VPP Khối Chi Nhánh - Saigon Tech Corp* — Doanh thu kỳ vọng: **85.000.000₫** (Xác suất 70%).
+* **Stage 4 (Won):** *Gói Cung Cấp VPP Thường Niên 2026 - Tập đoàn ABC* — Doanh thu: **120.000.000₫** (Xác suất 100%, đã chuyển hóa thành Đơn bán hàng SO `S00001`).
+* 👉 **Tổng giá trị phễu cơ hội (Pipeline Value):** **515.000.000₫**.
+
+---
+
+### 3.6. Cơ cấu Tổ chức Nhân sự & Phân quyền Vai trò Nghiệp vụ
+Khớp nối chuẩn xác với các Actor được phân tích trong Sơ đồ Use Case Tuần 10:
+* **Giám Đốc Dự Án ERP & Lead BA:** `Võ Duy Bình` (MSSV: `22301500`).
+* **Trưởng Phòng Kinh Doanh B2B (Sales Manager / Commercial Approver):** `Nguyễn Văn Quản Lý` — Phụ trách duyệt chiết khấu vượt 5% (`UC-SALES-03`).
+* **Thủ Kho Trưởng - Hub Tân Bình (Warehouse Officer):** `Trần Văn Kho` — Phụ trách lấy hàng theo ô kệ Bin-04 (`UC-INV-02`) và xác nhận phiếu xuất kho `WH/OUT`.
+* **Kế Toán Trưởng (Credit Controller & 3-Way Match):** `Lê Thị Kế Toán` — Phụ trách kiểm soát nợ Net 30 (`UC-ACC-02`), đối soát tự động 3 bên (`UC-ACC-01`) và hạch toán ngân hàng.
+* **Chuyên Viên Thu Mua (Procurement Officer):** `Phạm Thu Mua` — Phụ trách theo dõi đơn mua bù kho tự động `P00001` và tiếp nhận hàng từ NCC (`UC-PURCH-01/03`).
+
+---
+
+### 3.7. Cẩm nang Vận hành Chuẩn (Corporate SOPs trong App Knowledge)
+Ba bộ tài liệu SOP chuẩn mực đã được biên soạn và công bố trực tiếp trong phân hệ **Knowledge**:
+* **SOP-01:** Quy trình Bán hàng B2B & Khóa Giá Hợp Đồng (`BP1 & BP2`).
+* **SOP-02:** Quy trình Kiểm soát Tín dụng & Chặn Nợ Quá Hạn Net 30 (`UC-ACC-02`).
+* **SOP-03:** Quy trình Quét Mã Vạch Barcode & Bù Kho Tự Động (`BP4`).
+
+---
+
+## 4. HƯỚNG DẪN THAO TÁC CHI TIẾT TỪNG PHÂN HỆ (CLICK-BY-CLICK OPERATION MANUAL)
 
 Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn làm chủ 100% hệ thống Odoo khi thực hành hoặc trình diễn trước lớp:
 
@@ -276,7 +391,7 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
 
 ---
 
-## 4. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
+## 5. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
 
 Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo 4 kịch bản chuẩn sau:
 
@@ -287,10 +402,14 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 * **Yêu cầu chức năng tương ứng:** `FR-01`, `FR-02`, `FR-06`.
 
 #### Thao tác từng bước trên Odoo:
-1. Vào menu **Sales $ightarrow$ Orders $ightarrow$ Quotations $ightarrow$ Bấm nút "New"**.
+1. Vào menu **Sales $
+ightarrow$ Orders $
+ightarrow$ Quotations $
+ightarrow$ Bấm nút "New"**.
 2. **Chọn Khách hàng:** Chọn `Tập đoàn ABC`.
    * 👉 **Điểm nhấn thuyết minh:** Chỉ cho cô thấy trường **Pricelist** tự động nhảy sang `Bảng giá Hợp đồng 2026 — Tập đoàn ABC` mà nhân viên không cần chọn tay.
-3. **Thêm Dòng Sản phẩm:** Bấm *Add a product* $ightarrow$ Chọn SKU `ST-001`.
+3. **Thêm Dòng Sản phẩm:** Bấm *Add a product* $
+ightarrow$ Chọn SKU `ST-001`.
    * Nhập số lượng: `50` ram.
    * 👉 **Điểm nhấn thuyết minh:** Đơn giá niêm yết chuẩn trên hệ thống là **75.000đ**, nhưng khi thêm vào đơn của Tập đoàn ABC, đơn giá **tự động khóa chặt ở mức 65.000đ** theo đúng hợp đồng nguyên tắc! (Đạt chuẩn `UC-SALES-01` & `FR-01` — giảm tỷ lệ lỗi giá từ 5–8% về 0%).
 4. **Kiểm tra Tồn kho Khả dụng (ATP):**
@@ -321,14 +440,17 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 
 #### Thao tác từng bước trên Odoo:
 1. Click vào Smart Button **Delivery (1)** trên Sales Order (mở phiếu `WH/OUT/00002`).
-   * Bấm **Print $ightarrow$ Picking Operations**.
+   * Bấm **Print $
+ightarrow$ Picking Operations**.
    * 👉 **Điểm nhấn thuyết minh:** Phiếu xuất kho in ra thể hiện rõ vị trí lấy hàng theo tọa độ ô kệ (`Aisle 02 / Bin 04`), giúp thủ kho không phải đi tìm kiếm thủ công (Đạt chuẩn `UC-INV-02` & `FR-07`).
-2. Bấm nút **"Validate" (Xác nhận xuất kho)** $ightarrow$ Trạng thái chuyển sang **Done (Đã hoàn thành)**.
+2. Bấm nút **"Validate" (Xác nhận xuất kho)** $
+ightarrow$ Trạng thái chuyển sang **Done (Đã hoàn thành)**.
    * Tồn kho vật lý ban đầu: 120 ram.
    * Xuất kho bán: 50 ram.
    * **Tồn kho thực tế còn lại:** $120 - 50 = 70$ ram.
 3. **Mở Module Purchase (Thu mua) để chứng minh tính năng tự động:**
-   * Chuyển sang menu **Purchase $ightarrow$ Requests for Quotation (Yêu cầu báo giá)**.
+   * Chuyển sang menu **Purchase $
+ightarrow$ Requests for Quotation (Yêu cầu báo giá)**.
    * 👉 **Điểm nhấn thuyết minh kinh điển (Show-stopper):** 
      *"Thưa cô, mức tồn kho tối thiểu (Min) chúng em cài đặt cho SKU ST-001 là 100 ram, mức tối đa (Max) là 300 ram. Khi tồn kho tụt xuống 70 ram (< 100), hệ thống Odoo đã tự động chạy quy tắc Reordering Rule và **tự động sinh ra đơn mua nháp P00001** gửi Nhà cung cấp Giấy Bến Cát với số lượng chính xác là $300 - 70 = 230$ ram giấy mà không cần nhân viên gõ tay!"* (Chứng minh 100% hiện thực hóa `UC-PURCH-01` & `FR-04`).
 
@@ -339,8 +461,11 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 * **Yêu cầu chức năng tương ứng:** `FR-05`.
 
 #### Thao tác từng bước trên Odoo:
-1. Quay trở lại **Sales $ightarrow$ Orders $ightarrow$ S00001**.
-2. Bấm nút **"Create Invoice" (Tạo hóa đơn)** $ightarrow$ Chọn *Regular Invoice*.
+1. Quay trở lại **Sales $
+ightarrow$ Orders $
+ightarrow$ S00001**.
+2. Bấm nút **"Create Invoice" (Tạo hóa đơn)** $
+ightarrow$ Chọn *Regular Invoice*.
 3. Mở Hóa đơn nháp **INV/2026/00001**:
    * Chỉ cho giảng viên thấy: Số lượng trên hóa đơn được lấy **chính xác tuyệt đối bằng 50 ram đã thực giao** (Delivered Quantity), đơn giá lấy từ Đơn bán ban đầu (65.000đ).
    * 👉 **Điểm nhấn thuyết minh:** *"Đây là cơ chế Đối soát tự động 3 bên (3-Way Matching) giữa Đơn bán hàng, Phiếu giao kho thực tế và Hóa đơn tài chính. Dung sai chênh lệch bằng 0%, kế toán không cần ngồi đối chiếu từng tờ giấy chứng từ, tiết kiệm 15–18 giờ làm việc mỗi tuần cho doanh nghiệp!"* (Đạt chuẩn `UC-ACC-01` & `FR-05`).
@@ -351,7 +476,7 @@ Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo
 
 ---
 
-## 5. BẢNG TỔNG HỢP CÁC BẢN GHI SỐ LIỆU THỰC TẾ TRÊN LIVE CLOUD (LIVE AUDIT TRAIL EVIDENCE)
+## 6. BẢNG TỔNG HỢP CÁC BẢN GHI SỐ LIỆU THỰC TẾ TRÊN LIVE CLOUD (LIVE AUDIT TRAIL EVIDENCE)
 
 Toàn bộ kịch bản nghiệp vụ liên thông đã được thực thi và xác thực 100% trên hệ sinh thái Odoo Cloud chính thức của sinh viên: [https://edu-officeprodistribution.odoo.com/odoo](https://edu-officeprodistribution.odoo.com/odoo).
 
@@ -373,7 +498,7 @@ Dưới đây là bảng nhật ký kiểm toán (Audit Trail) với đầy đ�
 | **12** | **Bảng Điều hành Doanh nghiệp** | Dashboards Tổng quan | Dashboards | Cập nhật Real-time | Ghi nhận doanh thu bán, công nợ phải thu, phân tích chu kỳ mua hàng | [Xem Dashboards](https://edu-officeprodistribution.odoo.com/odoo/dashboards) |
 
 
-## 6. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
+## 7. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
 
 Bạn có thể đọc hoặc nói tự nhiên theo khung lời thoại này:
 
@@ -392,7 +517,7 @@ Bạn có thể đọc hoặc nói tự nhiên theo khung lời thoại này:
 
 ---
 
-## 7. BỘ CÂU HỎI PHẢN BIỆN DỰ KIẾN CỦA GIẢNG VIÊN & CÁCH TRẢ LỜI CHUẨN BA
+## 8. BỘ CÂU HỎI PHẢN BIỆN DỰ KIẾN CỦA GIẢNG VIÊN & CÁCH TRẢ LỜI CHUẨN BA
 
 * **Câu hỏi 1:** *"Tại sao trong Odoo nhóm không cấu hình cho khách hàng tự đặt hàng trên Website E-commerce?"*  
   * **Trả lời:** *"Dạ thưa cô, đây là mô hình phân phối B2B bán buôn văn phòng phẩm khối lượng lớn. Khách hàng doanh nghiệp mua theo hợp đồng khung nguyên tắc hàng năm với đơn giá cố định và điều khoản nợ Net 30, chứ không phải bán lẻ B2C quẹt thẻ online. Do đó, ranh giới hệ thống tập trung tối ưu phân hệ Sales, Inventory, Purchase và Invoicing để kiểm soát hợp đồng và đối soát chứng từ."*
