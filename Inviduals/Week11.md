@@ -50,6 +50,31 @@ Buổi demo Tuần 11 không đơn thuần là "bấm nút phần mềm", mà l�
 
 ---
 
+## 1.1. BẢNG MA TRẬN ÁNH XẠ KIỂM TOÁN 100% USE CASE (TUẦN 10) ➔ ODOO ERP CLOUD (TUẦN 11)
+
+Dưới đây là ma trận truy vết (Traceability Matrix) khẳng định **100% toàn bộ 14 Use Cases** từ mô hình tuần 10 (cả bài cá nhân của **Võ Duy Bình** và bài nhóm của **Group 6**) đã được hiện thực hóa, cấu hình và vận hành thành công trên hệ thống Odoo ERP Cloud thực tế:
+
+| UC ID | Tên Use Case (Tuần 10) | Thành viên phụ trách | FR liên quan | Phân hệ Odoo | Đường dẫn Menu trên Odoo Cloud | Bản ghi / Chứng từ thực tế trên Live Odoo | Trạng thái kiểm chứng |
+| :---: | :--- | :---: | :---: | :--- | :--- | :--- | :---: |
+| **UC-SALES-01** | Apply Contract Pricelist | **Võ Duy Bình** | `FR-01`, `FR-06` | Sales / Pricelists | Sales ➔ Products ➔ Pricelists | Bảng giá Hợp đồng 2026 — Tập đoàn ABC (Cố định 65.000₫ cho SKU `ST-001`) | ✅ 100% Hoàn thành |
+| **UC-SALES-02** | Query ATP Stock Availability | Phạm Nguyễn Gia Thuận | `FR-02` | Sales / Inventory | Sales ➔ Quotations / Forecasted Stock | Widget kính lúp xanh trên SO `S00001`; Báo cáo Forecasted stock tại Kho Tân Bình (`WH`) & Kho Biên Hòa (`KBH`) | ✅ 100% Hoàn thành |
+| **UC-SALES-03** | Request Discount Approval | **Võ Duy Bình** | `FR-01` | Sales / Discuss | Sales ➔ Settings ➔ Discounts / Discuss Channel | Kênh chat nội bộ `#duyet-chiet-khau-b2b` & Quy tắc phê duyệt chiết khấu > 5% bởi Sales Manager | ✅ 100% Hoàn thành |
+| **UC-SALES-04** | Confirm Sales Order | **Võ Duy Bình** | `FR-01`, `FR-02`, `FR-03` | Sales / Orders | Sales ➔ Orders ➔ Orders | Đơn hàng `S00001` (Tập đoàn ABC, 50 ram ST-001), tự động giữ chỗ ATP và sinh Lệnh giao hàng `WH/OUT/00002` | ✅ 100% Hoàn thành |
+| **UC-INV-01** | Log Inbound Barcode Receipt | Phạm Nguyễn Gia Thuận | `FR-02` | Inventory / Barcode | Barcode ➔ Operations ➔ Receipts | Phiếu nhập kho `WH/IN/00001` (230 ram từ NCC Giấy Bến Cát), quét mã EAN barcode `8938501234015` | ✅ 100% Hoàn thành |
+| **UC-INV-02** | Generate Bin-Guided Picking List | Phạm Nguyễn Gia Thuận | `FR-07` | Inventory / Operations | Inventory ➔ Delivery Orders ➔ Print Picking Operations | Phiếu xuất kho `WH/OUT/00002` in tọa độ ô kệ chuẩn xác: `WH/Stock/Aisle-02/Bin-04` | ✅ 100% Hoàn thành |
+| **UC-INV-03** | Capture Electronic Delivery Proof (e-POD) | Phạm Nguyễn Gia Thuận | `FR-05` | Sign / Documents | Sign ➔ Templates / Documents | Mẫu ký số `Biên Bản Giao Nhận Hàng Điện Tử & Ký Số e-POD (Mẫu OfficePro)` (`sign.template` #3) & File PDF lưu trữ | ✅ 100% Hoàn thành |
+| **UC-INV-04** | Audit Cycle Count Inventory | Phạm Nguyễn Gia Thuận | `FR-02` | Inventory / Physical Inventory | Inventory ➔ Operations ➔ Physical Inventory | Kiểm kê định kỳ `stock.quant` tại Kho Tân Bình (`WH/Stock`) xác nhận tồn kho On Hand chuẩn 300 ram | ✅ 100% Hoàn thành |
+| **UC-PURCH-01** | Trigger Automated Purchase Requisition | **Võ Duy Bình** | `FR-04` | Purchase / Inventory | Inventory ➔ Reordering Rules / Purchase ➔ RFQs | Reordering Rule #1 (Min: 100, Max: 300) tự kích hoạt sinh đơn mua nháp `P00001` (230 ram) khi tồn chạm 70 ram | ✅ 100% Hoàn thành |
+| **UC-PURCH-02** | Compare Multi-Vendor Purchase RFQs | **Võ Duy Bình** | `FR-04` | Purchase / Products | Purchase ➔ Products ➔ Purchase Tab | Danh mục nhà cung cấp được cấu hình: NCC Giấy Bến Cát (52.000₫), Thiên Long, Deli | ✅ 100% Hoàn thành |
+| **UC-PURCH-03** | Approve Purchase Order | **Võ Duy Bình** | `FR-04` | Purchase / Orders | Purchase ➔ Orders ➔ Purchase Orders | Đơn mua `P00001` được phê duyệt và xác nhận bởi Purchasing Officer Phạm Thu Mua (13.156.000₫) | ✅ 100% Hoàn thành |
+| **UC-ACC-01** | Execute Automated 3-Way Reconciliation | **Võ Duy Bình** | `FR-05` | Accounting / Invoicing | Invoicing ➔ Customers ➔ Invoices | Hóa đơn bán `INV/2026/00001` khớp 50 ram đã giao trên `WH/OUT/00002`; Hóa đơn mua `BILL/2026/11/0001` khớp 230 ram trên `WH/IN/00001` | ✅ 100% Hoàn thành |
+| **UC-ACC-02** | Enforce Hard Credit Hold | **Võ Duy Bình** | `FR-03` | Invoicing / Contacts | Contacts ➔ Customers ➔ Invoicing Tab | Điều khoản thanh toán `30 Days (Net 30)` & Cấu hình cảnh báo Warning/Block nợ quá hạn trên hồ sơ khách hàng | ✅ 100% Hoàn thành |
+| **UC-ACC-03** | Generate Electronic VAT Invoice | **Võ Duy Bình** | `FR-05`, `FR-08` | Accounting / Invoicing | Invoicing ➔ Customers ➔ Invoices | Hóa đơn VAT `INV/2026/00001` đã vào sổ (Posted) và thanh toán (In Payment) qua sổ ngân hàng Vietcombank | ✅ 100% Hoàn thành |
+
+---
+
+---
+
 ## 2. GIAI ĐOẠN 0: CHUẨN BỊ MÔI TRƯỜNG & NẠP DỮ LIỆU CHỦ (MASTER DATA)
 *(Thời gian chuẩn bị trước giờ học: 3–5 phút)*
 
