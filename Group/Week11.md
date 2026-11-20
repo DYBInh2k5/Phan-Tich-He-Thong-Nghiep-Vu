@@ -80,12 +80,13 @@ Toàn bộ 10 sản phẩm văn phòng phẩm chủ lực đã được thiết 
 * **Tọa độ vị trí lưu kho chi tiết:** `WH/Stock/Aisle-02/Bin-04` (dành riêng lưu trữ pallet giấy A4 Double A `ST-001`, phục vụ in phiếu Picking chuẩn `UC-INV-02`).
 
 ### 3.3. Cơ cấu Tổ chức Nhân sự & Phân quyền Truy cập (RBAC & Employees)
-Hệ thống thiết lập 5 tài khoản chuyên môn và hồ sơ nhân sự với sơ đồ tổ chức phân cấp trực thuộc CEO:
-1. **Võ Duy Bình** — Chức vụ: **Tổng Giám Đốc (CEO / System Admin)**. Nhóm quyền: Quản trị viên tối cao (Administration / Settings, Sales / Manager, Inventory / Administrator, Purchase / Administrator, Accounting / Advisor). Thẻ NV: `041223015001`, PIN: `2005`.
-2. **Nguyễn Văn Quản Lý** — Chức vụ: **Trưởng Phòng Kinh Doanh (Sales Manager)**. Nhóm quyền: Sales / Administrator, phụ trách thẩm định hợp đồng và duyệt chiết khấu `UC-SALES-03`. Thẻ NV: `041223015002`, PIN: `1234`.
-3. **Trần Văn Kho** — Chức vụ: **Trưởng Bộ Phận Kho Vận (Warehouse Supervisor)**. Nhóm quyền: Inventory / Administrator, phụ trách xác nhận xuất nhập kho, quét mã vạch và kiểm kê định kỳ `UC-INV-01`, `UC-INV-04`. Thẻ NV: `041223015003`, PIN: `5678`.
-4. **Lê Thị Kế Toán** — Chức vụ: **Kế Toán Trưởng (Chief Accountant)**. Nhóm quyền: Accounting / Advisor, phụ trách đối soát 3 bên `UC-ACC-01`, quản trị hạn mức nợ Net 30 `UC-ACC-02` và xuất hóa đơn VAT `UC-ACC-03`. Thẻ NV: `041223015004`, PIN: `9012`.
-5. **Phạm Thu Mua** — Chức vụ: **Chuyên Viên Thu Mua (Procurement Officer)**. Nhóm quyền: Purchase / User, phụ trách quản lý nhà cung cấp `UC-PURCH-02` và xác nhận đơn mua bù kho `UC-PURCH-03`. Thẻ NV: `041223015005`, PIN: `3456`.
+Hệ thống thiết lập 6 tài khoản chuyên môn và hồ sơ nhân sự với sơ đồ tổ chức phân cấp trực thuộc CEO, đảm bảo cả 2 thành viên Nhóm 6 đều có tài khoản quản trị vận hành trên hệ thống Odoo Cloud:
+1. **Võ Duy Bình** (MSSV: `22301500`) — Chức vụ: **Tổng Giám Đốc (CEO / System Admin)**. Login: `binhvo20055@gmail.com`. Nhóm quyền: Quản trị viên tối cao (Administration, Sales / Administrator, Inventory / Administrator, Purchase / Administrator, Accounting / Administrator). Thẻ NV: `041223015001`, PIN: `2005`.
+2. **Phạm Nguyễn Gia Thuận** (MSSV: `22204631`) — Chức vụ: **Phó Giám Đốc Kỹ Thuật & Quản Trị Kho Vận (Systems & Inventory Analyst)**. Login: `thuan.png04631@sinhvien.hoasen.edu.vn`. Nhóm quyền: Quản trị viên hệ thống & kho vận (Administration, Inventory / Administrator, Sales / Administrator, Purchase / Administrator, Accounting / Administrator). Thẻ NV: `041222046311`, PIN: `4631` (4 số cuối MSSV).
+3. **Nguyễn Văn Quản Lý** — Chức vụ: **Trưởng Phòng Kinh Doanh (Sales Manager)**. Login: `sales.manager@officepro.vn`. Nhóm quyền: Sales / Administrator, phụ trách thẩm định hợp đồng và duyệt chiết khấu `UC-SALES-03`. Thẻ NV: `041223015002`, PIN: `1234`.
+4. **Trần Văn Kho** — Chức vụ: **Trưởng Bộ Phận Kho Vận (Warehouse Supervisor)**. Login: `warehouse.lead@officepro.vn`. Nhóm quyền: Inventory / Administrator, phụ trách xác nhận xuất nhập kho, quét mã vạch và kiểm kê định kỳ `UC-INV-01`, `UC-INV-04`. Thẻ NV: `041223015003`, PIN: `5678`.
+5. **Lê Thị Kế Toán** — Chức vụ: **Kế Toán Trưởng (Chief Accountant)**. Login: `accounting@officepro.vn`. Nhóm quyền: Accounting / Administrator, phụ trách đối soát 3 bên `UC-ACC-01`, quản trị hạn mức nợ Net 30 `UC-ACC-02` và xuất hóa đơn VAT `UC-ACC-03`. Thẻ NV: `041223015004`, PIN: `9012`.
+6. **Phạm Thu Mua** — Chức vụ: **Chuyên Viên Thu Mua (Procurement Officer)**. Login: `procurement@officepro.vn`. Nhóm quyền: Purchase / Administrator, phụ trách quản lý nhà cung cấp `UC-PURCH-02` và xác nhận đơn mua bù kho `UC-PURCH-03`. Thẻ NV: `041223015005`, PIN: `3456`.
 
 ---
 

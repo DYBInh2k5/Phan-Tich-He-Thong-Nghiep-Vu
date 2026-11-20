@@ -612,6 +612,7 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
        | Họ và tên | Chức vụ | Mã Vạch Thẻ (Barcode) | Mã PIN Đăng Nhập |
        | :--- | :--- | :---: | :---: |
        | **Võ Duy Bình** | Tổng Giám Đốc (CEO / System Admin) | `041223015001` | `2005` |
+        | **Phạm Nguyễn Gia Thuận** | Phó Giám Đốc Kỹ Thuật & Quản Trị Kho Vận | `041222046311` | `4631` |
        | **Nguyễn Văn Quản Lý** | Trưởng Phòng Kinh Doanh B2B | `041223015002` | `1234` |
        | **Trần Văn Kho** | Thủ Kho Trưởng - Hub Tân Bình | `041223015003` | `5678` |
        | **Lê Thị Kế Toán** | Kế Toán Trưởng | `041223015004` | `9012` |
