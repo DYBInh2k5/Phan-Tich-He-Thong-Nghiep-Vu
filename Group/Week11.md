@@ -81,11 +81,11 @@ Toàn bộ 10 sản phẩm văn phòng phẩm chủ lực đã được thiết 
 
 ### 3.3. Cơ cấu Tổ chức Nhân sự & Phân quyền Truy cập (RBAC & Employees)
 Hệ thống thiết lập 5 tài khoản chuyên môn và hồ sơ nhân sự với sơ đồ tổ chức phân cấp trực thuộc CEO:
-1. **Võ Duy Bình** — Chức vụ: **Tổng Giám Đốc (CEO / System Admin)**. Nhóm quyền: Quản trị viên tối cao (Administration / Settings, Sales / Manager, Inventory / Administrator, Purchase / Administrator, Accounting / Advisor). Thẻ NV: `041223015001`, PIN: `1234`.
-2. **Nguyễn Văn Quản Lý** — Chức vụ: **Trưởng Phòng Kinh Doanh (Sales Manager)**. Nhóm quyền: Sales / Administrator, phụ trách thẩm định hợp đồng và duyệt chiết khấu `UC-SALES-03`. Thẻ NV: `041223015002`, PIN: `2345`.
+1. **Võ Duy Bình** — Chức vụ: **Tổng Giám Đốc (CEO / System Admin)**. Nhóm quyền: Quản trị viên tối cao (Administration / Settings, Sales / Manager, Inventory / Administrator, Purchase / Administrator, Accounting / Advisor). Thẻ NV: `041223015001`, PIN: `2005`.
+2. **Nguyễn Văn Quản Lý** — Chức vụ: **Trưởng Phòng Kinh Doanh (Sales Manager)**. Nhóm quyền: Sales / Administrator, phụ trách thẩm định hợp đồng và duyệt chiết khấu `UC-SALES-03`. Thẻ NV: `041223015002`, PIN: `1234`.
 3. **Trần Văn Kho** — Chức vụ: **Trưởng Bộ Phận Kho Vận (Warehouse Supervisor)**. Nhóm quyền: Inventory / Administrator, phụ trách xác nhận xuất nhập kho, quét mã vạch và kiểm kê định kỳ `UC-INV-01`, `UC-INV-04`. Thẻ NV: `041223015003`, PIN: `5678`.
-4. **Lê Thị Kế Toán** — Chức vụ: **Kế Toán Trưởng (Chief Accountant)**. Nhóm quyền: Accounting / Advisor, phụ trách đối soát 3 bên `UC-ACC-01`, quản trị hạn mức nợ Net 30 `UC-ACC-02` và xuất hóa đơn VAT `UC-ACC-03`. Thẻ NV: `041223015004`, PIN: `7890`.
-5. **Phạm Thu Mua** — Chức vụ: **Chuyên Viên Thu Mua (Procurement Officer)**. Nhóm quyền: Purchase / User, phụ trách quản lý nhà cung cấp `UC-PURCH-02` và xác nhận đơn mua bù kho `UC-PURCH-03`. Thẻ NV: `041223015005`, PIN: `9012`.
+4. **Lê Thị Kế Toán** — Chức vụ: **Kế Toán Trưởng (Chief Accountant)**. Nhóm quyền: Accounting / Advisor, phụ trách đối soát 3 bên `UC-ACC-01`, quản trị hạn mức nợ Net 30 `UC-ACC-02` và xuất hóa đơn VAT `UC-ACC-03`. Thẻ NV: `041223015004`, PIN: `9012`.
+5. **Phạm Thu Mua** — Chức vụ: **Chuyên Viên Thu Mua (Procurement Officer)**. Nhóm quyền: Purchase / User, phụ trách quản lý nhà cung cấp `UC-PURCH-02` và xác nhận đơn mua bù kho `UC-PURCH-03`. Thẻ NV: `041223015005`, PIN: `3456`.
 
 ---
 

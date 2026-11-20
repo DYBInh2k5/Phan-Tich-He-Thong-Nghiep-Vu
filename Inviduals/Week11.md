@@ -608,9 +608,16 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
      * Ở góc trên bên phải màn hình danh sách nhân viên, bấm vào biểu tượng cây phả hệ (**Hierarchy View**).
      * Màn hình thể hiện rõ: **Võ Duy Bình (CEO / System Admin)** đứng ở vị trí cao nhất, bên dưới là 4 nhánh báo cáo trực tiếp gồm 4 trưởng phòng ban (`Nguyễn Văn Quản Lý`, `Trần Văn Kho`, `Lê Thị Kế Toán`, `Phạm Thu Mua`).
   2. **Xem và Sử dụng Mã Thẻ Nhân viên (Barcode) & Mã PIN:**
-     * Bấm vào thẻ của bất kỳ nhân viên nào (ví dụ: `Trần Văn Kho` - Thủ kho).
-     * Tab **HR Settings**: Hiển thị **Badge ID / Barcode** (`041223015003`) và **PIN Code** (`5678`).
-     * Khi thủ kho đến cửa kho hoặc mở máy quét cầm tay, chỉ cần quét mã vạch trên thẻ nhân viên hoặc bấm PIN `5678` để đăng nhập nhanh mà không cần gõ mật khẩu dài.
+     * Bấm vào thẻ của bất kỳ nhân viên nào trong danh sách:
+       | Họ và tên | Chức vụ | Mã Vạch Thẻ (Barcode) | Mã PIN Đăng Nhập |
+       | :--- | :--- | :---: | :---: |
+       | **Võ Duy Bình** | Tổng Giám Đốc (CEO / System Admin) | `041223015001` | `2005` |
+       | **Nguyễn Văn Quản Lý** | Trưởng Phòng Kinh Doanh B2B | `041223015002` | `1234` |
+       | **Trần Văn Kho** | Thủ Kho Trưởng - Hub Tân Bình | `041223015003` | `5678` |
+       | **Lê Thị Kế Toán** | Kế Toán Trưởng | `041223015004` | `9012` |
+       | **Phạm Thu Mua** | Chuyên Viên Thu Mua | `041223015005` | `3456` |
+     * Tab **HR Settings**: Hiển thị **Badge ID / Barcode** và **PIN Code**.
+     * Khi nhân viên hoặc thủ kho đến cửa kho hoặc mở máy quét cầm tay Barcode, chỉ cần quét mã vạch trên thẻ nhân viên hoặc bấm PIN tương ứng để đăng nhập tức thì mà không cần gõ mật khẩu dài.
   3. **In Thẻ Nhân Viên Hàng Loạt:**
      * Chọn tất cả nhân viên $rightarrow$ Menu **Actions (Hành động)** $rightarrow$ Chọn **Print Badge (In thẻ)**.
      * Odoo tạo file PDF chứa ảnh, mã vạch EAN, họ tên và chức danh sẵn sàng in thẻ nhựa đeo cổ cho toàn công ty.
