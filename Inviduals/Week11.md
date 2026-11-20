@@ -625,6 +625,102 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
 
 ---
 
+
+---
+
+### PHÂN HỆ 19: CRM (QUẢN LÝ CƠ HỘI ĐẤU THẦU & ĐƯỜNG ỐNG KINH DOANH B2B)
+* **Mục đích:** Quản lý phễu cơ hội bán hàng từ khi tiếp nhận nhu cầu, khảo sát, gửi hồ sơ thầu đến khi chốt hợp đồng nguyên tắc.
+* **Đường dẫn truy cập:** Bấm icon **CRM**.
+* **Các bước thao tác chuẩn:**
+  1. Màn hình mở ra bảng Kanban chia thành 4 giai đoạn chuẩn hóa:
+     * **Mới (New):** *Dự án Cung ứng Trọn gói Tòa nhà Etown Tân Bình* (Dự kiến: 60.000.000₫).
+     * **Đủ điều kiện (Qualified):** *Hợp đồng Mua sắm Tập trung Quý 1/2026 - OCB Bank* (Dự kiến: 250.000.000₫).
+     * **Đề xuất (Proposition):** *Đấu thầu Cung ứng VPP Khối Chi Nhánh - Saigon Tech Corp* (Dự kiến: 85.000.000₫).
+     * **Thành công (Won):** *Gói Cung Cấp VPP Thường Niên 2026 - Tập đoàn ABC* (Đã ký kết: 120.000.000₫ -> Tự động chuyển thành SO S00001).
+  2. Để cập nhật tiến độ thầu: Kéo thả (Drag & Drop) thẻ cơ hội từ cột *Proposition* sang *Won* khi khách hàng đồng ý ký hợp đồng.
+  3. Bấm vào bất kỳ cơ hội nào để xem nhật ký trao đổi (Chatter) và tạo báo giá liên kết trực tiếp sang phân hệ Sales.
+
+---
+
+### PHÂN HỆ 20: BARCODE APP (GIAO DIỆN QUÉT MÃ VẠCH TRÊN MÁY PDA & DI ĐỘNG)
+* **Mục đích:** Giao diện quét mã vạch toàn màn hình tối ưu hóa cho máy quét cầm tay chuyên dụng (Zebra, Honeywell) hoặc camera điện thoại.
+* **Đường dẫn truy cập:** Bấm icon **Barcode** hoặc truy cập trực tiếp: `https://edu-officeprodistribution.odoo.com/barcode/web`.
+* **Các bước thao tác chuẩn:**
+  1. **Đăng nhập bằng mã vạch nhân viên:**
+     * Quét mã vạch nhân viên `041223015003` (Thủ kho Trần Văn Kho) hoặc `041222046311` (Gia Thuận).
+  2. **Thực hiện thao tác xuất kho không cần bàn phím/chuột:**
+     * Bấm vào nút **Operations** $rightarrow$ Chọn **Delivery Orders**.
+     * Chọn phiếu giao hàng `WH/OUT/00002`.
+     * Quét mã vạch EAN `8935001100018` trên vỏ thùng giấy Double A. Mỗi tiếng "bíp", số lượng đã nhặt (Picked Quantity) tự động tăng lên cho đến khi đạt đủ 50 ram.
+     * Bấm nút **Validate** màu xanh lớn để hoàn thành xuất kho.
+
+---
+
+### PHÂN HỆ 21: SHOP FLOOR (MÀN HÌNH PHÂN XƯỞNG ĐÓNG GÓI COMBO KITTING)
+* **Mục đích:** Màn hình cảm ứng (Touchscreen) cho công nhân phân xưởng đóng gói bộ Combo VPP `CB-001` theo định mức BOM.
+* **Đường dẫn truy cập:** Bấm icon **Shop Floor**.
+* **Các bước thao tác chuẩn:**
+  1. Chọn phân xưởng lắp ráp / kitting.
+  2. Màn hình hiển thị thẻ Lệnh sản xuất **`WH/MO/00001`**:
+     * Hiển thị sản phẩm đầu ra: 10 bộ Combo VPP Tiết Kiệm Standard (`CB-001`).
+     * Hiển thị danh sách 5 linh kiện thành phần cần lấy từ kệ kho để đóng hộp.
+  3. Khi công nhân nhặt và đóng gói xong, bấm nút **Done** trên màn hình cảm ứng để hoàn tất lệnh sản xuất mà không cần thao tác máy tính văn phòng phức tạp.
+
+---
+
+### PHÂN HỆ 22: ĐIỀU CHUYỂN KHO LIÊN CHI NHÁNH (INTERNAL TRANSFERS WH ➔ KBH)
+* **Mục đích:** Cân đối tồn kho Available-to-Promise giữa Tổng kho Tân Bình (`WH`) và Kho vệ tinh Biên Hòa (`KBH`).
+* **Đường dẫn truy cập:** Vào **Inventory** $rightarrow$ **Operations** $rightarrow$ **Transfers**.
+* **Các bước thao tác chuẩn:**
+  1. Mở phiếu điều chuyển đã thực thi: **`WH/INT/00003`**.
+  2. Xem luồng di chuyển tồn kho:
+     * **Source Location (Nguồn):** `WH/Stock` (Kho Tân Bình).
+     * **Destination Location (Đích):** `KBH/Stock` (Kho Biên Hòa).
+     * **Sản phẩm điều chuyển:** 30 ram Giấy in A4 Double A (`ST-001`).
+     * **Trạng thái:** **Done** (Hoàn thành).
+  3. Kiểm tra kết quả: Tồn kho tại Kho Tân Bình tự động trừ 30 ram, Kho Biên Hòa tự động ghi nhận có sẵn 30 ram để đáp ứng đơn hàng giao nhanh cho các doanh nghiệp tại Đồng Nai.
+
+---
+
+### PHÂN HỆ 23: QUẢN LÝ PHẾ PHẨM & HAO HỤT VẬN CHUYỂN (SCRAP OPERATIONS)
+* **Mục đích:** Ghi nhận và xuất hủy các mặt hàng văn phòng phẩm bị ẩm mốc, rách vỏ, hư hỏng trong quá trình vận chuyển.
+* **Đường dẫn truy cập:** Vào **Inventory** $rightarrow$ **Operations** $rightarrow$ **Scrap**.
+* **Các bước thao tác chuẩn:**
+  1. Mở phiếu hủy phế phẩm: **`SP/00001`**.
+  2. Xem chi tiết thông số:
+     * **Sản phẩm:** Giấy in A4 Double A 70gsm (`ST-001`).
+     * **Số lượng hủy:** `2 ram`.
+     * **Lý do / Diễn giải:** *"Bao bì rách, ẩm mốc trong quá trình bốc dỡ dock xuất hàng"*.
+     * **Trạng thái:** **Done**.
+  3. Hệ thống tự động chuyển 2 ram này từ `WH/Stock` sang `Virtual Locations/Scrap`, đảm bảo số lượng tồn hiển thị trên Báo giá cho Sale luôn là hàng đạt chuẩn chất lượng 100%.
+
+---
+
+### PHÂN HỆ 24: BÁO CÁO PHÂN TÍCH TUỔI NỢ & CHẶN NỢ NET 30 (AGED RECEIVABLE & CREDIT HOLD)
+* **Mục đích:** Minh họa trực quan tình huống ngoại lệ của Use Case `UC-ACC-02` (Chặn đơn hàng do nợ quá hạn).
+* **Đường dẫn truy cập:** Vào **Accounting** $rightarrow$ **Reporting** $rightarrow$ **Aged Receivable** (hoặc **Customers** $rightarrow$ **Invoices**).
+* **Các bước thao tác chuẩn:**
+  1. **Xem Báo cáo Tuổi nợ B2B:**
+     * Mở báo cáo **Aged Receivable**: Màn hình phân loại công nợ theo các cột thời gian: *Chưa đến hạn*, *Quá hạn 1-30 ngày*, *Quá hạn 31-60 ngày*, *Quá hạn 61-90 ngày*, *Quá hạn > 90 ngày*.
+     * Xem hồ sơ khách hàng thử nghiệm: **Công ty TNHH Giấy & Bao Bì Hoàng Gia** đang treo nợ **16.500.000₫** trên hóa đơn **`INV/2026/00002`** (Hạn nợ 31/10/2026, quá hạn > 20 ngày).
+  2. **Thao tác thử nghiệm chặn đơn hàng:**
+     * Vào **Sales** $rightarrow$ Tạo Báo giá mới cho khách hàng *Công ty TNHH Giấy & Bao Bì Hoàng Gia*.
+     * Hệ thống lập tức kích hoạt chính sách tín dụng: Hiển thị cảnh báo nợ quá hạn trên thanh ghi chú và nhân viên kinh doanh phải yêu cầu khách hàng tất toán hóa đơn cũ thì mới được phép duyệt đơn hàng mới.
+
+---
+
+### PHÂN HỆ 25: TO-DO (QUẢN LÝ ĐẦU VIỆC ĐIỀU HÀNH & KẾ HOẠCH CÁ NHÂN)
+* **Mục đích:** Quản lý danh mục nhiệm vụ cá nhân, nhắc nhở lịch trình làm việc hàng ngày của Ban Giám Đốc và các Chuyên viên.
+* **Đường dẫn truy cập:** Bấm icon **To-do**.
+* **Các bước thao tác chuẩn:**
+  1. Màn hình mở ra danh sách việc cần làm đã phân công:
+     * **Đầu việc 1:** *Đánh giá Báo cáo Tài chính P&L & Doanh thu hợp đồng B2B Tháng 11* (Người phụ trách: **Võ Duy Bình** - CEO).
+     * **Đầu việc 2:** *Kiểm tra Tồn kho Khả dụng ATP & Điều phối Hàng hóa giữa 2 Hub Tân Bình - Biên Hòa* (Người phụ trách: **Phạm Nguyễn Gia Thuận** - Systems & Inventory Lead).
+     * **Đầu việc 3:** *Thẩm định Hồ sơ Đấu thầu Cung ứng VPP Saigon Tech Corp* (Người phụ trách: **Võ Duy Bình** & **Phạm Nguyễn Gia Thuận**).
+  2. Khi hoàn thành công việc: Click vào ô tick tròn bên cạnh tên việc để đánh dấu hoàn thành, giúp theo dõi tiến độ công việc hàng ngày một cách trực quan.
+
+---
+
 ## 5. KỊCH BẢN THỰC HÀNH LIVE DEMO 4 BƯỚC LIÊN THÔNG (DEMO WALKTHROUGH)
 
 Khi đứng trước lớp hoặc giảng viên, bạn thực hiện đúng theo 4 kịch bản chuẩn sau:

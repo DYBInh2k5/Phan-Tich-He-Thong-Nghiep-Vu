@@ -171,7 +171,12 @@ Dưới đây là 25 bản ghi thực tế được lưu trữ trên môi trư�
 | 22 | **Kho Chứng Từ Số** | Documents Library | Documents | Active | 3 thư mục phân loại số hóa: Hợp đồng B2B, Biên bản e-POD, Hóa đơn VAT |
 | 23 | **Kênh Chat Nội Bộ** | 3 Kênh Chuyên Môn | Discuss | Active | `#kinh-doanh-b2b`, `#kho-van-logistics`, `#duyet-chiet-khau-b2b` |
 | 24 | **Mẫu Ký Số e-POD** | Template e-POD | Sign | Active | Mẫu ký số biên bản giao nhận hàng hóa điện tử có chữ ký khách hàng |
-| 25 | **Thẻ Nhân Viên & PIN** | 5 Employee Badges | Employees | Active | Thẻ định danh mã vạch EAN và mã PIN chấm công/đăng nhập máy quét kho |
+| 25 | **Thẻ Nhân Viên & PIN** | 6 Employee Badges | Employees | Active | Thẻ định danh mã vạch EAN và mã PIN đăng nhập cho cả Võ Duy Bình & Gia Thuận |
+| 26 | **Điều chuyển kho liên Hub** | **`WH/INT/00003`** | Inventory | **Done** | Chuyển 30 ram ST-001 từ Kho Tân Bình sang Kho Biên Hòa (Cân đối tồn kho ATP) |
+| 27 | **Hủy hàng phế phẩm (Scrap)** | **`SP/00001`** | Inventory | **Done** | Ghi nhận 2 ram ST-001 hỏng bao bì sang Virtual Locations/Scrap |
+| 28 | **Khách hàng Chặn Tín Dụng** | Cty Giấy Hoàng Gia | Contacts / Invoicing | Active (Overdue) | Nợ quá hạn 16.500.000₫ trên INV/2026/00002 quá hạn Net 30 (Minh họa UC-ACC-02) |
+| 29 | **Đường ống Cơ hội CRM** | 4 B2B Pipeline Leads | CRM | In Progress / Won | 4 gói thầu: ABC (Won 120M), Saigon Tech (Prop 85M), OCB (Qual 250M), Etown (New 60M) |
+| 30 | **Đầu việc Điều hành To-do** | 3 Executive Tasks | To-do | In Progress | 3 nhiệm vụ phân công cho CEO Võ Duy Bình và Lead Gia Thuận |
 
 ---
 
