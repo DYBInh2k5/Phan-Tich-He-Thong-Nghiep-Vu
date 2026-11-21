@@ -60,7 +60,31 @@ Bảng ma trận truy vết chứng minh sự liên kết tuyệt đối giữa 
 
 ## 3. THIẾT LẬP DỮ LIỆU CHỦ (MASTER DATA) & CẤU TRÚC DOANH NGHIỆP TRÊN ODOO
 
-### 3.1. Danh mục 10 SKU Trọng yếu & 1 Bộ Combo Đóng gói
+### 3.1. Danh mục 10 SKU Trọng yếu, Phân loại Danh mục & 1 Bộ Combo Đóng gói
+Toàn bộ 10 sản phẩm văn phòng phẩm chủ lực và 1 bộ Combo kitting đã được thiết lập mã Barcode EAN chuẩn, giá vốn, giá niêm yết, tuyến cung ứng và phân loại vào 6 nhóm danh mục sản phẩm chuyên môn (Product Categories):
+* 📁 **Nhóm Giấy in & Photo (Paper):**
+  1. `ST-001`: Giấy in A4 Double A 70gsm (Giá vốn: 52.000₫, Giá niêm yết: 75.000₫, Hợp đồng ABC: 65.000₫, Barcode: `8935001100018`).
+  2. `ST-002`: Giấy in A4 IK Plus 70gsm (Giá vốn: 48.000₫, Giá niêm yết: 70.000₫, Barcode: `8992752011021`).
+* 📁 **Nhóm Bút viết & Mực (Writing & Ink):**
+  3. `ST-003`: Bút bi Thiên Long TL-027 (Hộp 20 cây) (Giá vốn: 65.000₫, Giá niêm yết: 90.000₫, Barcode: `8935001800035`).
+  4. `ST-004`: Bút gel Pilot / Pentel EnerGel 0.7mm (Hộp 12 cây) (Giá vốn: 250.000₫, Giá niêm yết: 360.000₫, Barcode: `088485100042`).
+* 📁 **Nhóm Bìa & File lưu trữ (Filing & Storage):**
+  5. `ST-005`: File còng Kokuyo / Kingjim 7cm A4 (Giá vốn: 42.000₫, Giá niêm yết: 65.000₫, Barcode: `893603200059`).
+  6. `ST-006`: Bìa lỗ / Clear Holder Plus A4 40 Pockets (Giá vốn: 28.000₫, Giá niêm yết: 45.000₫, Barcode: `497756400066`).
+* 📁 **Nhóm Dụng cụ văn phòng & Đóng gói (Supplies & Packing):**
+  7. `ST-007`: Máy bấm kim lớn Deli 0395 (100 tờ) (Giá vốn: 190.000₫, Giá niêm yết: 280.000₫, Barcode: `692173490073`).
+  8. `ST-008`: Kim bấm Deli 23/13 (Hộp 1000 kim) (Giá vốn: 20.000₫, Giá niêm yết: 35.000₫, Barcode: `692173490080`).
+  9. `ST-009`: Giấy ghi chú 3M Post-it 3x3 Yellow (Giá vốn: 80.000₫, Giá niêm yết: 120.000₫, Barcode: `021200500097`).
+* 📁 **Nhóm Thiết bị & Mực in (Print Consumables):**
+  10. `ST-010`: Hộp mực in HP Laser 85A / 12A (Giá vốn: 980.000₫, Giá niêm yết: 1.450.000₫, Barcode: `088442000103`).
+* 📁 **Nhóm Combo Văn phòng phẩm (Bundles & Combos):**
+  11. `CB-001`: **Combo Văn Phòng Phẩm Tiết Kiệm Standard** (Định mức vật tư `BOM #1`, Lệnh sản xuất `WH/MO/00001` hoàn thành 10 bộ).
+
+### 3.1.1. Chuẩn Hóa Thông Tin Pháp Lý & Thuế B2B Doanh Nghiệp
+Hệ sinh thái Odoo đã được chuẩn hóa dữ liệu pháp lý doanh nghiệp 100% khớp thực tế:
+* **Công ty chủ quản:** Công ty TNHH Phân phối Văn phòng phẩm OfficePro (MST: `0317896542`, Trụ sở: Lô B2, KCN Tân Bình, TP.HCM, TK VCB: `0071001234567`).
+* **Khách hàng chiến lược:** Tập đoàn ABC (MST: `0301456789`, Tòa nhà Bitexco, Q.1, TP.HCM, Hạn nợ: Net 30).
+* **Nhà cung cấp trọng yếu:** Nhà cung cấp Giấy Bến Cát (MST: `3702112345`, KCN Mỹ Phước 3, Bến Cát, Bình Dương).
 Toàn bộ 10 sản phẩm văn phòng phẩm chủ lực đã được thiết lập mã Barcode EAN chuẩn, giá vốn, giá niêm yết và tuyến cung ứng:
 1. `ST-001`: Giấy in A4 Double A 70gsm (Giá vốn: 52.000₫, Giá niêm yết: 75.000₫, Hợp đồng ABC: 65.000₫, Barcode: `8938501234015`).
 2. `ST-002`: Giấy in A4 IK Plus 70gsm (Giá vốn: 48.000₫, Giá niêm yết: 70.000₫, Barcode: `8938501234022`).
