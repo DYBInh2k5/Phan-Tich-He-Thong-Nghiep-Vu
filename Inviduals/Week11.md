@@ -519,13 +519,14 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
 
 ---
 
-### PHÂN HỆ 13: WEBSITE (CỔNG THÔNG TIN DOANH NGHIỆP & CỬA HÀNG B2B TRỰC TUYẾN)
-* **Mục đích:** Cung cấp kênh tra cứu thông tin năng lực doanh nghiệp, danh mục sản phẩm chuẩn hóa và tiếp nhận yêu cầu báo giá/đấu thầu từ khách hàng doanh nghiệp.
+### PHÂN HỆ 13: WEBSITE (CỔNG THÔNG TIN DOANH NGHIỆP & CỬA HÀNG B2B TRỰC TUYẾN TỐI ƯU HÓA TOÀN DIỆN)
+* **Mục đích:** Cung cấp kênh tra cứu thông tin năng lực doanh nghiệp, danh mục sản phẩm chuẩn hóa, tiếp nhận yêu cầu báo giá/đấu thầu và cửa hàng B2B tích hợp Thương mại Điện tử thông minh (Smart B2B eCommerce).
 * **Đường dẫn truy cập:**
   * **Trang chủ chính thức:** [https://edu-officeprodistribution.odoo.com/](https://edu-officeprodistribution.odoo.com/)
   * **Trang Về Chúng Tôi:** [https://edu-officeprodistribution.odoo.com/about-us](https://edu-officeprodistribution.odoo.com/about-us)
   * **Cửa hàng B2B Trực tuyến:** [https://edu-officeprodistribution.odoo.com/shop](https://edu-officeprodistribution.odoo.com/shop)
   * **Trang Liên hệ & Báo giá:** [https://edu-officeprodistribution.odoo.com/contactus](https://edu-officeprodistribution.odoo.com/contactus)
+  * **Cổng Khách Hàng B2B & Tra cứu e-POD:** [https://edu-officeprodistribution.odoo.com/my](https://edu-officeprodistribution.odoo.com/my)
 * **Các tính năng đã thiết kế & vận hành thực tế:**
   1. **Trang chủ Doanh nghiệp (`/`):**
      * Thiết kế Hero Banner chuyên nghiệp: *"OfficePro Distribution Co., Ltd. — Giải Pháp Chuỗi Cung Ứng B2B Chuyên Nghiệp"*.
@@ -537,12 +538,20 @@ Dưới đây là cẩm nang thao tác cụ thể trên từng App để bạn l
      * Phân loại thành 6 danh mục eCommerce: *Giấy in, Bút viết, Bìa còng, Dụng cụ đóng gói, Hộp mực in, Combo Tiết kiệm*.
      * Xuất bản (Publish) toàn bộ 10 SKU + 1 Bộ Combo `CB-001`.
      * Khi khách hàng doanh nghiệp đăng nhập, đơn giá **tự động khóa chặt theo Bảng giá Hợp đồng 2026** và hiển thị số lượng tồn khả dụng (ATP).
-  4. **Cổng Tiếp nhận Thông tin Đối tác (`/contactus`):**
+  4. **Huy hiệu Nổi bật Sản phẩm (eCommerce Ribbons):**
+     * SKU `ST-001` (Giấy Double A): Gắn huy hiệu màu xanh **"Hợp Đồng B2B - Best Seller"**.
+     * SKU `CB-001` (Combo VPP Tiết kiệm): Gắn huy hiệu màu đỏ **"Tiết Kiệm 25%"**.
+     * SKU `ST-003` (Bút TL-027) & `ST-005` (File còng): Gắn huy hiệu xanh lá **"Sẵn Kho 24h"**.
+     * SKU `ST-010` (Hộp mực HP): Gắn huy hiệu tím **"Chính Hãng 100%"**.
+  5. **Bán chéo & Bán gia tăng (Up-sell & Cross-sell):**
+     * Khi khách xem giấy in `ST-001` (Double A), khối **Alternative Products** tự động hiển thị gợi ý giấy `ST-002` (IK Plus), và khối **Accessory Products** gợi ý mua kèm File còng `ST-005`, Máy bấm kim `ST-007`, Bút bi `ST-003`.
+  6. **Cổng Thanh toán Chuyển khoản Doanh nghiệp (Wire Transfer B2B):**
+     * Kích hoạt cổng thanh toán Chuyển khoản Vietcombank (STK: `0071001234567`) với cú pháp tra soát tự động `[Mã đơn hàng] - [Mã số thuế]`.
+  7. **Chính sách Vận chuyển Đa kho (Delivery Methods):**
+     * Kích hoạt phương thức *"Giao hàng Hỏa tốc 24h Hub Tân Bình & Biên Hòa"* (Miễn phí từ 2.000.000₫).
+  8. **Cổng Tiếp nhận Thông tin Đối tác (`/contactus`):**
      * Biểu mẫu liên hệ trực tuyến tự động chuyển hóa thành **Cơ hội Kinh doanh (Lead/Opportunity)** trong phân hệ CRM.
      * Hiển thị bảng định vị trụ sở KCN Tân Bình, chi nhánh Biên Hòa, hotline `(028) 3816 5588` và email `contact@officepro.vn`.
-
----
-
 
 ---
 
