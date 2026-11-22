@@ -197,10 +197,13 @@ Dưới đây là 25 bản ghi thực tế được lưu trữ trên môi trư�
 | 24 | **Mẫu Ký Số e-POD** | Template e-POD | Sign | Active | Mẫu ký số biên bản giao nhận hàng hóa điện tử có chữ ký khách hàng |
 | 25 | **Thẻ Nhân Viên & PIN** | 6 Employee Badges | Employees | Active | Thẻ định danh mã vạch EAN và mã PIN đăng nhập cho cả Võ Duy Bình & Gia Thuận |
 | 26 | **Điều chuyển kho liên Hub** | **`WH/INT/00003`** | Inventory | **Done** | Chuyển 30 ram ST-001 từ Kho Tân Bình sang Kho Biên Hòa (Cân đối tồn kho ATP) |
-| 27 | **Hủy hàng phế phẩm (Scrap)** | **`SP/00001`** | Inventory | **Done** | Ghi nhận 2 ram ST-001 hỏng bao bì sang Virtual Locations/Scrap |
-| 28 | **Khách hàng Chặn Tín Dụng** | Cty Giấy Hoàng Gia | Contacts / Invoicing | Active (Overdue) | Nợ quá hạn 16.500.000₫ trên INV/2026/00002 quá hạn Net 30 (Minh họa UC-ACC-02) |
-| 29 | **Đường ống Cơ hội CRM** | 4 B2B Pipeline Leads | CRM | In Progress / Won | 4 gói thầu: ABC (Won 120M), Saigon Tech (Prop 85M), OCB (Qual 250M), Etown (New 60M) |
-| 30 | **Đầu việc Điều hành To-do** | 3 Executive Tasks | To-do | In Progress | 3 nhiệm vụ phân công cho CEO Võ Duy Bình và Lead Gia Thuận |
+| 27 | **Lệnh chuyển kho chờ bốc hàng** | **`WH/INT/00004`** | Inventory | **Ready** | Chuyển 50 hộp bút bi TL-027 sang Biên Hòa (Demo trực tiếp trạng thái Ready) |
+| 28 | **Hủy hàng phế phẩm (Scrap)** | **`SP/00001`** & **`SP/00002`** | Inventory | **Done** | 2 ram giấy ST-001 rách vỏ & 3 chiếc file còng ST-005 móp còng chuyển sang Scrap |
+| 29 | **Đơn xuất kho demo Barcode** | **`WH/OUT/00003`** | Inventory / Barcode | **Ready** | Xuất 10 ram ST-001 cho Saigon Tech, sẵn sàng quét mã vạch 8935001100018 trên Barcode App |
+| 30 | **Lệnh sản xuất Shop Floor** | **`WH/MO/00002`** | Manufacturing | **Ready** | Lệnh đóng gói 5 bộ Combo CB-001 hiển thị trực quan trên màn hình cảm ứng Shop Floor |
+| 31 | **Báo giá chặn nợ quá hạn** | **`S00003`** | Sales | **Draft** | Đơn hàng 8.250.000₫ của Cty Hoàng Gia bị cảnh báo Hard Credit Hold do nợ quá hạn |
+| 32 | **Đường ống Cơ hội CRM** | 4 B2B Pipeline Leads | CRM | In Progress / Won | 4 gói thầu: ABC (Won 120M), Saigon Tech (Prop 85M), OCB (Qual 250M), Etown (New 60M) |
+| 33 | **Đầu việc Điều hành To-do** | 3 Executive Tasks | To-do | In Progress | 3 nhiệm vụ phân công cho CEO Võ Duy Bình và Lead Gia Thuận |
 
 ---
 

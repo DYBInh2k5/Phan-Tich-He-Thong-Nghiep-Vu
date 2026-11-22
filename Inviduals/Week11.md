@@ -849,10 +849,13 @@ Dưới đây là bảng nhật ký kiểm toán (Audit Trail) với đầy đ�
 | **24** | **Kênh Chat & Cộng Tác Nội Bộ** | Discuss Channels | Discuss | Hoạt động | 3 kênh #kinh-doanh-b2b, #kho-van-logistics, #duyet-chiet-khau-b2b (Chatter UC-SALES-03) | [Xem Discuss](https://edu-officeprodistribution.odoo.com/odoo) |
 | **25** | **Mẫu Ký Số Biên Bản e-POD** | Sign Template e-POD | Sign | Sẵn sàng ký | Mẫu biên bản giao nhận hàng hóa điện tử có chữ ký số khách hàng phục vụ đối soát | [Xem Sign](https://edu-officeprodistribution.odoo.com/odoo) |
 | **26** | **Điều chuyển kho liên Hub** | **`WH/INT/00003`** | Inventory | **Done** | Chuyển 30 ram ST-001 từ Kho Tân Bình sang Kho Biên Hòa (Cân đối tồn kho ATP) | [Xem Lệnh Chuyển Kho](https://edu-officeprodistribution.odoo.com/odoo) |
-| **27** | **Hủy hàng phế phẩm (Scrap)** | **`SP/00001`** | Inventory | **Done** | Ghi nhận 2 ram ST-001 hỏng bao bì sang Virtual Locations/Scrap | [Xem Phiếu Phế Phẩm](https://edu-officeprodistribution.odoo.com/odoo) |
-| **28** | **Khách hàng Chặn Tín Dụng** | Cty Giấy Hoàng Gia | Contacts / Invoicing | Active (Overdue) | Nợ quá hạn 16.500.000₫ trên INV/2026/00002 quá hạn Net 30 (Minh họa UC-ACC-02) | [Xem Hóa Đơn Quá Hạn](https://edu-officeprodistribution.odoo.com/odoo) |
-| **29** | **Đường ống Cơ hội CRM** | 4 B2B Pipeline Leads | CRM | In Progress / Won | 4 gói thầu: ABC (Won 120M), Saigon Tech (Prop 85M), OCB (Qual 250M), Etown (New 60M) | [Xem CRM Leads](https://edu-officeprodistribution.odoo.com/odoo) |
-| **30** | **Đầu việc Điều hành To-do** | 3 Executive Tasks | To-do | In Progress | 3 nhiệm vụ phân công cho CEO Võ Duy Bình và Lead Gia Thuận | [Xem To-do](https://edu-officeprodistribution.odoo.com/odoo) |
+| **27** | **Lệnh chuyển kho chờ bốc hàng** | **`WH/INT/00004`** | Inventory | **Ready** | Chuyển 50 hộp bút bi TL-027 sang Biên Hòa (Demo trực tiếp trạng thái Ready) | [Xem Lệnh Chờ Bốc](https://edu-officeprodistribution.odoo.com/odoo) |
+| **28** | **Hủy hàng phế phẩm (Scrap)** | **`SP/00001`** & **`SP/00002`** | Inventory | **Done** | 2 ram giấy ST-001 rách vỏ & 3 chiếc file còng ST-005 móp còng chuyển sang Scrap | [Xem Phiếu Phế Phẩm](https://edu-officeprodistribution.odoo.com/odoo) |
+| **29** | **Đơn xuất kho demo Barcode** | **`WH/OUT/00003`** | Inventory / Barcode | **Ready** | Xuất 10 ram ST-001 cho Saigon Tech, sẵn sàng quét mã vạch 8935001100018 trên Barcode App | [Xem Phiếu Xuất Sẵn Sàng](https://edu-officeprodistribution.odoo.com/odoo) |
+| **30** | **Lệnh sản xuất Shop Floor** | **`WH/MO/00002`** | Manufacturing | **Ready** | Lệnh đóng gói 5 bộ Combo CB-001 hiển thị trực quan trên màn hình cảm ứng Shop Floor | [Xem Lệnh Sản Xuất](https://edu-officeprodistribution.odoo.com/odoo) |
+| **31** | **Báo giá chặn nợ quá hạn** | **`S00003`** | Sales | **Draft** | Đơn hàng 8.250.000₫ của Cty Hoàng Gia bị cảnh báo Hard Credit Hold do nợ quá hạn | [Xem Báo Giá Cảnh Báo](https://edu-officeprodistribution.odoo.com/odoo) |
+| **32** | **Đường ống Cơ hội CRM** | 4 B2B Pipeline Leads | CRM | In Progress / Won | 4 gói thầu: ABC (Won 120M), Saigon Tech (Prop 85M), OCB (Qual 250M), Etown (New 60M) | [Xem CRM Leads](https://edu-officeprodistribution.odoo.com/odoo) |
+| **33** | **Đầu việc Điều hành To-do** | 3 Executive Tasks | To-do | In Progress | 3 nhiệm vụ phân công cho CEO Võ Duy Bình và Lead Gia Thuận | [Xem To-do](https://edu-officeprodistribution.odoo.com/odoo) |
 
 
 ## 7. KỊCH BẢN LỜI THOẠI MẪU KHI THUYẾT MINH TRƯỚC GIẢNG VIÊN (DEMO SCRIPT)
