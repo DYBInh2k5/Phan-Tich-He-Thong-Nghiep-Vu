@@ -1,10 +1,10 @@
-# KỊCH BẢN THUYẾT TRÌNH BẢO VỆ ĐỒ ÁN PHASE 1 (SONG NGỮ ANH - VIỆT)
-## BSA PHASE 1 MID-TERM DEFENSE SCRIPT — GROUP 6 (20 SLIDES ĐỒNG BỘ 1:1)
+# KỊCH BẢN THUYẾT TRÌNH BẢO VỆ ĐỒ ÁN CUỐI KỲ (SONG NGỮ ANH - VIỆT)
+## BSA FINAL CAPSTONE PROJECT DEFENSE SCRIPT — GROUP 6 (24 SLIDES ĐỒNG BỘ 1:1)
 **Doanh nghiệp nghiên cứu:** Công ty TNHH Phân phối OfficePro (OfficePro Distribution Co., Ltd.)  
 **Kịch bản nghiệp vụ:** Scenario B — B2B Wholesale & Distribution (Văn phòng phẩm & Thiết bị văn phòng)  
 **Khóa học:** Phân tích Hệ thống Nghiệp vụ (Business Systems Analysis - BSA) — Năm học 2026–2027, Học kỳ 1  
 **Giảng viên hướng dẫn:** ThS. Nguyễn Thị Thanh Thanh  
-**Phạm vi thẩm định:** **100% Pure Phase 1 (Sections 1, 2, và 3)** — Phân tích Nghiệp vụ Thuần túy (Bám sát 34 tiêu chí Quality Checklist & Bài mẫu Week 7)
+**Phạm vi thẩm định:** **100% Full Capstone (Phases 1 & 2)** — Báo cáo BRD Hoàn chỉnh, Đặc tả Use Cases, Hệ thống Odoo ERP Cloud Thực tế, Kiểm thử UAT & Đánh giá Fit-Gap
 
 ---
 
@@ -12,22 +12,37 @@
 
 | Diễn giả (Speaker) | Vai trò & Phân hệ Phụ trách | Số lượng Slide | Danh sách Slide chính xác trên màn hình |
 | :--- | :--- | :---: | :--- |
-| **Speaker 1: Võ Duy Bình**<br>*(MSSV: 22301500)* | **Team Leader / Lead BA & SA**<br>• Phân hệ: **Quản lý Bán hàng & Thu mua (Sales & Purchasing)**<br>• Phạm vi: Bối cảnh doanh nghiệp, Master Data 10 SKUs, Mạng lưới kho bãi, Quản trị RACI, 3 Nỗi đau vận hành định lượng, Mô hình quan hệ 5 quy trình, Các bước quy trình AS-IS, Phân tích 5-Whys, Chiến lược tái cấu trúc TO-BE, và Tổng kết Phase 1. | **10 Slides** | **Slide 1, 2, 3, 4, 5, 9, 10, 11, 14, 15**<br>*(Đồng tổng kết Slide 20)* |
-| **Speaker 2: Phạm Nguyễn Gia Thuận**<br>*(MSSV: 22204631)* | **QA & Solution Configurator / Requirements Analyst**<br>• Phân hệ: **Quản lý Kho & Hóa đơn (Inventory & Invoicing)**<br>• Phạm vi: Ma trận Stakeholder Power/Interest, Nhu cầu thông tin liên phòng ban, Bằng chứng phỏng vấn đối soát giả định, Sơ đồ AS-IS Swimlane (BPMN SVG), Điểm nghẽn phòng ban, Sơ đồ TO-BE Swimlane (BPMN SVG có làn ERP), Bảng so sánh lợi ích, Danh mục MoSCoW 8 FRs kèm Verification Ideas, Ma trận RTM 6 cột, và Điều phối Q&A. | **10 Slides** | **Slide 6, 7, 8, 12, 13, 16, 17, 18, 19**<br>*(Điều phối Phản biện Q&A Slide 20)* |
+| **Speaker 1: Võ Duy Bình**<br>*(MSSV: 22301500)* | **Team Leader / Lead BA & SA**<br>• Phân hệ: **Quản lý Bán hàng & Thu mua (Sales & Purchasing)**<br>• Phạm vi: Bối cảnh doanh nghiệp, Master Data 10 SKUs, Mạng lưới kho bãi, Quản trị RACI, 3 Nỗi đau vận hành định lượng, Mô hình quan hệ 5 quy trình, Quy trình AS-IS, Phân tích 5-Whys, Chiến lược TO-BE, Kiến trúc Use Case (Slide 20), và Hệ thống Odoo ERP Cloud & Master Data Setup (Slide 21), Tổng kết ROI (Slide 24). | **12 Slides** | **Slide 1, 2, 3, 4, 5, 9, 10, 11, 14, 15, 20, 21**<br>*(Đồng tổng kết Slide 24)* |
+| **Speaker 2: Phạm Nguyễn Gia Thuận**<br>*(MSSV: 22204631)* | **QA & Solution Configurator / Requirements Analyst**<br>• Phân hệ: **Quản lý Kho & Hóa đơn (Inventory & Invoicing)**<br>• Phạm vi: Ma trận Stakeholder Power/Interest, Nhu cầu thông tin liên phòng ban, Bằng chứng phỏng vấn, Sơ đồ AS-IS Swimlane, Điểm nghẽn phòng ban, Sơ đồ TO-BE Swimlane, Bảng so sánh lợi ích, Danh mục MoSCoW 8 FRs, Ma trận RTM, Trình diễn Nghiệp vụ Xuyên suốt Odoo (Slide 22), Kết quả UAT & Fit-Gap Analysis (Slide 23), Điều phối Q&A (Slide 24). | **12 Slides** | **Slide 6, 7, 8, 12, 13, 16, 17, 18, 19, 22, 23**<br>*(Điều phối Phản biện Q&A Slide 24)* |
 
 ---
 
 # SLIDE 1: TRANG TIÊU ĐỀ & TỔNG QUAN HỒ SƠ ĐỒ ÁN
-*(Tương ứng trên màn hình: BUSINESS SYSTEMS ANALYSIS (BSA) — Phase 1 Mid-Term Assessment: Business Requirements Document)*  
+*(Tương ứng trên màn hình: BUSINESS SYSTEMS ANALYSIS (BSA) — Final Capstone Project Defense: Business Requirements Document & Odoo Solution Validation)*  
 **Người trình bày:** Võ Duy Bình (Speaker 1)  
 **Thời lượng dự kiến:** 45 - 60 giây  
 
 ### 🇬🇧 English Script:
 > "Good morning, Lecturer MSc. Nguyen Thi Thanh Thanh, and members of the Examination Board.  
 > 
-> My name is **Vo Duy Binh**, Team Leader and Lead Business Analyst of **Group 6**. Joining me today is my teammate, **Pham Nguyen Gia Thuan**, our QA and Requirements Analyst.  
+> My name is **Vo Duy Binh**, Team Leader and Lead Business Analyst of **Group 6**. Joining me today is my teammate, **Pham Nguyen Gia Thuan**, our QA Specialist and Solution Configurator.  
 > 
-> Today, we are proud to present our **Phase 1 Business Systems Analysis Deliverable** for **Scenario B: B2B Wholesale & Distribution in Office Supplies and Stationery**, focusing on our enterprise case: **OfficePro Distribution Co., Ltd.**  
+> Today, we are proud to present our **Final Capstone Project Defense** for **Scenario B: B2B Wholesale & Distribution in Office Supplies and Stationery**, focusing on our enterprise case: **OfficePro Distribution Co., Ltd.**  
+> 
+> Our project embodies a complete, rigorous systems analysis cycle following the golden rule of **'Business-First, Technology-Second'**: from deep stakeholder elicitation and AS-IS/TO-BE process re-engineering in Phase 1, to formal Cockburn Use Case specifications, live cloud ERP configuration on Odoo, and empirical UAT test execution in Phase 2.  
+> 
+> Let us walk you through the end-to-end journey of business transformation at OfficePro Distribution!"
+
+### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
+> "Kính chào Giảng viên ThS. Nguyễn Thị Thanh Thanh và quý thầy cô trong Hội đồng đánh giá.  
+> 
+> Em tên là **Võ Duy Bình**, Trưởng nhóm và Lead Business Analyst của **Nhóm 6**. Đồng hành cùng em hôm nay là bạn **Phạm Nguyễn Gia Thuận**, QA Specialist và Phân tích Yêu cầu của nhóm.  
+> 
+> Hôm nay, Nhóm 6 xin trân trọng bảo vệ **Đồ án Cuối kỳ môn Phân tích Hệ thống Nghiệp vụ (BSA)** cho **Kịch bản B: Bán buôn & Phân phối B2B Văn phòng phẩm và Thiết bị văn phòng**, áp dụng trực tiếp tại doanh nghiệp mô phỏng: **Công ty TNHH Phân phối OfficePro**.  
+> 
+> Đồ án thể hiện trọn vẹn chu trình phân tích nghiệp vụ chuẩn mực theo phương châm **'Nghiệp vụ đi trước, Công nghệ theo sau'**: từ khảo sát thu thập thực địa, phân tích điểm nghẽn và tái cấu trúc quy trình AS-IS / TO-BE ở Phase 1, đến đặc tả Use Case chuẩn Cockburn, triển khai hệ thống Odoo ERP Cloud thực tế và kiểm thử UAT có lưu vết ở Phase 2.  
+> 
+> Kính mời Cô và Hội đồng cùng theo dõi hành trình chuyển đổi số toàn diện của OfficePro!"
 > 
 > Following the official course syllabus and rubrics, our Phase 1 investigation strictly focuses on **Pure Business Analysis** across Sections 1, 2, and 3: investigating real-world wholesale operations, stakeholder information needs, manual AS-IS process bottlenecks, 5-Whys root cause analysis, TO-BE workflow re-engineering, prioritized MoSCoW functional requirements, and end-to-end traceability.  
 > 
@@ -638,55 +653,173 @@
 
 ---
 
-# SLIDE 20: TỔNG KẾT PHASE 1, BÀN GIAO PHASE 2 & BẢO VỆ PHẢN BIỆN
-*(Tương ứng trên màn hình: Phase 1 Summary, Handover to Phase 2 & Q&A)*  
-**Người trình bày:** Võ Duy Bình & Phạm Nguyễn Gia Thuận  
-**Thời lượng dự kiến:** 50 - 60 giây  
+# SLIDE 20: PHẦN 5 — PHÂN TÍCH USE CASE: KIẾN TRÚC USE CASE DOANH NGHIỆP & ĐẶC TẢ CỐT LÕI
+*(Tương ứng trên màn hình: Section 5 — Use Case Analysis: Enterprise Use Case Architecture & Core Specifications)*  
+**Người trình bày:** Võ Duy Bình (Speaker 1)  
+**Thời lượng dự kiến:** 55 - 65 giây  
 
 ### 🇬🇧 English Script:
-> *(Vo Duy Binh concluding Phase 1):*  
-> "In conclusion, Group 6 has successfully completed all deliverables mandated for **Phase 1 Business Systems Analysis**:  
-> - We established an authentic **Enterprise Baseline**: covering our wholesale business model, 10 primary SKUs, multi-facility network, and RACI governance.  
-> - We executed rigorous **Stakeholder Elicitation**: completing the Information Needs Matrix and verified interview evidence log.  
-> - We diagnosed core **Operational Friction**: dissecting pricing errors, stockouts, and billing lag using the 5-Whys methodology.  
-> - We engineered our **TO-BE Re-engineering Architecture & MoSCoW Catalog**: delivering requirements `FR-01` to `FR-08` backed by full RTM traceability.  
+> "Moving into **Section 5: Use Case Analysis**, Slide 20 bridges our business requirements into technical system interactions.
 > 
-> *(Pham Nguyen Gia Thuan opening Q&A):*  
-> As we hand over these requirements into Phase 2—where Use Case specifications, ERP configuration, and peer UAT test execution will take place—we sincerely thank MSc. Nguyen Thi Thanh Thanh and the Examination Board for your valuable guidance.  
-> We now warmly welcome all questions and feedback from the Board!"
+> As visualized in our **Enterprise Use Case Diagram** (Figure 5.1 in our report), we cataloged **14 comprehensive Use Cases across 4 operational modules**:
+> - **Sales Management:** `UC-SALES-01` (Apply Contract Pricing `FR-01`), `UC-SALES-02` (Query Real-Time ATP `FR-02`), `UC-SALES-03` (Discount Approval), and `UC-SALES-04` (Sales Order Confirmation).
+> - **Inventory Logistics:** `UC-INV-01` (Dock Inbound Receiving), `UC-INV-02` (Bin-Guided Picking `FR-02`), `UC-INV-03` (Driver Electronic Proof of Delivery), and `UC-INV-04` (Cycle Counting).
+> - **Procurement Management:** `UC-PURCH-01` (Automated Reordering PR Trigger `FR-04`), and `UC-PURCH-02` (Multi-Vendor RFQ Comparison `FR-07`).
+> - **Invoicing & Accounting:** `UC-ACC-01` (Automated 3-Way Document Match `FR-05`), `UC-ACC-02` (Hard Credit Lock Enforcement `FR-03`), and `UC-ACC-03` (Circular 78 VAT Invoicing).
+> 
+> Each core use case is rigorously specified using **Alistair Cockburn's formal template** with clear Pre-conditions, Main Success Scenarios, Extensions, and Post-conditions. For instance, `UC-SALES-01` guarantees that selecting a contracted B2B account automatically locks the contracted 65,000 VND rate, while `UC-ACC-02` programmatically aborts order confirmation if overdue debt exceeds 30 days."
 
 ### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> *(Võ Duy Bình tổng kết Phase 1):*  
-> "Để tổng kết, Nhóm 6 đã hoàn thành xuất sắc và đầy đủ 100% mục tiêu của **Phase 1: Phân tích Hệ thống Nghiệp vụ**:  
-> - Thiết lập **Bối cảnh Doanh nghiệp Chuẩn mực**: với mô hình bán buôn B2B, danh mục 10 SKUs Master Data, mạng lưới kho bãi và ma trận quản trị RACI.  
-> - Thực hiện **Thu thập Yêu cầu Chặt chẽ**: hoàn thành Ma trận Nhu cầu Thông tin và Nhật ký Bằng chứng Phỏng vấn xác minh.  
-> - Chuẩn đoán thấu đáo **Nút thắt Vận hành**: bóc tách lỗi giá, thiếu hàng và đối soát qua kỹ thuật 5-Whys.  
-> - Thiết kế **Quy trình Tương lai TO-BE & Khung MoSCoW**: hoàn thiện danh mục `FR-01` đến `FR-08` đi kèm ma trận truy vết RTM chặt chẽ.  
+> "Bước sang **Phần 5: Phân tích Use Case**, Slide 20 là cầu nối biến các yêu cầu nghiệp vụ thành các kịch bản tương tác hệ thống chuẩn mực.
 > 
-> *(Phạm Nguyễn Gia Thuận kết thúc & mở Q&A):*  
-> Bàn giao trọn vẹn kết quả này sang Phase 2—nơi nhóm sẽ thực hiện đặc tả Use Case chi tiết, cấu hình ERP và kiểm thử UAT chéo—nhóm em xin chân thành cảm ơn Giảng viên ThS. Nguyễn Thị Thanh Thanh và Hội đồng đánh giá đã lắng nghe.  
-> Chúng em rất sẵn lòng đón nhận các câu hỏi phản biện từ Hội đồng!"
+> Như được mô hình hóa trong **Sơ đồ Use Case Doanh nghiệp** (Hình 5.1 trong báo cáo), nhóm em đã đặc tả toàn diện **14 Use Cases trên 4 phân hệ vận hành**:
+> - **Phân hệ Bán hàng:** `UC-SALES-01` (Tự động áp giá hợp đồng `FR-01`), `UC-SALES-02` (Tra cứu tồn kho ATP thời gian thực `FR-02`), `UC-SALES-03` (Phê duyệt chiết khấu), và `UC-SALES-04` (Xác nhận đơn hàng).
+> - **Phân hệ Kho vận:** `UC-INV-01` (Nhập kho cầu cảng), `UC-INV-02` (Lấy hàng theo tọa độ ô kệ `FR-02`), `UC-INV-03` (Ký biên bản điện tử e-POD), và `UC-INV-04` (Kiểm kê an toàn).
+> - **Phân hệ Mua hàng:** `UC-PURCH-01` (Tự động tạo yêu cầu mua hàng PR `FR-04`), và `UC-PURCH-02` (So sánh báo giá nhà cung cấp `FR-07`).
+> - **Phân hệ Kế toán:** `UC-ACC-01` (Đối soát 3 bên tự động `FR-05`), `UC-ACC-02` (Khóa công nợ quá hạn `FR-03`), và `UC-ACC-03` (Xuất hóa đơn điện tử VAT).
+> 
+> Từng Use Case trọng tâm đều được viết theo **chuẩn cấu trúc Alistair Cockburn** với điều kiện tiên quyết, luồng sự kiện chính, luồng ngoại lệ và hậu điều kiện khắt khe. Điển hình như `UC-SALES-01` đảm bảo áp đúng giá 65.000đ cho giấy `ST-001`, và `UC-ACC-02` chặn đứng mọi đơn hàng nếu khách còn nợ quá hạn trên 30 ngày."
 
 ---
 
-## 🎯 BỘ CÂU HỎI PHẢN BIỆN CHUYÊN SÂU DỰ PHÒNG CHO PHASE 1 (DEFENSE Q&A PREPARATION)
+# SLIDE 21: PHẦN 6 — GIẢI PHÁP THỰC TẾ TRÊN ODOO: HỆ THỐNG ODOO ERP CLOUD THỰC TẾ & CẤU HÌNH MASTER DATA
+*(Tương ứng trên màn hình: Section 6 — Odoo Solution Architecture: Live Odoo ERP Cloud Environment & Master Data Setup)*  
+**Người trình bày:** Võ Duy Bình (Speaker 1)  
+**Thời lượng dự kiến:** 55 - 65 giây  
 
-### ❓ Câu 1: Tại sao trong Phase 1 nhóm chưa trình diễn cấu hình Odoo hay kịch bản UAT?
-- **Trả lời (EN):** *"According to the course guidelines, Phase 1 evaluates pure Business Analysis capabilities—investigating business problems, stakeholder information needs, AS-IS/TO-BE processes, requirements framing, and RTM traceability. Odoo ERP configuration, Use Case specifications, and UAT execution are strictly scoped for Phase 2 (Weeks 10 to 13). We followed the 'Business-First, Technology-Second' principle to ensure our requirements are grounded in real operational needs before configuring software."*
-- **Trả lời (VN):** *"Thưa cô, theo đúng đề bài và thang điểm hướng dẫn, Phase 1 đánh giá năng lực Phân tích Nghiệp vụ Thuần túy (Pure Business Analysis) gồm bài toán kinh doanh, nhu cầu thông tin stakeholder, quy trình AS-IS/TO-BE, danh mục yêu cầu MoSCoW và ma trận RTM. Việc cấu hình Odoo, viết đặc tả Use Case và kiểm thử UAT thuộc về phạm vi Phase 2 (Tuần 10 đến 13). Nhóm tuân thủ chặt chẽ nguyên lý 'Nghiệp vụ đi trước, Công nghệ theo sau' để tránh việc vội vàng triển khai phần mềm khi chưa hiểu thấu nỗi đau doanh nghiệp."*
+### 🇬🇧 English Script:
+> "Slide 21 brings our analysis to life through our **Live Odoo ERP Cloud Environment**.
+> 
+> Rather than relying on static slides or conceptual mockups, Group 6 deployed and configured an active enterprise instance on Odoo SaaS Cloud:
+> - **Live Production URL:** `https://edu-officeprodistribution.odoo.com/odoo`
+> - **Enterprise Model:** OfficePro Distribution Co., Ltd. (Base currency: Vietnamese Dong ₫, Chart of Accounts aligned with Circular 200).
+> - **25 Active Modules:** Fully linking Sales, CRM, Purchase, Inventory, Barcode, Accounting, Manufacturing, Shop Floor, Employees, Sign, and Dashboards.
+> - **Master Data Architecture:** We imported and verified all **10 Primary Commercial SKUs (`ST-001` to `ST-010`)** with barcodes, multi-tier pricing, and automated Min/Max replenishment rules (e.g., Min: 100, Max: 300 reams for `ST-001`).
+> - We configured the **'B2B Corporate Contract Pricelist (Net 30)'** linking fixed contract rates directly to verified customer accounts such as *Saigon Tech Corp* and *Tap doan ABC*."
 
-### ❓ Câu 2: Tại sao Bảng giá Hợp đồng (`FR-01`) lại là yêu cầu Bắt buộc (Must-Have) quan trọng nhất?
-- **Trả lời (EN):** *"In B2B Wholesale, commercial relationships are governed by legal framework contracts. In the AS-IS state, reps made 5–8% copy-paste errors from personal Excel files, directly causing 50 million VND in monthly invoice disputes and credit notes. Automating contract pricelists upon client selection eliminates our largest revenue leak immediately."*
-- **Trả lời (VN):** *"Trong mô hình Bán buôn B2B, giao dịch gắn liền với hợp đồng nguyên tắc pháp lý. Ở hiện trạng AS-IS, việc copy-paste thủ công từ file Excel cá nhân gây lỗi giá 5-8% trên hóa đơn, làm thiệt hại 50 triệu đồng mỗi tháng tiền tranh chấp công nợ. Việc tự động áp giá hợp đồng (`FR-01`) giải quyết trực tiếp tổn thất tài chính lớn nhất của doanh nghiệp."*
+### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
+> "Tại Slide 21, Nhóm 6 chứng minh năng lực triển khai thực tế thông qua **Môi trường Odoo ERP Cloud Đang Hoạt động Thực tế**.
+> 
+> Thay vì chỉ dừng lại ở lý thuyết hay ảnh vẽ, nhóm em đã thiết lập và vận hành một hệ sinh thái ERP hoàn chỉnh trên nền tảng Odoo SaaS:
+> - **Đường dẫn Cloud Thực tế:** `https://edu-officeprodistribution.odoo.com/odoo`
+> - **Pháp nhân Doanh nghiệp:** OfficePro Distribution Co., Ltd. (Đơn vị tiền tệ chính: VNĐ ₫, Hệ thống tài khoản kế toán chuẩn Thông tư 200).
+> - **25 Phân hệ Tích hợp Liên thông:** Kết nối toàn diện từ Bán hàng, CRM, Mua hàng, Quản lý Kho, Quét Barcode, Kế toán, Đóng gói Combo đến Quản lý Nhân sự và Chữ ký số e-POD.
+> - **Kiến trúc Master Data Chuẩn hóa:** Nhập liệu và kiểm thử toàn bộ **10 SKUs thương mại chủ lực (`ST-001` đến `ST-010`)** kèm mã vạch EAN-13, đơn vị tính quy đổi và quy tắc tồn kho Min/Max (như Min 100, Max 300 ram cho `ST-001`).
+> - Cấu hình bảng giá hợp đồng **'B2B Corporate Contract Pricelist (Net 30)'** áp cố định cho các khách hàng lớn như *Tập đoàn ABC* và *Công ty Saigon Tech*."
 
-### ❓ Câu 3: Tồn kho Khả dụng ATP (Available-to-Promise) khác gì với Tồn kho thực tế (On-Hand)?
-- **Trả lời (EN):** *"On-hand inventory is the physical quantity currently present in the warehouse. ATP inventory represents physical stock minus quantities already reserved for other confirmed Sales Orders, plus incoming shipments from confirmed supplier POs. Real-time ATP prevents sales reps from double-selling the same batch of Double A paper to two different corporate clients."*
-- **Trả lời (VN):** *"Tồn kho On-Hand là số lượng hàng vật lý thực tế đang nằm trên kệ kho. Còn Tồn kho Khả dụng ATP bằng Tồn kho vật lý trừ đi số lượng đã được giữ chỗ cho các đơn bán hàng đã xác nhận khác, cộng lượng hàng sắp về từ các đơn PO đã duyệt. Chỉ số ATP thời gian thực ngăn chặn triệt để tình trạng nhân viên bán trùng một lô giấy Double A cho hai khách hàng khác nhau."*
+---
 
-### ❓ Câu 4: Phân tích 5-Whys giúp nhóm như thế nào trong việc tìm ra giải pháp cho gánh nặng Kế toán?
-- **Trả lời (EN):** *"Initially, one might assume accounting needs faster data entry tools. However, the 5-Whys revealed the true root cause: signed paper delivery slips are disconnected from sales orders, forcing manual line-by-line reconciliation. The solution is not faster typing, but automated 3-way matching between digital Sales Orders, warehouse delivery logs, and VAT invoices, cutting 15–20 hours weekly down to 2 hours."*
-- **Trả lời (VN):** *"Ban đầu, nếu nhìn bề nổi sẽ tưởng là kế toán cần phần mềm nhập liệu nhanh hơn. Nhưng qua kỹ thuật 5-Whys, nhóm phát hiện nguyên nhân gốc rễ là do biên bản giao hàng giấy bị ngắt kết nối với đơn bán hàng, buộc kế toán phải ngồi dò từng dòng bằng mắt. Giải pháp đúng đắn không phải là gõ nhanh hơn, mà là tự động đối soát 3 bên giữa Đơn bán hàng điện tử, Phiếu xuất kho và Hóa đơn VAT, giúp giảm từ 20 giờ xuống còn 2 giờ/tuần."*
+# SLIDE 22: PHẦN 6 — TRÌNH DIỄN NGHIỆP VỤ THỰC TẾ: MÔ PHỎNG QUY TRÌNH TO-BE XUYÊN SUỐT TRÊN ODOO THỰC TẾ
+*(Tương ứng trên màn hình: Section 6 — System Demonstration: End-to-End TO-BE Transaction Walkthrough on Live Odoo)*  
+**Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
+**Thời lượng dự kiến:** 60 - 70 giây  
 
-### ❓ Câu 5: Ý nghĩa của Ma trận Truy xuất Yêu cầu (RTM) ở Slide 19 đối với quản lý dự án là gì?
-- **Trả lời (EN):** *"The Requirements Traceability Matrix (RTM) establishes bidirectional traceability from field evidence to business requirements, functional requirements, and process activities. It guarantees zero orphan requirements—ensuring every feature delivers business value—and zero unaddressed business pains, serving as our baseline for Phase 2 Use Cases and UAT test case coverage."*
-- **Trả lời (VN):** *"Thưa cô, Ma trận RTM thiết lập mối liên kết hai chiều chặt chẽ từ bằng chứng phỏng vấn đến yêu cầu nghiệp vụ, yêu cầu chức năng và quy trình hoạt động. RTM đảm bảo hai nguyên tắc vàng trong BSA: Không có yêu cầu 'mồ côi' (tính năng dư thừa không mang lại giá trị) và Không bỏ sót nỗi đau nghiệp vụ nào. Đây chính là kim chỉ nam để nhóm phát triển các Use Case và bộ kịch bản kiểm thử UAT trong Phase 2."*
+### 🇬🇧 English Script:
+> "Slide 22 demonstrates our **End-to-End TO-BE Transaction Walkthrough** validated directly on our live Odoo prototype:
+> 
+> 1. **Step 1 — Automated Contract Pricing (`FR-01`):** On Quotation `S00001`, selecting customer *Tap doan ABC* instantly retrieved the fixed 65,000 VND contract price for 50 reams of `ST-001` Double A paper (saving ~50M VND monthly in pricing disputes).
+> 2. **Step 2 — Real-Time Multi-Hub ATP Reservation (`FR-02`):** System checked unreserved stock across Tan Binh and Bien Hoa hubs, displaying instant availability and reserving stock upon sales order confirmation.
+> 3. **Step 3 — Bin-Guided Warehouse Fulfillment:** Order confirmation automatically scheduled Delivery Order `WH/OUT/00002` directing pickers to `Aisle-02/Bin-04`, scanned via the Odoo Barcode module.
+> 4. **Step 4 — Automated 3-Way Matched Billing (`FR-05`):** Creating Customer Invoice `INV/2026/00001` from verified delivered quantities, posting accounting entries (Debit 131 / Credit 511, 3331) and moving to 'In Payment' status via Vietcombank reconciliation.
+> 5. **Step 5 — Automated Replenishment & Credit Control (`FR-03`, `FR-04`):** When stock fell below 100 reams, automated scheduler triggered Purchase Order `P00001` for 230 reams from *NCC Ben Cat*, while Quotation `S00003` for *Hoang Gia Paper* was locked under Credit Hold due to overdue invoice `INV/2026/00002`."
+
+### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
+> "Tại Slide 22, em xin trình bày **Chuỗi Nghiệp vụ TO-BE Xuyên suốt (End-to-End Walkthrough)** đã được kiểm chứng thực tế trên Odoo:
+> 
+> 1. **Bước 1 — Tự động áp giá hợp đồng (`FR-01`):** Trên Đơn bán hàng `S00001`, khi chọn khách hàng *Tập đoàn ABC*, hệ thống tự động khóa đơn giá 65.000đ cho 50 ram giấy `ST-001` (triệt tiêu 100% lỗi giá và tiết kiệm 50 triệu/tháng).
+> 2. **Bước 2 — Tra cứu ATP & Giữ chỗ tồn kho (`FR-02`):** Odoo kiểm tra tồn kho khả dụng giữa kho Tân Bình và Biên Hòa, tự động giữ chỗ ngay khi đơn hàng được xác nhận.
+> 3. **Bước 3 — Xuất kho chỉ dẫn ô kệ bằng Barcode:** Lệnh giao hàng `WH/OUT/00002` tự động sinh ra, chỉ dẫn thủ kho lấy hàng chính xác tại ô kệ `Aisle-02/Bin-04`, hoàn tất quét mã vạch trạng thái Done.
+> 4. **Bước 4 — Hóa đơn Đối soát 3 bên tự động (`FR-05`):** Hóa đơn `INV/2026/00001` được sinh tự động chuẩn 100% theo số lượng thực giao, hạch toán Nợ 131 / Có 511, 3331 và chuyển trạng thái 'In Payment' sau khi đối soát sao kê Vietcombank.
+> 5. **Bước 5 — Bù kho tự động & Khóa nợ quá hạn (`FR-03`, `FR-04`):** Khi tồn kho chạm ngưỡng Min, hệ thống tự động kích hoạt Đơn mua hàng `P00001` mua 230 ram từ *NCC Bến Cát*. Đồng thời, báo giá `S00003` của *Công ty Hoàng Gia* bị chặn Credit Hold do hóa đơn `INV/2026/00002` quá hạn 16,5 triệu."
+
+---
+
+# SLIDE 23: PHẦN 6 — KIỂM THỬ UAT & FIT-GAP: KẾT QUẢ KIỂM THỬ UAT & ĐÁNH GIÁ FIT-GAP TRÊN ODOO
+*(Tương ứng trên màn hình: Section 6 — UAT & Fit-Gap Analysis: Executed UAT Test Suite & Odoo Fit-Gap Evaluation)*  
+**Người trình bày:** Phạm Nguyễn Gia Thuận (Speaker 2)  
+**Thời lượng dự kiến:** 55 - 65 giây  
+
+### 🇬🇧 English Script:
+> "Slide 23 presents our **User Acceptance Testing (UAT) Execution Log and Fit-Gap Analysis**.
+> 
+> To ensure scientific rigor, we executed a test suite of **8 UAT test scenarios (`TC-01` to `TC-08`)** tracing directly to our Functional Requirements:
+> - `TC-01` (Contract Price Retrieval): **PASS** — Auto-applied 65,000 VND rate.
+> - `TC-02` & `TC-03` (ATP Warning & Stock Reservation): **PASS** — Prevented overselling and scheduled warehouse picking.
+> - `TC-04` (Hard Credit Hold): **PASS** — Blocked order confirmation for accounts with overdue debt > 30 days.
+> - `TC-05` (Automated Reordering PR): **PASS** — Auto-generated RFQ upon min-stock breach.
+> - `TC-06` & `TC-07` (Zero-Touch 3-Way Match & AR Aging Dashboard): **PASS** — Matched line items with 0% tolerance.
+> 
+> **Fit-Gap Evaluation:** As objective Business Analysts, we acknowledged that while Odoo natively satisfies `FR-01`, `FR-04`, `FR-05`, and `FR-08` out-of-the-box, it presents partial gaps in statutory Circular 78 electronic invoicing and multi-level approval hierarchies, for which we designed clear architectural workarounds."
+
+### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
+> "Slide 23 thể hiện **Kết quả Thực thi Bộ Kiểm thử Chấp nhận Người dùng (UAT) và Đánh giá Fit-Gap**.
+> 
+> Nhóm em đã thực hiện kiểm thử nghiêm ngặt bộ **8 kịch bản UAT (`TC-01` đến `TC-08`)** tương ứng chặt chẽ với các Yêu cầu Chức năng:
+> - `TC-01` (Áp giá hợp đồng): **PASS** — Tự động áp giá 65.000đ cho `ST-001`.
+> - `TC-02` & `TC-03` (Cảnh báo ATP & Giữ chỗ tồn kho): **PASS** — Ngăn bán trùng và tự động tạo lệnh giao hàng.
+> - `TC-04` (Khóa hạn mức tín dụng): **PASS** — Tự động chặn xác nhận đơn hàng khi khách còn nợ quá hạn.
+> - `TC-05` (Tái cung ứng tự động): **PASS** — Tự tạo đơn mua khi tồn kho dưới mức an toàn.
+> - `TC-06` & `TC-07` (Đối soát 3 bên & Báo cáo tuổi nợ): **PASS** — Khớp 100% chứng từ, giảm 90% công sức kế toán.
+> 
+> **Đánh giá Fit-Gap Khách quan:** Với tư cách là BA chuyên nghiệp, nhóm chỉ rõ Odoo đáp ứng hoàn hảo Out-of-the-Box các yêu cầu `FR-01`, `FR-04`, `FR-05`, `FR-08`, nhưng có khoảng cách ở quy định Hóa đơn điện tử Thông tư 78 và Phê duyệt đa cấp, từ đó nhóm đã đề xuất giải pháp tích hợp API trung gian khả thi."
+
+---
+
+# SLIDE 24: TỔNG KẾT ĐỒ ÁN & BẢO VỆ: TỔNG KẾT GIÁ TRỊ ĐỒ ÁN, ROI ĐỊNH LƯỢNG & HỎI ĐÁP Q&A
+*(Tương ứng trên màn hình: Conclusion & Master Defense: Complete Project Summary, Quantified ROI & Defense Q&A)*  
+**Người trình bày:** Võ Duy Bình & Phạm Nguyễn Gia Thuận (Co-Speakers)  
+**Thời lượng dự kiến:** 60 - 75 giây  
+
+### 🇬🇧 English Script:
+> *(Vo Duy Binh concluding Business Value & ROI):*  
+> "In conclusion, our Business Systems Analysis project delivers transformative, quantifiable Return on Investment for OfficePro Distribution:  
+> - **100% Pricing Accuracy:** Reducing contract billing errors from 5–8% to **0%**, saving **~50 million VND monthly** in dispute write-offs.  
+> - **95% Reduction in Stockouts:** Eliminating post-SO delivery failures via real-time multi-facility ATP reservation.  
+> - **100% Credit Policy Compliance:** Enforcing hard credit locks programmatically to eliminate unapproved bad debt.  
+> - **90% Reduction in Accounting Overhead:** Saving **15–18 hours weekly** through automated 3-way document matching.  
+> 
+> *(Pham Nguyen Gia Thuan opening Defense Q&A):*  
+> This capstone journey has solidified our mastery across the complete BA lifecycle: from stakeholder elicitation, BPMN modeling, and requirements engineering, to Cockburn Use Cases, live ERP deployment, and empirical UAT validation.  
+> We sincerely thank Lecturer MSc. Nguyen Thi Thanh Thanh and the Examination Board for your dedicated guidance throughout this semester.  
+> We are now ready and honored to welcome your questions and feedback!"
+
+### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
+> *(Võ Duy Bình tổng kết Giá trị & ROI Định lượng):*  
+> "Để tổng kết, Đồ án Phân tích Hệ thống Nghiệp vụ của Nhóm 6 mang lại giá trị chuyển đổi số đo lường được cho OfficePro:  
+> - **Chính xác Giá 100%:** Giảm tỷ lệ sai giá hợp đồng từ 5–8% về **0%**, tiết kiệm **~50 triệu đồng mỗi tháng** chi phí tranh chấp công nợ.  
+> - **Giảm 95% Sự cố Hết hàng:** Xóa bỏ tình trạng hủy đơn sau khi chốt nhờ cơ chế giữ chỗ ATP liên kho thời gian thực.  
+> - **Tuân thủ 100% Chính sách Tín dụng:** Khóa nợ tự động bằng thuật toán hệ thống, loại bỏ triệt để rủi ro nợ xấu thỏa thuận miệng.  
+> - **Giảm 90% Gánh nặng Kế toán:** Tiết kiệm **15–18 giờ làm việc mỗi tuần** nhờ cơ chế đối soát 3 bên tự động không chạm.  
+> 
+> *(Phạm Nguyễn Gia Thuận kết thúc & mở Q&A):*  
+> Đồ án này đã giúp hai chúng em làm chủ toàn diện chu trình BSA: từ phỏng vấn hiện trường, vẽ BPMN, viết yêu cầu MoSCoW, đến đặc tả Use Case chuẩn Cockburn, cấu hình Odoo Cloud thực tế và kiểm thử UAT.  
+> Nhóm 6 xin chân thành cảm ơn Giảng viên ThS. Nguyễn Thị Thanh Thanh và quý Thầy Cô trong Hội đồng đã đồng hành và chỉ dẫn chúng em trong suốt học kỳ qua.  
+> Chúng em xin trân trọng kính mời Hội đồng đặt câu hỏi phản biện!"
+
+---
+
+## 🎯 BỘ CÂU HỎI PHẢN BIỆN CHUYÊN SÂU DỰ PHÒNG CHO ĐỒ ÁN CUỐI KỲ (FINAL DEFENSE Q&A PREPARATION)
+
+### ❓ Câu 1: Tại sao Bảng giá Hợp đồng (`FR-01`) lại là yêu cầu Bắt buộc (Must-Have) quan trọng nhất và Odoo xử lý ra sao?
+- **Trả lời (EN):** *"In B2B wholesale, commercial contracts legally bind prices. Manual Excel lookups caused a 5–8% error rate, bleeding 50 million VND monthly in dispute write-offs. In Odoo, we configured the Advanced Pricelist engine with fixed-price rules tied to customer accounts. When selecting 'Saigon Tech Corp', Odoo instantly locks the 65,000 VND rate for `ST-001`, completely eliminating manual data entry errors."*
+- **Trả lời (VN):** *"Trong bán buôn B2B, hợp đồng nguyên tắc ràng buộc giá pháp lý. Việc tra Excel thủ công gây lỗi 5-8%, làm mất 50 triệu/tháng tiền điều chỉnh hóa đơn. Trên Odoo, nhóm cấu hình tính năng Pricelist nâng cao với quy tắc giá cố định gắn trực tiếp vào hồ sơ khách hàng. Khi chọn khách hàng, Odoo tự động khóa giá 65.000đ cho `ST-001`, loại bỏ 100% sai sót con người."*
+
+### ❓ Câu 2: Tồn kho Khả dụng ATP (Available-to-Promise) khác gì với Tồn kho thực tế (On-Hand) và giải quyết bài toán gì?
+- **Trả lời (EN):** *"On-hand stock is physical inventory on the warehouse shelf. ATP inventory equals physical stock minus quantities already reserved for confirmed sales orders, plus incoming shipments from approved POs. Real-time ATP visible during quotation prevents sales reps from double-selling the same batch of Double A paper, cutting post-SO stockouts by 95%."*
+- **Trả lời (VN):** *"Tồn kho On-Hand là lượng hàng vật lý thực tế trên kệ. Còn Tồn kho Khả dụng ATP bằng tồn thực tế trừ đi lượng hàng đã giữ chỗ cho các đơn bán hàng khác, cộng lượng hàng sắp về từ PO đã duyệt. Chỉ số ATP thời gian thực hiển thị ngay trên màn hình báo giá ngăn chặn việc nhân viên bán trùng hàng, giảm 95% sự cố hết hàng sau khi chốt đơn."*
+
+### ❓ Câu 3: Cơ chế Khóa nợ Tín dụng (`FR-03` / `UC-ACC-02`) hoạt động thế nào trên Odoo?
+- **Trả lời (EN):** *"In our live database, customer 'Hoang Gia Paper' has an overdue invoice of 16.5 million VND exceeding their 10 million credit limit. When a sales rep creates quotation `S00003`, Odoo immediately triggers a red Credit Limit Warning banner and aborts the confirmation button. The order remains on hold until the Chief Accountant reconciles payment or grants an authorized temporary credit override."*
+- **Trả lời (VN):** *"Trên hệ thống thực tế của nhóm, khách hàng Hoàng Gia có hóa đơn quá hạn 16,5 triệu vượt trần công nợ 10 triệu. Khi NVKD tạo báo giá `S00003`, Odoo hiển thị cảnh báo đỏ và khóa không cho bấm xác nhận. Đơn hàng bị giữ ở trạng thái Báo giá cho đến khi Kế toán trưởng xác nhận khách đã thanh toán hoặc phê duyệt mở khóa đặc biệt."*
+
+### ❓ Câu 4: Tính năng Đối soát 3 bên tự động (`FR-05` / `UC-ACC-01`) giúp giảm tải kế toán ra sao?
+- **Trả lời (EN):** *"In the AS-IS state, accounting spent 15–20 hours weekly matching paper sales orders, carbon delivery slips, and invoices. In Odoo, we enforced 'Invoicing Policy: Delivered Quantities'. Invoices can only be created from electronically validated delivery orders (`WH/OUT/00002`). The 3-way match is 100% automated with zero tolerance, cutting invoice processing from 5–7 days to under 2 hours weekly."*
+- **Trả lời (VN):** *"Ở hiện trạng AS-IS, kế toán mất 15-20 giờ mỗi tuần ngồi dò từng dòng giữa đơn đặt hàng, phiếu xuất kho giấy than và hóa đơn. Trên Odoo, nhóm thiết lập chính sách 'Xuất hóa đơn theo số lượng thực giao'. Hóa đơn chỉ được tạo từ phiếu xuất kho điện tử đã xác thực (`WH/OUT/00002`). Thuật toán đối soát 3 bên khớp 100%, giảm thời gian xử lý hóa đơn từ 7 ngày xuống còn dưới 2 giờ mỗi tuần."*
+
+### ❓ Câu 5: Fit-Gap Analysis cho thấy những hạn chế gì của Odoo bản chuẩn đối với thị trường Việt Nam?
+- **Trả lời (EN):** *"Standard Odoo excels in core wholesale logistics, pricing, and 3-way matching out-of-the-box. However, its gaps include: (1) Compliance with Vietnamese Circular 78 electronic invoice XML signed format, which requires a third-party connector to VNPT or Viettel S-Invoice; and (2) Complex multi-tier approval hierarchies, which standard Odoo simplifies into 2 steps and requires automated server actions or Odoo Studio to enforce tiered executive approval."*
+- **Trả lời (VN):** *"Odoo bản chuẩn đáp ứng xuất sắc các nghiệp vụ bán buôn, định giá và đối soát kho bãi. Tuy nhiên có 2 khoảng cách chính: (1) Chuẩn hóa Hóa đơn điện tử có mã của Cơ quan Thuế theo Thông tư 78/Nghị định 123 cần cổng kết nối API trung gian (như VNPT/Viettel); và (2) Quy trình duyệt chiết khấu nhiều cấp phức tạp cần bổ sung Server Action hoặc Odoo Studio để phân tầng quyền duyệt hạn mức."*
+
+### ❓ Câu 6: Bằng chứng nào chứng minh nhóm đã thực hành thực tế trên Odoo chứ không chỉ dùng ảnh mạng?
+- **Trả lời (EN):** *"Our live production database is deployed at `https://edu-officeprodistribution.odoo.com/odoo` with company name 'OfficePro Distribution Co., Ltd.'. In Section 6 and Week 11 deliverables, we logged over 20 completed transactions with verifiable reference numbers: Sales Order `S00001`, Delivery `WH/OUT/00002`, Invoice `INV/2026/00001`, Purchase Order `P00001`, Inbound Receipt `WH/IN/00001`, Vendor Bill `BILL/2026/11/0001`, and internal combo manufacturing `WH/MO/00001`, complete with employee barcodes and Vietcombank payment matching."*
+- **Trả lời (VN):** *"Hệ thống của nhóm em hoạt động trực tiếp tại địa chỉ `https://edu-officeprodistribution.odoo.com/odoo` mang tên công ty 'OfficePro Distribution Co., Ltd.'. Trong Phần 6 và bài nộp Tuần 11, nhóm đã thực hiện hơn 20 giao dịch hoàn tất có mã chứng từ thực tế: Đơn bán `S00001`, Phiếu xuất kho `WH/OUT/00002`, Hóa đơn `INV/2026/00001`, Đơn mua `P00001`, Nhập kho `WH/IN/00001`, Hóa đơn NCC `BILL/2026/11/0001`, và Lệnh sản xuất combo `WH/MO/00001`, đi kèm mã barcode thẻ nhân viên và đối soát chuyển khoản Vietcombank."*

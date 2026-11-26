@@ -14,8 +14,8 @@
 | **Submitted by**                     | **Vo Duy Binh** (Student ID: 22301500) — Team Leader / Lead Business Analyst**Pham Nguyen Gia Thuan** (Student ID: 22204631) — QA & Requirements Analyst |
 | **Class**                            | BA2631 — Semester 1 (2026–2027)                                                                                                                                      |
 | **Under The Guidance Of**            | MSc. Nguyen Thi Thanh Thanh                                                                                                                                            |
-| **Milestone / Assessment**           | **Phase 1 Mid-Term Assessment (Sections 1–4 Baseline — 30% Weight)**                                                                                           |
-| **Month, Year**                      | October 2026                                                                                                                                                           |
+| **Milestone / Assessment**           | **Final Project Capstone Assessment (Full Enterprise Scope: Phase 1 & Phase 2 — 100% Weight)**                                     |
+| **Month, Year**                      | November 2026                                                                                                                          |
 
 ---
 
@@ -29,13 +29,15 @@ As the enterprise expands, it faces critical operational bottlenecks stemming fr
 2. **Post-Confirmation Stockouts:** Warehouse goods receipts take **24–48 hours** to be entered into spreadsheets. Sales reps confirm delivery commitments based on outdated morning stock sheets, triggering **3–4 stockouts per week post-confirmation**.
 3. **Manual 3-Way Matching Overhead:** Accounts Receivable expends **15–20 hours weekly** manually reconciling paper Sales Orders, physical Delivery Notes, and Billing Invoices, while credit hold policies are verbally bypassed.
 
-In strict accordance with the **BSA Course BRD Template**, this report establishes a **Pure Business Systems Analysis (Phase 1)** covering:
+In strict accordance with the **BSA Course BRD Template and Final Project Guidelines**, this report establishes the comprehensive, end-to-end **Business Requirements Document (BRD) and Solution Design (Phases 1 & 2 Complete)** covering:
 
 * **Section 1:** Enterprise profile, 10-SKU Master Data catalog, facilities network, and team governance.
-* **Section 2:** Stakeholder Power/Interest matrix, verified elicitation evidence, information needs, and open assumptions.
+* **Section 2:** Stakeholder Power/Interest matrix, verified elicitation evidence, information needs, and validated assumptions.
 * **Section 3:** Five core business processes, AS-IS BPMN friction points, 5-Whys root cause analysis, TO-BE re-engineered workflows, and expected business benefits.
 * **Section 4:** Solution-neutral Business Requirements (`BR-01` to `BR-05`), MoSCoW Functional Requirements (`FR-01` to `FR-08`), Core Business Rules (`BR-R01` to `BR-R06`), and Requirements Traceability Matrix (RTM).
-* **Sections 5 & 6:** Phase 2 roadmaps for Use Case specifications and Odoo ERP solution mapping (deferred to Weeks 8–15 per course guidelines).
+* **Section 5:** Enterprise Use Case architecture, Cockburn use case specifications, and FR-to-UC traceability verification.
+* **Section 6:** Live Odoo ERP Cloud prototype ([https://edu-officeprodistribution.odoo.com/odoo](https://edu-officeprodistribution.odoo.com/odoo)), 25 active modules, 20+ completed transaction audit trail (`S00001`, `WH/OUT/00002`, `INV/2026/00001`, `P00001`, `WH/IN/00001`, `BILL/2026/11/0001`, `WH/MO/00001`, `SP/00001`, `S00003`), UAT test logs (TC-01 to TC-08), visual screenshot repository, and Fit-Gap analysis.
+* **Section 7 & Appendices:** Business transformation ROI (saving 50M VND/mo, 90% reduction in billing reconciliation), 4-phase rollout roadmap, academic reflections, and complete Master Data matrix.
 
 ---
 
