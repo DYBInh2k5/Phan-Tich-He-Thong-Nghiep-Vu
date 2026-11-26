@@ -43,21 +43,6 @@
 > Đồ án thể hiện trọn vẹn chu trình phân tích nghiệp vụ chuẩn mực theo phương châm **'Nghiệp vụ đi trước, Công nghệ theo sau'**: từ khảo sát thu thập thực địa, phân tích điểm nghẽn và tái cấu trúc quy trình AS-IS / TO-BE ở Phase 1, đến đặc tả Use Case chuẩn Cockburn, triển khai hệ thống Odoo ERP Cloud thực tế và kiểm thử UAT có lưu vết ở Phase 2.  
 > 
 > Kính mời Cô và Hội đồng cùng theo dõi hành trình chuyển đổi số toàn diện của OfficePro!"
-> 
-> Following the official course syllabus and rubrics, our Phase 1 investigation strictly focuses on **Pure Business Analysis** across Sections 1, 2, and 3: investigating real-world wholesale operations, stakeholder information needs, manual AS-IS process bottlenecks, 5-Whys root cause analysis, TO-BE workflow re-engineering, prioritized MoSCoW functional requirements, and end-to-end traceability.  
-> 
-> We adhere rigorously to the foundational principle: **'Business-First, Technology-Second'**. Let us begin with our Enterprise Profile."
-
-### 🇻🇳 Lời dịch & Hướng dẫn nói Tiếng Việt:
-> "Kính chào Giảng viên ThS. Nguyễn Thị Thanh Thanh và quý thầy cô trong Hội đồng đánh giá.  
-> 
-> Em tên là **Võ Duy Bình**, Trưởng nhóm và Phụ trách Phân tích Nghiệp vụ của **Nhóm 6**. Đồng hành cùng em hôm nay là bạn **Phạm Nguyễn Gia Thuận**, đảm nhận vai trò QA và Phân tích Yêu cầu.  
-> 
-> Hôm nay, nhóm em xin phép báo cáo kết quả bảo vệ giữa kỳ **Phase 1: Phân tích Hệ thống Nghiệp vụ** cho **Kịch bản B: Bán buôn & Phân phối Văn phòng phẩm B2B**, đại diện cho doanh nghiệp: **Công ty TNHH Phân phối OfficePro**.  
-> 
-> Bám sát chuẩn mực đề cương môn học và 34 tiêu chí đánh giá chất lượng của cô, Phase 1 của nhóm tập trung 100% vào **Phân tích Nghiệp vụ Thuần túy (Pure Business Analysis)** thuộc Sections 1, 2 và 3: tìm hiểu mô hình vận hành thực tế, ma trận nhu cầu thông tin stakeholder, mô hình hóa điểm nghẽn quy trình AS-IS, phân tích nguyên nhân gốc rễ 5-Whys, tái thiết kế quy trình TO-BE, danh mục yêu cầu MoSCoW và ma trận truy vết RTM.  
-> 
-> Nhóm quán triệt sâu sắc phương châm cốt lõi: **'Nghiệp vụ đi trước, Công nghệ theo sau'**. Sau đây, em xin phép bắt đầu với Hồ sơ Doanh nghiệp."
 
 ---
 

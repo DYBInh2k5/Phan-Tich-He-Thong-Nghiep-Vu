@@ -2,7 +2,7 @@
 ## BUSINESS SYSTEMS ANALYSIS (BSA) — MASTER COURSEWORK & EXERCISES KNOWLEDGE BASE
 
 > 🔄 **AUTOMATED SYNCHRONIZATION STATUS: ACTIVE**  
-> **Last Auto-Updated:** `2026-11-26 04:11:09 (UTC)`  
+> **Last Auto-Updated:** `2026-11-26 04:23:34 (UTC)`  
 > **Sync Engine:** `scripts/auto_update_knowledge.js`  
 > **Target Tracking:** All Lecture Slides, Individual Deliverables, Group Submissions, and Project Phase 1/2 Artifacts.  
 > *Note: This file is dynamically re-compiled whenever new slides, assignments, or project files are committed or saved.*
@@ -122,7 +122,7 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | **Odoo_Live_Instance_Group6.md** | [`Project/Final Project/Odoo_Live_Instance_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Odoo_Live_Instance_Group6.md) | 9.0 KB | Official Phase 1 Artifact |
 | **phace 1.docx** | [`Project/Final Project/phace 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/phace 1.docx) | 2464.9 KB | Official Phase 1 Artifact |
 | **Phase 1.docx** | [`Project/Final Project/Phase 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Phase 1.docx) | 2464.9 KB | Official Phase 1 Artifact |
-| **Presentation_Script_Bilingual.md** | [`Project/Final Project/Presentation_Script_Bilingual.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Presentation_Script_Bilingual.md) | 84.4 KB | Official Phase 1 Artifact |
+| **Presentation_Script_Bilingual.md** | [`Project/Final Project/Presentation_Script_Bilingual.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Presentation_Script_Bilingual.md) | 82.5 KB | Official Phase 1 Artifact |
 | **Presentation_Slides.html** | [`Project/Final Project/Presentation_Slides.html`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Presentation_Slides.html) | 293.1 KB | Official Phase 1 Artifact |
 | **Project phase 1.docx** | [`Project/Final Project/Project phase 1.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/Project phase 1.docx) | 161.7 KB | Official Phase 1 Artifact |
 | **PROJECT_PHASE_1_SUMMARY.md** | [`Project/PROJECT_PHASE_1_SUMMARY.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/PROJECT_PHASE_1_SUMMARY.md) | 64.9 KB | Official Phase 1 Artifact |
