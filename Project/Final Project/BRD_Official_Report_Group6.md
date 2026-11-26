@@ -123,8 +123,9 @@ The project team would like to express our deepest gratitude to **MSc. Nguyen Th
 * **Figure 6.7:** Live Quotation S00001 with Automated Contract Price Application
 * **Figure 6.8:** Real-Time Available-to-Promise (ATP) Inventory Forecast Warning
 * **Figure 6.9:** Confirmed Sales Order S00001 with Direct Warehouse Delivery Link
-* **Figure 6.10:** Generated Warehouse Delivery Order WH/OUT/00001
-* **Figure 6.11:** Commercial VAT Electronic Invoice INV/2026/00001 in Posted State
+* **Figure 6.10:** Generated Warehouse Delivery Order WH/OUT/00002 (Picked at Aisle-02/Bin-04)
+* **Figure 6.11:** Commercial VAT Electronic Invoice INV/2026/00001 in In Payment State (Vietcombank Matched)
+* **Figure 6.12:** Automated Procurement Purchase Order P00001 (Replenishment from NCC Giấy Bến Cát)
 * **Figure 7.1:** Enterprise ERP Implementation & Phased Rollout Roadmap
 
 ---
@@ -1325,15 +1326,19 @@ The following high-resolution screenshots captured directly from Group 6's live 
 
 ![Figure 6.9: Confirmed Sales Order S00001 with Direct Warehouse Delivery Link](./assets/odoo/odoo_07_confirmed_sales_order_delivery_link.png)
 
-*Figure 6.9: Confirmed Sales Order S00001 — Order Formally Released with Smart Tab Linked Directly to Warehouse Fulfillment WH/OUT/00001 (Test TC-03)*
+*Figure 6.9: Confirmed Sales Order S00001 — Order Formally Released with Smart Tab Linked Directly to Warehouse Fulfillment WH/OUT/00002 (Test TC-03)*
 
-![Figure 6.10: Generated Warehouse Delivery Order WH/OUT/00001](./assets/odoo/odoo_08_warehouse_delivery_order_waiting.png)
+![Figure 6.10: Generated Warehouse Delivery Order WH/OUT/00002](./assets/odoo/odoo_08_warehouse_delivery_order_waiting.png)
 
-*Figure 6.10: Generated Warehouse Delivery Order WH/OUT/00001 — Automatically Scheduled in Odoo Inventory with Stock Reservation (Test TC-03)*
+*Figure 6.10: Generated Warehouse Delivery Order WH/OUT/00002 — Automatically Scheduled in Odoo Inventory with Stock Reservation and Bin-Guided Picking at Aisle-02/Bin-04 (Test TC-03)*
 
 ![Figure 6.11: Posted Commercial VAT Electronic Invoice INV/2026/00001](./assets/odoo/odoo_09_customer_vat_invoice_posted_3way_match.png)
 
-*Figure 6.11: Commercial VAT Electronic Invoice INV/2026/00001 — Validated via Automated 3-Way Match in 'Posted' State with Net 30 Payment Terms (Tests TC-06, TC-07, TC-08)*
+*Figure 6.11: Commercial VAT Electronic Invoice INV/2026/00001 — Validated via Automated 3-Way Match in 'In Payment' State with Net 30 Payment Terms Matched via Vietcombank (Tests TC-06, TC-07, TC-08)*
+
+![Figure 6.12: Automated Procurement Purchase Order P00001](./assets/odoo/odoo_purchase_order_p00001.png)
+
+*Figure 6.12: Automated Procurement Purchase Order P00001 — Automatically Triggered by Reordering Rule RR/ST-001/01 Purchasing 230 Reams from NCC Giấy Bến Cát (Test TC-05)*
 
 ---
 
