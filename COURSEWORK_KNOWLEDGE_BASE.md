@@ -2,7 +2,7 @@
 ## BUSINESS SYSTEMS ANALYSIS (BSA) — MASTER COURSEWORK & EXERCISES KNOWLEDGE BASE
 
 > 🔄 **AUTOMATED SYNCHRONIZATION STATUS: ACTIVE**  
-> **Last Auto-Updated:** `2026-11-26 04:44:13 (UTC)`  
+> **Last Auto-Updated:** `2026-11-27 07:28:40 (UTC)`  
 > **Sync Engine:** `scripts/auto_update_knowledge.js`  
 > **Target Tracking:** All Lecture Slides, Individual Deliverables, Group Submissions, and Project Phase 1/2 Artifacts.  
 > *Note: This file is dynamically re-compiled whenever new slides, assignments, or project files are committed or saved.*
@@ -113,6 +113,7 @@ Bảng thống kê trạng thái các tệp tin bài học và bài tập hiện
 | Project Deliverable | File Path | Size | Description |
 | :--- | :--- | :---: | :--- |
 | **BRD_Master_Group6.md** | [`Project/Final Project/BRD_Master_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Master_Group6.md) | 13.1 KB | Official Phase 1 Artifact |
+| **BRD_Official_Report_Group6.html** | [`Project/Final Project/BRD_Official_Report_Group6.html`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Official_Report_Group6.html) | 182.0 KB | Official Phase 1 Artifact |
 | **BRD_Official_Report_Group6.md** | [`Project/Final Project/BRD_Official_Report_Group6.md`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Official_Report_Group6.md) | 173.1 KB | Official Phase 1 Artifact |
 | **BRD_Template_BSA_New.docx** | [`Project/Final Project/BRD_Template_BSA_New.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Template_BSA_New.docx) | 60.4 KB | Official Phase 1 Artifact |
 | **BRD_Template_BSA.docx** | [`Project/Final Project/BRD_Template_BSA.docx`](file:///D:/HSU/2631Semester 1(2026-2027)/BA/Project/Final Project/BRD_Template_BSA.docx) | 61.4 KB | Official Phase 1 Artifact |
